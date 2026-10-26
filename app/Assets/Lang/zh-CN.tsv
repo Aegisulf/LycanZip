@@ -1,0 +1,1374 @@
+# LycanZip 简体中文 (zh-CN)。每行一条：id、Tab、译文、Tab、英文原文的哈希（由 tools/i18n.py 维护）。转义：反斜线加 n、反斜线加 t、两个反斜线。
+## main
+main.select	选取	85982229
+main.pause	暂停	781961bc
+main.resume	继续	b3bd0b5a
+main.cancel	取消	77dfd213
+main.open_folder	打开文件夹	f9630141
+main.test_integrity	测试完整性	ba25de4f
+main.settings	设置	c7f73bb5
+main.drag_files_here	把文件拖到这里	0636917e
+main.archive_open_extract_files_folders	压缩文件 → 打开与解压缩　·　文件或文件夹 → 创建压缩文件	238fcb94
+main.open_archive	打开压缩文件	7f60c24c
+main.new_archive	新建压缩文件	b9ec2a94
+main.choose_files	选择文件…	20be8b95
+main.choose_folder	选择文件夹…	3a95ac72
+main.back	返回	b52b36b7
+main.extract_here	解压到此	5221b51b
+main.extract	解压到…	f5015680
+main.add_files_folders_archive_you_can	把文件或文件夹加入这个压缩文件（也可以直接拖进来）	b3ba97f0
+main.add_archive	加入到压缩文件	b17b8c86
+main.add	加入	61cc55aa
+main.add_files	添加文件…	9fdaa230
+main.add_folder	添加文件夹…	1c0da9c5
+main.new_folder	新建文件夹…	fea7178e
+main.preview	预览	f1fbb2b4
+main.image_preview	图片预览	6c5de6ef
+main.audio_preview	音频预览	47fea53e
+main.view	查看	69bd4ef9
+main.list_all	全部列出	04466388
+main.folder_tree	文件夹树	9c23f9bb
+main.folder_tree_toggle	文件夹树开关	36af87a8
+main.show_macos_metadata	显示 macOS 元数据	720609b5
+main.details	详细信息	dc3decbb
+main.list	列表	a1fffaaa
+main.show_image_thumbnails_icon_view	图标视图显示图片缩略图	9ac42949
+main.sort_by_name	按名称排序	d3b65f5c
+main.sort_by_size	按大小排序	2d08ec84
+main.sort_by_packed_size	按压缩后大小排序	efa7243d
+main.sort_by_modified_date	按修改时间排序	d254e057
+main.sort_by_type	按类型排序	0b1fc8b5
+main.ascending	升序	2b226c79
+main.descending	降序	36377adf
+main.more_options	其他选项	86c0a35e
+main.archive_information	压缩文件信息…	c03fec02
+main.hash_values_archive	计算压缩文件的哈希值…	13da45e4
+main.scan_malware	扫描恶意程序	fafc5d2f
+main.hands_every_file_archive_antivirus	把压缩文件里的每个文件交给已安装的杀毒软件（通过 Windows 的 AMSI）检查。需要开启实时防护；超过 128 MB 的文件会跳过。LycanZip 本身没有扫描引擎，结果不代表一定安全；Windows Defender 的云防护可能把可疑的样本发送到 Microsoft。	fccf6c01
+main.filename_encoding	文件名编码	f1290c20
+main.up_one_level_backspace	上一级（Backspace）	64d8b297
+main.up_one_level	上一级	71f23258
+main.current_location	当前位置	75ea6a18
+main.search_ctrl_f	搜索（Ctrl+F）	2b439fd3
+main.search	搜索	bce06414
+main.drag_resize_folder_tree_double	拖动调整文件夹树宽度（双击还原）	7c895e33
+main.folder_tree_splitter	文件夹树分隔线	b2a2647a
+main.select_all	全选	913afff1
+main.select_all_clear_selection	全选 / 取消全选	faf3477b
+main.name	名称	709a2322
+main.sort_by_location	按所在路径排序	e01625c5
+main.location	所在路径	d219c681
+main.type	类型	3deb7456
+main.size	大小	b7152342
+main.packed	压缩后	ac9f7c98
+main.modified	修改时间	19a532c8
+main.archive_contents	压缩文件内容	c451d872
+main.archive_contents_list_icons	压缩文件内容（列表 / 图标）	f99fa9aa
+main.extract_selected_items_here	解压所选项目到此处	7ef75e2c
+main.extract_selected_items	解压所选项目到…	d48f0e52
+main.copy_path	复制路径	9804556f
+main.clear_selection	取消选择	247fd631
+main.restore_default_settings	恢复默认设置	7dc68a00
+main.settings_tabs	设置分页	bd140503
+main.general	基本	9239ee2c
+main.compression	压缩	46ead404
+main.file_explorer	文件资源管理器	700869dc
+main.shortcuts	快捷键	90c93523
+main.about	关于	6b21fb79
+main.appearance	外观	41def7a0
+main.language	语言	89b86ab0
+main.interface_language_restart	界面语言。更改后需要重新启动 LycanZip 才会生效。	522335fd
+main.saved_takes_effect_after	已保存，重新启动后生效。	636c48e5
+main.follow_system	跟随系统	1b16bcb0
+main.theme	主题	a797e309
+main.follow_system_fixed_light_dark	跟随系统，或固定为浅色 / 深色 / 高对比（不管 Windows 的设置）	595f2484
+main.light	浅色	a36ef8ab
+main.dark	深色	ae1ef014
+main.high_contrast_black	高对比（黑底）	c341a6f4
+main.accent_color	主题色	e49578ed
+main.accent_color_buttons_selection	按钮、选取、进度与链接的强调色。“跟随系统”使用 Windows 的强调色。	b47a1f66
+main.background	背景	64dd60fe
+main.full_gradient_plus_moonlit_scene	完整：渐变加首页的月夜场景；仅渐变：只有背景色；关闭：纯系统材质（Mica）。渐变会跟随主题色与深色 / 浅色变化。	142c9f0e
+main.full	完整	10b28a8c
+main.gradient_only	仅渐变	aad06254
+main.close	关闭	bbfa773e
+main.animations	动画	c77dcded
+main.page_transitions_list_loading_drag	页面与选项卡切换、进出文件夹、提示栏、任务卡片、欢迎窗口翻页、预览换图，以及首页几颗闪烁的星星。Windows 的“显示动画”关闭时不会播放。	695074f5
+main.sound_effects	音效	a41e30af
+main.sounds_opening_completion_errors	打开 / 完成 / 错误等事件的提示音。默认关闭。	f2ce9860
+main.sound_set	音效组	0b3e2886
+main.synth_default_set_synthesized	Synth 是默认的合成音；Wave 是最早的简单音调。选择之后会播放一下完成的声音。	bd241e88
+main.system_notifications	系统通知	78adbf5b
+main.show_notification_when_tasks	任务结束时，如果 LycanZip 不在前台就显示通知（失败一律通知）。任务栏按钮的进度条与闪烁不受这个开关影响。	048330e2
+main.multiple_windows	多窗口	3fd4f2a6
+main.when_opening_another_archive	打开另一个压缩文件时	975f569a
+main.when_window_already_use_open	已有窗口在使用时，再打开压缩文件是开新窗口，还是替换当前窗口的内容。有任务在进行的窗口一律开新窗口；一次打开多个压缩文件时也各开一个窗口。	ff0b05f3
+main.open_new_window	在新窗口中打开	cb4c1f20
+main.replace_current_window	替换当前窗口	a92596ce
+main.performance	性能	63c90455
+main.simultaneous_tasks	同时执行的任务数	8868bc1f
+main.disk_bottleneck_so_1_run_one	硬盘是瓶颈，一般建议保持 1（依次执行）	83d28fbd
+main.task_priority	任务优先级	37e4e62c
+main.how_much_machine_compress_extract	压缩、解压和测试任务使用电脑的程度。较低或后台可以减少对其他程序的影响，但任务会比较慢。	0d1c783e
+main.normal	一般	45e118d0
+main.lower_leaves_some_cpu_others	较低（让出一些 CPU）	00d8c45a
+main.background_lowest_also_saves_disk	后台（最低，磁盘和电源也节省）	6786f633
+main.temporary_folder	临时文件夹	f9b015fa
+main.used_when_opening_files_from	打开压缩包里的文件、拖拽到文件资源管理器、打开和压缩 tar.gz 等需要临时文件时使用。默认是系统的临时文件夹；放在网络或 U 盘上会很慢。	768d718e
+main.choose	选择…	349ac8fb
+main.choose_temporary_folder	选择临时文件夹	ce762b1e
+main.reset	恢复默认	44c57abd
+main.reset_temporary_folder	临时文件夹恢复默认	e7a126ec
+main.clear_temporary_files	清除临时文件	242e5902
+main.extraction	解压缩	2552a425
+main.when_file_with_same_name_already	目标位置已有同名文件时	6310186a
+main.ask_me_shows_options_on_every	“询问我”会在每次冲突时显示选项，并可应用到之后所有冲突	41badf73
+main.file_conflict_handling	文件冲突处理	4af14a87
+main.ask_me	询问我	10a8fd63
+main.skip	跳过	3da47453
+main.overwrite	覆盖	0625c54e
+main.rename_automatically	自动重命名	eaecf2b5
+main.when_extracting_here	点击“解压到此”时	85622c6d
+main.automatic_single_top_level_folder	自动判断：内容只有一个文件夹时直接放，否则创建“文件名”文件夹。另外两种可以在按钮旁的箭头中选用。	18b0d690
+main.automatic_recommended	自动判断（推荐）	a068f350
+main.do_not_create_folder	不创建文件夹	c4f1ccef
+main.create_folder_named_after_archive	创建“文件名”文件夹	80c9b557
+main.check_unusually_big_archives	解压缩前检查异常大的压缩包	54593980
+main.when_archive_would_unpack_far_more	展开后远大于压缩包（1 GB 以上并且超过 500 倍，或 1 TB 以上）时，先问是否继续；这种文件可能是压缩炸弹，也可能是正常的（例如虚拟机的磁盘映像）。	548960de
+main.open_folder_when_done	完成后打开文件夹	a3de0246
+main.skip_macos_metadata_when	解压时跳过 macOS 元数据	0ad03852
+main.macosx_folder_files_starting_with	Mac 制作的压缩文件里的 __MACOSX 文件夹、以 ._ 开头的文件和 .DS_Store 在 Windows 上没有用处；跳过后不会解压出来，也不影响“单个文件夹直接放出来”的判断。	55d759da
+main.keep_files_have_data_error	保留有数据错误的文件	a8ffe63f
+main.when_archive_damaged_cut_off_what	压缩文件损坏或被截断时，解得出来的部分仍然保留（图片、视频、文字常常还能用），完成消息会列出哪些文件有错误。关闭则删除有错误的文件。密码错误、取消和磁盘已满一律删除。	bf3654cc
+main.ask_before_deleting_archive	删除压缩文件前先确认	1571593e
+main.ask_once_when_delete_archive	在文件夹树最上面的压缩文件上右键选择“删除压缩文件”时，先问一次（移到回收站）。关闭后会直接删除并回到首页。	91b986fd
+main.ask_before_deleting_items_from	从压缩文件删除项目前先确认	887aebad
+main.ask_once_when_delete_pressed	按 Delete 或选“删除”时，先问一次。项目是直接从压缩文件里拿掉，不会进回收站，也无法恢复（除非开启下面的备份）。	9963cc68
+main.keep_backup_when_archive_changed	修改压缩文件时保留备份	0901745b
+main.when_files_archive_added_deleted	加入、删除、重命名、编辑压缩文件里的文件时，把修改前的压缩文件留在旁边（文件名后加 .bak）。每次修改都会覆盖上一份备份。	79f9d4e3
+main.program_editing	编辑用的程序	aad87903
+main.which_program_edit_item_right	右键菜单的“编辑”用哪个程序打开文件。留空：文本文件用记事本，其他文件用关联的程序。可以填完整路径，例如 C:\\Program Files\\Notepad++\notepad++.exe。	598afdb5
+main.ask_before_edited_file_goes_back	编辑后存回压缩文件前先确认	d41240a6
+main.after_edited_file_saved_ask_once	编辑的文件存档后，先问一次要不要存回压缩文件。关闭后，存档就会直接存回去。	9bddade2
+main.warn_before_opening_programs	打开程序、安装程序和脚本前警告	6a5fabb4
+main.ask_first_when_you_double_click	在压缩包里双击 .exe、.msi、.bat 等会运行程序的文件时，先确认。	08615072
+main.warn_before_opening_programs_short	打开程序前警告	a2f7b94b
+main.what_extract_when_opening_program	打开程序时解压的范围	0315b5cf
+main.programs_often_need_files_next	程序常需要旁边的文件（DLL、数据文件）。“同文件夹”会连同子文件夹一起解压到临时文件夹再运行。	4122dec3
+main.files_same_folder_recommended	同文件夹的文件（建议）	75241d55
+main.extract_only_file	只解压这个文件	88665a9b
+main.close_window_automatically_after	右键操作完成后自动关闭窗口	da7d1f80
+main.when_you_extract_compress_from	从右键菜单解压或压缩时，全部成功后自动关闭小窗口；关闭此选项可以留在屏幕上查看结果。	17b6bcbc
+main.default_format	默认格式	8cb4e197
+main.show_new_archive_file_explorer	压缩完成后在文件资源管理器中显示新文件	900b4e40
+main.test_integrity_after_compressing	压缩完成后测试完整性	e1b0ecf4
+main.after_compressing_new_archive_read	压缩完成后自动读一遍新压缩文件，确认没有问题。	120ae65a
+main.skip_thumbs_db_automatically	自动跳过 Thumbs.db	a643400e
+main.windows_thumbnail_cache_thumbs_db	添加文件夹时不放入 Windows 的缩略图缓存文件 Thumbs.db（自己单独选择的 Thumbs.db 仍会添加）。	c6a7657e
+main.default_compression_mode	默认压缩方式	44f064cc
+main.balanced_recommended	平衡（推荐）	54966d31
+main.compatibility_first	兼容性优先	87d2fc57
+main.smallest_size_slower	最小体积（较慢）	db436898
+main.fastest	最快	4cb3bb0f
+main.archive_view	压缩文件查看	2c4e1be2
+main.remember_last_chosen_view	记住上次选择的视图	46d5eed2
+main.layout_you_pick_view_menu_details	在“查看”菜单切换的显示方式（详细信息 / 列表 / 图标）下次打开压缩文件时沿用。开启时，下面的“默认视图”由上次的选择决定。	84a38711
+main.default_view	默认视图	343256a5
+main.details_has_columns_sorting_list	详细信息有列和排序；列表最紧凑；图标是大图标。查看时随时可以从“查看”切换。	ee3a428f
+main.default_browsing_mode	默认浏览模式	0b61ca9a
+main.single_level_shows_one_folder_at	“单层”一次显示一个文件夹，可用左侧文件夹树或面包屑切换；“全部列出”把所有层级的文件平铺在同一份列表中。查看时随时可用工具栏切换。	636ff574
+main.single_level_folder_navigation	单层（文件夹导航）	9bab0a04
+main.use_file_icons_windows	使用 Windows 的文件图标	eb264ce6
+main.files_folders_lists_folder_tree	清单和文件夹树里的文件与文件夹使用资源管理器里的图标（按文件类型，与你安装的程序有关）。关闭则使用 LycanZip 自己的彩色图标。	d3c508e7
+main.only_works_non_solid_archives	只对非固实的压缩文件有效（固实压缩要读一张图就得先解开前面的数据，不生成缩略图）。需要时才在后台读取。	779ea938
+main.row_height	行高	0c1073d4
+main.compact_shows_more_items_at_once	紧凑可以一次看到更多项目	7892119a
+main.compact	紧凑	1df39aa5
+main.comfortable	舒适	2313707a
+main.show_folder_tree	显示文件夹树	62e23424
+main.hidden_automatically_when_window	窗口太窄时会自动隐藏	8351f46b
+main.hide_macos_metadata	隐藏 macOS 元数据	9a117a48
+main.do_not_show_macosx_folder_files	不显示 __MACOSX 文件夹、以 ._ 开头的文件和 .DS_Store；图片和音频预览一律不会收集它们。也可以在工具栏“查看”菜单中切换。	4aff2a0a
+main.stream_files_when_dragging_them	拖出文件时直接流式传输（不先解压）	5f7fc9b6
+main.when_dropped_on_explorer_desktop	拖到资源管理器或桌面时，文件在复制的同时才解压，大文件不用先等。有些程序只接受真正的文件，拖不进去时请关闭此选项（改为先解压到临时文件夹）。	494e8de9
+main.stream_files_when_dragging_them_out	拖出文件时直接流式传输	51bfaabc
+main.image_preview_heading	图片预览	6c5de6ef
+main.double_clicking_image	双击图片文件时	172ce1b9
+main.what_happens_when_you_double_click	在压缩文件内双击（或按 Enter）图片文件要怎么打开。右键菜单随时可以选另一种。	a9d91a70
+main.open_image_preview	在图片预览中打开	73779e96
+main.open_with_associated_app	用关联程序打开	dfc8591f
+main.when_audio_file_double_clicked	双击音频文件时	a45d93b9
+main.how_audio_file_inside_archive	在压缩包内双击（或按 Enter）音频文件时如何打开。右键菜单随时可以选另一种。	4e092015
+main.open_audio_preview	在音频预览中打开	2866b8c6
+main.enlarge_small_images_too	小图也放大	39504dba
+main.by_default_fit_window_width_height	预览的“适应窗口 / 适应宽度 / 适应高度”默认只缩小大图、不放大小图；开启后小图也会放大到适应。	33ef5d12
+main.read_ahead_faster_paging	预读（加快翻页）	56bba25f
+main.while_previewing_nearby_images	预览图片时，在后台先读好前后几张，翻页更快；已预读的图片会占用内存，这是上限。关闭后每次翻页都要重新读取。	ec1e2e27
+main.read_ahead	预读	8975dc30
+main.256_mb_default	256 MB（默认）	acf42636
+main.2_gb_maximum	2 GB（最大）	dedbdffa
+main.file_associations	文件关联	4d95177a
+main.register_lycanzip_as_archive_app	注册 LycanZip 为压缩文件程序	b46759ab
+main.after_registering_lycanzip_appears	注册后 LycanZip 会出现在“打开方式”与“默认应用”列表中。Windows 不允许程序自行更改默认设置，最后需要由你在系统设置中选择。	6ad5db2f
+main.current_default_apps	当前的默认程序	2da60cf8
+main.open_default_apps_settings	打开默认应用设置	c91c60a7
+main.add_lycanzip_right_click_menu	在右键菜单中加入 LycanZip	7e341f23
+main.files_add_archive_compress_zip_7z	文件：添加到压缩文件、压缩为 ZIP / 7z 等；压缩文件：打开、解压、测试、预览等。只影响当前用户，随时可以关闭。Windows 11 会显示在“显示更多选项”中。	15d4a5c4
+main.add_lycanzip_windows_11_context	在 Windows 11 新式右键菜单加入 LycanZip	80b4da17
+main.shown_at_top_level_windows_11	显示在 Windows 11 右键菜单的最上层，不必点“显示更多选项”。需要签名的菜单包；只影响当前用户，随时可以关闭。内容与上面的菜单相同，两个可以同时开着。	478467a0
+main.open_settings_file_location	打开设置文件位置	3d1c0853
+main.web_site	网站	f1a2cbc2
+main.source_code_on_github	GitHub 上的源代码	b82f9244
+main.show_welcome_window_again	重新显示欢迎窗口	60680018
+main.data_location	数据位置	043485f6
+main.diagnostics	诊断	3af2279f
+main.detailed_debug_log	记录详细的调试信息	e93621ed
+main.only_errors_warnings_logged_by	默认只记录错误与警告。开启后也记录打开了什么、任务的开始与结束和花的时间；报告问题时很有用。	695c5237
+main.log_full_paths	记录完整路径	b1556b47
+main.only_file_names_logged_by_default	默认只记录文件名。记录不会包含密码与文件内容，但可能有文件名；分享给别人之前请检查。	433b5937
+main.open_report_folder	打开记录文件夹	17984672
+main.copy_diagnostic_information	复制诊断信息	4688ca9e
+main.copied_clipboard	已复制到剪贴板	e9dd5680
+main.open_source_mit_compression_engine	开放源代码（MIT）。压缩引擎为 7-Zip（LGPL）；RAR 仅支持解压缩。	0ea369ab
+main.template	模板	3ec1ae06
+main.apply_whole_set_settings_at_once	一次应用整组设置	c061c181
+main.template_modified	已修改	19a532c8
+main.template_options	模板选项	71806c9b
+main.output	输出	4bed3361
+main.file_name_without_extension	文件名（不含扩展名）	8d28b6a9
+main.file_name_short	文件名	09979a78
+main.change_location	更改位置…	cf2f5d22
+main.change_location_tip	更改位置	04410a88
+main.format_mode	格式与模式	4b4d4074
+main.format	格式	041a5dec
+main.zip_most_compatible_7z_compresses	ZIP 最通用；7z 压缩率高且可加密文件名；TAR 系列常见于 Linux / macOS。	ca896635
+main.mode	模式	a7b93d21
+main.no_need_understand_parameters_just	不必理解参数：挑一个适合的取向就好。	be399537
+main.volume_label_optional	磁盘标签（选填）	da788598
+main.file_name_by_default	默认使用文件名	7ce76df4
+main.volume_label	磁盘标签	ac51eb2d
+main.keep_modified_times_files	保留文件的修改时间	3cde1626
+main.iso_image_not_compressed_names_can	ISO 不压缩；文件名可以很长、可以用中文，单个文件必须小于 4 GB。	0997b2d3
+main.protection	保护	0f8cc4f3
+main.password_optional	密码（可选）	408255ed
+main.password	密码	8be3c943
+main.re_enter_password	再次输入密码	aefce7f7
+main.show_password_keep_checked_when	显示密码（需要输入中文等字符时请保持勾选）	87f14436
+main.show_password	显示密码	044b852f
+main.encrypt_file_names_too_7z_only	连文件名一起加密（仅 7z）	d41e19ce
+main.encrypt_file_names	加密文件名	dd32ed5f
+main.new_archive_read_once_after	完成后自动读一遍新压缩文件，确认没有问题。	cae26887
+main.advanced_options	高级选项	63c9e0ba
+main.rarely_needed_leave_defaults_if	平时用不到；不确定就保持默认。	b7a59502
+main.compression_method	压缩方法	9d0a4081
+main.auto_picks_by_format_mode_deflate	“自动”会按格式与模式挑选（ZIP 为 Deflate、7z 为 LZMA2）。	d621daf6
+main.compression_level	压缩等级	bd95ecae
+main.overrides_level_mode_store_only	覆盖“模式”的默认等级。“仅存储”不压缩，只是把文件装进去。	0605216f
+main.dictionary_size	字典大小	b45d8fe0
+main.larger_usually_compresses_better	越大压缩率越好，但压缩与解压缩都要用更多内存。只对 LZMA / LZMA2 / PPMd 有效。	1b67795e
+main.word_size	单词大小	b40db3a8
+main.larger_usually_compresses_better_but_slower_ppmd_model_order	越大压缩率通常越好，但较慢。PPMd 则是模型阶数。	5f25893d
+main.solid_block	固实块	afb6cd9f
+main.compress_several_files_as_one	把多个文件当成一个连续数据压缩（仅 7z）：文件越相似体积越小，但单独解压某个文件要读取较多数据。	779cfd97
+main.store_files_compressed_already	跳过已压缩的文件	050996e6
+main.photos_music_video_archives_other	照片、音乐、视频、压缩文件等已经压缩过的文件（64 KB 以上）直接存进去，不重复压缩：更快，体积几乎一样，也不会让 7z 里的图片失去缩略图查看（仅 ZIP / 7z）。	d10ed811
+main.cpu_threads	CPU 线程数	56bf097a
+main.how_many_processor_cores_use_auto	同时使用多少个处理器核心。“自动”通常最好。	117a51b9
+main.zip_encryption_method	ZIP 加密方法	5e788827
+main.aes_256_secure_zipcrypto_weak_use	AES-256 安全；ZipCrypto 强度低，只在要给很旧的程序打开时使用。	b4a86163
+main.path_mode	路径模式	d86f49da
+main.relative_records_only_names_files	“相对路径”只记录你选的文件与文件夹名称；“完整路径”会连同上层文件夹（不含盘符）一起记录。	70a31205
+main.split_archive	分卷压缩	76b8ba2d
+main.cut_into_several_fixed_size_files	切成固定大小的多个文件（仅 ZIP / 7z），方便发邮件或放进小容量 U 盘。	a79972a1
+main.e_g_50_mb_1_5	例如 50 MB、1.5 GB	9115d30d
+main.custom_split_size	自定义分卷大小	a0643650
+main.custom_7_zip_parameters	自定义 7-Zip 参数	6b3f8ed7
+main.e_g_mx_9_fb_64	例如：mx=9 fb=64（名称=值，以空格分隔）	24af3d9a
+main.custom_parameters	自定义参数	3a766c13
+main.passed_straight_compression_engine	直接交给压缩引擎，会覆盖上面的同名设置。拼错或不适用于这个格式时，压缩会失败并说明原因。	eff850cb
+main.restore_template_s_settings	恢复为此模板的设置	1b4a6951
+main.add_files_button	添加文件	c06342c8
+main.add_folder_button	添加文件夹	03eb1a44
+main.you_can_also_paste_files_with	也可以使用 Ctrl+V 粘贴文件	8a2b7931
+main.start_compressing	开始压缩	320e1feb
+main.tasks	任务	090ec5f5
+main.run_background	后台运行	2168ebb5
+main.hide_window_tasks_keep_running	隐藏窗口，任务继续在后台运行；完成时会通知	40198391
+main.clear_finished	清除已完成	f2630670
+main.collapse_expand	折叠 / 展开	66e60822
+main.collapse_task_panel	折叠任务面板	9212c96f
+main.when_done	完成后：	bb608489
+main.done	完成	e9b450d1
+main.go	转到 {0}	5d459e5f
+main.unknown	未知	bc7819b3
+main.auto_detect	自动检测	7dbcac72
+main.big5_traditional_chinese	Big5（繁体中文）	10ca6be7
+main.gbk_simplified_chinese	GBK（简体中文）	7b7afee6
+main.shift_jis_japanese	Shift-JIS（日文）	f3beb558
+main.euc_kr_korean	EUC-KR（韩文）	beca3484
+main.opening	正在打开“{0}”…	bf854cfc
+main.total	，共 {0}	4e479839
+main.many_items_only_part_were_counted	（项目很多，只统计了一部分）	dda11ef4
+main.ok	确定	9ce3bd42
+main.invalid_command_line_arguments	命令行参数错误	24f65860
+main.no_files	没有文件	ccc17f61
+main.choose_folder_extract	选择解压的目标文件夹	a743f77c
+main.cannot_open_archive	无法打开压缩文件	6e9e4903
+main.file_format_unrecognized_file	文件格式无法识别或已损坏：{0}	3e6485f9
+main.cannot_write_settings_file	⚠ 无法写入设置文件：{0}	db6c0352
+main.there_no_audio_preview_archive	这个压缩文件里没有可以预览的音频	267daa15
+main.there_no_images_preview_archive	这个压缩文件里没有可以预览的图片	5f6025fe
+main.system_temporary_folder	系统的临时文件夹	800560c4
+main.use_opened_dragged_files	当前使用：{0}（打开和拖拽的临时文件）	4105ba89
+main.location_slow	这个位置会很慢	0fa2c041
+main.network_removable_drive_temporary	“{0}”是网络或可移动磁盘，放临时文件会很慢，大文件尤其明显。仍要使用吗？	2d979968
+main.use_anyway	仍要使用	851fa167
+main.temporary_files_cleared	临时文件已清除	ea9cd63a
+main.freed_files_use_not_deleted	释放了 {0}。正在使用中的文件不会被删除。	d4eb8d2f
+main.not_enough_room_temporary_files	临时空间不足	8a890f62
+main.about_intermediate_data_has_be_put	需要先在临时位置放约 {0} 的中间文件，但“{1}”只剩 {2}。	5871d099
+main.temporary_location_full_left	临时位置“{0}”已经满了（剩 {1}）。	907bde7d
+main.where_use_instead_local_disks_only	改用哪里？（只列出本机磁盘）	75badc65
+main.free	{0}（剩余 {1}）	43a497f5
+main.no_other_local_disk_has_enough	没有其他剩余空间足够的本机磁盘。可以选择其他文件夹、先腾出空间，或改用 zip / 7z 格式（不需要临时文件）。	067eee04
+main.network_removable_drive_temporary_files_will_be_slow	这是网络或可移动磁盘，临时文件会很慢。	fb869f7f
+main.choose_another_folder	选择其他文件夹…	dede39e2
+main.always_use_temporary_location	以后都用这个临时位置	74fed9dd
+main.use_location_try_again	使用这个位置并重试	8c4ca207
+main.chosen	自选：{0}	1888501e
+main.tasks_still_running	还有任务在进行	5071b7ce
+main.still_unfinished_closing_now	还有 {0} 个任务没有完成。现在关闭会取消它们，没做完的输出可能不完整。	438e1616
+main.cancel_tasks_close	取消任务并关闭	13c10e10
+main.keep_waiting	继续等待	9be1abba
+main.integrity_test	完整性测试	911e049a
+main.lycanzip_closed_unexpectedly_at	LycanZip 在 {0} 意外退出了。	00a441fb
+main.open_at_time	当时打开着 {0} 个压缩文件：	2d012cbd
+main.not_finished	有 {0} 个任务没有完成：	f6add7bc
+main.destination_extraction_may_contain	解压的目标位置可能留下不完整的文件，请自行检查。	3f2bf8f0
+main.removed_unfinished_compression	已清除 {0} 个未完成的压缩临时文件。	b7eb9a2b
+main.crash_report_including_memory_dump	崩溃记录（含内存转储）在：{0}\n分享给别人之前请注意，转储可能包含文件路径和程序内存里的内容。	7d581963
+main.lycanzip_closed_unexpectedly_last	LycanZip 上次意外退出	c3563d24
+main.reopen	重新打开 {0} 个压缩文件	bd33ef68
+main.opening_several_archives	一次打开多个压缩文件	e574ce13
+main.received_archives_at_once_each	一次收到 {0} 个压缩文件。每个压缩文件会各开一个窗口，窗口多了会占用更多内存。	8daf18ce
+main.open_first	打开前 {0} 个	0fc9e2e0
+main.open_all	全部打开（{0} 个）	29644d48
+main.open_only_first	只打开前 {0} 个	8583caf5
+main.later_volume_split_archive	这是分卷压缩文件的后面一卷	a9f41e5f
+main.volume_split_archive_one_volume	“{0}”是分卷压缩文件的第 {1} 卷，只开这一卷看不到完整的内容。要打开第一卷“{2}”吗？	89b33ec6
+main.open_first_volume	打开第一卷	688511ad
+main.open_volume_anyway	仍打开这一卷	bd4d8d54
+main.first_volume_was_not_found_only	找不到第一卷“{0}”，只能看到这一卷的部分内容。	4c778d63
+main.moonlight	月光	f61a85a3
+main.blood_moon	血月	a5c48a63
+main.amber_eyes	琥珀眼	e270f95b
+main.aurora	极光	eeee9b76
+main.forest	森林	f41c4e4d
+main.compression_engine_7_zip	压缩引擎：7-Zip	f93f7e5b
+main.7z_dll_not_found	（找不到 7z.dll）	72359520
+main.settings_file	设置文件：{0}	c819d085
+main.not_set	（尚未设置）	7eae163c
+main.already_lycanzip	　✓ 已是 LycanZip	3e869938
+main.not_registered_yet_turn_on_switch	\n\n尚未注册。请先打开上方的开关。	fd8f8732
+main.cannot_update_file_associations	无法更新文件关联	fc71ec5a
+main.registered	已注册	a844fcf8
+main.lycanzip_can_now_handle_archives	LycanZip 现在可以处理压缩文件了。\n\nWindows 不允许程序自行更改默认设置，请点击“打开默认应用设置”，在列表中为想要的格式选择 LycanZip。	0e2f1128
+main.cannot_open_settings	无法打开设置	2bf2a15a
+main.please_open_settings_apps_default	请手动打开“设置 → 应用 → 默认应用”。	9c106eb2
+main.menu_add_to_archive	添加到压缩文件…	2cdc38ad
+main.compress_name_format	压缩为“名称.格式”	9b854df6
+main.compress_each_separately_when	分别压缩（选中多个项目时）	c6a4a30f
+main.compress_with_preset	用模板压缩	851cb07a
+main.other_formats_tar_gz_tar_xz	其他格式（tar.gz / tar.xz / tar.bz2）	e3e3048c
+main.encrypted_archive	加密压缩…	284a3b16
+main.open_contents_with_lycanzip_exe	用 LycanZip 打开内容（.exe、.docx、.jar 等）	ac38e546
+main.hash_values_menu_files_archives	计算哈希值…（文件和压缩文件的菜单都有）	75b624c9
+main.open	打开	cf9b7706
+main.menu_extract_here	解压到此处	5221b51b
+main.extract_folders_same_name	解压到同名文件夹	96adc4e4
+main.extract_recent_folder	解压到最近使用的位置	6fb3e506
+main.extract_all_into_one_folder_when	合并解压到同一文件夹（选中多个压缩文件时）	ca375cec
+main.context_menu_entries	右键菜单的项目	3cfa8784
+main.choose_which_entries_shown_change	选择要显示哪些项目。修改后下次打开右键菜单就会生效，不需要重新注册。	f0265dc5
+main.format_second_compress_entry	第二个“压缩为”的格式	5ab68322
+main.format_first_compress_entry	第一个“压缩为”的格式	6dc0d11e
+main.compress_first_format	压缩为（第一个格式）	5edc11a7
+main.compress_second_format	压缩为（第二个格式）	2ced4124
+main.files_folders	文件和文件夹	154f56c1
+main.archives	压缩文件	a50710e7
+main.templates_compress_with_template	“用模板压缩”列表里的模板	7eb07671
+main.cannot_update_right_click_menu	无法更新右键菜单	41826d22
+main.pc_not_running_windows_11_there	这台电脑不是 Windows 11，没有新式右键菜单。	92fac2bb
+main.version_has_no_signed_menu_package	这个版本还没有签名的菜单包，暂时不能启用。	e2d429cd
+main.store_explorer_note	这是 Microsoft Store 版。右键菜单与文件类型是安装包的一部分：安装时由 Windows 添加、卸载时由 Windows 移除，所以这里不需要另外注册。\n• 右键菜单：Windows 11 在新式菜单与“显示更多选项”里，Windows 10 在普通的右键菜单里。用下面的开关显示或隐藏，再往下的列表可以选择要显示哪些项目。\n• 文件类型：LycanZip 会出现在压缩文件的“打开方式”列表里。要设为默认程序只能由你在 Windows 设置里选择（“打开默认应用设置”）。	c2fd0d80
+main.status_built_in	已内置	6b0c36de
+main.setup_skipped	已略过设置	779afd28
+main.you_can_change_everything_later	之后都可以在“设置”里更改。\n\n右键菜单和文件关联还没有开启：需要的话，请到“设置”的“文件资源管理器”分页自行开启。	754fa5fa
+main.right_click_menu	右键菜单	5c5bc6a1
+main.windows_11_right_click_menu	Windows 11 右键菜单	02d79a93
+main.some_things_could_not_be_set	有几项没有设置成功	6bb5c1e3
+main.you_can_try_again_on_settings	之后可以在设置页重试。	c8f33bba
+main.language_changes_after_lycanzip	更改语言后需要重新启动 LycanZip 才会生效。	ff26419c
+main.status_on	已启用。	8ec3f656
+main.status_off	未启用。	f4d4f25d
+main.could_not_add_windows_11_context	无法加入 Windows 11 右键菜单	16b597e8
+main.could_not_remove_windows_11	无法移除 Windows 11 右键菜单	a7e0b507
+main.added	已加入	b68734c2
+main.if_menu_does_not_show_up	如果右键菜单还没有出现，请重新启动文件资源管理器（任务管理器 → Windows 资源管理器 → 重新启动），或注销后重新登录。	c27ce2d5
+main.lycanzip_was_moved	菜单指向另一份 LycanZip	7a919664
+main.still_point_old_folder_so_right	{0}现在指向另一份 LycanZip（或它原来的位置），所以右键或双击压缩文件时不会使用这一份。要改用这一份吗？\n\n现在使用：{2}\n这一份：{1}	1b1d1b87
+main.use_current_folder	改用这一份	996267fc
+main.do_not_remind_me_again	不再提醒	f66139f0
+main.later	稍后	56e2f5d3
+main.could_not_update_windows_11	无法更新 Windows 11 右键菜单	eb3bef67
+main.updated	已更新	f2f8570d
+main.if_menu_does_not_show_up_yet_restart_file_explorer_sign_out	如果右键菜单还没有出现，请重新启动文件资源管理器或注销后重新登录。	107e9c10
+main.restore_default_settings_title	恢复默认设置？	d97b50c9
+main.defaults_theme_accent_color	主题、主题色、背景、视图、解压缩与压缩的默认值都会回到初始状态。右键菜单与文件关联是系统设置，不会被改动。	7b89291d
+main.restore	恢复	3cbe6d6b
+main.msix_package_settings_templates	MSIX 套件：设置、模板和记录存在这个套件自己的文件夹，不能切换。	7430001e
+main.portable_mode_settings_templates	便携模式：设置、模板、崩溃报告和记录都存在程序文件夹，整个文件夹可以带着走。	4a5534fd
+main.normal_mode_settings_templates	一般模式：设置、模板、崩溃报告和记录存在你的用户文件夹。	37ba2b42
+main.folder_settings	设置文件所在的文件夹：{0}	6a708aef
+main.switch_normal_mode_user_folder	改为一般模式（放在用户文件夹）	2b689843
+main.switch_portable_mode_program	改为便携模式（放在程序文件夹）	2961749a
+main.program_folder_cannot_be_written	程序文件夹（{0}）不能写入，所以不能改成便携模式。	95fb9ba1
+main.switching_copies_settings	切换会把设置文件和模板复制到新位置（旧位置的文件保留），然后重新启动 LycanZip。右键菜单、文件关联和 Windows 记得的上次文件夹不会跟着搬。	ad1754f6
+main.wait_tasks_end_cancel_them_before	请等任务结束（或取消它们）再切换数据位置：切换后 LycanZip 会重新启动。	fb634605
+main.switch_data_location	切换数据位置	b9ccb0f5
+main.settings_templates_copied_program	设置文件和模板会复制到程序文件夹：\n{0}\n\n旧位置的文件不会被删除。	19168b9b
+main.settings_templates_copied_user	设置文件和模板会复制到用户文件夹：\n{0}\n\n程序文件夹里的文件不会被删除。	77af4ecc
+main.if_new_place_has_settings_files	新位置如果已经有设置文件，会先改名成 .bak 保留。接着 LycanZip 会重新启动。	331623d5
+main.switch_restart	切换并重新启动	0af9174e
+main.could_not_switch	无法切换	dc903253
+main.new_place_cannot_be_written	新位置不能写入。	922ca063
+main.copying_settings_failed	复制设置文件失败。	7cf94c4d
+main.flag_file_portable_mode_lycanzip	无法创建或删除便携模式的标志文件（LycanZip.portable）。	7e4a9017
+main.release_process	松开以处理	0b69ba01
+main.password_required	需要密码	b9a6ccd9
+main.wrong_password_please_try_again	密码不正确，请再试一次。	0cb4d870
+main.file_format_unrecognized_file_damaged	文件格式无法识别或已损坏。	ba46df31
+main.solid_archive	　·　固实压缩	06afd404
+main.encrypted	　·　已加密	6a7165de
+main.filename_encoding_uncertain	文件名编码不确定	b637fd26
+main.filename_encoding_detected	已自动检测文件名编码	c41d79fe
+main.currently_using_if_file_names_look	当前使用 {0}。若文件名看起来是乱码，请在右上角切换编码。	0e4991b7
+main.found_matching_including	找到 {0} 个符合“{1}”的项目（含子文件夹）	4962ec29
+main.list_all_suffix	（全部列出）	c0df9304
+main.image_thumbnails_on_but_double	图片缩略图功能已开启，但{0}。可以双击图片进入预览查看。	8f08dad3
+main.archive_solid_so_no_thumbnails	此压缩文件为固实压缩，不生成缩略图（读取一张图片必须先解开前面的数据）	3d10c64f
+main.archive_format_cannot_read_single	此压缩文件格式无法单独读取一张图片，不生成缩略图	dd45aa8f
+main.show_image_thumbnails_icon_view_not_supported_by_archive	图标视图显示图片缩略图（此压缩文件不支持：{0}）	7b2d680e
+main.solid_compression	固实压缩	d4b061ba
+main.format_limitation	格式限制	77990b7f
+main.selected	已选 {0} 项（{1}）	473c83af
+main.opened_with_associated_app_instead	“{0}”：{1}，已改用关联程序打开。	a21d068c
+main.cannot_open	无法打开	2d89e8d4
+main.file_s_name_unsafe_was_rejected	这个文件的名称不安全，已被拒绝：{0}	cf8dc0a1
+main.run_program	要运行这个程序吗？	46ca4a8c
+main.comes_from_archive_will_run	“{0}”来自压缩包，打开后会运行程序。请确认这个压缩包的来源可信。	10f4b5fe
+main.which_files_should_be_extracted	要解压哪些文件？	1229b4ee
+main.needed_when_program_uses_files	程序需要旁边的文件（DLL、数据文件）时才能正常运行	8b6ce301
+main.faster_but_program_may_not_find	更快，但程序可能找不到它需要的文件	4c00f206
+main.do_not_warn_again_can_be	以后不再警告（可以在设置中重新开启）	bec2f6f9
+main.extract_run	解压并运行	981f5190
+main.folder_large	文件夹很大	2e4d06e1
+main.folder_program_extract_all	这个程序所在的文件夹共 {0}。要全部解压到临时文件夹吗？	d10693c7
+main.extract_whole_folder	解压整个文件夹	4f31642e
+main.temporary_folder_not_found	找不到临时文件夹。	79302ba5
+main.global	全局	5f1184f7
+main.open_archive_on_new_archive_page	打开压缩文件（新建压缩文件页面中：添加文件）	a4518fd3
+main.new_archive_choose_files	新建压缩文件（选择文件）	b9c7a9ba
+main.new_archive_choose_folder	新建压缩文件（选择文件夹）	6605bd77
+main.open_close_settings	打开 / 关闭设置	e0ce3034
+main.go_back_close_current_page	返回 / 关闭当前页面（设置、新建压缩文件）；取消选择	6a8d6fc4
+main.show_collapse_task_panel	显示 / 折叠任务面板	72198a66
+main.clear_finished_tasks	清除已完成的任务	f74ece90
+main.paste_files_folders_new_archive	粘贴文件和文件夹（新建压缩文件页面：加入来源；压缩文件视图：加入当前文件夹）	0bf8a669
+main.open_selected_item_file_enter	打开所选项目（文件 / 进入文件夹）	ef8adbe5
+main.rename_selected_item_zip_7z_tar	重命名选取的项目（ZIP、7z、tar 可以直接修改）	69f94962
+main.delete_selected_items_from_archive	从压缩文件删除选取的项目	375cf716
+main.extract_here_only_selected_items	解压到此（有选中项时只解压选中项）	04e856b3
+main.extract_only_selection_when	解压到…（有选择时只解压所选项目）	6d103e1a
+main.image_preview_selected_image_first	图片预览（选中的图片，没有选中就从第一张开始）	f69ab870
+main.audio_preview_selected_audio_file	音频预览（选中的音频，没有选中就从第一首开始）	9c2bf077
+main.properties_with_nothing_selected	属性（没有选中项目时是压缩文件信息）	ca0275f1
+main.view_details	查看：详细信息	9e796f77
+main.view_list	查看：列表	f4dbfacf
+main.view_icons	查看：图标	8c3db71f
+main.list_all_flatten_all_levels	全部列出（展平所有层级）	529ca6af
+main.show_hide_folder_tree	显示 / 隐藏文件夹树	c5494f49
+main.close_archive_return_home_page	关闭压缩文件，回到首页	04638611
+main.new_archive_page	新建压缩文件页面	f947afdb
+main.save_as_new_template	另存为新模板	17ba4ccc
+main.image_preview_window	图片预览窗口	ec61a865
+main.previous_next	上一张 / 下一张	7c1da99c
+main.space_pageup_pagedown_mouse_wheel	← ↑ / → ↓　Space　PageUp / PageDown　滚轮	f908d0de
+main.first_last	第一张 / 最后一张	14f40dcd
+main.view_mode_fit_window_actual_size	查看模式：适应窗口 / 原图尺寸 / 适应宽度 / 适应高度（F 在适应与原图间切换，双击图片也可以）	fa6029fa
+main.zoom_out_when_zoomed_drag_use	放大 / 缩小（放大后可拖动或用方向键平移）	5a2fa0f2
+main.ctrl_wheel	+ / −　Ctrl + 滚轮	bc638ffc
+main.rotate_changes_display_only	旋转（只改变显示）	405dfb25
+main.full_screen_thumbnail_strip	全屏 / 缩略图栏	88913a74
+main.copy_image_copy_path	复制图片 / 复制路径	09e858fb
+main.save_image_as_open_with_associated	图片另存为… / 用关联程序打开	53dc2b40
+main.animations_gif_animated_webp_play	动图（GIF、动态 WebP）播放 / 暂停	1d607f16
+main.image_info_size_format_photo_info	图片信息（尺寸、格式、拍摄信息…）	0a6c72d5
+main.menu_button_at_top_right_right	菜单（右上角的“⋯”按钮，或在图片上点右键）：以上操作与图片信息都在里面	ee9b5c43
+main.right_click	右键	602314c6
+main.close_leaves_full_screen_first	关闭（全屏时先退出全屏）	55020fc9
+main.dialogs	对话框	0fd66db1
+main.ok_cancel	确定 / 取消	00e849be
+main.open_archive_ctrl_o	打开压缩文件（Ctrl+O）	12c2f60d
+main.new_archive_ctrl_n	新建压缩文件（Ctrl+N）	d8dca725
+main.settings_ctrl	设置（Ctrl+,）	ea5e4c7d
+main.back_home_ctrl_w	回到首页（Ctrl+W）	531d2d2a
+main.extract_ctrl_shift_e	解压到…（Ctrl+Shift+E）	7bf5df69
+main.up_one_level_backspace_alt	上一级（Backspace / Alt+↑）	55c26440
+main.collapse_expand_ctrl_j	折叠 / 展开（Ctrl+J）	b5073496
+main.start_compressing_ctrl_enter	开始压缩（Ctrl+Enter）	ebaa754f
+main.cancel_esc	取消（Esc）	9c2c5ec0
+main.back_esc	返回（Esc）	7cfd2c37
+main.self_extracting_archive	这是自解压文件吗？	2ffbf2b6
+main.contains_compressed_data_format	“{0}”内含压缩数据（格式：{1}）。\n\n打开内容会列出里面的文件，不会运行这个程序。	3a8b37b3
+main.open_contents	打开内容	664328f0
+main.add_to_archive_title	添加到压缩文件	b17b8c86
+main.no_images_preview	没有可以预览的图片	db66f618
+main.there_no_images_current_folder	当前文件夹（或搜索结果）里没有图片。	558dab0e
+main.no_audio_preview	没有可以预览的音频	929bfe99
+main.there_no_audio_files_current	当前文件夹（或搜索结果）里没有音频文件。	10df04a2
+main.cannot_preview_use_open_with	无法预览“{0}”：{1}。可以在右键菜单选“用关联程序打开”。	32b8bd8e
+main.sort_by	排序方式	a2a5bdec
+main.packed_size	压缩后大小	9fc7e0d3
+main.switch_single_level_browsing	改为单层浏览	91da4dea
+main.edit_put_back_into_archive	编辑并存回压缩文件	81ca35a9
+main.calculate_hash_values	计算哈希值…	78ef4a80
+main.go_containing_folder	转到所在文件夹	c294be0e
+main.properties	属性	bc6c88db
+main.add_files_folder	加入文件到此文件夹…	6c361b03
+main.rename	重命名	d3f4cb89
+main.delete	删除	f6fdbe48
+main.show_explorer	在资源管理器中显示	7e922b30
+main.copy_file_path	复制文件路径	41884566
+main.delete_archive	删除压缩文件…	82ce5b59
+main.delete_archive_title	删除压缩文件？	0eb59598
+main.move_archive_recycle_bin_you_can	要把这个压缩文件移到回收站吗？可以从回收站还原。	88413552
+main.drive_archive_has_no_recycle_bin	⚠ 这个压缩文件所在的磁盘无法使用回收站，删除后无法还原！	541c1b51
+main.delete_without_asking_from_now_on	以后直接删除，不再询问	02d8001c
+main.move_recycle_bin	移到回收站	9176708b
+main.delete_permanently	永久删除	e63b5153
+main.archive_could_not_be_deleted	无法删除压缩文件	28085c64
+main.file_may_be_use_by_another	文件可能正被其他程序使用，或没有权限。	2513b6ea
+main.archive_being_changed_please_wait	正在修改压缩文件，请等它完成。	9a12ea3e
+main.archive_cannot_be_changed_directly	这种压缩文件无法直接修改	264c796a
+main.cannot_be_changed_place_only_zip	“{0}”不能在原文件上加入、删除或重命名（只有 ZIP、7z、tar 可以，而且不能是分卷或双层格式如 tar.gz）。可以先解压缩，或另外创建新的压缩文件。	8addc9e6
+main.archive_read_only	压缩文件是只读的	00d01975
+main.file_set_read_only_cannot_be	这个文件设成只读，无法修改。请先到文件的属性取消“只读”。	08f46060
+main.archive_could_not_be_changed	无法修改压缩文件	d2a95613
+main.will_take_while	要花一段时间	4363058a
+main.about_solid_archive_has_be	这个固实压缩文件里有约 {0} 的内容要解开再重新压缩，会花一段时间。要继续吗？	d7babaad
+main.nothing_update	没有需要更新的文件	ca4c07dd
+main.files_archive_up_date_none_files	压缩包里的文件已经是最新的（磁盘上的文件没有更新），没有做任何修改。	66b74d9d
+main.some_files_were_not_added	有些文件没有加入	8bfa612a
+main.archive_was_changed_but_file_s	压缩文件已修改，但有 {0} 个文件无法读取而没有加入：\n{1}	01f83dfe
+main.status_added	加入 {0} 项	3f289bed
+main.deleted	删除 {0} 项	a7b9b638
+main.renamed	重命名 {0} 项	d7b112a0
+main.new_folder_s	新增 {0} 个文件夹	c9f13ba4
+main.unchanged	{0} 项没有变动	19d70cc2
+main.archive_changed	已修改压缩文件：{0}	96d0198b
+main.already_compressed_file_s_stored	（{0} 个已压缩的文件直接存储）	2adb9906
+main.items_with_same_name	有同名的项目	d15d9d1f
+main.archive_already_has_items_with	压缩包里已经有 {0} 个同名的项目。同名的文件夹会合并；同名的文件要怎么处理？	955b341f
+main.replace_add	替换并加入	a99afac9
+main.files_same_name_always_replaced	同名的文件一律换成这次的，新的文件加入。	5b8ba483
+main.update_add	更新并加入	88959e8b
+main.file_replaced_only_if_one_on	磁盘上的文件比较新才替换，新的文件加入。	32cb83f7
+main.update_existing_only	仅更新现有	0500c630
+main.only_files_archive_newer_on_disk	只更新压缩包里已有、而且磁盘上比较新的文件；不加入新的文件。	35f981f8
+main.file_already_exists	文件已经存在	b1b0ec61
+main.add_to_this_archive	加入到这个压缩包	5a23e49d
+main.add_these_files_what_not	把这次的文件加进去，原本的内容不重新压缩（下面选择处理同名文件的方式）。	c38aabe2
+main.save_as_new_file	另存为新文件	ae076f13
+main.saved_as	保存为“{0}”。	cc3ec09c
+main.replace	替换它	5e4bd6c5
+main.old_archive_replaced_by_one	旧的压缩包会被这次的替换。	ffe726e3
+main.replace_add_files_same_name_always	替换并加入：同名的文件一律换成这次的	cc6a9b1f
+main.update_add_replace_only_if_newer	更新并加入：磁盘上比较新才替换，新的文件加入	5a9b4e05
+main.update_existing_only_only_files	仅更新现有：只更新压缩包里已有而且比较新的文件	31f64ae0
+main.synchronize_make_archive_match	同步：让压缩包和这次的内容一样（不同的替换、多出来的删除）	6340c109
+main.how_treat_files_same_name	同名文件的处理方式	0eb02b54
+main.cannot_synchronize	无法同步	5dab3b72
+main.synchronizing_deletes_items_from	同步会删除压缩包里的项目	83743985
+main.items_archive_no_longer_exist	压缩包里有 {0} 个项目在文件夹里已经不存在，同步会把它们删除（另外加入 {1} 个、替换 {2} 个、{3} 个没有变动）。	04186ca2
+main.more	…还有 {0} 个	f459eedf
+main.synchronize	同步	8dd29207
+main.choose_folder_add	选择要添加的文件夹	f8d6f042
+main.name_cannot_be_empty_contain	名称不能是空的，也不能包含反斜线、引号或 / : * ? < > | 这些符号。	fb27523c
+main.new_folder_name	新建文件夹	a711999b
+main.name_already_exists	名称已存在	1be78559
+main.there_already_item_called_here	这里已经有叫“{0}”的项目了。	38378553
+main.delete_from_archive	从压缩文件删除？	83290f91
+main.delete_one_from_archive	要把“{0}”从压缩文件删除吗？	5bb9cc9c
+main.delete_these_items_from_archive	要把这 {0} 个项目从压缩文件删除吗？	e9d5f1d5
+main.items_taken_out_archive_itself_not	项目会直接从压缩文件里拿掉，不会进回收站。修改前的压缩文件会留成 .bak。	5e7d72d9
+main.items_taken_out_archive_itself_not_moved_recycle_bin_cannot_be	项目会直接从压缩文件里拿掉，不会进回收站，也无法恢复。	0f5da694
+main.editing_after_you_save_you_asked	正在编辑“{0}”：存档后会询问要不要存回压缩文件。	586def92
+main.archive_was_changed	压缩文件被改动了	366dc893
+main.while_was_being_edited_another	“{0}”编辑的期间，压缩文件被别的程序改动了，所以不能存回去。修改后的文件还在：\n{1}	24f0efc0
+main.file_no_longer_archive	压缩文件里已经没有这个文件	f9987d8f
+main.no_longer_archive_deleted_renamed	“{0}”已经不在压缩文件里了（被删除或重命名），所以不能存回去。修改后的文件还在：\n{1}	ac36e3a6
+main.put_back_into_archive	存回压缩文件？	3c42975b
+main.was_changed_put_back_into_archive	“{0}”已经修改。要把它存回压缩文件吗？	62e00081
+main.put_back_without_asking_from_now	以后直接存回，不再询问	819757d5
+main.put_back	存回	7ac2f9d6
+main.not_now	先不要	e4571490
+main.changes_not_yet_put_back_into	有修改还没存回压缩文件	22e53f53
+main.file_you_edited_has_not_been	你编辑过的文件还没存回压缩文件。现在关闭就不会存回去了。	bf9dfbb6
+main.close_without_putting_back	不存回，直接关闭	8f179b2b
+main.path	路径：{0}\n	e0db47b5
+main.type_folder	类型：文件夹\n	94ff5341
+main.contains_total	内含：{0} 个文件，共 {1}\n	4259cf09
+main.type_file	类型：文件\n	7a6a1e42
+main.info_size	大小：{0}（{1} 字节）\n	9d5aef53
+main.info_packed	压缩后：{0}	44e26b42
+main.info_modified	修改时间：{0}\n	c8e8d841
+main.info_encrypted	已加密\n	4f568b30
+main.crc_32_stored_archive	CRC-32（压缩文件里记录的）：{0}\n	dbeb7ece
+main.after_completion_show_explorer	完成后在资源管理器中显示	d67b4ad6
+main.after_completion_test_integrity	完成后测试完整性	5c3adc49
+main.close_window	关闭窗口	e3896a93
+main.after_completion_close_window	完成后关闭窗口	1a56e2f5
+main.extract_here_no_folder	解压到此（不建文件夹）	158be682
+main.extract_folder	解压到“{0}”文件夹	28142937
+main.extract_here_automatic	解压到此（自动判断）	cc88ab76
+main.extract_here_straight_into_folder	解压到此，内容直接放进这个文件夹，不创建文件夹（Ctrl+E）	60c2166e
+main.extract_here_always_into_folder	解压到此，一律创建“文件名”文件夹（Ctrl+E）	e6c93a87
+main.extract_here_ctrl_e_creates_name	解压到此（Ctrl+E）：内容只有一个文件夹时直接放，否则自动创建“文件名”文件夹	d61281e2
+main.scan_could_not_run	无法扫描	464a3106
+main.scan_hands_files_antivirus_product	扫描是把文件交给已安装的杀毒软件检查，LycanZip 本身没有扫描引擎。	1da8ab74
+main.blocked_by_system_policy	（被系统策略阻止）	593a966e
+main.threat_names_logged_by_windows	Windows Defender 记录的威胁名称：{0}	d37f8e79
+main.suspicious_files_found	发现可疑的文件	8da644aa
+main.installed_antivirus_product_thinks	已安装的杀毒软件认为这个压缩文件里有 {0} 个文件有问题：	4fe67854
+main.do_not_open_these_files_antivirus	请不要打开这些文件。这是杀毒软件的判断，可能误判；没有被列出的文件也不代表一定安全。	9e59a0a4
+main.ask_every_time_no_automatic_choice	每次询问（不自动）	81733972
+main.keep_newer	保留较新的	f1be0c4d
+main.keep_older	保留较旧的	c09ddf2c
+main.keep_larger	保留较大的	49e494d8
+main.keep_smaller	保留较小的	6a8207d4
+main.skip_if_contents_identical	内容相同就跳过，其余两者都保留	0819267c
+main.archive_unpacks_something_very_big	这个压缩包展开后非常大	0fd7d9d3
+main.archive_only_unpacks_about_times	压缩包只有 {0}，展开后约 {1}（{2} 倍）。	a8955bec
+main.unpacks_about	展开后约 {0}。	5e6f45a7
+main.far_more_than_normal_archive_may	这比一般的压缩包大得多。可能是压缩炸弹（刻意做得很小、展开后塞满磁盘的文件），也可能是正常的，例如虚拟机的磁盘映像。不确定来源的话，建议取消。	3766aeb6
+main.do_not_check_again_can_be	以后不要再检查（可以在设置里重新开启）	393f5426
+main.continue_extracting	继续解压缩	fa29f5e2
+main.conflict_title	文件已存在	b1b0ec61
+main.same_size	大小相同	e9c1aa54
+main.larger	较大	acd1be8c
+main.smaller	较小	9c3c295f
+main.existing_file	现有文件	d49f7a8d
+main.newer	较新	56b079ac
+main.version_archive	压缩文件内的版本	27d73a30
+main.older	较旧	63f34dd2
+main.same_time	时间相同	d10b2ff6
+main.conflict_archive_version	压缩文件内的版本{0}。	bfce5d04
+main.what_would_you_like_do	要怎么处理？	7b52603b
+main.overwrite_existing_file	覆盖现有文件	a232a5a5
+main.replace_with_version_archive	用压缩文件内的版本替换	ab8f8b33
+main.keep_both	两者都保留	60c801a8
+main.new_file_renamed_automatically	新文件自动重命名，不会丢失任何数据	eee3a7ca
+main.skip_file	跳过这个文件	23150e3b
+main.keep_existing_file_do_not_extract	保留现有文件，不解压这一个	4d4262b7
+main.apply_same_choice_all_later	对之后所有冲突应用相同选择	8dfd3ccc
+main.choose_automatically	或自动选择	0598ff5b
+main.automatic_choice	自动选择	0c5a72b3
+main.cancel_extraction	取消解压	89ecef59
+main.choose_folder_compress	选择要压缩的文件夹	c24a7020
+main.smallest_size	最小体积	ba07b565
+main.balanced	平衡	03342dbb
+main.store_only	仅存储	6aadc26d
+main.level	等级 {0}	8051c09f
+main.single_solid_block	单一固实块	82518e40
+main.non_solid	非固实	0226bd71
+main.password_protected_incl_file_names	密码保护（含文件名）	19e5f976
+main.password_protected	密码保护	09d9e174
+main.split	分卷 {0}	678d4e6a
+main.full_path	完整路径	29e5ac46
+main.by_mode_default	按模式（默认）	54270810
+main.store_only_no_compression	仅存储（不压缩）	e3e66261
+main.1_fastest	1　最快	04d90b7d
+main.3_fast	3　快速	5385054d
+main.5_normal	5　标准	530f5284
+main.7_maximum	7　最大	5d52542d
+main.9_ultra	9　极限	d39524fd
+main.auto	自动	c614ba7c
+main.non_solid_each_file_separately	非固实（每个文件独立）	c7d92841
+main.all_single_block_smallest	全部（单一块，最小）	189a729d
+main.by_mode_aes_256	按模式（AES-256）	0bbe88ff
+main.zipcrypto_compatible_with_old	ZipCrypto（兼容旧程序）	8d6b9b84
+main.relative_path	相对路径	da42f64e
+main.full_path_without_drive_letter	完整路径（不含盘符）	3809d0df
+main.do_not_split	不分卷	c6e64721
+main.25_mb_e_mail_attachment	25 MB（电子邮件附件）	41991e74
+main.4_gb_fat32_limit	4 GB（FAT32 上限）	2ef4a47e
+main.custom	自定义…	dce04fd3
+main.choose_output_folder_archive	选择压缩文件的输出文件夹	595ed9c9
+main.menu_save_as_new_template	另存为新模板…	062f4db3
+main.update_template_with_current	用当前的设置更新这个模板	e0496ccb
+main.menu_rename_template	重命名…	94ac9a58
+main.delete_template	删除这个模板	9414be5d
+main.show_right_click_menu_compress	显示在右键菜单的“用模板压缩”	3bfd9a94
+main.fixed_format	（此格式固定）	383cd7ca
+main.two_passwords_do_not_match	两次输入的密码不一致。	4edbd2dc
+main.zip_passwords_can_only_use_letters	ZIP 的密码只能使用字母、数字与常见符号；要用中文等字符请改选 7z。	49150c83
+main.zipcrypto_weakly_encrypted	ZipCrypto 的加密强度较低；需要安全性请改用 AES-256（模式选“平衡”，加密方法选“AES-256”）。	eb3cf368
+main.iso_images_not_compressed_do_not	ISO 不压缩，也不支持密码与分卷。	ef7b274d
+main.tar_family_does_not_support	TAR 系列不支持密码与分卷。	971a8929
+main.no_password_entered_yet_so_file	尚未输入密码，所以文件名不会被加密。	39a1b880
+main.save	保存到：{0}	a01152d1
+main.invalid_file_name_chars	文件名不能为空，也不能包含 \\ / : * ? " < > |	6e20e19f
+main.output_file	输出文件名：{0}	33bf7452
+main.split_into_001_002	（分卷为 .001、.002…）	fbc7ce35
+main.invalid_file_name	文件名不正确。	a1bff97e
+main.please_add_files_folders_compress	请先添加要压缩的文件或文件夹。	67c7cad5
+main.invalid_split_size_enter_size_like	分卷大小格式不正确：请输入像“50 MB”“1.5 GB”这样的大小（至少 64 KB，没写单位视为 MB）。	f35af639
+main.custom_parameters_set_if_they_do	已设置自定义参数；若它不适用于这个格式，压缩会失败并说明原因。	a4d08a9d
+main.sources	来源（{0} 项）	ba3b4da5
+main.remove	移除	e963907d
+main.and_n_more_sources	…另有 {0} 项	f459eedf
+main.calculating	计算中…	c5737794
+main.delete_originals	删除原始文件	150eb4d3
+main.some_items_were_skipped_so	　（有跳过的项目，不提供删除原始文件）	249c1c7d
+main.integrity_test_passed	　完整性测试通过	a3039500
+main.data_after_end_compressed_stream	，{0} 个项目结尾有多余数据（内容已确认完整）	a13e3dd4
+main.integrity_test_failed	　⚠ 完整性测试失败：{0}	cf1323ef
+main.integrity_test_cancelled	　（完整性测试已取消）	556b443a
+main.nothing_delete	没有可以删除的项目	7acb2e0c
+main.originals_no_longer_exist_they	原始文件已经不存在，或者它们包含了新的压缩文件。	94521e2c
+main.new_archive_was_not_found	找不到新的压缩文件	db4dd6ab
+main.new_archive_gone_so_originals_will	新的压缩文件不见了，所以不会删除原始文件。	06ab4c73
+main.delete_originals_title	删除原始文件？	500d32bc
+main.delete_original_archive_title	删除原压缩文件？	e09267fc
+main.move_recycle_bin_you_can_restore	要把 {0} 个项目移到回收站吗？可以从回收站还原。	49ce89f1
+main.drive_cannot_use_recycle_bin	⚠ 这 {0} 个项目所在的磁盘无法使用回收站，删除后无法还原！	60f2dd07
+main.new_archive_passed_integrity_test	新的压缩文件已通过完整性测试。	95a88575
+main.integrity_test_new_archive_failed	⚠ 新的压缩文件完整性测试失败！原始文件可能是唯一完整的备份，不建议删除。	bfd538a9
+main.new_archive_has_not_been_tested	⚠ 还没有测试新压缩文件的完整性。建议先点击“测试完整性”，确认没有问题再删除。	7cc91b5c
+main.new_archive_inside_one_source	新压缩文件放在其中一个来源文件夹里，那个来源不会被删除。	dd7521da
+main.moved_recycle_bin	　已把 {0} 个项目移到回收站	0172199d
+main.status_deleted_items	　已删除 {0} 个项目	ff13ae6b
+main.not_deleted	　（{0} 个项目没有删除）	e3b12b2b
+main.template_name	模板名称	954ab955
+main.up_40_characters_no_allowed	最多 40 个字，不能包含 [ ]。模板只记录压缩设置，不会保存密码。	56660810
+main.my_template	我的模板	feab8114
+main.invalid_name	名称不正确	bb1826ee
+main.name_cannot_be_empty_contain_line	名称不能为空、不能包含 [ ] 或换行，最多 40 个字，首尾不能有空格。	20720a40
+main.template_with_name_already_exists	已经有同名的模板了，请换一个名称。	1eef553b
+main.rename_template	重命名模板	1e32c6e1
+main.delete_template_title	删除模板？	56396035
+main.delete_template_cannot_be_undone	要删除模板“{0}”吗？这个操作无法撤销。	e50df843
+main.wrong_password	密码不正确	fc2066fe
+main.archive_could_not_be_opened_with	这个压缩文件无法用刚才输入的密码打开。请再点一次解压缩，重新输入密码。	34ba58c8
+main.delete_original_archive	删除原压缩文件	132fc098
+main.some_items_could_not_be_processed	部分项目未能处理	91b6c84e
+main.change_archive	修改压缩文件	ea98cf6d
+main.op_failed	{0}失败	64e16e18
+main.complete	{0}完成	adf4aeab
+main.succeeded	{0} 个完成	70835f42
+main.suffix_n_failed	、{0} 个失败	f41037c2
+main.progress	{0} 个进行中	6ba4b16f
+main.n_failed	{0} 个失败	64e16e18
+main.all_done	全部完成	7268efa6
+main.hash_values	哈希值	c7455cfb
+main.item_s_archive	压缩文件“{0}”里的 {1} 个项目	0b9e61f3
+main.paste_hash_value_compare	粘贴要比对的哈希值	8b1ffac1
+main.example_sha_256_written_on_website	例如网站上写的 SHA-256；用长度判断是哪一种	838740ff
+main.hash_value_compare	比对的哈希值	3e0522ec
+main.match_only_means_file_same_as	相符只代表文件和你粘贴的值一样；那个值可不可信，要看你是从哪里拿到的。MD5 与 SHA-1 可以用来发现文件损坏，但不能防止有人故意改过文件。	294fb115
+main.more_file_s_not_listed_save	…还有 {0} 个文件没有列出（“保存为校验文件”会包含全部）	fc8359d8
+main.not_hash_value_only_0_9	这不是哈希值：只能有 0–9 和 a–f（可以有空格、连字符或前面的 0x）。	8db4145b
+main.length_digits_matches_no_algorithm	长度（{0} 位）不符合任何算法：CRC-32 是 8 位、MD5 32、SHA-1 40、SHA-256 64、SHA-384 96、SHA-512 128。	86ef5264
+main.still_calculating	还在计算…	624c0ce1
+main.match	✓ 相符：{0}（{1}）	5d3acc60
+main.has_not_been_calculated_tick_above	还没有计算 {0}：请在上面勾选它。	3f6489aa
+main.no_match_no_file_has	✗ 不相符：没有任何文件的 {0} 和这个值相同。	133cb393
+main.save_as	保存为 .{0}…	f0bdc77f
+main.calculating_progress	计算中… {0}%（{1} / {2}）	c8a8358b
+main.there_nothing_calculate	没有可以计算的文件。	6fc8debb
+main.done_file_s	完成：{0} 个文件，{1}	739e7fd5
+main.could_not_be_calculated	；{0} 个无法计算	fb91acb6
+main.copy_all	复制全部	9da9f044
+main.copied_to_clipboard_period	已复制到剪贴板。	fee2a7f7
+main.save_checksum_file	保存校验文件	f3f3218a
+main.could_not_save	无法保存	3b89fc9a
+main.could_not_write	无法写入“{0}”。	84647b8c
+main.saved	已保存：{0}	7810f2d3
+main.info_location	位置	d219c681
+main.file_size	文件大小	45d0df35
+main.file_s_folder_s	{0} 个文件、{1} 个文件夹	48e27f88
+main.archive	；压缩文件是它的 {0}%	ecc6d261
+main.original_size	原始大小	983bb440
+main.yes	是	5397e058
+main.no	否	816c52fd
+main.block_s	（{0} 个区块）	d74365de
+main.solid	固实	d0063586
+main.info_encrypted_label	加密	bde2fbb6
+main.yes_encrypted_file_s	是（{0} 个加密的文件）	545f5a09
+main.volumes	分卷	39c0ee03
+main.volume_s	{0} 个分卷	65a2cc5a
+main.can_be_changed	可以修改	0bb21756
+main.yes_files_can_be_added_deleted	是（可以添加、删除、重命名）	f5cd1343
+main.no_format_can_only_be_extracted	否（这个格式只能解压缩）	b75cf7d1
+main.archive_comment	压缩文件注释	7ec7e1af
+## welcome
+welcome.welcome_lycanzip	欢迎使用 LycanZip	2a1448ba
+welcome.free_open_source_ad_free_light	开源、无广告、轻量的压缩工具。先挑几个喜欢的设置，之后都能在设置页修改。	f8c5f342
+welcome.language_changes_after_restart	更改语言后需要重新启动才会生效。	8fd16493
+welcome.short_sound_when_task_finishes	任务完成、失败时的短音。打开时会先播放一次试听。	12bb78d5
+welcome.when_show_animations_off_windows	Windows 的“显示动画”关闭时，不管这里怎么设置都不会播放。	87e4ec47
+welcome.double_click_picture_opens_preview	双击图片：在预览窗口中打开	4d368b3b
+welcome.double_click_picture_opens	双击图片：用关联程序打开	717eddfc
+welcome.double_click_audio_file_plays	双击音频文件：在播放器中播放	885b47e1
+welcome.double_click_audio_file_opens	双击音频文件：用关联程序打开	6fe22413
+welcome.view_preview	视图与预览	ed24cabc
+welcome.how_archive_shown_when_opened	打开压缩包时如何呈现。	78eef94a
+welcome.pictures_show_thumbnails_other	图片显示缩略图，其他文件的图标一样大。	1f63a826
+welcome.default_format	默认压缩格式	8cb4e197
+welcome.zip_works_everywhere_7z_compresses	ZIP 最通用；7z 压缩率更高。	fdfb81fa
+welcome.double_click_picture_archive_open	双击压缩包里的图片，在预览窗口中打开。	c3ec0168
+welcome.double_click_audio_file_archive	双击压缩包里的音频文件，直接在播放器中播放。	44a51cab
+welcome.integrate_with_windows	集成到 Windows	8840c0f7
+welcome.only_step_changes_system_nothing	这是唯一会修改系统的一步：按“完成”才写入，按“略过”什么都不会改动。	68a28da9
+welcome.classic_right_click_menu	传统右键菜单	870ea56e
+welcome.right_click_files_compress_extract	在文件上按右键就能压缩、解压缩。	695499c8
+welcome.windows_11_right_click_menu	Windows 11 新式右键菜单	1889983f
+welcome.visible_without_choosing_show_more	不必点“显示更多选项”就能看到。	b682df71
+welcome.file_associations_open_with	文件关联（打开方式）	fec45671
+welcome.only_lists_lycanzip_under_open	只让 LycanZip 出现在“打开方式”和“默认应用”里。Windows 不允许程序自己变成默认，要设为默认请在 Windows 设置里选择。	d936e855
+welcome.all	…共 {0} 种	f51eb1e2
+welcome.which_items_right_click_menu_shows	右键菜单要显示哪些项目，之后可以在设置的“文件资源管理器”分页调整。	b241e0c8
+welcome.extract_name	解压缩到“名称\\”	252257c4
+welcome.compress_zip	压缩为 ZIP	ed33ffa5
+welcome.compress_7z	压缩为 7z	7e9babaa
+welcome.back	上一步	b52b36b7
+welcome.next	下一步	bc981983
+## task
+task.under_1_second	不到 1 秒	c9246acd
+task.min_s	{0} 分 {1} 秒	3f40e738
+task.h_min	{0} 小时 {1} 分	21a0c7a3
+task.test	测试	640ab2ba
+task.waiting	等待中	33d30632
+task.s	　·　{0}/秒	f6b14876
+task.left	　·　剩余 {0}	d6fd86cd
+task.working	处理中…　{0}	0e2ccf83
+task.paused	已暂停　{0}	155921b8
+task.done	完成　{0} 个文件	2e3f901c
+task.skipped	，跳过 {0} 个	75589066
+task.macos_metadata_item_s_skipped	，跳过 {0} 个 macOS 元数据	732f30fa
+task.unsafe_rejected	，拒绝 {0} 个不安全的路径	84be0dca
+task.renamed	，改名 {0} 个	7cf420b8
+task.done_sizes	完成　{0} 个文件　{1} → {2}	43858f28
+task.already_compressed_file_s_stored	，{0} 个已压缩的文件直接存储	ef250d9f
+task.thumbs_db_skipped	，跳过 {0} 个 Thumbs.db	d4450d3b
+task.done_plain	完成　	2d6f6fac
+task.new_files_not_added	{0} 个新文件没有加入	fd5b8cc5
+task.integrity_test_passed	完整性测试通过	d62ca692
+task.failed	失败　{0}	eee308fd
+task.failed_wrong_password_start_again	失败　密码不正确，请重新操作并输入正确的密码	d4634a7a
+task.extracted_kept	{0} 个有错误的文件已解出并保留：{1}	24e63e29
+task.failed_plain	失败　	4553638b
+task.cancelled	已取消	f840ac65
+## preview
+preview.stable_diffusion_webui_a1111_forge	Stable Diffusion WebUI（A1111 / Forge 格式）	8098eb0a
+preview.embedded_text_data	内嵌的文本数据（{0}）	ccc838d5
+preview.previous	上一张（←）	6603747f
+preview.next	下一张（→）	b24e35e3
+preview.fit_window	适应窗口	54983cda
+preview.switch_f_between_fit_window_width	在“适应”（窗口 / 宽度 / 高度，菜单或 Ctrl+0 / 2 / 3）与“原图尺寸”（Ctrl+1）之间切换（F）；当前的缩放比例显示在按钮上	f59713cc
+preview.actual_size	实际大小	e18d1468
+preview.menu_you_can_also_right_click	菜单（也可以在图片上点右键）	a5260417
+preview.menu	菜单	57f5f5ef
+preview.thumbnail_strip	缩略图栏	70cc2f0c
+preview.fit_width	适应宽度	4d6ed0ab
+preview.fit_height	适应高度	e6a94f84
+preview.actual_size_percent	原图尺寸（{0}）	13668eb2
+preview.animation_too_large_only_first	这个动画太大，只显示第一帧	0e92ed52
+preview.paused_press_p_resume	已暂停（按 P 继续播放）	dcfec256
+preview.playing	播放中	298c3905
+preview.previous_name	上一张	50f94286
+preview.next_name	下一张	bc981983
+preview.first	第一张	916a78d7
+preview.last	最后一张	d1c69a85
+preview.actual_size_name	原图尺寸	e18d1468
+preview.zoom	放大	4fc05f27
+preview.zoom_out	缩小	a4ae4b24
+preview.rotate_clockwise	顺时针旋转	acf3bc67
+preview.rotate_counterclockwise	逆时针旋转	e26261ca
+preview.full_screen	全屏	d15f886d
+preview.play_animation	播放动画	1d44b58b
+preview.copy_image	复制图片	883f2df0
+preview.save_image_as	图片另存为…	82c99fbc
+preview.image_info	图片信息	9ab2a0d2
+preview.copy	复制	af74f7c5
+preview.copy_what	复制{0}	37daa938
+preview.grayscale	灰度	c8b0f2ed
+preview.16_bits_channel	16 位 / 通道	f43e0282
+preview.color_8_bits_channel	彩色（8 位 / 通道）	b4c50510
+preview.with_transparency	，含透明度	4961855d
+preview.date_taken	拍摄日期	76edfcab
+preview.camera	相机	4da9c9af
+preview.aperture	光圈	aae12633
+preview.1_s	1/{0} 秒	2f466ea0
+preview.s	{0} 秒	5cd8bcda
+preview.shutter	快门	7116fe95
+preview.iso	感光度	4f325d99
+preview.focal_length	焦距	9bd85a7d
+preview.file	文件	2c3cafa4
+preview.path_archive	压缩文件内路径	ea550c9c
+preview.image	图片	50e19fda
+preview.dimensions	尺寸	9f4ca9ec
+preview.px_megapixels	{0} × {1} 像素（{2} 百万像素）	fc3a73cc
+preview.color	色彩	1d0c8304
+preview.resolution	分辨率	516aae52
+preview.status	状态	bae7d5be
+preview.not_fully_loaded_yet	尚未读取完成	a5972e0a
+preview.photo_info	拍摄信息	60fddc09
+preview.ai_generation_info	AI 生成信息	2c56ead3
+preview.source	来源	6da13add
+preview.prompt	提示词	a817d7eb
+preview.negative_prompt	负面提示词	e083520d
+preview.raw_data	原始数据	d88d5638
+preview.other_text_data	其他文本数据	9879c423
+preview.image_copied	已复制图片	a607eb31
+preview.path_copied	已复制路径	12ec0d2e
+preview.save_dialog_title	图片另存为	b8184460
+preview.saved	已保存到 {0}	136c4303
+preview.could_not_save	保存失败	3b89fc9a
+preview.file_too_large_preview_limit_64	这个文件太大（{0}），超过预览上限 64 MB。	6329212f
+preview.image_too_large_exceeds_preview	这张图片的尺寸太大，超过预览上限。	bd25df65
+preview.use_open_with_associated_app_file	{0}。\n\n可以在文件列表的右键菜单选“用关联程序打开”。	a12b1655
+preview.cannot_display_image_file_may_be	无法显示这张图片：文件可能已损坏。	0d642a27
+preview.jpeg_xl_images_need_jpeg_xl	JPEG XL 图片需要先安装 Microsoft Store 的“JPEG XL 图像扩展”才能预览	3b2ae038
+preview.avif_images_need_av1_video	AVIF 图片需要先安装 Microsoft Store 的“AV1 视频扩展”才能预览	22f5bb11
+preview.heic_heif_images_need_heif_image	HEIC / HEIF 图片需要先安装 Microsoft Store 的“HEIF 图像扩展”（可能还需要“HEVC 视频扩展”）才能预览	c6869eb3
+preview.webp_images_need_webp_image	WebP 图片需要先安装 Microsoft Store 的“WebP 图像扩展”才能预览	7abdfe5a
+preview.pc_has_no_decoder_can_preview	这台电脑没有可以预览这种图片的解码器	9a95035e
+preview.file_too_large	文件太大	a0704a4e
+preview.wrong_password_file_cannot_be_read	密码不正确，无法读取这个文件。	b6d065bf
+preview.failed_read_file	读取文件失败：{0}	46c4e52b
+preview.failed_read_file_plain	读取文件失败。	9c3f8d17
+## audio
+audio.audio_files	音频文件列表	e7b16352
+audio.playback_position	播放位置	61d5ff75
+audio.previous_track_ctrl_left	上一首（Ctrl+←）	1e5f9e32
+audio.play	播放	5d12bd53
+audio.next_track_ctrl_right	下一首（Ctrl+→）	d23b38e8
+audio.mute_m	静音（M）	4b5c1a90
+audio.volume	音量	3b18e8e3
+audio.file_too_large_preview_over_256	文件太大（超过 256 MB），无法预览。可以在右键菜单选择“用关联程序打开”。	5f24eb00
+audio.reading	读取中…	ae18b70a
+audio.file_could_not_be_read	无法读取这个文件。	e3744714
+audio.pc_cannot_play_file_decoder_format	这台电脑无法播放这个文件（可能缺少这种格式的解码器）。	a487415a
+audio.reached_last_track	已播放到最后一首。	1b15f3e9
+## scan
+scan.cannot_scan_windows_real_time	无法扫描：Windows 的实时防护没有开启。请到“Windows 安全中心”开启实时防护。	e1cd88f6
+scan.cannot_scan_antivirus_product	无法扫描：已安装的杀毒软件不支持 AMSI。Windows Defender 支持；请确认它已启用。	d761d14d
+scan.cannot_scan_computer_cannot_use	无法扫描：这台电脑无法使用 Windows 的恶意程序扫描接口（AMSI）。	3e0a3732
+scan.file_s_scanned	已扫描 {0} 个文件（{1}）	fac2ea06
+scan.suspicious_file_s_found	，发现 {0} 个可疑的文件	47e1ee76
+scan.nothing_found	，未发现威胁	4b3809ad
+scan.file_s_skipped_too_big	；跳过 {0} 个太大的文件	21fcc6c0
+scan.file_s_skipped_encrypted	；跳过 {0} 个加密的文件	5ef5c1ee
+scan.could_not_be_read	；{0} 个无法读取	45b47d1a
+scan.could_not_be_scanned	；{0} 个扫描失败	c00f2a01
+## assoc
+assoc.writing_registry_failed	写入注册表失败（{0}）：HKCU\\{1}	b227d1e2
+assoc.lycanzip_split_archive_001	LycanZip 分卷压缩文件 (.001)	2923f4fe
+assoc.lycanzip_comic_book_archive	LycanZip {0} 漫画压缩文件	7c877261
+assoc.lycanzip_archive	LycanZip {0} 压缩文件	bfcd176b
+assoc.path_lycanzip_exe_was_not_given	没有指定 LycanZip.exe 的路径	bdd9f137
+assoc.open_source_ad_free_lightweight	开源、无广告、轻量的压缩与解压缩软件	c79109cd
+assoc.could_not_remove	无法移除 {0}（{1}）	b99ee88b
+## app
+app.lycanzip_task_s_running	LycanZip：{0} 个任务进行中，{1}%	f9c7a519
+app.lycanzip_tasks_running_no_percent	LycanZip：{0} 个任务进行中	6c03fab4
+app.tasks_finished	任务已结束	3943ba15
+app.all_tasks_finished	所有任务都已完成。	e4026e4d
+app.lycanzip_still_has_tasks_running	LycanZip 还有任务在进行	9c8e7265
+app.show_window	显示窗口	0502f5ca
+app.cancel_all_tasks	取消全部任务	85159977
+app.exit_lycanzip	退出 LycanZip	842a20fa
+## win11
+win11.error_code	错误码 {0}	bf62a269
+win11.not_windows_11_new_style_context	这不是 Windows 11：新式右键菜单只有 Windows 11 才有。	3072296c
+win11.was_not_found	找不到 {0}	74587794
+win11.was_not_found_version_has_no	找不到 {0}。这个版本还没有签名的新式菜单包。	1242f165
+## drag
+drag.items	共 {0} 个项目	026a1b0e
+drag.folder	文件夹	30baa249
+## preset
+preset.general_zip	常规 ZIP	f75cf2d3
+preset.general_7z	常规 7z	773f446e
+preset.fast	快速	8db6a2f1
+preset.e_mail_share	邮件 / 分享	bd390aae
+preset.backup	备份	dd96994d
+preset.store_only_no_compression	仅存储，不压缩	05d2dfd8
+## lang
+lang.zh_tw	繁體中文	1f7e4a4c
+lang.en_us	English	649df08a
+lang.zh_cn	简体中文	93659150
+## fmt
+fmt.value_paren	{0}（{1}）	4aec5d0a
+fmt.size_bytes	{0}（{1} 字节）	a94a0670
+fmt.n_files	{0} 个文件	113de731
+fmt.and_n_folders	、{0} 个文件夹	8bf5d515
+fmt.paren	（{0}）	1ced71b6
+fmt.status_items_size	　·　共 {0} 个项目　·　{1}	c2148bb6
+fmt.n_items_short	{0} 项	79a3ecf0
+fmt.n_items	{0} 个项目	79a3ecf0
+fmt.percent_paren	（{0}%）	2955fcd7
+fmt.n_sources	　|　{0} 个来源	4065a811
+fmt.colon_value	：{0}	4f5acaf5
+## sums
+sums.verify_title	验证校验文件	6a43bbf1
+sums.checking	检查中…	820d6004
+sums.checking_progress	检查中… {0}%（{1} / {2}）	7d7f4ea5
+sums.error_unreadable	无法读取校验文件。	32f68ef2
+sums.error_too_big	校验文件太大。	a62b533e
+sums.error_no_lines	这看起来不是校验文件：里面没有任何一行含有哈希值。	88a7b6d0
+sums.all_match	✓ 全部 {0} 个文件都相符。	4c5be580
+sums.bytes_read	已读取 {0}	bce96785
+sums.some_match	✗ {1} 个文件中只有 {0} 个相符。	7077b230
+sums.differs	不相符	d15ff640
+sums.not_found	找不到	475c8486
+sums.could_not_read	无法读取：{0}	65d7b999
+sums.more_not_listed	…另有 {0} 个未列出	0bba02be
+sums.extra_files	压缩包里有 {0} 个文件不在校验文件中：	ec12fe42
+sums.names_skip_checksum	为了与压缩包对应，已忽略校验文件名称最前面的 {0} 层文件夹。	a45ece3d
+sums.names_skip_archive	为了与校验文件对应，已忽略压缩包路径最前面的 {0} 层文件夹。	7a193140
+sums.bad_lines	有 {0} 行无法识别，已跳过。	53c549af
+sums.summary_many	{1} 个校验文件中有 {0} 个完全相符。	d5d2dbe9
+sums.of_archive	“{0}”里的文件	5dcf2a18
+sums.of_folder	校验文件旁边的文件，位于 {0}	9e2ca60d
+sums.n_checksum_files	{0} 个校验文件	b9bc0f41
+sums.names_not_found	校验文件里大多数的名称在压缩包中找不到。如果名称的开头不同，请指定要移除和要加上的部分。	93e716cd
+sums.strip_prefix	从校验文件名称的开头移除	d27f48c7
+sums.strip_example	例如 backup/2025/	3eb331e6
+sums.add_prefix	加在名称的前面	c03022f0
+sums.add_example	例如 photos/	fb0d3a26
+sums.check_again	重新检查	e185048c
+sums.match_only_means	相符表示文件与制作校验文件时一样。校验文件本身可不可信，要看它的来源。	92da1fdc
+sums.verify_archive_with	用 {0} 验证压缩包	82b71eac
+sums.verify_files_with	用 {0} 验证里面的文件	cdcbf4f6
+sums.banner_title	这个压缩包旁边有校验文件	5f7afa0a
+sums.folder_files	文件夹“{0}”：{1} 个文件	d1be963b
+sums.no_files_to_hash	没有可以计算哈希值的文件。	67d9d4ea
+sums.side_unusable	无法使用 {0}。	f8388be4
+sums.side_no_entry	{0} 里没有这个文件的值。	823632ad
+sums.side_waiting	正在与 {0} 比对…	722743f7
+sums.side_untick	{0} 里是 {1} 值。请在上方勾选 {1} 才能比对。	80c436a1
+sums.side_match	✓ 与同文件夹的 {0} 验证相符。	349ed159
+sums.side_differ	✗ 与同文件夹的 {0} 不相符，它记录的是 {1}。	6804287b
+sums.verify_menu	验证校验文件…	5ef9d65d
+sums.setting_archive	生成新压缩包的校验文件	2511268d
+sums.setting_archive_caption	在压缩包旁边生成 name.zip.sha256，内容是它的 SHA-256（分卷时每一卷一行）。适合用在要提供下载或发给别人的文件。这是右键“不用模板”压缩时的默认值；模板有各自的设置。	ac78b96d
+sums.setting_files	生成放入文件的校验文件	9c9c05a1
+sums.setting_files_caption	在压缩包旁边生成 name.sha256，记录每个文件以压缩包里的名称表示的 SHA-256，之后可以用来检查压缩包。这是右键“不用模板”压缩时的默认值；模板有各自的设置。	aef4dbd2
+sums.card_note_written	 已生成校验文件：{0}	7e6782be
+sums.card_note_failed	 无法写入校验文件。	762c19c5
+sums.link_archive	验证压缩包	d25cf6a5
+sums.link_files	验证里面的文件	37c5d700
+sums.menu_hash_save	计算并保存为 name.sha256（两种右键菜单都有）	b7b11e23
+sums.save_exists_title	校验文件已经存在	e5226fcf
+sums.save_exists	“{0}”已经存在。要替换它，还是两个都保留、把新的保存为另一个名称？	2f2622e0
+sums.save_replace	替换	a7cf7b25
+sums.save_keep_both	两个都保留	60c801a8
+sums.save_title	计算并保存校验文件	8c086f1c
+sums.save_done	✓ 已保存：{0}	0dbe15ea
+sums.save_done_skipped	 有 {0} 个文件无法读取，不在校验文件里。	fb6a6101
+sums.save_failed_title	无法保存校验文件	018b3be7
+sums.notify_title	已保存校验文件	6877922b
+sums.notify_skipped	{0}（{1} 个文件无法读取）	cf4ba6a2
+preview.this_is_first	这是第一张图片	230d3949
+preview.this_is_last	这是最后一张图片	4ce142e3
+audio.loop_none	按顺序播放，播完停止	5eff807e
+audio.loop_all	全部循环	7cce343d
+audio.loop_one	单曲循环	40115bbc
+audio.shuffle	随机播放	5b772b7b
+audio.playback_mode_tip	播放模式：{0}（L）	e76eb3c6
+main.night	黑夜	1097b553
+main.home	主页	70f8bb9a
+main.desktop	桌面	532c67fe
+main.documents	文档	687c8286
+main.downloads	下载	a862c2b2
+main.paste	粘贴	db248300
+scan.affected_item_note	杀毒软件可能会把“lycanzip-cli.exe”（或 LycanZip）列为“受影响的项目”。那是把文件内容交给它检查的程序，内容没有写入磁盘，也不表示这个程序本身有问题。	6fba3070
+## core
+core.cannot_list_folder	{0} : 无法枚举文件夹	595a3cc5
+core.skipped_link	{0} (符号链接 / 联接点)	7cc5b706
+core.skipped_output_itself	{0} (输出文件本身)	84b91d26
+core.cannot_compress_drive_root	无法压缩驱动器根目录，请选择其中的文件夹: {0}	613bacc0
+core.input_not_found	找不到输入: {0}	f2dace5f
+core.cannot_read_file	{0} : 无法读取 ({1})	4443424a
+core.custom_param_format	自定义参数格式应为“名称=值”（以空格分隔）：{0}	31f4fa91
+core.custom_param_bad_char	自定义参数含有不允许的字符	bd954308
+core.format_cannot_create	此版本的 7z.dll 不支持创建 {0}	e340d737
+core.format_cannot_modify	此格式无法修改	fba21d69
+core.cannot_create_handler	无法创建压缩处理程序	13da818b
+core.zipcrypto_weak	ZipCrypto 加密强度低；需要安全性请改用 AES-256	ad77761a
+core.zipcrypto_weak_compat	ZipCrypto 加密强度低（兼容模式）；需要安全性请改用 AES-256（非兼容模式）	01aa2b18
+core.set_properties_failed	设置压缩参数失败（此格式不支持所选的方法或参数组合）	6f057beb
+core.set_properties_failed_custom	设置压缩参数失败：请检查“自定义参数”的拼写，或确认它适用于这个格式	35f4d0f4
+core.cancelled	已取消	f840ac65
+core.disk_full_archive	磁盘空间不足，无法写入压缩文件	5993ba38
+core.update_failed	修改压缩文件失败	7b1dee4a
+core.create_failed	创建压缩文件失败	90d456f9
+core.temp_space_plain	临时空间不足，已改为一般压缩（没有跳过已压缩的文件）	74e430a7
+core.cannot_read_back_temp	无法读回临时的压缩文件	b0e76526
+core.zip_password_ascii	ZIP 加密只支持英文数字与一般符号的密码；若要使用中文等字符，请改用 7z 格式	eb33d87a
+core.zip_aes_password_long	ZIP 的 AES 加密密码最长 99 个字符；请缩短密码，或改用 7z 格式	f09d8efc
+core.no_input	没有输入	8dc8debc
+core.iso_no_volumes	ISO 不支持分卷	32f98325
+core.iso_no_password	ISO 不支持密码	2d083ff0
+core.volume_too_small	分卷大小至少 64 KB	4d68d5a0
+core.volumes_zip_7z_only	分卷仅支持 zip 与 7z	8ed1c78f
+core.tar_no_password	tar 系列格式不支持密码，请改用 zip 或 7z	e51c78ab
+core.nothing_to_compress	没有可压缩的内容	2672e759
+core.target_exists	目标文件已存在: {0}	37b33c23
+core.cannot_create_output	无法创建输出文件: {0}	861c3cbf
+core.cannot_create_temp	无法创建临时文件	71288840
+core.cannot_rename_temp_output	无法将临时输出重命名为: {0}	7554dad7
+core.invalid_name	名称无效: {0}	64268bd2
+core.file_not_found	找不到文件: {0}	e28dca49
+core.nothing_to_delete	没有指定要删除的项目	a6fb797b
+core.not_in_archive	压缩文件内找不到: {0}	d9f85d0b
+core.nothing_to_rename	没有指定要重命名的项目	68c8d63a
+core.cannot_move_into_itself	不能把文件夹移到它自己里面: {0}	60172ad7
+core.name_taken	压缩文件内已有同名项目: {0}	e16328f5
+core.is_folder_cannot_replace	这是文件夹，不能替换内容: {0}	a8d67a24
+core.replacement_is_folder	要替换成的内容不能是文件夹: {0}	7e4b64b2
+core.nothing_to_add	没有要添加的文件	5f89bc7f
+core.folder_name_taken	压缩文件内已有同名的文件夹: {0}	83595597
+core.file_name_taken	压缩文件内已有同名的文件: {0}	b08fb67c
+core.nothing_deleted_unreadable	有文件无法读取，所以没有删除压缩文件里的任何项目	5876ea75
+core.archive_not_found	找不到压缩文件: {0}	573a9161
+core.archive_cannot_modify	这种压缩文件无法修改: {0}	f552428f
+core.password_needed_to_modify	压缩文件有加密的项目，修改时需要提供密码	6540948a
+core.wrong_password	密码错误: {0}	74a0ee51
+core.tar_no_password_short	tar 不支持密码	68738544
+core.disk_full_modify	磁盘空间不足：修改压缩文件需要约 {0} MB 的空间（目前剩 {1} MB）	cf14287c
+core.cannot_create_temp_file	无法创建临时文件: {0}	07f9843a
+core.cannot_replace_archive	无法换上修改后的压缩文件（文件可能正被其他程序使用，或没有写入权限）: {0}	ed4f9793
+core.disk_full_target	目标磁盘空间不足：需要约 {0} MB，可用 {1} MB	ec3d2a79
+core.op_ok	OK	9ce3bd42
+core.op_unsupported_method	不支持的压缩方法	ef2a9e38
+core.op_data_error	数据错误	c778bc80
+core.op_crc_error	CRC 错误	8c725472
+core.op_unavailable	数据不可用	f230d2f1
+core.op_unexpected_end	数据意外结束	39d93c5f
+core.op_data_after_end	结尾后仍有多余数据	781b28f4
+core.op_not_archive	不是压缩文件	0ed60af8
+core.op_headers_error	标头错误	93d23602
+core.op_wrong_password	密码错误	fc2066fe
+core.op_unknown	未知错误	e5fd9aa2
+core.path_reason	{0} : {1}	4d3c418a
+core.get_items_failed	无法读取项目数量	79b3b3df
+core.disk_full_extract	磁盘空间不足，无法写入解压的文件	f303f678
+core.extract_failed	解压失败	5991eb87
+core.cancelled_no_password	已取消（未提供密码）	fba45152
+core.temp_write_failed	写入临时文件失败	5ff6a944
+core.cannot_open_file	无法打开文件: {0}	f47ed1c3
+core.unknown_format	无法识别的压缩格式或文件已损坏: {0}	e81496d0
+core.item_index_out_of_range	项目索引超出范围	58869057
+core.read_item_failed	读取项目失败: {0}	13501ab1
+core.is_folder	这是文件夹	e971b3a4
+core.encrypted_needs_password	已加密，需要密码	5c440053
+core.link_no_content	链接没有内容	7f28c297
+core.skipped_symlink_policy	{0} (符号链接，按安全设置跳过)	87ffdbd9
+core.skipped_hardlink_policy	{0} (硬链接，按安全设置跳过)	8df2b6aa
+core.rejected_outside	{0} : 解析后超出目标文件夹	58fd5dd4
+core.cannot_create_folder	{0} : 无法创建文件夹	e5f475c7
+core.cannot_create_parent	{0} : 无法创建上层文件夹	e52c1873
+core.folder_in_the_way	{0} : 目标位置已存在同名文件夹	b9c178a7
+core.skipped_exists	{0} (已存在)	22be83fc
+core.file_exists	{0} : 文件已存在	69a42e39
+core.cannot_create_file	{0} : 无法创建文件 ({1})	2d149b96
+core.cannot_replace_file	{0} : 无法替换现有的文件 ({1})	af34f55c
+core.bomb_total	展开后总量超过上限，已中止（可能是压缩炸弹）	aa7db100
+core.bomb_ratio	压缩比异常偏高，已中止（可能是压缩炸弹）	97e64e36
+core.bomb_actual	实际展开量超过上限，已中止（可能是压缩炸弹）	3826ab3c
+core.cannot_create_target	无法创建目标文件夹: {0}	75abb342
+core.disk_full	磁盘空间不足	a0ec91c6
+core.cannot_write_output	无法写入输出文件（磁盘空间不足？）	34b6b5b2
+core.iso_nothing	没有可放进 ISO 的内容	1af43464
+core.iso_file_too_big	ISO 文件里单个文件不能超过 4 GB（这个版本还不支持 UDF）: {0}	5c20d6f9
+core.iso_cannot_read	{0} (无法读取)	c2f1f002
+core.iso_short_read	{0} (读取时文件变短或无法读取)	cc9ed007
+core.launch_list_needs_path	--list 需要文件路径	39e20492
+core.launch_cannot_read_list	无法读取列表文件: {0}	dfab0013
+core.launch_unknown_option	未知的选项: {0}	df63ee43
+core.launch_no_files	没有指定任何文件	62b2324d
+core.path_empty	空路径	4dd56da4
+core.path_nul	路径含有 NUL 字符	0363e018
+core.path_absolute	绝对路径或 UNC 路径	3fd273c3
+core.path_drive	含驱动器号	8e14a535
+core.path_traversal	路径穿越 (..)	46858ead
+core.path_colon	含 NTFS 备用数据流或非法冒号	7756e2a5
+core.path_component_empty	清理后组件为空	bac592df
+core.path_no_component	路径无有效组件	ec228d1c
+core.path_renamed	文件名含 Windows 不允许的字符或保留名称，已自动转换	f43897c6
+core.dll_not_found	找不到 7z.dll（可设置环境变量 LYCAN_7Z_DLL，或放在 exe 同一文件夹）	bedf1866
+core.dll_load_failed	无法加载 7z.dll: {0}	7970328f
+core.dll_missing_exports	7z.dll 缺少必要的导出函数	303fec2b
+core.dll_formats_failed	GetNumberOfFormats 失败	f25e7f29
+core.task_extract_failed	部分项目解压失败	73d74623
+core.task_test_failed	有项目测试失败	5d96975e
+core.task_unreadable	部分文件无法读取	a0499c76
+core.task_no_amsi	无法使用 Windows 的恶意软件扫描接口（AMSI）	ce19a6fc
+core.task_threat_found	发现可疑的文件	c358268b
+core.task_hash_failed	有文件无法计算	cfa8f7b7
+core.temp_space_need	临时空间不足：需要约 {0} MB，“{2}”只剩 {1} MB	08f0bbc5
+core.temp_space_full	临时空间不足：“{2}”已满（剩 {1} MB）	04139f08
+main.open_preview_key	按住按键打开压缩文件时直接预览图片	4ec4fba1
+main.open_preview_key_hint	从资源管理器打开压缩文件时按住这个键，会直接进入图片预览；没有图片的压缩文件会照常打开。	bedba710
+main.key_shift	Shift	469d5b18
+main.key_ctrl	Ctrl	dd6a02a5
+main.key_none	不使用	72a86113
+audio.info_format	格式	041a5dec
+audio.info_bitrate	比特率	eddca7c3
+audio.info_sample_rate	采样率	7a031620
+audio.info_channels	声道	18e03e2a
+audio.info_length	时长	3bade34e
+audio.info_size	大小	b7152342
+audio.kbps	{0} kbps	d6fe6f7a
+audio.khz	{0} kHz	a15a2a00
+audio.mono	单声道	c5c55338
+audio.stereo	立体声	f4f390b6
+audio.channels_n	{0} 个声道	c5f7ad51
+main.lock_open_archive	打开压缩文件时锁定文件	9a072cd4
+main.lock_open_archive_hint	窗口打开着压缩文件时，其他程序无法修改或删除这个文件，内容不会在你查看时被换掉。OneDrive、Dropbox 等同步软件要等到关闭窗口后才能更新它。	547105a7
+shell.add_to_archive	添加到压缩文件…	2cdc38ad
+shell.compress_to	压缩为 "{0}"	26079055
+shell.compress_each	分别压缩为 {0}	71b71810
+shell.compress_with_preset	用模板压缩	851cb07a
+shell.hash	计算哈希值…	78ef4a80
+shell.hash_save	计算并保存为 "{0}"	3bcf70ff
+shell.verify_checksum	用 LycanZip 验证校验和文件	fa6d1cbb
+shell.other_formats	其他格式	ad24dd8d
+shell.group_entry	{0}：{1}	4d3c418a
+shell.encrypted	加密压缩…	284a3b16
+shell.open_content	用 LycanZip 打开内容	b4b5ada3
+shell.open	打开	cf9b7706
+shell.extract_here	解压到此处	5221b51b
+shell.extract_to_named	解压到 "{0}\\"	70e9c1e4
+shell.extract_same_name	解压到同名文件夹	96adc4e4
+shell.extract_to	解压到…	f5015680
+shell.test	测试完整性	ba25de4f
+shell.image_preview	图片预览	6c5de6ef
+shell.audio_preview	音频预览	47fea53e
+shell.extract_recent	解压到最近使用的位置	6fb3e506
+shell.extract_merge	合并解压到同一文件夹	95dfa5b4
+shell.preset_zip	常规 ZIP	f75cf2d3
+shell.preset_7z	常规 7z	773f446e
+shell.preset_smallest	最小体积	ba07b565
+shell.preset_fast	快速	8db6a2f1
+shell.preset_mail	邮件 / 分享	bd390aae
+shell.preset_backup	备份	dd96994d
+shell.preset_store	仅存储，不压缩	05d2dfd8
+preview.set_wallpaper	设为桌面背景…	a8535aeb
+preview.wallpaper_title	设为桌面背景	bddfd29e
+preview.wallpaper_hint	这会更换你的桌面背景。图片的副本会存放在文件夹“{0}”，所以关闭压缩文件后桌面背景仍然在（之后可自行删除）。	545a014e
+preview.wallpaper_position	图片位置	57ec5754
+preview.wallpaper_fill	填充	7adb6736
+preview.wallpaper_fit	适应	dab564d8
+preview.wallpaper_stretch	拉伸	b148ed24
+preview.wallpaper_tile	平铺	2dd2c660
+preview.wallpaper_center	居中	a2391118
+preview.wallpaper_span	跨所有屏幕	f9ac80c1
+preview.wallpaper_screen	屏幕	5cc847f9
+preview.wallpaper_all_screens	所有屏幕	36e42090
+preview.wallpaper_screen_n	屏幕 {0}	450737fa
+preview.wallpaper_set	设为桌面背景	bddfd29e
+preview.wallpaper_done	桌面背景已更换	db9a8288
+preview.wallpaper_failed	无法更换桌面背景	fdcbceb4
+preview.save_as_original	原始文件（{0}）	55a52041
+preview.save_as_type	{0} 图片	4b7c0e56
+main.updates	更新	c76d1807
+main.update_check	检查新版本	459eada1
+main.update_check_hint	每周一次向 aegisulf.com 询问最新版本的编号。不会发送其他数据。安装版会一并下载更新，但只有在你选择时才会安装。	ff79bd40
+main.update_check_now	立即检查	2ce5dd0d
+main.update_checking	检查中...	494d0f68
+main.update_check_failed	无法连接到网站。	16d35b69
+main.update_up_to_date	LycanZip {0} 已是最新版本。	c3b654ab
+main.update_available	有新版本 {0}	d3f8a66c
+main.update_with_command	请用这个命令更新：{0}	1d9bdc7c
+main.update_download	下载页面	ca074cc1
+main.update_whats_new	新功能	4d8dc5fe
+main.update_skip	跳过这个版本	31996a8b
+main.update_skip_tip	不再提醒这个版本；更新的版本仍会提醒。	495188b9
+fmt.gap	　	099600a1
+fmt.dot_gap	　·　	c80c74a1
+fmt.bar_gap	　｜　	af18a86b
+fmt.list_sep	、	d3bc9a37
+fmt.comma	，	d3bc9a37
+main.restart_explorer	重启文件资源管理器	4f2f2310
+main.restart_explorer_hint	右键菜单的更改还没出现时使用：开启或关闭菜单之后，或更新之后。	9826207f
+main.restart_explorer_do	重启	b134bd55
+main.restart_explorer_title	要重启文件资源管理器吗？	1247b286
+main.restart_explorer_question	打开的文件夹窗口会关闭，任务栏会短暂消失。请先完成文件资源管理器里正在做的事。	bb88d250
+main.menu_updated	右键菜单已更新	35a346d0
+main.menu_updated_restart_explorer	重启文件资源管理器后就会使用新版。	81b74c5b
+main.off	关闭	e3de5ab0
+main.virustotal_lookup	在 VirusTotal 查询	45155d86
+main.virustotal_lookup_tip	计算 SHA-256 后用浏览器打开 VirusTotal。只会发送哈希值，不会上传文件。VirusTotal 没见过的哈希值，不代表文件安全。	162ec07b
+main.resize_column	调整列宽	a352329f
+main.reset_column_widths	还原列宽	0d1aad85
+main.ratio	压缩率	794f65e9
+main.col_encrypted	加密	bde2fbb6
+main.col_crc	CRC	3841eeac
+main.col_method	方式	88306943
+main.sort_by_ratio	按压缩率排序	0f42a324
+main.sort_by_encrypted	按加密排序	c704964e
+main.sort_by_crc	按 CRC 排序	4a496c5c
+main.sort_by_method	按方式排序	3fefe5e6
+main.info_technical	技术信息\n	89d4e276
+main.info_created	创建时间：{0}\n	76448e49
+main.info_accessed	访问时间：{0}\n	5702c685
+main.info_method	压缩方式：{0}\n	768c45b6
+main.info_permissions	权限：{0}\n	8bdf2fd8
+main.info_host_os	创建的系统：{0}\n	c3576d38
+main.info_characteristics	特征：{0}\n	04bb04e0
+main.info_link	链接目标：{0}\n	3502a252
+main.info_block	固实块：{0}\n	81074eb6
+main.info_offset	从压缩文件的第 {0} 字节开始\n	5f8618a5
+main.info_comment	注释：{0}\n	5491205f
+core.dll_not_pinned	7z.dll 不是 LycanZip 附带的那一个，所以没有加载：{0}。请重新安装 LycanZip 以获取正确的文件	ab86763d
+core.dll_missing_pinned	在 LycanZip 旁边找不到 7z.dll。请重新安装 LycanZip 以找回该文件	2568bd9b
+main.update_install_now	立即安装	8607e4ba
+main.update_install_title	安装更新	ac0f0e99
+main.update_install_question	要下载并安装 LycanZip {0}（{1}）吗？LycanZip 会关闭，并自动重新启动。	77267b1b
+main.update_downloading	正在下载更新… {0}%	a19e7001
+main.update_not_in_feed	目前还没有可以安装的新版本，请稍后再试。	7bc79e7b
+main.update_failed	无法下载更新，或更新未通过验证，没有做任何更改。请稍后再试。	aa9ff9d1
+main.update_tasks_running	还有任务正在运行。请等它们完成，或取消它们，再安装更新。	5f0e8545
+main.update_ready	版本 {0} 已可安装	bb0155f4
+main.update_ready_hint	LycanZip 会关闭并自动重新启动，完成更新。	2953ac9d
+main.update_restart_now	重新启动并更新	68d74304
+main.two_copies_title	LycanZip 安装了两份	ae047f6d
+main.two_copies_store_owns	这台电脑也安装了 Microsoft Store 版的 LycanZip。右键菜单与文件类型由 Store 版提供，所以这一份已经把自己的关掉，文件资源管理器只会显示一个 LycanZip。\n\n只保留一份会比较简单：可以在“已安装的应用”中卸载不用的那一份。\n\n这一份：{0}	a26b2e9a
+main.two_copies_other_has_menu	另一份 LycanZip 也注册了自己的右键菜单或文件类型，文件资源管理器可能会显示两个 LycanZip。请启动那一份一次（它发现这个版本时会把自己的关掉），或在“已安装的应用”中卸载它。\n\n另一份：{0}	35d66071
+main.open_installed_apps	打开“已安装的应用”	2765c7aa
+main.store_version_provides_menu	这台电脑安装了 Microsoft Store 版的 LycanZip：右键菜单与文件类型由它提供，所以这一份的都是关闭的。	f670f18e
+main.other_copy_note	另一份 LycanZip 也注册了右键菜单或文件类型：{0}\n请启动它一次（它发现这个版本时会把自己的关掉），或卸载它，文件资源管理器就只会显示一个 LycanZip。	883c2d94
+main.store_menu_switch_hint	显示或隐藏文件资源管理器里所有的 LycanZip 项目（右键菜单；Windows 11 还有右键拖放的菜单）。下次打开菜单时生效，不会注册或删除任何东西。	756e4de1
+main.welcome_offer_title	第一次使用 LycanZip？	e06f512c
+main.welcome_offer_hint	花一分钟选择外观、声音与预览方式。	ebdcfb8d
+main.welcome_offer_start	开始设置	a5041fda
+main.welcome_offer_no	不用了	5f5c4384
+welcome.file_explorer_menu	文件资源管理器的右键菜单	7000f59a
+main.view_small_icons	小图标	9fd460c2
+main.view_medium_icons	中图标	66c5bbfe
+main.view_large_icons	大图标	7d71ad7d
+main.view_huge_icons	超大图标	4ec7f1c2

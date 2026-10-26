@@ -1,0 +1,10 @@
+/packages/
+/bin/
+/obj/
+/.tools/
+/*.png
+/.lasttest.txt
+/XamlMetaDataProvider.*
+/packages.pre.props
+/packages.props
+/packages.targets

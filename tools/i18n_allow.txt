@@ -1,0 +1,23 @@
+# Texts that look like UI text but are data or names that stay as they are (tools/i18n.py --lint). One per line.
+LycanZip
+English
+Synth
+Wave
+ZIP
+7z
+TAR.GZ
+TAR.XZ
+TAR.BZ2
+TAR
+128 MB
+512 MB
+1 GB
+一般 ZIP
+一般 7z
+最小體積
+快速
+寄信 / 分享
+備份
+僅儲存不壓縮
+https://aegisulf.com/lycanzip/
+https://github.com/Aegisulf/LycanZip

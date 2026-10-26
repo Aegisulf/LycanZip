@@ -1,0 +1,57 @@
+#pragma code_page(65001)
+#include <winver.h>
+#include "lycan/version.h"
+
+// application icon
+1 ICON "Assets\\LycanZip.ico"
+
+// File-type icons (lycan/fileicons.h: IconResourceId): the file associations point here ("LycanZip.exe",-101 ...)
+101 ICON "Assets\\FileIcons\\zip.ico"
+102 ICON "Assets\\FileIcons\\7z.ico"
+103 ICON "Assets\\FileIcons\\rar.ico"
+104 ICON "Assets\\FileIcons\\tar.ico"
+105 ICON "Assets\\FileIcons\\iso.ico"
+106 ICON "Assets\\FileIcons\\arc.ico"
+107 ICON "Assets\\FileIcons\\comic.ico"
+
+// Icons of the Explorer menu entries (shellext/shellext.cpp: kIconExtract ...): a wolf with a badge for what the entry does
+111 ICON "Assets\\MenuIcons\\extract.ico"
+112 ICON "Assets\\MenuIcons\\test.ico"
+113 ICON "Assets\\MenuIcons\\images.ico"
+114 ICON "Assets\\MenuIcons\\audio.ico"
+115 ICON "Assets\\MenuIcons\\encrypt.ico"
+116 ICON "Assets\\MenuIcons\\hash.ico"
+117 ICON "Assets\\MenuIcons\\template.ico"
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION LYCAN_VERSION_RC
+ PRODUCTVERSION LYCAN_VERSION_RC
+ FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+#ifdef _DEBUG
+ FILEFLAGS VS_FF_DEBUG
+#else
+ FILEFLAGS 0
+#endif
+ FILEOS VOS_NT_WINDOWS32
+ FILETYPE VFT_APP
+ FILESUBTYPE VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040404B0"
+        BEGIN
+            VALUE "CompanyName", "LycanZip contributors"
+            VALUE "FileDescription", "LycanZip File Archiver"
+            VALUE "FileVersion", LYCAN_VERSION_RC_STRING
+            VALUE "InternalName", "LycanZip"
+            VALUE "LegalCopyright", "Copyright (c) LycanZip File Archiver. MIT License."
+            VALUE "OriginalFilename", "LycanZip.exe"
+            VALUE "ProductName", "LycanZip"
+            VALUE "ProductVersion", LYCAN_VERSION_STRING
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0404, 1200
+    END
+END

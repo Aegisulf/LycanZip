@@ -1,0 +1,1374 @@
+# LycanZip 繁體中文 (zh-TW)。每行一條：id、Tab、譯文、Tab、英文原文的雜湊（由 tools/i18n.py 維護）。轉義：反斜線加 n、反斜線加 t、兩個反斜線。
+## main
+main.select	選取	85982229
+main.pause	暫停	781961bc
+main.resume	繼續	b3bd0b5a
+main.cancel	取消	77dfd213
+main.open_folder	開啟資料夾	f9630141
+main.test_integrity	測試完整性	ba25de4f
+main.settings	設定	c7f73bb5
+main.drag_files_here	將檔案拖曳到此處	0636917e
+main.archive_open_extract_files_folders	壓縮檔 → 開啟與解壓縮　·　檔案或資料夾 → 建立壓縮檔	238fcb94
+main.open_archive	開啟壓縮檔	7f60c24c
+main.new_archive	新增壓縮檔	b9ec2a94
+main.choose_files	選擇檔案…	20be8b95
+main.choose_folder	選擇資料夾…	3a95ac72
+main.back	返回	b52b36b7
+main.extract_here	解壓縮到此	5221b51b
+main.extract	解壓縮到…	f5015680
+main.add_files_folders_archive_you_can	將檔案或資料夾加入此壓縮檔（也可直接拖曳至此）	b3ba97f0
+main.add_archive	加入到壓縮檔	b17b8c86
+main.add	加入	61cc55aa
+main.add_files	加入檔案…	9fdaa230
+main.add_folder	加入資料夾…	1c0da9c5
+main.new_folder	新增資料夾…	fea7178e
+main.preview	預覽	f1fbb2b4
+main.image_preview	圖形預覽	6c5de6ef
+main.audio_preview	音訊預覽	47fea53e
+main.view	檢視	69bd4ef9
+main.list_all	全部列出	04466388
+main.folder_tree	資料夾樹	9c23f9bb
+main.folder_tree_toggle	資料夾樹開關	36af87a8
+main.show_macos_metadata	顯示 macOS 中繼資料	720609b5
+main.details	詳細資料	dc3decbb
+main.list	清單	a1fffaaa
+main.show_image_thumbnails_icon_view	圖示檢視顯示圖片縮圖	9ac42949
+main.sort_by_name	依名稱排序	d3b65f5c
+main.sort_by_size	依大小排序	2d08ec84
+main.sort_by_packed_size	依壓縮後大小排序	efa7243d
+main.sort_by_modified_date	依修改時間排序	d254e057
+main.sort_by_type	依類型排序	0b1fc8b5
+main.ascending	遞增	2b226c79
+main.descending	遞減	36377adf
+main.more_options	其他選項	86c0a35e
+main.archive_information	壓縮檔資訊…	c03fec02
+main.hash_values_archive	計算壓縮檔的雜湊值…	13da45e4
+main.scan_malware	掃描惡意程式	fafc5d2f
+main.hands_every_file_archive_antivirus	將壓縮檔中的每個檔案交由已安裝的防毒軟體檢查（透過 Windows 的 AMSI）。需開啟即時防護，超過 128 MB 的檔案會略過。LycanZip 本身沒有掃描引擎，結果不保證安全。Windows Defender 的雲端防護可能會將可疑的樣本傳送給 Microsoft。	fccf6c01
+main.filename_encoding	檔名編碼	f1290c20
+main.up_one_level_backspace	上一層（Backspace）	64d8b297
+main.up_one_level	上一層	71f23258
+main.current_location	目前位置	75ea6a18
+main.search_ctrl_f	搜尋（Ctrl+F）	2b439fd3
+main.search	搜尋	bce06414
+main.drag_resize_folder_tree_double	拖曳以調整資料夾樹寬度（按兩下可還原）	7c895e33
+main.folder_tree_splitter	資料夾樹分隔線	b2a2647a
+main.select_all	全選	913afff1
+main.select_all_clear_selection	全選 / 取消全選	faf3477b
+main.name	名稱	709a2322
+main.sort_by_location	依所在路徑排序	e01625c5
+main.location	所在路徑	d219c681
+main.type	類型	3deb7456
+main.size	大小	b7152342
+main.packed	壓縮後	ac9f7c98
+main.modified	修改時間	19a532c8
+main.archive_contents	壓縮檔內容	c451d872
+main.archive_contents_list_icons	壓縮檔內容（清單 / 圖示）	f99fa9aa
+main.extract_selected_items_here	解壓選取項目到此處	7ef75e2c
+main.extract_selected_items	解壓選取項目到…	d48f0e52
+main.copy_path	複製路徑	9804556f
+main.clear_selection	取消選取	247fd631
+main.restore_default_settings	還原預設設定	7dc68a00
+main.settings_tabs	設定分頁	bd140503
+main.general	基本	9239ee2c
+main.compression	壓縮	46ead404
+main.file_explorer	檔案總管	700869dc
+main.shortcuts	快速鍵	90c93523
+main.about	關於	6b21fb79
+main.appearance	外觀	41def7a0
+main.language	語言	89b86ab0
+main.interface_language_restart	介面語言。變更後需重新啟動 LycanZip。	522335fd
+main.saved_takes_effect_after	已儲存，重新啟動後生效。	636c48e5
+main.follow_system	跟隨系統	1b16bcb0
+main.theme	主題	a797e309
+main.follow_system_fixed_light_dark	跟隨系統，或固定為淺色 / 深色 / 高對比	595f2484
+main.light	淺色	a36ef8ab
+main.dark	深色	ae1ef014
+main.high_contrast_black	高對比（黑底）	c341a6f4
+main.accent_color	主題色	e49578ed
+main.accent_color_buttons_selection	按鈕、選取項目、進度和連結所用的強調色。「跟隨系統」會使用 Windows 的強調色。	b47a1f66
+main.background	背景	64dd60fe
+main.full_gradient_plus_moonlit_scene	完整：漸層與首頁的月夜場景。僅漸層：僅顯示背景色。關閉：使用系統材質（Mica）。漸層會依主題色與深色 / 淺色而變化。	142c9f0e
+main.full	完整	10b28a8c
+main.gradient_only	僅漸層	aad06254
+main.close	關閉	bbfa773e
+main.animations	動畫	c77dcded
+main.page_transitions_list_loading_drag	頁面與分頁切換、進出資料夾、提示列、工作卡片、歡迎視窗換頁、預覽換圖，以及首頁幾顆閃爍的星星。Windows 的「顯示動畫」關閉時不會播放。	695074f5
+main.sound_effects	音效	a41e30af
+main.sounds_opening_completion_errors	開啟、完成、錯誤等事件的提示音。預設為關閉。	f2ce9860
+main.sound_set	音效組	0b3e2886
+main.synth_default_set_synthesized	Synth 為預設的合成音；Wave 為較簡單的音調。選取後會播放完成音效。	bd241e88
+main.system_notifications	系統通知	78adbf5b
+main.show_notification_when_tasks	工作結束時，若 LycanZip 不在前景，則顯示通知（失敗時一律通知）。工作列按鈕的進度列與閃爍不受此設定影響。	048330e2
+main.multiple_windows	多視窗	3fd4f2a6
+main.when_opening_another_archive	開啟另一個壓縮檔時	975f569a
+main.when_window_already_use_open	已有視窗正在使用時，開啟壓縮檔的方式：開新視窗，或取代目前視窗的內容。目前視窗有進行中的工作，或同時開啟多個壓縮檔時，一律開新視窗。	ff0b05f3
+main.open_new_window	開新視窗	cb4c1f20
+main.replace_current_window	取代目前視窗	a92596ce
+main.performance	效能	63c90455
+main.simultaneous_tasks	同時執行的工作數	8868bc1f
+main.disk_bottleneck_so_1_run_one	硬碟速度通常是瓶頸，建議維持 1（依序執行）	83d28fbd
+main.task_priority	工作優先權	37e4e62c
+main.how_much_machine_compress_extract	壓縮、解壓縮與測試工作使用電腦資源的程度。選擇較低或背景可減少對其他程式的影響，但工作速度會較慢。	0d1c783e
+main.normal	一般	45e118d0
+main.lower_leaves_some_cpu_others	較低（減少 CPU 使用）	00d8c45a
+main.background_lowest_also_saves_disk	背景（最低，同時降低磁碟與電源使用）	6786f633
+main.temporary_folder	暫存資料夾	f9b015fa
+main.used_when_opening_files_from	開啟壓縮檔中的檔案、拖曳，以及開啟與壓縮 tar.gz 等需要暫存時使用。預設為系統的暫存資料夾。不建議放在網路或隨身碟（速度慢）。	768d718e
+main.choose	選擇…	349ac8fb
+main.choose_temporary_folder	選擇暫存資料夾	ce762b1e
+main.reset	恢復預設	44c57abd
+main.reset_temporary_folder	暫存資料夾恢復預設	e7a126ec
+main.clear_temporary_files	清除暫存	242e5902
+main.extraction	解壓縮	2552a425
+main.when_file_with_same_name_already	目的地已有同名檔案時	6310186a
+main.ask_me_shows_options_on_every	「詢問我」會在每次發生衝突時顯示選項，並可套用至之後所有衝突	41badf73
+main.file_conflict_handling	檔案衝突處理	4af14a87
+main.ask_me	詢問我	10a8fd63
+main.skip	略過	3da47453
+main.overwrite	覆寫	0625c54e
+main.rename_automatically	自動重新命名	eaecf2b5
+main.when_extracting_here	按「解壓縮到此」時	85622c6d
+main.automatic_single_top_level_folder	自動判斷：內容僅有一個資料夾時直接解壓縮至目前位置，否則建立「檔名」資料夾。另外兩種可使用按鈕旁的箭頭選取。	18b0d690
+main.automatic_recommended	自動判斷（建議）	a068f350
+main.do_not_create_folder	不建立資料夾	c4f1ccef
+main.create_folder_named_after_archive	建立「檔名」資料夾	80c9b557
+main.check_unusually_big_archives	解壓縮前檢查異常大的壓縮檔	54593980
+main.when_archive_would_unpack_far_more	展開後的大小遠大於壓縮檔（1 GB 以上且超過 500 倍，或 1 TB 以上）時，先詢問是否繼續。這類檔案可能是壓縮炸彈，也可能是正常檔案（例如虛擬機器的磁碟映像）。	548960de
+main.open_folder_when_done	完成後開啟資料夾	a3de0246
+main.skip_macos_metadata_when	解壓縮時略過 macOS 中繼資料	0ad03852
+main.macosx_folder_files_starting_with	在 Mac 上建立的壓縮檔中，__MACOSX 資料夾、以 ._ 開頭的檔案與 .DS_Store 在 Windows 上沒有用途。略過後將不會解壓縮這些項目，也不影響「單一資料夾」的判斷。	55d759da
+main.keep_files_have_data_error	保留有資料錯誤的檔案	a8ffe63f
+main.when_archive_damaged_cut_off_what	壓縮檔損毀或不完整時，保留可解壓縮的部分（圖片、影片與文字通常仍可使用），完成訊息會列出有錯誤的檔案。關閉時會刪除有錯誤的檔案。密碼錯誤、取消或磁碟空間不足時，一律刪除。	bf3654cc
+main.ask_before_deleting_archive	刪除壓縮檔前先確認	1571593e
+main.ask_once_when_delete_archive	在資料夾樹頂端的壓縮檔上選取「刪除壓縮檔」時，先詢問一次（移至資源回收筒）。關閉後將直接刪除，並回到首頁。	91b986fd
+main.ask_before_deleting_items_from	從壓縮檔刪除項目前先確認	887aebad
+main.ask_once_when_delete_pressed	按 Delete 或選取「刪除」時，先詢問一次。項目會直接從壓縮檔中移除，不會移至資源回收筒，且無法復原（除非啟用下方的備份）。	9963cc68
+main.keep_backup_when_archive_changed	修改壓縮檔時保留備份	0901745b
+main.when_files_archive_added_deleted	加入、刪除、重新命名或編輯壓縮檔中的檔案時，將修改前的壓縮檔保留在同一資料夾（檔名後加 .bak）。每次修改都會覆寫前一份備份。	79f9d4e3
+main.program_editing	編輯用的程式	aad87903
+main.which_program_edit_item_right	右鍵選單中「編輯」所使用的程式。留空時，文字檔使用記事本，其他檔案使用關聯的程式。可輸入完整路徑，例如 C:\\Program Files\\Notepad++\\notepad++.exe。	598afdb5
+main.ask_before_edited_file_goes_back	編輯後存回壓縮檔前先確認	d41240a6
+main.after_edited_file_saved_ask_once	編輯的檔案儲存後，先詢問是否存回壓縮檔。關閉後，儲存時將直接存回。	9bddade2
+main.warn_before_opening_programs	開啟程式、安裝檔與腳本前警告	6a5fabb4
+main.ask_first_when_you_double_click	在壓縮檔中按兩下 .exe、.msi、.bat 等可執行檔案時，先要求確認。	08615072
+main.warn_before_opening_programs_short	開啟程式前警告	a2f7b94b
+main.what_extract_when_opening_program	開啟程式時解壓縮的範圍	0315b5cf
+main.programs_often_need_files_next	程式通常需要同一資料夾中的檔案（DLL、資料檔）。選取「同資料夾」時，會連同子資料夾一起解壓縮至暫存資料夾，再執行程式。	4122dec3
+main.files_same_folder_recommended	同資料夾的檔案（建議）	75241d55
+main.extract_only_file	只解壓這個檔案	88665a9b
+main.close_window_automatically_after	右鍵動作完成後自動關閉視窗	da7d1f80
+main.when_you_extract_compress_from	從右鍵選單解壓縮或壓縮時，全部成功後自動關閉小視窗。關閉此選項可保留視窗以檢視結果。	17b6bcbc
+main.default_format	預設格式	8cb4e197
+main.show_new_archive_file_explorer	壓縮完成後在檔案總管顯示新檔案	900b4e40
+main.test_integrity_after_compressing	壓縮完成後測試完整性	e1b0ecf4
+main.after_compressing_new_archive_read	壓縮完成後自動讀取新的壓縮檔，確認內容無誤。	120ae65a
+main.skip_thumbs_db_automatically	自動略過 Thumbs.db	a643400e
+main.windows_thumbnail_cache_thumbs_db	加入資料夾時，略過 Windows 的縮圖快取檔 Thumbs.db（單獨選取的 Thumbs.db 仍會加入）。	c6a7657e
+main.default_compression_mode	預設壓縮方式	44f064cc
+main.balanced_recommended	平衡（建議）	54966d31
+main.compatibility_first	相容性優先	87d2fc57
+main.smallest_size_slower	最小體積（較慢）	db436898
+main.fastest	最快	4cb3bb0f
+main.archive_view	壓縮檔檢視	2c4e1be2
+main.remember_last_chosen_view	記住上次選擇的檢視	46d5eed2
+main.layout_you_pick_view_menu_details	在「檢視」選單中切換的顯示方式（詳細資料 / 清單 / 圖示），下次開啟壓縮檔時會沿用。開啟此選項時，下方的「預設檢視」由上次的選擇決定。	84a38711
+main.default_view	預設檢視	343256a5
+main.details_has_columns_sorting_list	詳細資料可顯示欄位並排序，清單最為精簡，圖示以大圖示顯示。檢視時可隨時從「檢視」選單切換。	ee3a428f
+main.default_browsing_mode	預設瀏覽模式	0b61ca9a
+main.single_level_shows_one_folder_at	「單層」一次顯示一個資料夾，可使用左側的資料夾樹或路徑列切換。「全部列出」會將所有層級的檔案顯示在同一份清單中。檢視時可隨時使用工具列切換。	636ff574
+main.single_level_folder_navigation	單層（資料夾導覽）	9bab0a04
+main.use_file_icons_windows	使用 Windows 的檔案圖示	eb264ce6
+main.files_folders_lists_folder_tree	清單與資料夾樹中的檔案和資料夾，使用檔案總管的圖示（依檔案類型，與已安裝的程式有關）。關閉時使用 LycanZip 自己的彩色圖示。	d3c508e7
+main.only_works_non_solid_archives	僅適用於非固實的壓縮檔（固實壓縮檔須先解壓縮前面的資料才能讀取一張圖片，因此不產生縮圖）。僅在需要時於背景讀取。	779ea938
+main.row_height	列高	0c1073d4
+main.compact_shows_more_items_at_once	緊湊可同時顯示更多項目	7892119a
+main.compact	緊湊	1df39aa5
+main.comfortable	舒適	2313707a
+main.show_folder_tree	顯示資料夾樹	62e23424
+main.hidden_automatically_when_window	視窗寬度不足時會自動隱藏	8351f46b
+main.hide_macos_metadata	隱藏 macOS 中繼資料	9a117a48
+main.do_not_show_macosx_folder_files	不顯示 __MACOSX 資料夾、以 ._ 開頭的檔案與 .DS_Store。圖片與音訊預覽一律不會包含這些項目。也可從工具列的「檢視」選單切換。	4aff2a0a
+main.stream_files_when_dragging_them	拖出檔案時直接串流（不先解壓縮）	5f7fc9b6
+main.when_dropped_on_explorer_desktop	拖曳到檔案總管或桌面時，於複製的同時進行解壓縮，大型檔案無須等待。部分程式僅接受實際存在的檔案，若無法拖曳至該程式，請關閉此選項（改為先解壓縮至暫存資料夾）。	494e8de9
+main.stream_files_when_dragging_them_out	拖出檔案時直接串流	51bfaabc
+main.image_preview_heading	圖片預覽	6c5de6ef
+main.double_clicking_image	按兩下圖片檔時	172ce1b9
+main.what_happens_when_you_double_click	在壓縮檔中按兩下（或按 Enter）圖片檔時的開啟方式。可隨時從右鍵選單選擇另一種方式。	a9d91a70
+main.open_image_preview	在圖形預覽開啟	73779e96
+main.open_with_associated_app	以關聯程式開啟	dfc8591f
+main.when_audio_file_double_clicked	按兩下音訊檔時	a45d93b9
+main.how_audio_file_inside_archive	在壓縮檔中按兩下（或按 Enter）音訊檔時的開啟方式。可隨時從右鍵選單選擇另一種方式。	4e092015
+main.open_audio_preview	在音訊預覽開啟	2866b8c6
+main.enlarge_small_images_too	小圖也放大	39504dba
+main.by_default_fit_window_width_height	預覽的「符合視窗 / 符合寬度 / 符合高度」預設只縮小大型圖片，不放大小型圖片。開啟後，小型圖片也會放大至符合。	33ef5d12
+main.read_ahead_faster_paging	預讀（加快翻頁）	56bba25f
+main.while_previewing_nearby_images	預覽圖片時，在背景預先讀取前後幾張圖片，以加快翻頁速度。預讀的圖片會佔用記憶體，此為記憶體使用上限。關閉後，每次翻頁都需重新讀取。	ec1e2e27
+main.read_ahead	預讀	8975dc30
+main.256_mb_default	256 MB（預設）	acf42636
+main.2_gb_maximum	2 GB（最大）	dedbdffa
+main.file_associations	檔案關聯	4d95177a
+main.register_lycanzip_as_archive_app	註冊 LycanZip 為壓縮檔程式	b46759ab
+main.after_registering_lycanzip_appears	註冊後，LycanZip 會出現在「開啟檔案的方式」與「預設應用程式」清單中。Windows 不允許程式自行變更預設應用程式，必須由使用者在系統設定中選擇。	6ad5db2f
+main.current_default_apps	目前的預設程式	2da60cf8
+main.open_default_apps_settings	開啟預設應用程式設定	c91c60a7
+main.add_lycanzip_right_click_menu	在右鍵選單加入 LycanZip	7e341f23
+main.files_add_archive_compress_zip_7z	檔案：加入壓縮檔、壓縮成 ZIP / 7z 等。壓縮檔：開啟、解壓縮、測試、預覽等。僅影響目前的使用者，可隨時關閉。在 Windows 11 中會顯示於「顯示其他選項」內。	15d4a5c4
+main.add_lycanzip_windows_11_context	在 Windows 11 新式右鍵選單加入 LycanZip	80b4da17
+main.shown_at_top_level_windows_11	顯示在 Windows 11 右鍵選單的最上層，無須選取「顯示其他選項」。需要已簽署的選單套件。僅影響目前的使用者，可隨時關閉。內容與上方的選單相同，兩者可同時啟用。	478467a0
+main.open_settings_file_location	開啟設定檔位置	3d1c0853
+main.web_site	網站	f1a2cbc2
+main.source_code_on_github	GitHub 上的原始碼	b82f9244
+main.show_welcome_window_again	重新顯示歡迎視窗	60680018
+main.data_location	資料位置	043485f6
+main.diagnostics	診斷	3af2279f
+main.detailed_debug_log	記錄詳細的偵錯訊息	e93621ed
+main.only_errors_warnings_logged_by	預設只記錄錯誤與警告。開啟後，也會記錄開啟的項目、工作的開始與結束，以及所花費的時間。回報問題時很有幫助。	695c5237
+main.log_full_paths	記錄完整路徑	b1556b47
+main.only_file_names_logged_by_default	預設只記錄檔名。記錄不會包含密碼與檔案內容，但可能包含檔案名稱。與他人分享前，請先檢查內容。	433b5937
+main.open_report_folder	開啟記錄資料夾	17984672
+main.copy_diagnostic_information	複製診斷資訊	4688ca9e
+main.copied_clipboard	已複製到剪貼簿	e9dd5680
+main.open_source_mit_compression_engine	開放原始碼（MIT）。壓縮引擎為 7-Zip（LGPL）。RAR 僅支援解壓縮。	0ea369ab
+main.template	範本	3ec1ae06
+main.apply_whole_set_settings_at_once	一次套用整組設定	c061c181
+main.template_modified	已修改	19a532c8
+main.template_options	範本選項	71806c9b
+main.output	輸出	4bed3361
+main.file_name_without_extension	檔名（不含副檔名）	8d28b6a9
+main.file_name_short	檔名	09979a78
+main.change_location	更改位置…	cf2f5d22
+main.change_location_tip	更改位置	04410a88
+main.format_mode	格式與模式	4b4d4074
+main.format	格式	041a5dec
+main.zip_most_compatible_7z_compresses	ZIP 最通用；7z 壓縮率高且可加密檔名；TAR 系列常見於 Linux / macOS。	ca896635
+main.mode	模式	a7b93d21
+main.no_need_understand_parameters_just	無須了解各項參數，選擇適合的取向即可。	be399537
+main.volume_label_optional	磁碟標籤（選填）	da788598
+main.file_name_by_default	預設用檔名	7ce76df4
+main.volume_label	磁碟標籤	ac51eb2d
+main.keep_modified_times_files	保留檔案的修改時間	3cde1626
+main.iso_image_not_compressed_names_can	ISO 不進行壓縮。檔名可使用長檔名與中文，單一檔案須小於 4 GB。	0997b2d3
+main.protection	保護	0f8cc4f3
+main.password_optional	密碼（選填）	408255ed
+main.password	密碼	8be3c943
+main.re_enter_password	再次輸入密碼	aefce7f7
+main.show_password_keep_checked_when	顯示密碼（輸入中文等字元時，請保持勾選）	87f14436
+main.show_password	顯示密碼	044b852f
+main.encrypt_file_names_too_7z_only	連檔名一起加密（僅 7z）	d41e19ce
+main.encrypt_file_names	加密檔名	dd32ed5f
+main.new_archive_read_once_after	完成後自動讀取新的壓縮檔，確認內容無誤。	cae26887
+main.advanced_options	進階選項	63c9e0ba
+main.rarely_needed_leave_defaults_if	一般情況下無須變更。如不確定，請維持預設值。	b7a59502
+main.compression_method	壓縮方法	9d0a4081
+main.auto_picks_by_format_mode_deflate	「自動」會依格式與模式選擇（ZIP 使用 Deflate，7z 使用 LZMA2）。	d621daf6
+main.compression_level	壓縮等級	bd95ecae
+main.overrides_level_mode_store_only	覆寫「模式」的預設等級。「僅儲存」不壓縮，僅將檔案存入壓縮檔。	0605216f
+main.dictionary_size	字典大小	b45d8fe0
+main.larger_usually_compresses_better	數值越大，壓縮率越好，但壓縮與解壓縮時需要的記憶體也越多。僅適用於 LZMA / LZMA2 / PPMd。	1b67795e
+main.word_size	字組大小	b40db3a8
+main.larger_usually_compresses_better_but_slower_ppmd_model_order	數值越大，壓縮率通常越好，但速度較慢。對 PPMd 而言，此值為模型階數。	5f25893d
+main.solid_block	結實區塊	afb6cd9f
+main.compress_several_files_as_one	將多個檔案視為一個連續的資料進行壓縮（僅 7z）。檔案越相似，體積越小，但單獨解壓縮某個檔案時需要讀取較多資料。	779cfd97
+main.store_files_compressed_already	略過已壓縮的檔案	050996e6
+main.photos_music_video_archives_other	照片、音樂、影片、壓縮檔等已壓縮的檔案（64 KB 以上）會直接儲存，不再重複壓縮。速度較快，體積幾乎相同，且 7z 中的圖片仍可使用縮圖檢視（僅 ZIP / 7z）。	d10ed811
+main.cpu_threads	CPU 執行緒數	56bf097a
+main.how_many_processor_cores_use_auto	同時使用的處理器核心數。通常建議選擇「自動」。	117a51b9
+main.zip_encryption_method	ZIP 加密方法	5e788827
+main.aes_256_secure_zipcrypto_weak_use	AES-256 較為安全。ZipCrypto 強度較低，僅在需要以舊版程式開啟時使用。	b4a86163
+main.path_mode	路徑模式	d86f49da
+main.relative_records_only_names_files	「相對路徑」僅記錄所選檔案與資料夾的名稱。「完整路徑」會連同上層資料夾（不含磁碟機代號）一起記錄。	70a31205
+main.split_archive	分割壓縮檔	76b8ba2d
+main.cut_into_several_fixed_size_files	分割成固定大小的多個檔案（僅 ZIP / 7z），便於以電子郵件傳送或存入小容量的隨身碟。	a79972a1
+main.e_g_50_mb_1_5	例如 50 MB、1.5 GB	9115d30d
+main.custom_split_size	自訂分割大小	a0643650
+main.custom_7_zip_parameters	自訂 7-Zip 參數	6b3f8ed7
+main.e_g_mx_9_fb_64	例如：mx=9 fb=64（名稱=值，以空白分隔）	24af3d9a
+main.custom_parameters	自訂參數	3a766c13
+main.passed_straight_compression_engine	直接傳給壓縮引擎，並覆寫上方的同名設定。若拼字錯誤或不適用於此格式，壓縮將失敗並顯示原因。	eff850cb
+main.restore_template_s_settings	還原為此範本的設定	1b4a6951
+main.add_files_button	加入檔案	c06342c8
+main.add_folder_button	加入資料夾	03eb1a44
+main.you_can_also_paste_files_with	也可以使用 Ctrl+V 貼上檔案	8a2b7931
+main.start_compressing	開始壓縮	320e1feb
+main.tasks	工作	090ec5f5
+main.run_background	背景執行	2168ebb5
+main.hide_window_tasks_keep_running	隱藏視窗，工作會繼續在背景執行，完成時顯示通知	40198391
+main.clear_finished	清除已完成	f2630670
+main.collapse_expand	收合 / 展開	66e60822
+main.collapse_task_panel	收合工作面板	9212c96f
+main.when_done	完成後：	bb608489
+main.done	完成	e9b450d1
+main.go	前往 {0}	5d459e5f
+main.unknown	未知	bc7819b3
+main.auto_detect	自動偵測	7dbcac72
+main.big5_traditional_chinese	Big5 (繁體中文)	10ca6be7
+main.gbk_simplified_chinese	GBK (簡體中文)	7b7afee6
+main.shift_jis_japanese	Shift-JIS (日文)	f3beb558
+main.euc_kr_korean	EUC-KR (韓文)	beca3484
+main.opening	正在開啟「{0}」…	bf854cfc
+main.total	，共 {0}	4e479839
+main.many_items_only_part_were_counted	（項目很多，只統計了一部分）	dda11ef4
+main.ok	確定	9ce3bd42
+main.invalid_command_line_arguments	命令列參數錯誤	24f65860
+main.no_files	沒有檔案	ccc17f61
+main.choose_folder_extract	選擇解壓縮的目的資料夾	a743f77c
+main.cannot_open_archive	無法開啟壓縮檔	6e9e4903
+main.file_format_unrecognized_file	無法辨識檔案格式或檔案已損毀：{0}	3e6485f9
+main.cannot_write_settings_file	⚠ 無法寫入設定檔：{0}	db6c0352
+main.there_no_audio_preview_archive	此壓縮檔中沒有可預覽的音訊	267daa15
+main.there_no_images_preview_archive	此壓縮檔中沒有可預覽的圖片	5f6025fe
+main.system_temporary_folder	系統的暫存資料夾	800560c4
+main.use_opened_dragged_files	目前使用：{0}（開啟與拖曳的暫存檔）	4105ba89
+main.location_slow	此位置速度較慢	0fa2c041
+main.network_removable_drive_temporary	「{0}」為網路磁碟或卸除式磁碟，在此存放暫存檔的速度較慢，大型檔案尤其明顯。仍要使用嗎？	2d979968
+main.use_anyway	仍要使用	851fa167
+main.temporary_files_cleared	暫存已清除	ea9cd63a
+main.freed_files_use_not_deleted	已釋放 {0}。使用中的檔案不會被刪除。	d4eb8d2f
+main.not_enough_room_temporary_files	暫存空間不足	8a890f62
+main.about_intermediate_data_has_be_put	需要在暫存位置存放約 {0} 的中繼檔案，但「{1}」僅剩 {2}。	5871d099
+main.temporary_location_full_left	暫存位置「{0}」已滿（剩餘 {1}）。	907bde7d
+main.where_use_instead_local_disks_only	選擇其他位置（僅列出本機磁碟）	75badc65
+main.free	{0}（剩餘 {1}）	43a497f5
+main.no_other_local_disk_has_enough	沒有其他剩餘空間足夠的本機磁碟。請選擇其他資料夾、清出空間，或改用 zip / 7z 格式（不需要暫存）。	067eee04
+main.network_removable_drive_temporary_files_will_be_slow	這是網路磁碟或卸除式磁碟，暫存檔的速度較慢。	fb869f7f
+main.choose_another_folder	選擇其他資料夾…	dede39e2
+main.always_use_temporary_location	以後都用這個暫存位置	74fed9dd
+main.use_location_try_again	使用這個位置並重試	8c4ca207
+main.chosen	自選：{0}	1888501e
+main.tasks_still_running	仍有工作進行中	5071b7ce
+main.still_unfinished_closing_now	仍有 {0} 個工作尚未完成。現在關閉會取消這些工作，未完成的輸出可能不完整。	438e1616
+main.cancel_tasks_close	取消工作並關閉	13c10e10
+main.keep_waiting	繼續等待	9be1abba
+main.integrity_test	完整性測試	911e049a
+main.lycanzip_closed_unexpectedly_at	LycanZip 在 {0} 意外結束。	00a441fb
+main.open_at_time	當時已開啟 {0} 個壓縮檔：	2d012cbd
+main.not_finished	有 {0} 個工作尚未完成：	f6add7bc
+main.destination_extraction_may_contain	解壓縮的目的地可能留有不完整的檔案，請自行檢查。	3f2bf8f0
+main.removed_unfinished_compression	已清除 {0} 個未完成的壓縮暫存檔。	b7eb9a2b
+main.crash_report_including_memory_dump	當機記錄（含記憶體傾印）位於：{0}\n與他人分享前請注意，傾印可能包含檔案路徑與程式記憶體中的內容。	7d581963
+main.lycanzip_closed_unexpectedly_last	LycanZip 上次意外結束	c3563d24
+main.reopen	重新開啟 {0} 個壓縮檔	bd33ef68
+main.opening_several_archives	一次開啟多個壓縮檔	e574ce13
+main.received_archives_at_once_each	一次收到 {0} 個壓縮檔。每個壓縮檔會各開啟一個視窗，視窗過多會佔用較多記憶體。	8daf18ce
+main.open_first	開啟前 {0} 個	0fc9e2e0
+main.open_all	全部開啟（{0} 個）	29644d48
+main.open_only_first	只開啟前 {0} 個	8583caf5
+main.later_volume_split_archive	這是分割壓縮檔的後續分卷	a9f41e5f
+main.volume_split_archive_one_volume	「{0}」是分割壓縮檔的第 {1} 卷，只開啟這一卷無法看到完整的內容。要開啟第一卷「{2}」嗎？	89b33ec6
+main.open_first_volume	開啟第一卷	688511ad
+main.open_volume_anyway	仍開啟這一卷	bd4d8d54
+main.first_volume_was_not_found_only	找不到第一卷「{0}」，只能看到這一卷的部分內容。	4c778d63
+main.moonlight	月光	f61a85a3
+main.blood_moon	血月	a5c48a63
+main.amber_eyes	琥珀眼	e270f95b
+main.aurora	極光	eeee9b76
+main.forest	森林	f41c4e4d
+main.compression_engine_7_zip	壓縮引擎：7-Zip	f93f7e5b
+main.7z_dll_not_found	（找不到 7z.dll）	72359520
+main.settings_file	設定檔：{0}	c819d085
+main.not_set	（尚未設定）	7eae163c
+main.already_lycanzip	　✓ 已是 LycanZip	3e869938
+main.not_registered_yet_turn_on_switch	\n\n尚未註冊。請先開啟上方的選項。	fd8f8732
+main.cannot_update_file_associations	無法更新檔案關聯	fc71ec5a
+main.registered	已註冊	a844fcf8
+main.lycanzip_can_now_handle_archives	LycanZip 現在可處理壓縮檔。\n\nWindows 不允許程式自行變更預設應用程式。請選取「開啟預設應用程式設定」，並在清單中為所需的格式選擇 LycanZip。	0e2f1128
+main.cannot_open_settings	無法開啟設定	2bf2a15a
+main.please_open_settings_apps_default	請手動開啟「設定 → 應用程式 → 預設應用程式」。	9c106eb2
+main.menu_add_to_archive	加入壓縮檔…	2cdc38ad
+main.compress_name_format	壓縮成「名稱.格式」	9b854df6
+main.compress_each_separately_when	分別壓縮（選了多個項目時）	c6a4a30f
+main.compress_with_preset	用範本壓縮	851cb07a
+main.other_formats_tar_gz_tar_xz	其他格式（tar.gz / tar.xz / tar.bz2）	e3e3048c
+main.encrypted_archive	加密壓縮…	284a3b16
+main.open_contents_with_lycanzip_exe	以 LycanZip 開啟內容（.exe、.docx、.jar 等）	ac38e546
+main.hash_values_menu_files_archives	計算雜湊值…（檔案和壓縮檔的選單都有）	75b624c9
+main.open	開啟	cf9b7706
+main.menu_extract_here	解壓縮到此處	5221b51b
+main.extract_folders_same_name	解壓縮到同名資料夾	96adc4e4
+main.extract_recent_folder	解壓縮到最近用過的位置	6fb3e506
+main.extract_all_into_one_folder_when	多個壓縮檔合併解壓（選了多個壓縮檔時）	ca375cec
+main.context_menu_entries	右鍵選單的項目	3cfa8784
+main.choose_which_entries_shown_change	選擇要顯示的項目。變更會在下次開啟右鍵選單時生效，無須重新註冊。	f0265dc5
+main.format_second_compress_entry	第二個「壓縮成」的格式	5ab68322
+main.format_first_compress_entry	第一個「壓縮成」的格式	6dc0d11e
+main.compress_first_format	壓縮成（第一個格式）	5edc11a7
+main.compress_second_format	壓縮成（第二個格式）	2ced4124
+main.files_folders	檔案與資料夾	154f56c1
+main.archives	壓縮檔	a50710e7
+main.templates_compress_with_template	「用範本壓縮」清單中的範本	7eb07671
+main.cannot_update_right_click_menu	無法更新右鍵選單	41826d22
+main.pc_not_running_windows_11_there	此電腦不是 Windows 11，沒有新式右鍵選單。	92fac2bb
+main.version_has_no_signed_menu_package	此版本尚未提供已簽署的選單套件，目前無法啟用。	e2d429cd
+main.store_explorer_note	這是 Microsoft Store 版。右鍵選單與檔案類型是套件的一部分：安裝時由 Windows 加上、解除安裝時由 Windows 移除，所以這裡不需要另外登錄。\n• 右鍵選單：Windows 11 在新式選單與「顯示其他選項」裡，Windows 10 在一般的右鍵選單裡。用下面的開關顯示或隱藏，再往下的清單可以選擇要顯示哪些項目。\n• 檔案類型：LycanZip 會出現在壓縮檔的「開啟檔案」清單裡。要設成預設程式只能由你在 Windows 設定裡選擇（「開啟預設應用程式設定」）。	c2fd0d80
+main.status_built_in	已內建	6b0c36de
+main.setup_skipped	已略過設定	779afd28
+main.you_can_change_everything_later	之後可在「設定」中變更。\n\n右鍵選單與檔案關聯尚未啟用。如有需要，請至「設定」的「檔案總管」頁面自行啟用。	754fa5fa
+main.right_click_menu	右鍵選單	5c5bc6a1
+main.windows_11_right_click_menu	Windows 11 右鍵選單	02d79a93
+main.some_things_could_not_be_set	部分項目設定失敗	6bb5c1e3
+main.you_can_try_again_on_settings	稍後可在設定頁面重試。	c8f33bba
+main.language_changes_after_lycanzip	變更語言後需重新啟動 LycanZip。	ff26419c
+main.status_on	已啟用。	8ec3f656
+main.status_off	未啟用。	f4d4f25d
+main.could_not_add_windows_11_context	無法加入 Windows 11 右鍵選單	16b597e8
+main.could_not_remove_windows_11	無法移除 Windows 11 右鍵選單	a7e0b507
+main.added	已加入	b68734c2
+main.if_menu_does_not_show_up	若右鍵選單尚未出現，請重新啟動檔案總管（工作管理員 → Windows 檔案總管 → 重新啟動），或登出後再登入。	c27ce2d5
+main.lycanzip_was_moved	選單指向另一份 LycanZip	7a919664
+main.still_point_old_folder_so_right	{0}目前指向另一份 LycanZip（或它原本的位置），因此在壓縮檔上按右鍵或按兩下時，不會使用這一份。要改用這一份嗎？\n\n目前使用：{2}\n這一份：{1}	1b1d1b87
+main.use_current_folder	改用這一份	996267fc
+main.do_not_remind_me_again	不再提醒	f66139f0
+main.later	稍後	56e2f5d3
+main.could_not_update_windows_11	無法更新 Windows 11 右鍵選單	eb3bef67
+main.updated	已更新	f2f8570d
+main.if_menu_does_not_show_up_yet_restart_file_explorer_sign_out	若右鍵選單尚未出現，請重新啟動檔案總管，或登出後再登入。	107e9c10
+main.restore_default_settings_title	還原預設設定？	d97b50c9
+main.defaults_theme_accent_color	主題、主題色、背景、檢視、解壓縮與壓縮的預設值都會還原為初始狀態。右鍵選單與檔案關聯屬於系統設定，不會變更。	7b89291d
+main.restore	還原	3cbe6d6b
+main.msix_package_settings_templates	MSIX 套件：設定、範本與記錄儲存在此套件專屬的資料夾中，無法切換。	7430001e
+main.portable_mode_settings_templates	可攜式模式：設定、範本、當機報告與記錄都儲存在程式資料夾中，可將整個資料夾隨身攜帶。	4a5534fd
+main.normal_mode_settings_templates	一般模式：設定、範本、當機報告與記錄儲存在使用者資料夾中。	37ba2b42
+main.folder_settings	設定檔所在的資料夾：{0}	6a708aef
+main.switch_normal_mode_user_folder	切換為一般模式（儲存在使用者資料夾）	2b689843
+main.switch_portable_mode_program	切換為可攜式模式（儲存在程式資料夾）	2961749a
+main.program_folder_cannot_be_written	無法寫入程式資料夾（{0}），因此無法切換為可攜式模式。	95fb9ba1
+main.switching_copies_settings	切換時會將設定檔與範本複製到新位置（保留舊位置的檔案），然後重新啟動 LycanZip。右鍵選單、檔案關聯，以及 Windows 記錄的上次使用資料夾不會一併移動。	ad1754f6
+main.wait_tasks_end_cancel_them_before	請等待工作結束（或取消工作）後再切換資料位置。切換後 LycanZip 會重新啟動。	fb634605
+main.switch_data_location	切換資料位置	b9ccb0f5
+main.settings_templates_copied_program	設定檔與範本會複製到程式資料夾：\n{0}\n\n舊位置的檔案不會被刪除。	19168b9b
+main.settings_templates_copied_user	設定檔與範本會複製到使用者資料夾：\n{0}\n\n程式資料夾中的檔案不會被刪除。	77af4ecc
+main.if_new_place_has_settings_files	若新位置已有設定檔，會先重新命名為 .bak 保留，接著 LycanZip 會重新啟動。	331623d5
+main.switch_restart	切換並重新啟動	0af9174e
+main.could_not_switch	無法切換	dc903253
+main.new_place_cannot_be_written	無法寫入新位置。	922ca063
+main.copying_settings_failed	複製設定檔失敗。	7cf94c4d
+main.flag_file_portable_mode_lycanzip	無法建立或刪除可攜式模式的旗標檔（LycanZip.portable）。	7e4a9017
+main.release_process	放開即可處理	0b69ba01
+main.password_required	需要密碼	b9a6ccd9
+main.wrong_password_please_try_again	密碼不正確，請再試一次。	0cb4d870
+main.file_format_unrecognized_file_damaged	無法辨識檔案格式，或檔案已損毀。	ba46df31
+main.solid_archive	　·　固實壓縮	06afd404
+main.encrypted	　·　已加密	6a7165de
+main.filename_encoding_uncertain	檔名編碼不確定	b637fd26
+main.filename_encoding_detected	已自動偵測檔名編碼	c41d79fe
+main.currently_using_if_file_names_look	目前使用 {0}。若檔名顯示為亂碼，請在右上角切換編碼。	0e4991b7
+main.found_matching_including	找到 {0} 個符合「{1}」的項目（含子資料夾）	4962ec29
+main.list_all_suffix	（全部列出）	c0df9304
+main.image_thumbnails_on_but_double	已啟用圖片縮圖，但{0}。可按兩下圖片以進入預覽。	8f08dad3
+main.archive_solid_so_no_thumbnails	此壓縮檔為固實壓縮檔，不產生縮圖（讀取一張圖片須先解壓縮前面的資料）	3d10c64f
+main.archive_format_cannot_read_single	此壓縮檔格式無法單獨讀取一張圖片，因此不產生縮圖	dd45aa8f
+main.show_image_thumbnails_icon_view_not_supported_by_archive	圖示檢視顯示圖片縮圖（此壓縮檔不支援：{0}）	7b2d680e
+main.solid_compression	固實壓縮	d4b061ba
+main.format_limitation	格式限制	77990b7f
+main.selected	已選 {0} 項（{1}）	473c83af
+main.opened_with_associated_app_instead	「{0}」：{1}，已改用關聯程式開啟。	a21d068c
+main.cannot_open	無法開啟	2d89e8d4
+main.file_s_name_unsafe_was_rejected	此檔案的名稱不安全，已拒絕處理：{0}	cf8dc0a1
+main.run_program	要執行這個程式嗎？	46ca4a8c
+main.comes_from_archive_will_run	「{0}」來自壓縮檔，開啟後將執行程式。請確認此壓縮檔的來源可信。	10f4b5fe
+main.which_files_should_be_extracted	要解壓縮哪些檔案？	1229b4ee
+main.needed_when_program_uses_files	程式需要同一資料夾中的檔案（DLL、資料檔）才能正常執行	8b6ce301
+main.faster_but_program_may_not_find	速度較快，但程式可能找不到所需的檔案	4c00f206
+main.do_not_warn_again_can_be	不再警告（可在設定中重新開啟）	bec2f6f9
+main.extract_run	解壓縮並執行	981f5190
+main.folder_large	資料夾很大	2e4d06e1
+main.folder_program_extract_all	此程式所在的資料夾共 {0}。要全部解壓縮至暫存資料夾嗎？	d10693c7
+main.extract_whole_folder	解壓整個資料夾	4f31642e
+main.temporary_folder_not_found	找不到暫存資料夾。	79302ba5
+main.global	全域	5f1184f7
+main.open_archive_on_new_archive_page	開啟壓縮檔（新增壓縮檔頁面中：加入檔案）	a4518fd3
+main.new_archive_choose_files	新增壓縮檔（選擇檔案）	b9c7a9ba
+main.new_archive_choose_folder	新增壓縮檔（選擇資料夾）	6605bd77
+main.open_close_settings	開啟 / 關閉設定	e0ce3034
+main.go_back_close_current_page	返回 / 關閉目前頁面（設定、新增壓縮檔）；取消選取	6a8d6fc4
+main.show_collapse_task_panel	顯示 / 收合任務面板	72198a66
+main.clear_finished_tasks	清除已完成的工作	f74ece90
+main.paste_files_folders_new_archive	貼上檔案和資料夾（新增壓縮檔頁面：加入來源；壓縮檔檢視：加入目前的資料夾）	0bf8a669
+main.open_selected_item_file_enter	開啟選取的項目（檔案 / 進入資料夾）	ef8adbe5
+main.rename_selected_item_zip_7z_tar	重新命名選取的項目（ZIP、7z、tar 可以直接修改）	69f94962
+main.delete_selected_items_from_archive	從壓縮檔刪除選取的項目	375cf716
+main.extract_here_only_selected_items	解壓縮到此（有選取時只解壓選取項目）	04e856b3
+main.extract_only_selection_when	解壓縮到…（有選取時只解壓選取項目）	6d103e1a
+main.image_preview_selected_image_first	圖形預覽（選取的圖片，沒有選取就從第一張開始）	f69ab870
+main.audio_preview_selected_audio_file	音訊預覽（選取的音訊，沒有選取就從第一首開始）	9c2bf077
+main.properties_with_nothing_selected	內容（沒有選取項目時是壓縮檔資訊）	ca0275f1
+main.view_details	檢視：詳細資料	9e796f77
+main.view_list	檢視：清單	f4dbfacf
+main.view_icons	檢視：圖示	8c3db71f
+main.list_all_flatten_all_levels	全部列出（展平所有層級）	529ca6af
+main.show_hide_folder_tree	顯示 / 隱藏資料夾樹	c5494f49
+main.close_archive_return_home_page	關閉壓縮檔，回到首頁	04638611
+main.new_archive_page	新增壓縮檔頁面	f947afdb
+main.save_as_new_template	另存為新範本	17ba4ccc
+main.image_preview_window	圖片預覽視窗	ec61a865
+main.previous_next	上一張 / 下一張	7c1da99c
+main.space_pageup_pagedown_mouse_wheel	← ↑ / → ↓　Space　PageUp / PageDown　滾輪	f908d0de
+main.first_last	第一張 / 最後一張	14f40dcd
+main.view_mode_fit_window_actual_size	檢視模式：符合視窗 / 原圖尺寸 / 符合寬度 / 符合高度（F 在符合與原圖間切換，按兩下圖片也可）	fa6029fa
+main.zoom_out_when_zoomed_drag_use	放大 / 縮小（放大後可拖曳或使用方向鍵平移）	5a2fa0f2
+main.ctrl_wheel	+ / −　Ctrl + 滾輪	bc638ffc
+main.rotate_changes_display_only	旋轉（只改變顯示）	405dfb25
+main.full_screen_thumbnail_strip	全螢幕 / 縮圖列	88913a74
+main.copy_image_copy_path	複製圖片 / 複製路徑	09e858fb
+main.save_image_as_open_with_associated	另存圖片… / 以關聯程式開啟	53dc2b40
+main.animations_gif_animated_webp_play	動圖（GIF、動態 WebP）播放 / 暫停	1d607f16
+main.image_info_size_format_photo_info	圖片資訊（尺寸、格式、拍攝資訊…）	0a6c72d5
+main.menu_button_at_top_right_right	選單（右上角的「⋯」按鈕，或在圖片上按右鍵）：包含以上動作與圖片資訊	ee9b5c43
+main.right_click	右鍵	602314c6
+main.close_leaves_full_screen_first	關閉（全螢幕時先離開全螢幕）	55020fc9
+main.dialogs	對話框	0fd66db1
+main.ok_cancel	確定 / 取消	00e849be
+main.open_archive_ctrl_o	開啟壓縮檔（Ctrl+O）	12c2f60d
+main.new_archive_ctrl_n	新增壓縮檔（Ctrl+N）	d8dca725
+main.settings_ctrl	設定（Ctrl+,）	ea5e4c7d
+main.back_home_ctrl_w	回到首頁（Ctrl+W）	531d2d2a
+main.extract_ctrl_shift_e	解壓縮到…（Ctrl+Shift+E）	7bf5df69
+main.up_one_level_backspace_alt	上一層（Backspace / Alt+↑）	55c26440
+main.collapse_expand_ctrl_j	收合 / 展開（Ctrl+J）	b5073496
+main.start_compressing_ctrl_enter	開始壓縮（Ctrl+Enter）	ebaa754f
+main.cancel_esc	取消（Esc）	9c2c5ec0
+main.back_esc	返回（Esc）	7cfd2c37
+main.self_extracting_archive	這是自解壓縮檔嗎？	2ffbf2b6
+main.contains_compressed_data_format	「{0}」內含壓縮資料（格式：{1}）。\n\n開啟內容會列出其中的檔案，不會執行此程式。	3a8b37b3
+main.open_contents	開啟內容	664328f0
+main.add_to_archive_title	加入壓縮檔	b17b8c86
+main.no_images_preview	沒有可以預覽的圖片	db66f618
+main.there_no_images_current_folder	目前的資料夾（或搜尋結果）中沒有圖片。	558dab0e
+main.no_audio_preview	沒有可以預覽的音訊	929bfe99
+main.there_no_audio_files_current	目前的資料夾（或搜尋結果）中沒有音訊檔案。	10df04a2
+main.cannot_preview_use_open_with	無法預覽「{0}」：{1}。請從右鍵選單選取「以關聯程式開啟」。	32b8bd8e
+main.sort_by	排序方式	a2a5bdec
+main.packed_size	壓縮後大小	9fc7e0d3
+main.switch_single_level_browsing	改為單層瀏覽	91da4dea
+main.edit_put_back_into_archive	編輯並存回壓縮檔	81ca35a9
+main.calculate_hash_values	計算雜湊值…	78ef4a80
+main.go_containing_folder	移到所在資料夾	c294be0e
+main.properties	內容	bc6c88db
+main.add_files_folder	加入檔案到此資料夾…	6c361b03
+main.rename	重新命名	d3f4cb89
+main.delete	刪除	f6fdbe48
+main.show_explorer	在檔案總管顯示	7e922b30
+main.copy_file_path	複製檔案路徑	41884566
+main.delete_archive	刪除壓縮檔…	82ce5b59
+main.delete_archive_title	刪除壓縮檔？	0eb59598
+main.move_archive_recycle_bin_you_can	要將此壓縮檔移至資源回收筒嗎？可從資源回收筒還原。	88413552
+main.drive_archive_has_no_recycle_bin	⚠ 此壓縮檔所在的磁碟無法使用資源回收筒，刪除後將無法還原。	541c1b51
+main.delete_without_asking_from_now_on	以後直接刪除，不再詢問	02d8001c
+main.move_recycle_bin	移到資源回收筒	9176708b
+main.delete_permanently	永久刪除	e63b5153
+main.archive_could_not_be_deleted	無法刪除壓縮檔	28085c64
+main.file_may_be_use_by_another	檔案可能正由其他程式使用，或沒有存取權限。	2513b6ea
+main.archive_being_changed_please_wait	正在修改壓縮檔，請等待作業完成。	9a12ea3e
+main.archive_cannot_be_changed_directly	無法直接修改此類壓縮檔	264c796a
+main.cannot_be_changed_place_only_zip	無法直接在「{0}」中加入、刪除或重新命名項目（僅 ZIP、7z、tar 支援，且不可為分卷或 tar.gz 等雙層格式）。請先解壓縮，或另行建立新的壓縮檔。	8addc9e6
+main.archive_read_only	壓縮檔是唯讀的	00d01975
+main.file_set_read_only_cannot_be	此檔案已設為唯讀，無法修改。請先在檔案的內容中取消「唯讀」。	08f46060
+main.archive_could_not_be_changed	無法修改壓縮檔	d2a95613
+main.will_take_while	作業需要一些時間	4363058a
+main.about_solid_archive_has_be	此固實壓縮檔中約有 {0} 的內容需要先解壓縮再重新壓縮，作業需要一些時間。要繼續嗎？	d7babaad
+main.nothing_update	沒有需要更新的檔案	ca4c07dd
+main.files_archive_up_date_none_files	壓縮檔中的檔案已是最新（磁碟上的檔案沒有較新的版本），未進行任何修改。	66b74d9d
+main.some_files_were_not_added	有些檔案沒有加入	8bfa612a
+main.archive_was_changed_but_file_s	壓縮檔已修改，但有 {0} 個檔案因無法讀取而未加入：\n{1}	01f83dfe
+main.status_added	加入 {0} 項	3f289bed
+main.deleted	刪除 {0} 項	a7b9b638
+main.renamed	改名 {0} 項	d7b112a0
+main.new_folder_s	新增 {0} 個資料夾	c9f13ba4
+main.unchanged	沒有變動 {0} 項	19d70cc2
+main.archive_changed	已修改壓縮檔：{0}	96d0198b
+main.already_compressed_file_s_stored	（{0} 個已壓縮的檔案直接儲存）	2adb9906
+main.items_with_same_name	有同名的項目	d15d9d1f
+main.archive_already_has_items_with	壓縮檔中已有 {0} 個同名的項目。同名的資料夾會合併。同名的檔案要如何處理？	955b341f
+main.replace_add	取代並加入	a99afac9
+main.files_same_name_always_replaced	同名的檔案一律取代為這次的檔案，並加入新的檔案。	5b8ba483
+main.update_add	更新並加入	88959e8b
+main.file_replaced_only_if_one_on	僅在磁碟上的檔案較新時才取代，並加入新的檔案。	32cb83f7
+main.update_existing_only	僅更新現有	0500c630
+main.only_files_archive_newer_on_disk	僅更新壓縮檔中已有且磁碟上較新的檔案，不加入新的檔案。	35f981f8
+main.file_already_exists	檔案已經存在	b1b0ec61
+main.add_to_this_archive	加入到這個壓縮檔	5a23e49d
+main.add_these_files_what_not	加入這次的檔案，原有的內容不會重新壓縮（請在下方選擇同名檔案的處理方式）。	c38aabe2
+main.save_as_new_file	另存新檔	ae076f13
+main.saved_as	存成「{0}」。	cc3ec09c
+main.replace	取代它	5e4bd6c5
+main.old_archive_replaced_by_one	舊的壓縮檔將被這次的壓縮檔取代。	ffe726e3
+main.replace_add_files_same_name_always	取代並加入：同名的檔案一律取代為這次的檔案	cc6a9b1f
+main.update_add_replace_only_if_newer	更新並加入：僅在磁碟上的檔案較新時取代，並加入新的檔案	5a9b4e05
+main.update_existing_only_only_files	僅更新現有：僅更新壓縮檔中已有且較新的檔案	31f64ae0
+main.synchronize_make_archive_match	同步：使壓縮檔與這次的內容一致（取代不同的檔案，刪除多餘的檔案）	6340c109
+main.how_treat_files_same_name	同名檔案的處理方式	0eb02b54
+main.cannot_synchronize	無法同步	5dab3b72
+main.synchronizing_deletes_items_from	同步會刪除壓縮檔中的項目	83743985
+main.items_archive_no_longer_exist	壓縮檔中有 {0} 個項目在資料夾中已不存在，同步時會將它們刪除（另外加入 {1} 個、取代 {2} 個，{3} 個沒有變動）。	04186ca2
+main.more	…還有 {0} 個	f459eedf
+main.synchronize	同步	8dd29207
+main.choose_folder_add	選擇要加入的資料夾	f8d6f042
+main.name_cannot_be_empty_contain	名稱不可為空白，也不可包含反斜線、引號或 / : * ? < > | 等符號。	fb27523c
+main.new_folder_name	新增資料夾	a711999b
+main.name_already_exists	名稱已存在	1be78559
+main.there_already_item_called_here	這裡已有名為「{0}」的項目。	38378553
+main.delete_from_archive	從壓縮檔刪除？	83290f91
+main.delete_one_from_archive	要把「{0}」從壓縮檔刪除嗎？	5bb9cc9c
+main.delete_these_items_from_archive	要把這 {0} 個項目從壓縮檔刪除嗎？	e9d5f1d5
+main.items_taken_out_archive_itself_not	項目會直接從壓縮檔中移除，不會移至資源回收筒。修改前的壓縮檔會保留為 .bak。	5e7d72d9
+main.items_taken_out_archive_itself_not_moved_recycle_bin_cannot_be	項目會直接從壓縮檔中移除，不會移至資源回收筒，且無法復原。	0f5da694
+main.editing_after_you_save_you_asked	正在編輯「{0}」。儲存後會詢問是否存回壓縮檔。	586def92
+main.archive_was_changed	壓縮檔被改動了	366dc893
+main.while_was_being_edited_another	編輯「{0}」期間，壓縮檔已被其他程式變更，因此無法存回。修改後的檔案仍保留在：\n{1}	24f0efc0
+main.file_no_longer_archive	壓縮檔中已沒有此檔案	f9987d8f
+main.no_longer_archive_deleted_renamed	「{0}」已不在壓縮檔中（已被刪除或重新命名），因此無法存回。修改後的檔案仍保留在：\n{1}	ac36e3a6
+main.put_back_into_archive	存回壓縮檔？	3c42975b
+main.was_changed_put_back_into_archive	「{0}」已修改。要將它存回壓縮檔嗎？	62e00081
+main.put_back_without_asking_from_now	之後直接存回，不再詢問	819757d5
+main.put_back	存回	7ac2f9d6
+main.not_now	暫不存回	e4571490
+main.changes_not_yet_put_back_into	有修改尚未存回壓縮檔	22e53f53
+main.file_you_edited_has_not_been	編輯過的檔案尚未存回壓縮檔。若現在關閉，將不會存回。	bf9dfbb6
+main.close_without_putting_back	不存回，直接關閉	8f179b2b
+main.path	路徑：{0}\n	e0db47b5
+main.type_folder	類型：資料夾\n	94ff5341
+main.contains_total	內含：{0} 個檔案，共 {1}\n	4259cf09
+main.type_file	類型：檔案\n	7a6a1e42
+main.info_size	大小：{0}（{1} 位元組）\n	9d5aef53
+main.info_packed	壓縮後：{0}	44e26b42
+main.info_modified	修改時間：{0}\n	c8e8d841
+main.info_encrypted	已加密\n	4f568b30
+main.crc_32_stored_archive	CRC-32（壓縮檔中記錄的值）：{0}\n	dbeb7ece
+main.after_completion_show_explorer	完成後在檔案總管顯示	d67b4ad6
+main.after_completion_test_integrity	完成後測試完整性	5c3adc49
+main.close_window	關閉視窗	e3896a93
+main.after_completion_close_window	完成後關閉視窗	1a56e2f5
+main.extract_here_no_folder	解壓縮到此（不建資料夾）	158be682
+main.extract_folder	解壓縮到「{0}」資料夾	28142937
+main.extract_here_automatic	解壓縮到此（自動判斷）	cc88ab76
+main.extract_here_straight_into_folder	解壓縮到此，內容直接放入目前資料夾，不建立資料夾（Ctrl+E）	60c2166e
+main.extract_here_always_into_folder	解壓縮到此，一律建立「檔名」資料夾（Ctrl+E）	e6c93a87
+main.extract_here_ctrl_e_creates_name	解壓縮到此（Ctrl+E）：內容僅有一個資料夾時直接放入，否則自動建立「檔名」資料夾	d61281e2
+main.scan_could_not_run	無法掃描	464a3106
+main.scan_hands_files_antivirus_product	掃描會將檔案交由已安裝的防毒軟體檢查。LycanZip 本身沒有掃描引擎。	1da8ab74
+main.blocked_by_system_policy	（被系統原則封鎖）	593a966e
+main.threat_names_logged_by_windows	Windows Defender 記錄的威脅名稱：{0}	d37f8e79
+main.suspicious_files_found	發現可疑的檔案	8da644aa
+main.installed_antivirus_product_thinks	已安裝的防毒軟體判定此壓縮檔中有 {0} 個檔案可能有問題：	4fe67854
+main.do_not_open_these_files_antivirus	請勿開啟這些檔案。此為防毒軟體的判斷，可能有誤判。未列出的檔案也不代表一定安全。	9e59a0a4
+main.ask_every_time_no_automatic_choice	每次詢問（不自動）	81733972
+main.keep_newer	保留較新的	f1be0c4d
+main.keep_older	保留較舊的	c09ddf2c
+main.keep_larger	保留較大的	49e494d8
+main.keep_smaller	保留較小的	6a8207d4
+main.skip_if_contents_identical	內容相同時略過，其餘情況兩者皆保留	0819267c
+main.archive_unpacks_something_very_big	此壓縮檔展開後非常大	0fd7d9d3
+main.archive_only_unpacks_about_times	壓縮檔只有 {0}，展開後約 {1}（{2} 倍）。	a8955bec
+main.unpacks_about	展開後約 {0}。	5e6f45a7
+main.far_more_than_normal_archive_may	這遠大於一般的壓縮檔。可能是壓縮炸彈（刻意製作成體積很小、展開後會佔滿磁碟的檔案），也可能是正常檔案，例如虛擬機器的磁碟映像。若不確定來源，建議取消。	3766aeb6
+main.do_not_check_again_can_be	不再檢查（可在設定中重新開啟）	393f5426
+main.continue_extracting	繼續解壓縮	fa29f5e2
+main.conflict_title	檔案已存在	b1b0ec61
+main.same_size	大小相同	e9c1aa54
+main.larger	較大	acd1be8c
+main.smaller	較小	9c3c295f
+main.existing_file	既有檔案	d49f7a8d
+main.newer	較新	56b079ac
+main.version_archive	壓縮檔內的版本	27d73a30
+main.older	較舊	63f34dd2
+main.same_time	時間相同	d10b2ff6
+main.conflict_archive_version	壓縮檔內的版本{0}。	bfce5d04
+main.what_would_you_like_do	要怎麼處理？	7b52603b
+main.overwrite_existing_file	覆寫既有檔案	a232a5a5
+main.replace_with_version_archive	以壓縮檔內的版本取代	ab8f8b33
+main.keep_both	兩者都保留	60c801a8
+main.new_file_renamed_automatically	新檔案會自動重新命名，不會遺失任何資料	eee3a7ca
+main.skip_file	略過這個檔案	23150e3b
+main.keep_existing_file_do_not_extract	保留既有檔案，不解壓縮此檔案	4d4262b7
+main.apply_same_choice_all_later	對之後所有衝突套用相同的選擇	8dfd3ccc
+main.choose_automatically	或自動選擇	0598ff5b
+main.automatic_choice	自動選擇	0c5a72b3
+main.cancel_extraction	取消解壓縮	89ecef59
+main.choose_folder_compress	選擇要壓縮的資料夾	c24a7020
+main.smallest_size	最小體積	ba07b565
+main.balanced	平衡	03342dbb
+main.store_only	僅儲存	6aadc26d
+main.level	等級 {0}	8051c09f
+main.single_solid_block	單一結實區塊	82518e40
+main.non_solid	非結實	0226bd71
+main.password_protected_incl_file_names	密碼保護（含檔名）	19e5f976
+main.password_protected	密碼保護	09d9e174
+main.split	分割 {0}	678d4e6a
+main.full_path	完整路徑	29e5ac46
+main.by_mode_default	依模式（預設）	54270810
+main.store_only_no_compression	僅儲存（不壓縮）	e3e66261
+main.1_fastest	1　最快	04d90b7d
+main.3_fast	3　快速	5385054d
+main.5_normal	5　標準	530f5284
+main.7_maximum	7　最大	5d52542d
+main.9_ultra	9　極限	d39524fd
+main.auto	自動	c614ba7c
+main.non_solid_each_file_separately	非結實（每個檔案獨立）	c7d92841
+main.all_single_block_smallest	全部（單一區塊，最小）	189a729d
+main.by_mode_aes_256	依模式（AES-256）	0bbe88ff
+main.zipcrypto_compatible_with_old	ZipCrypto（相容舊程式）	8d6b9b84
+main.relative_path	相對路徑	da42f64e
+main.full_path_without_drive_letter	完整路徑（不含磁碟機代號）	3809d0df
+main.do_not_split	不分卷	c6e64721
+main.25_mb_e_mail_attachment	25 MB（電子郵件附件）	41991e74
+main.4_gb_fat32_limit	4 GB（FAT32 上限）	2ef4a47e
+main.custom	自訂…	dce04fd3
+main.choose_output_folder_archive	選擇壓縮檔的輸出資料夾	595ed9c9
+main.menu_save_as_new_template	另存為新範本…	062f4db3
+main.update_template_with_current	用目前的設定更新這個範本	e0496ccb
+main.menu_rename_template	重新命名…	94ac9a58
+main.delete_template	刪除這個範本	9414be5d
+main.show_right_click_menu_compress	顯示在右鍵選單的「用範本壓縮」	3bfd9a94
+main.fixed_format	（此格式固定）	383cd7ca
+main.two_passwords_do_not_match	兩次輸入的密碼不一致。	4edbd2dc
+main.zip_passwords_can_only_use_letters	ZIP 的密碼只能使用英數字與一般符號。若要使用中文等字元，請改選 7z。	49150c83
+main.zipcrypto_weakly_encrypted	ZipCrypto 的加密強度較低。如需較高的安全性，請改用 AES-256（模式選擇「平衡」，加密方法選擇「AES-256」）。	eb3cf368
+main.iso_images_not_compressed_do_not	ISO 沒有壓縮，也不支援密碼與分割。	ef7b274d
+main.tar_family_does_not_support	TAR 系列不支援密碼與分割。	971a8929
+main.no_password_entered_yet_so_file	尚未輸入密碼，因此不會加密檔名。	39a1b880
+main.save	儲存到：{0}	a01152d1
+main.invalid_file_name_chars	檔名不可為空，也不可包含 \\ / : * ? " < > |	6e20e19f
+main.output_file	輸出檔名：{0}	33bf7452
+main.split_into_001_002	（分割為 .001、.002…）	fbc7ce35
+main.invalid_file_name	檔名不正確。	a1bff97e
+main.please_add_files_folders_compress	請先加入要壓縮的檔案或資料夾。	67c7cad5
+main.invalid_split_size_enter_size_like	分割大小的格式不正確。請輸入例如「50 MB」或「1.5 GB」的大小（至少 64 KB；未指定單位時視為 MB）。	f35af639
+main.custom_parameters_set_if_they_do	已設定自訂參數。若不適用於此格式，壓縮將失敗並顯示原因。	a4d08a9d
+main.sources	來源（{0} 項）	ba3b4da5
+main.remove	移除	e963907d
+main.and_n_more_sources	…另有 {0} 項	f459eedf
+main.calculating	計算中…	c5737794
+main.delete_originals	刪除原始檔案	150eb4d3
+main.some_items_were_skipped_so	　（有略過的項目，不提供刪除原始檔案）	249c1c7d
+main.integrity_test_passed	　完整性測試通過	a3039500
+main.data_after_end_compressed_stream	，{0} 個項目結尾有多餘資料（內容已確認完整）	a13e3dd4
+main.integrity_test_failed	　⚠ 完整性測試失敗：{0}	cf1323ef
+main.integrity_test_cancelled	　（完整性測試已取消）	556b443a
+main.nothing_delete	沒有可以刪除的項目	7acb2e0c
+main.originals_no_longer_exist_they	原始檔案已不存在，或其中包含新的壓縮檔。	94521e2c
+main.new_archive_was_not_found	找不到新的壓縮檔	db4dd6ab
+main.new_archive_gone_so_originals_will	找不到新的壓縮檔，因此不會刪除原始檔案。	06ab4c73
+main.delete_originals_title	刪除原始檔案？	500d32bc
+main.delete_original_archive_title	刪除原壓縮檔？	e09267fc
+main.move_recycle_bin_you_can_restore	要將 {0} 個項目移至資源回收筒嗎？可從資源回收筒還原。	49ce89f1
+main.drive_cannot_use_recycle_bin	⚠ 這 {0} 個項目所在的磁碟無法使用資源回收筒，刪除後將無法還原。	60f2dd07
+main.new_archive_passed_integrity_test	新的壓縮檔已經通過完整性測試。	95a88575
+main.integrity_test_new_archive_failed	⚠ 新的壓縮檔未通過完整性測試。原始檔案可能是唯一完整的備份，不建議刪除。	bfd538a9
+main.new_archive_has_not_been_tested	⚠ 尚未測試新壓縮檔的完整性。建議先選取「測試完整性」，確認無誤後再刪除。	7cc91b5c
+main.new_archive_inside_one_source	新的壓縮檔位於其中一個來源資料夾中，該來源不會被刪除。	dd7521da
+main.moved_recycle_bin	　已把 {0} 個項目移到資源回收筒	0172199d
+main.status_deleted_items	　已刪除 {0} 個項目	ff13ae6b
+main.not_deleted	　（{0} 個項目沒有刪除）	e3b12b2b
+main.template_name	範本名稱	954ab955
+main.up_40_characters_no_allowed	最多 40 個字元，不可包含 [ ]。範本只記錄壓縮設定，不會儲存密碼。	56660810
+main.my_template	我的範本	feab8114
+main.invalid_name	名稱不正確	bb1826ee
+main.name_cannot_be_empty_contain_line	名稱不可為空白，不可包含 [ ] 或換行，最多 40 個字元，開頭與結尾不可有空白。	20720a40
+main.template_with_name_already_exists	已有同名的範本，請使用其他名稱。	1eef553b
+main.rename_template	重新命名範本	1e32c6e1
+main.delete_template_title	刪除範本？	56396035
+main.delete_template_cannot_be_undone	要刪除範本「{0}」嗎？此動作無法復原。	e50df843
+main.wrong_password	密碼不正確	fc2066fe
+main.archive_could_not_be_opened_with	無法使用剛才輸入的密碼開啟此壓縮檔。請再次選取「解壓縮」，並重新輸入密碼。	34ba58c8
+main.delete_original_archive	刪除原壓縮檔	132fc098
+main.some_items_could_not_be_processed	部分項目未能處理	91b6c84e
+main.change_archive	修改壓縮檔	ea98cf6d
+main.op_failed	{0}失敗	64e16e18
+main.complete	{0}完成	adf4aeab
+main.succeeded	{0} 個完成	70835f42
+main.suffix_n_failed	、{0} 個失敗	f41037c2
+main.progress	{0} 個進行中	6ba4b16f
+main.n_failed	{0} 個失敗	64e16e18
+main.all_done	全部完成	7268efa6
+main.hash_values	雜湊值	c7455cfb
+main.item_s_archive	壓縮檔「{0}」裡的 {1} 個項目	0b9e61f3
+main.paste_hash_value_compare	貼上要比對的雜湊值	8b1ffac1
+main.example_sha_256_written_on_website	例如網站上提供的 SHA-256（依長度判斷演算法）	838740ff
+main.hash_value_compare	比對的雜湊值	3e0522ec
+main.match_only_means_file_same_as	符合只代表檔案與貼上的值相同，該值是否可信，取決於其來源。MD5 與 SHA-1 可用來偵測檔案損毀，但無法防止檔案被人為竄改。	294fb115
+main.more_file_s_not_listed_save	…另有 {0} 個檔案未列出（「儲存為校驗檔」會包含全部檔案）	fc8359d8
+main.not_hash_value_only_0_9	這不是雜湊值。只能包含 0–9 和 a–f（可含空白、連字號，或開頭的 0x）。	8db4145b
+main.length_digits_matches_no_algorithm	長度（{0} 位）不符合任何演算法。CRC-32 為 8 位、MD5 為 32 位、SHA-1 為 40 位、SHA-256 為 64 位、SHA-384 為 96 位、SHA-512 為 128 位。	86ef5264
+main.still_calculating	仍在計算…	624c0ce1
+main.match	✓ 相符：{0}（{1}）	5d3acc60
+main.has_not_been_calculated_tick_above	尚未計算 {0}，請在上方勾選。	3f6489aa
+main.no_match_no_file_has	✗ 不相符：沒有任何檔案的 {0} 與此值相同。	133cb393
+main.save_as	儲存為 .{0}…	f0bdc77f
+main.calculating_progress	計算中… {0}%（{1} / {2}）	c8a8358b
+main.there_nothing_calculate	沒有可以計算的檔案。	6fc8debb
+main.done_file_s	完成：{0} 個檔案，{1}	739e7fd5
+main.could_not_be_calculated	；{0} 個無法計算	fb91acb6
+main.copy_all	複製全部	9da9f044
+main.copied_to_clipboard_period	已複製到剪貼簿。	fee2a7f7
+main.save_checksum_file	儲存校驗檔	f3f3218a
+main.could_not_save	無法儲存	3b89fc9a
+main.could_not_write	無法寫入「{0}」。	84647b8c
+main.saved	已儲存：{0}	7810f2d3
+main.info_location	位置	d219c681
+main.file_size	檔案大小	45d0df35
+main.file_s_folder_s	{0} 個檔案、{1} 個資料夾	48e27f88
+main.archive	；壓縮檔是它的 {0}%	ecc6d261
+main.original_size	原始大小	983bb440
+main.yes	是	5397e058
+main.no	否	816c52fd
+main.block_s	（{0} 個區塊）	d74365de
+main.solid	固實	d0063586
+main.info_encrypted_label	加密	bde2fbb6
+main.yes_encrypted_file_s	是（{0} 個加密的檔案）	545f5a09
+main.volumes	分卷	39c0ee03
+main.volume_s	{0} 個分卷	65a2cc5a
+main.can_be_changed	可以修改	0bb21756
+main.yes_files_can_be_added_deleted	是（可以加入、刪除、重新命名）	f5cd1343
+main.no_format_can_only_be_extracted	否（這個格式只能解壓縮）	b75cf7d1
+main.archive_comment	壓縮檔註解	7ec7e1af
+## welcome
+welcome.welcome_lycanzip	歡迎使用 LycanZip	2a1448ba
+welcome.free_open_source_ad_free_light	開放原始碼、無廣告的輕量壓縮工具。請先選擇偏好的設定，之後可在設定頁面變更。	f8c5f342
+welcome.language_changes_after_restart	變更語言後需重新啟動。	8fd16493
+welcome.short_sound_when_task_finishes	工作完成或失敗時播放的提示音。開啟時會先播放一次作為試聽。	12bb78d5
+welcome.when_show_animations_off_windows	若 Windows 的「顯示動畫」已關閉，無論此處如何設定都不會播放。	87e4ec47
+welcome.double_click_picture_opens_preview	按兩下圖片：在預覽視窗開啟	4d368b3b
+welcome.double_click_picture_opens	按兩下圖片：以關聯程式開啟	717eddfc
+welcome.double_click_audio_file_plays	按兩下音訊檔：在播放器播放	885b47e1
+welcome.double_click_audio_file_opens	按兩下音訊檔：以關聯程式開啟	6fe22413
+welcome.view_preview	檢視與預覽	ed24cabc
+welcome.how_archive_shown_when_opened	開啟壓縮檔時的顯示方式。	78eef94a
+welcome.pictures_show_thumbnails_other	圖片顯示縮圖，其他檔案的圖示大小相同。	1f63a826
+welcome.default_format	預設壓縮格式	8cb4e197
+welcome.zip_works_everywhere_7z_compresses	ZIP 最通用；7z 壓縮率高。	fdfb81fa
+welcome.double_click_picture_archive_open	按兩下壓縮檔中的圖片時，在預覽視窗中開啟。	c3ec0168
+welcome.double_click_audio_file_archive	按兩下壓縮檔中的音訊檔時，直接在播放器中播放。	44a51cab
+welcome.integrate_with_windows	整合到 Windows	8840c0f7
+welcome.only_step_changes_system_nothing	這是唯一會變更系統的步驟。選取「完成」才會寫入，選取「略過」則不會變更任何項目。	68a28da9
+welcome.classic_right_click_menu	傳統右鍵選單	870ea56e
+welcome.right_click_files_compress_extract	在檔案上按右鍵即可壓縮或解壓縮。	695499c8
+welcome.windows_11_right_click_menu	Windows 11 新式右鍵選單	1889983f
+welcome.visible_without_choosing_show_more	無須選取「顯示其他選項」即可看到。	b682df71
+welcome.file_associations_open_with	檔案關聯（開啟方式）	fec45671
+welcome.only_lists_lycanzip_under_open	僅讓 LycanZip 出現在「開啟方式」與「預設應用程式」中。Windows 不允許程式自行成為預設應用程式，若要設為預設，請在 Windows 設定中選擇。	d936e855
+welcome.all	…共 {0} 種	f51eb1e2
+welcome.which_items_right_click_menu_shows	要在右鍵選單中顯示的項目，之後可在設定的「檔案總管」頁面調整。	b241e0c8
+welcome.extract_name	解壓縮到「名稱\\」	252257c4
+welcome.compress_zip	壓縮成 ZIP	ed33ffa5
+welcome.compress_7z	壓縮成 7z	7e9babaa
+welcome.back	上一步	b52b36b7
+welcome.next	下一步	bc981983
+## task
+task.under_1_second	不到 1 秒	c9246acd
+task.min_s	{0} 分 {1} 秒	3f40e738
+task.h_min	{0} 小時 {1} 分	21a0c7a3
+task.test	測試	640ab2ba
+task.waiting	等待中	33d30632
+task.s	　·　{0}/秒	f6b14876
+task.left	　·　剩餘 {0}	d6fd86cd
+task.working	處理中…　{0}	0e2ccf83
+task.paused	已暫停　{0}	155921b8
+task.done	完成　{0} 個檔案	2e3f901c
+task.skipped	，略過 {0} 個	75589066
+task.macos_metadata_item_s_skipped	，略過 {0} 個 macOS 中繼資料	732f30fa
+task.unsafe_rejected	，拒絕 {0} 個不安全的路徑	84be0dca
+task.renamed	，改名 {0} 個	7cf420b8
+task.done_sizes	完成　{0} 個檔案　{1} → {2}	43858f28
+task.already_compressed_file_s_stored	，{0} 個已壓縮的檔案直接儲存	ef250d9f
+task.thumbs_db_skipped	，略過 {0} 個 Thumbs.db	d4450d3b
+task.done_plain	完成　	2d6f6fac
+task.new_files_not_added	沒有加入 {0} 個新檔	fd5b8cc5
+task.integrity_test_passed	完整性測試通過	d62ca692
+task.failed	失敗　{0}	eee308fd
+task.failed_wrong_password_start_again	失敗　密碼不正確，請重新操作並輸入正確的密碼	d4634a7a
+task.extracted_kept	已解壓縮並保留 {0} 個有錯誤的檔案：{1}	24e63e29
+task.failed_plain	失敗　	4553638b
+task.cancelled	已取消	f840ac65
+## preview
+preview.stable_diffusion_webui_a1111_forge	Stable Diffusion WebUI（A1111 / Forge 格式）	8098eb0a
+preview.embedded_text_data	內嵌的文字資料（{0}）	ccc838d5
+preview.previous	上一張（←）	6603747f
+preview.next	下一張（→）	b24e35e3
+preview.fit_window	符合視窗	54983cda
+preview.switch_f_between_fit_window_width	在「符合」（視窗 / 寬度 / 高度，從選單或按 Ctrl+0 / 2 / 3）與「原圖尺寸」（Ctrl+1）之間切換（F）。目前的縮放比例會顯示在按鈕上	f59713cc
+preview.actual_size	實際大小	e18d1468
+preview.menu_you_can_also_right_click	選單（也可在圖片上按右鍵）	a5260417
+preview.menu	選單	57f5f5ef
+preview.thumbnail_strip	縮圖列	70cc2f0c
+preview.fit_width	符合寬度	4d6ed0ab
+preview.fit_height	符合高度	e6a94f84
+preview.actual_size_percent	原圖尺寸（{0}）	13668eb2
+preview.animation_too_large_only_first	此動畫過大，僅顯示第一個畫面	0e92ed52
+preview.paused_press_p_resume	已暫停（按 P 繼續播放）	dcfec256
+preview.playing	播放中	298c3905
+preview.previous_name	上一張	50f94286
+preview.next_name	下一張	bc981983
+preview.first	第一張	916a78d7
+preview.last	最後一張	d1c69a85
+preview.actual_size_name	原圖尺寸	e18d1468
+preview.zoom	放大	4fc05f27
+preview.zoom_out	縮小	a4ae4b24
+preview.rotate_clockwise	順時針旋轉	acf3bc67
+preview.rotate_counterclockwise	逆時針旋轉	e26261ca
+preview.full_screen	全螢幕	d15f886d
+preview.play_animation	播放動畫	1d44b58b
+preview.copy_image	複製圖片	883f2df0
+preview.save_image_as	另存圖片…	82c99fbc
+preview.image_info	圖片資訊	9ab2a0d2
+preview.copy	複製	af74f7c5
+preview.copy_what	複製{0}	37daa938
+preview.grayscale	灰階	c8b0f2ed
+preview.16_bits_channel	16 位元 / 色版	f43e0282
+preview.color_8_bits_channel	彩色（8 位元 / 色版）	b4c50510
+preview.with_transparency	，含透明度	4961855d
+preview.date_taken	拍攝日期	76edfcab
+preview.camera	相機	4da9c9af
+preview.aperture	光圈	aae12633
+preview.1_s	1/{0} 秒	2f466ea0
+preview.s	{0} 秒	5cd8bcda
+preview.shutter	快門	7116fe95
+preview.iso	感光度	4f325d99
+preview.focal_length	焦距	9bd85a7d
+preview.file	檔案	2c3cafa4
+preview.path_archive	壓縮檔內路徑	ea550c9c
+preview.image	圖片	50e19fda
+preview.dimensions	尺寸	9f4ca9ec
+preview.px_megapixels	{0} × {1} 像素（{2} 百萬畫素）	fc3a73cc
+preview.color	色彩	1d0c8304
+preview.resolution	解析度	516aae52
+preview.status	狀態	bae7d5be
+preview.not_fully_loaded_yet	尚未讀取完成	a5972e0a
+preview.photo_info	拍攝資訊	60fddc09
+preview.ai_generation_info	AI 生成資訊	2c56ead3
+preview.source	來源	6da13add
+preview.prompt	提示詞	a817d7eb
+preview.negative_prompt	負向提示詞	e083520d
+preview.raw_data	原始資料	d88d5638
+preview.other_text_data	其他文字資料	9879c423
+preview.image_copied	已複製圖片	a607eb31
+preview.path_copied	已複製路徑	12ec0d2e
+preview.save_dialog_title	另存圖片	b8184460
+preview.saved	已儲存到 {0}	136c4303
+preview.could_not_save	儲存失敗	3b89fc9a
+preview.file_too_large_preview_limit_64	此檔案過大（{0}），超過預覽上限 64 MB。	6329212f
+preview.image_too_large_exceeds_preview	此圖片的尺寸過大，超過預覽上限。	bd25df65
+preview.use_open_with_associated_app_file	{0}。\n\n請從檔案清單的右鍵選單選取「以關聯程式開啟」。	a12b1655
+preview.cannot_display_image_file_may_be	無法顯示此圖片，檔案可能已損毀。	0d642a27
+preview.jpeg_xl_images_need_jpeg_xl	若要預覽 JPEG XL 圖片，請先安裝 Microsoft Store 的「JPEG XL 影像擴充功能」	3b2ae038
+preview.avif_images_need_av1_video	若要預覽 AVIF 圖片，請先安裝 Microsoft Store 的「AV1 影像擴充功能」	22f5bb11
+preview.heic_heif_images_need_heif_image	若要預覽 HEIC / HEIF 圖片，請先安裝 Microsoft Store 的「HEIF 影像擴充功能」（可能還需要「HEVC 影片擴充功能」）	c6869eb3
+preview.webp_images_need_webp_image	若要預覽 WebP 圖片，請先安裝 Microsoft Store 的「WebP 影像擴充功能」	7abdfe5a
+preview.pc_has_no_decoder_can_preview	此電腦沒有可預覽這種圖片的解碼器	9a95035e
+preview.file_too_large	檔案太大	a0704a4e
+preview.wrong_password_file_cannot_be_read	密碼不正確，無法讀取此檔案。	b6d065bf
+preview.failed_read_file	讀取檔案失敗：{0}	46c4e52b
+preview.failed_read_file_plain	讀取檔案失敗。	9c3f8d17
+## audio
+audio.audio_files	音訊檔案清單	e7b16352
+audio.playback_position	播放位置	61d5ff75
+audio.previous_track_ctrl_left	上一首（Ctrl+←）	1e5f9e32
+audio.play	播放	5d12bd53
+audio.next_track_ctrl_right	下一首（Ctrl+→）	d23b38e8
+audio.mute_m	靜音（M）	4b5c1a90
+audio.volume	音量	3b18e8e3
+audio.file_too_large_preview_over_256	檔案過大（超過 256 MB），無法預覽。請從右鍵選單選取「以關聯程式開啟」。	5f24eb00
+audio.reading	讀取中…	ae18b70a
+audio.file_could_not_be_read	無法讀取此檔案。	e3744714
+audio.pc_cannot_play_file_decoder_format	此電腦無法播放這個檔案（可能缺少該格式的解碼器）。	a487415a
+audio.reached_last_track	已播放到最後一首。	1b15f3e9
+## scan
+scan.cannot_scan_windows_real_time	無法掃描：Windows 的即時防護未開啟。請至「Windows 安全性」開啟即時防護。	e1cd88f6
+scan.cannot_scan_antivirus_product	無法掃描：已安裝的防毒軟體不支援 AMSI。Windows Defender 支援 AMSI，請確認已啟用。	d761d14d
+scan.cannot_scan_computer_cannot_use	無法掃描：此電腦無法使用 Windows 的惡意程式掃描介面（AMSI）。	3e0a3732
+scan.file_s_scanned	已掃描 {0} 個檔案（{1}）	fac2ea06
+scan.suspicious_file_s_found	，發現 {0} 個可疑的檔案	47e1ee76
+scan.nothing_found	，未發現威脅	4b3809ad
+scan.file_s_skipped_too_big	；略過 {0} 個過大的檔案	21fcc6c0
+scan.file_s_skipped_encrypted	；跳過 {0} 個加密的檔案	5ef5c1ee
+scan.could_not_be_read	；{0} 個無法讀取	45b47d1a
+scan.could_not_be_scanned	；{0} 個掃描失敗	c00f2a01
+## assoc
+assoc.writing_registry_failed	寫入登錄檔失敗（{0}）：HKCU\\{1}	b227d1e2
+assoc.lycanzip_split_archive_001	LycanZip 分卷壓縮檔 (.001)	2923f4fe
+assoc.lycanzip_comic_book_archive	LycanZip {0} 漫畫壓縮檔	7c877261
+assoc.lycanzip_archive	LycanZip {0} 壓縮檔	bfcd176b
+assoc.path_lycanzip_exe_was_not_given	沒有指定 LycanZip.exe 的路徑	bdd9f137
+assoc.open_source_ad_free_lightweight	開放原始碼、無廣告的輕量壓縮與解壓縮軟體	c79109cd
+assoc.could_not_remove	無法移除 {0}（{1}）	b99ee88b
+## app
+app.lycanzip_task_s_running	LycanZip：{0} 個工作進行中，{1}%	f9c7a519
+app.lycanzip_tasks_running_no_percent	LycanZip：{0} 個工作進行中	6c03fab4
+app.tasks_finished	工作已結束	3943ba15
+app.all_tasks_finished	所有工作都已完成。	e4026e4d
+app.lycanzip_still_has_tasks_running	LycanZip 仍有工作進行中	9c8e7265
+app.show_window	顯示視窗	0502f5ca
+app.cancel_all_tasks	取消全部工作	85159977
+app.exit_lycanzip	結束 LycanZip	842a20fa
+## win11
+win11.error_code	錯誤碼 {0}	bf62a269
+win11.not_windows_11_new_style_context	這不是 Windows 11。新式右鍵選單僅適用於 Windows 11。	3072296c
+win11.was_not_found	找不到 {0}	74587794
+win11.was_not_found_version_has_no	找不到 {0}。此版本尚未提供已簽署的新式選單套件。	1242f165
+## drag
+drag.items	共 {0} 個項目	026a1b0e
+drag.folder	資料夾	30baa249
+## preset
+preset.general_zip	一般 ZIP	f75cf2d3
+preset.general_7z	一般 7z	773f446e
+preset.fast	快速	8db6a2f1
+preset.e_mail_share	寄信 / 分享	bd390aae
+preset.backup	備份	dd96994d
+preset.store_only_no_compression	僅儲存不壓縮	05d2dfd8
+## lang
+lang.zh_tw	繁體中文	1f7e4a4c
+lang.en_us	English	649df08a
+lang.zh_cn	简体中文	93659150
+## fmt
+fmt.value_paren	{0}（{1}）	4aec5d0a
+fmt.size_bytes	{0}（{1} 位元組）	a94a0670
+fmt.n_files	{0} 個檔案	113de731
+fmt.and_n_folders	、{0} 個資料夾	8bf5d515
+fmt.paren	（{0}）	1ced71b6
+fmt.status_items_size	　·　共 {0} 個項目　·　{1}	c2148bb6
+fmt.n_items_short	{0} 項	79a3ecf0
+fmt.n_items	{0} 個項目	79a3ecf0
+fmt.percent_paren	（{0}%）	2955fcd7
+fmt.n_sources	　|　{0} 個來源	4065a811
+fmt.colon_value	：{0}	4f5acaf5
+## sums
+sums.verify_title	驗證校驗檔	6a43bbf1
+sums.checking	檢查中…	820d6004
+sums.checking_progress	檢查中… {0}%（{1} / {2}）	7d7f4ea5
+sums.error_unreadable	無法讀取校驗檔。	32f68ef2
+sums.error_too_big	校驗檔太大。	a62b533e
+sums.error_no_lines	這看起來不是校驗檔：裡面沒有任何一行含有雜湊值。	88a7b6d0
+sums.all_match	✓ 全部 {0} 個檔案都相符。	4c5be580
+sums.bytes_read	已讀取 {0}	bce96785
+sums.some_match	✗ {1} 個檔案中只有 {0} 個相符。	7077b230
+sums.differs	不相符	d15ff640
+sums.not_found	找不到	475c8486
+sums.could_not_read	無法讀取：{0}	65d7b999
+sums.more_not_listed	…另有 {0} 個未列出	0bba02be
+sums.extra_files	壓縮檔裡有 {0} 個檔案不在校驗檔中：	ec12fe42
+sums.names_skip_checksum	為了與壓縮檔對應，已略過校驗檔名稱最前面的 {0} 層資料夾。	a45ece3d
+sums.names_skip_archive	為了與校驗檔對應，已略過壓縮檔路徑最前面的 {0} 層資料夾。	7a193140
+sums.bad_lines	有 {0} 行無法辨識，已略過。	53c549af
+sums.summary_many	{1} 個校驗檔中有 {0} 個完全相符。	d5d2dbe9
+sums.of_archive	「{0}」裡的檔案	5dcf2a18
+sums.of_folder	校驗檔旁邊的檔案，位於 {0}	9e2ca60d
+sums.n_checksum_files	{0} 個校驗檔	b9bc0f41
+sums.names_not_found	校驗檔裡大多數的名稱在壓縮檔中找不到。如果名稱的開頭不同，請指定要移除與要加上的部分。	93e716cd
+sums.strip_prefix	從校驗檔名稱的開頭移除	d27f48c7
+sums.strip_example	例如 backup/2025/	3eb331e6
+sums.add_prefix	加在名稱的前面	c03022f0
+sums.add_example	例如 photos/	fb0d3a26
+sums.check_again	重新檢查	e185048c
+sums.match_only_means	相符表示檔案與製作校驗檔時一樣。校驗檔本身可不可信，要看它的來源。	92da1fdc
+sums.verify_archive_with	用 {0} 驗證壓縮檔	82b71eac
+sums.verify_files_with	用 {0} 驗證裡面的檔案	cdcbf4f6
+sums.banner_title	這個壓縮檔旁邊有校驗檔	5f7afa0a
+sums.folder_files	資料夾「{0}」：{1} 個檔案	d1be963b
+sums.no_files_to_hash	沒有可以計算雜湊值的檔案。	67d9d4ea
+sums.side_unusable	無法使用 {0}。	f8388be4
+sums.side_no_entry	{0} 裡沒有這個檔案的值。	823632ad
+sums.side_waiting	正在與 {0} 比對…	722743f7
+sums.side_untick	{0} 裡是 {1} 值。請在上方勾選 {1} 才能比對。	80c436a1
+sums.side_match	✓ 與同資料夾的 {0} 驗證相符。	349ed159
+sums.side_differ	✗ 與同資料夾的 {0} 不相符，它記錄的是 {1}。	6804287b
+sums.verify_menu	驗證校驗檔…	5ef9d65d
+sums.setting_archive	產生新壓縮檔的校驗檔	2511268d
+sums.setting_archive_caption	在壓縮檔旁邊產生 name.zip.sha256，內容是它的 SHA-256（分卷時每一卷一行）。適合用在要提供下載或寄給別人的檔案。這是右鍵「不用範本」壓縮時的預設值；範本有各自的設定。	ac78b96d
+sums.setting_files	產生放入檔案的校驗檔	9c9c05a1
+sums.setting_files_caption	在壓縮檔旁邊產生 name.sha256，記錄每個檔案以壓縮檔裡的名稱表示的 SHA-256，之後可以用來檢查壓縮檔。這是右鍵「不用範本」壓縮時的預設值；範本有各自的設定。	aef4dbd2
+sums.card_note_written	 已產生校驗檔：{0}	7e6782be
+sums.card_note_failed	 無法寫入校驗檔。	762c19c5
+sums.link_archive	驗證壓縮檔	d25cf6a5
+sums.link_files	驗證裡面的檔案	37c5d700
+sums.menu_hash_save	計算並儲存為 name.sha256（兩種右鍵選單都有）	b7b11e23
+sums.save_exists_title	校驗檔已經存在	e5226fcf
+sums.save_exists	「{0}」已經存在。要取代它，還是兩個都保留、把新的存成另一個名稱？	2f2622e0
+sums.save_replace	取代	a7cf7b25
+sums.save_keep_both	兩個都保留	60c801a8
+sums.save_title	計算並儲存校驗檔	8c086f1c
+sums.save_done	✓ 已儲存：{0}	0dbe15ea
+sums.save_done_skipped	 有 {0} 個檔案無法讀取，不在校驗檔裡。	fb6a6101
+sums.save_failed_title	無法儲存校驗檔	018b3be7
+sums.notify_title	已儲存校驗檔	6877922b
+sums.notify_skipped	{0}（{1} 個檔案無法讀取）	cf4ba6a2
+preview.this_is_first	這是第一張圖片	230d3949
+preview.this_is_last	這是最後一張圖片	4ce142e3
+audio.loop_none	依序播放，播完停止	5eff807e
+audio.loop_all	全部循環	7cce343d
+audio.loop_one	單首循環	40115bbc
+audio.shuffle	隨機播放	5b772b7b
+audio.playback_mode_tip	播放模式：{0}（L）	e76eb3c6
+main.night	黑夜	1097b553
+main.home	首頁	70f8bb9a
+main.desktop	桌面	532c67fe
+main.documents	文件	687c8286
+main.downloads	下載	a862c2b2
+main.paste	貼上	db248300
+scan.affected_item_note	防毒軟體可能會把「lycanzip-cli.exe」（或 LycanZip）列為「受影響的項目」。那是把檔案內容交給它檢查的程式，內容沒有寫到磁碟，也不表示這個程式本身有問題。	6fba3070
+## core
+core.cannot_list_folder	{0} : 無法列舉資料夾	595a3cc5
+core.skipped_link	{0} (符號連結 / 連接點)	7cc5b706
+core.skipped_output_itself	{0} (輸出檔自身)	84b91d26
+core.cannot_compress_drive_root	無法壓縮磁碟機根目錄，請選擇其中的資料夾: {0}	613bacc0
+core.input_not_found	找不到輸入: {0}	f2dace5f
+core.cannot_read_file	{0} : 無法讀取 ({1})	4443424a
+core.custom_param_format	自訂參數格式應為「名稱=值」（以空白分隔）：{0}	31f4fa91
+core.custom_param_bad_char	自訂參數含有不允許的字元	bd954308
+core.format_cannot_create	此版本的 7z.dll 不支援建立 {0}	e340d737
+core.format_cannot_modify	此格式無法修改	fba21d69
+core.cannot_create_handler	無法建立壓縮處理器	13da818b
+core.zipcrypto_weak	ZipCrypto 加密強度低；需要安全性請改用 AES-256	ad77761a
+core.zipcrypto_weak_compat	ZipCrypto 加密強度低（相容性模式）；需要安全性請改用 AES-256（非相容性模式）	01aa2b18
+core.set_properties_failed	設定壓縮參數失敗（此格式不支援所選的方法或參數組合）	6f057beb
+core.set_properties_failed_custom	設定壓縮參數失敗：請檢查「自訂參數」的拼寫，或確認它適用於這個格式	35f4d0f4
+core.cancelled	已取消	f840ac65
+core.disk_full_archive	磁碟空間不足，無法寫入壓縮檔	5993ba38
+core.update_failed	修改壓縮檔失敗	7b1dee4a
+core.create_failed	建立壓縮檔失敗	90d456f9
+core.temp_space_plain	暫存空間不足，已改為一般壓縮（沒有略過已壓縮的檔案）	74e430a7
+core.cannot_read_back_temp	無法讀回暫存的壓縮檔	b0e76526
+core.zip_password_ascii	ZIP 加密只支援英數字與一般符號的密碼；若要使用中文等字元，請改用 7z 格式	eb33d87a
+core.zip_aes_password_long	ZIP 的 AES 加密密碼最長 99 個字元；請縮短密碼，或改用 7z 格式	f09d8efc
+core.no_input	沒有輸入	8dc8debc
+core.iso_no_volumes	ISO 不支援分卷	32f98325
+core.iso_no_password	ISO 不支援密碼	2d083ff0
+core.volume_too_small	分卷大小至少 64 KB	4d68d5a0
+core.volumes_zip_7z_only	分卷僅支援 zip 與 7z	8ed1c78f
+core.tar_no_password	tar 系列格式不支援密碼，請改用 zip 或 7z	e51c78ab
+core.nothing_to_compress	沒有可壓縮的內容	2672e759
+core.target_exists	目的檔案已存在: {0}	37b33c23
+core.cannot_create_output	無法建立輸出檔: {0}	861c3cbf
+core.cannot_create_temp	無法建立暫存檔	71288840
+core.cannot_rename_temp_output	無法將暫存輸出改名為: {0}	7554dad7
+core.invalid_name	名稱無效: {0}	64268bd2
+core.file_not_found	找不到檔案: {0}	e28dca49
+core.nothing_to_delete	沒有指定要刪除的項目	a6fb797b
+core.not_in_archive	壓縮檔內找不到: {0}	d9f85d0b
+core.nothing_to_rename	沒有指定要改名的項目	68c8d63a
+core.cannot_move_into_itself	不能把資料夾移到它自己裡面: {0}	60172ad7
+core.name_taken	壓縮檔內已有同名項目: {0}	e16328f5
+core.is_folder_cannot_replace	這是資料夾，不能取代內容: {0}	a8d67a24
+core.replacement_is_folder	要取代成的內容不能是資料夾: {0}	7e4b64b2
+core.nothing_to_add	沒有要加入的檔案	5f89bc7f
+core.folder_name_taken	壓縮檔內已有同名的資料夾: {0}	83595597
+core.file_name_taken	壓縮檔內已有同名的檔案: {0}	b08fb67c
+core.nothing_deleted_unreadable	有檔案無法讀取，所以沒有刪除壓縮檔裡的任何項目	5876ea75
+core.archive_not_found	找不到壓縮檔: {0}	573a9161
+core.archive_cannot_modify	這種壓縮檔無法修改: {0}	f552428f
+core.password_needed_to_modify	壓縮檔有加密的項目，修改時需要提供密碼	6540948a
+core.wrong_password	密碼錯誤: {0}	74a0ee51
+core.tar_no_password_short	tar 不支援密碼	68738544
+core.disk_full_modify	磁碟空間不足：修改壓縮檔需要約 {0} MB 的空間（目前剩 {1} MB）	cf14287c
+core.cannot_create_temp_file	無法建立暫存檔: {0}	07f9843a
+core.cannot_replace_archive	無法換上修改後的壓縮檔（檔案可能正被其他程式使用，或沒有寫入權限）: {0}	ed4f9793
+core.disk_full_target	目的磁碟空間不足：需要約 {0} MB，可用 {1} MB	ec3d2a79
+core.op_ok	OK	9ce3bd42
+core.op_unsupported_method	不支援的壓縮方法	ef2a9e38
+core.op_data_error	資料錯誤	c778bc80
+core.op_crc_error	CRC 錯誤	8c725472
+core.op_unavailable	資料不可用	f230d2f1
+core.op_unexpected_end	資料意外結束	39d93c5f
+core.op_data_after_end	結尾後仍有多餘資料	781b28f4
+core.op_not_archive	不是壓縮檔	0ed60af8
+core.op_headers_error	標頭錯誤	93d23602
+core.op_wrong_password	密碼錯誤	fc2066fe
+core.op_unknown	未知錯誤	e5fd9aa2
+core.path_reason	{0} : {1}	4d3c418a
+core.get_items_failed	無法讀取項目數量	79b3b3df
+core.disk_full_extract	磁碟空間不足，無法寫入解壓的檔案	f303f678
+core.extract_failed	解壓失敗	5991eb87
+core.cancelled_no_password	已取消（未提供密碼）	fba45152
+core.temp_write_failed	寫入暫存檔失敗	5ff6a944
+core.cannot_open_file	無法開啟檔案: {0}	f47ed1c3
+core.unknown_format	無法辨識的壓縮格式或檔案已損壞: {0}	e81496d0
+core.item_index_out_of_range	項目索引超出範圍	58869057
+core.read_item_failed	讀取項目失敗: {0}	13501ab1
+core.is_folder	這是資料夾	e971b3a4
+core.encrypted_needs_password	加密，需要密碼	5c440053
+core.link_no_content	連結沒有內容	7f28c297
+core.skipped_symlink_policy	{0} (符號連結，依安全設定略過)	87ffdbd9
+core.skipped_hardlink_policy	{0} (硬連結，依安全設定略過)	8df2b6aa
+core.rejected_outside	{0} : 解析後超出目的資料夾	58fd5dd4
+core.cannot_create_folder	{0} : 無法建立資料夾	e5f475c7
+core.cannot_create_parent	{0} : 無法建立上層資料夾	e52c1873
+core.folder_in_the_way	{0} : 目的地已存在同名資料夾	b9c178a7
+core.skipped_exists	{0} (已存在)	22be83fc
+core.file_exists	{0} : 檔案已存在	69a42e39
+core.cannot_create_file	{0} : 無法建立檔案 ({1})	2d149b96
+core.cannot_replace_file	{0} : 無法取代既有的檔案 ({1})	af34f55c
+core.bomb_total	展開後總量超過上限，已中止（可能是壓縮炸彈）	aa7db100
+core.bomb_ratio	壓縮比異常偏高，已中止（可能是壓縮炸彈）	97e64e36
+core.bomb_actual	實際展開量超過上限，已中止（可能是壓縮炸彈）	3826ab3c
+core.cannot_create_target	無法建立目的資料夾: {0}	75abb342
+core.disk_full	磁碟空間不足	a0ec91c6
+core.cannot_write_output	無法寫入輸出檔（磁碟空間不足？）	34b6b5b2
+core.iso_nothing	沒有可放進 ISO 的內容	1af43464
+core.iso_file_too_big	ISO 檔案裡單一檔案不能超過 4 GB（這個版本還不支援 UDF）: {0}	5c20d6f9
+core.iso_cannot_read	{0} (無法讀取)	c2f1f002
+core.iso_short_read	{0} (讀取時檔案變短或無法讀取)	cc9ed007
+core.launch_list_needs_path	--list 需要檔案路徑	39e20492
+core.launch_cannot_read_list	無法讀取清單檔: {0}	dfab0013
+core.launch_unknown_option	未知的選項: {0}	df63ee43
+core.launch_no_files	沒有指定任何檔案	62b2324d
+core.path_empty	空路徑	4dd56da4
+core.path_nul	路徑含有 NUL 字元	0363e018
+core.path_absolute	絕對路徑或 UNC 路徑	3fd273c3
+core.path_drive	含磁碟機代號	8e14a535
+core.path_traversal	路徑穿越 (..)	46858ead
+core.path_colon	含 NTFS 交替資料流或非法冒號	7756e2a5
+core.path_component_empty	清理後元件為空	bac592df
+core.path_no_component	路徑無有效元件	ec228d1c
+core.path_renamed	檔名含 Windows 不允許的字元或保留名稱，已自動轉換	f43897c6
+core.dll_not_found	找不到 7z.dll（可設定環境變數 LYCAN_7Z_DLL，或放在 exe 同一資料夾）	bedf1866
+core.dll_load_failed	無法載入 7z.dll: {0}	7970328f
+core.dll_missing_exports	7z.dll 缺少必要的匯出函式	303fec2b
+core.dll_formats_failed	GetNumberOfFormats 失敗	f25e7f29
+core.task_extract_failed	部分項目解壓失敗	73d74623
+core.task_test_failed	有項目測試失敗	5d96975e
+core.task_unreadable	部分檔案無法讀取	a0499c76
+core.task_no_amsi	無法使用 Windows 的惡意程式掃描介面（AMSI）	ce19a6fc
+core.task_threat_found	發現可疑的檔案	c358268b
+core.task_hash_failed	有檔案無法計算	cfa8f7b7
+core.temp_space_need	暫存空間不足：需要約 {0} MB，「{2}」只剩 {1} MB	08f0bbc5
+core.temp_space_full	暫存空間不足：「{2}」已滿（剩 {1} MB）	04139f08
+main.open_preview_key	按住按鍵開啟壓縮檔時直接預覽圖片	4ec4fba1
+main.open_preview_key_hint	從檔案總管開啟壓縮檔時按住這個鍵，會直接進入圖片預覽；沒有圖片的壓縮檔會照常開啟。	bedba710
+main.key_shift	Shift	469d5b18
+main.key_ctrl	Ctrl	dd6a02a5
+main.key_none	不使用	72a86113
+audio.info_format	格式	041a5dec
+audio.info_bitrate	位元率	eddca7c3
+audio.info_sample_rate	取樣率	7a031620
+audio.info_channels	聲道	18e03e2a
+audio.info_length	長度	3bade34e
+audio.info_size	大小	b7152342
+audio.kbps	{0} kbps	d6fe6f7a
+audio.khz	{0} kHz	a15a2a00
+audio.mono	單聲道	c5c55338
+audio.stereo	立體聲	f4f390b6
+audio.channels_n	{0} 個聲道	c5f7ad51
+main.lock_open_archive	開啟壓縮檔時鎖定檔案	9a072cd4
+main.lock_open_archive_hint	視窗開著壓縮檔時，其他程式無法修改或刪除這個檔案，內容不會在你看的時候被換掉。OneDrive、Dropbox 等同步軟體要等到關閉視窗後才能更新它。	547105a7
+shell.add_to_archive	加入壓縮檔…	2cdc38ad
+shell.compress_to	壓縮成 "{0}"	26079055
+shell.compress_each	分別壓縮成 {0}	71b71810
+shell.compress_with_preset	用範本壓縮	851cb07a
+shell.hash	計算雜湊值…	78ef4a80
+shell.hash_save	計算並儲存為 "{0}"	3bcf70ff
+shell.verify_checksum	用 LycanZip 驗證校驗檔	fa6d1cbb
+shell.other_formats	其他格式	ad24dd8d
+shell.group_entry	{0}：{1}	4d3c418a
+shell.encrypted	加密壓縮…	284a3b16
+shell.open_content	以 LycanZip 開啟內容	b4b5ada3
+shell.open	開啟	cf9b7706
+shell.extract_here	解壓縮到此處	5221b51b
+shell.extract_to_named	解壓縮到 "{0}\\"	70e9c1e4
+shell.extract_same_name	解壓縮到同名資料夾	96adc4e4
+shell.extract_to	解壓縮到…	f5015680
+shell.test	測試完整性	ba25de4f
+shell.image_preview	圖形預覽	6c5de6ef
+shell.audio_preview	音訊預覽	47fea53e
+shell.extract_recent	解壓縮到最近用過的位置	6fb3e506
+shell.extract_merge	多個壓縮檔合併解壓	95dfa5b4
+shell.preset_zip	一般 ZIP	f75cf2d3
+shell.preset_7z	一般 7z	773f446e
+shell.preset_smallest	最小體積	ba07b565
+shell.preset_fast	快速	8db6a2f1
+shell.preset_mail	寄信 / 分享	bd390aae
+shell.preset_backup	備份	dd96994d
+shell.preset_store	僅儲存不壓縮	05d2dfd8
+preview.set_wallpaper	設成桌布…	a8535aeb
+preview.wallpaper_title	設成桌布	bddfd29e
+preview.wallpaper_hint	這會更換你的桌面圖片。圖片的副本會存放在資料夾「{0}」，所以關閉壓縮檔後桌布仍然在（之後可自行刪除）。	545a014e
+preview.wallpaper_position	圖片位置	57ec5754
+preview.wallpaper_fill	填滿	7adb6736
+preview.wallpaper_fit	符合	dab564d8
+preview.wallpaper_stretch	延伸	b148ed24
+preview.wallpaper_tile	並排	2dd2c660
+preview.wallpaper_center	置中	a2391118
+preview.wallpaper_span	橫跨所有螢幕	f9ac80c1
+preview.wallpaper_screen	螢幕	5cc847f9
+preview.wallpaper_all_screens	所有螢幕	36e42090
+preview.wallpaper_screen_n	螢幕 {0}	450737fa
+preview.wallpaper_set	設成桌布	bddfd29e
+preview.wallpaper_done	桌布已更換	db9a8288
+preview.wallpaper_failed	無法更換桌布	fdcbceb4
+preview.save_as_original	原始檔案（{0}）	55a52041
+preview.save_as_type	{0} 圖片	4b7c0e56
+main.updates	更新	c76d1807
+main.update_check	檢查新版本	459eada1
+main.update_check_hint	每週一次向 aegisulf.com 詢問最新版本的編號。不會傳送其他資料。安裝版會一併下載更新，但只有在你選擇時才會安裝。	ff79bd40
+main.update_check_now	立即檢查	2ce5dd0d
+main.update_checking	檢查中...	494d0f68
+main.update_check_failed	無法連線到網站。	16d35b69
+main.update_up_to_date	LycanZip {0} 已是最新版本。	c3b654ab
+main.update_available	有新版本 {0}	d3f8a66c
+main.update_with_command	請用這個指令更新：{0}	1d9bdc7c
+main.update_download	下載頁面	ca074cc1
+main.update_whats_new	新功能	4d8dc5fe
+main.update_skip	略過這個版本	31996a8b
+main.update_skip_tip	不再提醒這個版本；更新的版本仍會提醒。	495188b9
+fmt.gap	　	099600a1
+fmt.dot_gap	　·　	c80c74a1
+fmt.bar_gap	　｜　	af18a86b
+fmt.list_sep	、	d3bc9a37
+fmt.comma	，	d3bc9a37
+main.restart_explorer	重新啟動檔案總管	4f2f2310
+main.restart_explorer_hint	右鍵選單的變更還沒出現時使用：開啟或關閉選單之後，或更新之後。	9826207f
+main.restart_explorer_do	重新啟動	b134bd55
+main.restart_explorer_title	要重新啟動檔案總管嗎？	1247b286
+main.restart_explorer_question	開著的資料夾視窗會關閉，工作列會短暫消失。請先完成檔案總管裡正在做的事。	bb88d250
+main.menu_updated	右鍵選單已更新	35a346d0
+main.menu_updated_restart_explorer	重新啟動檔案總管後就會使用新版。	81b74c5b
+main.off	關閉	e3de5ab0
+main.virustotal_lookup	在 VirusTotal 查詢	45155d86
+main.virustotal_lookup_tip	計算 SHA-256 後用瀏覽器開啟 VirusTotal。只會送出雜湊值，不會上傳檔案。VirusTotal 沒看過的雜湊值，不代表檔案安全。	162ec07b
+main.resize_column	調整欄位寬度	a352329f
+main.reset_column_widths	還原欄位寬度	0d1aad85
+main.ratio	壓縮率	794f65e9
+main.col_encrypted	加密	bde2fbb6
+main.col_crc	CRC	3841eeac
+main.col_method	方式	88306943
+main.sort_by_ratio	依壓縮率排序	0f42a324
+main.sort_by_encrypted	依加密排序	c704964e
+main.sort_by_crc	依 CRC 排序	4a496c5c
+main.sort_by_method	依方式排序	3fefe5e6
+main.info_technical	技術資訊\n	89d4e276
+main.info_created	建立時間：{0}\n	76448e49
+main.info_accessed	存取時間：{0}\n	5702c685
+main.info_method	壓縮方式：{0}\n	768c45b6
+main.info_permissions	權限：{0}\n	8bdf2fd8
+main.info_host_os	建立的系統：{0}\n	c3576d38
+main.info_characteristics	特徵：{0}\n	04bb04e0
+main.info_link	連結目標：{0}\n	3502a252
+main.info_block	固實區塊：{0}\n	81074eb6
+main.info_offset	從壓縮檔的第 {0} 位元組開始\n	5f8618a5
+main.info_comment	註解：{0}\n	5491205f
+core.dll_not_pinned	7z.dll 不是 LycanZip 附帶的那一個，所以沒有載入：{0}。請重新安裝 LycanZip 以取得正確的檔案	ab86763d
+core.dll_missing_pinned	在 LycanZip 旁邊找不到 7z.dll。請重新安裝 LycanZip 以取回該檔案	2568bd9b
+main.update_install_now	立即安裝	8607e4ba
+main.update_install_title	安裝更新	ac0f0e99
+main.update_install_question	要下載並安裝 LycanZip {0}（{1}）嗎？LycanZip 會關閉，並自動重新啟動。	77267b1b
+main.update_downloading	正在下載更新… {0}%	a19e7001
+main.update_not_in_feed	目前還沒有可以安裝的新版本，請稍後再試。	7bc79e7b
+main.update_failed	無法下載更新，或更新未通過驗證，沒有做任何變更。請稍後再試。	aa9ff9d1
+main.update_tasks_running	還有工作正在執行。請等它們完成，或取消它們，再安裝更新。	5f0e8545
+main.update_ready	版本 {0} 已可安裝	bb0155f4
+main.update_ready_hint	LycanZip 會關閉並自動重新啟動，完成更新。	2953ac9d
+main.update_restart_now	重新啟動並更新	68d74304
+main.two_copies_title	LycanZip 安裝了兩份	ae047f6d
+main.two_copies_store_owns	這台電腦也安裝了 Microsoft Store 版的 LycanZip。右鍵選單與檔案類型由 Store 版提供，所以這一份已經把自己的關掉，檔案總管只會顯示一個 LycanZip。\n\n只保留一份會比較單純：可以在「已安裝的應用程式」移除不用的那一份。\n\n這一份：{0}	a26b2e9a
+main.two_copies_other_has_menu	另一份 LycanZip 也登錄了自己的右鍵選單或檔案類型，檔案總管可能會顯示兩個 LycanZip。請啟動那一份一次（它發現這個版本時會把自己的關掉），或在「已安裝的應用程式」移除它。\n\n另一份：{0}	35d66071
+main.open_installed_apps	開啟「已安裝的應用程式」	2765c7aa
+main.store_version_provides_menu	這台電腦安裝了 Microsoft Store 版的 LycanZip：右鍵選單與檔案類型由它提供，所以這一份的都是關閉的。	f670f18e
+main.other_copy_note	另一份 LycanZip 也登錄了右鍵選單或檔案類型：{0}\n請啟動它一次（它發現這個版本時會把自己的關掉），或移除它，檔案總管就只會顯示一個 LycanZip。	883c2d94
+main.store_menu_switch_hint	顯示或隱藏檔案總管裡所有的 LycanZip 項目（右鍵選單；Windows 11 還有右鍵拖曳的選單）。下次開啟選單時生效，不會登錄或移除任何東西。	756e4de1
+main.welcome_offer_title	第一次使用 LycanZip？	e06f512c
+main.welcome_offer_hint	花一分鐘選擇外觀、聲音與預覽方式。	ebdcfb8d
+main.welcome_offer_start	開始設定	a5041fda
+main.welcome_offer_no	不用了	5f5c4384
+welcome.file_explorer_menu	檔案總管的右鍵選單	7000f59a
+main.view_small_icons	小圖示	9fd460c2
+main.view_medium_icons	中圖示	66c5bbfe
+main.view_large_icons	大圖示	7d71ad7d
+main.view_huge_icons	巨大圖示	4ec7f1c2

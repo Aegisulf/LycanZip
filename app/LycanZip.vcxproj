@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LycanZip WinUI 3 application (C++/WinRT, unpackaged). Restore the packages with app\restore.ps1 first; build the Core with CMake first (scripts\build.ps1). -->
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{B3D7C5A1-2F64-4C1E-9A58-7E0F1B2C3D4E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>LycanZip</RootNamespace>
+    <ProjectName>LycanZip</ProjectName>
+    <TargetName>LycanZip</TargetName>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.19041.0</WindowsTargetPlatformMinVersion>
+    <CppWinRTOptimized>true</CppWinRTOptimized>
+    <CppWinRTRootNamespaceAutoMerge>true</CppWinRTRootNamespaceAutoMerge>
+    <MinimalCoreWin>true</MinimalCoreWin>
+    <DefaultLanguage>zh-TW</DefaultLanguage>
+    <WindowsPackageType>None</WindowsPackageType>
+    <WindowsAppSDKSelfContained>false</WindowsAppSDKSelfContained>
+    <WindowsAppSDKVerifyTransitiveDependencies>false</WindowsAppSDKVerifyTransitiveDependencies>
+    <!-- /p:LycanSelfContained=true: the self-contained build (the Windows App Runtime is in the folder of the program; for the installer and the zip packages;
+         the Store package uses the runtime of the system). Own output folders (bin\ReleaseSC), because nothing of the other build can be reused. -->
+    <WindowsAppSDKSelfContained Condition="'$(LycanSelfContained)' == 'true'">true</WindowsAppSDKSelfContained>
+    <EnableMsixTooling>true</EnableMsixTooling>
+    <UseWinUI>true</UseWinUI>
+    <AppxPackage>false</AppxPackage>
+    <AppContainerApplication>false</AppContainerApplication>
+    <!-- Windows App Runtime bootstrapper: shows an install guide when the runtime is missing (ShowUI); when the same exe is packaged as MSIX (has a package identity) it is skipped (NoOp),
+         otherwise the bootstrapper would fail in a process that has an identity already and exit -->
+    <WindowsAppSDKBootstrapAutoInitializeOptions_OnNoMatch_ShowUI>true</WindowsAppSDKBootstrapAutoInitializeOptions_OnNoMatch_ShowUI>
+    <WindowsAppSDKBootstrapAutoInitializeOptions_OnPackageIdentity_NoOp>true</WindowsAppSDKBootstrapAutoInitializeOptions_OnPackageIdentity_NoOp>
+  </PropertyGroup>
+  <Import Project="packages.pre.props" Condition="Exists('packages.pre.props')" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="packages.props" Condition="Exists('packages.props')" />
+  </ImportGroup>
+  <PropertyGroup>
+    <LycanCoreLib>$(MSBuildThisFileDirectory)..\build\$(Configuration.ToLower())\src\core\lycan_core.lib</LycanCoreLib>
+    <!-- The installer and update library (scripts\fetch-velopack.ps1); without it the program is built without an installed form -->
+    <LycanVelopackDir>$(MSBuildThisFileDirectory)..\third_party\velopack\</LycanVelopackDir>
+    <LycanVelopack Condition="Exists('$(LycanVelopackDir)lib\velopack_libc_win_x64_msvc.dll.lib')">true</LycanVelopack>
+    <LycanVariant Condition="'$(LycanSelfContained)' == 'true'">SC</LycanVariant>
+    <OutDir>$(MSBuildThisFileDirectory)bin\$(Configuration)$(LycanVariant)\</OutDir>
+    <IntDir>$(MSBuildThisFileDirectory)obj\$(Configuration)$(LycanVariant)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)'=='Debug'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)'=='Release'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level4</WarningLevel>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <ConformanceMode>true</ConformanceMode>
+      <DisableSpecificWarnings>4100;4453;28204;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\src\core\include;$(MSBuildProjectDirectory);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32_LEAN_AND_MEAN;WINRT_LEAN_AND_MEAN;NOMINMAX;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/utf-8 /bigobj %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\src\core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Culture>0x0404</Culture>
+    </ResourceCompile>
+    <Manifest>
+      <AdditionalManifestFiles>$(MSBuildThisFileDirectory)LycanZip.exe.manifest;%(AdditionalManifestFiles)</AdditionalManifestFiles>
+    </Manifest>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(LycanCoreLib);oleaut32.lib;ole32.lib;shell32.lib;shlwapi.lib;version.lib;advapi32.lib;cabinet.lib;wevtapi.lib;bcrypt.lib;winhttp.lib;crypt32.lib;gdi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(LycanVelopack)' == 'true'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(LycanVelopackDir)include;$(MSBuildThisFileDirectory)..\src\updater;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LYCAN_VELOPACK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(LycanVelopackDir)lib\velopack_libc_win_x64_msvc.dll.lib;delayimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <!-- loaded only when velopack_libc.dll is next to the exe (the installed copy): the zip packages and the Store package do not carry it -->
+      <DelayLoadDLLs>velopack_libc.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="App.xaml.h"><DependentUpon>App.xaml</DependentUpon><SubType>Code</SubType></ClInclude>
+    <ClInclude Include="MainWindow.xaml.h"><DependentUpon>MainWindow.xaml</DependentUpon><SubType>Code</SubType></ClInclude>
+    <ClInclude Include="SingleInstance.h" />
+    <ClInclude Include="EntryRow.h" />
+    <ClInclude Include="TaskRow.h" />
+    <ClInclude Include="ShellNotify.h" />
+    <ClInclude Include="Win11Menu.h" />
+    <ClInclude Include="ShellIcons.h" />
+    <ClInclude Include="BackgroundHost.h" />
+    <ClInclude Include="PreviewReader.h" />
+    <ClInclude Include="AudioPreview.h" />
+    <ClInclude Include="DragOut.h" />
+    <ClInclude Include="OpenTempDir.h" />
+    <ClInclude Include="I18nXaml.h" />
+    <ClInclude Include="SettingsHub.h" />
+    <ClInclude Include="CrashHandler.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml"><SubType>Designer</SubType></ApplicationDefinition>
+    <Page Include="MainWindow.xaml"><SubType>Designer</SubType></Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp"><PrecompiledHeader>Create</PrecompiledHeader></ClCompile>
+    <ClCompile Include="App.xaml.cpp"><DependentUpon>App.xaml</DependentUpon><SubType>Code</SubType></ClCompile>
+    <ClCompile Include="MainWindow.xaml.cpp"><DependentUpon>MainWindow.xaml</DependentUpon><SubType>Code</SubType></ClCompile>
+    <ClCompile Include="EntryRow.cpp" />
+    <ClCompile Include="TaskRow.cpp" />
+    <ClCompile Include="ContrastTheme.cpp" />
+    <ClCompile Include="Welcome.cpp" />
+    <ClCompile Include="ShellNotify.cpp" />
+    <ClCompile Include="Win11Menu.cpp" />
+    <ClCompile Include="ShellIcons.cpp" />
+    <ClCompile Include="BackgroundHost.cpp" />
+    <ClCompile Include="I18nXaml.cpp" />
+    <ClCompile Include="CrashHandler.cpp" />
+    <ClCompile Include="ImagePreview.cpp" />
+    <ClCompile Include="AudioPreview.cpp" />
+    <ClCompile Include="DragOut.cpp" />
+    <ClCompile Include="AiMeta.cpp" />
+    <ClCompile Include="Module.cpp" />
+    <ClCompile Include="VelopackApp.cpp" />
+    <ClCompile Include="SingleInstance.cpp" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(LycanVelopack)' == 'true'">
+    <!-- the automatic update of the installed copy; no precompiled header (it is shared with the test program) -->
+    <ClCompile Include="..\src\updater\installed_update.cpp"><PrecompiledHeader>NotUsing</PrecompiledHeader><DisableSpecificWarnings>4100;%(DisableSpecificWarnings)</DisableSpecificWarnings></ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="App.idl"><DependentUpon>App.xaml</DependentUpon><SubType>Code</SubType></Midl>
+    <Midl Include="MainWindow.idl"><DependentUpon>MainWindow.xaml</DependentUpon><SubType>Code</SubType></Midl>
+    <Midl Include="Rows.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="LycanZip.rc" />
+    <None Include="LycanZip.exe.manifest" />
+    <None Include="Assets\LycanZip.ico" />
+    <None Include="Assets\FileIcons\*.ico" />
+    <None Include="Assets\MenuIcons\*.ico" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages.targets" Condition="Exists('packages.targets')" />
+  </ImportGroup>
+  <!-- The VS Build Tools do not ship WindowsXaml\Microsoft.Windows.UI.Xaml.Cpp.targets (the file that connects the XAML compiler to native projects),
+       so MarkupCompilePass1 / Pass2 of the WinUI package are hooked into the build here: Pass1 -> Midl -> Pass2 -> ClCompile.
+       The full Visual Studio may have the native connection already (Microsoft.Windows.UI.Xaml.Cpp.targets); running both conflicts (XAML compiled twice,
+       Xaml*.g.cpp added twice), so LycanXamlMode decides who is responsible:
+         custom = the connection below (default, the case of the Build Tools)
+         native = leave it to the native connection of Visual Studio; all targets below are disabled
+         not set = automatic: if Microsoft.Cpp.targets imports the native XAML targets (_CppCommonExtensionTargets has a value and the file exists) use native, otherwise custom.
+       To set it by hand: msbuild /p:LycanXamlMode=custom|native, or the environment variable LYCAN_XAML=custom|native (scripts\build-app.ps1 -XamlMode). -->
+  <PropertyGroup>
+    <LycanXamlMode Condition="'$(LycanXamlMode)' == '' and '$(LYCAN_XAML)' != ''">$(LYCAN_XAML)</LycanXamlMode>
+    <LycanXamlMode Condition="'$(LycanXamlMode)' == '' and '$(_CppCommonExtensionTargets)' != '' and Exists('$(_CppCommonExtensionTargets)')">native</LycanXamlMode>
+    <LycanXamlMode Condition="'$(LycanXamlMode)' == ''">custom</LycanXamlMode>
+  </PropertyGroup>
+  <Target Name="LycanXamlModeInfo" BeforeTargets="Midl">
+    <Message Importance="high" Text="XAML compile connection: $(LycanXamlMode) (custom = of this project; native = of Visual Studio; set it with -p:LycanXamlMode=)" />
+  </Target>
+  <PropertyGroup>
+    <XamlLanguage>CppWinRT</XamlLanguage>
+    <DefaultLanguageSourceExtension>.cpp</DefaultLanguageSourceExtension>
+    <UseXamlCompilerExecutable>false</UseXamlCompilerExecutable>
+    <IsNativeLanguage>true</IsNativeLanguage>
+  </PropertyGroup>
+  <!-- The XAML compiler needs winmd references (@(ReferencePath) of a native project is empty by default) -->
+  <Target Name="LycanXamlReferences" Condition="'$(LycanXamlMode)' == 'custom'">
+    <ItemGroup>
+      <_LycanWinmd Include="$(MSBuildProjectDirectory)\packages\**\metadata\**\*.winmd" />
+      <_LycanWinmd Include="$(MSBuildProjectDirectory)\packages\Microsoft.Web.WebView2.*\lib\*.winmd" />
+      <ReferencePath Include="@(_LycanWinmd)" />
+      <ReferencePath Include="$(MSBuildProgramFiles32)\Windows Kits\10\UnionMetadata\10.*\Windows.winmd" />
+      <_LycanWinmd Remove="@(_LycanWinmd)" />
+    </ItemGroup>
+  </Target>
+  <!-- The winmd of this project is added only after Midl (if Pass1 loaded it first it would lock the file and Midl could not overwrite it) -->
+  <Target Name="LycanXamlLocalReferences" AfterTargets="Midl" DependsOnTargets="LycanXamlReferences" Condition="'$(LycanXamlMode)' == 'custom'">
+    <ItemGroup>
+      <!-- Pass2 reads WinMDReferenceToCompile (the Cpp.targets of VS fills it; here we fill it ourselves; CppWinRT adds $(OutDir)*.winmd separately) -->
+      <WinMDReferenceToCompile Include="@(ReferencePath)" />
+    </ItemGroup>
+  </Target>
+  <Target Name="LycanXamlPass1" BeforeTargets="Midl" DependsOnTargets="LycanXamlReferences;MarkupCompilePass1" Condition="'$(LycanXamlMode)' == 'custom'" />
+  <!-- Pass2 needs the merged project winmd (bin\$(Configuration)\LycanZip.winmd); it does not exist yet on the first build of a new configuration,
+       so make sure the merge and copy of CppWinRT are done first. -->
+  <Target Name="LycanXamlPass2" AfterTargets="LycanXamlLocalReferences" BeforeTargets="ClCompile" Condition="'$(LycanXamlMode)' == 'custom'"
+          DependsOnTargets="CppWinRTMergeProjectWinMDInputs;CppWinRTCopyWinMDToOutputDirectory;MarkupCompilePass2">
+    <!-- Files made by the XAML compiler are in $(IntDir); the cpp files of type information and binding information are compiled too -->
+    <ItemGroup>
+      <ClCompile Include="$(IntDir)Xaml*.g.cpp" />
+    </ItemGroup>
+  </Target>
+
+  <!-- 7z.dll and the dependencies of the Core: copied from the local 7-Zip during development -->
+  <!-- Brand pictures (title bar / start page / About page) are copied to Assets\ of the output folder; loaded by file path, so it works unpackaged and in MSIX -->
+  <ItemGroup>
+    <BrandAsset Include="Assets\logo-*.png" />
+    <FileIconAsset Include="Assets\FileIcons\*.png" />
+    <SoundAsset Include="Assets\Sounds\**\*.wav" />
+    <LangAsset Include="Assets\Lang\*.tsv" />
+  </ItemGroup>
+  <Target Name="CopyBrandAssets" AfterTargets="Build">
+    <Copy SourceFiles="@(BrandAsset)" DestinationFolder="$(OutDir)Assets" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(FileIconAsset)" DestinationFolder="$(OutDir)Assets\FileIcons" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(SoundAsset)" DestinationFiles="@(SoundAsset->'$(OutDir)Assets\Sounds\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(LangAsset)" DestinationFolder="$(OutDir)Assets\Lang" SkipUnchangedFiles="true" />
+  </Target>
+
+  <!-- Task worker processes: lycanzip-cli.exe (built by CMake) next to the app; packaging copies it too -->
+  <Target Name="CopyWorkerExe" AfterTargets="Build">
+    <PropertyGroup>
+      <_WorkerExe>$(MSBuildThisFileDirectory)..\build\$([System.String]::Copy('$(Configuration)').ToLower())\bin\lycanzip-cli.exe</_WorkerExe>
+    </PropertyGroup>
+    <Copy SourceFiles="$(_WorkerExe)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" Condition="Exists('$(_WorkerExe)')" />
+  </Target>
+
+  <!-- The context-menu extension (built by CMake, LycanZipShell-<version>.dll) next to the app; the classic menu is registered with its path.
+       Only the DLL of the current version is copied (the file name has the version, so nothing that Explorer has loaded is overwritten;
+       ContinueOnError for the case that it is the same version and loaded, see the shell integration notes) -->
+  <Target Name="CopyShellDll" AfterTargets="Build">
+    <ItemGroup>
+      <_ShellDll Include="$(MSBuildThisFileDirectory)..\build\$([System.String]::Copy('$(Configuration)').ToLower())\bin\LycanZipShell-*.dll" />
+    </ItemGroup>
+    <Copy SourceFiles="@(_ShellDll)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" ContinueOnError="true" />
+  </Target>
+
+  <Target Name="CopyVelopackDll" AfterTargets="Build" Condition="'$(LycanVelopack)' == 'true'">
+    <!-- the import library asks for velopack_libc.dll -->
+    <Copy SourceFiles="$(LycanVelopackDir)lib\velopack_libc_win_x64_msvc.dll" DestinationFiles="$(OutDir)velopack_libc.dll" SkipUnchangedFiles="true" />
+  </Target>
+
+  <Target Name="CopySevenZipDll" AfterTargets="Build">
+    <!-- Use the DLL of the same version as the headers, got with scripts\fetch-7zip.ps1 -Binaries first -->
+    <PropertyGroup>
+      <_SevenZipDll Condition="Exists('$(MSBuildThisFileDirectory)..\third_party\7zip-bin\7z.dll')">$(MSBuildThisFileDirectory)..\third_party\7zip-bin\7z.dll</_SevenZipDll>
+      <_SevenZipDll Condition="'$(_SevenZipDll)' == '' And Exists('$(ProgramFiles)\7-Zip\7z.dll')">$(ProgramFiles)\7-Zip\7z.dll</_SevenZipDll>
+      <_SevenZipDll Condition="'$(_SevenZipDll)' == '' And Exists('$(USERPROFILE)\scoop\apps\7zip\current\7z.dll')">$(USERPROFILE)\scoop\apps\7zip\current\7z.dll</_SevenZipDll>
+    </PropertyGroup>
+    <Copy SourceFiles="$(_SevenZipDll)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="false" Condition="'$(_SevenZipDll)' != ''" />
+  </Target>
+</Project>

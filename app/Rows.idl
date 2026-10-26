@@ -1,0 +1,112 @@
+namespace LycanZip
+{
+    // One row of the list of archive content
+    [bindable]
+    [default_interface]
+    runtimeclass EntryRow : Microsoft.UI.Xaml.Data.INotifyPropertyChanged
+    {
+        // nodeId: the node number of ArchiveTree (nodes of the folder tree use the same class); showPath: whether to show the "folder" column
+        EntryRow(UInt32 nodeId, String name, String folder, String sizeText, String packedText, String modifiedText,
+                 Boolean isDir, Boolean isEncrypted, Boolean showPath);
+        UInt32 NodeId{ get; };
+        String Name{ get; };
+        String Folder{ get; };
+        String SizeText{ get; };
+        String PackedText{ get; };
+        String ModifiedText{ get; };
+        // The columns that are off by default (ratio, CRC, method, a lock): set after the row is made
+        String RatioText{ get; };
+        String CrcText{ get; };
+        String MethodText{ get; };
+        Microsoft.UI.Xaml.Visibility LockVisibility{ get; };
+        void SetExtra(String ratioText, String crcText, String methodText, Boolean encrypted);
+        String TypeText{ get; };
+        // Details: the icon and the checkbox share one cell (the icon turns into the checkbox when the mouse is over it or it is selected)
+        Double GlyphOpacity{ get; };
+        Double ChipOpacity{ get; };
+        Boolean CheckHitTest{ get; };
+        String Glyph{ get; };
+        Microsoft.UI.Xaml.Media.Brush GlyphBrush{ get; };
+        Boolean IsDir{ get; };
+        Microsoft.UI.Xaml.GridLength PathWidth{ get; };
+        // Checkbox: shown only when the mouse is over it or it is selected (as in Explorer)
+        Boolean IsSelected{ get; set; };
+        Boolean IsHover{ get; set; };
+        Double CheckOpacity{ get; };
+        // Thumbnail of the icon view: ItemWidth = width of the item; BoxHeight = height of the icon / thumbnail area (NaN = automatic); the category icon is shown until the thumbnail is loaded
+        Double ItemWidth{ get; };
+        Double BoxHeight{ get; };
+        Double ItemHeight{ get; };
+        String DisplayName{ get; };
+        Microsoft.UI.Xaml.Media.ImageSource ThumbSource{ get; };
+        Microsoft.UI.Xaml.Visibility ThumbVisibility{ get; };
+        Microsoft.UI.Xaml.Visibility GlyphVisibility{ get; };
+        // The icon view: the width of a cell, the height of the picture area and how many lines of the name there is room for (the same for every cell of a folder)
+        // iconSize: the size of the icon of a file that is not a picture (the glyph is a little smaller)
+        void SetLayout(Double itemWidth, Double boxHeight, Int32 nameLines, Double iconSize);
+        Double IconSize{ get; };
+        Double GlyphSize{ get; };
+        Int32 NameLines{ get; };
+        void SetThumb(Microsoft.UI.Xaml.Media.ImageSource source);
+        // The folder tree's root is the archive itself: it shows the archive's file-type icon (RootIcon) instead of a glyph
+        void SetRootIcon(Microsoft.UI.Xaml.Media.ImageSource source);
+        // An archive inside the archive shows its file-type icon (32 px in lists, 64 px in the icon view) instead of a glyph
+        Microsoft.UI.Xaml.Media.ImageSource ArchiveIcon{ get; };
+        Microsoft.UI.Xaml.Media.ImageSource ArchiveIconLarge{ get; };
+        Microsoft.UI.Xaml.Visibility ArchiveIconVisibility{ get; };
+        Microsoft.UI.Xaml.Visibility ListArchiveVisibility{ get; };
+        Microsoft.UI.Xaml.Visibility ListGlyphVisibility{ get; };
+        // The icons of Windows (Settings > View): the key says which icon ("<dir>", ".txt"); the pictures are set once they are loaded
+        String IconKey{ get; };
+        void SetShellIcons(Microsoft.UI.Xaml.Media.ImageSource smallIcon, Microsoft.UI.Xaml.Media.ImageSource largeIcon);
+        Microsoft.UI.Xaml.Media.ImageSource ShellIcon{ get; };
+        Microsoft.UI.Xaml.Media.ImageSource ShellIconLarge{ get; };
+        Microsoft.UI.Xaml.Visibility ShellIconVisibility{ get; };
+        Microsoft.UI.Xaml.Visibility ShellIconLargeVisibility{ get; };
+        Microsoft.UI.Xaml.Media.ImageSource RootIcon{ get; };
+        Microsoft.UI.Xaml.Visibility RootIconVisibility{ get; };
+        Microsoft.UI.Xaml.Visibility TreeGlyphVisibility{ get; };
+    }
+
+    // One part of the breadcrumb: the last part (the current place) is bold; the tooltip says "Go to xxx"
+    [bindable]
+    [default_interface]
+    runtimeclass CrumbItem
+    {
+        CrumbItem(String name, Boolean isLast);
+        String Name{ get; };
+        String Tip{ get; };
+        Microsoft.UI.Xaml.Visibility NormalVisibility{ get; };
+        Microsoft.UI.Xaml.Visibility LastVisibility{ get; };
+    }
+
+    // One row of the task panel (the progress changes, so it implements INotifyPropertyChanged)
+    [bindable]
+    [default_interface]
+    runtimeclass TaskRow : Microsoft.UI.Xaml.Data.INotifyPropertyChanged
+    {
+        TaskRow(UInt64 id);
+        UInt64 Id{ get; };
+        String Title{ get; };
+        String StatusText{ get; };
+        Double Progress{ get; };
+        Boolean IsIndeterminate{ get; };
+        Microsoft.UI.Xaml.Visibility PauseVisibility{ get; };
+        Microsoft.UI.Xaml.Visibility ResumeVisibility{ get; };
+        Microsoft.UI.Xaml.Visibility CancelVisibility{ get; };
+        Microsoft.UI.Xaml.Visibility OpenFolderVisibility{ get; };
+        Microsoft.UI.Xaml.Visibility TestVisibility{ get; };    // finished compression: "test the integrity" button
+        Microsoft.UI.Xaml.Visibility DeleteVisibility{ get; };  // finished task: "delete the originals" button
+        String DeleteLabel{ get; };
+        Microsoft.UI.Xaml.Visibility ProgressVisibility{ get; };
+        String OutputPath{ get; };
+        // Moon phase progress: LitGeometry is the lit part of the moon (0% new moon -> 50% half moon -> 100% full moon)
+        Microsoft.UI.Xaml.Media.Geometry LitGeometry{ get; };
+        Microsoft.UI.Xaml.Media.Brush LitBrush{ get; };
+        Microsoft.UI.Xaml.Media.Brush StateGlyphBrush{ get; };
+        String StateGlyph{ get; };
+        Microsoft.UI.Xaml.Visibility StateGlyphVisibility{ get; };
+        Microsoft.UI.Xaml.Visibility RingErrorVisibility{ get; };
+        Microsoft.UI.Xaml.Visibility SpinnerVisibility{ get; };
+    }
+}

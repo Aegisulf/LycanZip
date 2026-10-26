@@ -1,0 +1,17 @@
+/build/
+/out/
+/third_party/7zip/
+*.obj
+*.pdb
+*.ilk
+.vs/
+.vscode/
+*.user
+CMakeUserPresets.json
+
+# Screenshots that the UI tests write, and the intermediate output of the icon export scripts (assets/design/tools)
+/app/shots/
+/assets/design/export/
+/third_party/7zip-bin/
+/third_party/velopack/
+/dist/

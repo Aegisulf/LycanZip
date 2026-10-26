@@ -1,0 +1,1374 @@
+# LycanZip master texts (en-US). One entry per line: id TAB English text TAB note for the translators (optional). Escapes: backslash-n, backslash-t, double backslash. Keep the {0} {1} placeholders; {0:file|files} chooses by the number. Maintained with tools/i18n.py.
+## main
+main.select	Select	
+main.pause	Pause	
+main.resume	Resume	
+main.cancel	Cancel	
+main.open_folder	Open folder	
+main.test_integrity	Test integrity	
+main.settings	Settings	
+main.drag_files_here	Drag files here	
+main.archive_open_extract_files_folders	Archive → open and extract  ·  Files or folders → create archive	
+main.open_archive	Open archive	
+main.new_archive	New archive	
+main.choose_files	Select files…	
+main.choose_folder	Select folder…	
+main.back	Back	
+main.extract_here	Extract here	
+main.extract	Extract to…	
+main.add_files_folders_archive_you_can	Add files or folders to this archive (or drag them here)	
+main.add_archive	Add to archive	
+main.add	Add	
+main.add_files	Add files…	
+main.add_folder	Add folder…	
+main.new_folder	New folder…	
+main.preview	Preview	
+main.image_preview	Image preview	
+main.audio_preview	Audio preview	
+main.view	View	
+main.list_all	List all	
+main.folder_tree	Folder tree	
+main.folder_tree_toggle	Folder tree toggle	
+main.show_macos_metadata	Show macOS metadata	
+main.details	Details	
+main.list	List	
+main.show_image_thumbnails_icon_view	Show image thumbnails in icon view	
+main.sort_by_name	Sort by name	
+main.sort_by_size	Sort by size	
+main.sort_by_packed_size	Sort by packed size	
+main.sort_by_modified_date	Sort by modified date	
+main.sort_by_type	Sort by type	
+main.ascending	Ascending	
+main.descending	Descending	
+main.more_options	More options	
+main.archive_information	Archive information…	
+main.hash_values_archive	Archive hash values…	
+main.scan_malware	Scan for malware	
+main.hands_every_file_archive_antivirus	Sends each file in the archive to the installed antivirus software for scanning (through Windows AMSI). Real-time protection must be on, and files over 128 MB are skipped. LycanZip has no scanning engine of its own, so a clean result doesn't guarantee safety. Windows Defender cloud protection might send suspicious samples to Microsoft.	
+main.filename_encoding	Filename encoding	
+main.up_one_level_backspace	Up one level (Backspace)	
+main.up_one_level	Up one level	
+main.current_location	Current location	
+main.search_ctrl_f	Search (Ctrl+F)	
+main.search	Search	
+main.drag_resize_folder_tree_double	Drag to resize the folder tree (double-click to reset)	
+main.folder_tree_splitter	Folder tree splitter	
+main.select_all	Select all	
+main.select_all_clear_selection	Select all / Clear selection	
+main.name	Name	
+main.sort_by_location	Sort by location	
+main.location	Location	
+main.type	Type	
+main.size	Size	
+main.packed	Packed	
+main.modified	Modified	
+main.archive_contents	Archive contents	
+main.archive_contents_list_icons	Archive contents (list / icons)	
+main.extract_selected_items_here	Extract selected items here	
+main.extract_selected_items	Extract selected items to…	
+main.copy_path	Copy path	
+main.clear_selection	Clear selection	
+main.restore_default_settings	Restore default settings	
+main.settings_tabs	Settings tabs	
+main.general	General	
+main.compression	Compression	
+main.file_explorer	File Explorer	
+main.shortcuts	Shortcuts	
+main.about	About	
+main.appearance	Appearance	
+main.language	Language	
+main.interface_language_restart	Interface language. Restart LycanZip after changing it.	
+main.saved_takes_effect_after	Saved. Takes effect after a restart.	
+main.follow_system	Follow system	
+main.theme	Theme	
+main.follow_system_fixed_light_dark	Follow system, or use light, dark, or high contrast	
+main.light	Light	
+main.dark	Dark	
+main.high_contrast_black	High contrast (black)	
+main.accent_color	Accent color	
+main.accent_color_buttons_selection	The accent color for buttons, selection, progress, and links. "Follow system" uses the Windows accent color.	
+main.background	Background	
+main.full_gradient_plus_moonlit_scene	Full: gradient and the moonlit scene on the home page. Gradient only: background color only. Off: system material (Mica). The gradient follows the accent color and light or dark mode.	
+main.full	Full	
+main.gradient_only	Gradient only	
+main.close	Close	
+main.animations	Animations	
+main.page_transitions_list_loading_drag	Page and tab changes, moving between folders, notices, task cards, the steps of the welcome window, the next picture of the preview, and a few twinkling stars on the home page. Not played when animations are off in Windows.	
+main.sound_effects	Sound effects	
+main.sounds_opening_completion_errors	Sounds for opening, completion, errors, and other events. Off by default.	
+main.sound_set	Sound set	
+main.synth_default_set_synthesized	Synth is the default set of synthesized sounds. Wave is a simpler set of tones. Selecting a set plays the completion sound.	
+main.system_notifications	System notifications	
+main.show_notification_when_tasks	Show a notification when tasks finish while LycanZip isn't in the foreground (failures always notify). The taskbar progress bar and flashing aren't affected by this setting.	
+main.multiple_windows	Multiple windows	
+main.when_opening_another_archive	When opening another archive	
+main.when_window_already_use_open	How to open an archive when a window is already in use: open in a new window, or replace the contents of the current window. If a window has running tasks or multiple archives are opened at once, new windows are always used.	
+main.open_new_window	Open in a new window	
+main.replace_current_window	Replace the current window	
+main.performance	Performance	
+main.simultaneous_tasks	Simultaneous tasks	
+main.disk_bottleneck_so_1_run_one	Disk speed is usually the bottleneck. 1 (one task at a time) is recommended.	
+main.task_priority	Task priority	
+main.how_much_machine_compress_extract	How much system resources compression, extraction, and testing tasks use. Lower or Background reduces the impact on other apps, but tasks take longer.	
+main.normal	Normal	
+main.lower_leaves_some_cpu_others	Lower (uses less CPU)	
+main.background_lowest_also_saves_disk	Background (lowest; also reduces disk and power use)	
+main.temporary_folder	Temporary folder	
+main.used_when_opening_files_from	Used when opening or dragging files from an archive, and when opening or creating .tar.gz archives. Defaults to the system temporary folder. Network or USB drives aren't recommended (slow).	
+main.choose	Select…	
+main.choose_temporary_folder	Select the temporary folder	
+main.reset	Reset	
+main.reset_temporary_folder	Reset the temporary folder	
+main.clear_temporary_files	Clear temporary files	
+main.extraction	Extraction	
+main.when_file_with_same_name_already	When a file with the same name already exists	
+main.ask_me_shows_options_on_every	"Ask me" prompts you on each conflict and lets you apply your choice to all remaining conflicts.	
+main.file_conflict_handling	File conflict handling	
+main.ask_me	Ask me	
+main.skip	Skip	
+main.overwrite	Overwrite	
+main.rename_automatically	Rename automatically	
+main.when_extracting_here	When extracting here	
+main.automatic_single_top_level_folder	Automatic: if the archive has a single top-level folder, extracts it directly here; otherwise, creates a folder named after the archive. Use the arrow next to the button for other options.	
+main.automatic_recommended	Automatic (recommended)	
+main.do_not_create_folder	Don't create a folder	
+main.create_folder_named_after_archive	Create a folder named after the archive	
+main.check_unusually_big_archives	Check unusually big archives before extracting	
+main.when_archive_would_unpack_far_more	Ask before extracting when an archive would unpack to a much larger size (at least 1 GB and over 500× its packed size, or 1 TB or more). This might be a compression bomb, or a legitimate large file such as a virtual machine disk image.	
+main.open_folder_when_done	Open the folder when done	
+main.skip_macos_metadata_when	Skip macOS metadata when extracting	
+main.macosx_folder_files_starting_with	In archives created on macOS, the __MACOSX folder, .DS_Store, and files starting with ._ aren't needed on Windows. When enabled, they are skipped during extraction and ignored by the single-folder check.	
+main.keep_files_have_data_error	Keep files with data errors	
+main.when_archive_damaged_cut_off_what	When an archive is damaged or incomplete, keep whatever data could be extracted (images, videos, and text files are often still partially usable). Files with errors are listed when done. When off, corrupted files are deleted. Wrong passwords, canceled tasks, or full disks always delete incomplete files.	
+main.ask_before_deleting_archive	Ask before deleting an archive	
+main.ask_once_when_delete_archive	Ask once when "Delete archive" is selected on the archive at the top of the folder tree (it moves to the Recycle Bin). When off, the archive is deleted immediately and you return to the home page.	
+main.ask_before_deleting_items_from	Ask before deleting items from an archive	
+main.ask_once_when_delete_pressed	Ask once when Delete is pressed or "Delete" is selected. Items are removed directly from the archive. They don't go to the Recycle Bin and can't be restored (unless the backup below is on).	
+main.keep_backup_when_archive_changed	Keep a backup when an archive is changed	
+main.when_files_archive_added_deleted	When files in an archive are added, deleted, renamed, or edited, keep the archive as it was in the same folder (with .bak added to the name). Each change overwrites the previous backup.	
+main.program_editing	Program for editing	
+main.which_program_edit_item_right	The app used by "Edit" in the context menu. When empty, text files open in Notepad and other files open in their default app. Full paths are supported (e.g., C:\\Program Files\\Notepad++\\notepad++.exe).	
+main.ask_before_edited_file_goes_back	Ask before updating edited files in the archive	
+main.after_edited_file_saved_ask_once	After saving an edited file, ask whether to update it in the archive. When off, it's updated automatically.	
+main.warn_before_opening_programs	Warn before opening programs, installers, and scripts	
+main.ask_first_when_you_double_click	Ask for confirmation when double-clicking an executable file (.exe, .msi, .bat, etc.) inside an archive.	
+main.warn_before_opening_programs_short	Warn before opening programs	
+main.what_extract_when_opening_program	What to extract when opening a program	
+main.programs_often_need_files_next	Programs often need files in the same folder (DLLs, data files). "Same folder" extracts the folder, including subfolders, to a temporary folder before running the program.	
+main.files_same_folder_recommended	Files in the same folder (recommended)	
+main.extract_only_file	Extract only this file	
+main.close_window_automatically_after	Close the window automatically after a context-menu action	
+main.when_you_extract_compress_from	When you extract or compress from the context menu, close the small window automatically after everything succeeds. Turn this off to keep the window open and see the result.	
+main.default_format	Default format	
+main.show_new_archive_file_explorer	Show the new archive in File Explorer after compressing	
+main.test_integrity_after_compressing	Test integrity after compressing	
+main.after_compressing_new_archive_read	After compressing, read the new archive to make sure it's intact.	
+main.skip_thumbs_db_automatically	Skip Thumbs.db automatically	
+main.windows_thumbnail_cache_thumbs_db	Skip the Windows thumbnail cache file Thumbs.db when adding folders (a Thumbs.db you select yourself is still added).	
+main.default_compression_mode	Default compression mode	
+main.balanced_recommended	Balanced (recommended)	
+main.compatibility_first	Compatibility first	
+main.smallest_size_slower	Smallest size (slower)	
+main.fastest	Fastest	
+main.archive_view	Archive view	
+main.remember_last_chosen_view	Remember the last chosen view	
+main.layout_you_pick_view_menu_details	The layout selected in the View menu (details / list / icons) is used the next time an archive is opened. When on, "Default view" below follows your last choice.	
+main.default_view	Default view	
+main.details_has_columns_sorting_list	Details shows columns and supports sorting. List is the most compact. Icons shows large icons. You can switch at any time from the View menu.	
+main.default_browsing_mode	Default browsing mode	
+main.single_level_shows_one_folder_at	"Single level" shows one folder at a time; use the folder tree on the left or the path bar to navigate. "List all" shows the files from all levels in one list. You can switch at any time from the toolbar.	
+main.single_level_folder_navigation	Single level (folder navigation)	
+main.use_file_icons_windows	Use Windows file icons	
+main.files_folders_lists_folder_tree	Use File Explorer icons for files and folders in the list and folder tree (based on installed apps). When off, LycanZip uses its own colored icons.	
+main.only_works_non_solid_archives	Applies to non-solid archives only (reading one image from a solid archive requires decoding the data before it, so no thumbnails are made). Read in the background only when needed.	
+main.row_height	Row height	
+main.compact_shows_more_items_at_once	Compact fits more items on screen	
+main.compact	Compact	
+main.comfortable	Comfortable	
+main.show_folder_tree	Show the folder tree	
+main.hidden_automatically_when_window	Automatically hidden when the window is too narrow	
+main.hide_macos_metadata	Hide macOS metadata	
+main.do_not_show_macosx_folder_files	Don't show the __MACOSX folder, files that start with ._, or .DS_Store. Image and audio previews never include them. Also available from the View menu on the toolbar.	
+main.stream_files_when_dragging_them	Stream files when dragging them out (no unpacking first)	
+main.when_dropped_on_explorer_desktop	When dragging to File Explorer or the desktop, files are extracted on the fly while copying, so large files don't need to be unpacked to a temporary folder first. Some apps only accept regular files on disk—if drag-and-drop fails, turn this off.	
+main.stream_files_when_dragging_them_out	Stream files when dragging them out	
+main.image_preview_heading	Image preview	
+main.double_clicking_image	Double-clicking an image	
+main.what_happens_when_you_double_click	How an image in an archive opens when you double-click it (or press Enter). The context menu always offers the other option.	
+main.open_image_preview	Open in image preview	
+main.open_with_associated_app	Open with associated app	
+main.when_audio_file_double_clicked	When an audio file is double-clicked	
+main.how_audio_file_inside_archive	How an audio file in an archive opens when you double-click it (or press Enter). The context menu always offers the other option.	
+main.open_audio_preview	Open in audio preview	
+main.enlarge_small_images_too	Enlarge small images too	
+main.by_default_fit_window_width_height	By default, "Fit to window / width / height" only shrinks large images and doesn't enlarge small ones. When on, small images are enlarged to fit.	
+main.read_ahead_faster_paging	Read ahead (faster paging)	
+main.while_previewing_nearby_images	Preload nearby images in the background for faster paging. This sets the maximum memory used for preloaded images. When off, images are loaded on demand.	
+main.read_ahead	Read ahead	
+main.256_mb_default	256 MB (default)	
+main.2_gb_maximum	2 GB (maximum)	
+main.file_associations	File associations	
+main.register_lycanzip_as_archive_app	Register LycanZip as an archive app	
+main.after_registering_lycanzip_appears	Once registered, LycanZip appears in "Open with" and "Default apps". Windows requires you to set default apps manually in System Settings.	
+main.current_default_apps	Current default apps	
+main.open_default_apps_settings	Open default apps settings	
+main.add_lycanzip_right_click_menu	Add LycanZip to the context menu	
+main.files_add_archive_compress_zip_7z	Files: add to archive, compress to ZIP / 7z, and more. Archives: open, extract, test, preview, and more. Affects only the current user and can be turned off at any time. On Windows 11, it appears under "Show more options".	
+main.add_lycanzip_windows_11_context	Add LycanZip to the Windows 11 context menu	
+main.shown_at_top_level_windows_11	Shown at the top level of the Windows 11 context menu, without selecting "Show more options". Requires a signed menu package. Affects only the current user and can be turned off at any time. The entries are the same as in the menu above, and both can be on at once.	
+main.open_settings_file_location	Open settings file location	
+main.web_site	Web site	Link on the About page; opens aegisulf.com/lycanzip
+main.source_code_on_github	Source code on GitHub	Link on the About page
+main.show_welcome_window_again	Show the welcome window again	
+main.data_location	Data location	
+main.diagnostics	Diagnostics	
+main.detailed_debug_log	Detailed debug log	
+main.only_errors_warnings_logged_by	Only errors and warnings are logged by default. When on, the log also records what was opened, when tasks start and end, and how long they take. Helpful when reporting a problem.	
+main.log_full_paths	Log full paths	
+main.only_file_names_logged_by_default	Only file names are logged by default. The log never includes passwords or file contents, but it can include file names. Check it before sharing.	
+main.open_report_folder	Open the report folder	
+main.copy_diagnostic_information	Copy diagnostic information	
+main.copied_clipboard	Copied to the clipboard	
+main.open_source_mit_compression_engine	Open source (MIT). The compression engine is 7-Zip (LGPL); RAR is extract-only.	
+main.template	Template	
+main.apply_whole_set_settings_at_once	Apply a whole set of settings at once	
+main.template_modified	Modified	
+main.template_options	Template options	
+main.output	Output	
+main.file_name_without_extension	File name (without extension)	
+main.file_name_short	File name	
+main.change_location	Change location…	
+main.change_location_tip	Change location	
+main.format_mode	Format and mode	
+main.format	Format	
+main.zip_most_compatible_7z_compresses	ZIP is the most compatible; 7z compresses better and can encrypt file names; the TAR family is common on Linux / macOS.	
+main.mode	Mode	
+main.no_need_understand_parameters_just	No need to tweak complex parameters—just pick the mode that fits your needs.	
+main.volume_label_optional	Volume label (optional)	
+main.file_name_by_default	The file name by default	
+main.volume_label	Volume label	
+main.keep_modified_times_files	Preserve file modification times	
+main.iso_image_not_compressed_names_can	An ISO image isn't compressed. File names can be long and in any language, and a single file must be smaller than 4 GB.	
+main.protection	Protection	
+main.password_optional	Password (optional)	
+main.password	Password	
+main.re_enter_password	Re-enter password	
+main.show_password_keep_checked_when	Show password (keep enabled when typing non-ASCII characters)	
+main.show_password	Show password	
+main.encrypt_file_names_too_7z_only	Encrypt file names too (7z only)	
+main.encrypt_file_names	Encrypt file names	
+main.new_archive_read_once_after	Verify the new archive after creation to make sure it's intact.	
+main.advanced_options	Advanced options	
+main.rarely_needed_leave_defaults_if	Rarely needed. Leave the defaults if you're not sure.	
+main.compression_method	Compression method	
+main.auto_picks_by_format_mode_deflate	"Auto" chooses by format and mode (Deflate for ZIP, LZMA2 for 7z).	
+main.compression_level	Compression level	
+main.overrides_level_mode_store_only	Overrides the mode's default compression level. "Store only" packs files without compression.	
+main.dictionary_size	Dictionary size	
+main.larger_usually_compresses_better	A larger value usually compresses better, but uses more memory for both compression and extraction. Applies to LZMA / LZMA2 / PPMd only.	
+main.word_size	Word size	
+main.larger_usually_compresses_better_but_slower_ppmd_model_order	A larger value usually compresses better but is slower. For PPMd, this is the model order.	
+main.solid_block	Solid block	
+main.compress_several_files_as_one	Compress several files as one continuous stream (7z only). The more similar the files, the smaller the result, but extracting a single file reads more data.	
+main.store_files_compressed_already	Store already-compressed files without recompressing	
+main.photos_music_video_archives_other	Photos, audio, videos, archives, and other already-compressed files (64 KB or larger) are stored directly without recompression. This is faster with minimal size difference, and preserves image thumbnails in 7z archives (ZIP / 7z only).	
+main.cpu_threads	CPU threads	
+main.how_many_processor_cores_use_auto	The number of processor cores to use. "Auto" is usually best.	
+main.zip_encryption_method	ZIP encryption method	
+main.aes_256_secure_zipcrypto_weak_use	AES-256 is strongly recommended. ZipCrypto is weak—use it only for compatibility with older software.	
+main.path_mode	Path mode	
+main.relative_records_only_names_files	"Relative path" records only the names of the files and folders you selected. "Full path" also records the parent folders (without the drive letter).	
+main.split_archive	Split archive	
+main.cut_into_several_fixed_size_files	Splits the archive into several fixed-size files (ZIP / 7z only), for sending by email or storing on small USB drives.	
+main.e_g_50_mb_1_5	e.g. 50 MB, 1.5 GB	
+main.custom_split_size	Custom split size	
+main.custom_7_zip_parameters	Custom 7-Zip parameters	
+main.e_g_mx_9_fb_64	e.g. mx=9 fb=64 (name=value, separated by spaces)	
+main.custom_parameters	Custom parameters	
+main.passed_straight_compression_engine	Passed directly to the compression engine, overriding the settings above. Invalid or unsupported parameters will cause compression to fail with an error message.	
+main.restore_template_s_settings	Restore this template's settings	
+main.add_files_button	Add files	
+main.add_folder_button	Add folder	
+main.you_can_also_paste_files_with	You can also paste files with Ctrl+V	
+main.start_compressing	Start compressing	
+main.tasks	Tasks	
+main.run_background	Run in background	
+main.hide_window_tasks_keep_running	Hide the window. Tasks keep running in the background, and a notification appears when they finish.	
+main.clear_finished	Clear finished	
+main.collapse_expand	Collapse / expand	
+main.collapse_task_panel	Collapse the task panel	
+main.when_done	When done:	
+main.done	Done	
+main.go	Go to {0}	
+main.unknown	Unknown	
+main.auto_detect	Auto-detect	
+main.big5_traditional_chinese	Big5 (Traditional Chinese)	
+main.gbk_simplified_chinese	GBK (Simplified Chinese)	
+main.shift_jis_japanese	Shift-JIS (Japanese)	
+main.euc_kr_korean	EUC-KR (Korean)	
+main.opening	Opening "{0}"…	
+main.total	, {0} in total	
+main.many_items_only_part_were_counted	(too many items; only partially counted)	
+main.ok	OK	
+main.invalid_command_line_arguments	Invalid command-line arguments	
+main.no_files	No files	
+main.choose_folder_extract	Select the folder to extract to	
+main.cannot_open_archive	Can't open the archive	
+main.file_format_unrecognized_file	The file format isn't recognized or the file is damaged: {0}	
+main.cannot_write_settings_file	⚠ Can't write the settings file: {0}	
+main.there_no_audio_preview_archive	There are no audio files to preview in this archive	
+main.there_no_images_preview_archive	There are no images to preview in this archive	
+main.system_temporary_folder	The system temporary folder	
+main.use_opened_dragged_files	In use: {0} (opened and dragged files)	
+main.location_slow	This location is slow	
+main.network_removable_drive_temporary	"{0}" is on a network or removable drive. Storing temporary files there will be slow, especially for large archives. Use it anyway?	
+main.use_anyway	Use it anyway	
+main.temporary_files_cleared	Temporary files cleared	
+main.freed_files_use_not_deleted	Freed {0}. Files that are in use aren't deleted.	
+main.not_enough_room_temporary_files	Not enough room for temporary files	
+main.about_intermediate_data_has_be_put	About {0} of temporary space is required, but "{1}" only has {2} free.	
+main.temporary_location_full_left	The temporary location "{0}" is full ({1} left).	
+main.where_use_instead_local_disks_only	Select another location (local disks only)	
+main.free	{0} ({1} free)	
+main.no_other_local_disk_has_enough	No other local disk has enough space. Select another folder, free up disk space, or use the ZIP or 7z format (which doesn't require temporary files).	
+main.network_removable_drive_temporary_files_will_be_slow	This is a network or removable drive. Temporary files will be slow.	
+main.choose_another_folder	Select another folder…	
+main.always_use_temporary_location	Always use this temporary location	
+main.use_location_try_again	Use this location and try again	
+main.chosen	Chosen: {0}	
+main.tasks_still_running	Tasks are still running	
+main.still_unfinished_closing_now	{0} {0:task is|tasks are} still unfinished. Closing now cancels {0:it|them}, and unfinished output might be incomplete.	
+main.cancel_tasks_close	Cancel tasks and close	
+main.keep_waiting	Keep waiting	
+main.integrity_test	Integrity test	
+main.lycanzip_closed_unexpectedly_at	LycanZip closed unexpectedly at {0}.	
+main.open_at_time	{0} {0:archive was|archives were} open at the time:	
+main.not_finished	{0} {0:task was|tasks were} not finished:	
+main.destination_extraction_may_contain	The extraction folder might contain incomplete files. Please check its contents.	
+main.removed_unfinished_compression	Removed {0} incomplete temporary compression {0:file|files}.	
+main.crash_report_including_memory_dump	The crash report (including a memory dump) is in: {0}\nBefore sharing it, note that the dump can contain file paths and program memory contents.	
+main.lycanzip_closed_unexpectedly_last	LycanZip closed unexpectedly last time	
+main.reopen	Reopen {0} {0:archive|archives}	
+main.opening_several_archives	Opening several archives	
+main.received_archives_at_once_each	Received {0} archives at once. Each archive opens in its own window, and many windows use more memory.	
+main.open_first	Open the first {0}	
+main.open_all	Open all ({0})	
+main.open_only_first	Open only the first {0}	
+main.later_volume_split_archive	This is a later volume of a split archive	
+main.volume_split_archive_one_volume	"{0}" is volume {1} of a split archive. Opening only this volume doesn't show the whole content. Open the first volume "{2}"?	
+main.open_first_volume	Open the first volume	
+main.open_volume_anyway	Open this volume anyway	
+main.first_volume_was_not_found_only	The first volume "{0}" wasn't found. Only part of the content of this volume can be seen.	
+main.moonlight	Moonlight	
+main.blood_moon	Blood Moon	
+main.amber_eyes	Amber Eyes	
+main.aurora	Aurora	
+main.forest	Forest	
+main.compression_engine_7_zip	Compression engine: 7-Zip	
+main.7z_dll_not_found	(7z.dll not found)	
+main.settings_file	Settings file: {0}	
+main.not_set	(not set)	
+main.already_lycanzip	  ✓ Already LycanZip	
+main.not_registered_yet_turn_on_switch	\n\nNot registered yet. Turn on the option above first.	
+main.cannot_update_file_associations	Can't update file associations	
+main.registered	Registered	
+main.lycanzip_can_now_handle_archives	LycanZip can now handle archives.\n\nWindows doesn't let apps change the default apps themselves. Select "Open default apps settings" and choose LycanZip for the formats you want.	
+main.cannot_open_settings	Can't open settings	
+main.please_open_settings_apps_default	Open "Settings → Apps → Default apps" manually.	
+main.menu_add_to_archive	Add to archive…	
+main.compress_name_format	Compress to "name.format"	
+main.compress_each_separately_when	Compress each separately (when several items are selected)	
+main.compress_with_preset	Compress with a template	
+main.other_formats_tar_gz_tar_xz	Other formats (tar.gz / tar.xz / tar.bz2)	
+main.encrypted_archive	Encrypted archive…	
+main.open_contents_with_lycanzip_exe	Open contents with LycanZip (.exe, .docx, .jar, …)	
+main.hash_values_menu_files_archives	Hash values… (in the menus of files and archives)	
+main.open	Open	
+main.menu_extract_here	Extract here	
+main.extract_folders_same_name	Extract each to a separate folder	
+main.extract_recent_folder	Extract to a recent folder	
+main.extract_all_into_one_folder_when	Extract all into one folder (when several archives are selected)	
+main.context_menu_entries	Context menu entries	
+main.choose_which_entries_shown_change	Select the entries to show. A change takes effect the next time the context menu opens. Nothing needs to be registered again.	
+main.format_second_compress_entry	Format of the second "Compress to" entry	
+main.format_first_compress_entry	Format of the first "Compress to" entry	
+main.compress_first_format	Compress to (first format)	
+main.compress_second_format	Compress to (second format)	
+main.files_folders	Files and folders	
+main.archives	Archives	
+main.templates_compress_with_template	Templates in the "Compress with a template" list	
+main.cannot_update_right_click_menu	Can't update the context menu	
+main.pc_not_running_windows_11_there	This PC isn't running Windows 11, so there is no new-style context menu.	
+main.version_has_no_signed_menu_package	This version has no signed menu package yet, so it can't be turned on.	
+main.store_explorer_note	This is the Microsoft Store version. Its right-click menu and its file types are part of the package: Windows adds them when LycanZip is installed and removes them when it is uninstalled, so nothing needs to be registered here.\n• Right-click menu: on Windows 11 in the new menu and under Show more options, on Windows 10 in the normal menu. The switch below shows or hides it; the list further down chooses the entries.\n• File types: LycanZip is listed under Open with for archives. Only you can make it the default app, in the settings of Windows (Open default apps settings).	Note at the top of the Explorer tab, only in the Microsoft Store version
+main.status_built_in	Built in	Status of the Windows 11 menu in the Microsoft Store version
+main.setup_skipped	Setup skipped	
+main.you_can_change_everything_later	You can change everything later in Settings.\n\nThe context menu and file associations aren't turned on. If you want them, turn them on in the File Explorer tab of Settings.	
+main.right_click_menu	The context menu	
+main.windows_11_right_click_menu	The Windows 11 context menu	
+main.some_things_could_not_be_set	Some items couldn't be set up	
+main.you_can_try_again_on_settings	You can try again on the Settings page.	
+main.language_changes_after_lycanzip	Restart LycanZip after changing the language.	
+main.status_on	On.	
+main.status_off	Off.	
+main.could_not_add_windows_11_context	Couldn't add the Windows 11 context menu	
+main.could_not_remove_windows_11	Couldn't remove the Windows 11 context menu	
+main.added	Added	
+main.if_menu_does_not_show_up	If the menu doesn't appear yet, restart File Explorer (Task Manager → Windows Explorer → Restart), or sign out and back in.	
+main.lycanzip_was_moved	The menus point to another copy	Title: LycanZip was moved, or there are two copies (an installed one and a portable one)
+main.still_point_old_folder_so_right	These point to another copy of LycanZip (or to its old folder): {0}. Opening or right-clicking archives won't use this copy. Use this copy instead?\n\nNow used: {2}\nThis copy: {1}	{0} = right-click menu, file associations; {1} = the folder of this copy; {2} = where the registrations point now
+main.use_current_folder	Use this copy	
+main.do_not_remind_me_again	Don't remind me again	
+main.later	Later	
+main.could_not_update_windows_11	Couldn't update the Windows 11 context menu	
+main.updated	Updated	
+main.if_menu_does_not_show_up_yet_restart_file_explorer_sign_out	If the menu doesn't appear yet, restart File Explorer, or sign out and back in.	
+main.restore_default_settings_title	Restore default settings?	
+main.defaults_theme_accent_color	The defaults for theme, accent color, background, view, extraction, and compression return to their initial state. The context menu and file associations are system settings and aren't changed.	
+main.restore	Restore	
+main.msix_package_settings_templates	MSIX package: settings, templates, and the log are kept in the package's own folder and can't be switched.	
+main.portable_mode_settings_templates	Portable mode: settings, templates, crash reports, and the log are kept in the program folder, so the whole folder can be carried around.	
+main.normal_mode_settings_templates	Normal mode: settings, templates, crash reports, and the log are kept in your user folder.	
+main.folder_settings	Settings folder: {0}	
+main.switch_normal_mode_user_folder	Switch to normal mode (user folder)	
+main.switch_portable_mode_program	Switch to portable mode (program folder)	
+main.program_folder_cannot_be_written	The program folder ({0}) can't be written to, so it can't be switched to portable mode.	
+main.switching_copies_settings	Switching copies the settings and templates to the new location (the files in the old location stay) and then restarts LycanZip. The context menu, the file associations, and the last folders that Windows remembers don't move with it.	
+main.wait_tasks_end_cancel_them_before	Wait for the tasks to end (or cancel them) before switching the data location. LycanZip restarts after the switch.	
+main.switch_data_location	Switch the data location	
+main.settings_templates_copied_program	The settings and templates are copied to the program folder:\n{0}\n\nThe files in the old location aren't deleted.	
+main.settings_templates_copied_user	The settings and templates are copied to the user folder:\n{0}\n\nThe files in the program folder aren't deleted.	
+main.if_new_place_has_settings_files	If the new location already has settings files, they're renamed to .bak first. Then LycanZip restarts.	
+main.switch_restart	Switch and restart	
+main.could_not_switch	Couldn't switch	
+main.new_place_cannot_be_written	The new location can't be written to.	
+main.copying_settings_failed	Copying the settings failed.	
+main.flag_file_portable_mode_lycanzip	The flag file for portable mode (LycanZip.portable) couldn't be created or deleted.	
+main.release_process	Release to process	
+main.password_required	Password required	
+main.wrong_password_please_try_again	Wrong password. Try again.	
+main.file_format_unrecognized_file_damaged	The file format isn't recognized or the file is damaged.	
+main.solid_archive	  ·  Solid archive	
+main.encrypted	  ·  Encrypted	
+main.filename_encoding_uncertain	Filename encoding uncertain	
+main.filename_encoding_detected	Filename encoding detected automatically	
+main.currently_using_if_file_names_look	Currently using {0}. If file names look garbled, switch the encoding at the top right.	
+main.found_matching_including	Found {0} {0:item|items} matching "{1}" (including subfolders)	
+main.list_all_suffix	(list all)	
+main.image_thumbnails_on_but_double	Image thumbnails are on, but {0}. Double-click an image to preview it.	
+main.archive_solid_so_no_thumbnails	this is a solid archive, so thumbnails are disabled (reading a single image requires decompressing all preceding data)	
+main.archive_format_cannot_read_single	this archive format can't read a single image on its own, so no thumbnails are made	
+main.show_image_thumbnails_icon_view_not_supported_by_archive	Show image thumbnails in icon view (not supported by this archive: {0})	
+main.solid_compression	solid compression	
+main.format_limitation	format limitation	
+main.selected	{0} selected ({1})	
+main.opened_with_associated_app_instead	"{0}": {1}. Opened with the associated app instead.	
+main.cannot_open	Can't open	
+main.file_s_name_unsafe_was_rejected	Rejected unsafe file name: {0}	
+main.run_program	Run this program?	
+main.comes_from_archive_will_run	"{0}" is inside an archive and will execute when opened. Only run it if you trust the source of this archive.	
+main.which_files_should_be_extracted	Which files should be extracted?	
+main.needed_when_program_uses_files	Needed when the program uses files in the same folder (DLLs, data files)	
+main.faster_but_program_may_not_find	Faster, but the program may not find the files it needs	
+main.do_not_warn_again_can_be	Don't warn again (can be turned back on in Settings)	
+main.extract_run	Extract and run	
+main.folder_large	The folder is large	
+main.folder_program_extract_all	This program's folder is {0}. Extract the entire folder to a temporary location?	
+main.extract_whole_folder	Extract the whole folder	
+main.temporary_folder_not_found	Temporary folder not found.	
+main.global	Global	
+main.open_archive_on_new_archive_page	Open an archive (on the New archive page: add files)	
+main.new_archive_choose_files	New archive (select files)	
+main.new_archive_choose_folder	New archive (select folder)	
+main.open_close_settings	Open / close settings	
+main.go_back_close_current_page	Go back / close the current page (settings, new archive); clear the selection	
+main.show_collapse_task_panel	Show / collapse the task panel	
+main.clear_finished_tasks	Clear finished tasks	
+main.paste_files_folders_new_archive	Paste files and folders (New archive page: adds sources; archive view: adds to the current folder)	
+main.open_selected_item_file_enter	Open the selected item (file / enter folder)	
+main.rename_selected_item_zip_7z_tar	Rename the selected item (supported in-place for ZIP, 7z, and TAR)	
+main.delete_selected_items_from_archive	Delete the selected items from the archive	
+main.extract_here_only_selected_items	Extract here (extracts only selected items if any are selected)	
+main.extract_only_selection_when	Extract to… (extracts only selected items if any are selected)	
+main.image_preview_selected_image_first	Image preview (the selected image, or the first one)	
+main.audio_preview_selected_audio_file	Audio preview (the selected audio file, or the first one)	
+main.properties_with_nothing_selected	Properties (with nothing selected: archive information)	
+main.view_details	View: Details	
+main.view_list	View: List	
+main.view_icons	View: Icons	
+main.list_all_flatten_all_levels	List all (flatten all levels)	
+main.show_hide_folder_tree	Show / hide the folder tree	
+main.close_archive_return_home_page	Close the archive and return to the home page	
+main.new_archive_page	New archive page	
+main.save_as_new_template	Save as new template	
+main.image_preview_window	Image preview window	
+main.previous_next	Previous / next	
+main.space_pageup_pagedown_mouse_wheel	← ↑ / → ↓  Space  PageUp / PageDown  Mouse wheel	
+main.first_last	First / last	
+main.view_mode_fit_window_actual_size	View mode: fit window / actual size / fit width / fit height (F switches between fit and actual size; double-clicking the image also works)	
+main.zoom_out_when_zoomed_drag_use	Zoom in / out (when zoomed in, drag or use the arrow keys to pan)	
+main.ctrl_wheel	+ / −  Ctrl + wheel	
+main.rotate_changes_display_only	Rotate (changes the display only)	
+main.full_screen_thumbnail_strip	Full screen / thumbnail strip	
+main.copy_image_copy_path	Copy image / copy path	
+main.save_image_as_open_with_associated	Save image as… / Open with the associated app	
+main.animations_gif_animated_webp_play	Animations (GIF, animated WebP) play / pause	
+main.image_info_size_format_photo_info	Image info (size, format, photo info…)	
+main.menu_button_at_top_right_right	Menu (the "⋯" button at the top right, or right-click the image): includes all the actions above and the image info	
+main.right_click	Right-click	
+main.close_leaves_full_screen_first	Close (leaves full screen first when in full screen)	
+main.dialogs	Dialogs	
+main.ok_cancel	OK / Cancel	
+main.open_archive_ctrl_o	Open an archive (Ctrl+O)	
+main.new_archive_ctrl_n	New archive (Ctrl+N)	
+main.settings_ctrl	Settings (Ctrl+,)	
+main.back_home_ctrl_w	Back to home (Ctrl+W)	
+main.extract_ctrl_shift_e	Extract to… (Ctrl+Shift+E)	
+main.up_one_level_backspace_alt	Up one level (Backspace / Alt+↑)	
+main.collapse_expand_ctrl_j	Collapse / expand (Ctrl+J)	
+main.start_compressing_ctrl_enter	Start compressing (Ctrl+Enter)	
+main.cancel_esc	Cancel (Esc)	
+main.back_esc	Back (Esc)	
+main.self_extracting_archive	Is this a self-extracting archive?	
+main.contains_compressed_data_format	"{0}" contains compressed data (format: {1}).\n\nOpening the contents lists the files inside. The program isn't run.	
+main.open_contents	Open contents	
+main.add_to_archive_title	Add to archive	
+main.no_images_preview	No images to preview	
+main.there_no_images_current_folder	There are no images in the current folder (or search results).	
+main.no_audio_preview	No audio to preview	
+main.there_no_audio_files_current	There are no audio files in the current folder (or search results).	
+main.cannot_preview_use_open_with	Can't preview "{0}": {1}. Select "Open with associated app" from the context menu.	
+main.sort_by	Sort by	
+main.packed_size	Packed size	
+main.switch_single_level_browsing	Switch to single-level browsing	
+main.edit_put_back_into_archive	Edit and update in archive	
+main.calculate_hash_values	Calculate hash values…	
+main.go_containing_folder	Go to containing folder	
+main.properties	Properties	
+main.add_files_folder	Add files to this folder…	
+main.rename	Rename	
+main.delete	Delete	
+main.show_explorer	Show in File Explorer	
+main.copy_file_path	Copy file path	
+main.delete_archive	Delete archive…	
+main.delete_archive_title	Delete the archive?	
+main.move_archive_recycle_bin_you_can	Move this archive to the Recycle Bin? You can restore it from there.	
+main.drive_archive_has_no_recycle_bin	⚠ The drive of this archive has no Recycle Bin. After deleting, it can't be restored.	
+main.delete_without_asking_from_now_on	Delete without asking from now on	
+main.move_recycle_bin	Move to Recycle Bin	
+main.delete_permanently	Delete permanently	
+main.archive_could_not_be_deleted	The archive couldn't be deleted	
+main.file_may_be_use_by_another	The file might be in use by another program, or you might not have permission.	
+main.archive_being_changed_please_wait	The archive is being changed. Wait for it to finish.	
+main.archive_cannot_be_changed_directly	This archive can't be changed directly	
+main.cannot_be_changed_place_only_zip	"{0}" can't be modified in place (only single-volume ZIP, 7z, and TAR archives are supported, not split archives or compound formats like .tar.gz). Extract it first and create a new archive.	
+main.archive_read_only	The archive is read-only	
+main.file_set_read_only_cannot_be	This file is read-only and can't be changed. Clear "Read-only" in the file's properties first.	
+main.archive_could_not_be_changed	The archive couldn't be changed	
+main.will_take_while	This will take a while	
+main.about_solid_archive_has_be	About {0} of this solid archive must be unpacked and packed again, which takes a while. Continue?	
+main.nothing_update	Nothing to update	
+main.files_archive_up_date_none_files	All files in the archive are already up to date (no newer files on disk). Nothing was changed.	
+main.some_files_were_not_added	Some files weren't added	
+main.archive_was_changed_but_file_s	The archive was changed, but {0} {0:file|files} couldn't be read and weren't added:\n{1}	
+main.status_added	{0} added	
+main.deleted	{0} deleted	
+main.renamed	{0} renamed	
+main.new_folder_s	{0} new {0:folder|folders}	
+main.unchanged	{0} unchanged	
+main.archive_changed	Archive changed: {0}	
+main.already_compressed_file_s_stored	 ({0} already-compressed {0:file|files} stored directly)	
+main.items_with_same_name	Items with the same name	
+main.archive_already_has_items_with	The archive already contains {0} {0:item|items} with the same name. Folders with the same name will be merged. How should conflicting files be handled?	
+main.replace_add	Replace and add	
+main.files_same_name_always_replaced	Overwrite existing files with the same name and add new files.	
+main.update_add	Update and add	
+main.file_replaced_only_if_one_on	Overwrite existing files only if the disk version is newer, and add new files.	
+main.update_existing_only	Update existing only	
+main.only_files_archive_newer_on_disk	Only files that are already in the archive and newer on disk are updated. New files aren't added.	
+main.file_already_exists	File already exists	
+main.add_to_this_archive	Add to this archive	
+main.add_these_files_what_not	Add these files to the existing archive without recompressing current contents (choose how to handle conflicting file names below).	
+main.save_as_new_file	Save as a new file	
+main.saved_as	Saved as "{0}".	
+main.replace	Replace it	
+main.old_archive_replaced_by_one	The old archive is replaced by this one.	
+main.replace_add_files_same_name_always	Replace and add: files of the same name are always replaced	
+main.update_add_replace_only_if_newer	Update and add: replace only if newer on disk, and add new files	
+main.update_existing_only_only_files	Update existing only: update only files that are already in the archive and newer	
+main.synchronize_make_archive_match	Synchronize: make the archive match this content (replace what differs, delete what's extra)	
+main.how_treat_files_same_name	When file names conflict	
+main.cannot_synchronize	Can't synchronize	
+main.synchronizing_deletes_items_from	Synchronizing deletes items from the archive	
+main.items_archive_no_longer_exist	{0} {0:item|items} in the archive no longer exist in the folder. Synchronizing deletes them ({1} more added, {2} replaced, {3} unchanged).	
+main.more	…and {0} more	
+main.synchronize	Synchronize	
+main.choose_folder_add	Select the folder to add	
+main.name_cannot_be_empty_contain	The name can't be empty or contain backslashes, quotes, or / : * ? < > |.	
+main.new_folder_name	New folder	
+main.name_already_exists	Name already exists	
+main.there_already_item_called_here	There is already an item called "{0}" here.	
+main.delete_from_archive	Delete from the archive?	
+main.delete_one_from_archive	Delete "{0}" from the archive?	
+main.delete_these_items_from_archive	Delete these {0} items from the archive?	
+main.items_taken_out_archive_itself_not	Selected items will be permanently removed from the archive (not sent to the Recycle Bin). The original archive will be backed up as .bak.	
+main.items_taken_out_archive_itself_not_moved_recycle_bin_cannot_be	Selected items will be permanently removed from the archive (not sent to the Recycle Bin) and cannot be restored.	
+main.editing_after_you_save_you_asked	Editing "{0}". After saving, you'll be asked whether to update it in the archive.	
+main.archive_was_changed	The archive was changed	
+main.while_was_being_edited_another	While "{0}" was open for editing, the archive was modified by another program, so changes can't be saved back. Your edited file is saved at:\n{1}	
+main.file_no_longer_archive	The file is no longer in the archive	
+main.no_longer_archive_deleted_renamed	"{0}" is no longer in the archive (it was deleted or renamed), so changes can't be saved back. Your edited file is saved at:\n{1}	
+main.put_back_into_archive	Update file in the archive?	
+main.was_changed_put_back_into_archive	"{0}" has been modified. Update it in the archive?	
+main.put_back_without_asking_from_now	Always update without asking	
+main.put_back	Update archive	
+main.not_now	Not now	
+main.changes_not_yet_put_back_into	Unsaved changes to archived file	
+main.file_you_edited_has_not_been	The file you edited hasn't been updated in the archive yet. Closing now will leave the archive unchanged.	
+main.close_without_putting_back	Close without updating	
+main.path	Path: {0}\n	
+main.type_folder	Type: folder\n	
+main.contains_total	Contains: {0} {0:file|files}, {1} in total\n	
+main.type_file	Type: file\n	
+main.info_size	Size: {0} ({1} {1:byte|bytes})\n	
+main.info_packed	Packed: {0}	
+main.info_modified	Modified: {0}\n	
+main.info_encrypted	Encrypted\n	
+main.crc_32_stored_archive	CRC-32 (stored in the archive): {0}\n	
+main.after_completion_show_explorer	After completion: show in File Explorer	
+main.after_completion_test_integrity	After completion: test the integrity	
+main.close_window	Close window	
+main.after_completion_close_window	After completion: close the window	
+main.extract_here_no_folder	Extract here (no folder)	
+main.extract_folder	Extract to "{0}" folder	
+main.extract_here_automatic	Extract here (automatic)	
+main.extract_here_straight_into_folder	Extract here, straight into this folder without creating one (Ctrl+E)	
+main.extract_here_always_into_folder	Extract here, always into a folder named after the archive (Ctrl+E)	
+main.extract_here_ctrl_e_creates_name	Extract here (Ctrl+E): creates a folder named after the archive only when the archive has several top-level items	
+main.scan_could_not_run	The scan couldn't run	
+main.scan_hands_files_antivirus_product	A scan sends the files to the installed antivirus software. LycanZip has no scanning engine of its own.	
+main.blocked_by_system_policy	 (blocked by a system policy)	
+main.threat_names_logged_by_windows	Threat names logged by Windows Defender: {0}	
+main.suspicious_files_found	Suspicious files found	
+main.installed_antivirus_product_thinks	The installed antivirus software reports a problem with {0} {0:file|files} in this archive:	
+main.do_not_open_these_files_antivirus	Don't open these files. This is the antivirus software's judgment and might be wrong. Files that aren't listed aren't guaranteed to be safe either.	
+main.ask_every_time_no_automatic_choice	Ask every time (no automatic choice)	
+main.keep_newer	Keep newer file	
+main.keep_older	Keep older file	
+main.keep_larger	Keep larger file	
+main.keep_smaller	Keep smaller file	
+main.skip_if_contents_identical	Skip if the contents are identical, otherwise keep both	
+main.archive_unpacks_something_very_big	This archive unpacks to an unusually large size	
+main.archive_only_unpacks_about_times	The archive is only {0}, but unpacks to about {1} ({2}× larger).	
+main.unpacks_about	It unpacks to about {0}.	
+main.far_more_than_normal_archive_may	That's far more than a normal archive. It might be a compression bomb (a file made small on purpose that fills the disk when unpacked), or it might be legitimate, such as a virtual machine disk image. If you're not sure where it comes from, cancel.	
+main.do_not_check_again_can_be	Don't check again (can be turned back on in Settings)	
+main.continue_extracting	Continue extracting	
+main.conflict_title	File already exists	
+main.same_size	same size	
+main.larger	larger	
+main.smaller	smaller	
+main.existing_file	Existing file	
+main.newer	Newer	
+main.version_archive	Version in the archive	
+main.older	Older	
+main.same_time	Same time	
+main.conflict_archive_version	The version in the archive: {0}.	
+main.what_would_you_like_do	What would you like to do?	
+main.overwrite_existing_file	Overwrite the existing file	
+main.replace_with_version_archive	Replace it with the version in the archive	
+main.keep_both	Keep both	
+main.new_file_renamed_automatically	The new file is renamed automatically and nothing is lost	
+main.skip_file	Skip this file	
+main.keep_existing_file_do_not_extract	Keep the existing file and don't extract this one	
+main.apply_same_choice_all_later	Apply the same choice to all later conflicts	
+main.choose_automatically	Or select automatically	
+main.automatic_choice	Automatic choice	
+main.cancel_extraction	Cancel extraction	
+main.choose_folder_compress	Select the folder to compress	
+main.smallest_size	Smallest size	
+main.balanced	Balanced	
+main.store_only	Store only	
+main.level	Level {0}	
+main.single_solid_block	Single solid block	
+main.non_solid	Non-solid	
+main.password_protected_incl_file_names	Password protected (incl. file names)	
+main.password_protected	Password protected	
+main.split	Split {0}	
+main.full_path	Full path	
+main.by_mode_default	By mode (default)	
+main.store_only_no_compression	Store only (no compression)	
+main.1_fastest	1  Fastest	
+main.3_fast	3  Fast	
+main.5_normal	5  Normal	
+main.7_maximum	7  Maximum	
+main.9_ultra	9  Ultra	
+main.auto	Auto	
+main.non_solid_each_file_separately	Non-solid (each file separately)	
+main.all_single_block_smallest	All (single block, smallest)	
+main.by_mode_aes_256	By mode (AES-256)	
+main.zipcrypto_compatible_with_old	ZipCrypto (compatible with old programs)	
+main.relative_path	Relative path	
+main.full_path_without_drive_letter	Full path (without the drive letter)	
+main.do_not_split	Don't split	
+main.25_mb_e_mail_attachment	25 MB (email attachment)	
+main.4_gb_fat32_limit	4 GB (FAT32 limit)	
+main.custom	Custom…	
+main.choose_output_folder_archive	Select the output folder for the archive	
+main.menu_save_as_new_template	Save as new template…	
+main.update_template_with_current	Update this template with the current settings	
+main.menu_rename_template	Rename…	
+main.delete_template	Delete this template	
+main.show_right_click_menu_compress	Show in the context menu under "Compress with a template"	
+main.fixed_format	(fixed for this format)	
+main.two_passwords_do_not_match	The two passwords don't match.	
+main.zip_passwords_can_only_use_letters	ZIP passwords can use only letters, digits, and common symbols. Choose 7z to use other characters.	
+main.zipcrypto_weakly_encrypted	ZipCrypto encryption is weak. For better security, use AES-256 ("Balanced" mode with "AES-256" encryption).	
+main.iso_images_not_compressed_do_not	ISO images aren't compressed and don't support passwords or splitting.	
+main.tar_family_does_not_support	The TAR family doesn't support passwords or splitting.	
+main.no_password_entered_yet_so_file	No password has been entered, so file names won't be encrypted.	
+main.save	Save to: {0}	
+main.invalid_file_name_chars	The name can't be empty or contain \\ / : * ? " < > |	
+main.output_file	Output file: {0}	
+main.split_into_001_002	(split into .001, .002…)	
+main.invalid_file_name	Invalid file name.	
+main.please_add_files_folders_compress	Add the files or folders to compress first.	
+main.invalid_split_size_enter_size_like	Invalid split size. Enter a size such as "50 MB" or "1.5 GB" (at least 64 KB; with no unit, MB is assumed).	
+main.custom_parameters_set_if_they_do	Custom parameters are set. If they don't apply to this format, compression fails and explains why.	
+main.sources	Sources ({0})	
+main.remove	Remove	
+main.and_n_more_sources	…and {0} more	
+main.calculating	Calculating…	
+main.delete_originals	Delete the originals	
+main.some_items_were_skipped_so	  (Some items were skipped, so deleting the originals isn't offered)	
+main.integrity_test_passed	  Integrity test passed	
+main.data_after_end_compressed_stream	, {0} {0:item has|items have} data after the end of the compressed stream (the content is complete)	
+main.integrity_test_failed	  ⚠ Integrity test failed: {0}	
+main.integrity_test_cancelled	  (Integrity test canceled)	
+main.nothing_delete	Nothing to delete	
+main.originals_no_longer_exist_they	The originals no longer exist, or they contain the new archive.	
+main.new_archive_was_not_found	The new archive wasn't found	
+main.new_archive_gone_so_originals_will	The new archive is gone, so the originals won't be deleted.	
+main.delete_originals_title	Delete the originals?	
+main.delete_original_archive_title	Delete the original archive?	
+main.move_recycle_bin_you_can_restore	Move {0} {0:item|items} to the Recycle Bin? You can restore {0:it|them} from the Recycle Bin.	
+main.drive_cannot_use_recycle_bin	⚠ The drive of {0} {0:item|items} can't use the Recycle Bin. Deleting is permanent and can't be undone.	
+main.new_archive_passed_integrity_test	The new archive passed the integrity test.	
+main.integrity_test_new_archive_failed	⚠ The new archive didn't pass the integrity test. The originals might be the only intact copy, so deleting them isn't recommended.	
+main.new_archive_has_not_been_tested	⚠ The new archive hasn't been verified yet. Run "Test integrity" first before deleting the original files.	
+main.new_archive_inside_one_source	The new archive is inside one of the source folders. That source won't be deleted.	
+main.moved_recycle_bin	  Moved {0} {0:item|items} to the Recycle Bin	
+main.status_deleted_items	  Deleted {0} {0:item|items}	
+main.not_deleted	  ({0} {0:item was|items were} not deleted)	
+main.template_name	Template name	
+main.up_40_characters_no_allowed	Up to 40 characters, and [ ] isn't allowed. A template stores only compression settings, never passwords.	
+main.my_template	My template	
+main.invalid_name	Invalid name	
+main.name_cannot_be_empty_contain_line	The name can't be empty or contain [ ] or line breaks. It can have up to 40 characters, with no leading or trailing spaces.	
+main.template_with_name_already_exists	A template with that name already exists. Use a different name.	
+main.rename_template	Rename template	
+main.delete_template_title	Delete template?	
+main.delete_template_cannot_be_undone	Delete the template "{0}"? This can't be undone.	
+main.wrong_password	Wrong password	
+main.archive_could_not_be_opened_with	This archive couldn't be opened with the password you just entered. Select Extract again and re-enter the password.	
+main.delete_original_archive	Delete the original archive	
+main.some_items_could_not_be_processed	Some items couldn't be processed	
+main.change_archive	Change archive	
+main.op_failed	{0} failed	
+main.complete	{0} complete	
+main.succeeded	{0} succeeded	
+main.suffix_n_failed	, {0} failed	
+main.progress	{0} in progress	
+main.n_failed	{0} failed	
+main.all_done	All done	
+main.hash_values	Hash values	
+main.item_s_archive	{1} {1:item|items} in "{0}"	
+main.paste_hash_value_compare	Paste a hash value to compare	
+main.example_sha_256_written_on_website	For example, the SHA-256 on a website (the length identifies the algorithm)	
+main.hash_value_compare	Hash value to compare	
+main.match_only_means_file_same_as	A match only means that the file is the same as the pasted value. Whether that value can be trusted depends on where it came from. MD5 and SHA-1 can detect a damaged file, but they can't stop someone from changing a file on purpose.	
+main.more_file_s_not_listed_save	…{0} more {0:file is|files are} not listed ("Save as a checksum file" includes all of them)	
+main.not_hash_value_only_0_9	This isn't a hash value. Only 0–9 and a–f are allowed (spaces, dashes, or a leading 0x are fine).	
+main.length_digits_matches_no_algorithm	A length of {0} digits matches no algorithm. CRC-32 has 8, MD5 32, SHA-1 40, SHA-256 64, SHA-384 96, and SHA-512 128.	
+main.still_calculating	Still calculating…	
+main.match	✓ Match: {0} ({1})	
+main.has_not_been_calculated_tick_above	{0} hasn't been calculated. Select it above.	
+main.no_match_no_file_has	✗ No match: no file has this {0}.	
+main.save_as	Save as .{0}…	
+main.calculating_progress	Calculating… {0}% ({1} / {2})	
+main.there_nothing_calculate	There is nothing to calculate.	
+main.done_file_s	Done: {0} {0:file|files}, {1}	
+main.could_not_be_calculated	; {0} couldn't be calculated	
+main.copy_all	Copy all	
+main.copied_to_clipboard_period	Copied to the clipboard.	
+main.save_checksum_file	Save the checksum file	
+main.could_not_save	Couldn't save	
+main.could_not_write	Couldn't write "{0}".	
+main.saved	Saved: {0}	
+main.info_location	Location	
+main.file_size	File size	
+main.file_s_folder_s	{0} {0:file|files}, {1} {1:folder|folders}	
+main.archive	; compressed to {0}% of original	
+main.original_size	Original size	
+main.yes	Yes	
+main.no	No	
+main.block_s	 ({0} {0:block|blocks})	
+main.solid	Solid	
+main.info_encrypted_label	Encrypted	
+main.yes_encrypted_file_s	Yes ({0} encrypted {0:file|files})	
+main.volumes	Volumes	
+main.volume_s	{0} {0:volume|volumes}	
+main.can_be_changed	Can be changed	
+main.yes_files_can_be_added_deleted	Yes (files can be added, deleted, and renamed)	
+main.no_format_can_only_be_extracted	No (this format can only be extracted)	
+main.archive_comment	Archive comment	
+## welcome
+welcome.welcome_lycanzip	Welcome to LycanZip	
+welcome.free_open_source_ad_free_light	A free, open-source, ad-free, lightweight archiver. Pick the settings you like. You can change them all later.	
+welcome.language_changes_after_restart	Restart after changing the language.	
+welcome.short_sound_when_task_finishes	A short sound when a task finishes or fails. A sample plays when you turn it on.	
+welcome.when_show_animations_off_windows	If "Show animations" is off in Windows, nothing is animated, no matter what's set here.	
+welcome.double_click_picture_opens_preview	Double-clicking an image opens it in the preview window	
+welcome.double_click_picture_opens	Double-clicking an image opens it in the associated app	
+welcome.double_click_audio_file_plays	Double-clicking an audio file plays it in the built-in player	
+welcome.double_click_audio_file_opens	Double-clicking an audio file opens it in the associated app	
+welcome.view_preview	View and preview	
+welcome.how_archive_shown_when_opened	How an archive is shown when it is opened.	
+welcome.pictures_show_thumbnails_other	Images show thumbnails; other files show icons of the same size.	
+welcome.default_format	Default format	
+welcome.zip_works_everywhere_7z_compresses	ZIP works everywhere; 7z compresses more.	
+welcome.double_click_picture_archive_open	Double-click an image in an archive to open it in the preview window.	
+welcome.double_click_audio_file_archive	Double-click an audio file in an archive to play it in the built-in player.	
+welcome.integrate_with_windows	Integrate with Windows	
+welcome.only_step_changes_system_nothing	This is the only step that changes the system. Nothing is written until you select Finish, and Skip changes nothing.	
+welcome.classic_right_click_menu	Classic context menu	
+welcome.right_click_files_compress_extract	Right-click files to compress or extract them.	
+welcome.windows_11_right_click_menu	Windows 11 context menu	
+welcome.visible_without_choosing_show_more	Visible without selecting "Show more options".	
+welcome.file_associations_open_with	File associations (Open with)	
+welcome.only_lists_lycanzip_under_open	Registers LycanZip under "Open with" and "Default apps". Windows doesn't allow apps to set themselves as default, so you'll need to select LycanZip in Windows Settings.	
+welcome.all	…{0} in all	
+welcome.which_items_right_click_menu_shows	The items shown in the context menu can be changed later in the File Explorer tab of Settings.	
+welcome.extract_name	Extract to "name\\"	
+welcome.compress_zip	Compress to ZIP	
+welcome.compress_7z	Compress to 7z	
+welcome.back	Back	
+welcome.next	Next	
+## task
+task.under_1_second	Under 1 second	
+task.min_s	{0} min {1} s	
+task.h_min	{0} h {1} min	
+task.test	Test	
+task.waiting	Waiting	
+task.s	  ·  {0}/s	
+task.left	  ·  {0} left	
+task.working	Working…  {0}	
+task.paused	Paused  {0}	
+task.done	Done  {0} {0:file|files}	
+task.skipped	, {0} skipped	
+task.macos_metadata_item_s_skipped	, {0} macOS metadata {0:item|items} skipped	
+task.unsafe_rejected	, {0} unsafe {0:path|paths} rejected	
+task.renamed	, {0} renamed	
+task.done_sizes	Done  {0} {0:file|files}  {1} → {2}	
+task.already_compressed_file_s_stored	, {0} already-compressed {0:file|files} stored directly	
+task.thumbs_db_skipped	, {0} Thumbs.db skipped	
+task.done_plain	Done  	
+task.new_files_not_added	{0} new {0:file|files} not added	
+task.integrity_test_passed	Integrity test passed	
+task.failed	Failed  {0}	
+task.failed_wrong_password_start_again	Failed  Wrong password. Start again and enter the correct password	
+task.extracted_kept	{0} {0:file with an error was|files with errors were} extracted and kept: {1}	
+task.failed_plain	Failed  	
+task.cancelled	Canceled	
+## preview
+preview.stable_diffusion_webui_a1111_forge	Stable Diffusion WebUI (A1111 / Forge format)	
+preview.embedded_text_data	Embedded text data ({0})	
+preview.previous	Previous (←)	
+preview.next	Next (→)	
+preview.fit_window	Fit to window	
+preview.switch_f_between_fit_window_width	Switch (F) between "Fit" (window / width / height; from the menu or Ctrl+0 / 2 / 3) and "Actual size" (Ctrl+1). The current zoom is shown on the button	
+preview.actual_size	Actual size	
+preview.menu_you_can_also_right_click	Menu (you can also right-click the image)	
+preview.menu	Menu	
+preview.thumbnail_strip	Thumbnail strip	
+preview.fit_width	Fit to width	
+preview.fit_height	Fit to height	
+preview.actual_size_percent	Actual size ({0})	
+preview.animation_too_large_only_first	This animation is too large, so only the first frame is shown	
+preview.paused_press_p_resume	Paused (press P to resume)	
+preview.playing	Playing	
+preview.previous_name	Previous	
+preview.next_name	Next	
+preview.first	First	
+preview.last	Last	
+preview.actual_size_name	Actual size	
+preview.zoom	Zoom in	
+preview.zoom_out	Zoom out	
+preview.rotate_clockwise	Rotate clockwise	
+preview.rotate_counterclockwise	Rotate counterclockwise	
+preview.full_screen	Full screen	
+preview.play_animation	Play animation	
+preview.copy_image	Copy image	
+preview.save_image_as	Save image as…	
+preview.image_info	Image info	
+preview.copy	Copy	
+preview.copy_what	Copy {0}	
+preview.grayscale	Grayscale	
+preview.16_bits_channel	16 bits / channel	
+preview.color_8_bits_channel	Color (8 bits / channel)	
+preview.with_transparency	, with transparency	
+preview.date_taken	Date taken	
+preview.camera	Camera	
+preview.aperture	Aperture	
+preview.1_s	1/{0} s	
+preview.s	{0} s	
+preview.shutter	Shutter	
+preview.iso	ISO	
+preview.focal_length	Focal length	
+preview.file	File	
+preview.path_archive	Path in archive	
+preview.image	Image	
+preview.dimensions	Dimensions	
+preview.px_megapixels	{0} × {1} px ({2} megapixels)	
+preview.color	Color	
+preview.resolution	Resolution	
+preview.status	Status	
+preview.not_fully_loaded_yet	Not fully loaded yet	
+preview.photo_info	Photo info	
+preview.ai_generation_info	AI generation info	
+preview.source	Source	
+preview.prompt	Prompt	
+preview.negative_prompt	Negative prompt	
+preview.raw_data	Raw data	
+preview.other_text_data	Other text data	
+preview.image_copied	Image copied	
+preview.path_copied	Path copied	
+preview.save_dialog_title	Save image as	
+preview.saved	Saved to {0}	
+preview.could_not_save	Couldn't save	
+preview.file_too_large_preview_limit_64	This file is too large ({0}). The preview limit is 64 MB.	
+preview.image_too_large_exceeds_preview	This image is too large; it exceeds the preview limit.	
+preview.use_open_with_associated_app_file	{0}.\n\nSelect "Open with associated app" from the context menu of the file list.	
+preview.cannot_display_image_file_may_be	Can't display this image. The file might be damaged.	
+preview.jpeg_xl_images_need_jpeg_xl	To preview JPEG XL images, install the "JPEG XL Image Extension" from the Microsoft Store	
+preview.avif_images_need_av1_video	To preview AVIF images, install the "AV1 Video Extension" from the Microsoft Store	
+preview.heic_heif_images_need_heif_image	To preview HEIC / HEIF images, install the "HEIF Image Extensions" from the Microsoft Store (the "HEVC Video Extensions" might also be needed)	
+preview.webp_images_need_webp_image	To preview WebP images, install the "WebP Image Extensions" from the Microsoft Store	
+preview.pc_has_no_decoder_can_preview	This PC has no decoder that can preview this kind of image	
+preview.file_too_large	File too large	
+preview.wrong_password_file_cannot_be_read	Wrong password. This file can't be read.	
+preview.failed_read_file	Couldn't read the file: {0}	
+preview.failed_read_file_plain	Couldn't read the file.	
+## audio
+audio.audio_files	Audio files	
+audio.playback_position	Playback position	
+audio.previous_track_ctrl_left	Previous track (Ctrl+Left)	
+audio.play	Play	
+audio.next_track_ctrl_right	Next track (Ctrl+Right)	
+audio.mute_m	Mute (M)	
+audio.volume	Volume	
+audio.file_too_large_preview_over_256	The file is too large to preview (over 256 MB). Select "Open with associated app" from the context menu.	
+audio.reading	Reading…	
+audio.file_could_not_be_read	This file couldn't be read.	
+audio.pc_cannot_play_file_decoder_format	This PC can't play this file (the decoder for this format might be missing).	
+audio.reached_last_track	Reached the last track.	
+## scan
+scan.cannot_scan_windows_real_time	Can't scan: Windows real-time protection is off. Turn it on in Windows Security.	
+scan.cannot_scan_antivirus_product	Can't scan: the installed antivirus software doesn't support AMSI. Windows Defender does. Make sure it's turned on.	
+scan.cannot_scan_computer_cannot_use	Can't scan: this PC can't use the Windows malware scanning interface (AMSI).	
+scan.file_s_scanned	{0} {0:file|files} scanned ({1})	
+scan.suspicious_file_s_found	, {0} suspicious {0:file|files} found	
+scan.nothing_found	, nothing found	
+scan.file_s_skipped_too_big	; {0} {0:file|files} skipped (too large)	
+scan.file_s_skipped_encrypted	; {0} {0:file|files} skipped (encrypted)	
+scan.could_not_be_read	; {0} couldn't be read	
+scan.could_not_be_scanned	; {0} couldn't be scanned	
+## assoc
+assoc.writing_registry_failed	Writing to the registry failed ({0}): HKCU\\{1}	
+assoc.lycanzip_split_archive_001	LycanZip split archive (.001)	
+assoc.lycanzip_comic_book_archive	LycanZip {0} comic book archive	
+assoc.lycanzip_archive	LycanZip {0} archive	
+assoc.path_lycanzip_exe_was_not_given	The path of LycanZip.exe wasn't given	
+assoc.open_source_ad_free_lightweight	Open source, ad-free, lightweight compression and extraction	
+assoc.could_not_remove	Couldn't remove {0} ({1})	
+## app
+app.lycanzip_task_s_running	LycanZip: {0} {0:task|tasks} running, {1}%	
+app.lycanzip_tasks_running_no_percent	LycanZip: {0} {0:task|tasks} running	
+app.tasks_finished	Tasks finished	
+app.all_tasks_finished	All tasks have finished.	
+app.lycanzip_still_has_tasks_running	LycanZip still has tasks running	
+app.show_window	Show window	
+app.cancel_all_tasks	Cancel all tasks	
+app.exit_lycanzip	Exit LycanZip	
+## win11
+win11.error_code	Error code {0}	
+win11.not_windows_11_new_style_context	This isn't Windows 11. The new-style context menu is available only on Windows 11.	
+win11.was_not_found	{0} wasn't found	
+win11.was_not_found_version_has_no	{0} wasn't found. This version has no signed new-style menu package yet.	
+## drag
+drag.items	{0} items	
+drag.folder	Folder	
+## preset
+preset.general_zip	General ZIP	
+preset.general_7z	General 7z	
+preset.fast	Fast	
+preset.e_mail_share	Email / share	
+preset.backup	Backup	
+preset.store_only_no_compression	Store only, no compression	
+## lang
+lang.zh_tw	繁體中文	The name of a language in that language: the same text in every language file
+lang.en_us	English
+lang.zh_cn	简体中文
+## fmt
+fmt.value_paren	{0} ({1})	
+fmt.size_bytes	{0} ({1} {1:byte|bytes})	
+fmt.n_files	{0} {0:file|files}	
+fmt.and_n_folders	, {0} {0:folder|folders}	
+fmt.paren	 ({0})	
+fmt.status_items_size	  ·  {0} {0:item|items}  ·  {1}	
+fmt.n_items_short	{0} {0:item|items}	
+fmt.n_items	{0} {0:item|items}	
+fmt.percent_paren	 ({0}%)	
+fmt.n_sources	  |  {0} {0:source|sources}	
+fmt.colon_value	: {0}	
+## sums
+sums.verify_title	Verify checksum files
+sums.checking	Checking…
+sums.checking_progress	Checking… {0}% ({1} / {2})
+sums.error_unreadable	Couldn't read the checksum file.
+sums.error_too_big	The checksum file is too large.
+sums.error_no_lines	This doesn't look like a checksum file: it has no line with a hash value.
+sums.all_match	✓ All {0} {0:file matches|files match}.
+sums.bytes_read	{0} read
+sums.some_match	✗ {0} of {1} {1:file matches|files match}.
+sums.differs	Doesn't match
+sums.not_found	Not found
+sums.could_not_read	Couldn't be read: {0}
+sums.more_not_listed	…{0} more not listed
+sums.extra_files	{0} {0:file is|files are} in the archive but not in the checksum file:
+sums.names_skip_checksum	To match the archive, the first {0} {0:folder|folders} of the names in the checksum file were left out.
+sums.names_skip_archive	To match the checksum file, the first {0} {0:folder|folders} of the paths in the archive were left out.
+sums.bad_lines	{0} {0:line was|lines were} not understood and skipped.
+sums.summary_many	{0} of {1} checksum files match completely.
+sums.of_archive	The files inside "{0}"
+sums.of_folder	The files next to the checksum file, in {0}
+sums.n_checksum_files	{0} checksum files
+sums.names_not_found	Most file names in the checksum file weren't found in the archive. If the folder paths differ, specify a prefix to remove or add below.
+sums.strip_prefix	Prefix to remove from checksum paths
+sums.strip_example	For example, backup/2025/
+sums.add_prefix	Prefix to add to checksum paths
+sums.add_example	For example, photos/
+sums.check_again	Check again
+sums.match_only_means	A match means the file is the same as when the checksum file was made. Whether the checksum file can be trusted depends on where it came from.
+sums.verify_archive_with	Verify the archive with {0}
+sums.verify_files_with	Verify the files with {0}
+sums.banner_title	A checksum file is next to this archive
+sums.folder_files	Folder "{0}": {1} {1:file|files}
+sums.no_files_to_hash	There are no files to calculate hash values for.
+sums.side_unusable	Couldn't use {0}.
+sums.side_no_entry	{0} has no value for this file.
+sums.side_waiting	Checking against {0}…
+sums.side_untick	{0} has a {1} value. Select {1} above to compare it.
+sums.side_match	✓ Matches {0} in the same folder.
+sums.side_differ	✗ Doesn't match {0} in the same folder, which says {1}.
+sums.verify_menu	Verify a checksum file…	
+sums.setting_archive	Create a checksum file for the new archive	
+sums.setting_archive_caption	Saves name.zip.sha256 next to the archive containing its SHA-256 hash (one line per volume for split archives). Useful for verifying downloads or shared files. Applies to quick context-menu compression; templates use their own settings.	
+sums.setting_files	Create a checksum file for the archived files	
+sums.setting_files_caption	Saves name.sha256 next to the archive containing the SHA-256 hash of each file inside. Useful for verifying the archive contents later. Applies to quick context-menu compression; templates use their own settings.	
+sums.card_note_written	 Checksum files: {0}	
+sums.card_note_failed	 The checksum files couldn't be written.	
+sums.link_archive	Verify the archive	
+sums.link_files	Verify the files	
+sums.menu_hash_save	Calculate and save as name.sha256 (in both menus)	
+sums.save_exists_title	Checksum file already exists	
+sums.save_exists	"{0}" already exists. Replace it, or keep both by saving the new one with a different name?	
+sums.save_replace	Replace	
+sums.save_keep_both	Keep both	
+sums.save_title	Calculate and save the checksums	
+sums.save_done	✓ Saved: {0}	
+sums.save_done_skipped	 {0} {0:file couldn't be read and is|files couldn't be read and are} not in it.	
+sums.save_failed_title	Couldn't save the checksum file	
+sums.notify_title	Checksum file saved	
+sums.notify_skipped	{0} ({1} {1:file wasn't|files weren't} read)	
+preview.this_is_first	This is the first image	
+preview.this_is_last	This is the last image	
+audio.loop_none	Play in order, then stop	
+audio.loop_all	Repeat all	
+audio.loop_one	Repeat this track	
+audio.shuffle	Shuffle	
+audio.playback_mode_tip	Playback mode: {0} (L)	
+main.night	Night	
+main.home	Home	
+main.desktop	Desktop	
+main.documents	Documents	
+main.downloads	Downloads	
+main.paste	Paste	
+scan.affected_item_note	Your antivirus software might list "lycanzip-cli.exe" (or LycanZip) as the "affected item". This is only because LycanZip passed the data stream to the antivirus for scanning—nothing was written to disk, and LycanZip itself is not infected.	
+## core
+core.cannot_list_folder	{0}: can't list folder	A warning of the compressor. {0} = the path of the folder
+core.skipped_link	{0} (symbolic link / junction)	Skipped while compressing. {0} = the path
+core.skipped_output_itself	{0} (the output file itself)	Skipped while compressing: the archive that is being written. {0} = the path
+core.cannot_compress_drive_root	Can't compress the root of a drive; select a folder inside it: {0}	An error. {0} = the path
+core.input_not_found	Input not found: {0}	An error. {0} = the path
+core.cannot_read_file	{0}: can't be read ({1})	A warning of the compressor. {0} = the path, {1} = the Windows error code
+core.custom_param_format	A custom parameter must look like name=value (separated by spaces): {0}	
+core.custom_param_bad_char	Custom parameters contain an invalid character	
+core.format_cannot_create	This version of 7z.dll can't create {0} archives	{0} = the name of the format
+core.format_cannot_modify	This format can't be modified	
+core.cannot_create_handler	Couldn't initialize the compression handler	
+core.zipcrypto_weak	ZipCrypto encryption is weak; use AES-256 when security matters	
+core.zipcrypto_weak_compat	ZipCrypto (compatibility mode) encryption is weak; use AES-256 when security matters	
+core.set_properties_failed	Couldn't apply compression parameters (this format doesn't support the selected method or parameter combination)	
+core.set_properties_failed_custom	Couldn't apply compression parameters: check your custom parameters for typos or format compatibility	
+core.cancelled	Canceled	
+core.disk_full_archive	Not enough disk space to write the archive	
+core.update_failed	Couldn't modify the archive	
+core.create_failed	Couldn't create the archive	
+core.temp_space_plain	Not enough temporary disk space: fell back to normal compression (already-compressed files weren't bypassed)	
+core.cannot_read_back_temp	Couldn't read back the temporary archive	
+core.zip_password_ascii	ZIP encryption only supports ASCII characters (letters, digits, and common symbols); use 7z for non-ASCII passwords	
+core.zip_aes_password_long	ZIP AES passwords cannot exceed 99 characters; use a shorter password or the 7z format	
+core.no_input	There is no input	
+core.iso_no_volumes	ISO does not support volumes	
+core.iso_no_password	ISO does not support passwords	
+core.volume_too_small	A volume must be at least 64 KB	
+core.volumes_zip_7z_only	Split volumes are only supported for ZIP and 7z	
+core.tar_no_password	TAR formats don't support passwords; use ZIP or 7z	
+core.nothing_to_compress	There is nothing to compress	
+core.target_exists	The target file already exists: {0}	
+core.cannot_create_output	The output file could not be created: {0}	
+core.cannot_create_temp	The temporary file could not be created	
+core.cannot_rename_temp_output	The temporary output could not be renamed to: {0}	
+core.invalid_name	Invalid name: {0}	
+core.file_not_found	File not found: {0}	
+core.nothing_to_delete	No item was given to delete	
+core.not_in_archive	Not found in the archive: {0}	
+core.nothing_to_rename	No item was given to rename	
+core.cannot_move_into_itself	A folder cannot be moved into itself: {0}	
+core.name_taken	The archive already has an item with this name: {0}	
+core.is_folder_cannot_replace	This is a folder: its content cannot be replaced: {0}	
+core.replacement_is_folder	The replacement cannot be a folder: {0}	
+core.nothing_to_add	There are no files to add	
+core.folder_name_taken	The archive already has a folder with this name: {0}	
+core.file_name_taken	The archive already has a file with this name: {0}	
+core.nothing_deleted_unreadable	Some files could not be read, so no item was deleted from the archive	
+core.archive_not_found	Archive not found: {0}	
+core.archive_cannot_modify	This kind of archive cannot be changed: {0}	{0} = the name of the format
+core.password_needed_to_modify	The archive has encrypted items: the password is needed to change it	
+core.wrong_password	Wrong password: {0}	
+core.tar_no_password_short	TAR doesn't support passwords	
+core.disk_full_modify	There is not enough disk space: changing the archive needs about {0} MB (free: {1} MB)	
+core.cannot_create_temp_file	The temporary file could not be created: {0}	
+core.cannot_replace_archive	The changed archive could not be put in place (the file may be in use by another program, or there is no permission to write): {0}	
+core.disk_full_target	Not enough space on target drive: about {0} MB needed, {1} MB free	
+core.op_ok	OK	The result of unpacking one item
+core.op_unsupported_method	Unsupported compression method	The reason an item could not be unpacked
+core.op_data_error	Data error	
+core.op_crc_error	CRC error	
+core.op_unavailable	Data not available	
+core.op_unexpected_end	Unexpected end of data	
+core.op_data_after_end	More data after the end	
+core.op_not_archive	Not an archive	
+core.op_headers_error	Header error	
+core.op_wrong_password	Wrong password	
+core.op_unknown	Unknown error	
+core.path_reason	{0}: {1}	{0} = the path of an item, {1} = why it failed
+core.get_items_failed	The number of items could not be read	
+core.disk_full_extract	There is not enough disk space to write the extracted files	
+core.extract_failed	Extraction failed	
+core.cancelled_no_password	Canceled (no password entered)	
+core.temp_write_failed	Writing the temporary file failed	
+core.cannot_open_file	The file could not be opened: {0}	
+core.unknown_format	Unknown archive format or the file is damaged: {0}	
+core.item_index_out_of_range	The item index is out of range	
+core.read_item_failed	The item could not be read: {0}	
+core.is_folder	This is a folder	Shown as the reason a checksum was not made
+core.encrypted_needs_password	Encrypted: a password is needed	
+core.link_no_content	A link has no content	
+core.skipped_symlink_policy	{0} (symbolic link, skipped by the safety settings)	
+core.skipped_hardlink_policy	{0} (hard link, skipped by the safety settings)	
+core.rejected_outside	{0}: path resolves outside the destination folder	
+core.cannot_create_folder	{0}: couldn't create folder	
+core.cannot_create_parent	{0}: couldn't create parent folder	
+core.folder_in_the_way	{0}: a folder with this name already exists at the destination	
+core.skipped_exists	{0} (already exists)	
+core.file_exists	{0}: file already exists	
+core.cannot_create_file	{0}: couldn't create file ({1})	{1} = the Windows error code
+core.cannot_replace_file	{0}: couldn't replace existing file ({1})	
+core.bomb_total	The expanded size is over the limit; stopped (possibly a compression bomb)	
+core.bomb_ratio	The compression ratio is unusually high; stopped (possibly a compression bomb)	
+core.bomb_actual	The real expanded size is over the limit; stopped (possibly a compression bomb)	
+core.cannot_create_target	The destination folder could not be created: {0}	
+core.disk_full	There is not enough disk space	
+core.cannot_write_output	The output file could not be written (is the disk full?)	
+core.iso_nothing	There is nothing that can go into an ISO	
+core.iso_file_too_big	A single file in an ISO cannot be larger than 4 GB (this version does not support UDF yet): {0}	
+core.iso_cannot_read	{0} (cannot be read)	
+core.iso_short_read	{0} (file was truncated while reading, or couldn't be read)	
+core.launch_list_needs_path	--list needs the path of a file	
+core.launch_cannot_read_list	The list file could not be read: {0}	
+core.launch_unknown_option	Unknown option: {0}	
+core.launch_no_files	No file was given	
+core.path_empty	Empty path	Why a path inside an archive was refused
+core.path_nul	The path contains a NUL character	
+core.path_absolute	An absolute or UNC path	
+core.path_drive	Contains a drive letter	
+core.path_traversal	Path traversal (..)	
+core.path_colon	Contains an NTFS alternate data stream or an illegal colon	
+core.path_component_empty	A component is empty after cleaning	
+core.path_no_component	The path has no valid component	
+core.path_renamed	The name contains characters that Windows does not allow, or a reserved name; it was converted automatically	
+core.dll_not_found	7z.dll was not found (set the environment variable LYCAN_7Z_DLL, or put it in the folder of the exe)	
+core.dll_load_failed	7z.dll could not be loaded: {0}	
+core.dll_missing_exports	7z.dll lacks a function that is needed	
+core.dll_formats_failed	GetNumberOfFormats failed	
+core.task_extract_failed	Some items could not be extracted	
+core.task_test_failed	Some items failed the test	
+core.task_unreadable	Some files could not be read	
+core.task_no_amsi	The malware scan interface of Windows (AMSI) cannot be used	
+core.task_threat_found	Suspicious files were found	
+core.task_hash_failed	The checksum of some files could not be calculated	
+core.temp_space_need	Not enough temporary space: about {0} MB needed, but only {1} MB free on "{2}"	Args 3 and 4 are numbers for the program (bytes)
+core.temp_space_full	Not enough temporary space: "{2}" is full ({1} MB free)	Args 3 and 4 are numbers for the program (bytes)
+main.open_preview_key	Open archive directly in image preview	A setting in the picture preview section
+main.open_preview_key_hint	Hold this key while opening an archive from File Explorer. Archives without images will open normally.	
+main.key_shift	Shift	The name of a key; not translated
+main.key_ctrl	Ctrl	The name of a key; not translated
+main.key_none	Not used	
+audio.info_format	Format	Audio info card: the kind of file
+audio.info_bitrate	Bit rate	
+audio.info_sample_rate	Sample rate	
+audio.info_channels	Channels	
+audio.info_length	Length	
+audio.info_size	Size	
+audio.kbps	{0} kbps	
+audio.khz	{0} kHz	
+audio.mono	Mono	
+audio.stereo	Stereo	
+audio.channels_n	{0} channels	
+main.lock_open_archive	Lock an archive while it is open	A setting
+main.lock_open_archive_hint	While an archive is open in LycanZip, prevent other apps from modifying or deleting it underneath you. Cloud sync apps (OneDrive, Dropbox, etc.) will wait until you close the archive to sync changes.	
+shell.add_to_archive	Add to archive…	Context menu entry (the menu is in the shell extension, which has these texts compiled in)
+shell.compress_to	Compress to "{0}"	{0} = the name of the new archive
+shell.compress_each	Compress each to {0}	{0} = the format
+shell.compress_with_preset	Compress with a template	Sub menu
+shell.hash	Calculate hash values…	
+shell.hash_save	Calculate and save as "{0}"	{0} = the name of the checksum file
+shell.verify_checksum	Verify the checksum file with LycanZip	
+shell.other_formats	Other formats	Sub menu
+shell.group_entry	{0}: {1}	The Windows 11 menu has no sub menus inside the LycanZip menu: an entry of a sub menu is shown as "sub menu: entry". {0} = the sub menu (Compress with a template), {1} = the entry (Smallest size)
+shell.encrypted	Encrypted archive…	
+shell.open_content	Open contents with LycanZip	
+shell.open	Open	
+shell.extract_here	Extract here	
+shell.extract_to_named	Extract to "{0}\\"	{0} = the name of the folder; the backslash at the end is meant
+shell.extract_same_name	Extract each to a separate folder	
+shell.extract_to	Extract to…	
+shell.test	Test integrity	
+shell.image_preview	Image preview	
+shell.audio_preview	Audio preview	
+shell.extract_recent	Extract to a recent folder	Sub menu
+shell.extract_merge	Extract all into one folder	
+shell.preset_zip	General ZIP	A built-in preset in the menu "Compress with a preset"
+shell.preset_7z	General 7z	
+shell.preset_smallest	Smallest size	
+shell.preset_fast	Fast	
+shell.preset_mail	Email / share	
+shell.preset_backup	Backup	
+shell.preset_store	Store only, no compression	
+preview.set_wallpaper	Set as desktop picture…	Menu item of the picture preview
+preview.wallpaper_title	Set as desktop picture	Title of the question
+preview.wallpaper_hint	This changes the picture of your desktop. A copy of the picture is saved in the folder "{0}" so that it stays when the archive is closed (you can delete it later).	{0} = a folder
+preview.wallpaper_position	Picture position	
+preview.wallpaper_fill	Fill	
+preview.wallpaper_fit	Fit	
+preview.wallpaper_stretch	Stretch	
+preview.wallpaper_tile	Tile	
+preview.wallpaper_center	Center	
+preview.wallpaper_span	Span across all screens	
+preview.wallpaper_screen	Screen	
+preview.wallpaper_all_screens	All screens	
+preview.wallpaper_screen_n	Screen {0}	
+preview.wallpaper_set	Set as desktop picture	Button
+preview.wallpaper_done	The desktop picture was changed	
+preview.wallpaper_failed	The desktop picture could not be changed	
+preview.save_as_original	Original file ({0})	A file type in the dialog "Save image as"
+preview.save_as_type	{0} picture	{0} = PNG, JPEG ...: the picture is converted to this format
+main.updates	Updates	Heading of the About page section
+main.update_check	Check for new versions	Settings toggle
+main.update_check_hint	Once a week LycanZip asks aegisulf.com for the number of the newest version. Nothing else is sent. An installed copy also downloads the update, but installs it only when you choose.	Under the toggle; keep it short
+main.update_check_now	Check now	Button
+main.update_checking	Checking...	Status next to the button
+main.update_check_failed	Could not reach the web site.	Status next to the button
+main.update_up_to_date	LycanZip {0} is the newest version.	{0} = version number
+main.update_available	Version {0} is available	Title of the notice above the list, and the status next to the button; {0} = version number
+main.update_with_command	Update with: {0}	{0} = a command line such as winget upgrade ...
+main.update_download	Download page	Link in the notice; opens the web site
+main.update_whats_new	What's new	Link in the notice; opens the changelog
+main.update_skip	Skip this version	Link in the notice
+main.update_skip_tip	No notice for this version; a newer one is still announced.	Tooltip of the link above
+fmt.gap	  	A wider gap between two parts of one line (two spaces; the Chinese texts use the ideographic space)
+fmt.dot_gap	  ·  	Separator with a middle dot between parts of a status line
+fmt.bar_gap	  |  	Separator with a bar between the archive information and the rest of the status line
+fmt.list_sep	, 	Separator between items of a list
+fmt.comma	, 	A comma between two parts of a phrase
+main.restart_explorer	Restart File Explorer	Title of a card on the Explorer settings tab; also a link in the notice after the menu was updated
+main.restart_explorer_hint	Use it when a change of the right-click menu does not show yet: after the menu was switched on or off, or after an update.	Under the title of the card
+main.restart_explorer_do	Restart	Button of the card and of the question
+main.restart_explorer_title	Restart File Explorer?	Title of the question
+main.restart_explorer_question	The open folder windows close and the taskbar disappears for a moment. Finish what you are doing in File Explorer first.	The question before File Explorer is restarted
+main.menu_updated	The right-click menu was updated	Title of the notice on the start page after an update of the program
+main.menu_updated_restart_explorer	Restart File Explorer to use the new version.	Message of the notice
+main.off	Off	An option of a drop-down list that switches the feature off (background, read-ahead); not the Close button
+main.virustotal_lookup	Look up on VirusTotal	Menu item, tooltip of the button next to a SHA-256 value, and the title of the small window while the hash is calculated
+main.virustotal_lookup_tip	Calculates the SHA-256 and opens VirusTotal in your browser. Only the hash is sent, not the file. A hash that VirusTotal does not know does not mean that the file is safe.	Tooltip of the menu item
+main.resize_column	Resize column	Accessible name of the handle at the right edge of a column header (drag it; a double click restores the width)
+main.reset_column_widths	Reset column widths	Item in the menu of the column headers
+main.ratio	Ratio	Column of the details view: packed size as a percentage of the original size
+main.col_encrypted	Encrypted	Column of the details view (a lock when the item is encrypted)
+main.col_crc	CRC	Column of the details view: the CRC-32 stored in the archive
+main.col_method	Method	Column of the details view: the compression method of the item
+main.sort_by_ratio	Sort by ratio	Accessible name of the column header
+main.sort_by_encrypted	Sort by encryption	Accessible name of the column header
+main.sort_by_crc	Sort by CRC	Accessible name of the column header
+main.sort_by_method	Sort by method	Accessible name of the column header
+main.info_technical	Technical information\n	Heading in the Properties window of an item, above the details that the archive format has
+main.info_created	Created: {0}\n	Properties of an item
+main.info_accessed	Accessed: {0}\n	Properties of an item
+main.info_method	Method: {0}\n	Properties of an item: the compression method, for example Deflate or LZMA2:24
+main.info_permissions	Permissions: {0}\n	Properties of an item: the Unix permissions, for example rw-r--r--
+main.info_host_os	Made on: {0}\n	Properties of an item: the operating system that made the entry (Unix, FAT, NTFS ...)
+main.info_characteristics	Characteristics: {0}\n	Properties of an item: technical flags that the format reports
+main.info_link	Link to: {0}\n	Properties of an item: the target of a symbolic link
+main.info_block	Solid block: {0}\n	Properties of an item in a solid 7z archive
+main.info_offset	Starts at byte {0} of the archive\n	Properties of an item: where its data begins in the archive file
+main.info_comment	Comment: {0}\n	Properties of an item: the comment stored in the archive
+core.dll_not_pinned	7z.dll is not the one that LycanZip came with, so it was not loaded: {0}. Reinstall LycanZip to get the right file	{0} = path of the file
+core.dll_missing_pinned	7z.dll was not found next to LycanZip. Reinstall LycanZip to get it back	
+main.update_install_now	Install now	Button in the update notice of an installed copy; also the button of the question
+main.update_install_title	Install the update	Title of the question and of the messages about the update
+main.update_install_question	Download and install LycanZip {0} ({1})? LycanZip closes and starts again by itself.	{0} = version, {1} = size of the download
+main.update_downloading	Downloading the update... {0}%	Title of the notice while the update is downloaded
+main.update_not_in_feed	There is no newer version to install yet. Try again later.	
+main.update_failed	The update could not be downloaded, or it did not pass the check. Nothing was changed. Try again later.	
+main.update_tasks_running	Tasks are still running. Let them finish, or cancel them, and then install the update.
+main.update_ready	Version {0} is ready to install	Title of the notice when an installed copy has downloaded the update in the background; {0} = version number
+main.update_ready_hint	LycanZip closes and starts again to finish the update.	Under the title above
+main.update_restart_now	Restart and update	Button in the notice above
+main.two_copies_title	LycanZip is installed twice	Title of a one-time message when the Microsoft Store version and another copy are both on the PC
+main.two_copies_store_owns	The Microsoft Store version of LycanZip is also installed. It provides the right-click menu and the file types, so this copy has switched its own off and File Explorer shows LycanZip only once.\n\nKeeping one copy is simpler: you can remove the one you do not use in Installed apps.\n\nThis copy: {0}	Shown once by an installed, zip or portable copy when it finds the Store version. {0} = the folder of this copy
+main.two_copies_other_has_menu	Another copy of LycanZip has its own right-click menu or file types registered, so File Explorer may show LycanZip twice. Start that copy once (it switches them off when it finds this version), or remove it in Installed apps.\n\nThe other copy: {0}	Shown once by the Microsoft Store version when another copy (installer, zip, portable) still has its menu. {0} = where that copy is
+main.open_installed_apps	Open Installed apps	Button: opens Settings > Apps > Installed apps
+main.store_version_provides_menu	The Microsoft Store version of LycanZip is installed: it provides the right-click menu and the file types, so they are off in this copy.	Note on the Explorer tab and in the welcome window of a copy that is not the Store version
+main.other_copy_note	Another copy of LycanZip also has a right-click menu or file types registered: {0}\nStart it once (it switches them off when it finds this version) or remove it, so that File Explorer shows LycanZip once.	Note on the Explorer tab of the Microsoft Store version. {0} = where the other copy is
+main.store_menu_switch_hint	Shows or hides every LycanZip entry in File Explorer (the right-click menu, and on Windows 11 also the right-drag menu). It applies the next time a menu opens; nothing is registered or removed.	Caption under the context menu switch, only in the Microsoft Store version
+main.welcome_offer_title	First time with LycanZip?	Notice above the list in the first window opened with an archive, until the welcome window was seen
+main.welcome_offer_hint	Take a minute to choose the look, the sounds and the previews.	The rest of the same notice
+main.welcome_offer_start	Set up	Button in the notice: opens the welcome window
+main.welcome_offer_no	No, thanks	Button in the notice: the notice is not shown again
+welcome.file_explorer_menu	File Explorer right-click menu	Welcome window, step 3, Microsoft Store version: the one switch for the menus of File Explorer
+main.view_small_icons	Small icons	View menu, settings and welcome window: the icon view, small
+main.view_medium_icons	Medium icons	The icon view, medium
+main.view_large_icons	Large icons	The icon view, large
+main.view_huge_icons	Extra large icons	The icon view, extra large

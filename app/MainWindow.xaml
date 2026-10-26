@@ -1,0 +1,1476 @@
+<Window
+    x:Class="LycanZip.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LycanZip"
+    Title="LycanZip">
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop />
+    </Window.SystemBackdrop>
+
+
+    <!-- Outer layer: the background layer and the content each have a cell, so the background (the big halo / wolf shadow) does not change the height of the content row -->
+    <Grid>
+        <!-- Background layer: gradient (changes with the accent theme and dark / light) + start page scene (halo, stars, wolf shadow). Does not intercept mouse events -->
+        <Grid x:Name="BackdropLayer" IsHitTestVisible="False">
+            <Rectangle x:Name="BgFill" />
+            <Rectangle x:Name="BgGlow" />
+            <Grid x:Name="HomeScene" Visibility="Collapsed">
+                <Ellipse x:Name="MoonHalo" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                <Ellipse x:Name="MilkyBand" Height="200" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                    <Ellipse.RenderTransform><RotateTransform Angle="-26" /></Ellipse.RenderTransform>
+                </Ellipse>
+                <Canvas x:Name="Stars" />
+                <Path x:Name="WolfShade" HorizontalAlignment="Right" VerticalAlignment="Bottom" Stretch="Uniform"
+                      Data="M484.5 859.5 C439.7 840.9 400.2 811.7 369.2 774.5 L365.9 770.5 L366.5 779.5 C367.0 787.3 369.8 803.5 371.6 809.4 C374.1 817.3 335.0 781.4 319.5 761.6 C297.7 733.7 283.0 696.7 283.0 669.8 C283.0 662.5 282.7 662.6 274.9 670.8 C256.0 690.6 242.1 713.6 234.5 737.7 C232.5 744.2 230.6 750.2 230.3 751.0 C229.7 753.0 226.5 746.7 220.7 732.0 C200.5 680.8 201.4 621.5 222.8 577.2 C224.5 573.8 225.6 571.0 225.4 571.0 C225.2 571.0 219.0 573.0 211.8 575.4 C175.1 587.4 143.9 604.7 118.3 626.9 C113.7 630.9 110.0 633.7 110.0 633.2 C110.0 632.7 110.9 627.2 112.0 620.9 C122.3 563.3 149.5 513.6 196.1 466.9 L213.7 449.3 L203.2 448.6 C178.3 447.1 140.3 448.5 113.8 451.8 C106.2 452.8 100.0 453.4 100.0 453.1 C100.0 451.9 116.1 433.8 126.2 423.8 C161.7 388.6 208.3 360.7 259.5 344.0 C265.0 342.2 269.8 340.5 270.2 340.1 C270.6 339.8 265.2 336.3 258.3 332.5 C234.0 319.1 205.5 299.1 185.7 281.6 C177.5 274.4 177.4 274.6 195.0 273.6 C227.9 271.8 310.8 265.2 311.9 264.3 C312.1 264.2 311.6 263.2 310.7 262.3 C308.0 259.2 295.0 239.7 295.4 239.2 C295.7 239.0 305.1 241.3 316.4 244.4 C327.7 247.5 338.7 250.3 340.8 250.6 L344.7 251.2 L342.4 240.9 C335.3 209.7 333.2 172.4 336.5 139.0 C337.7 126.5 340.6 107.1 341.3 106.3 C341.5 106.2 347.2 111.1 354.0 117.2 C387.2 146.6 410.0 165.1 454.0 197.8 C471.3 210.7 489.0 224.2 493.2 227.7 C503.0 235.7 503.0 235.1 492.9 223.3 L484.7 213.9 L485.4 199.2 C486.4 179.3 490.9 141.5 492.9 135.7 C493.6 133.8 492.9 133.0 534.5 179.0 C568.3 216.3 588.7 240.7 598.8 255.8 C604.3 264.0 604.5 264.1 615.2 269.6 C656.3 290.6 693.4 321.8 730.7 366.5 C755.6 396.4 758.9 404.5 752.0 419.7 L748.9 426.4 L758.2 435.7 C766.5 444.1 768.6 445.6 778.6 450.4 C793.0 457.4 811.7 468.7 829.9 481.3 C842.8 490.3 845.2 491.6 854.0 494.1 C876.3 500.6 893.2 509.5 899.7 518.2 C907.2 528.5 896.7 550.1 878.5 561.6 C874.4 564.2 871.0 566.9 871.0 567.5 C871.0 570.5 864.5 581.2 860.1 585.3 C854.6 590.5 849.8 593.1 841.9 595.4 L836.3 597.0 L831.0 607.3 C821.9 624.9 812.3 636.6 799.8 645.1 C794.7 648.6 789.0 651.5 789.0 650.6 C789.0 650.5 789.9 647.7 791.0 644.4 C793.6 636.9 796.0 627.9 797.0 621.7 C797.7 616.9 797.7 616.9 795.3 617.5 C793.3 618.0 792.9 617.6 792.4 615.2 L791.8 612.3 L785.7 615.6 C776.1 620.8 775.6 620.5 776.3 611.5 C776.9 602.8 776.3 602.3 771.9 608.7 C764.1 619.9 749.1 633.4 738.3 638.9 C731.7 642.2 731.7 641.8 735.9 628.3 C743.7 603.6 745.0 574.0 738.3 574.0 C737.5 574.0 732.6 576.1 727.4 578.6 C717.7 583.3 715.0 583.6 715.0 580.1 C715.0 579.0 713.8 574.4 712.4 570.0 L709.9 561.8 L706.2 562.5 C687.5 566.0 670.2 580.3 661.4 599.5 C658.8 605.1 658.8 605.2 660.3 610.8 C661.2 613.9 662.4 620.5 663.0 625.5 C663.7 630.5 664.3 635.0 664.5 635.7 C664.9 636.8 668.0 636.4 673.6 634.6 C675.7 634.0 675.8 634.2 676.2 645.2 C676.5 655.0 676.9 657.3 679.3 662.5 C685.6 676.0 687.8 676.0 704.0 662.6 C711.0 656.8 711.6 657.7 710.0 670.9 C708.2 684.5 709.2 691.8 712.8 692.2 C717.5 692.8 727.1 687.2 739.4 676.6 L745.3 671.5 L744.7 676.8 C743.9 683.7 738.4 697.0 732.7 705.8 C728.3 712.6 728.1 713.1 729.5 715.7 C732.6 721.5 730.2 726.6 721.2 733.4 C713.7 739.1 708.5 744.3 701.5 753.0 C696.8 758.9 695.5 760.1 695.2 758.5 C694.5 754.1 694.2 754.0 688.3 757.6 C682.4 761.1 670.9 765.2 663.2 766.5 L658.9 767.2 L662.9 761.8 L667.0 756.5 L653.2 755.9 C640.4 755.3 629.5 753.9 624.9 752.1 C623.1 751.5 623.9 750.7 630.0 746.7 C634.6 743.5 636.8 741.5 636.3 740.7 C634.0 736.9 617.6 716.6 610.1 708.2 C592.4 688.5 571.3 673.5 552.1 666.9 L546.7 665.0 L540.1 668.6 C520.1 679.7 507.6 693.2 502.4 709.4 C495.4 731.4 502.4 768.9 518.5 794.9 L521.2 799.2 L518.9 798.5 C509.3 795.5 486.6 781.3 475.0 770.9 C471.3 767.7 468.1 765.0 467.7 765.0 C466.6 765.0 467.9 788.6 469.5 798.1 C472.8 817.4 480.6 838.9 490.4 855.4 C493.0 859.7 494.9 863.4 494.8 863.5 C494.6 863.6 490.0 861.8 484.5 859.5 Z" />
+            </Grid>
+            <!-- the strip at the top while an archive is open: a few stars and a small wolf (the silhouette of the chibi wolf of the web site, drawn by the owner) that fade out downwards -->
+            <Grid x:Name="ArchiveScene" Visibility="Collapsed" VerticalAlignment="Top" Height="120">
+                <Canvas x:Name="ArchiveStars" />
+                <Path x:Name="WolfStrip" HorizontalAlignment="Right" VerticalAlignment="Top" Stretch="Uniform" Height="96" Margin="0,8,28,0"
+                      Data="M 392 128 C 402 82, 424 44, 442 22 C 448 52, 444 92, 434 126 Z M 382 355 L 392 468 C 408 470, 422 478, 424 492 C 424 500, 412 504, 388 504 L 356 504 L 350 365 Z M 225 355 C 238 388, 250 422, 265 468 C 280 470, 294 478, 295 492 C 295 500, 282 504, 258 504 L 232 504 C 220 462, 202 425, 188 385 Z M 342 18 C 365 45, 385 85, 398 125 C 412 124, 428 128, 442 136 L 452 146 C 478 142, 508 136, 535 130 C 545 128, 550 134, 546 144 C 540 162, 524 178, 502 186 L 468 194 L 504 202 C 508 212, 496 224, 476 230 C 456 236, 438 238, 424 242 C 448 258, 466 280, 478 302 L 452 304 C 464 326, 466 350, 458 372 L 438 366 C 425 385, 405 398, 382 405 L 374 478 C 392 480, 406 488, 408 504 C 408 512, 395 516, 368 516 L 328 516 C 320 516, 316 508, 316 492 L 314 388 L 296 396 L 304 378 C 268 370, 235 375, 208 392 C 192 418, 178 448, 174 478 C 190 480, 204 488, 206 504 C 206 512, 192 516, 165 516 L 128 516 C 120 516, 115 508, 118 492 C 124 458, 136 428, 152 402 L 132 396 C 140 380, 146 362, 148 345 C 112 368, 72 378, 36 362 C 16 352, 8 332, 16 312 C 24 324, 42 328, 62 322 C 32 302, 18 272, 24 238 C 36 254, 58 264, 84 264 C 68 244, 66 218, 78 198 C 98 214, 128 232, 158 258 C 188 238, 224 228, 262 222 L 246 206 C 268 196, 290 190, 310 186 L 288 170 C 304 156, 320 144, 336 135 L 318 122 C 328 112, 336 104, 344 98 C 334 72, 334 42, 342 18 Z" />
+            </Grid>
+        </Grid>
+
+    <Grid x:Name="RootGrid" AllowDrop="True" KeyboardAcceleratorPlacementMode="Hidden" DragOver="OnDragOver" DragLeave="OnDragLeave" Drop="OnDrop" SizeChanged="OnRootSizeChanged">
+        <!-- Keyboard shortcuts use XAML KeyboardAccelerator: they work also on an empty part of the list / tree, or with no focus at all.
+             PlacementMode=Hidden keeps it from showing a hint like "Ctrl + F" on mouse hover -->
+        <Grid.KeyboardAccelerators>
+            <KeyboardAccelerator Key="F" Modifiers="Control" Invoked="OnFindAccelerator" />
+        </Grid.KeyboardAccelerators>
+        <Grid.Resources>
+            <!-- The "card" of the settings page: one setting per row -->
+            <Style x:Key="SettingCard" TargetType="Border">
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Padding" Value="16,12" />
+                <Setter Property="BorderBrush" Value="{ThemeResource ControlStrokeColorDefaultBrush}" />
+                <Setter Property="Background" Value="{ThemeResource LayerFillColorDefaultBrush}" />
+            </Style>
+            <!-- Item templates and panels of the list / icon view (switched at run time for EntryGrid) -->
+            <DataTemplate x:Key="ListItemTemplate" x:DataType="local:EntryRow">
+                <StackPanel Orientation="Horizontal" Spacing="4" Width="250" ToolTipService.ToolTip="{x:Bind Name}" Loaded="OnTemplateLoaded">
+                    <CheckBox x:Name="RowCheck" Width="28" MinWidth="0" Padding="0" IsTabStop="False"
+                              Opacity="{x:Bind CheckOpacity, Mode=OneWay}" IsChecked="{x:Bind IsSelected, Mode=OneWay}" AutomationProperties.Name="main.select" />
+                    <Grid Width="22" Height="22" VerticalAlignment="Center" Visibility="{x:Bind ListGlyphVisibility, Mode=OneWay}">
+                        <Border CornerRadius="5" Background="{x:Bind GlyphBrush}" Opacity="{x:Bind ChipOpacity, Mode=OneWay}" />
+                        <FontIcon Glyph="{x:Bind Glyph}" FontSize="14" Foreground="{x:Bind GlyphBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Grid>
+                    <Image Source="{x:Bind ArchiveIcon}" Width="18" Height="18" VerticalAlignment="Center" Visibility="{x:Bind ListArchiveVisibility, Mode=OneWay}" />
+                    <Image Source="{x:Bind ShellIcon, Mode=OneWay}" Width="18" Height="18" VerticalAlignment="Center" Visibility="{x:Bind ShellIconVisibility, Mode=OneWay}" />
+                    <TextBlock Text="{x:Bind Name}" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" MaxWidth="180" />
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="IconItemTemplate" x:DataType="local:EntryRow">
+                <Grid Width="{x:Bind ItemWidth}" Height="{x:Bind ItemHeight}" ToolTipService.ToolTip="{x:Bind Name}" Loaded="OnTemplateLoaded">
+                    <StackPanel Padding="4,8" Spacing="6">
+                        <Grid Height="{x:Bind BoxHeight}">
+                            <FontIcon Glyph="{x:Bind Glyph}" FontSize="{x:Bind GlyphSize}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="{x:Bind GlyphBrush}"
+                                      Visibility="{x:Bind GlyphVisibility, Mode=OneWay}" />
+                            <Image Source="{x:Bind ArchiveIconLarge}" Width="{x:Bind IconSize}" Height="{x:Bind IconSize}" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                                   Visibility="{x:Bind ArchiveIconVisibility, Mode=OneWay}" />
+                            <Image Source="{x:Bind ShellIconLarge, Mode=OneWay}" Width="{x:Bind IconSize}" Height="{x:Bind IconSize}" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                                   Visibility="{x:Bind ShellIconLargeVisibility, Mode=OneWay}" />
+                            <!-- a thin plate under the picture: pictures with a transparent background (PNG, GIF) still show where they end; no blur or shadow (scrolling stays fast) -->
+                            <Border HorizontalAlignment="Center" VerticalAlignment="Bottom" BorderThickness="1" CornerRadius="2"
+                                    Background="{ThemeResource ControlAltFillColorSecondaryBrush}" BorderBrush="{ThemeResource ControlStrokeColorDefaultBrush}"
+                                    Visibility="{x:Bind ThumbVisibility, Mode=OneWay}">
+                                <Image Source="{x:Bind ThumbSource, Mode=OneWay}" Stretch="Uniform" />
+                            </Border>
+                        </Grid>
+                        <TextBlock Text="{x:Bind DisplayName}" TextAlignment="Center" TextWrapping="Wrap" MaxLines="{x:Bind NameLines}"
+                                   TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" />
+                    </StackPanel>
+                    <CheckBox x:Name="RowCheck" Width="28" MinWidth="0" Padding="0" IsTabStop="False" HorizontalAlignment="Left" VerticalAlignment="Top"
+                              Opacity="{x:Bind CheckOpacity, Mode=OneWay}" IsHitTestVisible="{x:Bind CheckHitTest, Mode=OneWay}" IsChecked="{x:Bind IsSelected, Mode=OneWay}" AutomationProperties.Name="main.select" />
+                </Grid>
+            </DataTemplate>
+            <ItemsPanelTemplate x:Key="ListPanel"><ItemsWrapGrid Orientation="Vertical" /></ItemsPanelTemplate>
+            <ItemsPanelTemplate x:Key="IconPanel"><ItemsWrapGrid Orientation="Horizontal" /></ItemsPanelTemplate>
+            <!-- Task row: moon phase progress (0% new moon -> 100% full moon; done = check mark, failed = light red, cancelled = grey) -->
+            <DataTemplate x:Key="TaskRowTemplate" x:DataType="local:TaskRow">
+                <Grid ColumnSpacing="12" Padding="10,10,0,10" Loaded="OnTemplateLoaded">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <!-- the glow of the moon when the task ends (MainWindow::GlowMoon): invisible until then; it may spill over the moon -->
+                    <Ellipse x:Name="MoonGlow" Width="40" Height="40" Opacity="0" IsHitTestVisible="False" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Ellipse.RenderTransform><CompositeTransform /></Ellipse.RenderTransform>
+                        <Ellipse.Fill><RadialGradientBrush><GradientStop Color="#FFF4F8FF" Offset="0.4" /><GradientStop Color="#00F4F8FF" Offset="1" /></RadialGradientBrush></Ellipse.Fill>
+                    </Ellipse>
+                    <Viewbox Width="40" Height="40" VerticalAlignment="Center">
+                        <Grid Width="40" Height="40">
+                            <Ellipse Width="40" Height="40" Fill="#0A1030" Stroke="#2B3C7C" StrokeThickness="1" />
+                            <Path Data="{x:Bind LitGeometry, Mode=OneWay}" Fill="{x:Bind LitBrush, Mode=OneWay}" />
+                            <Ellipse Width="38" Height="38" Stroke="{ThemeResource AccentFillColorDefaultBrush}" StrokeThickness="2" Opacity="0.9" />
+                            <Ellipse Width="38" Height="38" Stroke="#FF6B6B" StrokeThickness="2.5" Visibility="{x:Bind RingErrorVisibility, Mode=OneWay}" />
+                            <ProgressRing Width="20" Height="20" IsActive="{x:Bind IsIndeterminate, Mode=OneWay}" Visibility="{x:Bind SpinnerVisibility, Mode=OneWay}" />
+                            <FontIcon Glyph="{x:Bind StateGlyph, Mode=OneWay}" FontSize="17" Foreground="{x:Bind StateGlyphBrush, Mode=OneWay}"
+                                      Visibility="{x:Bind StateGlyphVisibility, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                    </Viewbox>
+                    <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
+                        <TextBlock Text="{x:Bind Title, Mode=OneWay}" Style="{StaticResource BodyStrongTextBlockStyle}" TextTrimming="CharacterEllipsis" />
+                        <TextBlock Text="{x:Bind StatusText, Mode=OneWay}" Opacity="0.75" TextWrapping="Wrap" MaxLines="3" TextTrimming="CharacterEllipsis" ToolTipService.ToolTip="{x:Bind StatusText, Mode=OneWay}" Style="{StaticResource CaptionTextBlockStyle}" />
+                        <ProgressBar Minimum="0" Maximum="100" Value="{x:Bind Progress, Mode=OneWay}" IsIndeterminate="{x:Bind IsIndeterminate, Mode=OneWay}" Visibility="{x:Bind ProgressVisibility, Mode=OneWay}" Height="6" MinHeight="6" CornerRadius="3" Margin="0,4,0,0" Foreground="{ThemeResource AccentFillColorDefaultBrush}" Background="#26FFFFFF" >
+                            <ProgressBar.Resources><x:Double x:Key="ProgressBarTrackHeight">6</x:Double><x:Double x:Key="ProgressBarMinHeight">6</x:Double><CornerRadius x:Key="ControlCornerRadius">3</CornerRadius></ProgressBar.Resources>
+                        </ProgressBar>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+                        <Button Tag="{x:Bind Id}" Click="OnTaskPauseClick" Visibility="{x:Bind PauseVisibility, Mode=OneWay}" ToolTipService.ToolTip="main.pause" AutomationProperties.Name="main.pause"><FontIcon Glyph="&#xE769;" FontSize="14" /></Button>
+                        <Button Tag="{x:Bind Id}" Click="OnTaskResumeClick" Visibility="{x:Bind ResumeVisibility, Mode=OneWay}" ToolTipService.ToolTip="main.resume" AutomationProperties.Name="main.resume"><FontIcon Glyph="&#xE768;" FontSize="14" /></Button>
+                        <Button Tag="{x:Bind Id}" Click="OnTaskCancelClick" Visibility="{x:Bind CancelVisibility, Mode=OneWay}" ToolTipService.ToolTip="main.cancel" AutomationProperties.Name="main.cancel"><FontIcon Glyph="&#xE711;" FontSize="14" /></Button>
+                        <Button Tag="{x:Bind OutputPath, Mode=OneWay}" Click="OnTaskOpenFolderClick" Visibility="{x:Bind OpenFolderVisibility, Mode=OneWay}" ToolTipService.ToolTip="main.open_folder" AutomationProperties.Name="main.open_folder"><FontIcon Glyph="&#xE838;" FontSize="14" /></Button>
+                        <Button Tag="{x:Bind Id}" Click="OnTaskTestClick" Visibility="{x:Bind TestVisibility, Mode=OneWay}" ToolTipService.ToolTip="main.test_integrity" AutomationProperties.Name="main.test_integrity"><FontIcon Glyph="&#xE73E;" FontSize="14" Foreground="{ThemeResource SystemFillColorSuccessBrush}" /></Button>
+                        <Button Tag="{x:Bind Id}" Click="OnTaskDeleteClick" Visibility="{x:Bind DeleteVisibility, Mode=OneWay}" ToolTipService.ToolTip="{x:Bind DeleteLabel, Mode=OneWay}" AutomationProperties.Name="{x:Bind DeleteLabel, Mode=OneWay}"><FontIcon Glyph="&#xE74D;" FontSize="14" Foreground="{ThemeResource SystemFillColorCriticalBrush}" /></Button>
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+            <!-- For the compact window: big moon, big title -->
+            <DataTemplate x:Key="TaskHeroTemplate" x:DataType="local:TaskRow">
+                <Grid ColumnSpacing="20" Padding="22,22,0,22" Loaded="OnTemplateLoaded">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" /><ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <!-- the glow of the moon when the task ends (MainWindow::GlowMoon): invisible until then; it may spill over the moon -->
+                    <Ellipse x:Name="MoonGlow" Width="92" Height="92" Opacity="0" IsHitTestVisible="False" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Ellipse.RenderTransform><CompositeTransform /></Ellipse.RenderTransform>
+                        <Ellipse.Fill><RadialGradientBrush><GradientStop Color="#FFF4F8FF" Offset="0.4" /><GradientStop Color="#00F4F8FF" Offset="1" /></RadialGradientBrush></Ellipse.Fill>
+                    </Ellipse>
+                    <Viewbox Width="92" Height="92" VerticalAlignment="Center">
+                        <Grid Width="40" Height="40">
+                            <Ellipse Width="40" Height="40" Fill="#0A1030" Stroke="#2B3C7C" StrokeThickness="0.8" />
+                            <Path Data="{x:Bind LitGeometry, Mode=OneWay}" Fill="{x:Bind LitBrush, Mode=OneWay}" />
+                            <Ellipse Width="38.4" Height="38.4" Stroke="{ThemeResource AccentFillColorDefaultBrush}" StrokeThickness="1.6" Opacity="0.95" />
+                            <Ellipse Width="38.4" Height="38.4" Stroke="#FF6B6B" StrokeThickness="2" Visibility="{x:Bind RingErrorVisibility, Mode=OneWay}" />
+                            <ProgressRing Width="20" Height="20" IsActive="{x:Bind IsIndeterminate, Mode=OneWay}" Visibility="{x:Bind SpinnerVisibility, Mode=OneWay}" />
+                            <FontIcon Glyph="{x:Bind StateGlyph, Mode=OneWay}" FontSize="17" Foreground="{x:Bind StateGlyphBrush, Mode=OneWay}"
+                                      Visibility="{x:Bind StateGlyphVisibility, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                    </Viewbox>
+                    <StackPanel Grid.Column="1" Spacing="6" VerticalAlignment="Center">
+                        <TextBlock Text="{x:Bind Title, Mode=OneWay}" Style="{StaticResource SubtitleTextBlockStyle}" TextTrimming="CharacterEllipsis" />
+                        <TextBlock Text="{x:Bind StatusText, Mode=OneWay}" Opacity="0.8" TextWrapping="Wrap" />
+                        <ProgressBar Minimum="0" Maximum="100" Value="{x:Bind Progress, Mode=OneWay}" IsIndeterminate="{x:Bind IsIndeterminate, Mode=OneWay}" Visibility="{x:Bind ProgressVisibility, Mode=OneWay}" Height="8" MinHeight="8" CornerRadius="4" Margin="0,4,0,0" Foreground="{ThemeResource AccentFillColorDefaultBrush}" Background="#26FFFFFF" >
+                            <ProgressBar.Resources><x:Double x:Key="ProgressBarTrackHeight">8</x:Double><x:Double x:Key="ProgressBarMinHeight">8</x:Double><CornerRadius x:Key="ControlCornerRadius">4</CornerRadius></ProgressBar.Resources>
+                        </ProgressBar>
+                        <StackPanel Orientation="Horizontal" Spacing="4" Margin="0,4,0,0">
+                            <StackPanel.Resources>
+                                <Style TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}"><Setter Property="Padding" Value="8,5,8,6" /></Style>
+                            </StackPanel.Resources>
+                            <Button Tag="{x:Bind Id}" Click="OnTaskPauseClick" Visibility="{x:Bind PauseVisibility, Mode=OneWay}" AutomationProperties.Name="main.pause"><StackPanel Orientation="Horizontal" Spacing="6"><FontIcon Glyph="&#xE769;" FontSize="14" /><TextBlock Text="main.pause" /></StackPanel></Button>
+                            <Button Tag="{x:Bind Id}" Click="OnTaskResumeClick" Visibility="{x:Bind ResumeVisibility, Mode=OneWay}" AutomationProperties.Name="main.resume"><StackPanel Orientation="Horizontal" Spacing="6"><FontIcon Glyph="&#xE768;" FontSize="14" /><TextBlock Text="main.resume" /></StackPanel></Button>
+                            <Button Tag="{x:Bind Id}" Click="OnTaskCancelClick" Visibility="{x:Bind CancelVisibility, Mode=OneWay}" AutomationProperties.Name="main.cancel"><StackPanel Orientation="Horizontal" Spacing="6"><FontIcon Glyph="&#xE711;" FontSize="14" /><TextBlock Text="main.cancel" /></StackPanel></Button>
+                            <Button Tag="{x:Bind OutputPath, Mode=OneWay}" Click="OnTaskOpenFolderClick" Visibility="{x:Bind OpenFolderVisibility, Mode=OneWay}" AutomationProperties.Name="main.open_folder"><StackPanel Orientation="Horizontal" Spacing="6"><FontIcon Glyph="&#xE838;" FontSize="14" /><TextBlock Text="main.open_folder" /></StackPanel></Button>
+                            <Button Tag="{x:Bind Id}" Click="OnTaskTestClick" Visibility="{x:Bind TestVisibility, Mode=OneWay}" AutomationProperties.Name="main.test_integrity"><StackPanel Orientation="Horizontal" Spacing="6"><FontIcon Glyph="&#xE73E;" FontSize="14" Foreground="{ThemeResource SystemFillColorSuccessBrush}" /><TextBlock Text="main.test_integrity" /></StackPanel></Button>
+                            <Button Tag="{x:Bind Id}" Click="OnTaskDeleteClick" Visibility="{x:Bind DeleteVisibility, Mode=OneWay}" AutomationProperties.Name="{x:Bind DeleteLabel, Mode=OneWay}"><StackPanel Orientation="Horizontal" Spacing="6"><FontIcon Glyph="&#xE74D;" FontSize="14" Foreground="{ThemeResource SystemFillColorCriticalBrush}" /><TextBlock Text="{x:Bind DeleteLabel, Mode=OneWay}" /></StackPanel></Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition x:Name="ContentRow" Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Custom title bar -->
+        <Grid x:Name="AppTitleBar" Grid.Row="0" Height="40">
+            <StackPanel Orientation="Horizontal" Spacing="8" Margin="14,0,0,0" VerticalAlignment="Center">
+                <Image x:Name="TitleLogo" Width="20" Height="20" VerticalAlignment="Center" />
+                <TextBlock x:Name="AppTitleText" Text="LycanZip" Style="{StaticResource CaptionTextBlockStyle}" VerticalAlignment="Center" />
+            </StackPanel>
+            <Button x:Name="SettingsButton" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,150,0"
+                    Width="40" Height="32" Padding="0" Background="Transparent" BorderThickness="0"
+                    Click="OnSettingsClick" ToolTipService.ToolTip="main.settings" AutomationProperties.Name="main.settings">
+                <FontIcon Glyph="&#xE713;" FontSize="16" />
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="20,0,20,16">
+
+            <!-- Start page: drop area -->
+            <Border x:Name="HomePanel"
+                    CornerRadius="12" BorderThickness="2"
+                    BorderBrush="{ThemeResource ControlStrokeColorDefaultBrush}"
+                    Background="{ThemeResource LayerFillColorDefaultBrush}">
+                <Grid>
+                <!-- the notice of a new version (optional check, MainWindow::CheckForUpdateAsync) -->
+                <Border x:Name="UpdateStrip" Visibility="Collapsed" VerticalAlignment="Top" Margin="12" CornerRadius="6" BorderThickness="1" Padding="10,2,4,2"
+                        BorderBrush="{ThemeResource ControlStrokeColorDefaultBrush}" Background="{ThemeResource CardBackgroundFillColorSecondaryBrush}" />
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="14">
+                    <Image x:Name="HomeLogo" Width="176" Height="176" HorizontalAlignment="Center" />
+                    <TextBlock x:Name="HomeTitle" Text="main.drag_files_here" Style="{StaticResource TitleTextBlockStyle}" HorizontalAlignment="Center" />
+                    <TextBlock Text="main.archive_open_extract_files_folders"
+                               Opacity="0.7" HorizontalAlignment="Center" />
+                    <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Center" Margin="0,12,0,0">
+                        <Button x:Name="OpenButton" Content="main.open_archive" Style="{StaticResource AccentButtonStyle}" Click="OnOpenArchiveClick" />
+                        <DropDownButton x:Name="NewButton" Content="main.new_archive">
+                            <DropDownButton.Flyout>
+                                <MenuFlyout>
+                                    <MenuFlyoutItem Text="main.choose_files" Click="OnNewFromFilesClick" />
+                                    <MenuFlyoutItem Text="main.choose_folder" Click="OnNewFromFolderClick" />
+                                </MenuFlyout>
+                            </DropDownButton.Flyout>
+                        </DropDownButton>
+                    </StackPanel>
+                </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Archive view -->
+            <Grid x:Name="ArchivePanel" Visibility="Collapsed" RowSpacing="6">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" MinHeight="40" />
+                </Grid.RowDefinitions>
+
+                <!-- First row: extract, preview, view, other options; on the right the file name encoding (only when needed). In a narrow window the buttons keep only the icon (UpdateToolbarText) -->
+                <Grid x:Name="ArchiveToolRow" ColumnSpacing="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <SplitButton x:Name="ExtractHereButton" AutomationProperties.Name="main.extract_here" Background="{ThemeResource AccentFillColorDefaultBrush}" Foreground="{ThemeResource TextOnAccentFillColorPrimaryBrush}" Click="OnExtractHereSplitClick">
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <FontIcon Glyph="&#xE896;" FontSize="14" />
+                            <TextBlock x:Name="ExtractHereText" Text="main.extract_here" />
+                        </StackPanel>
+                    </SplitButton>
+                    <SplitButton x:Name="ExtractToButton" Grid.Column="1" Click="OnExtractToSplitClick" AutomationProperties.Name="main.extract">
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <FontIcon Glyph="&#xE8DA;" FontSize="14" />
+                            <TextBlock x:Name="ExtractToText" Text="main.extract" />
+                        </StackPanel>
+                    </SplitButton>
+                    <DropDownButton x:Name="AddButton" Grid.Column="2" ToolTipService.ToolTip="main.add_files_folders_archive_you_can" AutomationProperties.Name="main.add_archive">
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <FontIcon Glyph="&#xE710;" FontSize="14" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" />
+                            <TextBlock x:Name="AddText" Text="main.add" />
+                        </StackPanel>
+                        <DropDownButton.Flyout>
+                            <MenuFlyout>
+                                <MenuFlyoutItem x:Name="AddFilesItem" Text="main.add_files" Click="OnAddFilesClick">
+                                    <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE8A5;" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" /></MenuFlyoutItem.Icon>
+                                </MenuFlyoutItem>
+                                <MenuFlyoutItem x:Name="AddFolderItem" Text="main.add_folder" Click="OnAddFolderClick">
+                                    <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE8B7;" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" /></MenuFlyoutItem.Icon>
+                                </MenuFlyoutItem>
+                                <MenuFlyoutSeparator />
+                                <MenuFlyoutItem x:Name="NewFolderItem" Text="main.new_folder" Click="OnNewFolderClick">
+                                    <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE8F4;" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" /></MenuFlyoutItem.Icon>
+                                </MenuFlyoutItem>
+                            </MenuFlyout>
+                        </DropDownButton.Flyout>
+                    </DropDownButton>
+                    <DropDownButton x:Name="PreviewButton" Grid.Column="3" AutomationProperties.Name="main.preview">
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <Image x:Name="PreviewWolf" Width="16" Height="16" />
+                            <TextBlock x:Name="PreviewText" Text="main.preview" />
+                        </StackPanel>
+                        <DropDownButton.Flyout>
+                            <MenuFlyout>
+                                <MenuFlyoutItem x:Name="PreviewImageItem" Text="main.image_preview" KeyboardAcceleratorTextOverride="Alt+P" Click="OnPreviewImagesClick">
+                                    <MenuFlyoutItem.Icon><FontIcon Glyph="&#xEB9F;" /></MenuFlyoutItem.Icon>
+                                </MenuFlyoutItem>
+                                <MenuFlyoutItem x:Name="PreviewAudioItem" Text="main.audio_preview" KeyboardAcceleratorTextOverride="Alt+Shift+P" Click="OnPreviewAudioClick">
+                                    <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE8D6;" /></MenuFlyoutItem.Icon>
+                                </MenuFlyoutItem>
+                            </MenuFlyout>
+                        </DropDownButton.Flyout>
+                    </DropDownButton>
+                            <DropDownButton x:Name="ViewButton" Grid.Column="4" AutomationProperties.Name="main.view">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <FontIcon Glyph="&#xE890;" FontSize="14" />
+                                    <TextBlock x:Name="ViewText" Text="main.view" />
+                                </StackPanel>
+                                <DropDownButton.Flyout>
+                                    <MenuFlyout>
+                                        <ToggleMenuFlyoutItem x:Name="FlatToggle" Text="main.list_all" KeyboardAcceleratorTextOverride="Ctrl+Shift+F" Click="OnFlatToggleClick" AutomationProperties.Name="main.list_all" />
+                                        <ToggleMenuFlyoutItem x:Name="TreeToggle" Text="main.folder_tree" KeyboardAcceleratorTextOverride="Ctrl+B" Click="OnTreeToggleClick" AutomationProperties.Name="main.folder_tree_toggle" />
+                                        <ToggleMenuFlyoutItem x:Name="MacMetaItem" Text="main.show_macos_metadata" Click="OnMacMetaItemClick" AutomationProperties.Name="main.show_macos_metadata" />
+                                        <MenuFlyoutSeparator />
+                                        <RadioMenuFlyoutItem x:Name="ViewDetailsItem" Text="main.details" GroupName="view" Tag="v0" Click="OnViewMenuClick" />
+                                        <RadioMenuFlyoutItem x:Name="ViewListItem" Text="main.list" GroupName="view" Tag="v1" Click="OnViewMenuClick" />
+                                        <!-- the icon view in its four sizes belongs to the same group: choosing a size shows the icons (like File Explorer) -->
+                                        <RadioMenuFlyoutItem x:Name="ThumbSmallItem" Text="main.view_small_icons" GroupName="view" Tag="i0" Click="OnViewMenuClick" />
+                                        <RadioMenuFlyoutItem x:Name="ThumbMediumItem" Text="main.view_medium_icons" GroupName="view" Tag="i1" Click="OnViewMenuClick" />
+                                        <RadioMenuFlyoutItem x:Name="ThumbLargeItem" Text="main.view_large_icons" GroupName="view" Tag="i2" Click="OnViewMenuClick" />
+                                        <RadioMenuFlyoutItem x:Name="ThumbHugeItem" Text="main.view_huge_icons" GroupName="view" Tag="i3" Click="OnViewMenuClick" />
+                                        <MenuFlyoutSeparator />
+                                        <ToggleMenuFlyoutItem x:Name="ThumbsItem" Text="main.show_image_thumbnails_icon_view" Tag="t1" Click="OnViewMenuClick" />
+                                        <MenuFlyoutSeparator />
+                                        <RadioMenuFlyoutItem x:Name="SortNameItem" Text="main.sort_by_name" GroupName="sort" Tag="s0" Click="OnViewMenuClick" />
+                                        <RadioMenuFlyoutItem x:Name="SortSizeItem" Text="main.sort_by_size" GroupName="sort" Tag="s1" Click="OnViewMenuClick" />
+                                        <RadioMenuFlyoutItem x:Name="SortPackedItem" Text="main.sort_by_packed_size" GroupName="sort" Tag="s2" Click="OnViewMenuClick" />
+                                        <RadioMenuFlyoutItem x:Name="SortModifiedItem" Text="main.sort_by_modified_date" GroupName="sort" Tag="s3" Click="OnViewMenuClick" />
+                                        <RadioMenuFlyoutItem x:Name="SortTypeItem" Text="main.sort_by_type" GroupName="sort" Tag="s4" Click="OnViewMenuClick" />
+                                        <MenuFlyoutSeparator />
+                                        <RadioMenuFlyoutItem x:Name="SortAscItem" Text="main.ascending" GroupName="dir" Tag="d1" Click="OnViewMenuClick" />
+                                        <RadioMenuFlyoutItem x:Name="SortDescItem" Text="main.descending" GroupName="dir" Tag="d0" Click="OnViewMenuClick" />
+                                    </MenuFlyout>
+                                </DropDownButton.Flyout>
+                            </DropDownButton>
+                            <DropDownButton x:Name="MoreButton" Grid.Column="5" AutomationProperties.Name="main.more_options">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <FontIcon Glyph="&#xE700;" FontSize="14" />
+                                    <TextBlock Text="main.more_options" />
+                                </StackPanel>
+                                <DropDownButton.Flyout>
+                                    <MenuFlyout>
+                                        <MenuFlyoutItem x:Name="TestItem" Text="main.test_integrity" KeyboardAcceleratorTextOverride="Ctrl+T" Click="OnTestClick">
+                                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE73E;" Foreground="{ThemeResource SystemFillColorSuccessBrush}" /></MenuFlyoutItem.Icon>
+                                        </MenuFlyoutItem>
+                                        <MenuFlyoutItem x:Name="ArchiveInfoItem" Text="main.archive_information" KeyboardAcceleratorTextOverride="Alt+Enter" Click="OnArchiveInfoClick">
+                                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE946;" /></MenuFlyoutItem.Icon>
+                                        </MenuFlyoutItem>
+                                        <MenuFlyoutItem x:Name="HashArchiveItem" Text="main.hash_values_archive" Click="OnHashArchiveClick">
+                                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE7C3;" /></MenuFlyoutItem.Icon>
+                                        </MenuFlyoutItem>
+                                        <MenuFlyoutItem x:Name="VerifySumsItem" Text="sums.verify_menu" Click="OnVerifySumsClick">
+                                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE73E;" Foreground="{ThemeResource SystemFillColorSuccessBrush}" /></MenuFlyoutItem.Icon>
+                                        </MenuFlyoutItem>
+                                        <MenuFlyoutItem x:Name="ScanItem" Text="main.scan_malware" Click="OnScanClick"
+                                                        ToolTipService.ToolTip="main.hands_every_file_archive_antivirus">
+                                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xEA18;" Foreground="{ThemeResource SystemFillColorCautionBrush}" /></MenuFlyoutItem.Icon>
+                                        </MenuFlyoutItem>
+                                        <MenuFlyoutItem x:Name="VirusTotalItem" Text="main.virustotal_lookup" Click="OnVirusTotalArchiveClick"
+                                                        ToolTipService.ToolTip="main.virustotal_lookup_tip">
+                                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE774;" Foreground="{ThemeResource SystemFillColorCautionBrush}" /></MenuFlyoutItem.Icon>
+                                        </MenuFlyoutItem>
+                                    </MenuFlyout>
+                                </DropDownButton.Flyout>
+                            </DropDownButton>
+                    <StackPanel x:Name="EncodingPanel" Grid.Column="7" Orientation="Horizontal" Spacing="8" Visibility="Collapsed">
+                        <TextBlock Text="main.filename_encoding" VerticalAlignment="Center" Opacity="0.8" />
+                        <ComboBox x:Name="EncodingCombo" MinWidth="170" SelectionChanged="OnEncodingChanged" AutomationProperties.Name="main.filename_encoding" />
+                    </StackPanel>
+                </Grid>
+
+                <!-- Second row: up one level, the whole-row path (breadcrumb), search -->
+                <Grid Grid.Row="1" ColumnSpacing="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="BackButton" Click="OnBackClick" ToolTipService.ToolTip="main.back_home_ctrl_w" AutomationProperties.Name="main.home">
+                        <FontIcon Glyph="&#xE80F;" FontSize="14" />
+                    </Button>
+                    <Button x:Name="UpButton" Grid.Column="1" Click="OnUpClick" ToolTipService.ToolTip="main.up_one_level_backspace" AutomationProperties.Name="main.up_one_level">
+                        <FontIcon Glyph="&#xE74A;" FontSize="14" />
+                    </Button>
+                    <!-- Path box: has a background and border (same height as the search box and buttons), with an archive icon in front, so it can be seen that the path is clickable -->
+                    <Border x:Name="PathBox" Grid.Column="2" Height="32" CornerRadius="4" BorderThickness="1" Padding="10,0,6,0"
+                            BorderBrush="{ThemeResource ControlStrokeColorDefaultBrush}" Background="{ThemeResource ControlFillColorDefaultBrush}">
+                        <Grid ColumnSpacing="8">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="Auto" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
+                            <Grid VerticalAlignment="Center">
+                                <FontIcon x:Name="PathGlyph" Glyph="&#xE7B8;" FontSize="14" Opacity="0.8" VerticalAlignment="Center" />
+                                <Image x:Name="PathIcon" Width="18" Height="18" Visibility="Collapsed" VerticalAlignment="Center" />
+                            </Grid>
+                            <BreadcrumbBar x:Name="Crumbs" Grid.Column="1" ItemClicked="OnCrumbClicked" VerticalAlignment="Center" AutomationProperties.Name="main.current_location">
+                                <BreadcrumbBar.ItemTemplate>
+                                    <DataTemplate x:DataType="local:CrumbItem">
+                                        <Grid ToolTipService.ToolTip="{x:Bind Tip}">
+                                            <TextBlock Text="{x:Bind Name}" Visibility="{x:Bind NormalVisibility}" />
+                                            <TextBlock Text="{x:Bind Name}" FontWeight="SemiBold" Visibility="{x:Bind LastVisibility}" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </BreadcrumbBar.ItemTemplate>
+                            </BreadcrumbBar>
+                        </Grid>
+                    </Border>
+                    <TextBox x:Name="SearchBox" Grid.Column="3" Width="220" PlaceholderText="main.search_ctrl_f" TextChanged="OnSearchTextChanged"
+                             AutomationProperties.Name="main.search" />
+                </Grid>
+
+                <StackPanel Grid.Row="2" Spacing="6">
+                    <!-- one-line notices (MainWindow::ShowNotice): an InfoBar needs three times the height -->
+                    <Border x:Name="WelcomeStrip" Visibility="Collapsed" CornerRadius="6" BorderThickness="1" Padding="10,2,4,2"
+                            BorderBrush="{ThemeResource ControlStrokeColorDefaultBrush}" Background="{ThemeResource LayerFillColorDefaultBrush}" />
+                    <Border x:Name="EncodingStrip" Visibility="Collapsed" CornerRadius="6" BorderThickness="1" Padding="10,2,4,2"
+                            BorderBrush="{ThemeResource ControlStrokeColorDefaultBrush}" Background="{ThemeResource LayerFillColorDefaultBrush}" />
+                    <Border x:Name="SumsStrip" Visibility="Collapsed" CornerRadius="6" BorderThickness="1" Padding="10,2,4,2"
+                            BorderBrush="{ThemeResource ControlStrokeColorDefaultBrush}" Background="{ThemeResource LayerFillColorDefaultBrush}" />
+                </StackPanel>
+
+                <!-- Content area: folder tree on the left + list on the right -->
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition x:Name="TreeCol" Width="200" />
+                        <ColumnDefinition x:Name="SplitCol" Width="10" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Border x:Name="TreePane" CornerRadius="8" BorderThickness="1" Padding="4,6"
+                            BorderBrush="{ThemeResource ControlStrokeColorDefaultBrush}"
+                            Background="{ThemeResource LayerFillColorDefaultBrush}">
+                        <TreeView x:Name="FolderTree" SelectionMode="Single" Expanding="OnTreeExpanding" ItemInvoked="OnTreeItemInvoked"
+                                  CanDragItems="True" DragItemsStarting="OnTreeDragStarting" DragItemsCompleted="OnTreeDragCompleted" ContextRequested="OnTreeContextRequested"
+                                  AutomationProperties.Name="main.folder_tree">
+                            <TreeView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Spacing="8">
+                                        <Grid Width="18" Height="18" VerticalAlignment="Center">
+                                            <Border CornerRadius="4" Width="20" Height="20" Background="{Binding Content.GlyphBrush}" Opacity="0.2" Visibility="{Binding Content.TreeGlyphVisibility}" />
+                                            <FontIcon Glyph="{Binding Content.Glyph}" FontSize="14" Foreground="{Binding Content.GlyphBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding Content.TreeGlyphVisibility}" />
+                                            <Image Width="18" Height="18" Source="{Binding Content.RootIcon}" Visibility="{Binding Content.RootIconVisibility}" />
+                                            <Image Width="18" Height="18" Source="{Binding Content.ShellIcon}" Visibility="{Binding Content.ShellIconVisibility}" />
+                                        </Grid>
+                                        <TextBlock Text="{Binding Content.Name}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </TreeView.ItemTemplate>
+                        </TreeView>
+                    </Border>
+
+                    <!-- Splitter between the folder tree and the list: drag left / right to change the width of the tree (remembered) -->
+                    <Border x:Name="TreeSplitter" Grid.Column="1" Background="Transparent" ToolTipService.ToolTip="main.drag_resize_folder_tree_double" AutomationProperties.Name="main.folder_tree_splitter">
+                        <Rectangle x:Name="TreeSplitterLine" Width="2" RadiusX="1" RadiusY="1" HorizontalAlignment="Center" Margin="0,12" Opacity="0"
+                                   Fill="{ThemeResource AccentFillColorDefaultBrush}" />
+                    </Border>
+
+                    <Grid Grid.Column="2">
+                        <Border CornerRadius="8" BorderThickness="1"
+                                BorderBrush="{ThemeResource ControlStrokeColorDefaultBrush}"
+                                Background="{ThemeResource LayerFillColorDefaultBrush}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <!-- Column headers: click to sort. The blank on the left lines up with the checkbox column of the list -->
+                                <!-- The header follows the list when it scrolls sideways (MainWindow::HookListScroll); it is clipped to the width of the list -->
+                                <Grid x:Name="HeaderViewport">
+                                <Grid x:Name="ListHeader" Padding="8,4,8,4" Background="Transparent" HorizontalAlignment="Left">
+                                    <Grid.RenderTransform><TranslateTransform x:Name="HeaderShift" /></Grid.RenderTransform>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="24" />
+                                        <ColumnDefinition x:Name="HeaderNameCol" Width="300" />
+                                        <ColumnDefinition x:Name="HeaderPathCol" Width="0" />
+                                        <ColumnDefinition x:Name="HeaderTypeCol" Width="62" />
+                                        <ColumnDefinition x:Name="HeaderSizeCol" Width="78" />
+                                        <ColumnDefinition x:Name="HeaderPackedCol" Width="78" />
+                                        <ColumnDefinition x:Name="HeaderRatioCol" Width="0" />
+                                        <ColumnDefinition x:Name="HeaderModifiedCol" Width="136" />
+                                        <ColumnDefinition x:Name="HeaderEncCol" Width="0" />
+                                        <ColumnDefinition x:Name="HeaderMethodCol" Width="0" />
+                                        <ColumnDefinition x:Name="HeaderCrcCol" Width="0" />
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox x:Name="SelectAllBox" Width="22" MinWidth="0" Padding="0" Click="OnSelectAllClick"
+                                              AutomationProperties.Name="main.select_all" ToolTipService.ToolTip="main.select_all_clear_selection" />
+                                    <Button x:Name="SortNameButton" Grid.Column="1" Tag="0" Click="OnSortClick" Background="Transparent" BorderThickness="0"
+                                            Padding="0,2" Margin="6,0,0,0" HorizontalAlignment="Left" AutomationProperties.Name="main.sort_by_name">
+                                        <TextBlock x:Name="SortNameText" Text="main.name" Opacity="0.8" />
+                                    </Button>
+                                    <Button x:Name="SortPathButton" Grid.Column="2" Tag="5" Click="OnSortClick" Background="Transparent" BorderThickness="0"
+                                            Padding="0,2" Margin="6,0,0,0" HorizontalAlignment="Left" Visibility="Collapsed" AutomationProperties.Name="main.sort_by_location">
+                                        <TextBlock x:Name="SortPathText" Text="main.location" Opacity="0.8" />
+                                    </Button>
+                                    <Button x:Name="SortTypeButton" Grid.Column="3" Tag="4" Click="OnSortClick" Background="Transparent" BorderThickness="0"
+                                            Padding="0,2" Margin="6,0,0,0" HorizontalAlignment="Left" AutomationProperties.Name="main.sort_by_type">
+                                        <TextBlock x:Name="SortTypeText" Text="main.type" Opacity="0.8" />
+                                    </Button>
+                                    <Button x:Name="SortSizeButton" Grid.Column="4" Tag="1" Click="OnSortClick" Background="Transparent" BorderThickness="0"
+                                            Padding="0,2" HorizontalAlignment="Right" AutomationProperties.Name="main.sort_by_size">
+                                        <TextBlock x:Name="SortSizeText" Text="main.size" Opacity="0.8" />
+                                    </Button>
+                                    <Button x:Name="SortPackedButton" Grid.Column="5" Tag="2" Click="OnSortClick" Background="Transparent" BorderThickness="0"
+                                            Padding="0,2" HorizontalAlignment="Right" AutomationProperties.Name="main.sort_by_packed_size">
+                                        <TextBlock x:Name="SortPackedText" Text="main.packed" Opacity="0.8" />
+                                    </Button>
+                                    <Button x:Name="SortRatioButton" Grid.Column="6" Tag="6" Click="OnSortClick" Background="Transparent" BorderThickness="0"
+                                            Padding="0,2" HorizontalAlignment="Right" Visibility="Collapsed" AutomationProperties.Name="main.sort_by_ratio">
+                                        <TextBlock x:Name="SortRatioText" Text="main.ratio" Opacity="0.8" />
+                                    </Button>
+                                    <Button x:Name="SortModifiedButton" Grid.Column="7" Tag="3" Click="OnSortClick" Background="Transparent" BorderThickness="0"
+                                            Padding="0,2" Margin="10,0,0,0" HorizontalAlignment="Left" AutomationProperties.Name="main.sort_by_modified_date">
+                                        <TextBlock x:Name="SortModifiedText" Text="main.modified" Opacity="0.8" />
+                                    </Button>
+                                    <Button x:Name="SortEncButton" Grid.Column="8" Tag="7" Click="OnSortClick" Background="Transparent" BorderThickness="0"
+                                            Padding="0,2" Margin="6,0,0,0" HorizontalAlignment="Left" Visibility="Collapsed" AutomationProperties.Name="main.sort_by_encrypted">
+                                        <TextBlock x:Name="SortEncText" Text="main.col_encrypted" Opacity="0.8" />
+                                    </Button>
+                                    <Button x:Name="SortMethodButton" Grid.Column="9" Tag="9" Click="OnSortClick" Background="Transparent" BorderThickness="0"
+                                            Padding="0,2" Margin="6,0,0,0" HorizontalAlignment="Left" Visibility="Collapsed" AutomationProperties.Name="main.sort_by_method">
+                                        <TextBlock x:Name="SortMethodText" Text="main.col_method" Opacity="0.8" />
+                                    </Button>
+                                    <Button x:Name="SortCrcButton" Grid.Column="10" Tag="8" Click="OnSortClick" Background="Transparent" BorderThickness="0"
+                                            Padding="0,2" Margin="6,0,0,0" HorizontalAlignment="Left" Visibility="Collapsed" AutomationProperties.Name="main.sort_by_crc">
+                                        <TextBlock x:Name="SortCrcText" Text="main.col_crc" Opacity="0.8" />
+                                    </Button>
+                                </Grid>
+                                </Grid>
+                                <ListView x:Name="EntryList" Grid.Row="1" SelectionMode="Extended" Background="Transparent"
+                                          ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollMode="Enabled"
+                                          ContainerContentChanging="OnContainerChanging" SelectionChanged="OnEntrySelectionChanged"
+                                          ContextRequested="OnEntryContextRequested" KeyDown="OnEntryKeyDown" CanDragItems="True" DragItemsStarting="OnEntryDragStarting" DragItemsCompleted="OnEntryDragCompleted"
+                                          AutomationProperties.Name="main.archive_contents">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate x:DataType="local:EntryRow">
+                                            <Grid Loaded="OnTemplateLoaded">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="24" />
+                                                    <ColumnDefinition Width="3*" />
+                                                    <ColumnDefinition Width="{x:Bind PathWidth}" />
+                                                    <ColumnDefinition Width="62" />
+                                                    <ColumnDefinition Width="78" />
+                                                    <ColumnDefinition Width="78" />
+                                                    <ColumnDefinition Width="0" />
+                                                    <ColumnDefinition Width="136" />
+                                                    <ColumnDefinition Width="0" />
+                                                    <ColumnDefinition Width="0" />
+                                                    <ColumnDefinition Width="0" />
+                                                </Grid.ColumnDefinitions>
+                                                <!-- The icon and the checkbox share one cell: the icon turns into the checkbox when the mouse is over it or it is selected (when hidden it takes no mouse, clicking the icon = selecting the row) -->
+                                                <Border Width="22" Height="22" CornerRadius="5" Background="{x:Bind GlyphBrush}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                        Opacity="{x:Bind ChipOpacity, Mode=OneWay}" Visibility="{x:Bind ListGlyphVisibility, Mode=OneWay}" />
+                                                <FontIcon Glyph="{x:Bind Glyph}" FontSize="14" Foreground="{x:Bind GlyphBrush}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                          Opacity="{x:Bind GlyphOpacity, Mode=OneWay}" Visibility="{x:Bind ListGlyphVisibility, Mode=OneWay}" />
+                                                <Image Source="{x:Bind ArchiveIcon}" Width="18" Height="18" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                       Opacity="{x:Bind GlyphOpacity, Mode=OneWay}" Visibility="{x:Bind ListArchiveVisibility, Mode=OneWay}" />
+                                                <Image Source="{x:Bind ShellIcon, Mode=OneWay}" Width="18" Height="18" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                       Opacity="{x:Bind GlyphOpacity, Mode=OneWay}" Visibility="{x:Bind ShellIconVisibility, Mode=OneWay}" />
+                                                <CheckBox x:Name="RowCheck" Width="22" MinWidth="0" Padding="0" IsTabStop="False" HorizontalAlignment="Center"
+                                                          Opacity="{x:Bind CheckOpacity, Mode=OneWay}" IsHitTestVisible="{x:Bind CheckHitTest, Mode=OneWay}"
+                                                          IsChecked="{x:Bind IsSelected, Mode=OneWay}" AutomationProperties.Name="main.select" />
+                                                <!-- Name on the left (only the width of the text): the blank on the right of the name can be the start of a "band selection" -->
+                                                <TextBlock Grid.Column="1" Margin="6,0,0,0" Text="{x:Bind Name}" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                                                <TextBlock x:Name="RowFolder" Grid.Column="2" Margin="6,0,0,0" Text="{x:Bind Folder}" Opacity="0.65" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                                                <TextBlock x:Name="RowType" Grid.Column="3" Margin="6,0,0,0" Text="{x:Bind TypeText}" Opacity="0.65" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                                                <TextBlock x:Name="RowSize" Grid.Column="4" Text="{x:Bind SizeText}" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                                                <TextBlock x:Name="RowPacked" Grid.Column="5" Text="{x:Bind PackedText}" HorizontalAlignment="Right" VerticalAlignment="Center" Opacity="0.65" />
+                                                <TextBlock x:Name="RowRatio" Grid.Column="6" Text="{x:Bind RatioText}" Opacity="0.65" HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="Collapsed" />
+                                                <TextBlock x:Name="RowModified" Grid.Column="7" Margin="10,0,0,0" Text="{x:Bind ModifiedText}" Opacity="0.65" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                                                <FontIcon x:Name="RowEnc" Grid.Column="8" Glyph="&#xE72E;" FontSize="13" Margin="6,0,0,0" Opacity="0.75" Visibility="Collapsed" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                                <TextBlock x:Name="RowMethod" Grid.Column="9" Margin="6,0,0,0" Text="{x:Bind MethodText}" Opacity="0.65" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" HorizontalAlignment="Left" Visibility="Collapsed" />
+                                                <TextBlock x:Name="RowCrc" Grid.Column="10" Margin="6,0,0,0" Text="{x:Bind CrcText}" Opacity="0.65" FontFamily="Consolas" VerticalAlignment="Center" HorizontalAlignment="Left" Visibility="Collapsed" />
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                                <GridView x:Name="EntryGrid" Grid.Row="1" Visibility="Collapsed" SelectionMode="Extended" Background="Transparent"
+                                          Padding="8" ContainerContentChanging="OnContainerChanging" SelectionChanged="OnEntrySelectionChanged"
+                                          ContextRequested="OnEntryContextRequested" KeyDown="OnEntryKeyDown" CanDragItems="True" DragItemsStarting="OnEntryDragStarting" DragItemsCompleted="OnEntryDragCompleted"
+                                          AutomationProperties.Name="main.archive_contents_list_icons" />
+                                <!-- Selection rectangle of the mouse band selection (does not intercept the mouse) -->
+                                <Canvas x:Name="BandLayer" Grid.Row="1" IsHitTestVisible="False" Visibility="Collapsed">
+                                    <Rectangle x:Name="BandRect" StrokeThickness="1" RadiusX="2" RadiusY="2" />
+                                </Canvas>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Grid>
+
+        <Grid Grid.Row="4" ColumnSpacing="14">
+            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                <TextBlock x:Name="ArchiveStatus" Opacity="0.75" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+        <!-- Selection bar: appears after items are ticked. At the very bottom, replacing the status bar, so the items above the list are not pushed when it appears (otherwise the second click of a double click would hit another row) -->
+        <Border x:Name="SelectionBar" Grid.Column="1" MaxWidth="780" Visibility="Collapsed" CornerRadius="8" BorderThickness="1" Padding="12,2"
+                BorderBrush="{ThemeResource AccentFillColorDefaultBrush}"
+                Background="{ThemeResource LayerFillColorDefaultBrush}">
+            <Grid ColumnSpacing="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="SelectionText" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+                <Button Grid.Column="1" Content="main.extract_selected_items_here" Style="{StaticResource AccentButtonStyle}" Click="OnExtractSelHereClick" />
+                <Button Grid.Column="2" Content="main.extract_selected_items" Click="OnExtractSelToClick" />
+                <Button Grid.Column="3" Content="main.copy_path" Click="OnCopyPathClick" />
+                <Button Grid.Column="4" Content="main.clear_selection" Click="OnClearSelectionClick" />
+            </Grid>
+        </Border>
+
+                <!-- Message (for example "this picture format has no decoder, opened with the associated program"): temporarily replaces the status bar / selection bar -->
+                <Border x:Name="StatusNote" Grid.Column="1" MaxWidth="700" Visibility="Collapsed" CornerRadius="8" BorderThickness="1" Padding="12,6" VerticalAlignment="Center"
+                        BorderBrush="{ThemeResource ControlStrokeColorDefaultBrush}" Background="{ThemeResource LayerFillColorDefaultBrush}">
+                    <Grid ColumnSpacing="10">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="Auto" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
+                        <FontIcon Glyph="&#xE946;" FontSize="16" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" VerticalAlignment="Center" />
+                        <TextBlock x:Name="StatusNoteText" Grid.Column="1" TextWrapping="Wrap" MaxLines="2" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
+                    </Grid>
+                </Border>
+        </Grid>
+            </Grid>
+
+            <!-- Settings page -->
+            <!-- the header (back / title / reset) stays on top while the settings scroll -->
+            <Grid x:Name="SettingsPanel" Visibility="Collapsed" RowSpacing="8">
+            <Grid.RowDefinitions><RowDefinition Height="Auto" /><RowDefinition Height="Auto" /><RowDefinition Height="*" /></Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Spacing="12" Margin="0,0,0,4">
+                <Button x:Name="SettingsBackButton" Click="OnSettingsBackClick" ToolTipService.ToolTip="main.back" AutomationProperties.Name="main.back">
+                    <FontIcon Glyph="&#xE72B;" FontSize="14" />
+                </Button>
+                <TextBlock Text="main.settings" Style="{StaticResource TitleTextBlockStyle}" VerticalAlignment="Center" />
+                <Button Content="main.restore_default_settings" Click="OnResetSettingsClick" Margin="16,0,0,0" VerticalAlignment="Center" AutomationProperties.Name="main.restore_default_settings" />
+            </StackPanel>
+            <SelectorBar x:Name="SettingsTabs" Grid.Row="1" SelectionChanged="OnSettingsTabChanged" AutomationProperties.Name="main.settings_tabs">
+                <SelectorBarItem x:Name="TabItemGeneral" Text="main.general"><SelectorBarItem.Icon><FontIcon Glyph="&#xE713;" /></SelectorBarItem.Icon></SelectorBarItem>
+                <SelectorBarItem x:Name="TabItemCompress" Text="main.compression"><SelectorBarItem.Icon><FontIcon Glyph="&#xE7B8;" /></SelectorBarItem.Icon></SelectorBarItem>
+                <SelectorBarItem x:Name="TabItemView" Text="main.view"><SelectorBarItem.Icon><FontIcon Glyph="&#xE890;" /></SelectorBarItem.Icon></SelectorBarItem>
+                <SelectorBarItem x:Name="TabItemShell" Text="main.file_explorer"><SelectorBarItem.Icon><FontIcon Glyph="&#xE838;" /></SelectorBarItem.Icon></SelectorBarItem>
+                <SelectorBarItem x:Name="TabItemKeys" Text="main.shortcuts"><SelectorBarItem.Icon><FontIcon Glyph="&#xE765;" /></SelectorBarItem.Icon></SelectorBarItem>
+                <SelectorBarItem x:Name="TabItemAbout" Text="main.about"><SelectorBarItem.Icon><FontIcon Glyph="&#xE946;" /></SelectorBarItem.Icon></SelectorBarItem>
+            </SelectorBar>
+            <ScrollViewer x:Name="SettingsScroll" Grid.Row="2" VerticalScrollBarVisibility="Auto"
+                          HorizontalScrollBarVisibility="Disabled" HorizontalScrollMode="Disabled">
+                <Grid>
+                    <StackPanel x:Name="TabGeneral" Spacing="8" Padding="0,0,16,16">
+                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,4,0,4"><FontIcon Glyph="&#xE771;" FontSize="15" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" VerticalAlignment="Center" /><TextBlock Text="main.appearance" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Center" /></StackPanel>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="main.language" />
+                                <TextBlock Text="main.interface_language_restart" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" />
+                                <TextBlock x:Name="LangRestartNote" Text="main.saved_takes_effect_after" Visibility="Collapsed" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" Style="{StaticResource CaptionTextBlockStyle}" />
+                            </StackPanel>
+                            <ComboBox x:Name="LangCombo" Grid.Column="1" MinWidth="180" SelectionChanged="OnSettingComboChanged" AutomationProperties.Name="main.language">
+                                <ComboBoxItem Content="main.follow_system" />
+                            </ComboBox>
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.theme" /><TextBlock Text="main.follow_system_fixed_light_dark" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" /></StackPanel>
+                            <ComboBox x:Name="ThemeCombo" Grid.Column="1" MinWidth="180" SelectionChanged="OnSettingComboChanged" AutomationProperties.Name="main.theme">
+                                <ComboBoxItem Content="main.follow_system" /><ComboBoxItem Content="main.light" /><ComboBoxItem Content="main.dark" /><ComboBoxItem Content="main.high_contrast_black" />
+                            </ComboBox>
+                        </Grid>
+                    </Border>
+
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid RowSpacing="10">
+                            <Grid.RowDefinitions><RowDefinition Height="Auto" /><RowDefinition Height="Auto" /></Grid.RowDefinitions>
+                            <StackPanel><TextBlock Text="main.accent_color" /><TextBlock Text="main.accent_color_buttons_selection" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <GridView x:Name="AccentGrid" Grid.Row="1" SelectionMode="Single" SelectionChanged="OnAccentChanged" AutomationProperties.Name="main.accent_color" />
+                        </Grid>
+                    </Border>
+
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.background" /><TextBlock Text="main.full_gradient_plus_moonlit_scene" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ComboBox x:Name="BackgroundCombo" Grid.Column="1" MinWidth="180" SelectionChanged="OnSettingComboChanged" AutomationProperties.Name="main.background">
+                                <ComboBoxItem Content="main.full" /><ComboBoxItem Content="main.gradient_only" /><ComboBoxItem Content="main.off" />
+                            </ComboBox>
+                        </Grid>
+                    </Border>
+
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.animations" /><TextBlock Text="main.page_transitions_list_loading_drag" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="AnimToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.animations" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.sound_effects" /><TextBlock Text="main.sounds_opening_completion_errors" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="SoundToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.sound_effects" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.sound_set" /><TextBlock Text="main.synth_default_set_synthesized" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ComboBox x:Name="SoundSetCombo" Grid.Column="1" MinWidth="180" SelectionChanged="OnSettingComboChanged" AutomationProperties.Name="main.sound_set">
+                                <ComboBoxItem Content="Synth" /><ComboBoxItem Content="Wave" />
+                            </ComboBox>
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.system_notifications" /><TextBlock Text="main.show_notification_when_tasks" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="NotifyToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.system_notifications" />
+                        </Grid>
+                    </Border>
+
+                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,16,0,4"><FontIcon Glyph="&#xE8A7;" FontSize="15" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" VerticalAlignment="Center" /><TextBlock Text="main.multiple_windows" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Center" /></StackPanel>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.when_opening_another_archive" /><TextBlock Text="main.when_window_already_use_open" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{ThemeResource TextFillColorSecondaryBrush}" TextWrapping="Wrap" /></StackPanel>
+                            <ComboBox x:Name="OpenPolicyCombo" Grid.Column="1" MinWidth="180" SelectionChanged="OnSettingComboChanged" AutomationProperties.Name="main.when_opening_another_archive">
+                                <ComboBoxItem Content="main.open_new_window" /><ComboBoxItem Content="main.replace_current_window" />
+                            </ComboBox>
+                        </Grid>
+                    </Border>
+                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,16,0,4"><FontIcon Glyph="&#xE9D9;" FontSize="15" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" VerticalAlignment="Center" /><TextBlock Text="main.performance" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Center" /></StackPanel>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.simultaneous_tasks" /><TextBlock Text="main.disk_bottleneck_so_1_run_one" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" /></StackPanel>
+                            <NumberBox x:Name="ParallelBox" Grid.Column="1" Minimum="1" Maximum="4" SmallChange="1" SpinButtonPlacementMode="Inline"
+                                       ValueChanged="OnSettingNumberChanged" AutomationProperties.Name="main.simultaneous_tasks" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.task_priority" /><TextBlock Text="main.how_much_machine_compress_extract" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ComboBox x:Name="TaskPriorityCombo" Grid.Column="1" MinWidth="200" SelectionChanged="OnSettingComboChanged" AutomationProperties.Name="main.task_priority">
+                                <ComboBoxItem Content="main.normal" /><ComboBoxItem Content="main.lower_leaves_some_cpu_others" /><ComboBoxItem Content="main.background_lowest_also_saves_disk" />
+                            </ComboBox>
+                        </Grid>
+                    </Border>
+
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel Spacing="2">
+                                <TextBlock Text="main.temporary_folder" />
+                                <TextBlock Text="main.used_when_opening_files_from" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" />
+                                <TextBlock x:Name="TempDirText" Opacity="0.9" TextWrapping="Wrap" IsTextSelectionEnabled="True" />
+                                <TextBlock x:Name="TempUsageText" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="8" VerticalAlignment="Top">
+                                <Button Content="main.choose" Click="OnTempChooseClick" AutomationProperties.Name="main.choose_temporary_folder" />
+                                <Button x:Name="TempResetButton" Content="main.reset" Click="OnTempResetClick" AutomationProperties.Name="main.reset_temporary_folder" />
+                                <Button Content="main.clear_temporary_files" Click="OnTempClearClick" AutomationProperties.Name="main.clear_temporary_files" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    </StackPanel>
+                    <StackPanel x:Name="TabCompress" Spacing="8" Padding="0,0,16,16" Visibility="Collapsed">
+                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,4,0,4"><FontIcon Glyph="&#xE896;" FontSize="15" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" VerticalAlignment="Center" /><TextBlock Text="main.extraction" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Center" /></StackPanel>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.when_file_with_same_name_already" /><TextBlock Text="main.ask_me_shows_options_on_every" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ComboBox x:Name="ConflictCombo" Grid.Column="1" MinWidth="180" SelectionChanged="OnSettingComboChanged" AutomationProperties.Name="main.file_conflict_handling">
+                                <ComboBoxItem Content="main.ask_me" /><ComboBoxItem Content="main.skip" /><ComboBoxItem Content="main.overwrite" /><ComboBoxItem Content="main.rename_automatically" />
+                            </ComboBox>
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.when_extracting_here" /><TextBlock Text="main.automatic_single_top_level_folder" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ComboBox x:Name="ExtractModeCombo" Grid.Column="1" MinWidth="200" SelectionChanged="OnSettingComboChanged" AutomationProperties.Name="main.when_extracting_here">
+                                <ComboBoxItem Content="main.automatic_recommended" /><ComboBoxItem Content="main.do_not_create_folder" /><ComboBoxItem Content="main.create_folder_named_after_archive" />
+                            </ComboBox>
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.check_unusually_big_archives" /><TextBlock Text="main.when_archive_would_unpack_far_more" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="BombCheckToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.check_unusually_big_archives" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.open_folder_when_done" /></StackPanel>
+                            <ToggleSwitch x:Name="OpenFolderToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.open_folder_when_done" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center"><TextBlock Text="main.skip_macos_metadata_when" /><TextBlock Text="main.macosx_folder_files_starting_with" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="SkipMacMetaToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.skip_macos_metadata_when" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center"><TextBlock Text="main.keep_files_have_data_error" /><TextBlock Text="main.when_archive_damaged_cut_off_what" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="KeepDamagedToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.keep_files_have_data_error" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center"><TextBlock Text="main.ask_before_deleting_archive" /><TextBlock Text="main.ask_once_when_delete_archive" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="ConfirmDeleteToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.ask_before_deleting_archive" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center"><TextBlock Text="main.ask_before_deleting_items_from" /><TextBlock Text="main.ask_once_when_delete_pressed" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="ConfirmDeleteEntriesToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.ask_before_deleting_items_from" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center"><TextBlock Text="main.keep_backup_when_archive_changed" /><TextBlock Text="main.when_files_archive_added_deleted" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="KeepBackupToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.keep_backup_when_archive_changed" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center"><TextBlock Text="main.program_editing" /><TextBlock Text="main.which_program_edit_item_right" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <TextBox x:Name="EditorPathBox" Grid.Column="1" Width="300" LostFocus="OnEditorPathLostFocus" AutomationProperties.Name="main.program_editing" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center"><TextBlock Text="main.ask_before_edited_file_goes_back" /><TextBlock Text="main.after_edited_file_saved_ask_once" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="ConfirmWriteBackToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.ask_before_edited_file_goes_back" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.warn_before_opening_programs" /><TextBlock Text="main.ask_first_when_you_double_click" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="WarnExecToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.warn_before_opening_programs_short" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.lock_open_archive" /><TextBlock Text="main.lock_open_archive_hint" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="LockOpenToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.lock_open_archive" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.what_extract_when_opening_program" /><TextBlock Text="main.programs_often_need_files_next" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ComboBox x:Name="ExecScopeCombo" Grid.Column="1" MinWidth="200" SelectionChanged="OnSettingComboChanged" AutomationProperties.Name="main.what_extract_when_opening_program">
+                                <ComboBoxItem Content="main.files_same_folder_recommended" /><ComboBoxItem Content="main.extract_only_file" />
+                            </ComboBox>
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.close_window_automatically_after" /><TextBlock Text="main.when_you_extract_compress_from" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="CloseCompactToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.close_window_automatically_after" />
+                        </Grid>
+                    </Border>
+
+                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,16,0,4"><FontIcon Glyph="&#xE7B8;" FontSize="15" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" VerticalAlignment="Center" /><TextBlock Text="main.compression" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Center" /></StackPanel>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <TextBlock Text="main.default_format" VerticalAlignment="Center" />
+                            <ComboBox x:Name="DefaultFormatCombo" Grid.Column="1" MinWidth="180" SelectionChanged="OnSettingComboChanged" AutomationProperties.Name="main.default_format">
+                                <ComboBoxItem Content="ZIP" /><ComboBoxItem Content="7z" /><ComboBoxItem Content="TAR.GZ" /><ComboBoxItem Content="TAR.XZ" /><ComboBoxItem Content="TAR.BZ2" /><ComboBoxItem Content="TAR" />
+                            </ComboBox>
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <TextBlock Text="main.show_new_archive_file_explorer" VerticalAlignment="Center" />
+                            <ToggleSwitch x:Name="RevealToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.show_new_archive_file_explorer" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center"><TextBlock Text="main.test_integrity_after_compressing" /><TextBlock Text="main.after_compressing_new_archive_read" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="TestAfterToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.test_integrity_after_compressing" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center"><TextBlock Text="sums.setting_archive" /><TextBlock Text="sums.setting_archive_caption" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="SumsArchiveToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="sums.setting_archive" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center"><TextBlock Text="sums.setting_files" /><TextBlock Text="sums.setting_files_caption" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="SumsFilesToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="sums.setting_files" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center"><TextBlock Text="main.skip_thumbs_db_automatically" /><TextBlock Text="main.windows_thumbnail_cache_thumbs_db" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="SkipThumbsToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.skip_thumbs_db_automatically" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <TextBlock Text="main.default_compression_mode" VerticalAlignment="Center" />
+                            <ComboBox x:Name="DefaultProfileCombo" Grid.Column="1" MinWidth="180" SelectionChanged="OnSettingComboChanged" AutomationProperties.Name="main.default_compression_mode">
+                                <ComboBoxItem Content="main.balanced_recommended" /><ComboBoxItem Content="main.compatibility_first" /><ComboBoxItem Content="main.smallest_size_slower" /><ComboBoxItem Content="main.fastest" />
+                            </ComboBox>
+                        </Grid>
+                    </Border>
+
+
+                    </StackPanel>
+                    <StackPanel x:Name="TabView" Spacing="8" Padding="0,0,16,16" Visibility="Collapsed">
+                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,4,0,4"><FontIcon Glyph="&#xE8FD;" FontSize="15" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" VerticalAlignment="Center" /><TextBlock Text="main.archive_view" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Center" /></StackPanel>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.remember_last_chosen_view" /><TextBlock Text="main.layout_you_pick_view_menu_details" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="RememberViewToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.remember_last_chosen_view" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.default_view" /><TextBlock Text="main.details_has_columns_sorting_list" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ComboBox x:Name="ViewStyleCombo" Grid.Column="1" MinWidth="180" SelectionChanged="OnSettingComboChanged" AutomationProperties.Name="main.default_view">
+                                <ComboBoxItem Content="main.details" /><ComboBoxItem Content="main.list" />
+                                <ComboBoxItem Content="main.view_small_icons" /><ComboBoxItem Content="main.view_medium_icons" /><ComboBoxItem Content="main.view_large_icons" /><ComboBoxItem Content="main.view_huge_icons" />
+                            </ComboBox>
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.default_browsing_mode" /><TextBlock Text="main.single_level_shows_one_folder_at" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ComboBox x:Name="ViewModeCombo" Grid.Column="1" MinWidth="180" SelectionChanged="OnSettingComboChanged" AutomationProperties.Name="main.default_browsing_mode">
+                                <ComboBoxItem Content="main.single_level_folder_navigation" /><ComboBoxItem Content="main.list_all" />
+                            </ComboBox>
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center"><TextBlock Text="main.use_file_icons_windows" /><TextBlock Text="main.files_folders_lists_folder_tree" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="ShellIconsToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.use_file_icons_windows" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.show_image_thumbnails_icon_view" /><TextBlock Text="main.only_works_non_solid_archives" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="ThumbsToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.show_image_thumbnails_icon_view" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.row_height" /><TextBlock Text="main.compact_shows_more_items_at_once" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" /></StackPanel>
+                            <ComboBox x:Name="DensityCombo" Grid.Column="1" MinWidth="180" SelectionChanged="OnSettingComboChanged" AutomationProperties.Name="main.row_height">
+                                <ComboBoxItem Content="main.compact" /><ComboBoxItem Content="main.comfortable" />
+                            </ComboBox>
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.show_folder_tree" /><TextBlock Text="main.hidden_automatically_when_window" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" /></StackPanel>
+                            <ToggleSwitch x:Name="FolderTreeToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.show_folder_tree" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center"><TextBlock Text="main.hide_macos_metadata" /><TextBlock Text="main.do_not_show_macosx_folder_files" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="HideMacMetaToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.hide_macos_metadata" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center"><TextBlock Text="main.stream_files_when_dragging_them" /><TextBlock Text="main.when_dropped_on_explorer_desktop" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="DragVirtualToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.stream_files_when_dragging_them_out" />
+                        </Grid>
+                    </Border>
+
+                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,16,0,4"><FontIcon Glyph="&#xEB9F;" FontSize="15" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" VerticalAlignment="Center" /><TextBlock Text="main.image_preview_heading" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Center" /></StackPanel>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.double_clicking_image" /><TextBlock Text="main.what_happens_when_you_double_click" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ComboBox x:Name="DblPreviewCombo" Grid.Column="1" MinWidth="200" SelectionChanged="OnSettingComboChanged" AutomationProperties.Name="main.double_clicking_image"><ComboBoxItem Content="main.open_image_preview" /><ComboBoxItem Content="main.open_with_associated_app" /></ComboBox>
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.open_preview_key" /><TextBlock Text="main.open_preview_key_hint" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ComboBox x:Name="OpenPreviewKeyCombo" Grid.Column="1" MinWidth="200" SelectionChanged="OnSettingComboChanged" AutomationProperties.Name="main.open_preview_key"><ComboBoxItem Content="main.key_shift" /><ComboBoxItem Content="main.key_ctrl" /><ComboBoxItem Content="main.key_none" /></ComboBox>
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.when_audio_file_double_clicked" /><TextBlock Text="main.how_audio_file_inside_archive" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ComboBox x:Name="DblAudioCombo" Grid.Column="1" MinWidth="200" SelectionChanged="OnSettingComboChanged" AutomationProperties.Name="main.when_audio_file_double_clicked"><ComboBoxItem Content="main.open_audio_preview" /><ComboBoxItem Content="main.open_with_associated_app" /></ComboBox>
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.enlarge_small_images_too" /><TextBlock Text="main.by_default_fit_window_width_height" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="EnlargeToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.enlarge_small_images_too" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.read_ahead_faster_paging" /><TextBlock Text="main.while_previewing_nearby_images" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ComboBox x:Name="PrefetchCombo" Grid.Column="1" MinWidth="200" SelectionChanged="OnSettingComboChanged" AutomationProperties.Name="main.read_ahead"><ComboBoxItem Content="main.off" /><ComboBoxItem Content="128 MB" /><ComboBoxItem Content="main.256_mb_default" /><ComboBoxItem Content="512 MB" /><ComboBoxItem Content="1 GB" /><ComboBoxItem Content="main.2_gb_maximum" /></ComboBox>
+                        </Grid>
+                    </Border>
+
+                    </StackPanel>
+                    <StackPanel x:Name="TabShell" Spacing="8" Padding="0,0,16,16" Visibility="Collapsed">
+                    <Border x:Name="StoreExplorerNote" Visibility="Collapsed" Style="{StaticResource SettingCard}">
+                        <TextBlock Text="main.store_explorer_note" TextWrapping="Wrap" />
+                    </Border>
+                    <Border x:Name="OtherCopyNote" Visibility="Collapsed" Style="{StaticResource SettingCard}">
+                        <TextBlock x:Name="OtherCopyNoteText" TextWrapping="Wrap" IsTextSelectionEnabled="True" />
+                    </Border>
+                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,4,0,4"><FontIcon Glyph="&#xE8A7;" FontSize="15" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" VerticalAlignment="Center" /><TextBlock Text="main.file_associations" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Center" /></StackPanel>
+                    <Border x:Name="FileAssocCard" Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="main.register_lycanzip_as_archive_app" />
+                                <TextBlock Text="main.after_registering_lycanzip_appears"
+                                           Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" />
+                            </StackPanel>
+                            <ToggleSwitch x:Name="FileAssocToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0"
+                                          Toggled="OnFileAssocToggled" AutomationProperties.Name="main.register_lycanzip_as_archive_app" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel Spacing="4">
+                                <TextBlock Text="main.current_default_apps" />
+                                <TextBlock x:Name="AssocStatus" Opacity="0.75" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" />
+                            </StackPanel>
+                            <Button x:Name="OpenDefaultAppsButton" Grid.Column="1" Content="main.open_default_apps_settings" VerticalAlignment="Top"
+                                    Click="OnOpenDefaultAppsClick" AutomationProperties.Name="main.open_default_apps_settings" />
+                        </Grid>
+                    </Border>
+
+                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,16,0,4"><FontIcon Glyph="&#xE8B7;" FontSize="15" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" VerticalAlignment="Center" /><TextBlock Text="main.file_explorer" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Center" /></StackPanel>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="main.add_lycanzip_right_click_menu" />
+                                <TextBlock x:Name="ShellMenuHint" Text="main.files_add_archive_compress_zip_7z"
+                                           Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" />
+                            </StackPanel>
+                            <ToggleSwitch x:Name="ShellMenuToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0"
+                                          Toggled="OnShellMenuToggled" AutomationProperties.Name="main.add_lycanzip_right_click_menu" />
+                        </Grid>
+                    </Border>
+                    <Border x:Name="Win11MenuCard" Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="main.add_lycanzip_windows_11_context" />
+                                <TextBlock Text="main.shown_at_top_level_windows_11"
+                                           Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" />
+                                <TextBlock x:Name="Win11MenuStatus" Opacity="0.75" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" />
+                            </StackPanel>
+                            <ToggleSwitch x:Name="Win11MenuToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0"
+                                          Toggled="OnWin11MenuToggled" AutomationProperties.Name="main.add_lycanzip_windows_11_context" />
+                        </Grid>
+                    </Border>
+                    <Border x:Name="RestartExplorerCard" Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="main.restart_explorer" />
+                                <TextBlock Text="main.restart_explorer_hint" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" />
+                            </StackPanel>
+                            <Button x:Name="RestartExplorerButton" Grid.Column="1" Content="main.restart_explorer_do" VerticalAlignment="Center" Click="OnRestartExplorerClick"
+                                    AutomationProperties.Name="main.restart_explorer_do" />
+                        </Grid>
+                    </Border>
+                    <StackPanel x:Name="ShellItemsPanel" Spacing="8" />
+
+                    </StackPanel>
+                    <StackPanel x:Name="TabKeys" Spacing="8" Padding="0,0,16,16" Visibility="Collapsed">
+                    <StackPanel x:Name="ShortcutPanel" Spacing="8" />
+
+                    </StackPanel>
+                    <StackPanel x:Name="TabAbout" Spacing="8" Padding="0,0,16,16" Visibility="Collapsed">
+                    <StackPanel x:Name="AboutPanel" Spacing="6">
+                        <Image x:Name="AboutLogo" Width="72" Height="72" HorizontalAlignment="Left" />
+                        <TextBlock x:Name="AboutVersion" />
+                        <TextBlock x:Name="AboutEngine" Opacity="0.75" TextWrapping="Wrap" />
+                        <TextBlock x:Name="AboutSettingsPath" Opacity="0.75" TextWrapping="Wrap" IsTextSelectionEnabled="True" />
+                        <StackPanel Orientation="Horizontal" Spacing="18">
+                            <HyperlinkButton Content="main.web_site" Click="OnOpenWebsiteClick" Padding="0" ToolTipService.ToolTip="https://aegisulf.com/lycanzip/" AutomationProperties.Name="main.web_site" />
+                            <HyperlinkButton Content="main.source_code_on_github" Click="OnOpenSourceClick" Padding="0" ToolTipService.ToolTip="https://github.com/Aegisulf/LycanZip" AutomationProperties.Name="main.source_code_on_github" />
+                        </StackPanel>
+                        <HyperlinkButton Content="main.open_settings_file_location" Click="OnOpenSettingsFolderClick" Padding="0" AutomationProperties.Name="main.open_settings_file_location" />
+                        <HyperlinkButton Content="main.show_welcome_window_again" Click="OnShowWelcomeClick" Padding="0" AutomationProperties.Name="main.show_welcome_window_again" />
+                        <TextBlock x:Name="UpdatesHeader" Text="main.updates" Style="{StaticResource BodyStrongTextBlockStyle}" Margin="0,14,0,2" />
+                        <Border x:Name="UpdatesCard" Style="{StaticResource SettingCard}">
+                            <StackPanel Spacing="8">
+                                <Grid ColumnSpacing="16">
+                                    <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                    <StackPanel><TextBlock Text="main.update_check" /><TextBlock Text="main.update_check_hint" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                                    <ToggleSwitch x:Name="UpdateCheckToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.update_check" />
+                                </Grid>
+                                <StackPanel Orientation="Horizontal" Spacing="12">
+                                    <Button x:Name="UpdateCheckNowButton" Content="main.update_check_now" Click="OnUpdateCheckNowClick" AutomationProperties.Name="main.update_check_now" />
+                                    <TextBlock x:Name="UpdateStatusText" VerticalAlignment="Center" Opacity="0.75" TextWrapping="Wrap" />
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                        <TextBlock Text="main.data_location" Style="{StaticResource BodyStrongTextBlockStyle}" Margin="0,14,0,2" />
+                        <Border Style="{StaticResource SettingCard}">
+                            <StackPanel Spacing="6">
+                                <TextBlock x:Name="DataModeText" TextWrapping="Wrap" />
+                                <TextBlock x:Name="DataFolderText" Opacity="0.75" TextWrapping="Wrap" IsTextSelectionEnabled="True" />
+                                <TextBlock x:Name="DataNoteText" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" />
+                                <Button x:Name="DataSwitchButton" Click="OnDataSwitchClick" Margin="0,4,0,0" />
+                            </StackPanel>
+                        </Border>
+                        <TextBlock Text="main.diagnostics" Style="{StaticResource BodyStrongTextBlockStyle}" Margin="0,14,0,2" />
+                        <Border Style="{StaticResource SettingCard}">
+                            <Grid ColumnSpacing="16">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                <StackPanel><TextBlock Text="main.detailed_debug_log" /><TextBlock Text="main.only_errors_warnings_logged_by" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                                <ToggleSwitch x:Name="DebugLogToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.detailed_debug_log" />
+                            </Grid>
+                        </Border>
+                        <Border Style="{StaticResource SettingCard}">
+                            <Grid ColumnSpacing="16">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                <StackPanel><TextBlock Text="main.log_full_paths" /><TextBlock Text="main.only_file_names_logged_by_default" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                                <ToggleSwitch x:Name="LogPathsToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.log_full_paths" />
+                            </Grid>
+                        </Border>
+                        <StackPanel Orientation="Horizontal" Spacing="18">
+                            <HyperlinkButton Content="main.open_report_folder" Click="OnOpenLogFolderClick" Padding="0" AutomationProperties.Name="main.open_report_folder" />
+                            <HyperlinkButton Content="main.copy_diagnostic_information" Click="OnCopyDiagnosticsClick" Padding="0" AutomationProperties.Name="main.copy_diagnostic_information" />
+                            <TextBlock x:Name="DiagCopiedNote" Text="main.copied_clipboard" Opacity="0.75" VerticalAlignment="Center" Visibility="Collapsed" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" />
+                        </StackPanel>
+                        <TextBlock Text="main.open_source_mit_compression_engine" Opacity="0.75" TextWrapping="Wrap" />
+                    </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
+            </Grid>
+
+
+            <!-- "New archive" page -->
+            <Grid x:Name="CompressPanel" Visibility="Collapsed" RowSpacing="12">
+                <Grid.RowDefinitions><RowDefinition Height="Auto" /><RowDefinition Height="*" /><RowDefinition Height="Auto" /></Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Spacing="12">
+                    <Button x:Name="CBackButton" ToolTipService.ToolTip="main.back" AutomationProperties.Name="main.back"><FontIcon Glyph="&#xE72B;" FontSize="14" /></Button>
+                    <TextBlock Text="main.new_archive" Style="{StaticResource TitleTextBlockStyle}" VerticalAlignment="Center" />
+                </StackPanel>
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" HorizontalScrollMode="Disabled">
+                    <Grid ColumnSpacing="24">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition x:Name="CSideCol" Width="0" /></Grid.ColumnDefinitions>
+                        <StackPanel x:Name="CMain" Spacing="8" Padding="0,0,16,16">
+                            <StackPanel x:Name="CSourcesNarrowHost" />
+
+                            <Border Style="{StaticResource SettingCard}">
+                                <Grid ColumnSpacing="12">
+                                    <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /><ColumnDefinition Width="Auto" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                    <StackPanel VerticalAlignment="Center"><TextBlock Text="main.template" /><TextBlock Text="main.apply_whole_set_settings_at_once" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                                    <TextBlock x:Name="CPresetModified" Grid.Column="1" Text="main.template_modified" Opacity="0.75" VerticalAlignment="Center" Visibility="Collapsed" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" />
+                                    <ComboBox x:Name="CPresetCombo" Grid.Column="2" MinWidth="170" AutomationProperties.Name="main.template" />
+                                    <Button x:Name="CPresetMenu" Grid.Column="3" ToolTipService.ToolTip="main.template_options" AutomationProperties.Name="main.template_options"><FontIcon Glyph="&#xE712;" FontSize="14" /></Button>
+                                </Grid>
+                            </Border>
+
+                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,12,0,2"><FontIcon Glyph="&#xE8B7;" FontSize="15" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" VerticalAlignment="Center" /><TextBlock Text="main.output" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Center" /></StackPanel>
+                            <Border Style="{StaticResource SettingCard}">
+                                <StackPanel Spacing="10">
+                                    <TextBox x:Name="CNameBox" Header="main.file_name_without_extension" AutomationProperties.Name="main.file_name_short" />
+                                    <Grid ColumnSpacing="10">
+                                        <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                        <TextBlock x:Name="COutDirText" Opacity="0.8" TextWrapping="Wrap" IsTextSelectionEnabled="True" VerticalAlignment="Center" />
+                                        <Button x:Name="CChangeDirButton" Grid.Column="1" Content="main.change_location" AutomationProperties.Name="main.change_location_tip" />
+                                    </Grid>
+                                    <TextBlock x:Name="COutNameText" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" />
+                                </StackPanel>
+                            </Border>
+
+                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,12,0,2"><FontIcon Glyph="&#xE7B8;" FontSize="15" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" VerticalAlignment="Center" /><TextBlock Text="main.format_mode" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Center" /></StackPanel>
+                            <Border Style="{StaticResource SettingCard}">
+                                <Grid ColumnSpacing="20">
+                                    <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
+                                    <StackPanel Spacing="6">
+                                        <TextBlock Text="main.format" />
+                                        <ComboBox x:Name="CFormatCombo" HorizontalAlignment="Stretch" AutomationProperties.Name="main.format" />
+                                        <TextBlock Text="main.zip_most_compatible_7z_compresses" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" />
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="1" Spacing="6">
+                                        <TextBlock Text="main.mode" />
+                                        <ComboBox x:Name="CProfileCombo" HorizontalAlignment="Stretch" AutomationProperties.Name="main.mode" />
+                                        <TextBlock Text="main.no_need_understand_parameters_just" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" />
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+
+                            <Border x:Name="CIsoCard" Style="{StaticResource SettingCard}" Visibility="Collapsed">
+                                <StackPanel Spacing="10">
+                                    <TextBox x:Name="CIsoLabel" Header="main.volume_label_optional" PlaceholderText="main.file_name_by_default" AutomationProperties.Name="main.volume_label" />
+                                    <ToggleSwitch x:Name="CIsoKeepTimes" Header="main.keep_modified_times_files" OnContent="" OffContent="" IsOn="True" AutomationProperties.Name="main.keep_modified_times_files" />
+                                    <TextBlock Text="main.iso_image_not_compressed_names_can" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" />
+                                </StackPanel>
+                            </Border>
+
+                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,12,0,2"><FontIcon Glyph="&#xE72E;" FontSize="15" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" VerticalAlignment="Center" /><TextBlock Text="main.protection" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Center" /></StackPanel>
+                            <Border Style="{StaticResource SettingCard}">
+                                <StackPanel Spacing="10">
+                                    <TextBox x:Name="CPwText" Header="main.password_optional" AutomationProperties.Name="main.password" />
+                                    <PasswordBox x:Name="CPwBox" Header="main.password_optional" PasswordRevealMode="Peek" AutomationProperties.Name="main.password" Visibility="Collapsed" />
+                                    <PasswordBox x:Name="CPwConfirm" Header="main.re_enter_password" PasswordRevealMode="Peek" AutomationProperties.Name="main.re_enter_password" Visibility="Collapsed" />
+                                    <CheckBox x:Name="CShowPw" Content="main.show_password_keep_checked_when" AutomationProperties.Name="main.show_password" />
+                                    <ToggleSwitch x:Name="CEncNames" Header="main.encrypt_file_names_too_7z_only" OnContent="" OffContent="" AutomationProperties.Name="main.encrypt_file_names" />
+                                    <TextBlock x:Name="CPwNote" Opacity="0.8" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" Visibility="Collapsed" />
+                                </StackPanel>
+                            </Border>
+
+                            <Border Style="{StaticResource SettingCard}">
+                                <Grid ColumnSpacing="16">
+                                    <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                    <StackPanel VerticalAlignment="Center"><TextBlock Text="main.test_integrity_after_compressing" /><TextBlock Text="main.new_archive_read_once_after" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                                    <ContentControl Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Right">
+                                        <ToggleSwitch x:Name="CTestAfter" OnContent="" OffContent="" MinWidth="0" AutomationProperties.Name="main.test_integrity_after_compressing" />
+                                    </ContentControl>
+                                </Grid>
+                            </Border>
+                            <Border Style="{StaticResource SettingCard}">
+                                <Grid ColumnSpacing="16">
+                                    <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                    <StackPanel VerticalAlignment="Center"><TextBlock Text="sums.setting_archive" /><TextBlock Text="sums.setting_archive_caption" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                                    <ContentControl Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Right">
+                                        <ToggleSwitch x:Name="CSumsArchive" OnContent="" OffContent="" MinWidth="0" AutomationProperties.Name="sums.setting_archive" />
+                                    </ContentControl>
+                                </Grid>
+                            </Border>
+                            <Border Style="{StaticResource SettingCard}">
+                                <Grid ColumnSpacing="16">
+                                    <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                    <StackPanel VerticalAlignment="Center"><TextBlock Text="sums.setting_files" /><TextBlock Text="sums.setting_files_caption" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                                    <ContentControl Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Right">
+                                        <ToggleSwitch x:Name="CSumsFiles" OnContent="" OffContent="" MinWidth="0" AutomationProperties.Name="sums.setting_files" />
+                                    </ContentControl>
+                                </Grid>
+                            </Border>
+
+                            <Expander x:Name="CAdvanced" Margin="0,12,0,0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" AutomationProperties.Name="main.advanced_options">
+                                <Expander.Header>
+                                    <StackPanel Orientation="Horizontal" Spacing="10" Padding="0,6">
+                                        <FontIcon Glyph="&#xE713;" FontSize="15" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" />
+                                        <StackPanel><TextBlock Text="main.advanced_options" /><TextBlock Text="main.rarely_needed_leave_defaults_if" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" /></StackPanel>
+                                    </StackPanel>
+                                </Expander.Header>
+                                <StackPanel Spacing="8">
+                        <Border Style="{StaticResource SettingCard}">
+                            <Grid ColumnSpacing="16">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                <StackPanel VerticalAlignment="Center"><TextBlock Text="main.compression_method" /><TextBlock Text="main.auto_picks_by_format_mode_deflate" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                                <ContentControl Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Right">
+                                    <ComboBox x:Name="CMethodCombo" MinWidth="190" AutomationProperties.Name="main.compression_method" />
+                                </ContentControl>
+                            </Grid>
+                        </Border>
+                        <Border Style="{StaticResource SettingCard}">
+                            <Grid ColumnSpacing="16">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                <StackPanel VerticalAlignment="Center"><TextBlock Text="main.compression_level" /><TextBlock Text="main.overrides_level_mode_store_only" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                                <ContentControl Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Right">
+                                    <ComboBox x:Name="CLevelCombo" MinWidth="190" AutomationProperties.Name="main.compression_level" />
+                                </ContentControl>
+                            </Grid>
+                        </Border>
+                        <Border Style="{StaticResource SettingCard}">
+                            <Grid ColumnSpacing="16">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                <StackPanel VerticalAlignment="Center"><TextBlock Text="main.dictionary_size" /><TextBlock Text="main.larger_usually_compresses_better" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                                <ContentControl Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Right">
+                                    <ComboBox x:Name="CDictCombo" MinWidth="190" AutomationProperties.Name="main.dictionary_size" />
+                                </ContentControl>
+                            </Grid>
+                        </Border>
+                        <Border Style="{StaticResource SettingCard}">
+                            <Grid ColumnSpacing="16">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                <StackPanel VerticalAlignment="Center"><TextBlock Text="main.word_size" /><TextBlock Text="main.larger_usually_compresses_better_but_slower_ppmd_model_order" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                                <ContentControl Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Right">
+                                    <ComboBox x:Name="CWordCombo" MinWidth="190" AutomationProperties.Name="main.word_size" />
+                                </ContentControl>
+                            </Grid>
+                        </Border>
+                        <Border Style="{StaticResource SettingCard}">
+                            <Grid ColumnSpacing="16">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                <StackPanel VerticalAlignment="Center"><TextBlock Text="main.solid_block" /><TextBlock Text="main.compress_several_files_as_one" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                                <ContentControl Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Right">
+                                    <ComboBox x:Name="CSolidCombo" MinWidth="190" AutomationProperties.Name="main.solid_block" />
+                                </ContentControl>
+                            </Grid>
+                        </Border>
+                        <Border Style="{StaticResource SettingCard}">
+                            <Grid ColumnSpacing="16">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                <StackPanel VerticalAlignment="Center"><TextBlock Text="main.store_files_compressed_already" /><TextBlock Text="main.photos_music_video_archives_other" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                                <ToggleSwitch x:Name="CStoreCompressed" Grid.Column="1" VerticalAlignment="Center" OnContent="" OffContent="" AutomationProperties.Name="main.store_files_compressed_already" />
+                            </Grid>
+                        </Border>
+                        <Border Style="{StaticResource SettingCard}">
+                            <Grid ColumnSpacing="16">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                <StackPanel VerticalAlignment="Center"><TextBlock Text="main.cpu_threads" /><TextBlock Text="main.how_many_processor_cores_use_auto" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                                <ContentControl Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Right">
+                                    <ComboBox x:Name="CThreadsCombo" MinWidth="120" AutomationProperties.Name="main.cpu_threads" />
+                                </ContentControl>
+                            </Grid>
+                        </Border>
+                        <Border Style="{StaticResource SettingCard}">
+                            <Grid ColumnSpacing="16">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                <StackPanel VerticalAlignment="Center"><TextBlock Text="main.zip_encryption_method" /><TextBlock Text="main.aes_256_secure_zipcrypto_weak_use" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                                <ContentControl Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Right">
+                                    <ComboBox x:Name="CZipEncCombo" MinWidth="190" AutomationProperties.Name="main.zip_encryption_method" />
+                                </ContentControl>
+                            </Grid>
+                        </Border>
+                        <Border Style="{StaticResource SettingCard}">
+                            <Grid ColumnSpacing="16">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                <StackPanel VerticalAlignment="Center"><TextBlock Text="main.path_mode" /><TextBlock Text="main.relative_records_only_names_files" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                                <ContentControl Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Right">
+                                    <ComboBox x:Name="CPathModeCombo" MinWidth="190" AutomationProperties.Name="main.path_mode" />
+                                </ContentControl>
+                            </Grid>
+                        </Border>
+                        <Border Style="{StaticResource SettingCard}">
+                            <Grid ColumnSpacing="16">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                <StackPanel VerticalAlignment="Center"><TextBlock Text="main.split_archive" /><TextBlock Text="main.cut_into_several_fixed_size_files" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                                <ContentControl Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Right">
+                                    <StackPanel Spacing="6" HorizontalAlignment="Right">
+                                        <ComboBox x:Name="CVolCombo" MinWidth="190" HorizontalAlignment="Stretch" AutomationProperties.Name="main.split_archive" />
+                                        <TextBox x:Name="CVolCustom" PlaceholderText="main.e_g_50_mb_1_5" Visibility="Collapsed" AutomationProperties.Name="main.custom_split_size" />
+                                    </StackPanel>
+                                </ContentControl>
+                            </Grid>
+                        </Border>
+                                    <Border Style="{StaticResource SettingCard}">
+                                        <StackPanel Spacing="6">
+                                            <TextBox x:Name="CParamsBox" Header="main.custom_7_zip_parameters" PlaceholderText="main.e_g_mx_9_fb_64" AutomationProperties.Name="main.custom_parameters" />
+                                            <TextBlock Text="main.passed_straight_compression_engine" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" />
+                                        </StackPanel>
+                                    </Border>
+                                    <Button x:Name="CResetAdvanced" Content="main.restore_template_s_settings" AutomationProperties.Name="main.restore_template_s_settings" />
+                                </StackPanel>
+                            </Expander>
+                        </StackPanel>
+
+                        <StackPanel x:Name="CSide" Grid.Column="1" Margin="0,0,16,0" VerticalAlignment="Top">
+                            <Border x:Name="CSourcesCard" Style="{StaticResource SettingCard}">
+                                <StackPanel Spacing="10">
+                                    <TextBlock x:Name="CSourcesTitle" Style="{StaticResource BodyStrongTextBlockStyle}" />
+                                    <TextBlock x:Name="CSourcesInfo" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" />
+                                    <StackPanel x:Name="CSourcesList" Spacing="2" />
+                                    <StackPanel Orientation="Horizontal" Spacing="8">
+                                        <Button x:Name="CAddFiles" Content="main.add_files" AutomationProperties.Name="main.add_files_button" />
+                                        <Button x:Name="CAddFolder" Content="main.add_folder" AutomationProperties.Name="main.add_folder_button" />
+                                    </StackPanel>
+                                    <TextBlock x:Name="CPasteHint" Text="main.you_can_also_paste_files_with" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" />
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+                <Border Grid.Row="2" Style="{StaticResource SettingCard}" Padding="16,10">
+                    <Grid ColumnSpacing="12">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                        <TextBlock x:Name="CStatusText" VerticalAlignment="Center" TextWrapping="Wrap" Opacity="0.85" />
+                        <Button x:Name="CCancelButton" Grid.Column="1" Content="main.cancel" MinWidth="88" AutomationProperties.Name="main.cancel" />
+                        <Button x:Name="CStartButton" Grid.Column="2" Content="main.start_compressing" MinWidth="120" Style="{StaticResource AccentButtonStyle}" AutomationProperties.Name="main.start_compressing" />
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <!-- opening an archive from nothing (Explorer, right-click): shown instead of the home page, after a short delay -->
+            <StackPanel x:Name="LoadingPanel" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="18">
+                <ProgressRing IsActive="True" Width="56" Height="56" />
+                <TextBlock x:Name="LoadingText" TextAlignment="Center" TextWrapping="Wrap" MaxWidth="520" Style="{StaticResource SubtitleTextBlockStyle}" />
+            </StackPanel>
+
+            <!-- Busy -->
+            <ProgressRing x:Name="BusyRing" IsActive="False" Visibility="Collapsed" Width="48" Height="48"
+                          HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Grid>
+
+        <!-- Task panel (in the compact window the title bar and the frame are hidden, only the task card with the big moon stays) -->
+        <Border x:Name="TaskPanel" Grid.Row="2" Visibility="Collapsed" Margin="20,0,20,16"
+                CornerRadius="10" BorderThickness="1" Padding="14,8"
+                BorderBrush="{ThemeResource ControlStrokeColorDefaultBrush}"
+                Background="{ThemeResource LayerFillColorDefaultBrush}">
+            <Grid RowSpacing="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid x:Name="TaskHeader">
+                    <StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+                        <TextBlock Text="main.tasks" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Center" />
+                        <TextBlock x:Name="TaskSummary" Opacity="0.7" Style="{StaticResource CaptionTextBlockStyle}" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Spacing="4" HorizontalAlignment="Right">
+                        <HyperlinkButton x:Name="BackgroundButton" Content="main.run_background" Visibility="Collapsed" Click="OnBackgroundClick"
+                                         ToolTipService.ToolTip="main.hide_window_tasks_keep_running" AutomationProperties.Name="main.run_background" />
+                        <HyperlinkButton Content="main.clear_finished" Click="OnClearFinishedClick" />
+                        <Button x:Name="TaskCollapseButton" Click="OnTaskCollapseClick" Background="Transparent" BorderThickness="0" Padding="8,4"
+                                ToolTipService.ToolTip="main.collapse_expand" AutomationProperties.Name="main.collapse_task_panel">
+                            <FontIcon x:Name="TaskCollapseGlyph" Glyph="&#xE70D;" FontSize="12" />
+                        </Button>
+                    </StackPanel>
+                </Grid>
+                <!-- ListView virtualization makes a row newly inserted at the top "jump above the visible range" without growing its height; there are few tasks, so ItemsControl + ScrollViewer is used -->
+                <ScrollViewer x:Name="TaskScroll" Grid.Row="1" MaxHeight="240" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <ItemsControl x:Name="TaskList" ItemTemplate="{StaticResource TaskRowTemplate}" />
+                </ScrollViewer>
+                <!-- For the compact window (context menu actions) only: what to do when done; the options are bound to the settings directly -->
+                <!-- the three options share the width (a long text wraps in its column), the button is in a row of its own: no text is hidden behind it -->
+                <Grid x:Name="CompactOptions" Grid.Row="2" Visibility="Collapsed" Margin="0,2,0,0" ColumnSpacing="8" RowSpacing="4">
+                    <Grid.RowDefinitions><RowDefinition Height="Auto" /><RowDefinition Height="Auto" /></Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions><ColumnDefinition Width="Auto" /><ColumnDefinition Width="*" /><ColumnDefinition Width="*" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
+                    <TextBlock Text="main.when_done" VerticalAlignment="Center" Opacity="0.75" Margin="0,0,6,0" />
+                    <CheckBox x:Name="OptFirst" Grid.Column="1" MinWidth="0" Click="OnCompactOptionClick" />
+                    <CheckBox x:Name="OptSecond" Grid.Column="2" MinWidth="0" Click="OnCompactOptionClick" />
+                    <CheckBox x:Name="OptClose" Grid.Column="3" MinWidth="0" Click="OnCompactOptionClick" />
+                    <StackPanel Grid.Row="1" Grid.ColumnSpan="4" HorizontalAlignment="Right" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                        <HyperlinkButton x:Name="CompactBackgroundButton" Content="main.run_background" Visibility="Collapsed" Click="OnBackgroundClick"
+                                         ToolTipService.ToolTip="main.hide_window_tasks_keep_running" AutomationProperties.Name="main.run_background" />
+                <!-- Appears when all tasks are finished: success is "Done", with a failure it is "Close"; Enter and Esc can close it too -->
+                        <Button x:Name="CompactDoneButton" Style="{StaticResource AccentButtonStyle}" MinWidth="88" Visibility="Collapsed" Click="OnCompactDoneClick" AutomationProperties.Name="main.done">
+                            <Button.KeyboardAccelerators><KeyboardAccelerator Key="Escape" /></Button.KeyboardAccelerators>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+    </Grid>
+</Window>

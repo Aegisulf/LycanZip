@@ -20,6 +20,11 @@ inline constexpr LanguageInfo kLanguages[] = {
     {L"zh-TW", L"lang.zh_tw"},
     {L"en-US", L"lang.en_us"},
     {L"zh-CN", L"lang.zh_cn"},
+    {L"ja-JP", L"lang.ja_jp"},
+    {L"ko-KR", L"lang.ko_kr"},
+    {L"de-DE", L"lang.de_de"},
+    {L"es-ES", L"lang.es_es"},
+    {L"fr-FR", L"lang.fr_fr"},
 };
 inline constexpr int kLanguageCount = static_cast<int>(std::size(kLanguages));
 

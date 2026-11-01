@@ -107,6 +107,27 @@ static int Run() {
         EXPECT(!fs::exists(root / "nonascii.zip") && !fs::exists(root / "nonascii.zip.lycantmp"));
     }
 
+    // ZipCrypto has one check byte (1 wrong password in 256 gets past it); the verification unpacks a whole file with data and checks
+    // its CRC, so none may pass. The saved passwords are tried one after another, so this matters. (An empty file has no data to
+    // check; 7-Zip does not encrypt empty files, the check skips them anyway.)
+    {
+        Write(root / "zc" / "empty.txt", "");
+        Write(root / "zc" / "small.txt", "tiny content");
+        CompressOptions co;
+        co.type = ArchiveType::Zip;
+        co.password = L"right-one";
+        co.zipEncryption = L"ZipCrypto";
+        CreateArchive(root / "zc.zip", {root / "zc"}, co);
+        auto src = ArchiveSource::Open(root / "zc.zip");
+        EXPECT(src->CheckPassword(L"right-one"));
+        int passed = 0;
+        for (int i = 0; i < 2000; ++i)
+            if (src->CheckPassword(L"wrong-" + std::to_wstring(i))) ++passed;
+        if (passed) std::fprintf(stderr, "  %d wrong ZipCrypto passwords passed\n", passed);
+        EXPECT(passed == 0);
+        EXPECT(src->CheckPassword(L"right-one"));
+    }
+
     // No encrypted file: CheckPassword is always true
     CompressOptions plain;
     CreateArchive(root / "plain.zip", {root / "src"}, plain);

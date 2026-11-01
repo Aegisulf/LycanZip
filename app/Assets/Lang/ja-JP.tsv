@@ -1,0 +1,1520 @@
+# LycanZip 简体中文 (ja-JP)。每行一条：id、Tab、译文、Tab、英文原文的哈希（由 tools/i18n.py 维护）。转义：反斜线加 n、反斜线加 t、两个反斜线。
+## main
+main.select	選択	85982229
+main.pause	一時停止	781961bc
+main.resume	再開	b3bd0b5a
+main.cancel	キャンセル	77dfd213
+main.open_folder	フォルダーを開く	f9630141
+main.test_integrity	整合性をテスト	ba25de4f
+main.settings	設定	c7f73bb5
+main.drag_files_here	ここにファイルをドラッグ	0636917e
+main.archive_open_extract_files_folders	圧縮ファイル → 開いて展開  ·  ファイルまたはフォルダー → 圧縮ファイルを作成	238fcb94
+main.open_archive	圧縮ファイルを開く	7f60c24c
+main.new_archive	新しい圧縮ファイル	b9ec2a94
+main.choose_files	ファイルを選択…	20be8b95
+main.choose_folder	フォルダーを選択…	3a95ac72
+main.back	戻る	b52b36b7
+main.extract_here	ここに展開	5221b51b
+main.extract	展開先を指定…	f5015680
+main.add_files_folders_archive_you_can	この圧縮ファイルにファイルやフォルダーを追加します（ここにドラッグすることもできます）	b3ba97f0
+main.add_archive	圧縮ファイルに追加	b17b8c86
+main.add	追加	61cc55aa
+main.add_files	ファイルを追加…	9fdaa230
+main.add_folder	フォルダーを追加…	1c0da9c5
+main.new_folder	新しいフォルダー…	fea7178e
+main.preview	プレビュー	f1fbb2b4
+main.image_preview	画像のプレビュー	6c5de6ef
+main.audio_preview	音声のプレビュー	47fea53e
+main.view	表示	69bd4ef9
+main.list_all	すべて一覧表示	04466388
+main.folder_tree	フォルダー ツリー	9c23f9bb
+main.folder_tree_toggle	フォルダー ツリーの表示切り替え	36af87a8
+main.show_macos_metadata	macOS のメタデータを表示	720609b5
+main.details	詳細	dc3decbb
+main.list	一覧	a1fffaaa
+main.show_image_thumbnails_icon_view	アイコン表示で画像の縮小版を表示	9ac42949
+main.sort_by_name	名前で並べ替え	d3b65f5c
+main.sort_by_size	サイズで並べ替え	2d08ec84
+main.sort_by_packed_size	圧縮後のサイズで並べ替え	efa7243d
+main.sort_by_modified_date	更新日時で並べ替え	d254e057
+main.sort_by_type	種類で並べ替え	0b1fc8b5
+main.ascending	昇順	2b226c79
+main.descending	降順	36377adf
+main.more_options	その他のオプション	86c0a35e
+main.archive_information	圧縮ファイルの情報…	c03fec02
+main.hash_values_archive	圧縮ファイルのハッシュ値…	13da45e4
+main.scan_malware	マルウェアをスキャン	fafc5d2f
+main.hands_every_file_archive_antivirus	圧縮ファイル内の各ファイルを、インストールされているウイルス対策ソフトに送ってスキャンします（Windows AMSI 経由）。リアルタイム保護がオンになっている必要があり、128 MB を超えるファイルはスキップされます。LycanZip 自体はスキャン エンジンを持たないため、問題が見つからなくても安全が保証されるわけではありません。Windows Defender のクラウド保護により、疑わしいサンプルが Microsoft に送信される場合があります。	fccf6c01
+main.filename_encoding	ファイル名のエンコード	f1290c20
+main.up_one_level_backspace	1 つ上の階層へ (Backspace)	64d8b297
+main.up_one_level	1 つ上の階層へ	71f23258
+main.current_location	現在の場所	75ea6a18
+main.search_ctrl_f	検索 (Ctrl+F)	2b439fd3
+main.search	検索	bce06414
+main.drag_resize_folder_tree_double	ドラッグしてフォルダー ツリーの幅を変更（ダブルクリックで元に戻す）	7c895e33
+main.folder_tree_splitter	フォルダー ツリーの境界線	b2a2647a
+main.select_all	すべて選択	913afff1
+main.select_all_clear_selection	すべて選択 / 選択を解除	faf3477b
+main.name	名前	709a2322
+main.sort_by_location	場所で並べ替え	e01625c5
+main.location	場所	d219c681
+main.type	種類	3deb7456
+main.size	サイズ	b7152342
+main.packed	圧縮後	ac9f7c98
+main.modified	更新日時	19a532c8
+main.archive_contents	圧縮ファイルの内容	c451d872
+main.archive_contents_list_icons	圧縮ファイルの内容（一覧 / アイコン）	f99fa9aa
+main.extract_selected_items_here	選択した項目をここに展開	7ef75e2c
+main.extract_selected_items	選択した項目の展開先を指定…	d48f0e52
+main.copy_path	パスをコピー	9804556f
+main.clear_selection	選択を解除	247fd631
+main.restore_default_settings	既定の設定に戻す	7dc68a00
+main.settings_tabs	設定のタブ	bd140503
+main.general	全般	9239ee2c
+main.compression	圧縮	46ead404
+main.file_explorer	エクスプローラー	700869dc
+main.shortcuts	ショートカット	90c93523
+main.about	バージョン情報	6b21fb79
+main.appearance	外観	41def7a0
+main.language	言語	89b86ab0
+main.interface_language_restart	表示言語です。変更後は LycanZip を再起動してください。	522335fd
+main.saved_takes_effect_after	保存しました。再起動後に有効になります。	636c48e5
+main.follow_system	システムに合わせる	1b16bcb0
+main.theme	テーマ	a797e309
+main.follow_system_fixed_light_dark	システムに合わせるか、ライト、ダーク、ハイ コントラストを使用します	595f2484
+main.light	ライト	a36ef8ab
+main.dark	ダーク	ae1ef014
+main.high_contrast_black	ハイ コントラスト（黒）	c341a6f4
+main.accent_color	アクセント カラー	e49578ed
+main.accent_color_buttons_selection	ボタン、選択、進行状況、リンクのアクセント カラーです。「システムに合わせる」では Windows のアクセント カラーを使用します。	b47a1f66
+main.background	背景	64dd60fe
+main.full_gradient_plus_moonlit_scene	フル: グラデーションとホーム画面の月夜の風景。グラデーションのみ: 背景色のみ。オフ: システムの素材 (Mica)。グラデーションはアクセント カラーとライト / ダーク モードに合わせて変わります。	142c9f0e
+main.full	フル	10b28a8c
+main.gradient_only	グラデーションのみ	aad06254
+main.close	閉じる	bbfa773e
+main.animations	アニメーション	c77dcded
+main.page_transitions_list_loading_drag	ページやタブの切り替え、フォルダー間の移動、通知、タスク カード、ウェルカム ウィンドウの各ステップ、プレビューの次の画像、ホーム画面できらめく星。Windows でアニメーションがオフの場合は再生されません。	695074f5
+main.sound_effects	効果音	a41e30af
+main.sounds_opening_completion_errors	開いたとき、完了時、エラー時などのサウンドです。既定ではオフです。	f2ce9860
+main.sound_set	サウンド セット	0b3e2886
+main.synth_default_set_synthesized	Synth は合成音による既定のセットです。Wave はよりシンプルなトーンのセットです。セットを選択すると完了音が再生されます。	bd241e88
+main.system_notifications	システム通知	78adbf5b
+main.show_notification_when_tasks	LycanZip が前面にないときにタスクが完了したら通知を表示します（失敗は常に通知されます）。タスク バーの進行状況バーと点滅はこの設定の影響を受けません。	048330e2
+main.multiple_windows	複数のウィンドウ	3fd4f2a6
+main.when_opening_another_archive	別の圧縮ファイルを開くとき	975f569a
+main.when_window_already_use_open	ウィンドウが使用中のときに圧縮ファイルを開く方法: 新しいウィンドウで開くか、現在のウィンドウの内容を置き換えます。ウィンドウで実行中のタスクがある場合や、複数の圧縮ファイルを一度に開く場合は、常に新しいウィンドウが使われます。	ff0b05f3
+main.open_new_window	新しいウィンドウで開く	cb4c1f20
+main.replace_current_window	現在のウィンドウを置き換える	a92596ce
+main.performance	パフォーマンス	63c90455
+main.simultaneous_tasks	同時に実行するタスク	8868bc1f
+main.disk_bottleneck_so_1_run_one	通常はディスクの速度がボトルネックになります。1（一度に 1 つのタスク）をお勧めします。	83d28fbd
+main.task_priority	タスクの優先度	37e4e62c
+main.how_much_machine_compress_extract	圧縮、展開、テストのタスクが使うシステム リソースの量です。「低」または「バックグラウンド」にすると他のアプリへの影響が減りますが、タスクに時間がかかります。	0d1c783e
+main.normal	標準	45e118d0
+main.lower_leaves_some_cpu_others	低（CPU の使用を抑える）	00d8c45a
+main.background_lowest_also_saves_disk	バックグラウンド（最低。ディスクと電力の使用も抑える）	6786f633
+main.temporary_folder	一時フォルダー	f9b015fa
+main.used_when_opening_files_from	圧縮ファイルからファイルを開いたりドラッグしたりするとき、および .tar.gz の圧縮ファイルを開いたり作成したりするときに使います。既定ではシステムの一時フォルダーです。ネットワーク ドライブや USB ドライブはお勧めしません（低速）。	768d718e
+main.choose	選択…	349ac8fb
+main.choose_temporary_folder	一時フォルダーを選択	ce762b1e
+main.reset	リセット	44c57abd
+main.reset_temporary_folder	一時フォルダーをリセット	e7a126ec
+main.clear_temporary_files	一時ファイルを削除	242e5902
+main.extraction	展開	2552a425
+main.when_file_with_same_name_already	同じ名前のファイルが既にある場合	6310186a
+main.ask_me_shows_options_on_every	「確認する」では競合のたびに確認し、選んだ操作を残りのすべての競合に適用することもできます。	41badf73
+main.file_conflict_handling	ファイルの競合の処理	4af14a87
+main.ask_me	確認する	10a8fd63
+main.skip	スキップ	3da47453
+main.overwrite	上書き	0625c54e
+main.rename_automatically	自動的に名前を変更	eaecf2b5
+main.when_extracting_here	「ここに展開」のとき	85622c6d
+main.automatic_single_top_level_folder	自動: 圧縮ファイルの最上位がフォルダー 1 つだけならそのままここに展開し、そうでなければ圧縮ファイルと同じ名前のフォルダーを作成します。ほかの方法はボタンの横の矢印から選べます。	18b0d690
+main.automatic_recommended	自動（推奨）	a068f350
+main.do_not_create_folder	フォルダーを作成しない	c4f1ccef
+main.create_folder_named_after_archive	圧縮ファイルと同じ名前のフォルダーを作成	80c9b557
+main.check_unusually_big_archives	展開前に異常に大きい圧縮ファイルを確認する	54593980
+main.when_archive_would_unpack_far_more	展開後のサイズが非常に大きくなる圧縮ファイル（1 GB 以上かつ圧縮後のサイズの 500 倍超、または 1 TB 以上）は、展開前に確認します。圧縮爆弾の可能性もあれば、仮想マシンのディスク イメージのような正当な大容量ファイルの場合もあります。	548960de
+main.open_folder_when_done	完了したらフォルダーを開く	a3de0246
+main.skip_macos_metadata_when	展開時に macOS のメタデータをスキップする	0ad03852
+main.macosx_folder_files_starting_with	macOS で作成された圧縮ファイルの __MACOSX フォルダー、.DS_Store、._ で始まるファイルは Windows では不要です。オンにすると、展開時にスキップされ、単一フォルダーの判定でも無視されます。	55d759da
+main.keep_files_have_data_error	データ エラーのあるファイルを残す	a8ffe63f
+main.when_archive_damaged_cut_off_what	圧縮ファイルが破損しているか不完全な場合、展開できたデータを残します（画像、動画、テキスト ファイルは部分的に使えることがよくあります）。エラーのあるファイルは完了時に一覧表示されます。オフにすると、破損したファイルは削除されます。パスワードの誤り、タスクのキャンセル、ディスクの空き容量不足の場合は、不完全なファイルは常に削除されます。	bf3654cc
+main.ask_before_deleting_archive	圧縮ファイルを削除する前に確認する	1571593e
+main.ask_once_when_delete_archive	フォルダー ツリーの一番上にある圧縮ファイルで「圧縮ファイルを削除」を選んだときに一度確認します（ごみ箱に移動します）。オフにすると、すぐに削除されてホーム画面に戻ります。	91b986fd
+main.ask_before_deleting_items_from	圧縮ファイルから項目を削除する前に確認する	887aebad
+main.ask_once_when_delete_pressed	Delete キーを押すか「削除」を選んだときに一度確認します。項目は圧縮ファイルから直接削除されます。ごみ箱には移動せず、元に戻せません（下のバックアップがオンの場合を除く）。	9963cc68
+main.keep_backup_when_archive_changed	圧縮ファイルを変更するときにバックアップを残す	0901745b
+main.when_files_archive_added_deleted	圧縮ファイル内のファイルを追加、削除、名前変更、編集するとき、変更前の圧縮ファイルを同じフォルダーに残します（名前に .bak を付加）。変更するたびに前のバックアップは上書きされます。	79f9d4e3
+main.program_editing	編集に使うプログラム	aad87903
+main.which_program_edit_item_right	コンテキスト メニューの「編集」で使うアプリです。空欄の場合、テキスト ファイルはメモ帳で、ほかのファイルは既定のアプリで開きます。フル パスも指定できます（例: C:\\Program Files\\Notepad++\\notepad++.exe）。	598afdb5
+main.ask_before_edited_file_goes_back	編集したファイルを圧縮ファイルに反映する前に確認する	d41240a6
+main.after_edited_file_saved_ask_once	編集したファイルを保存した後、圧縮ファイルに反映するかどうかを確認します。オフにすると自動的に反映されます。	9bddade2
+main.warn_before_opening_programs	プログラム、インストーラー、スクリプトを開く前に警告する	6a5fabb4
+main.ask_first_when_you_double_click	圧縮ファイル内の実行可能ファイル（.exe、.msi、.bat など）をダブルクリックしたときに確認します。	08615072
+main.warn_before_opening_programs_short	プログラムを開く前に警告する	a2f7b94b
+main.what_extract_when_opening_program	プログラムを開くときに展開するもの	0315b5cf
+main.programs_often_need_files_next	プログラムは同じフォルダー内のファイル（DLL、データ ファイル）を必要とすることがよくあります。「同じフォルダー」では、プログラムを実行する前に、サブフォルダーを含むフォルダーを一時フォルダーに展開します。	4122dec3
+main.files_same_folder_recommended	同じフォルダー内のファイル（推奨）	75241d55
+main.extract_only_file	このファイルだけを展開	88665a9b
+main.close_window_automatically_after	コンテキスト メニューの操作後にウィンドウを自動的に閉じる	da7d1f80
+main.when_you_extract_compress_from	コンテキスト メニューから展開や圧縮をしたとき、すべて成功したら小さいウィンドウを自動的に閉じます。結果を確認するためにウィンドウを開いたままにするには、オフにします。	17b6bcbc
+main.default_format	既定の形式	8cb4e197
+main.show_new_archive_file_explorer	圧縮後に新しい圧縮ファイルをエクスプローラーで表示する	900b4e40
+main.test_integrity_after_compressing	圧縮後に整合性をテストする	e1b0ecf4
+main.after_compressing_new_archive_read	圧縮後に新しい圧縮ファイルを読み取り、壊れていないことを確認します。	120ae65a
+main.skip_thumbs_db_automatically	Thumbs.db を自動的にスキップする	a643400e
+main.windows_thumbnail_cache_thumbs_db	フォルダーを追加するとき、Windows の縮小版キャッシュ ファイル Thumbs.db をスキップします（自分で選んだ Thumbs.db は追加されます）。	c6a7657e
+main.default_compression_mode	既定の圧縮モード	44f064cc
+main.balanced_recommended	バランス（推奨）	54966d31
+main.compatibility_first	互換性優先	87d2fc57
+main.smallest_size_slower	最小サイズ（低速）	db436898
+main.fastest	最速	4cb3bb0f
+main.archive_view	圧縮ファイルの表示	2c4e1be2
+main.remember_last_chosen_view	最後に選んだ表示を記憶する	46d5eed2
+main.layout_you_pick_view_menu_details	[表示] メニューで選んだレイアウト（詳細 / 一覧 / アイコン）を、次に圧縮ファイルを開くときに使います。オンにすると、下の「既定の表示」は最後の選択に従います。	84a38711
+main.default_view	既定の表示	343256a5
+main.details_has_columns_sorting_list	「詳細」は列を表示し、並べ替えができます。「一覧」は最もコンパクトです。「アイコン」は大きいアイコンを表示します。[表示] メニューからいつでも切り替えられます。	ee3a428f
+main.default_browsing_mode	既定の閲覧方法	0b61ca9a
+main.single_level_shows_one_folder_at	「単一階層」では一度に 1 つのフォルダーを表示し、左のフォルダー ツリーやパス バーで移動します。「すべて一覧表示」ではすべての階層のファイルを 1 つの一覧に表示します。ツール バーからいつでも切り替えられます。	636ff574
+main.single_level_folder_navigation	単一階層（フォルダー移動）	9bab0a04
+main.use_file_icons_windows	Windows のファイル アイコンを使う	eb264ce6
+main.files_folders_lists_folder_tree	一覧とフォルダー ツリーのファイルとフォルダーに、エクスプローラーのアイコン（インストールされているアプリに基づく）を使います。オフにすると、LycanZip 独自のカラー アイコンを使います。	d3c508e7
+main.only_works_non_solid_archives	ソリッドでない圧縮ファイルにのみ適用されます（ソリッド圧縮ファイルから画像を 1 つ読むには、その前のデータをデコードする必要があるため、縮小版は作成されません）。必要なときだけバックグラウンドで読み込みます。	779ea938
+main.row_height	行の高さ	0c1073d4
+main.compact_shows_more_items_at_once	「コンパクト」では画面により多くの項目を表示できます	7892119a
+main.compact	コンパクト	1df39aa5
+main.comfortable	ゆったり	2313707a
+main.show_folder_tree	フォルダー ツリーを表示する	62e23424
+main.hidden_automatically_when_window	ウィンドウの幅が狭すぎるときは自動的に非表示になります	8351f46b
+main.hide_macos_metadata	macOS のメタデータを非表示にする	9a117a48
+main.do_not_show_macosx_folder_files	__MACOSX フォルダー、._ で始まるファイル、.DS_Store を表示しません。画像と音声のプレビューには含まれません。ツール バーの [表示] メニューからも切り替えられます。	4aff2a0a
+main.stream_files_when_dragging_them	ドラッグで取り出すときにファイルをストリーミングする（先に展開しない）	5f7fc9b6
+main.when_dropped_on_explorer_desktop	エクスプローラーやデスクトップにドラッグすると、コピーしながらファイルを展開するため、大きなファイルを先に一時フォルダーへ展開する必要がありません。ディスク上の通常のファイルしか受け付けないアプリもあります。ドラッグ アンド ドロップがうまくいかない場合はオフにしてください。	494e8de9
+main.stream_files_when_dragging_them_out	ドラッグで取り出すときにストリーミングする	51bfaabc
+main.image_preview_heading	画像のプレビュー	6c5de6ef
+main.double_clicking_image	画像をダブルクリックしたとき	172ce1b9
+main.what_happens_when_you_double_click	圧縮ファイル内の画像をダブルクリック（または Enter キー）したときの開き方です。コンテキスト メニューにはもう一方の方法が常に表示されます。	a9d91a70
+main.open_image_preview	画像のプレビューで開く	73779e96
+main.open_with_associated_app	関連付けられたアプリで開く	dfc8591f
+main.when_audio_file_double_clicked	音声ファイルをダブルクリックしたとき	a45d93b9
+main.how_audio_file_inside_archive	圧縮ファイル内の音声ファイルをダブルクリック（または Enter キー）したときの開き方です。コンテキスト メニューにはもう一方の方法が常に表示されます。	4e092015
+main.open_audio_preview	音声のプレビューで開く	2866b8c6
+main.enlarge_small_images_too	小さい画像も拡大する	39504dba
+main.by_default_fit_window_width_height	既定では、「ウィンドウ / 幅 / 高さに合わせる」は大きい画像を縮小するだけで、小さい画像は拡大しません。オンにすると、小さい画像も合わせて拡大します。	33ef5d12
+main.read_ahead_faster_paging	先読み（ページ送りを高速化）	56bba25f
+main.while_previewing_nearby_images	近くの画像をバックグラウンドで先に読み込み、ページ送りを速くします。先読みした画像に使うメモリの上限を設定します。オフにすると、画像は必要なときに読み込まれます。	ec1e2e27
+main.read_ahead	先読み	8975dc30
+main.256_mb_default	256 MB（既定）	acf42636
+main.2_gb_maximum	2 GB（最大）	dedbdffa
+main.file_associations	ファイルの関連付け	4d95177a
+main.register_lycanzip_as_archive_app	LycanZip を圧縮ファイル用アプリとして登録する	b46759ab
+main.after_registering_lycanzip_appears	登録すると、LycanZip が「プログラムから開く」と「既定のアプリ」に表示されます。既定のアプリは Windows の設定で手動で設定する必要があります。	6ad5db2f
+main.current_default_apps	現在の既定のアプリ	2da60cf8
+main.open_default_apps_settings	既定のアプリの設定を開く	c91c60a7
+main.add_lycanzip_right_click_menu	LycanZip をコンテキスト メニューに追加する	7e341f23
+main.files_add_archive_compress_zip_7z	ファイル: 圧縮ファイルに追加、ZIP / 7z に圧縮など。圧縮ファイル: 開く、展開、テスト、プレビューなど。現在のユーザーにのみ適用され、いつでもオフにできます。Windows 11 では「その他のオプションを確認」の中に表示されます。	15d4a5c4
+main.add_lycanzip_windows_11_context	LycanZip を Windows 11 のコンテキスト メニューに追加する	80b4da17
+main.shown_at_top_level_windows_11	「その他のオプションを確認」を選ばなくても、Windows 11 のコンテキスト メニューの最上位に表示されます。署名済みのメニュー パッケージが必要です。現在のユーザーにのみ適用され、いつでもオフにできます。項目は上のメニューと同じで、両方を同時にオンにできます。	478467a0
+main.open_settings_file_location	設定ファイルの場所を開く	3d1c0853
+main.web_site	Web サイト	f1a2cbc2
+main.source_code_on_github	GitHub のソース コード	b82f9244
+main.show_welcome_window_again	ウェルカム ウィンドウをもう一度表示する	60680018
+main.data_location	データの場所	043485f6
+main.diagnostics	診断	3af2279f
+main.detailed_debug_log	詳細なデバッグ ログ	e93621ed
+main.only_errors_warnings_logged_by	既定ではエラーと警告だけを記録します。オンにすると、開いたもの、タスクの開始と終了、所要時間も記録します。問題を報告するときに役立ちます。	695c5237
+main.log_full_paths	フル パスを記録する	b1556b47
+main.only_file_names_logged_by_default	既定ではファイル名だけを記録します。ログにパスワードやファイルの内容が含まれることはありませんが、ファイル名は含まれる場合があります。共有する前に確認してください。	433b5937
+main.open_report_folder	レポート フォルダーを開く	17984672
+main.copy_diagnostic_information	診断情報をコピー	4688ca9e
+main.copied_clipboard	クリップボードにコピーしました	e9dd5680
+main.open_source_mit_compression_engine	オープンソース (MIT)。圧縮エンジンは 7-Zip (LGPL) で、RAR は展開のみ対応しています。	0ea369ab
+main.template	テンプレート	3ec1ae06
+main.apply_whole_set_settings_at_once	一連の設定をまとめて適用します	c061c181
+main.template_modified	変更あり	19a532c8
+main.template_options	テンプレートのオプション	71806c9b
+main.output	出力	4bed3361
+main.file_name_without_extension	ファイル名（拡張子なし）	8d28b6a9
+main.file_name_short	ファイル名	09979a78
+main.change_location	場所を変更…	cf2f5d22
+main.change_location_tip	場所を変更	04410a88
+main.format_mode	形式とモード	4b4d4074
+main.format	形式	041a5dec
+main.zip_most_compatible_7z_compresses	ZIP は最も互換性が高く、7z は圧縮率が高くファイル名も暗号化できます。TAR 系は Linux / macOS でよく使われます。	ca896635
+main.mode	モード	a7b93d21
+main.no_need_understand_parameters_just	複雑なパラメーターを調整する必要はありません。目的に合ったモードを選ぶだけです。	be399537
+main.volume_label_optional	ボリューム ラベル（省略可）	da788598
+main.file_name_by_default	既定ではファイル名	7ce76df4
+main.volume_label	ボリューム ラベル	ac51eb2d
+main.keep_modified_times_files	ファイルの更新日時を保持する	3cde1626
+main.iso_image_not_compressed_names_can	ISO イメージは圧縮されません。ファイル名は長くてもよく、どの言語でも使えますが、1 つのファイルは 4 GB 未満である必要があります。	0997b2d3
+main.protection	保護	0f8cc4f3
+main.password_optional	パスワード（省略可）	408255ed
+main.password	パスワード	8be3c943
+main.re_enter_password	パスワードの再入力	aefce7f7
+main.show_password_keep_checked_when	パスワードを表示する（ASCII 以外の文字を入力するときはオンのままにしてください）	87f14436
+main.show_password	パスワードを表示	044b852f
+main.encrypt_file_names_too_7z_only	ファイル名も暗号化する（7z のみ）	d41e19ce
+main.encrypt_file_names	ファイル名を暗号化	dd32ed5f
+main.new_archive_read_once_after	作成後に新しい圧縮ファイルを検証し、壊れていないことを確認します。	cae26887
+main.advanced_options	詳細オプション	63c9e0ba
+main.rarely_needed_leave_defaults_if	通常は必要ありません。よくわからない場合は既定のままにしてください。	b7a59502
+main.compression_method	圧縮方式	9d0a4081
+main.auto_picks_by_format_mode_deflate	「自動」では形式とモードに応じて選びます（ZIP は Deflate、7z は LZMA2）。	d621daf6
+main.compression_level	圧縮レベル	bd95ecae
+main.overrides_level_mode_store_only	モードの既定の圧縮レベルを上書きします。「無圧縮」では圧縮せずにファイルをまとめます。	0605216f
+main.dictionary_size	辞書サイズ	b45d8fe0
+main.larger_usually_compresses_better	大きいほど通常は圧縮率が上がりますが、圧縮と展開の両方でより多くのメモリを使います。LZMA / LZMA2 / PPMd にのみ適用されます。	1b67795e
+main.word_size	ワード サイズ	b40db3a8
+main.larger_usually_compresses_better_but_slower_ppmd_model_order	大きいほど通常は圧縮率が上がりますが、遅くなります。PPMd ではモデルの次数です。	5f25893d
+main.solid_block	ソリッド ブロック	afb6cd9f
+main.compress_several_files_as_one	複数のファイルを 1 つの連続したストリームとして圧縮します（7z のみ）。ファイルが似ているほど小さくなりますが、1 つのファイルを展開するときに読むデータが増えます。	779cfd97
+main.store_files_compressed_already	圧縮済みのファイルは再圧縮せずに格納する	050996e6
+main.photos_music_video_archives_other	写真、音声、動画、圧縮ファイルなど圧縮済みのファイル（64 KB 以上）は、再圧縮せずにそのまま格納します。サイズの差はわずかで高速になり、7z 圧縮ファイルの画像の縮小版も保たれます（ZIP / 7z のみ）。	d10ed811
+main.cpu_threads	CPU スレッド	56bf097a
+main.how_many_processor_cores_use_auto	使用するプロセッサ コアの数です。通常は「自動」が最適です。	117a51b9
+main.zip_encryption_method	ZIP の暗号化方式	5e788827
+main.aes_256_secure_zipcrypto_weak_use	AES-256 を強くお勧めします。ZipCrypto は脆弱なので、古いソフトウェアとの互換性が必要な場合にのみ使ってください。	b4a86163
+main.path_mode	パス モード	d86f49da
+main.relative_records_only_names_files	「相対パス」では、選択したファイルとフォルダーの名前だけを記録します。「フル パス」では親フォルダーも記録します（ドライブ文字は除く）。	70a31205
+main.split_archive	圧縮ファイルの分割	76b8ba2d
+main.cut_into_several_fixed_size_files	圧縮ファイルを決まったサイズの複数のファイルに分割します（ZIP / 7z のみ）。メールで送ったり、容量の小さい USB ドライブに保存したりするときに使います。	a79972a1
+main.e_g_50_mb_1_5	例: 50 MB、1.5 GB	9115d30d
+main.custom_split_size	カスタムの分割サイズ	a0643650
+main.custom_7_zip_parameters	カスタムの 7-Zip パラメーター	6b3f8ed7
+main.e_g_mx_9_fb_64	例: mx=9 fb=64（名前=値、スペース区切り）	24af3d9a
+main.custom_parameters	カスタム パラメーター	3a766c13
+main.passed_straight_compression_engine	圧縮エンジンに直接渡され、上の設定より優先されます。無効なパラメーターやサポートされていないパラメーターがあると、圧縮はエラー メッセージを表示して失敗します。	eff850cb
+main.restore_template_s_settings	このテンプレートの設定に戻す	1b4a6951
+main.add_files_button	ファイルを追加	c06342c8
+main.add_folder_button	フォルダーを追加	03eb1a44
+main.you_can_also_paste_files_with	Ctrl+V でファイルを貼り付けることもできます	8a2b7931
+main.start_compressing	圧縮を開始	320e1feb
+main.tasks	タスク	090ec5f5
+main.run_background	バックグラウンドで実行	2168ebb5
+main.hide_window_tasks_keep_running	ウィンドウを非表示にします。タスクはバックグラウンドで続行され、完了すると通知が表示されます。	40198391
+main.clear_finished	完了したものを消去	f2630670
+main.collapse_expand	折りたたむ / 展開する	66e60822
+main.collapse_task_panel	タスク パネルを折りたたむ	9212c96f
+main.when_done	完了後:	bb608489
+main.done	完了	e9b450d1
+main.go	{0} へ移動	5d459e5f
+main.unknown	不明	bc7819b3
+main.auto_detect	自動検出	7dbcac72
+main.big5_traditional_chinese	Big5（繁体字中国語）	10ca6be7
+main.gbk_simplified_chinese	GBK（簡体字中国語）	7b7afee6
+main.shift_jis_japanese	Shift-JIS（日本語）	f3beb558
+main.euc_kr_korean	EUC-KR（韓国語）	beca3484
+main.opening	「{0}」を開いています…	bf854cfc
+main.total	、合計 {0}	4e479839
+main.many_items_only_part_were_counted	（項目が多すぎるため、一部のみ集計）	dda11ef4
+main.ok	OK	9ce3bd42
+main.invalid_command_line_arguments	コマンドライン引数が無効です	24f65860
+main.no_files	ファイルがありません	ccc17f61
+main.choose_folder_extract	展開先のフォルダーを選択	a743f77c
+main.cannot_open_archive	圧縮ファイルを開けません	6e9e4903
+main.file_format_unrecognized_file	ファイル形式を認識できないか、ファイルが破損しています: {0}	3e6485f9
+main.cannot_write_settings_file	⚠ 設定ファイルに書き込めません: {0}	db6c0352
+main.there_no_audio_preview_archive	この圧縮ファイルにはプレビューできる音声ファイルがありません	267daa15
+main.there_no_images_preview_archive	この圧縮ファイルにはプレビューできる画像がありません	5f6025fe
+main.system_temporary_folder	システムの一時フォルダー	800560c4
+main.use_opened_dragged_files	使用中: {0}（開いたファイルとドラッグしたファイル）	4105ba89
+main.location_slow	この場所は低速です	0fa2c041
+main.network_removable_drive_temporary	「{0}」はネットワーク ドライブまたはリムーバブル ドライブにあります。ここに一時ファイルを置くと、特に大きな圧縮ファイルでは遅くなります。それでも使いますか?	2d979968
+main.use_anyway	それでも使う	851fa167
+main.temporary_files_cleared	一時ファイルを削除しました	ea9cd63a
+main.freed_files_use_not_deleted	{0} を解放しました。使用中のファイルは削除されません。	d4eb8d2f
+main.not_enough_room_temporary_files	一時ファイル用の空き容量が足りません	8a890f62
+main.about_intermediate_data_has_be_put	一時領域が約 {0} 必要ですが、「{1}」の空き容量は {2} しかありません。	5871d099
+main.temporary_location_full_left	一時ファイルの場所「{0}」がいっぱいです（残り {1}）。	907bde7d
+main.where_use_instead_local_disks_only	別の場所を選択（ローカル ディスクのみ）	75badc65
+main.free	{0}（空き {1}）	43a497f5
+main.no_other_local_disk_has_enough	十分な空き容量のあるローカル ディスクがほかにありません。別のフォルダーを選ぶか、ディスクの空き容量を増やすか、ZIP または 7z 形式（一時ファイルが不要）を使ってください。	067eee04
+main.network_removable_drive_temporary_files_will_be_slow	ネットワーク ドライブまたはリムーバブル ドライブです。一時ファイルの処理が遅くなります。	fb869f7f
+main.choose_another_folder	別のフォルダーを選択…	dede39e2
+main.always_use_temporary_location	常にこの一時ファイルの場所を使う	74fed9dd
+main.use_location_try_again	この場所を使ってもう一度試す	8c4ca207
+main.chosen	選択済み: {0}	1888501e
+main.tasks_still_running	実行中のタスクがあります	5071b7ce
+main.still_unfinished_closing_now	{0} 個のタスクがまだ完了していません。今閉じるとキャンセルされ、未完了の出力は不完全になる可能性があります。	438e1616
+main.cancel_tasks_close	タスクをキャンセルして閉じる	13c10e10
+main.keep_waiting	待ち続ける	9be1abba
+main.integrity_test	整合性テスト	911e049a
+main.lycanzip_closed_unexpectedly_at	LycanZip は {0} に予期せず終了しました。	00a441fb
+main.open_at_time	そのとき開いていた圧縮ファイル（{0} 個）:	2d012cbd
+main.not_finished	完了しなかったタスク（{0} 個）:	f6add7bc
+main.destination_extraction_may_contain	展開先のフォルダーに不完全なファイルが含まれている可能性があります。内容を確認してください。	3f2bf8f0
+main.removed_unfinished_compression	圧縮中の不完全な一時ファイルを {0} 個削除しました。	b7eb9a2b
+main.crash_report_including_memory_dump	クラッシュ レポート（メモリ ダンプを含む）の場所: {0}\n共有する前に、ダンプにはファイル パスやプログラムのメモリの内容が含まれる場合があることに注意してください。	7d581963
+main.lycanzip_closed_unexpectedly_last	前回 LycanZip が予期せず終了しました	c3563d24
+main.reopen	{0} 個の圧縮ファイルをもう一度開く	bd33ef68
+main.opening_several_archives	複数の圧縮ファイルを開いています	e574ce13
+main.received_archives_at_once_each	{0} 個の圧縮ファイルを一度に受け取りました。圧縮ファイルはそれぞれ別のウィンドウで開き、ウィンドウが多いとメモリを多く使います。	8daf18ce
+main.open_first	最初の {0} 個を開く	0fc9e2e0
+main.open_all	すべて開く（{0} 個）	29644d48
+main.open_only_first	最初の {0} 個だけを開く	8583caf5
+main.later_volume_split_archive	分割圧縮ファイルの途中のボリュームです	a9f41e5f
+main.volume_split_archive_one_volume	「{0}」は分割圧縮ファイルの第 {1} ボリュームです。このボリュームだけを開いても内容全体は表示されません。最初のボリューム「{2}」を開きますか?	89b33ec6
+main.open_first_volume	最初のボリュームを開く	688511ad
+main.open_volume_anyway	それでもこのボリュームを開く	bd4d8d54
+main.first_volume_was_not_found_only	最初のボリューム「{0}」が見つかりませんでした。このボリュームの内容の一部しか表示できません。	4c778d63
+main.moonlight	月光	f61a85a3
+main.blood_moon	ブラッド ムーン	a5c48a63
+main.amber_eyes	琥珀の瞳	e270f95b
+main.aurora	オーロラ	eeee9b76
+main.forest	森	f41c4e4d
+main.compression_engine_7_zip	圧縮エンジン: 7-Zip	f93f7e5b
+main.7z_dll_not_found	（7z.dll が見つかりません）	72359520
+main.settings_file	設定ファイル: {0}	c819d085
+main.not_set	（未設定）	7eae163c
+main.already_lycanzip	  ✓ すでに LycanZip です	3e869938
+main.not_registered_yet_turn_on_switch	\n\nまだ登録されていません。先に上のオプションをオンにしてください。	fd8f8732
+main.cannot_update_file_associations	ファイルの関連付けを更新できません	fc71ec5a
+main.registered	登録しました	a844fcf8
+main.lycanzip_can_now_handle_archives	LycanZip で圧縮ファイルを扱えるようになりました。\n\nWindows では、アプリが既定のアプリを自分で変更することはできません。「既定のアプリの設定を開く」を選び、使いたい形式で LycanZip を選んでください。	0e2f1128
+main.cannot_open_settings	設定を開けません	2bf2a15a
+main.please_open_settings_apps_default	「設定 → アプリ → 既定のアプリ」を手動で開いてください。	9c106eb2
+main.menu_add_to_archive	圧縮ファイルに追加…	2cdc38ad
+main.compress_name_format	「名前.形式」に圧縮	9b854df6
+main.compress_each_separately_when	個別に圧縮（複数の項目を選んだとき）	c6a4a30f
+main.compress_with_preset	テンプレートで圧縮	851cb07a
+main.other_formats_tar_gz_tar_xz	その他の形式（tar.gz / tar.xz / tar.bz2）	e3e3048c
+main.encrypted_archive	暗号化された圧縮ファイル…	284a3b16
+main.open_contents_with_lycanzip_exe	LycanZip で内容を開く（.exe、.docx、.jar など）	ac38e546
+main.hash_values_menu_files_archives	ハッシュ値…（ファイルと圧縮ファイルのメニュー）	75b624c9
+main.open	開く	cf9b7706
+main.menu_extract_here	ここに展開	5221b51b
+main.extract_folders_same_name	それぞれ別のフォルダーに展開	96adc4e4
+main.extract_recent_folder	最近使ったフォルダーに展開	6fb3e506
+main.extract_all_into_one_folder_when	すべてを 1 つのフォルダーに展開（複数の圧縮ファイルを選んだとき）	ca375cec
+main.context_menu_entries	コンテキスト メニューの項目	3cfa8784
+main.choose_which_entries_shown_change	表示する項目を選びます。変更は次にコンテキスト メニューを開いたときに反映されます。再登録は必要ありません。	f0265dc5
+main.format_second_compress_entry	2 つ目の「圧縮」項目の形式	5ab68322
+main.format_first_compress_entry	1 つ目の「圧縮」項目の形式	6dc0d11e
+main.compress_first_format	圧縮（1 つ目の形式）	5edc11a7
+main.compress_second_format	圧縮（2 つ目の形式）	2ced4124
+main.files_folders	ファイルとフォルダー	154f56c1
+main.archives	圧縮ファイル	a50710e7
+main.templates_compress_with_template	「テンプレートで圧縮」の一覧に表示するテンプレート	7eb07671
+main.cannot_update_right_click_menu	コンテキスト メニューを更新できません	41826d22
+main.pc_not_running_windows_11_there	この PC は Windows 11 ではないため、新しいスタイルのコンテキスト メニューはありません。	92fac2bb
+main.version_has_no_signed_menu_package	このバージョンにはまだ署名済みのメニュー パッケージがないため、オンにできません。	e2d429cd
+main.store_explorer_note	これは Microsoft Store 版です。右クリック メニューとファイルの種類はパッケージに含まれています。LycanZip をインストールすると Windows が追加し、アンインストールすると削除するため、ここで登録する必要はありません。\n• 右クリック メニュー: Windows 11 では新しいメニューと「その他のオプションを確認」の中に、Windows 10 では通常のメニューに表示されます。下のスイッチで表示 / 非表示を切り替え、さらに下の一覧で項目を選びます。\n• ファイルの種類: 圧縮ファイルの「プログラムから開く」に LycanZip が表示されます。既定のアプリにできるのはユーザー自身だけで、Windows の設定（既定のアプリの設定を開く）で行います。	c2fd0d80
+main.status_built_in	組み込み	6b0c36de
+main.setup_skipped	セットアップをスキップしました	779afd28
+main.you_can_change_everything_later	すべての設定は後で [設定] から変更できます。\n\nコンテキスト メニューとファイルの関連付けはオンになっていません。使う場合は、[設定] の [エクスプローラー] タブでオンにしてください。	754fa5fa
+main.right_click_menu	コンテキスト メニュー	5c5bc6a1
+main.windows_11_right_click_menu	Windows 11 のコンテキスト メニュー	02d79a93
+main.some_things_could_not_be_set	一部の項目を設定できませんでした	6bb5c1e3
+main.you_can_try_again_on_settings	[設定] ページでもう一度試すことができます。	c8f33bba
+main.language_changes_after_lycanzip	言語を変更したら LycanZip を再起動してください。	ff26419c
+main.status_on	オン。	8ec3f656
+main.status_off	オフ。	f4d4f25d
+main.could_not_add_windows_11_context	Windows 11 のコンテキスト メニューを追加できませんでした	16b597e8
+main.could_not_remove_windows_11	Windows 11 のコンテキスト メニューを削除できませんでした	a7e0b507
+main.added	追加しました	b68734c2
+main.if_menu_does_not_show_up	メニューがまだ表示されない場合は、エクスプローラーを再起動する（タスク マネージャー → エクスプローラー → 再起動）か、サインアウトしてもう一度サインインしてください。	c27ce2d5
+main.lycanzip_was_moved	メニューが別のコピーを指しています	7a919664
+main.still_point_old_folder_so_right	次の項目が LycanZip の別のコピー（または以前のフォルダー）を指しています: {0}。圧縮ファイルを開いたり右クリックしたりしても、このコピーは使われません。代わりにこのコピーを使いますか?\n\n現在使われているもの: {2}\nこのコピー: {1}	1b1d1b87
+main.use_current_folder	このコピーを使う	996267fc
+main.do_not_remind_me_again	今後は通知しない	f66139f0
+main.later	後で	56e2f5d3
+main.could_not_update_windows_11	Windows 11 のコンテキスト メニューを更新できませんでした	eb3bef67
+main.updated	更新しました	f2f8570d
+main.if_menu_does_not_show_up_yet_restart_file_explorer_sign_out	メニューがまだ表示されない場合は、エクスプローラーを再起動するか、サインアウトしてもう一度サインインしてください。	107e9c10
+main.restore_default_settings_title	既定の設定に戻しますか?	d97b50c9
+main.defaults_theme_accent_color	テーマ、アクセント カラー、背景、表示、展開、圧縮の設定が初期状態に戻ります。コンテキスト メニューとファイルの関連付けはシステムの設定なので変更されません。	7b89291d
+main.restore	戻す	3cbe6d6b
+main.msix_package_settings_templates	MSIX パッケージ: 設定、テンプレート、ログはパッケージ専用のフォルダーに保存され、切り替えられません。	7430001e
+main.portable_mode_settings_templates	ポータブル モード: 設定、テンプレート、クラッシュ レポート、ログはプログラム フォルダーに保存されるため、フォルダーごと持ち運べます。	4a5534fd
+main.normal_mode_settings_templates	通常モード: 設定、テンプレート、クラッシュ レポート、ログはユーザー フォルダーに保存されます。	37ba2b42
+main.folder_settings	設定フォルダー: {0}	6a708aef
+main.switch_normal_mode_user_folder	通常モードに切り替える（ユーザー フォルダー）	2b689843
+main.switch_portable_mode_program	ポータブル モードに切り替える（プログラム フォルダー）	2961749a
+main.program_folder_cannot_be_written	プログラム フォルダー（{0}）に書き込めないため、ポータブル モードに切り替えられません。	95fb9ba1
+main.switching_copies_settings	切り替えると、設定とテンプレートを新しい場所にコピーし（元の場所のファイルは残ります）、LycanZip を再起動します。コンテキスト メニュー、ファイルの関連付け、Windows が記憶している最近のフォルダーは移動しません。	ad1754f6
+main.wait_tasks_end_cancel_them_before	データの場所を切り替える前に、タスクが終わるまで待つ（またはキャンセルする）必要があります。切り替え後に LycanZip が再起動します。	fb634605
+main.switch_data_location	データの場所の切り替え	b9ccb0f5
+main.settings_templates_copied_program	設定とテンプレートをプログラム フォルダーにコピーします:\n{0}\n\n元の場所のファイルは削除されません。	19168b9b
+main.settings_templates_copied_user	設定とテンプレートをユーザー フォルダーにコピーします:\n{0}\n\nプログラム フォルダーのファイルは削除されません。	77af4ecc
+main.if_new_place_has_settings_files	新しい場所に設定ファイルが既にある場合は、先に .bak に名前を変更します。その後 LycanZip が再起動します。	331623d5
+main.switch_restart	切り替えて再起動	0af9174e
+main.could_not_switch	切り替えられませんでした	dc903253
+main.new_place_cannot_be_written	新しい場所に書き込めません。	922ca063
+main.copying_settings_failed	設定をコピーできませんでした。	7cf94c4d
+main.flag_file_portable_mode_lycanzip	ポータブル モードのフラグ ファイル（LycanZip.portable）を作成または削除できませんでした。	7e4a9017
+main.release_process	ドロップして処理	0b69ba01
+main.password_required	パスワードが必要です	b9a6ccd9
+main.wrong_password_please_try_again	パスワードが正しくありません。もう一度入力してください。	0cb4d870
+main.file_format_unrecognized_file_damaged	ファイル形式を認識できないか、ファイルが破損しています。	ba46df31
+main.solid_archive	  ·  ソリッド圧縮ファイル	06afd404
+main.encrypted	  ·  暗号化	6a7165de
+main.filename_encoding_uncertain	ファイル名のエンコードが不確かです	b637fd26
+main.filename_encoding_detected	ファイル名のエンコードを自動検出しました	c41d79fe
+main.currently_using_if_file_names_look	現在 {0} を使用しています。ファイル名が文字化けしている場合は、右上でエンコードを切り替えてください。	0e4991b7
+main.found_matching_including	「{1}」に一致する項目が {0} 個見つかりました（サブフォルダーを含む）	4962ec29
+main.list_all_suffix	（すべて一覧表示）	c0df9304
+main.image_thumbnails_on_but_double	画像の縮小版はオンですが、{0}。画像をダブルクリックするとプレビューできます。	8f08dad3
+main.archive_solid_so_no_thumbnails	ソリッド圧縮ファイルのため縮小版は無効です（画像を 1 つ読むにも、その前のデータをすべて展開する必要があります）	3d10c64f
+main.archive_format_cannot_read_single	この圧縮形式では画像を 1 つだけ読むことができないため、縮小版は作成されません	dd45aa8f
+main.show_image_thumbnails_icon_view_not_supported_by_archive	アイコン表示で画像の縮小版を表示（この圧縮ファイルでは非対応: {0}）	7b2d680e
+main.solid_compression	ソリッド圧縮	d4b061ba
+main.format_limitation	形式の制限	77990b7f
+main.selected	{0} 個選択（{1}）	473c83af
+main.opened_with_associated_app_instead	「{0}」: {1}。代わりに関連付けられたアプリで開きました。	a21d068c
+main.cannot_open	開けません	2d89e8d4
+main.file_s_name_unsafe_was_rejected	安全でないファイル名を拒否しました: {0}	cf8dc0a1
+main.run_program	このプログラムを実行しますか?	46ca4a8c
+main.comes_from_archive_will_run	「{0}」は圧縮ファイル内にあり、開くと実行されます。この圧縮ファイルの入手元を信頼できる場合にのみ実行してください。	10f4b5fe
+main.which_files_should_be_extracted	どのファイルを展開しますか?	1229b4ee
+main.needed_when_program_uses_files	プログラムが同じフォルダー内のファイル（DLL、データ ファイル）を使う場合に必要です	8b6ce301
+main.faster_but_program_may_not_find	高速ですが、プログラムが必要なファイルを見つけられない場合があります	4c00f206
+main.do_not_warn_again_can_be	今後は警告しない（[設定] で元に戻せます）	bec2f6f9
+main.extract_run	展開して実行	981f5190
+main.folder_large	フォルダーが大きすぎます	2e4d06e1
+main.folder_program_extract_all	このプログラムのフォルダーは {0} です。フォルダー全体を一時的な場所に展開しますか?	d10693c7
+main.extract_whole_folder	フォルダー全体を展開	4f31642e
+main.temporary_folder_not_found	一時フォルダーが見つかりません。	79302ba5
+main.global	全体	5f1184f7
+main.open_archive_on_new_archive_page	圧縮ファイルを開く（「新しい圧縮ファイル」ページではファイルを追加）	a4518fd3
+main.new_archive_choose_files	新しい圧縮ファイル（ファイルを選択）	b9c7a9ba
+main.new_archive_choose_folder	新しい圧縮ファイル（フォルダーを選択）	6605bd77
+main.open_close_settings	設定を開く / 閉じる	e0ce3034
+main.go_back_close_current_page	戻る / 現在のページ（設定、新しい圧縮ファイル）を閉じる / 選択を解除	6a8d6fc4
+main.show_collapse_task_panel	タスク パネルを表示 / 折りたたむ	72198a66
+main.clear_finished_tasks	完了したタスクを消去	f74ece90
+main.paste_files_folders_new_archive	ファイルとフォルダーを貼り付け（「新しい圧縮ファイル」ページ: 元のファイルに追加。圧縮ファイルの表示: 現在のフォルダーに追加）	0bf8a669
+main.open_selected_item_file_enter	選択した項目を開く（ファイル / フォルダーに入る）	ef8adbe5
+main.rename_selected_item_zip_7z_tar	選択した項目の名前を変更（ZIP、7z、TAR ではその場で変更可能）	69f94962
+main.delete_selected_items_from_archive	選択した項目を圧縮ファイルから削除	375cf716
+main.extract_here_only_selected_items	ここに展開（選択した項目がある場合はそれだけを展開）	04e856b3
+main.extract_only_selection_when	展開先を指定…（選択した項目がある場合はそれだけを展開）	6d103e1a
+main.image_preview_selected_image_first	画像のプレビュー（選択した画像、または最初の画像）	f69ab870
+main.audio_preview_selected_audio_file	音声のプレビュー（選択した音声ファイル、または最初のファイル）	9c2bf077
+main.properties_with_nothing_selected	プロパティ（何も選択していない場合: 圧縮ファイルの情報）	ca0275f1
+main.view_details	表示: 詳細	9e796f77
+main.view_list	表示: 一覧	f4dbfacf
+main.view_icons	表示: アイコン	8c3db71f
+main.list_all_flatten_all_levels	すべて一覧表示（すべての階層をまとめて表示）	529ca6af
+main.show_hide_folder_tree	フォルダー ツリーの表示 / 非表示	c5494f49
+main.close_archive_return_home_page	圧縮ファイルを閉じてホーム画面に戻る	04638611
+main.new_archive_page	「新しい圧縮ファイル」ページ	f947afdb
+main.save_as_new_template	新しいテンプレートとして保存	17ba4ccc
+main.image_preview_window	画像のプレビュー ウィンドウ	ec61a865
+main.previous_next	前へ / 次へ	7c1da99c
+main.space_pageup_pagedown_mouse_wheel	← ↑ / → ↓  Space  PageUp / PageDown  マウス ホイール	f908d0de
+main.first_last	最初 / 最後	14f40dcd
+main.view_mode_fit_window_actual_size	表示モード: ウィンドウに合わせる / 実際のサイズ / 幅に合わせる / 高さに合わせる（F でウィンドウに合わせると実際のサイズを切り替え。画像のダブルクリックでも可）	fa6029fa
+main.zoom_out_when_zoomed_drag_use	拡大 / 縮小（拡大中はドラッグまたは方向キーで移動）	5a2fa0f2
+main.ctrl_wheel	+ / −  Ctrl + ホイール	bc638ffc
+main.rotate_changes_display_only	回転（表示のみ変更）	405dfb25
+main.full_screen_thumbnail_strip	全画面表示 / 縮小版の帯	88913a74
+main.copy_image_copy_path	画像をコピー / パスをコピー	09e858fb
+main.save_image_as_open_with_associated	名前を付けて画像を保存… / 関連付けられたアプリで開く	53dc2b40
+main.animations_gif_animated_webp_play	アニメーション（GIF、アニメーション WebP）の再生 / 一時停止	1d607f16
+main.image_info_size_format_photo_info	画像の情報（サイズ、形式、写真の情報など）	0a6c72d5
+main.menu_button_at_top_right_right	メニュー（右上の「⋯」ボタン、または画像を右クリック）: 上のすべての操作と画像の情報を含みます	ee9b5c43
+main.right_click	右クリック	602314c6
+main.close_leaves_full_screen_first	閉じる（全画面表示中はまず全画面表示を終了）	55020fc9
+main.dialogs	ダイアログ	0fd66db1
+main.ok_cancel	OK / キャンセル	00e849be
+main.open_archive_ctrl_o	圧縮ファイルを開く (Ctrl+O)	12c2f60d
+main.new_archive_ctrl_n	新しい圧縮ファイル (Ctrl+N)	d8dca725
+main.settings_ctrl	設定 (Ctrl+,)	ea5e4c7d
+main.back_home_ctrl_w	ホームに戻る (Ctrl+W)	531d2d2a
+main.extract_ctrl_shift_e	展開先を指定… (Ctrl+Shift+E)	7bf5df69
+main.up_one_level_backspace_alt	1 つ上の階層へ (Backspace / Alt+↑)	55c26440
+main.collapse_expand_ctrl_j	折りたたむ / 展開する (Ctrl+J)	b5073496
+main.start_compressing_ctrl_enter	圧縮を開始 (Ctrl+Enter)	ebaa754f
+main.cancel_esc	キャンセル (Esc)	9c2c5ec0
+main.back_esc	戻る (Esc)	7cfd2c37
+main.self_extracting_archive	これは自己解凍形式の圧縮ファイルですか?	2ffbf2b6
+main.contains_compressed_data_format	「{0}」には圧縮データが含まれています（形式: {1}）。\n\n内容を開くと、中のファイルが一覧表示されます。プログラムは実行されません。	3a8b37b3
+main.open_contents	内容を開く	664328f0
+main.add_to_archive_title	圧縮ファイルに追加	b17b8c86
+main.no_images_preview	プレビューできる画像がありません	db66f618
+main.there_no_images_current_folder	現在のフォルダー（または検索結果）に画像がありません。	558dab0e
+main.no_audio_preview	プレビューできる音声がありません	929bfe99
+main.there_no_audio_files_current	現在のフォルダー（または検索結果）に音声ファイルがありません。	10df04a2
+main.cannot_preview_use_open_with	「{0}」をプレビューできません: {1}。コンテキスト メニューから「関連付けられたアプリで開く」を選んでください。	32b8bd8e
+main.sort_by	並べ替え	a2a5bdec
+main.packed_size	圧縮後のサイズ	9fc7e0d3
+main.switch_single_level_browsing	単一階層の表示に切り替え	91da4dea
+main.edit_put_back_into_archive	編集して圧縮ファイルに反映	81ca35a9
+main.calculate_hash_values	ハッシュ値を計算…	78ef4a80
+main.go_containing_folder	含まれているフォルダーへ移動	c294be0e
+main.properties	プロパティ	bc6c88db
+main.add_files_folder	このフォルダーにファイルを追加…	6c361b03
+main.rename	名前の変更	d3f4cb89
+main.delete	削除	f6fdbe48
+main.show_explorer	エクスプローラーで表示	7e922b30
+main.copy_file_path	ファイルのパスをコピー	41884566
+main.delete_archive	圧縮ファイルを削除…	82ce5b59
+main.delete_archive_title	圧縮ファイルを削除しますか?	0eb59598
+main.move_archive_recycle_bin_you_can	この圧縮ファイルをごみ箱に移動しますか? ごみ箱から元に戻せます。	88413552
+main.drive_archive_has_no_recycle_bin	⚠ この圧縮ファイルがあるドライブにはごみ箱がありません。削除すると元に戻せません。	541c1b51
+main.delete_without_asking_from_now_on	今後は確認せずに削除する	02d8001c
+main.move_recycle_bin	ごみ箱に移動	9176708b
+main.delete_permanently	完全に削除	e63b5153
+main.archive_could_not_be_deleted	圧縮ファイルを削除できませんでした	28085c64
+main.file_may_be_use_by_another	ファイルが別のプログラムで使用中か、アクセス許可がない可能性があります。	2513b6ea
+main.archive_being_changed_please_wait	圧縮ファイルを変更しています。完了するまでお待ちください。	9a12ea3e
+main.archive_cannot_be_changed_directly	この圧縮ファイルは直接変更できません	264c796a
+main.cannot_be_changed_place_only_zip	「{0}」はその場で変更できません（対応しているのは分割されていない ZIP、7z、TAR の圧縮ファイルのみで、分割圧縮ファイルや .tar.gz のような複合形式は対象外です）。先に展開してから新しい圧縮ファイルを作成してください。	8addc9e6
+main.archive_read_only	圧縮ファイルは読み取り専用です	00d01975
+main.file_set_read_only_cannot_be	このファイルは読み取り専用のため変更できません。先にファイルのプロパティで「読み取り専用」をオフにしてください。	08f46060
+main.archive_could_not_be_changed	圧縮ファイルを変更できませんでした	d2a95613
+main.will_take_while	時間がかかります	4363058a
+main.about_solid_archive_has_be	このソリッド圧縮ファイルのうち約 {0} を展開して再圧縮する必要があり、時間がかかります。続行しますか?	d7babaad
+main.nothing_update	更新するものはありません	ca4c07dd
+main.files_archive_up_date_none_files	圧縮ファイル内のファイルはすべて最新です（ディスク上に新しいファイルはありません）。何も変更されていません。	66b74d9d
+main.some_files_were_not_added	一部のファイルが追加されませんでした	8bfa612a
+main.archive_was_changed_but_file_s	圧縮ファイルは変更されましたが、{0} 個のファイルを読み取れず、追加されませんでした:\n{1}	01f83dfe
+main.status_added	{0} 個追加	3f289bed
+main.deleted	{0} 個削除	a7b9b638
+main.renamed	{0} 個の名前を変更	d7b112a0
+main.new_folder_s	新しいフォルダー {0} 個	c9f13ba4
+main.unchanged	{0} 個変更なし	19d70cc2
+main.archive_changed	圧縮ファイルを変更しました: {0}	96d0198b
+main.already_compressed_file_s_stored	（圧縮済みのファイル {0} 個はそのまま格納）	2adb9906
+main.items_with_same_name	同じ名前の項目	d15d9d1f
+main.archive_already_has_items_with	圧縮ファイルには同じ名前の項目が既に {0} 個あります。同じ名前のフォルダーは統合されます。競合するファイルをどう処理しますか?	955b341f
+main.replace_add	置き換えて追加	a99afac9
+main.files_same_name_always_replaced	同じ名前の既存のファイルを上書きし、新しいファイルを追加します。	5b8ba483
+main.update_add	更新して追加	88959e8b
+main.file_replaced_only_if_one_on	ディスク上の方が新しい場合にだけ既存のファイルを上書きし、新しいファイルを追加します。	32cb83f7
+main.update_existing_only	既存のファイルのみ更新	0500c630
+main.only_files_archive_newer_on_disk	圧縮ファイルに既にあり、ディスク上の方が新しいファイルだけを更新します。新しいファイルは追加しません。	35f981f8
+main.file_already_exists	ファイルは既に存在します	b1b0ec61
+main.add_to_this_archive	この圧縮ファイルに追加	5a23e49d
+main.add_these_files_what_not	現在の内容を再圧縮せずに、これらのファイルを既存の圧縮ファイルに追加します（名前が競合するファイルの処理方法は下で選びます）。	c38aabe2
+main.save_as_new_file	新しいファイルとして保存	ae076f13
+main.saved_as	「{0}」として保存しました。	cc3ec09c
+main.replace	置き換える	5e4bd6c5
+main.old_archive_replaced_by_one	古い圧縮ファイルはこのファイルに置き換えられます。	ffe726e3
+main.replace_add_files_same_name_always	置き換えて追加: 同じ名前のファイルは常に置き換えます	cc6a9b1f
+main.update_add_replace_only_if_newer	更新して追加: ディスク上の方が新しい場合のみ置き換え、新しいファイルを追加します	5a9b4e05
+main.update_existing_only_only_files	既存のファイルのみ更新: 圧縮ファイルに既にあり、より新しいファイルだけを更新します	31f64ae0
+main.synchronize_make_archive_match	同期: 圧縮ファイルをこの内容に一致させます（異なるものは置き換え、余分なものは削除）	6340c109
+main.how_treat_files_same_name	ファイル名が競合する場合	0eb02b54
+main.cannot_synchronize	同期できません	5dab3b72
+main.synchronizing_deletes_items_from	同期すると圧縮ファイルから項目が削除されます	83743985
+main.items_archive_no_longer_exist	圧縮ファイル内の {0} 個の項目はもうフォルダーにありません。同期するとそれらは削除されます（ほかに {1} 個追加、{2} 個置き換え、{3} 個変更なし）。	04186ca2
+main.more	…ほか {0} 個	f459eedf
+main.synchronize	同期	8dd29207
+main.choose_folder_add	追加するフォルダーを選択	f8d6f042
+main.name_cannot_be_empty_contain	名前を空にすることはできず、円記号（\\）、引用符、/ : * ? < > | も使えません。	fb27523c
+main.new_folder_name	新しいフォルダー	a711999b
+main.name_already_exists	名前が既に存在します	1be78559
+main.there_already_item_called_here	ここには「{0}」という名前の項目が既にあります。	38378553
+main.delete_from_archive	圧縮ファイルから削除しますか?	83290f91
+main.delete_one_from_archive	「{0}」を圧縮ファイルから削除しますか?	5bb9cc9c
+main.delete_these_items_from_archive	これら {0} 個の項目を圧縮ファイルから削除しますか?	e9d5f1d5
+main.items_taken_out_archive_itself_not	選択した項目は圧縮ファイルから完全に削除されます（ごみ箱には移動しません）。元の圧縮ファイルは .bak としてバックアップされます。	5e7d72d9
+main.items_taken_out_archive_itself_not_moved_recycle_bin_cannot_be	選択した項目は圧縮ファイルから完全に削除され（ごみ箱には移動しません）、元に戻せません。	0f5da694
+main.editing_after_you_save_you_asked	「{0}」を編集中です。保存すると、圧縮ファイルに反映するかどうかを確認します。	586def92
+main.archive_was_changed	圧縮ファイルが変更されました	366dc893
+main.while_was_being_edited_another	「{0}」を編集している間に、圧縮ファイルが別のプログラムによって変更されたため、変更を書き戻せません。編集したファイルは次の場所に保存されています:\n{1}	24f0efc0
+main.file_no_longer_archive	ファイルが圧縮ファイル内にありません	f9987d8f
+main.no_longer_archive_deleted_renamed	「{0}」は圧縮ファイル内にもうありません（削除されたか名前が変更されました）。そのため変更を書き戻せません。編集したファイルは次の場所に保存されています:\n{1}	ac36e3a6
+main.put_back_into_archive	圧縮ファイル内のファイルを更新しますか?	3c42975b
+main.was_changed_put_back_into_archive	「{0}」が変更されました。圧縮ファイルに反映しますか?	62e00081
+main.put_back_without_asking_from_now	今後は確認せずに常に反映する	819757d5
+main.put_back	圧縮ファイルを更新	7ac2f9d6
+main.not_now	今はしない	e4571490
+main.changes_not_yet_put_back_into	圧縮ファイル内のファイルに未保存の変更があります	22e53f53
+main.file_you_edited_has_not_been	編集したファイルはまだ圧縮ファイルに反映されていません。今閉じると、圧縮ファイルは変更されません。	bf9dfbb6
+main.close_without_putting_back	反映せずに閉じる	8f179b2b
+main.path	パス: {0}\n	e0db47b5
+main.type_folder	種類: フォルダー\n	94ff5341
+main.contains_total	内容: ファイル {0} 個、合計 {1}\n	4259cf09
+main.type_file	種類: ファイル\n	7a6a1e42
+main.info_size	サイズ: {0}（{1} バイト）\n	9d5aef53
+main.info_packed	圧縮後: {0}	44e26b42
+main.info_modified	更新日時: {0}\n	c8e8d841
+main.info_encrypted	暗号化済み\n	4f568b30
+main.crc_32_stored_archive	CRC-32（圧縮ファイルに記録された値）: {0}\n	dbeb7ece
+main.after_completion_show_explorer	完了後: エクスプローラーで表示	d67b4ad6
+main.after_completion_test_integrity	完了後: 整合性をテスト	5c3adc49
+main.close_window	ウィンドウを閉じる	e3896a93
+main.after_completion_close_window	完了後: ウィンドウを閉じる	1a56e2f5
+main.extract_here_no_folder	ここに展開（フォルダーなし）	158be682
+main.extract_folder	「{0}」フォルダーに展開	28142937
+main.extract_here_automatic	ここに展開（自動）	cc88ab76
+main.extract_here_straight_into_folder	ここに展開。フォルダーを作らずに直接このフォルダーへ (Ctrl+E)	60c2166e
+main.extract_here_always_into_folder	ここに展開。常に圧縮ファイルと同じ名前のフォルダーへ (Ctrl+E)	e6c93a87
+main.extract_here_ctrl_e_creates_name	ここに展開 (Ctrl+E): 圧縮ファイルの最上位に複数の項目がある場合にだけ、圧縮ファイルと同じ名前のフォルダーを作成します	d61281e2
+main.scan_could_not_run	スキャンを実行できませんでした	464a3106
+main.scan_hands_files_antivirus_product	スキャンでは、ファイルをインストールされているウイルス対策ソフトに送ります。LycanZip 自体はスキャン エンジンを持っていません。	1da8ab74
+main.blocked_by_system_policy	（システムのポリシーによりブロックされています）	593a966e
+main.threat_names_logged_by_windows	Windows Defender が記録した脅威の名前: {0}	d37f8e79
+main.suspicious_files_found	疑わしいファイルが見つかりました	8da644aa
+main.installed_antivirus_product_thinks	インストールされているウイルス対策ソフトが、この圧縮ファイル内の {0} 個のファイルに問題があると報告しています:	4fe67854
+main.do_not_open_these_files_antivirus	これらのファイルは開かないでください。これはウイルス対策ソフトの判断であり、誤っている可能性もあります。一覧にないファイルが安全だと保証されるわけでもありません。	9e59a0a4
+main.ask_every_time_no_automatic_choice	毎回確認する（自動で選択しない）	81733972
+main.keep_newer	新しい方のファイルを残す	f1be0c4d
+main.keep_older	古い方のファイルを残す	c09ddf2c
+main.keep_larger	大きい方のファイルを残す	49e494d8
+main.keep_smaller	小さい方のファイルを残す	6a8207d4
+main.skip_if_contents_identical	内容が同じならスキップし、異なれば両方を残す	0819267c
+main.archive_unpacks_something_very_big	この圧縮ファイルは展開すると異常に大きくなります	0fd7d9d3
+main.archive_only_unpacks_about_times	圧縮ファイルは {0} しかありませんが、展開すると約 {1}（{2} 倍）になります。	a8955bec
+main.unpacks_about	展開すると約 {0} になります。	5e6f45a7
+main.far_more_than_normal_archive_may	通常の圧縮ファイルよりはるかに大きいサイズです。圧縮爆弾（展開するとディスクがいっぱいになるよう意図的に小さく作られたファイル）の可能性もあれば、仮想マシンのディスク イメージのような正当なものの可能性もあります。入手元がわからない場合はキャンセルしてください。	3766aeb6
+main.do_not_check_again_can_be	今後は確認しない（[設定] で元に戻せます）	393f5426
+main.continue_extracting	展開を続ける	fa29f5e2
+main.conflict_title	ファイルは既に存在します	b1b0ec61
+main.same_size	同じサイズ	e9c1aa54
+main.larger	大きい	acd1be8c
+main.smaller	小さい	9c3c295f
+main.existing_file	既存のファイル	d49f7a8d
+main.newer	新しい	56b079ac
+main.version_archive	圧縮ファイル内のバージョン	27d73a30
+main.older	古い	63f34dd2
+main.same_time	同じ日時	d10b2ff6
+main.conflict_archive_version	圧縮ファイル内のバージョン: {0}。	bfce5d04
+main.what_would_you_like_do	どうしますか?	7b52603b
+main.overwrite_existing_file	既存のファイルを上書きする	a232a5a5
+main.replace_with_version_archive	圧縮ファイル内のバージョンで置き換えます	ab8f8b33
+main.keep_both	両方とも残す	60c801a8
+main.new_file_renamed_automatically	新しいファイルの名前が自動的に変更され、何も失われません	eee3a7ca
+main.skip_file	このファイルをスキップする	23150e3b
+main.keep_existing_file_do_not_extract	既存のファイルを残し、このファイルは展開しません	4d4262b7
+main.apply_same_choice_all_later	以降のすべての競合に同じ操作を適用する	8dfd3ccc
+main.choose_automatically	または自動で選択	0598ff5b
+main.automatic_choice	自動選択	0c5a72b3
+main.cancel_extraction	展開をキャンセル	89ecef59
+main.choose_folder_compress	圧縮するフォルダーを選択	c24a7020
+main.smallest_size	最小サイズ	ba07b565
+main.balanced	バランス	03342dbb
+main.store_only	無圧縮	6aadc26d
+main.level	レベル {0}	8051c09f
+main.single_solid_block	単一のソリッド ブロック	82518e40
+main.non_solid	非ソリッド	0226bd71
+main.password_protected_incl_file_names	パスワードで保護（ファイル名を含む）	19e5f976
+main.password_protected	パスワードで保護	09d9e174
+main.split	{0} ごとに分割	678d4e6a
+main.full_path	フル パス	29e5ac46
+main.by_mode_default	モードに従う（既定）	54270810
+main.store_only_no_compression	無圧縮（圧縮しない）	e3e66261
+main.1_fastest	1  最速	04d90b7d
+main.3_fast	3  高速	5385054d
+main.5_normal	5  標準	530f5284
+main.7_maximum	7  最大	5d52542d
+main.9_ultra	9  ウルトラ	d39524fd
+main.auto	自動	c614ba7c
+main.non_solid_each_file_separately	非ソリッド（ファイルごとに個別）	c7d92841
+main.all_single_block_smallest	すべて（単一ブロック、最小）	189a729d
+main.by_mode_aes_256	モードに従う（AES-256）	0bbe88ff
+main.zipcrypto_compatible_with_old	ZipCrypto（古いプログラムと互換）	8d6b9b84
+main.relative_path	相対パス	da42f64e
+main.full_path_without_drive_letter	フル パス（ドライブ文字を除く）	3809d0df
+main.do_not_split	分割しない	c6e64721
+main.25_mb_e_mail_attachment	25 MB（メールの添付ファイル）	41991e74
+main.4_gb_fat32_limit	4 GB（FAT32 の上限）	2ef4a47e
+main.custom	カスタム…	dce04fd3
+main.choose_output_folder_archive	圧縮ファイルの出力先フォルダーを選択	595ed9c9
+main.menu_save_as_new_template	新しいテンプレートとして保存…	062f4db3
+main.update_template_with_current	現在の設定でこのテンプレートを更新	e0496ccb
+main.menu_rename_template	名前の変更…	94ac9a58
+main.delete_template	このテンプレートを削除	9414be5d
+main.show_right_click_menu_compress	コンテキスト メニューの「テンプレートで圧縮」に表示する	3bfd9a94
+main.fixed_format	（この形式では固定）	383cd7ca
+main.two_passwords_do_not_match	2 つのパスワードが一致しません。	4edbd2dc
+main.zip_passwords_can_only_use_letters	ZIP のパスワードに使えるのは英字、数字、一般的な記号だけです。それ以外の文字を使うには 7z を選んでください。	49150c83
+main.zipcrypto_weakly_encrypted	ZipCrypto の暗号化は脆弱です。安全性を高めるには AES-256（「バランス」モードと「AES-256」暗号化）を使ってください。	eb3cf368
+main.iso_images_not_compressed_do_not	ISO イメージは圧縮されず、パスワードと分割には対応していません。	ef7b274d
+main.tar_family_does_not_support	TAR 系はパスワードと分割に対応していません。	971a8929
+main.no_password_entered_yet_so_file	パスワードが入力されていないため、ファイル名は暗号化されません。	39a1b880
+main.save	保存先: {0}	a01152d1
+main.invalid_file_name_chars	名前を空にすることはできず、\\ / : * ? " < > | も使えません	6e20e19f
+main.output_file	出力ファイル: {0}	33bf7452
+main.split_into_001_002	（.001、.002… に分割）	fbc7ce35
+main.invalid_file_name	ファイル名が無効です。	a1bff97e
+main.please_add_files_folders_compress	先に圧縮するファイルまたはフォルダーを追加してください。	67c7cad5
+main.invalid_split_size_enter_size_like	分割サイズが無効です。「50 MB」や「1.5 GB」のようなサイズを入力してください（64 KB 以上。単位がない場合は MB とみなします）。	f35af639
+main.custom_parameters_set_if_they_do	カスタム パラメーターが設定されています。この形式に適用できない場合、圧縮は失敗し、その理由が表示されます。	a4d08a9d
+main.sources	元のファイル（{0}）	ba3b4da5
+main.remove	削除	e963907d
+main.and_n_more_sources	…ほか {0} 個	f459eedf
+main.calculating	計算しています…	c5737794
+main.delete_originals	元のファイルを削除	150eb4d3
+main.some_items_were_skipped_so	  （スキップされた項目があるため、元のファイルの削除は表示されません）	249c1c7d
+main.integrity_test_passed	  整合性テストに合格しました	a3039500
+main.data_after_end_compressed_stream	、{0} 個の項目で圧縮ストリームの終端の後にデータがあります（内容は完全です）	a13e3dd4
+main.integrity_test_failed	  ⚠ 整合性テストに失敗しました: {0}	cf1323ef
+main.integrity_test_cancelled	  （整合性テストはキャンセルされました）	556b443a
+main.nothing_delete	削除するものはありません	7acb2e0c
+main.originals_no_longer_exist_they	元のファイルがもう存在しないか、新しい圧縮ファイルを含んでいます。	94521e2c
+main.new_archive_was_not_found	新しい圧縮ファイルが見つかりませんでした	db4dd6ab
+main.new_archive_gone_so_originals_will	新しい圧縮ファイルがなくなったため、元のファイルは削除されません。	06ab4c73
+main.delete_originals_title	元のファイルを削除しますか?	500d32bc
+main.delete_original_archive_title	元の圧縮ファイルを削除しますか?	e09267fc
+main.move_recycle_bin_you_can_restore	{0} 個の項目をごみ箱に移動しますか? ごみ箱から元に戻せます。	49ce89f1
+main.drive_cannot_use_recycle_bin	⚠ {0} 個の項目があるドライブではごみ箱を使えません。削除は完全で、元に戻せません。	60f2dd07
+main.new_archive_passed_integrity_test	新しい圧縮ファイルは整合性テストに合格しました。	95a88575
+main.integrity_test_new_archive_failed	⚠ 新しい圧縮ファイルは整合性テストに合格しませんでした。元のファイルが唯一の完全なコピーかもしれないため、削除はお勧めしません。	bfd538a9
+main.new_archive_has_not_been_tested	⚠ 新しい圧縮ファイルはまだ検証されていません。元のファイルを削除する前に、まず「整合性をテスト」を実行してください。	7cc91b5c
+main.new_archive_inside_one_source	新しい圧縮ファイルが元のフォルダーの 1 つの中にあります。そのフォルダーは削除されません。	dd7521da
+main.moved_recycle_bin	  {0} 個の項目をごみ箱に移動しました	0172199d
+main.status_deleted_items	  {0} 個の項目を削除しました	ff13ae6b
+main.not_deleted	  （{0} 個の項目は削除されませんでした）	e3b12b2b
+main.template_name	テンプレート名	954ab955
+main.up_40_characters_no_allowed	40 文字まで、[ ] は使えません。テンプレートに保存されるのは圧縮の設定だけで、パスワードは保存されません。	56660810
+main.my_template	マイ テンプレート	feab8114
+main.invalid_name	名前が無効です	bb1826ee
+main.name_cannot_be_empty_contain_line	名前を空にすることはできず、[ ] や改行も使えません。40 文字まで、先頭と末尾にスペースは使えません。	20720a40
+main.template_with_name_already_exists	同じ名前のテンプレートが既にあります。別の名前を使ってください。	1eef553b
+main.rename_template	テンプレート名の変更	1e32c6e1
+main.delete_template_title	テンプレートを削除しますか?	56396035
+main.delete_template_cannot_be_undone	テンプレート「{0}」を削除しますか? この操作は元に戻せません。	e50df843
+main.wrong_password	パスワードが正しくありません	fc2066fe
+main.archive_could_not_be_opened_with	入力したパスワードではこの圧縮ファイルを開けませんでした。もう一度「展開」を選び、パスワードを入力し直してください。	34ba58c8
+main.delete_original_archive	元の圧縮ファイルを削除	132fc098
+main.some_items_could_not_be_processed	一部の項目を処理できませんでした	91b6c84e
+main.change_archive	圧縮ファイルの変更	ea98cf6d
+main.op_failed	{0}: 失敗	64e16e18
+main.complete	{0}: 完了	adf4aeab
+main.succeeded	{0} 個成功	70835f42
+main.suffix_n_failed	、{0} 個失敗	f41037c2
+main.progress	{0} 件実行中	6ba4b16f
+main.n_failed	{0} 件失敗	64e16e18
+main.all_done	すべて完了	7268efa6
+main.hash_values	ハッシュ値	c7455cfb
+main.item_s_archive	「{0}」内の {1} 個の項目	0b9e61f3
+main.paste_hash_value_compare	比較するハッシュ値を貼り付け	8b1ffac1
+main.example_sha_256_written_on_website	Web サイトに記載された SHA-256 など（長さでアルゴリズムを判別します）	838740ff
+main.hash_value_compare	比較するハッシュ値	3e0522ec
+main.match_only_means_file_same_as	一致しても、ファイルが貼り付けた値と同じであることを意味するだけです。その値を信頼できるかどうかは、値の入手元によります。MD5 と SHA-1 は破損したファイルは検出できますが、意図的なファイルの改ざんは防げません。	294fb115
+main.more_file_s_not_listed_save	…ほか {0} 個のファイルは一覧にありません（「チェックサム ファイルとして保存」にはすべて含まれます）	fc8359d8
+main.not_hash_value_only_0_9	ハッシュ値ではありません。使えるのは 0～9 と a～f だけです（スペース、ハイフン、先頭の 0x は可）。	8db4145b
+main.length_digits_matches_no_algorithm	{0} 桁に該当するアルゴリズムはありません。CRC-32 は 8 桁、MD5 は 32 桁、SHA-1 は 40 桁、SHA-256 は 64 桁、SHA-384 は 96 桁、SHA-512 は 128 桁です。	86ef5264
+main.still_calculating	計算中です…	624c0ce1
+main.match	✓ 一致: {0}（{1}）	5d3acc60
+main.has_not_been_calculated_tick_above	{0} は計算されていません。上で選択してください。	3f6489aa
+main.no_match_no_file_has	✗ 不一致: この {0} を持つファイルはありません。	133cb393
+main.save_as	.{0} として保存…	f0bdc77f
+main.calculating_progress	計算しています… {0}%（{1} / {2}）	c8a8358b
+main.there_nothing_calculate	計算するものがありません。	6fc8debb
+main.done_file_s	完了: {0} 個のファイル、{1}	739e7fd5
+main.could_not_be_calculated	、{0} 個は計算できませんでした	fb91acb6
+main.copy_all	すべてコピー	9da9f044
+main.copied_to_clipboard_period	クリップボードにコピーしました。	fee2a7f7
+main.save_checksum_file	チェックサム ファイルを保存	f3f3218a
+main.could_not_save	保存できませんでした	3b89fc9a
+main.could_not_write	「{0}」に書き込めませんでした。	84647b8c
+main.saved	保存しました: {0}	7810f2d3
+main.info_location	場所	d219c681
+main.file_size	ファイル サイズ	45d0df35
+main.file_s_folder_s	ファイル {0} 個、フォルダー {1} 個	48e27f88
+main.archive	、元のサイズの {0}% に圧縮	ecc6d261
+main.original_size	元のサイズ	983bb440
+main.yes	はい	5397e058
+main.no	いいえ	816c52fd
+main.block_s	（{0} ブロック）	d74365de
+main.solid	ソリッド	d0063586
+main.info_encrypted_label	暗号化	bde2fbb6
+main.yes_encrypted_file_s	はい（暗号化されたファイル {0} 個）	545f5a09
+main.volumes	ボリューム	39c0ee03
+main.volume_s	{0} ボリューム	65a2cc5a
+main.can_be_changed	変更可能	0bb21756
+main.yes_files_can_be_added_deleted	はい（ファイルの追加、削除、名前の変更が可能）	f5cd1343
+main.no_format_can_only_be_extracted	いいえ（この形式は展開のみ可能）	b75cf7d1
+main.archive_comment	圧縮ファイルのコメント	7ec7e1af
+## welcome
+welcome.welcome_lycanzip	LycanZip へようこそ	2a1448ba
+welcome.free_open_source_ad_free_light	無料、オープンソース、広告なし、軽量の圧縮・展開ソフトです。好みの設定を選んでください。すべて後から変更できます。	f8c5f342
+welcome.language_changes_after_restart	言語を変更したら再起動してください。	8fd16493
+welcome.short_sound_when_task_finishes	タスクが完了または失敗したときに短い音を鳴らします。オンにすると試聴できます。	12bb78d5
+welcome.when_show_animations_off_windows	Windows で「アニメーション効果」がオフの場合は、ここでの設定に関係なくアニメーションしません。	87e4ec47
+welcome.double_click_picture_opens_preview	画像をダブルクリックするとプレビュー ウィンドウで開きます	4d368b3b
+welcome.double_click_picture_opens	画像をダブルクリックすると関連付けられたアプリで開きます	717eddfc
+welcome.double_click_audio_file_plays	音声ファイルをダブルクリックすると内蔵プレーヤーで再生します	885b47e1
+welcome.double_click_audio_file_opens	音声ファイルをダブルクリックすると関連付けられたアプリで開きます	6fe22413
+welcome.view_preview	表示とプレビュー	ed24cabc
+welcome.how_archive_shown_when_opened	圧縮ファイルを開いたときの表示方法です。	78eef94a
+welcome.pictures_show_thumbnails_other	画像は縮小版を、ほかのファイルは同じサイズのアイコンを表示します。	1f63a826
+welcome.default_format	既定の形式	8cb4e197
+welcome.zip_works_everywhere_7z_compresses	ZIP はどこでも使え、7z はより小さく圧縮できます。	fdfb81fa
+welcome.double_click_picture_archive_open	圧縮ファイル内の画像をダブルクリックすると、プレビュー ウィンドウで開きます。	c3ec0168
+welcome.double_click_audio_file_archive	圧縮ファイル内の音声ファイルをダブルクリックすると、内蔵プレーヤーで再生します。	44a51cab
+welcome.integrate_with_windows	Windows との統合	8840c0f7
+welcome.only_step_changes_system_nothing	システムを変更するのはこの手順だけです。[完了] を選ぶまで何も書き込まれず、[スキップ] では何も変更されません。	68a28da9
+welcome.classic_right_click_menu	従来のコンテキスト メニュー	870ea56e
+welcome.right_click_files_compress_extract	ファイルを右クリックして圧縮や展開ができます。	695499c8
+welcome.windows_11_right_click_menu	Windows 11 のコンテキスト メニュー	1889983f
+welcome.visible_without_choosing_show_more	「その他のオプションを確認」を選ばなくても表示されます。	b682df71
+welcome.file_associations_open_with	ファイルの関連付け（プログラムから開く）	fec45671
+welcome.only_lists_lycanzip_under_open	LycanZip を「プログラムから開く」と「既定のアプリ」に登録します。Windows ではアプリが自分自身を既定に設定できないため、Windows の設定で LycanZip を選ぶ必要があります。	d936e855
+welcome.all	…全 {0} 項目	f51eb1e2
+welcome.which_items_right_click_menu_shows	コンテキスト メニューに表示する項目は、後で [設定] の [エクスプローラー] タブで変更できます。	b241e0c8
+welcome.extract_name	「名前\\」に展開	252257c4
+welcome.compress_zip	ZIP に圧縮	ed33ffa5
+welcome.compress_7z	7z に圧縮	7e9babaa
+welcome.back	戻る	b52b36b7
+welcome.next	次へ	bc981983
+## task
+task.under_1_second	1 秒未満	c9246acd
+task.min_s	{0} 分 {1} 秒	3f40e738
+task.h_min	{0} 時間 {1} 分	21a0c7a3
+task.test	テスト	640ab2ba
+task.waiting	待機中	33d30632
+task.s	  ·  {0}/秒	f6b14876
+task.left	  ·  残り {0}	d6fd86cd
+task.working	処理中…  {0}	0e2ccf83
+task.paused	一時停止中  {0}	155921b8
+task.done	完了  {0} 個のファイル	2e3f901c
+task.skipped	、{0} 個スキップ	75589066
+task.macos_metadata_item_s_skipped	、macOS のメタデータ {0} 個をスキップ	732f30fa
+task.unsafe_rejected	、安全でないパス {0} 個を拒否	84be0dca
+task.renamed	、{0} 個の名前を変更	7cf420b8
+task.done_sizes	完了  {0} 個のファイル  {1} → {2}	43858f28
+task.already_compressed_file_s_stored	、圧縮済みのファイル {0} 個はそのまま格納	ef250d9f
+task.thumbs_db_skipped	、Thumbs.db {0} 個をスキップ	d4450d3b
+task.done_plain	完了　	2d6f6fac
+task.new_files_not_added	新しいファイル {0} 個は追加されません	fd5b8cc5
+task.integrity_test_passed	整合性テストに合格しました	d62ca692
+task.failed	失敗  {0}	eee308fd
+task.failed_wrong_password_start_again	失敗  パスワードが正しくありません。もう一度始めて、正しいパスワードを入力してください	d4634a7a
+task.extracted_kept	エラーのあるファイル {0} 個を展開して残しました: {1}	24e63e29
+task.failed_plain	失敗　	4553638b
+task.cancelled	キャンセルしました	f840ac65
+## preview
+preview.stable_diffusion_webui_a1111_forge	Stable Diffusion WebUI（A1111 / Forge 形式）	8098eb0a
+preview.embedded_text_data	埋め込みテキスト データ（{0}）	ccc838d5
+preview.previous	前へ (←)	6603747f
+preview.next	次へ (→)	b24e35e3
+preview.fit_window	ウィンドウに合わせる	54983cda
+preview.switch_f_between_fit_window_width	「合わせる」（ウィンドウ / 幅 / 高さ。メニューまたは Ctrl+0 / 2 / 3）と「実際のサイズ」（Ctrl+1）を F で切り替えます。現在の倍率がボタンに表示されます	f59713cc
+preview.actual_size	実際のサイズ	e18d1468
+preview.menu_you_can_also_right_click	メニュー（画像を右クリックしても開けます）	a5260417
+preview.menu	メニュー	57f5f5ef
+preview.thumbnail_strip	縮小版の帯	70cc2f0c
+preview.fit_width	幅に合わせる	4d6ed0ab
+preview.fit_height	高さに合わせる	e6a94f84
+preview.actual_size_percent	実際のサイズ（{0}）	13668eb2
+preview.animation_too_large_only_first	このアニメーションは大きすぎるため、最初のフレームだけを表示しています	0e92ed52
+preview.paused_press_p_resume	一時停止中（P キーで再開）	dcfec256
+preview.playing	再生中	298c3905
+preview.previous_name	前へ	50f94286
+preview.next_name	次へ	bc981983
+preview.first	最初	916a78d7
+preview.last	最後	d1c69a85
+preview.actual_size_name	実際のサイズ	e18d1468
+preview.zoom	拡大	4fc05f27
+preview.zoom_out	縮小	a4ae4b24
+preview.rotate_clockwise	右に回転	acf3bc67
+preview.rotate_counterclockwise	左に回転	e26261ca
+preview.full_screen	全画面表示	d15f886d
+preview.play_animation	アニメーションを再生	1d44b58b
+preview.copy_image	画像をコピー	883f2df0
+preview.save_image_as	名前を付けて画像を保存…	82c99fbc
+preview.image_info	画像の情報	9ab2a0d2
+preview.copy	コピー	af74f7c5
+preview.copy_what	{0} をコピー	37daa938
+preview.grayscale	グレースケール	c8b0f2ed
+preview.16_bits_channel	16 ビット / チャネル	f43e0282
+preview.color_8_bits_channel	カラー（8 ビット / チャネル）	b4c50510
+preview.with_transparency	、透明度あり	4961855d
+preview.date_taken	撮影日時	76edfcab
+preview.camera	カメラ	4da9c9af
+preview.aperture	絞り値	aae12633
+preview.1_s	1/{0} 秒	2f466ea0
+preview.s	{0} 秒	5cd8bcda
+preview.shutter	シャッター速度	7116fe95
+preview.iso	ISO	4f325d99
+preview.focal_length	焦点距離	9bd85a7d
+preview.file	ファイル	2c3cafa4
+preview.path_archive	圧縮ファイル内のパス	ea550c9c
+preview.image	画像	50e19fda
+preview.dimensions	サイズ	9f4ca9ec
+preview.px_megapixels	{0} × {1} ピクセル（{2} メガピクセル）	fc3a73cc
+preview.color	色	1d0c8304
+preview.resolution	解像度	516aae52
+preview.status	状態	bae7d5be
+preview.not_fully_loaded_yet	まだ完全に読み込まれていません	a5972e0a
+preview.photo_info	写真の情報	60fddc09
+preview.ai_generation_info	AI 生成の情報	2c56ead3
+preview.source	ソース	6da13add
+preview.prompt	プロンプト	a817d7eb
+preview.negative_prompt	ネガティブ プロンプト	e083520d
+preview.raw_data	生データ	d88d5638
+preview.other_text_data	その他のテキスト データ	9879c423
+preview.image_copied	画像をコピーしました	a607eb31
+preview.path_copied	パスをコピーしました	12ec0d2e
+preview.save_dialog_title	名前を付けて画像を保存	b8184460
+preview.saved	{0} に保存しました	136c4303
+preview.could_not_save	保存できませんでした	3b89fc9a
+preview.file_too_large_preview_limit_64	このファイルは大きすぎます（{0}）。プレビューの上限は 64 MB です。	6329212f
+preview.image_too_large_exceeds_preview	この画像は大きすぎて、プレビューの上限を超えています。	bd25df65
+preview.use_open_with_associated_app_file	{0}。\n\nファイル一覧のコンテキスト メニューから「関連付けられたアプリで開く」を選んでください。	a12b1655
+preview.cannot_display_image_file_may_be	この画像を表示できません。ファイルが破損している可能性があります。	0d642a27
+preview.jpeg_xl_images_need_jpeg_xl	JPEG XL 画像をプレビューするには、Microsoft Store から「JPEG XL Image Extension」をインストールしてください	3b2ae038
+preview.avif_images_need_av1_video	AVIF 画像をプレビューするには、Microsoft Store から「AV1 Video Extension」をインストールしてください	22f5bb11
+preview.heic_heif_images_need_heif_image	HEIC / HEIF 画像をプレビューするには、Microsoft Store から「HEIF Image Extensions」をインストールしてください（「HEVC Video Extensions」も必要な場合があります）	c6869eb3
+preview.webp_images_need_webp_image	WebP 画像をプレビューするには、Microsoft Store から「WebP Image Extensions」をインストールしてください	7abdfe5a
+preview.pc_has_no_decoder_can_preview	この PC にはこの種類の画像をプレビューできるデコーダーがありません	9a95035e
+preview.file_too_large	ファイルが大きすぎます	a0704a4e
+preview.wrong_password_file_cannot_be_read	パスワードが正しくありません。このファイルは読み取れません。	b6d065bf
+preview.failed_read_file	ファイルを読み取れませんでした: {0}	46c4e52b
+preview.failed_read_file_plain	ファイルを読み取れませんでした。	9c3f8d17
+## audio
+audio.audio_files	音声ファイル	e7b16352
+audio.playback_position	再生位置	61d5ff75
+audio.previous_track_ctrl_left	前のトラック (Ctrl+←)	1e5f9e32
+audio.play	再生	5d12bd53
+audio.next_track_ctrl_right	次のトラック (Ctrl+→)	d23b38e8
+audio.mute_m	ミュート (M)	4b5c1a90
+audio.volume	音量	3b18e8e3
+audio.file_too_large_preview_over_256	ファイルが大きすぎてプレビューできません（256 MB 超）。コンテキスト メニューから「関連付けられたアプリで開く」を選んでください。	5f24eb00
+audio.reading	読み込んでいます…	ae18b70a
+audio.file_could_not_be_read	このファイルを読み取れませんでした。	e3744714
+audio.pc_cannot_play_file_decoder_format	この PC ではこのファイルを再生できません（この形式のデコーダーがない可能性があります）。	a487415a
+audio.reached_last_track	最後のトラックです。	1b15f3e9
+## scan
+scan.cannot_scan_windows_real_time	スキャンできません: Windows のリアルタイム保護がオフです。Windows セキュリティでオンにしてください。	e1cd88f6
+scan.cannot_scan_antivirus_product	スキャンできません: インストールされているウイルス対策ソフトが AMSI に対応していません。Windows Defender は対応しています。オンになっていることを確認してください。	d761d14d
+scan.cannot_scan_computer_cannot_use	スキャンできません: この PC では Windows のマルウェア スキャン インターフェイス (AMSI) を使えません。	3e0a3732
+scan.file_s_scanned	{0} 個のファイルをスキャンしました（{1}）	fac2ea06
+scan.suspicious_file_s_found	、疑わしいファイルが {0} 個見つかりました	47e1ee76
+scan.nothing_found	、何も見つかりませんでした	4b3809ad
+scan.file_s_skipped_too_big	、{0} 個のファイルをスキップ（大きすぎる）	21fcc6c0
+scan.file_s_skipped_encrypted	、{0} 個のファイルをスキップ（暗号化）	5ef5c1ee
+scan.could_not_be_read	、{0} 個は読み取れませんでした	45b47d1a
+scan.could_not_be_scanned	、{0} 個はスキャンできませんでした	c00f2a01
+## assoc
+assoc.writing_registry_failed	レジストリへの書き込みに失敗しました（{0}）: HKCU\\{1}	b227d1e2
+assoc.lycanzip_split_archive_001	LycanZip 分割圧縮ファイル (.001)	2923f4fe
+assoc.lycanzip_comic_book_archive	LycanZip {0} コミック圧縮ファイル	7c877261
+assoc.lycanzip_archive	LycanZip {0} 圧縮ファイル	bfcd176b
+assoc.path_lycanzip_exe_was_not_given	LycanZip.exe のパスが指定されていません	bdd9f137
+assoc.open_source_ad_free_lightweight	オープンソース、広告なし、軽量の圧縮・展開ソフト	c79109cd
+assoc.could_not_remove	{0} を削除できませんでした（{1}）	b99ee88b
+## app
+app.lycanzip_task_s_running	LycanZip: {0} 個のタスクを実行中、{1}%	f9c7a519
+app.lycanzip_tasks_running_no_percent	LycanZip: {0} 個のタスクを実行中	6c03fab4
+app.tasks_finished	タスクが完了しました	3943ba15
+app.all_tasks_finished	すべてのタスクが完了しました。	e4026e4d
+app.lycanzip_still_has_tasks_running	LycanZip で実行中のタスクがあります	9c8e7265
+app.show_window	ウィンドウを表示	0502f5ca
+app.cancel_all_tasks	すべてのタスクをキャンセル	85159977
+app.exit_lycanzip	LycanZip を終了	842a20fa
+## win11
+win11.error_code	エラー コード {0}	bf62a269
+win11.not_windows_11_new_style_context	Windows 11 ではありません。新しいスタイルのコンテキスト メニューは Windows 11 でのみ使えます。	3072296c
+win11.was_not_found	{0} が見つかりません	74587794
+win11.was_not_found_version_has_no	{0} が見つかりません。このバージョンにはまだ署名済みの新しいスタイルのメニュー パッケージがありません。	1242f165
+## drag
+drag.items	{0} 個の項目	026a1b0e
+drag.folder	フォルダー	30baa249
+## preset
+preset.general_zip	標準 ZIP	f75cf2d3
+preset.general_7z	標準 7z	773f446e
+preset.fast	高速	8db6a2f1
+preset.e_mail_share	メール / 共有	bd390aae
+preset.backup	バックアップ	dd96994d
+preset.store_only_no_compression	無圧縮で格納	05d2dfd8
+## lang
+lang.zh_tw	繁體中文	1f7e4a4c
+lang.en_us	English	649df08a
+lang.zh_cn	简体中文	93659150
+lang.ja_jp	日本語	c12140a0
+lang.ko_kr	한국어	6e081b59
+lang.de_de	Deutsch	a6a77092
+lang.es_es	Español	2001ca08
+lang.fr_fr	Français	2ca514eb
+## fmt
+fmt.value_paren	{0}（{1}）	4aec5d0a
+fmt.size_bytes	{0}（{1} バイト）	a94a0670
+fmt.n_files	{0} 個のファイル	113de731
+fmt.and_n_folders	、{0} 個のフォルダー	8bf5d515
+fmt.paren	（{0}）	1ced71b6
+fmt.status_items_size	  ·  {0} 個の項目  ·  {1}	c2148bb6
+fmt.n_items_short	{0} 個	79a3ecf0
+fmt.n_items	{0} 個の項目	79a3ecf0
+fmt.percent_paren	（{0}%）	2955fcd7
+fmt.n_sources	  |  圧縮元 {0} 個	4065a811
+fmt.colon_value	: {0}	4f5acaf5
+## sums
+sums.verify_title	チェックサム ファイルの検証	6a43bbf1
+sums.checking	確認しています…	820d6004
+sums.checking_progress	確認しています… {0}%（{1} / {2}）	7d7f4ea5
+sums.error_unreadable	チェックサム ファイルを読み取れませんでした。	32f68ef2
+sums.error_too_big	チェックサム ファイルが大きすぎます。	a62b533e
+sums.error_no_lines	チェックサム ファイルではないようです: ハッシュ値のある行がありません。	88a7b6d0
+sums.all_match	✓ {0} 個のファイルがすべて一致しました。	4c5be580
+sums.bytes_read	{0} 読み取り済み	bce96785
+sums.some_match	✗ {1} 個中 {0} 個のファイルが一致しました。	7077b230
+sums.differs	一致しません	d15ff640
+sums.not_found	見つかりません	475c8486
+sums.could_not_read	読み取れません: {0}	65d7b999
+sums.more_not_listed	…ほか {0} 個は一覧にありません	0bba02be
+sums.extra_files	{0} 個のファイルは圧縮ファイルにありますが、チェックサム ファイルにはありません:	ec12fe42
+sums.names_skip_checksum	圧縮ファイルに合わせるため、チェックサム ファイルの名前の先頭 {0} 階層のフォルダーを除きました。	a45ece3d
+sums.names_skip_archive	チェックサム ファイルに合わせるため、圧縮ファイル内のパスの先頭 {0} 階層のフォルダーを除きました。	7a193140
+sums.bad_lines	解釈できない {0} 行をスキップしました。	53c549af
+sums.summary_many	{1} 個中 {0} 個のチェックサム ファイルが完全に一致しました。	d5d2dbe9
+sums.of_archive	「{0}」内のファイル	5dcf2a18
+sums.of_folder	チェックサム ファイルと同じ場所のファイル（{0}）	9e2ca60d
+sums.n_checksum_files	{0} 個のチェックサム ファイル	b9bc0f41
+sums.names_not_found	チェックサム ファイルのファイル名のほとんどが圧縮ファイル内に見つかりませんでした。フォルダーのパスが異なる場合は、下で削除または追加するプレフィックスを指定してください。	93e716cd
+sums.strip_prefix	チェックサムのパスから削除するプレフィックス	d27f48c7
+sums.strip_example	例: backup/2025/	3eb331e6
+sums.add_prefix	チェックサムのパスに追加するプレフィックス	c03022f0
+sums.add_example	例: photos/	fb0d3a26
+sums.check_again	もう一度確認	e185048c
+sums.match_only_means	一致した場合、ファイルはチェックサム ファイルが作成されたときと同じです。チェックサム ファイルを信頼できるかどうかは、その入手元によります。	92da1fdc
+sums.verify_archive_with	{0} で圧縮ファイルを検証	82b71eac
+sums.verify_files_with	{0} でファイルを検証	cdcbf4f6
+sums.banner_title	この圧縮ファイルの隣にチェックサム ファイルがあります	5f7afa0a
+sums.folder_files	フォルダー「{0}」: {1} 個のファイル	d1be963b
+sums.no_files_to_hash	ハッシュ値を計算するファイルがありません。	67d9d4ea
+sums.side_unusable	{0} を使えませんでした。	f8388be4
+sums.side_no_entry	{0} にはこのファイルの値がありません。	823632ad
+sums.side_waiting	{0} と照合しています…	722743f7
+sums.side_untick	{0} には {1} の値があります。比較するには上で {1} を選んでください。	80c436a1
+sums.side_match	✓ 同じフォルダーの {0} と一致します。	349ed159
+sums.side_differ	✗ 同じフォルダーの {0} と一致しません（記載されている値: {1}）。	6804287b
+sums.verify_menu	チェックサム ファイルを検証…	5ef9d65d
+sums.setting_archive	新しい圧縮ファイルのチェックサム ファイルを作成する	2511268d
+sums.setting_archive_caption	圧縮ファイルの隣に、その SHA-256 ハッシュを記した name.zip.sha256 を保存します（分割圧縮ファイルではボリュームごとに 1 行）。ダウンロードや共有したファイルの検証に役立ちます。コンテキスト メニューからのクイック圧縮に適用され、テンプレートでは各テンプレートの設定が使われます。	ac78b96d
+sums.setting_files	圧縮したファイルのチェックサム ファイルを作成する	9c9c05a1
+sums.setting_files_caption	圧縮ファイルの隣に、中の各ファイルの SHA-256 ハッシュを記した name.sha256 を保存します。後で圧縮ファイルの内容を検証するのに役立ちます。コンテキスト メニューからのクイック圧縮に適用され、テンプレートでは各テンプレートの設定が使われます。	aef4dbd2
+sums.card_note_written	 チェックサム ファイル: {0}	7e6782be
+sums.card_note_failed	 チェックサム ファイルを書き込めませんでした。	762c19c5
+sums.link_archive	圧縮ファイルを検証	d25cf6a5
+sums.link_files	ファイルを検証	37c5d700
+sums.menu_hash_save	計算して name.sha256 として保存（両方のメニュー）	b7b11e23
+sums.save_exists_title	チェックサム ファイルは既に存在します	e5226fcf
+sums.save_exists	「{0}」は既に存在します。置き換えますか? それとも新しいファイルを別の名前で保存して両方残しますか?	2f2622e0
+sums.save_replace	置き換える	a7cf7b25
+sums.save_keep_both	両方とも残す	60c801a8
+sums.save_title	チェックサムを計算して保存	8c086f1c
+sums.save_done	✓ 保存しました: {0}	0dbe15ea
+sums.save_done_skipped	 {0} 個のファイルは読み取れなかったため含まれていません。	fb6a6101
+sums.save_failed_title	チェックサム ファイルを保存できませんでした	018b3be7
+sums.notify_title	チェックサム ファイルを保存しました	6877922b
+sums.notify_skipped	{0}（{1} 個のファイルは読み取れませんでした）	cf4ba6a2
+preview.this_is_first	最初の画像です	230d3949
+preview.this_is_last	最後の画像です	4ce142e3
+audio.loop_none	順番に再生して停止	5eff807e
+audio.loop_all	すべてリピート	7cce343d
+audio.loop_one	このトラックをリピート	40115bbc
+audio.shuffle	シャッフル	5b772b7b
+audio.playback_mode_tip	再生モード: {0} (L)	e76eb3c6
+main.night	夜	1097b553
+main.home	ホーム	70f8bb9a
+main.desktop	デスクトップ	532c67fe
+main.documents	ドキュメント	687c8286
+main.downloads	ダウンロード	a862c2b2
+main.paste	貼り付け	db248300
+scan.affected_item_note	ウイルス対策ソフトが「影響を受ける項目」として「lycanzip-cli.exe」（または LycanZip）を表示することがあります。これは LycanZip がスキャンのためにデータ ストリームをウイルス対策ソフトに渡したためで、ディスクには何も書き込まれておらず、LycanZip 自体が感染しているわけではありません。	6fba3070
+## core
+core.cannot_list_folder	{0}: フォルダーの内容を取得できません	595a3cc5
+core.skipped_link	{0}（シンボリック リンク / ジャンクション）	7cc5b706
+core.skipped_output_itself	{0}（出力ファイル自体）	84b91d26
+core.cannot_compress_drive_root	ドライブのルートは圧縮できません。中のフォルダーを選んでください: {0}	613bacc0
+core.input_not_found	入力が見つかりません: {0}	f2dace5f
+core.cannot_read_file	{0}: 読み取れません（{1}）	4443424a
+core.custom_param_format	カスタム パラメーターは name=value の形式（スペース区切り）にする必要があります: {0}	31f4fa91
+core.custom_param_bad_char	カスタム パラメーターに無効な文字が含まれています	bd954308
+core.format_cannot_create	このバージョンの 7z.dll では {0} 形式の圧縮ファイルを作成できません	e340d737
+core.format_cannot_modify	この形式は変更できません	fba21d69
+core.cannot_create_handler	圧縮ハンドラーを初期化できませんでした	13da818b
+core.zipcrypto_weak	ZipCrypto の暗号化は脆弱です。安全性が重要な場合は AES-256 を使ってください	ad77761a
+core.zipcrypto_weak_compat	ZipCrypto（互換モード）の暗号化は脆弱です。安全性が重要な場合は AES-256 を使ってください	01aa2b18
+core.set_properties_failed	圧縮パラメーターを適用できませんでした（この形式は選択した方式またはパラメーターの組み合わせに対応していません）	6f057beb
+core.set_properties_failed_custom	圧縮パラメーターを適用できませんでした。カスタム パラメーターの入力ミスや形式との互換性を確認してください	35f4d0f4
+core.cancelled	キャンセルしました	f840ac65
+core.disk_full_archive	圧縮ファイルを書き込むためのディスク容量が足りません	5993ba38
+core.update_failed	圧縮ファイルを変更できませんでした	7b1dee4a
+core.create_failed	圧縮ファイルを作成できませんでした	90d456f9
+core.temp_space_plain	一時ディスク領域が足りないため、通常の圧縮に切り替えました（圧縮済みのファイルもそのまま格納されていません）	74e430a7
+core.cannot_read_back_temp	一時的な圧縮ファイルを読み戻せませんでした	b0e76526
+core.zip_password_ascii	ZIP の暗号化は ASCII 文字（英字、数字、一般的な記号）にのみ対応しています。ASCII 以外のパスワードには 7z を使ってください	eb33d87a
+core.zip_aes_password_long	ZIP AES のパスワードは 99 文字以内にする必要があります。短いパスワードか 7z 形式を使ってください	f09d8efc
+core.no_input	入力がありません	8dc8debc
+core.iso_no_volumes	ISO は分割に対応していません	32f98325
+core.iso_no_password	ISO はパスワードに対応していません	2d083ff0
+core.volume_too_small	分割サイズは 64 KB 以上にする必要があります	4d68d5a0
+core.volumes_zip_7z_only	分割は ZIP と 7z でのみ使えます	8ed1c78f
+core.tar_no_password	TAR 形式はパスワードに対応していません。ZIP または 7z を使ってください	e51c78ab
+core.nothing_to_compress	圧縮するものがありません	2672e759
+core.target_exists	出力先のファイルが既に存在します: {0}	37b33c23
+core.cannot_create_output	出力ファイルを作成できませんでした: {0}	861c3cbf
+core.cannot_create_temp	一時ファイルを作成できませんでした	71288840
+core.cannot_rename_temp_output	一時的な出力の名前を変更できませんでした: {0}	7554dad7
+core.invalid_name	無効な名前: {0}	64268bd2
+core.file_not_found	ファイルが見つかりません: {0}	e28dca49
+core.nothing_to_delete	削除する項目が指定されていません	a6fb797b
+core.not_in_archive	圧縮ファイル内に見つかりません: {0}	d9f85d0b
+core.nothing_to_rename	名前を変更する項目が指定されていません	68c8d63a
+core.cannot_move_into_itself	フォルダーをそれ自体の中に移動することはできません: {0}	60172ad7
+core.name_taken	圧縮ファイルには既にこの名前の項目があります: {0}	e16328f5
+core.is_folder_cannot_replace	これはフォルダーのため、内容を置き換えられません: {0}	a8d67a24
+core.replacement_is_folder	置き換えるものにフォルダーは指定できません: {0}	7e4b64b2
+core.nothing_to_add	追加するファイルがありません	5f89bc7f
+core.folder_name_taken	圧縮ファイルには既にこの名前のフォルダーがあります: {0}	83595597
+core.file_name_taken	圧縮ファイルには既にこの名前のファイルがあります: {0}	b08fb67c
+core.nothing_deleted_unreadable	一部のファイルを読み取れなかったため、圧縮ファイルから何も削除しませんでした	5876ea75
+core.archive_not_found	圧縮ファイルが見つかりません: {0}	573a9161
+core.archive_cannot_modify	この種類の圧縮ファイルは変更できません: {0}	f552428f
+core.password_needed_to_modify	圧縮ファイルに暗号化された項目があります。変更するにはパスワードが必要です	6540948a
+core.wrong_password	パスワードが正しくありません: {0}	74a0ee51
+core.tar_no_password_short	TAR はパスワードに対応していません	68738544
+core.disk_full_modify	ディスク容量が足りません。圧縮ファイルの変更には約 {0} MB 必要です（空き: {1} MB）	cf14287c
+core.cannot_create_temp_file	一時ファイルを作成できませんでした: {0}	07f9843a
+core.cannot_replace_archive	変更した圧縮ファイルで置き換えられませんでした（ファイルが別のプログラムで使用中か、書き込み権限がない可能性があります）: {0}	ed4f9793
+core.disk_full_target	出力先のドライブの空き容量が足りません: 約 {0} MB 必要、空き {1} MB	ec3d2a79
+core.op_ok	OK	9ce3bd42
+core.op_unsupported_method	サポートされていない圧縮方式	ef2a9e38
+core.op_data_error	データ エラー	c778bc80
+core.op_crc_error	CRC エラー	8c725472
+core.op_unavailable	データを利用できません	f230d2f1
+core.op_unexpected_end	データが予期せず終了しました	39d93c5f
+core.op_data_after_end	終端の後にデータがあります	781b28f4
+core.op_not_archive	圧縮ファイルではありません	0ed60af8
+core.op_headers_error	ヘッダー エラー	93d23602
+core.op_wrong_password	パスワードが正しくありません	fc2066fe
+core.op_unknown	不明なエラー	e5fd9aa2
+core.path_reason	{0}: {1}	4d3c418a
+core.get_items_failed	項目の数を読み取れませんでした	79b3b3df
+core.disk_full_extract	展開したファイルを書き込むためのディスク容量が足りません	f303f678
+core.extract_failed	展開に失敗しました	5991eb87
+core.cancelled_no_password	キャンセルしました（パスワードが入力されませんでした）	fba45152
+core.temp_write_failed	一時ファイルの書き込みに失敗しました	5ff6a944
+core.cannot_open_file	ファイルを開けませんでした: {0}	f47ed1c3
+core.unknown_format	不明な圧縮形式か、ファイルが破損しています: {0}	e81496d0
+core.item_index_out_of_range	項目のインデックスが範囲外です	58869057
+core.read_item_failed	項目を読み取れませんでした: {0}	13501ab1
+core.is_folder	フォルダーです	e971b3a4
+core.encrypted_needs_password	暗号化されています: パスワードが必要です	5c440053
+core.link_no_content	リンクには内容がありません	7f28c297
+core.skipped_symlink_policy	{0}（シンボリック リンク、安全設定によりスキップ）	87ffdbd9
+core.skipped_hardlink_policy	{0}（ハード リンク、安全設定によりスキップ）	8df2b6aa
+core.rejected_outside	{0}: パスが展開先フォルダーの外を指しています	58fd5dd4
+core.cannot_create_folder	{0}: フォルダーを作成できませんでした	e5f475c7
+core.cannot_create_parent	{0}: 親フォルダーを作成できませんでした	e52c1873
+core.folder_in_the_way	{0}: 展開先に同じ名前のフォルダーが既にあります	b9c178a7
+core.skipped_exists	{0}（既に存在します）	22be83fc
+core.file_exists	{0}: ファイルは既に存在します	69a42e39
+core.cannot_create_file	{0}: ファイルを作成できませんでした（{1}）	2d149b96
+core.cannot_replace_file	{0}: 既存のファイルを置き換えられませんでした（{1}）	af34f55c
+core.bomb_total	展開後のサイズが上限を超えたため停止しました（圧縮爆弾の可能性があります）	aa7db100
+core.bomb_ratio	圧縮率が異常に高いため停止しました（圧縮爆弾の可能性があります）	97e64e36
+core.bomb_actual	実際の展開後のサイズが上限を超えたため停止しました（圧縮爆弾の可能性があります）	3826ab3c
+core.cannot_create_target	展開先のフォルダーを作成できませんでした: {0}	75abb342
+core.disk_full	ディスク容量が足りません	a0ec91c6
+core.cannot_write_output	出力ファイルに書き込めませんでした（ディスクがいっぱいではありませんか?）	34b6b5b2
+core.iso_nothing	ISO に入れられるものがありません	1af43464
+core.iso_file_too_big	ISO 内の 1 つのファイルは 4 GB を超えられません（このバージョンはまだ UDF に対応していません）: {0}	5c20d6f9
+core.iso_cannot_read	{0}（読み取れません）	c2f1f002
+core.iso_short_read	{0}（読み取り中にファイルが短くなったか、読み取れませんでした）	cc9ed007
+core.launch_list_needs_path	--list にはファイルのパスが必要です	39e20492
+core.launch_cannot_read_list	一覧ファイルを読み取れませんでした: {0}	dfab0013
+core.launch_unknown_option	不明なオプション: {0}	df63ee43
+core.launch_no_files	ファイルが指定されていません	62b2324d
+core.path_empty	空のパス	4dd56da4
+core.path_nul	パスに NUL 文字が含まれています	0363e018
+core.path_absolute	絶対パスまたは UNC パス	3fd273c3
+core.path_drive	ドライブ文字が含まれています	8e14a535
+core.path_traversal	パス トラバーサル (..)	46858ead
+core.path_colon	NTFS の代替データ ストリームまたは不正なコロンが含まれています	7756e2a5
+core.path_component_empty	整理した後に空になる要素があります	bac592df
+core.path_no_component	パスに有効な要素がありません	ec228d1c
+core.path_renamed	名前に Windows で使えない文字または予約名が含まれていたため、自動的に変換しました	f43897c6
+core.dll_not_found	7z.dll が見つかりません（環境変数 LYCAN_7Z_DLL を設定するか、exe と同じフォルダーに置いてください）	bedf1866
+core.dll_load_failed	7z.dll を読み込めませんでした: {0}	7970328f
+core.dll_missing_exports	7z.dll に必要な関数がありません	303fec2b
+core.dll_formats_failed	GetNumberOfFormats が失敗しました	f25e7f29
+core.task_extract_failed	一部の項目を展開できませんでした	73d74623
+core.task_test_failed	一部の項目がテストに合格しませんでした	5d96975e
+core.task_unreadable	一部のファイルを読み取れませんでした	a0499c76
+core.task_no_amsi	Windows のマルウェア スキャン インターフェイス (AMSI) を使えません	ce19a6fc
+core.task_threat_found	疑わしいファイルが見つかりました	c358268b
+core.task_hash_failed	一部のファイルのチェックサムを計算できませんでした	cfa8f7b7
+core.temp_space_need	一時領域が足りません: 約 {0} MB 必要ですが、「{2}」の空きは {1} MB だけです	08f0bbc5
+core.temp_space_full	一時領域が足りません: 「{2}」がいっぱいです（空き {1} MB）	04139f08
+main.open_preview_key	圧縮ファイルを画像のプレビューで直接開く	4ec4fba1
+main.open_preview_key_hint	エクスプローラーから圧縮ファイルを開くときにこのキーを押したままにします。画像のない圧縮ファイルは通常どおり開きます。	bedba710
+main.key_shift	Shift	469d5b18
+main.key_ctrl	Ctrl	dd6a02a5
+main.key_none	使わない	72a86113
+audio.info_format	形式	041a5dec
+audio.info_bitrate	ビット レート	eddca7c3
+audio.info_sample_rate	サンプル レート	7a031620
+audio.info_channels	チャネル	18e03e2a
+audio.info_length	長さ	3bade34e
+audio.info_size	サイズ	b7152342
+audio.kbps	{0} kbps	d6fe6f7a
+audio.khz	{0} kHz	a15a2a00
+audio.mono	モノラル	c5c55338
+audio.stereo	ステレオ	f4f390b6
+audio.channels_n	{0} チャネル	c5f7ad51
+main.lock_open_archive	開いている圧縮ファイルをロックする	9a072cd4
+main.lock_open_archive_hint	LycanZip で圧縮ファイルを開いている間、ほかのアプリがそれを変更したり削除したりできないようにします。クラウド同期アプリ（OneDrive、Dropbox など）は、圧縮ファイルを閉じるまで変更の同期を待ちます。	547105a7
+shell.add_to_archive	圧縮ファイルに追加…	2cdc38ad
+shell.compress_to	「{0}」に圧縮	26079055
+shell.compress_each	それぞれ {0} に圧縮	71b71810
+shell.compress_with_preset	テンプレートで圧縮	851cb07a
+shell.hash	ハッシュ値を計算…	78ef4a80
+shell.hash_save	計算して「{0}」として保存	3bcf70ff
+shell.verify_checksum	LycanZip でチェックサム ファイルを検証	fa6d1cbb
+shell.other_formats	その他の形式	ad24dd8d
+shell.group_entry	{0}: {1}	4d3c418a
+shell.encrypted	暗号化された圧縮ファイル…	284a3b16
+shell.open_content	LycanZip で内容を開く	b4b5ada3
+shell.open	開く	cf9b7706
+shell.extract_here	ここに展開	5221b51b
+shell.extract_to_named	「{0}\\」に展開	70e9c1e4
+shell.extract_same_name	それぞれ別のフォルダーに展開	96adc4e4
+shell.extract_to	展開先を指定…	f5015680
+shell.test	整合性をテスト	ba25de4f
+shell.image_preview	画像のプレビュー	6c5de6ef
+shell.audio_preview	音声のプレビュー	47fea53e
+shell.extract_recent	最近使ったフォルダーに展開	6fb3e506
+shell.extract_merge	すべてを 1 つのフォルダーに展開	95dfa5b4
+shell.preset_zip	標準 ZIP	f75cf2d3
+shell.preset_7z	標準 7z	773f446e
+shell.preset_smallest	最小サイズ	ba07b565
+shell.preset_fast	高速	8db6a2f1
+shell.preset_mail	メール / 共有	bd390aae
+shell.preset_backup	バックアップ	dd96994d
+shell.preset_store	無圧縮で格納	05d2dfd8
+preview.set_wallpaper	デスクトップの背景に設定…	a8535aeb
+preview.wallpaper_title	デスクトップの背景に設定	bddfd29e
+preview.wallpaper_hint	デスクトップの背景の画像を変更します。圧縮ファイルを閉じても残るように、画像のコピーをフォルダー「{0}」に保存します（後で削除できます）。	545a014e
+preview.wallpaper_position	画像の位置	57ec5754
+preview.wallpaper_fill	ページ幅に合わせる	7adb6736
+preview.wallpaper_fit	ページ縦幅に合わせる	dab564d8
+preview.wallpaper_stretch	拡大して表示	b148ed24
+preview.wallpaper_tile	並べて表示	2dd2c660
+preview.wallpaper_center	中央に表示	a2391118
+preview.wallpaper_span	スパン	f9ac80c1
+preview.wallpaper_screen	ディスプレイ	5cc847f9
+preview.wallpaper_all_screens	すべてのディスプレイ	36e42090
+preview.wallpaper_screen_n	ディスプレイ {0}	450737fa
+preview.wallpaper_set	デスクトップの背景に設定	bddfd29e
+preview.wallpaper_done	デスクトップの背景を変更しました	db9a8288
+preview.wallpaper_failed	デスクトップの背景を変更できませんでした	fdcbceb4
+preview.save_as_original	元のファイル（{0}）	55a52041
+preview.save_as_type	{0} 画像	4b7c0e56
+main.updates	更新	c76d1807
+main.update_check	新しいバージョンを確認する	459eada1
+main.update_check_hint	LycanZip は週に 1 回、aegisulf.com に最新バージョンの番号を問い合わせます。それ以外は何も送信しません。インストール版は更新プログラムもダウンロードしますが、インストールするのはユーザーが選んだときだけです。	ff79bd40
+main.update_check_now	今すぐ確認	2ce5dd0d
+main.update_checking	確認しています...	494d0f68
+main.update_check_failed	Web サイトに接続できませんでした。	16d35b69
+main.update_up_to_date	LycanZip {0} が最新バージョンです。	c3b654ab
+main.update_available	バージョン {0} が利用できます	d3f8a66c
+main.update_with_command	更新コマンド: {0}	1d9bdc7c
+main.update_download	ダウンロード ページ	ca074cc1
+main.update_whats_new	新機能	4d8dc5fe
+main.update_skip	このバージョンをスキップ	31996a8b
+main.update_skip_tip	このバージョンについては通知しません。さらに新しいバージョンは通知されます。	495188b9
+fmt.gap	  	099600a1
+fmt.dot_gap	  ·  	c80c74a1
+fmt.bar_gap	  |  	af18a86b
+fmt.list_sep	、	d3bc9a37
+fmt.comma	、	d3bc9a37
+main.restart_explorer	エクスプローラーの再起動	4f2f2310
+main.restart_explorer_hint	右クリック メニューの変更がまだ反映されていないとき（メニューのオン / オフを切り替えた後や更新の後）に使います。	9826207f
+main.restart_explorer_do	再起動	b134bd55
+main.restart_explorer_title	エクスプローラーを再起動しますか?	1247b286
+main.restart_explorer_question	開いているフォルダー ウィンドウが閉じ、タスク バーが一瞬消えます。先にエクスプローラーでの作業を終えてください。	bb88d250
+main.menu_updated	右クリック メニューが更新されました	35a346d0
+main.menu_updated_restart_explorer	新しいバージョンを使うには、エクスプローラーを再起動してください。	81b74c5b
+main.off	オフ	e3de5ab0
+main.virustotal_lookup	VirusTotal で調べる	45155d86
+main.virustotal_lookup_tip	SHA-256 を計算し、ブラウザーで VirusTotal を開きます。送信されるのはハッシュだけで、ファイルは送信されません。VirusTotal が知らないハッシュでも、ファイルが安全だとは限りません。	162ec07b
+main.resize_column	列の幅を変更	a352329f
+main.reset_column_widths	列の幅をリセット	0d1aad85
+main.ratio	圧縮率	794f65e9
+main.col_encrypted	暗号化	bde2fbb6
+main.col_crc	CRC	3841eeac
+main.col_method	方式	88306943
+main.sort_by_ratio	圧縮率で並べ替え	0f42a324
+main.sort_by_encrypted	暗号化で並べ替え	c704964e
+main.sort_by_crc	CRC で並べ替え	4a496c5c
+main.sort_by_method	方式で並べ替え	3fefe5e6
+main.info_technical	技術情報\n	89d4e276
+main.info_created	作成日時: {0}\n	76448e49
+main.info_accessed	アクセス日時: {0}\n	5702c685
+main.info_method	方式: {0}\n	768c45b6
+main.info_permissions	アクセス許可: {0}\n	8bdf2fd8
+main.info_host_os	作成元: {0}\n	c3576d38
+main.info_characteristics	特性: {0}\n	04bb04e0
+main.info_link	リンク先: {0}\n	3502a252
+main.info_block	ソリッド ブロック: {0}\n	81074eb6
+main.info_offset	圧縮ファイルの {0} バイト目から開始\n	5f8618a5
+main.info_comment	コメント: {0}\n	5491205f
+core.dll_not_pinned	7z.dll が LycanZip に付属のものではないため、読み込みませんでした: {0}。正しいファイルを入手するには LycanZip を再インストールしてください	ab86763d
+core.dll_missing_pinned	LycanZip と同じ場所に 7z.dll が見つかりませんでした。LycanZip を再インストールして元に戻してください	2568bd9b
+main.update_install_now	今すぐインストール	8607e4ba
+main.update_install_title	更新プログラムのインストール	ac0f0e99
+main.update_install_question	LycanZip {0}（{1}）をダウンロードしてインストールしますか? LycanZip はいったん終了し、自動的に再起動します。	77267b1b
+main.update_downloading	更新プログラムをダウンロードしています... {0}%	a19e7001
+main.update_not_in_feed	インストールできる新しいバージョンはまだありません。後でもう一度お試しください。	7bc79e7b
+main.update_failed	更新プログラムをダウンロードできなかったか、検証に合格しませんでした。何も変更されていません。後でもう一度お試しください。	aa9ff9d1
+main.update_tasks_running	実行中のタスクがあります。タスクの完了を待つかキャンセルしてから、更新プログラムをインストールしてください。	5f0e8545
+main.update_ready	バージョン {0} をインストールする準備ができました	bb0155f4
+main.update_ready_hint	更新を完了するため、LycanZip はいったん終了して再起動します。	2953ac9d
+main.update_restart_now	再起動して更新	68d74304
+main.two_copies_title	LycanZip が 2 つインストールされています	ae047f6d
+main.two_copies_store_owns	Microsoft Store 版の LycanZip もインストールされています。右クリック メニューとファイルの種類はそちらが提供するため、このコピーは自分の分をオフにしました。エクスプローラーには LycanZip が 1 回だけ表示されます。\n\nコピーは 1 つにしておく方が簡単です。使わない方は「インストールされているアプリ」から削除できます。\n\nこのコピー: {0}	a26b2e9a
+main.two_copies_other_has_menu	別のコピーの LycanZip が独自の右クリック メニューまたはファイルの種類を登録しているため、エクスプローラーに LycanZip が 2 回表示される場合があります。そのコピーを一度起動する（このバージョンを見つけるとオフにします）か、「インストールされているアプリ」から削除してください。\n\n別のコピー: {0}	35d66071
+main.open_installed_apps	インストールされているアプリを開く	2765c7aa
+main.store_version_provides_menu	Microsoft Store 版の LycanZip がインストールされています。右クリック メニューとファイルの種類はそちらが提供するため、このコピーではオフになっています。	f670f18e
+main.other_copy_note	別のコピーの LycanZip も右クリック メニューまたはファイルの種類を登録しています: {0}\nエクスプローラーに LycanZip が 1 回だけ表示されるように、そのコピーを一度起動する（このバージョンを見つけるとオフにします）か、削除してください。	883c2d94
+main.store_menu_switch_hint	エクスプローラー内の LycanZip のすべての項目（右クリック メニュー、Windows 11 では右ドラッグ メニューも）を表示または非表示にします。次にメニューを開いたときに反映され、何も登録や削除はされません。	756e4de1
+main.welcome_offer_title	LycanZip を初めてお使いですか?	e06f512c
+main.welcome_offer_hint	少し時間をとって、外観、サウンド、プレビューを選びましょう。	ebdcfb8d
+main.welcome_offer_start	セットアップ	a5041fda
+main.welcome_offer_no	いいえ、結構です	5f5c4384
+welcome.file_explorer_menu	エクスプローラーの右クリック メニュー	7000f59a
+main.view_small_icons	小アイコン	9fd460c2
+main.view_medium_icons	中アイコン	66c5bbfe
+main.view_large_icons	大アイコン	7d71ad7d
+main.view_huge_icons	特大アイコン	4ec7f1c2
+main.search_settings	設定を検索	9a6f37a7
+main.search_settings_ctrl_f	設定を検索 (Ctrl+F)	2763171f
+main.no_settings_match	一致する設定はありません	ba12d2cd
+main.search_settings_on_page	設定を検索（[設定] ページで）	862a70e5
+main.preview_pane	プレビュー ウィンドウ	b40b3929
+main.preview_pane_toggle	プレビュー ウィンドウの表示切り替え	cad29b53
+main.show_preview_pane	プレビュー ウィンドウを表示する	d5b62a9a
+main.preview_pane_desc	どの表示でも、フォルダー ツリーの下に選択した項目（画像、テキスト、PDF、音声のタグ、詳細）を表示します。ウィンドウの幅が狭すぎるときは自動的に非表示になります。	8fe413c6
+main.show_hide_preview_pane	プレビュー ウィンドウの表示 / 非表示	89f2d82c
+main.drag_resize_preview_pane_double	ドラッグしてプレビュー ウィンドウのサイズを変更（ダブルクリックで元に戻す）	aaa0b471
+main.preview_pane_splitter	プレビュー ウィンドウの境界線	ad8cab6b
+preview.pane_text	テキストのプレビュー	960373f3
+preview.pane_loading	読み込み中	8f26c652
+preview.pane_enlarge	大きなプレビューを開く	b7a798a8
+preview.pane_previous_page	前のページ	81f54719
+preview.pane_next_page	次のページ	4bfc194b
+preview.pane_page_of	{0} / {1} ページ	c10e7490
+preview.pane_play	再生	5d12bd53
+preview.pane_enter_password	パスワードを入力	570591c0
+preview.pane_locked	暗号化されています。プレビューするにはパスワードを入力してください。	0c432e08
+preview.pane_program_not_previewed	プログラムとインストーラーはプレビューしません。	ba76c063
+preview.pane_not_text	このファイルはテキストではないようです。	533067ba
+preview.pane_text_truncated	（最初の {0} だけを表示しています。）	79ced1ce
+preview.pane_audio_title	タイトル	768e0c1c
+preview.pane_audio_artist	アーティスト	6c3f3d32
+preview.pane_audio_album	アルバム	dfb4c9a1
+preview.pane_length	長さ	3bade34e
+preview.pane_pdf_failed	この PDF は表示できません。破損しているか保護されている可能性があります。	a741ecac
+preview.pane_window_title	プレビュー	f1fbb2b4
+preview.pane_window_title_name	プレビュー – {0}	d4bdfa4a
+welcome.preview_pane_hint	フォルダー ツリーの下に、選択した画像、テキスト、PDF を表示します	9066fd16
+preview.reading_mode	閲覧モード	d75871a6
+preview.reading_mode_tip	閲覧モード (B): 圧縮ファイル全体を順番に、2 ページ見開き、右から左へ	d7b46a5e
+preview.reading_on	閲覧モード オン	8dfdb523
+preview.reading_off	閲覧モード オフ	6d526edb
+preview.reading_rtl	右から左	da502a64
+preview.reading_ltr	左から右	34ce1477
+preview.reading_direction_tip	読む方向 (D)	39306b19
+preview.reading_spread_auto	ページ: 自動	f2bfb879
+preview.reading_spread_single	単ページ	b6c31c22
+preview.reading_spread_double	見開き	bd8c3aa6
+preview.reading_spread_tip	見開き (S): 自動 / 単ページ / 見開き	3b726cd5
+preview.reading_shift	1 ページずらす	5f7d1b48
+preview.reading_resume	{0} ページから続けます	abd0854c
+main.comic_reading_mode	コミック圧縮ファイルを閲覧モードで開く	410e39d2
+main.comic_reading_mode_desc	.cbz、.cb7、.cbr、.cbt ファイルをダブルクリックすると、画像のプレビューの閲覧モードで画像を開きます。ファイル一覧を表示するにはオフにします。	7c65a9e1
+main.reading_mode_keys	閲覧モード / 読む方向 / 単ページまたは見開き / 1 ページずらす	7ffd115a
+main.remember_this_password	このパスワードを記憶する	9c29b204
+main.used_saved_password	保存したパスワードで開きました	8fbc1750
+main.passwords	パスワード	02c83041
+main.password_manager	パスワード マネージャー	17015895
+main.auto_try_saved_passwords	保存したパスワードを自動的に試す	c5c561d7
+main.auto_try_saved_passwords_desc	圧縮ファイルにパスワードが必要なとき、保存したパスワードを先に試し（最大 50 個または 5 秒）、どれも合わない場合だけ確認します。	5cd0401d
+main.remember_run_passwords	このセッションで使ったパスワードを記憶する	92bf3dab
+main.remember_run_passwords_desc	正しかったパスワードは LycanZip を閉じるまでメモリに保持され、優先して試されます。ディスクには書き込まれません。	c99abf03
+main.remember_password_default	「このパスワードを記憶する」を既定でオンにする	7f51be69
+main.remember_password_default_desc	パスワードのダイアログで。オフの場合、パスワードはオンにしたときだけ保存されます。	dbbb2f08
+main.saved_passwords	保存したパスワード	b3c61c55
+main.saved_passwords_desc	設定と同じ場所の passwords.dat に、Windows アカウント用に暗号化して保存されます。読み取れるのはこの PC のこのアカウントだけです（ポータブル版を別の PC に移すと読み取れません）。お使いのアカウントで動作するマルウェアからは保護されません。	c21e27eb
+main.add_password	パスワードを追加	7b7a8260
+main.import_passwords	インポート…	4834caf8
+main.export_passwords	エクスポート…	0a116345
+main.clear_unreadable_passwords	保存したパスワードを削除	2063bc45
+main.saved_passwords_unreadable	保存したパスワードを読み取れません。別の Windows アカウントや別の PC で保存されたか、ファイルが破損しています。	bf64511e
+main.clear_unreadable_passwords_question	passwords.dat を削除しますか? 中のパスワードは失われます。その後、新しいパスワードを保存できます。	942eb96f
+main.no_saved_passwords	保存したパスワードはまだありません。パスワードを入力するときに「このパスワードを記憶する」をオンにするか、ここで追加してください。	0be995a4
+main.hidden_password	非表示のパスワード	a51156d2
+main.never_used	未使用	984ec5ee
+main.copy_password	パスワードをコピー	cda3abab
+main.edit_password	パスワードを編集	22215170
+main.delete_password	パスワードを削除	330753fe
+main.delete_password_question	この保存したパスワードを削除しますか?	7330db44
+main.password_copied	パスワードをコピーしました	9a0081f0
+main.password_note	メモ（省略可）	4e395670
+main.password_note_hint	このパスワードの入手元	bd693a41
+main.could_not_save_passwords	パスワードを保存できませんでした。	d5436c25
+main.password_file_too_large	このファイルはパスワードの一覧にしては大きすぎます。	1c31e120
+main.passwords_imported	{0} 個の新しいパスワードをインポートしました。	6d274f3a
+main.export_passwords_warning	エクスポートしたファイルはプレーン テキストです。開ける人なら誰でもすべてのパスワードを読めます。安全な場所に保管し、不要になったら削除してください。	ba640f91
+main.text_file	テキスト ファイル	ee3d21a8
+main.passwords_exported	パスワードをエクスポートしました	1100b2dc
+main.master_password	マスター パスワード	33acdbd6
+main.master_password_desc	保存したパスワードを試したり、表示・変更したりする前に、パスワードを 1 つ入力します（LycanZip を起動するたびに 1 回）。忘れると保存したパスワードは復元できず、削除するしかありません。	453684fb
+main.master_password_off	オフ。保存したパスワードは Windows アカウントだけで保護されています。	8e599348
+main.master_password_unlocked	オン。保存したパスワードは LycanZip を閉じるまでロック解除されています。	9b1f206e
+main.master_password_locked	オン。保存したパスワードはロックされています。	d650441e
+main.set_master_password	マスター パスワードを設定	5867cf47
+main.change_master_password	マスター パスワードを変更	318ba37e
+main.turn_off_master_password	マスター パスワードをオフにする	a4c8bd59
+main.lock_now	今すぐロック	9217b30d
+main.unlock	ロック解除	1526a17e
+main.unlock_saved_passwords	保存したパスワードのロック解除	8310b6ac
+main.forgot_master_password	マスター パスワードを忘れた場合	4322007e
+main.reset_saved_passwords_question	マスター パスワードがないと、保存したパスワードは読み取れません。保存したパスワードとマスター パスワードをすべて削除しますか? この操作は元に戻せません。	82c2607e
+main.delete_all	すべて削除	08170580
+main.current_master_password	現在のマスター パスワード	78246fe5
+main.new_master_password	新しいマスター パスワード	a935c72d
+main.master_password_rules	4 文字以上。忘れると保存したパスワードは復元できず、削除するしかありません。	7d63f663
+main.wrong_master_password	マスター パスワードが正しくありません。	70658a46
+main.master_password_set	マスター パスワードを設定しました	48fb5813
+main.master_password_changed	マスター パスワードを変更しました	aeb24a2b
+main.master_password_turned_off	マスター パスワードをオフにしました	84fb0020
+main.saved_passwords_locked_now	保存したパスワードをロックしました	7799a360
+main.saved_passwords_are_locked	保存したパスワードはロックされています。表示や変更をするには、マスター パスワードでロックを解除してください。	7d5fda6d
+main.unlock_to_try_saved	保存したパスワードはロックされています。マスター パスワードを入力すると、それらを試します。	694ae67a
+main.master_to_remember	保存したパスワードはロックされています。このパスワードを記憶するには、マスター パスワードを入力してください。	a14af63c
+main.enter_master_to_remember	このパスワードを記憶するには、マスター パスワードを入力してください。	3f28a8b9
+main.unlock_and_try	ロック解除して試す	2d406384
+main.no_saved_password_fits	保存したパスワードはどれも一致しません。	f5d39707
+main.use_saved_password	保存したパスワードを使う	ccb81a8c
+main.show_passwords	パスワードを表示	a7656741
+main.save_button	保存	efc007a3
+core.repack_damaged	圧縮ファイルの {0} 個の項目を読み取れません（破損）。変換は行われませんでした。	abbaaa71
+core.repack_test_failed	新しい圧縮ファイルが整合性テストに合格しませんでした。元の圧縮ファイルは変更されていません。	41a7b625
+core.repack_count_mismatch	新しい圧縮ファイルのファイル数は {0} 個で、元の圧縮ファイルは {1} 個でした。	80a46cfa
+main.convert_archive_format	圧縮ファイルの形式を変換…	9555ac3f
+main.convert_archive_title	圧縮ファイルの形式を変換	14c35dc9
+main.remove_archive_password	圧縮ファイルのパスワードを削除	b7a726b2
+main.upgrade_archive	圧縮ファイルをアップグレード	95cf43c8
+main.upgrade_archive_tip	ファイル名を UTF-8 で保存し直し、どの PC でも正しく表示されるようにします。データはそのままコピーされます。	0693060f
+main.upgrade_avoids_problem	圧縮ファイルをアップグレードすると、この問題を避けられます。	3b1ecb4c
+main.convert_password	新しい圧縮ファイルのパスワード	f99b5cc8
+main.keep_original_password	元のパスワードを使う	ade86a77
+main.no_password	パスワードなし	18518368
+main.new_password	新しいパスワード	d850ee18
+main.convert_each_keeps_name	各圧縮ファイルは元の名前のまま、拡張子が {0} になります	86eeb4df
+main.password_removed	パスワードを削除しました（新しい圧縮ファイルは整合性テストに合格しました）	8451dd24
+main.archive_upgraded	圧縮ファイルをアップグレードしました: ファイル名は UTF-8 で保存されています	abec33f5
+main.items_left_out_original_kept	（読み取れない項目が除外されたため、元のファイルの削除は表示されません）	f4309fa4
+main.conversion	変換	9151f843
+main.password_removal	パスワードの削除	43970eb1
+task.tested	、テスト済み	0d1a310d
+task.left_out	、{0} 個を除外	170b0356
+shell.convert	圧縮ファイルの形式を変換…	9555ac3f
+main.start_converting	変換を開始	69bc1019
+main.upgrade_confirm_text	ファイル名は下に表示されているとおりに UTF-8 で恒久的に保存されます。文字化けしている場合は、先に別のエンコードを選んでください。	35846f99
+main.upgrade_encoding_uncertain	エンコードは自動検出されましたが、確実ではありません。ファイル名をよく確認してください。	28d37b63
+main.upgrade_button	アップグレード	a6f47e00
+main.convert_names_note	ファイル名は現在の表示（{0}）のとおりに書き込まれます。文字化けしている場合は、戻って先に別のエンコードを選んでください。	4563f36d
+main.tar_names_title	ファイル名を UTF-8 で保存しますか?	1cc12cbc
+main.tar_names_text	この tar 圧縮ファイルのファイル名にはエンコードの情報がありません。変更すると、すべてのファイル名が下に表示されているとおりに UTF-8 で恒久的に保存されます。文字化けしている場合は、キャンセルして先に右上で別のエンコードを選んでください。	85e7fd4d

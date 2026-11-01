@@ -171,6 +171,19 @@ Settings LoadSettings(const fs::path& file) {
         else if (k == "shell_icons") s.shellIcons = ToBool(v, s.shellIcons);
         else if (k == "compact_rows") s.compactRows = ToBool(v, s.compactRows);
         else if (k == "show_folder_tree") s.showFolderTree = ToBool(v, s.showFolderTree);
+        else if (k == "preview_pane") s.previewPane = ToBool(v, s.previewPane);
+        else if (k == "preview_pane_height") {
+            try {
+                const long n = std::stol(v);
+                if (n >= 120 && n <= 1200) s.previewPaneHeight = static_cast<unsigned>(n);
+            } catch (...) {}
+        }
+        else if (k == "preview_window_rect") {
+            // four numbers separated by commas (x and y may be negative on a monitor left of / above the main one)
+            bool ok = v.size() <= 60 && std::count(v.begin(), v.end(), ',') == 3;
+            for (char c : v) if (!std::isdigit(static_cast<unsigned char>(c)) && c != ',' && c != '-') ok = false;
+            if (ok) s.previewWindowRect = v;
+        }
         else if (k == "stale_menu_ignored") { auto w = FromUtf8(v); if (w.size() <= 520) s.ignoredMenuPath = w; }
         else if (k == "two_copies_notice_shown") s.twoCopiesNoticeShown = ToBool(v, s.twoCopiesNoticeShown);
         else if (k == "update_mode") s.addMode = FromText(kAddModes, v, s.addMode);
@@ -178,6 +191,10 @@ Settings LoadSettings(const fs::path& file) {
         else if (k == "last_preset") { auto w = FromUtf8(v); if (!w.empty() && w.size() <= 40) s.lastPreset = CanonicalBuiltinPresetName(w); }
         else if (k == "compress_advanced_open") s.compressAdvancedOpen = ToBool(v, s.compressAdvancedOpen);
         else if (k == "dblclick_image_preview") s.doubleClickPreview = ToBool(v, s.doubleClickPreview);
+        else if (k == "comic_reading_mode") s.comicReading = ToBool(v, s.comicReading);
+        else if (k == "auto_try_passwords") s.autoTryPasswords = ToBool(v, s.autoTryPasswords);
+        else if (k == "remember_run_passwords") s.rememberRunPasswords = ToBool(v, s.rememberRunPasswords);
+        else if (k == "remember_password_default") s.rememberPasswordDefault = ToBool(v, s.rememberPasswordDefault);
         else if (k == "list_columns") {
             try {
                 const long n = std::stol(v);
@@ -295,17 +312,24 @@ bool SaveSettings(const fs::path& file, const Settings& s) {
             << "compact_rows=" << yn(s.compactRows) << "\n"
             << "shell_icons=" << yn(s.shellIcons) << "\n"
             << "show_folder_tree=" << yn(s.showFolderTree) << "\n"
+            << "preview_pane=" << yn(s.previewPane) << "\n"
             << "remember_view_mode=" << yn(s.rememberViewMode) << "\n"
             << "icon_thumbnails=" << yn(s.iconThumbnails) << "\n"
             << "thumb_size=" << s.thumbSize << "\n"
 
             << "\n[preview]\n"
             << "dblclick_image_preview=" << yn(s.doubleClickPreview) << "\n"
+            << "comic_reading_mode=" << yn(s.comicReading) << "\n"
             << "open_preview_key=" << ToText(kPreviewKeys, s.openPreviewKey) << "\n"
             << "audio_loop=" << ToText(kAudioLoops, s.audioLoop) << "\n"
             << "dblclick_audio_preview=" << yn(s.doubleClickAudioPreview) << "\n"
             << "preview_enlarge_small=" << yn(s.previewEnlargeSmall) << "\n"
             << "image_prefetch_mb=" << s.prefetchMB << "\n"
+
+            << "\n[passwords]\n"
+            << "auto_try_passwords=" << yn(s.autoTryPasswords) << "\n"
+            << "remember_run_passwords=" << yn(s.rememberRunPasswords) << "\n"
+            << "remember_password_default=" << yn(s.rememberPasswordDefault) << "\n"
 
             << "\n[extract]\n"
             << "conflict=" << ToText(kConflicts, s.conflict) << "\n"
@@ -376,6 +400,8 @@ bool SaveSettings(const fs::path& file, const Settings& s) {
             << "list_columns=" << s.listColumns << "\n"
             << "list_col_widths=" << s.listColWidths << "\n"
             << "tree_width=" << s.treeWidth << "\n"
+            << "preview_pane_height=" << s.previewPaneHeight << "\n"
+            << "preview_window_rect=" << s.previewWindowRect << "\n"
             << "recent_extract_dirs=" << JoinDirs(s.recentExtract) << "\n";
         if (!out.good()) return false;
     }

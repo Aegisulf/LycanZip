@@ -31,6 +31,8 @@ struct AudioRequest {
 
 // Known audio extensions (whether this PC can decode the format is only found out when it is played)
 bool IsPreviewableAudioName(const std::wstring& name);
+// The content type the Windows media source is given for this file (by its extension)
+const wchar_t* AudioContentType(const std::wstring& name);
 
 // Opens (or reuses) the player window of req.owner and plays req.items[req.start]
 void ShowAudioPreview(AudioRequest req);

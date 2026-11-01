@@ -1,0 +1,1520 @@
+# LycanZip 简体中文 (es-ES)。每行一条：id、Tab、译文、Tab、英文原文的哈希（由 tools/i18n.py 维护）。转义：反斜线加 n、反斜线加 t、两个反斜线。
+## main
+main.select	Seleccionar	85982229
+main.pause	Pausar	781961bc
+main.resume	Reanudar	b3bd0b5a
+main.cancel	Cancelar	77dfd213
+main.open_folder	Abrir carpeta	f9630141
+main.test_integrity	Comprobar integridad	ba25de4f
+main.settings	Configuración	c7f73bb5
+main.drag_files_here	Arrastra archivos aquí	0636917e
+main.archive_open_extract_files_folders	Archivo comprimido → abrir y extraer  ·  Archivos o carpetas → crear archivo comprimido	238fcb94
+main.open_archive	Abrir archivo comprimido	7f60c24c
+main.new_archive	Nuevo archivo comprimido	b9ec2a94
+main.choose_files	Seleccionar archivos…	20be8b95
+main.choose_folder	Seleccionar carpeta…	3a95ac72
+main.back	Atrás	b52b36b7
+main.extract_here	Extraer aquí	5221b51b
+main.extract	Extraer en…	f5015680
+main.add_files_folders_archive_you_can	Agregar archivos o carpetas a este archivo comprimido (o arrastrarlos aquí)	b3ba97f0
+main.add_archive	Agregar a archivo comprimido	b17b8c86
+main.add	Agregar	61cc55aa
+main.add_files	Agregar archivos…	9fdaa230
+main.add_folder	Agregar carpeta…	1c0da9c5
+main.new_folder	Nueva carpeta…	fea7178e
+main.preview	Vista previa	f1fbb2b4
+main.image_preview	Vista previa de imagen	6c5de6ef
+main.audio_preview	Vista previa de audio	47fea53e
+main.view	Vista	69bd4ef9
+main.list_all	Mostrar todo	04466388
+main.folder_tree	Árbol de carpetas	9c23f9bb
+main.folder_tree_toggle	Mostrar u ocultar el árbol de carpetas	36af87a8
+main.show_macos_metadata	Mostrar metadatos de macOS	720609b5
+main.details	Detalles	dc3decbb
+main.list	Lista	a1fffaaa
+main.show_image_thumbnails_icon_view	Mostrar miniaturas de imágenes en la vista de iconos	9ac42949
+main.sort_by_name	Ordenar por nombre	d3b65f5c
+main.sort_by_size	Ordenar por tamaño	2d08ec84
+main.sort_by_packed_size	Ordenar por tamaño comprimido	efa7243d
+main.sort_by_modified_date	Ordenar por fecha de modificación	d254e057
+main.sort_by_type	Ordenar por tipo	0b1fc8b5
+main.ascending	Ascendente	2b226c79
+main.descending	Descendente	36377adf
+main.more_options	Más opciones	86c0a35e
+main.archive_information	Información del archivo comprimido…	c03fec02
+main.hash_values_archive	Valores hash del archivo comprimido…	13da45e4
+main.scan_malware	Buscar malware	fafc5d2f
+main.hands_every_file_archive_antivirus	Envía cada archivo del archivo comprimido al antivirus instalado para que lo analice (mediante Windows AMSI). La protección en tiempo real debe estar activada y se omiten los archivos de más de 128 MB. LycanZip no tiene motor de análisis propio, así que un resultado limpio no garantiza la seguridad. La protección en la nube de Windows Defender puede enviar muestras sospechosas a Microsoft.	fccf6c01
+main.filename_encoding	Codificación de nombres de archivo	f1290c20
+main.up_one_level_backspace	Subir un nivel (Retroceso)	64d8b297
+main.up_one_level	Subir un nivel	71f23258
+main.current_location	Ubicación actual	75ea6a18
+main.search_ctrl_f	Buscar (Ctrl+F)	2b439fd3
+main.search	Buscar	bce06414
+main.drag_resize_folder_tree_double	Arrastra para cambiar el ancho del árbol de carpetas (doble clic para restablecerlo)	7c895e33
+main.folder_tree_splitter	Divisor del árbol de carpetas	b2a2647a
+main.select_all	Seleccionar todo	913afff1
+main.select_all_clear_selection	Seleccionar todo / Borrar selección	faf3477b
+main.name	Nombre	709a2322
+main.sort_by_location	Ordenar por ubicación	e01625c5
+main.location	Ubicación	d219c681
+main.type	Tipo	3deb7456
+main.size	Tamaño	b7152342
+main.packed	Comprimido	ac9f7c98
+main.modified	Modificado	19a532c8
+main.archive_contents	Contenido del archivo comprimido	c451d872
+main.archive_contents_list_icons	Contenido del archivo comprimido (lista / iconos)	f99fa9aa
+main.extract_selected_items_here	Extraer aquí los elementos seleccionados	7ef75e2c
+main.extract_selected_items	Extraer los elementos seleccionados en…	d48f0e52
+main.copy_path	Copiar ruta	9804556f
+main.clear_selection	Borrar selección	247fd631
+main.restore_default_settings	Restaurar la configuración predeterminada	7dc68a00
+main.settings_tabs	Pestañas de configuración	bd140503
+main.general	General	9239ee2c
+main.compression	Compresión	46ead404
+main.file_explorer	Explorador de archivos	700869dc
+main.shortcuts	Métodos abreviados	90c93523
+main.about	Acerca de	6b21fb79
+main.appearance	Apariencia	41def7a0
+main.language	Idioma	89b86ab0
+main.interface_language_restart	Idioma de la interfaz. Reinicia LycanZip después de cambiarlo.	522335fd
+main.saved_takes_effect_after	Guardado. Se aplicará después de reiniciar.	636c48e5
+main.follow_system	Usar la configuración del sistema	1b16bcb0
+main.theme	Tema	a797e309
+main.follow_system_fixed_light_dark	Usar la configuración del sistema, o claro, oscuro o contraste alto	595f2484
+main.light	Claro	a36ef8ab
+main.dark	Oscuro	ae1ef014
+main.high_contrast_black	Contraste alto (negro)	c341a6f4
+main.accent_color	Color de énfasis	e49578ed
+main.accent_color_buttons_selection	El color de énfasis de los botones, la selección, el progreso y los vínculos. «Usar la configuración del sistema» usa el color de énfasis de Windows.	b47a1f66
+main.background	Fondo	64dd60fe
+main.full_gradient_plus_moonlit_scene	Completo: degradado y la escena nocturna con luna de la página de inicio. Solo degradado: solo el color de fondo. Desactivado: material del sistema (Mica). El degradado sigue el color de énfasis y el modo claro u oscuro.	142c9f0e
+main.full	Completo	10b28a8c
+main.gradient_only	Solo degradado	aad06254
+main.close	Cerrar	bbfa773e
+main.animations	Animaciones	c77dcded
+main.page_transitions_list_loading_drag	Cambios de página y de pestaña, el paso de una carpeta a otra, los avisos, las tarjetas de tareas, los pasos de la ventana de bienvenida, la siguiente imagen de la vista previa y algunas estrellas que titilan en la página de inicio. No se reproducen si las animaciones están desactivadas en Windows.	695074f5
+main.sound_effects	Efectos de sonido	a41e30af
+main.sounds_opening_completion_errors	Sonidos al abrir, al terminar, en errores y en otros eventos. Desactivados de forma predeterminada.	f2ce9860
+main.sound_set	Conjunto de sonidos	0b3e2886
+main.synth_default_set_synthesized	Synth es el conjunto predeterminado de sonidos sintetizados. Wave es un conjunto de tonos más sencillo. Al seleccionar un conjunto se reproduce el sonido de finalización.	bd241e88
+main.system_notifications	Notificaciones del sistema	78adbf5b
+main.show_notification_when_tasks	Mostrar una notificación cuando terminen tareas mientras LycanZip no está en primer plano (los errores siempre se notifican). La barra de progreso y el parpadeo de la barra de tareas no dependen de esta opción.	048330e2
+main.multiple_windows	Varias ventanas	3fd4f2a6
+main.when_opening_another_archive	Al abrir otro archivo comprimido	975f569a
+main.when_window_already_use_open	Cómo abrir un archivo comprimido cuando ya hay una ventana en uso: abrirlo en una ventana nueva o reemplazar el contenido de la ventana actual. Si una ventana tiene tareas en curso o se abren varios archivos comprimidos a la vez, siempre se usan ventanas nuevas.	ff0b05f3
+main.open_new_window	Abrir en una ventana nueva	cb4c1f20
+main.replace_current_window	Reemplazar la ventana actual	a92596ce
+main.performance	Rendimiento	63c90455
+main.simultaneous_tasks	Tareas simultáneas	8868bc1f
+main.disk_bottleneck_so_1_run_one	La velocidad del disco suele ser el cuello de botella. Se recomienda 1 (una tarea a la vez).	83d28fbd
+main.task_priority	Prioridad de las tareas	37e4e62c
+main.how_much_machine_compress_extract	Cuántos recursos del sistema usan las tareas de compresión, extracción y comprobación. «Más baja» o «En segundo plano» reducen el impacto en otras aplicaciones, pero las tareas tardan más.	0d1c783e
+main.normal	Normal	45e118d0
+main.lower_leaves_some_cpu_others	Más baja (usa menos CPU)	00d8c45a
+main.background_lowest_also_saves_disk	En segundo plano (la más baja; también reduce el uso de disco y energía)	6786f633
+main.temporary_folder	Carpeta temporal	f9b015fa
+main.used_when_opening_files_from	Se usa al abrir o arrastrar archivos desde un archivo comprimido y al abrir o crear archivos .tar.gz. De forma predeterminada es la carpeta temporal del sistema. No se recomiendan unidades de red ni USB (son lentas).	768d718e
+main.choose	Seleccionar…	349ac8fb
+main.choose_temporary_folder	Seleccionar la carpeta temporal	ce762b1e
+main.reset	Restablecer	44c57abd
+main.reset_temporary_folder	Restablecer la carpeta temporal	e7a126ec
+main.clear_temporary_files	Borrar archivos temporales	242e5902
+main.extraction	Extracción	2552a425
+main.when_file_with_same_name_already	Cuando ya existe un archivo con el mismo nombre	6310186a
+main.ask_me_shows_options_on_every	«Preguntarme» te pregunta en cada conflicto y permite aplicar tu elección a todos los conflictos restantes.	41badf73
+main.file_conflict_handling	Gestión de conflictos de archivos	4af14a87
+main.ask_me	Preguntarme	10a8fd63
+main.skip	Omitir	3da47453
+main.overwrite	Sobrescribir	0625c54e
+main.rename_automatically	Cambiar el nombre automáticamente	eaecf2b5
+main.when_extracting_here	Al extraer aquí	85622c6d
+main.automatic_single_top_level_folder	Automático: si el archivo comprimido tiene una sola carpeta en el nivel superior, la extrae directamente aquí; si no, crea una carpeta con el nombre del archivo comprimido. Usa la flecha junto al botón para ver otras opciones.	18b0d690
+main.automatic_recommended	Automático (recomendado)	a068f350
+main.do_not_create_folder	No crear una carpeta	c4f1ccef
+main.create_folder_named_after_archive	Crear una carpeta con el nombre del archivo comprimido	80c9b557
+main.check_unusually_big_archives	Comprobar archivos comprimidos inusualmente grandes antes de extraer	54593980
+main.when_archive_would_unpack_far_more	Preguntar antes de extraer cuando un archivo comprimido ocuparía mucho más al descomprimirse (al menos 1 GB y más de 500 veces su tamaño comprimido, o 1 TB o más). Podría ser una bomba de compresión o un archivo grande legítimo, como la imagen de disco de una máquina virtual.	548960de
+main.open_folder_when_done	Abrir la carpeta al terminar	a3de0246
+main.skip_macos_metadata_when	Omitir los metadatos de macOS al extraer	0ad03852
+main.macosx_folder_files_starting_with	En los archivos comprimidos creados en macOS, la carpeta __MACOSX, .DS_Store y los archivos que empiezan por ._ no se necesitan en Windows. Si está activado, se omiten al extraer y se ignoran en la comprobación de carpeta única.	55d759da
+main.keep_files_have_data_error	Conservar los archivos con errores de datos	a8ffe63f
+main.when_archive_damaged_cut_off_what	Cuando un archivo comprimido está dañado o incompleto, conserva los datos que se pudieron extraer (las imágenes, los vídeos y los archivos de texto suelen ser parcialmente utilizables). Al terminar se muestran los archivos con errores. Si está desactivado, los archivos dañados se eliminan. Con una contraseña incorrecta, una tarea cancelada o un disco lleno, los archivos incompletos siempre se eliminan.	bf3654cc
+main.ask_before_deleting_archive	Preguntar antes de eliminar un archivo comprimido	1571593e
+main.ask_once_when_delete_archive	Preguntar una vez cuando se selecciona «Eliminar archivo comprimido» en el archivo comprimido de la parte superior del árbol de carpetas (se mueve a la Papelera de reciclaje). Si está desactivado, se elimina de inmediato y vuelves a la página de inicio.	91b986fd
+main.ask_before_deleting_items_from	Preguntar antes de eliminar elementos de un archivo comprimido	887aebad
+main.ask_once_when_delete_pressed	Preguntar una vez cuando se pulsa Supr o se selecciona «Eliminar». Los elementos se quitan directamente del archivo comprimido. No van a la Papelera de reciclaje y no se pueden recuperar (salvo que la copia de seguridad de abajo esté activada).	9963cc68
+main.keep_backup_when_archive_changed	Conservar una copia de seguridad al cambiar un archivo comprimido	0901745b
+main.when_files_archive_added_deleted	Al agregar, eliminar, cambiar de nombre o editar archivos de un archivo comprimido, conserva el archivo comprimido tal como estaba en la misma carpeta (con .bak añadido al nombre). Cada cambio sobrescribe la copia anterior.	79f9d4e3
+main.program_editing	Programa para editar	aad87903
+main.which_program_edit_item_right	La aplicación que usa «Editar» en el menú contextual. Si está vacío, los archivos de texto se abren en el Bloc de notas y los demás en su aplicación predeterminada. Se admiten rutas completas (por ejemplo, C:\\Program Files\\Notepad++\\notepad++.exe).	598afdb5
+main.ask_before_edited_file_goes_back	Preguntar antes de actualizar en el archivo comprimido los archivos editados	d41240a6
+main.after_edited_file_saved_ask_once	Después de guardar un archivo editado, preguntar si se actualiza en el archivo comprimido. Si está desactivado, se actualiza automáticamente.	9bddade2
+main.warn_before_opening_programs	Advertir antes de abrir programas, instaladores y scripts	6a5fabb4
+main.ask_first_when_you_double_click	Pedir confirmación al hacer doble clic en un archivo ejecutable (.exe, .msi, .bat, etc.) dentro de un archivo comprimido.	08615072
+main.warn_before_opening_programs_short	Advertir antes de abrir programas	a2f7b94b
+main.what_extract_when_opening_program	Qué extraer al abrir un programa	0315b5cf
+main.programs_often_need_files_next	Los programas suelen necesitar archivos de la misma carpeta (DLL, archivos de datos). «Misma carpeta» extrae la carpeta, con sus subcarpetas, a una carpeta temporal antes de ejecutar el programa.	4122dec3
+main.files_same_folder_recommended	Archivos de la misma carpeta (recomendado)	75241d55
+main.extract_only_file	Extraer solo este archivo	88665a9b
+main.close_window_automatically_after	Cerrar la ventana automáticamente después de una acción del menú contextual	da7d1f80
+main.when_you_extract_compress_from	Al extraer o comprimir desde el menú contextual, cerrar la ventana pequeña automáticamente cuando todo salga bien. Desactívalo para dejar la ventana abierta y ver el resultado.	17b6bcbc
+main.default_format	Formato predeterminado	8cb4e197
+main.show_new_archive_file_explorer	Mostrar el nuevo archivo comprimido en el Explorador de archivos después de comprimir	900b4e40
+main.test_integrity_after_compressing	Comprobar la integridad después de comprimir	e1b0ecf4
+main.after_compressing_new_archive_read	Después de comprimir, leer el nuevo archivo comprimido para asegurarse de que está intacto.	120ae65a
+main.skip_thumbs_db_automatically	Omitir Thumbs.db automáticamente	a643400e
+main.windows_thumbnail_cache_thumbs_db	Omitir el archivo de caché de miniaturas de Windows Thumbs.db al agregar carpetas (un Thumbs.db que selecciones tú se agrega igualmente).	c6a7657e
+main.default_compression_mode	Modo de compresión predeterminado	44f064cc
+main.balanced_recommended	Equilibrado (recomendado)	54966d31
+main.compatibility_first	Compatibilidad primero	87d2fc57
+main.smallest_size_slower	Tamaño mínimo (más lento)	db436898
+main.fastest	Más rápido	4cb3bb0f
+main.archive_view	Vista del archivo comprimido	2c4e1be2
+main.remember_last_chosen_view	Recordar la última vista elegida	46d5eed2
+main.layout_you_pick_view_menu_details	El diseño seleccionado en el menú Vista (detalles / lista / iconos) se usa la próxima vez que se abra un archivo comprimido. Si está activado, «Vista predeterminada» sigue tu última elección.	84a38711
+main.default_view	Vista predeterminada	343256a5
+main.details_has_columns_sorting_list	«Detalles» muestra columnas y permite ordenar. «Lista» es la más compacta. «Iconos» muestra iconos grandes. Puedes cambiar en cualquier momento desde el menú Vista.	ee3a428f
+main.default_browsing_mode	Modo de exploración predeterminado	0b61ca9a
+main.single_level_shows_one_folder_at	«Un solo nivel» muestra una carpeta cada vez; usa el árbol de carpetas de la izquierda o la barra de ruta para moverte. «Mostrar todo» muestra los archivos de todos los niveles en una sola lista. Puedes cambiar en cualquier momento desde la barra de herramientas.	636ff574
+main.single_level_folder_navigation	Un solo nivel (navegación por carpetas)	9bab0a04
+main.use_file_icons_windows	Usar los iconos de archivo de Windows	eb264ce6
+main.files_folders_lists_folder_tree	Usar los iconos del Explorador de archivos para los archivos y carpetas de la lista y del árbol de carpetas (según las aplicaciones instaladas). Si está desactivado, LycanZip usa sus propios iconos de colores.	d3c508e7
+main.only_works_non_solid_archives	Solo se aplica a archivos comprimidos no sólidos (leer una imagen de un archivo sólido exige descodificar los datos anteriores, así que no se crean miniaturas). Se lee en segundo plano solo cuando hace falta.	779ea938
+main.row_height	Alto de fila	0c1073d4
+main.compact_shows_more_items_at_once	«Compacto» muestra más elementos en pantalla	7892119a
+main.compact	Compacto	1df39aa5
+main.comfortable	Cómodo	2313707a
+main.show_folder_tree	Mostrar el árbol de carpetas	62e23424
+main.hidden_automatically_when_window	Se oculta automáticamente cuando la ventana es demasiado estrecha	8351f46b
+main.hide_macos_metadata	Ocultar los metadatos de macOS	9a117a48
+main.do_not_show_macosx_folder_files	No mostrar la carpeta __MACOSX, los archivos que empiezan por ._ ni .DS_Store. Las vistas previas de imagen y audio nunca los incluyen. También disponible en el menú Vista de la barra de herramientas.	4aff2a0a
+main.stream_files_when_dragging_them	Transmitir los archivos al arrastrarlos fuera (sin descomprimirlos antes)	5f7fc9b6
+main.when_dropped_on_explorer_desktop	Al arrastrar al Explorador de archivos o al escritorio, los archivos se extraen mientras se copian, así que los archivos grandes no tienen que descomprimirse antes en una carpeta temporal. Algunas aplicaciones solo aceptan archivos normales en disco; si arrastrar y colocar falla, desactiva esta opción.	494e8de9
+main.stream_files_when_dragging_them_out	Transmitir los archivos al arrastrarlos fuera	51bfaabc
+main.image_preview_heading	Vista previa de imagen	6c5de6ef
+main.double_clicking_image	Al hacer doble clic en una imagen	172ce1b9
+main.what_happens_when_you_double_click	Cómo se abre una imagen de un archivo comprimido al hacer doble clic en ella (o pulsar Entrar). El menú contextual siempre ofrece la otra opción.	a9d91a70
+main.open_image_preview	Abrir en la vista previa de imagen	73779e96
+main.open_with_associated_app	Abrir con la aplicación asociada	dfc8591f
+main.when_audio_file_double_clicked	Al hacer doble clic en un archivo de audio	a45d93b9
+main.how_audio_file_inside_archive	Cómo se abre un archivo de audio de un archivo comprimido al hacer doble clic en él (o pulsar Entrar). El menú contextual siempre ofrece la otra opción.	4e092015
+main.open_audio_preview	Abrir en la vista previa de audio	2866b8c6
+main.enlarge_small_images_too	Ampliar también las imágenes pequeñas	39504dba
+main.by_default_fit_window_width_height	De forma predeterminada, «Ajustar a la ventana / al ancho / al alto» solo reduce las imágenes grandes y no amplía las pequeñas. Si está activado, las imágenes pequeñas también se amplían para ajustarse.	33ef5d12
+main.read_ahead_faster_paging	Lectura anticipada (paso de página más rápido)	56bba25f
+main.while_previewing_nearby_images	Precargar en segundo plano las imágenes cercanas para pasar de página más rápido. Establece la memoria máxima para las imágenes precargadas. Si está desactivado, las imágenes se cargan cuando se necesitan.	ec1e2e27
+main.read_ahead	Lectura anticipada	8975dc30
+main.256_mb_default	256 MB (predeterminado)	acf42636
+main.2_gb_maximum	2 GB (máximo)	dedbdffa
+main.file_associations	Asociaciones de archivos	4d95177a
+main.register_lycanzip_as_archive_app	Registrar LycanZip como aplicación de archivos comprimidos	b46759ab
+main.after_registering_lycanzip_appears	Una vez registrado, LycanZip aparece en «Abrir con» y en «Aplicaciones predeterminadas». Windows exige que elijas las aplicaciones predeterminadas manualmente en Configuración.	6ad5db2f
+main.current_default_apps	Aplicaciones predeterminadas actuales	2da60cf8
+main.open_default_apps_settings	Abrir la configuración de aplicaciones predeterminadas	c91c60a7
+main.add_lycanzip_right_click_menu	Agregar LycanZip al menú contextual	7e341f23
+main.files_add_archive_compress_zip_7z	Archivos: agregar a un archivo comprimido, comprimir en ZIP / 7z y más. Archivos comprimidos: abrir, extraer, comprobar, vista previa y más. Afecta solo al usuario actual y se puede desactivar en cualquier momento. En Windows 11 aparece en «Mostrar más opciones».	15d4a5c4
+main.add_lycanzip_windows_11_context	Agregar LycanZip al menú contextual de Windows 11	80b4da17
+main.shown_at_top_level_windows_11	Se muestra en el nivel superior del menú contextual de Windows 11, sin seleccionar «Mostrar más opciones». Requiere un paquete de menú firmado. Afecta solo al usuario actual y se puede desactivar en cualquier momento. Las entradas son las mismas que en el menú anterior y ambos pueden estar activados a la vez.	478467a0
+main.open_settings_file_location	Abrir la ubicación del archivo de configuración	3d1c0853
+main.web_site	Sitio web	f1a2cbc2
+main.source_code_on_github	Código fuente en GitHub	b82f9244
+main.show_welcome_window_again	Volver a mostrar la ventana de bienvenida	60680018
+main.data_location	Ubicación de los datos	043485f6
+main.diagnostics	Diagnóstico	3af2279f
+main.detailed_debug_log	Registro de depuración detallado	e93621ed
+main.only_errors_warnings_logged_by	De forma predeterminada solo se registran errores y advertencias. Si está activado, el registro también anota lo que se abrió, cuándo empiezan y terminan las tareas y cuánto tardan. Útil para informar de un problema.	695c5237
+main.log_full_paths	Registrar rutas completas	b1556b47
+main.only_file_names_logged_by_default	De forma predeterminada solo se registran los nombres de archivo. El registro nunca incluye contraseñas ni contenido de archivos, pero puede incluir nombres de archivo. Revísalo antes de compartirlo.	433b5937
+main.open_report_folder	Abrir la carpeta de informes	17984672
+main.copy_diagnostic_information	Copiar información de diagnóstico	4688ca9e
+main.copied_clipboard	Copiado al portapapeles	e9dd5680
+main.open_source_mit_compression_engine	Código abierto (MIT). El motor de compresión es 7-Zip (LGPL); RAR solo se puede extraer.	0ea369ab
+main.template	Plantilla	3ec1ae06
+main.apply_whole_set_settings_at_once	Aplicar un conjunto completo de opciones de una vez	c061c181
+main.template_modified	Modificada	19a532c8
+main.template_options	Opciones de plantilla	71806c9b
+main.output	Salida	4bed3361
+main.file_name_without_extension	Nombre de archivo (sin extensión)	8d28b6a9
+main.file_name_short	Nombre de archivo	09979a78
+main.change_location	Cambiar ubicación…	cf2f5d22
+main.change_location_tip	Cambiar ubicación	04410a88
+main.format_mode	Formato y modo	4b4d4074
+main.format	Formato	041a5dec
+main.zip_most_compatible_7z_compresses	ZIP es el más compatible; 7z comprime mejor y puede cifrar los nombres de archivo; la familia TAR es habitual en Linux / macOS.	ca896635
+main.mode	Modo	a7b93d21
+main.no_need_understand_parameters_just	No hace falta ajustar parámetros complicados: elige el modo que se adapte a lo que necesitas.	be399537
+main.volume_label_optional	Etiqueta de volumen (opcional)	da788598
+main.file_name_by_default	El nombre de archivo de forma predeterminada	7ce76df4
+main.volume_label	Etiqueta de volumen	ac51eb2d
+main.keep_modified_times_files	Conservar las fechas de modificación de los archivos	3cde1626
+main.iso_image_not_compressed_names_can	Una imagen ISO no se comprime. Los nombres de archivo pueden ser largos y estar en cualquier idioma, y cada archivo debe ocupar menos de 4 GB.	0997b2d3
+main.protection	Protección	0f8cc4f3
+main.password_optional	Contraseña (opcional)	408255ed
+main.password	Contraseña	8be3c943
+main.re_enter_password	Vuelve a escribir la contraseña	aefce7f7
+main.show_password_keep_checked_when	Mostrar la contraseña (déjalo activado al escribir caracteres no ASCII)	87f14436
+main.show_password	Mostrar la contraseña	044b852f
+main.encrypt_file_names_too_7z_only	Cifrar también los nombres de archivo (solo 7z)	d41e19ce
+main.encrypt_file_names	Cifrar los nombres de archivo	dd32ed5f
+main.new_archive_read_once_after	Comprobar el nuevo archivo comprimido después de crearlo para asegurarse de que está intacto.	cae26887
+main.advanced_options	Opciones avanzadas	63c9e0ba
+main.rarely_needed_leave_defaults_if	Rara vez es necesario. Si no estás seguro, deja los valores predeterminados.	b7a59502
+main.compression_method	Método de compresión	9d0a4081
+main.auto_picks_by_format_mode_deflate	«Automático» elige según el formato y el modo (Deflate para ZIP, LZMA2 para 7z).	d621daf6
+main.compression_level	Nivel de compresión	bd95ecae
+main.overrides_level_mode_store_only	Sustituye el nivel de compresión predeterminado del modo. «Solo almacenar» empaqueta los archivos sin comprimirlos.	0605216f
+main.dictionary_size	Tamaño del diccionario	b45d8fe0
+main.larger_usually_compresses_better	Un valor mayor suele comprimir mejor, pero usa más memoria tanto al comprimir como al extraer. Solo se aplica a LZMA / LZMA2 / PPMd.	1b67795e
+main.word_size	Tamaño de palabra	b40db3a8
+main.larger_usually_compresses_better_but_slower_ppmd_model_order	Un valor mayor suele comprimir mejor, pero es más lento. En PPMd es el orden del modelo.	5f25893d
+main.solid_block	Bloque sólido	afb6cd9f
+main.compress_several_files_as_one	Comprime varios archivos como un único flujo continuo (solo 7z). Cuanto más parecidos sean los archivos, menor será el resultado, pero extraer un solo archivo lee más datos.	779cfd97
+main.store_files_compressed_already	Almacenar sin recomprimir los archivos ya comprimidos	050996e6
+main.photos_music_video_archives_other	Las fotos, el audio, los vídeos, los archivos comprimidos y otros archivos ya comprimidos (de 64 KB o más) se almacenan directamente sin recomprimir. Es más rápido, con una diferencia de tamaño mínima, y conserva las miniaturas de las imágenes en los archivos 7z (solo ZIP / 7z).	d10ed811
+main.cpu_threads	Subprocesos de CPU	56bf097a
+main.how_many_processor_cores_use_auto	El número de núcleos de procesador que se usan. «Automático» suele ser lo mejor.	117a51b9
+main.zip_encryption_method	Método de cifrado ZIP	5e788827
+main.aes_256_secure_zipcrypto_weak_use	Se recomienda encarecidamente AES-256. ZipCrypto es débil: úsalo solo por compatibilidad con software antiguo.	b4a86163
+main.path_mode	Modo de ruta	d86f49da
+main.relative_records_only_names_files	«Ruta relativa» guarda solo los nombres de los archivos y carpetas seleccionados. «Ruta completa» guarda también las carpetas superiores (sin la letra de unidad).	70a31205
+main.split_archive	Dividir el archivo comprimido	76b8ba2d
+main.cut_into_several_fixed_size_files	Divide el archivo comprimido en varios archivos de tamaño fijo (solo ZIP / 7z), para enviarlo por correo o guardarlo en unidades USB pequeñas.	a79972a1
+main.e_g_50_mb_1_5	p. ej., 50 MB, 1,5 GB	9115d30d
+main.custom_split_size	Tamaño de división personalizado	a0643650
+main.custom_7_zip_parameters	Parámetros personalizados de 7-Zip	6b3f8ed7
+main.e_g_mx_9_fb_64	p. ej., mx=9 fb=64 (nombre=valor, separados por espacios)	24af3d9a
+main.custom_parameters	Parámetros personalizados	3a766c13
+main.passed_straight_compression_engine	Se pasan directamente al motor de compresión y sustituyen a las opciones anteriores. Los parámetros no válidos o no admitidos harán que la compresión falle con un mensaje de error.	eff850cb
+main.restore_template_s_settings	Restaurar las opciones de esta plantilla	1b4a6951
+main.add_files_button	Agregar archivos	c06342c8
+main.add_folder_button	Agregar carpeta	03eb1a44
+main.you_can_also_paste_files_with	También puedes pegar archivos con Ctrl+V	8a2b7931
+main.start_compressing	Empezar a comprimir	320e1feb
+main.tasks	Tareas	090ec5f5
+main.run_background	Ejecutar en segundo plano	2168ebb5
+main.hide_window_tasks_keep_running	Oculta la ventana. Las tareas siguen ejecutándose en segundo plano y aparece una notificación cuando terminan.	40198391
+main.clear_finished	Borrar las terminadas	f2630670
+main.collapse_expand	Contraer / expandir	66e60822
+main.collapse_task_panel	Contraer el panel de tareas	9212c96f
+main.when_done	Al terminar:	bb608489
+main.done	Listo	e9b450d1
+main.go	Ir a {0}	5d459e5f
+main.unknown	Desconocido	bc7819b3
+main.auto_detect	Detectar automáticamente	7dbcac72
+main.big5_traditional_chinese	Big5 (chino tradicional)	10ca6be7
+main.gbk_simplified_chinese	GBK (chino simplificado)	7b7afee6
+main.shift_jis_japanese	Shift-JIS (japonés)	f3beb558
+main.euc_kr_korean	EUC-KR (coreano)	beca3484
+main.opening	Abriendo «{0}»…	bf854cfc
+main.total	, {0} en total	4e479839
+main.many_items_only_part_were_counted	(demasiados elementos; recuento parcial)	dda11ef4
+main.ok	Aceptar	9ce3bd42
+main.invalid_command_line_arguments	Argumentos de línea de comandos no válidos	24f65860
+main.no_files	No hay archivos	ccc17f61
+main.choose_folder_extract	Selecciona la carpeta en la que extraer	a743f77c
+main.cannot_open_archive	No se puede abrir el archivo comprimido	6e9e4903
+main.file_format_unrecognized_file	No se reconoce el formato de archivo o el archivo está dañado: {0}	3e6485f9
+main.cannot_write_settings_file	⚠ No se puede escribir el archivo de configuración: {0}	db6c0352
+main.there_no_audio_preview_archive	No hay archivos de audio para previsualizar en este archivo comprimido	267daa15
+main.there_no_images_preview_archive	No hay imágenes para previsualizar en este archivo comprimido	5f6025fe
+main.system_temporary_folder	La carpeta temporal del sistema	800560c4
+main.use_opened_dragged_files	En uso: {0} (archivos abiertos y arrastrados)	4105ba89
+main.location_slow	Esta ubicación es lenta	0fa2c041
+main.network_removable_drive_temporary	«{0}» está en una unidad de red o extraíble. Guardar ahí los archivos temporales será lento, sobre todo con archivos comprimidos grandes. ¿Quieres usarla de todos modos?	2d979968
+main.use_anyway	Usarla de todos modos	851fa167
+main.temporary_files_cleared	Archivos temporales borrados	ea9cd63a
+main.freed_files_use_not_deleted	Se liberaron {0}. Los archivos en uso no se eliminan.	d4eb8d2f
+main.not_enough_room_temporary_files	No hay espacio suficiente para los archivos temporales	8a890f62
+main.about_intermediate_data_has_be_put	Se necesitan unos {0} de espacio temporal, pero «{1}» solo tiene {2} libres.	5871d099
+main.temporary_location_full_left	La ubicación temporal «{0}» está llena (quedan {1}).	907bde7d
+main.where_use_instead_local_disks_only	Seleccionar otra ubicación (solo discos locales)	75badc65
+main.free	{0} ({1} libres)	43a497f5
+main.no_other_local_disk_has_enough	Ningún otro disco local tiene espacio suficiente. Selecciona otra carpeta, libera espacio en disco o usa el formato ZIP o 7z (que no necesita archivos temporales).	067eee04
+main.network_removable_drive_temporary_files_will_be_slow	Es una unidad de red o extraíble. Los archivos temporales serán lentos.	fb869f7f
+main.choose_another_folder	Seleccionar otra carpeta…	dede39e2
+main.always_use_temporary_location	Usar siempre esta ubicación temporal	74fed9dd
+main.use_location_try_again	Usar esta ubicación y volver a intentarlo	8c4ca207
+main.chosen	Seleccionada: {0}	1888501e
+main.tasks_still_running	Todavía hay tareas en curso	5071b7ce
+main.still_unfinished_closing_now	{0} {0:tarea sigue|tareas siguen} sin terminar. Si cierras ahora, {0:se cancelará|se cancelarán} y la salida sin terminar podría quedar incompleta.	438e1616
+main.cancel_tasks_close	Cancelar las tareas y cerrar	13c10e10
+main.keep_waiting	Seguir esperando	9be1abba
+main.integrity_test	Comprobación de integridad	911e049a
+main.lycanzip_closed_unexpectedly_at	LycanZip se cerró inesperadamente a las {0}.	00a441fb
+main.open_at_time	{0} {0:archivo comprimido estaba abierto|archivos comprimidos estaban abiertos} en ese momento:	2d012cbd
+main.not_finished	{0} {0:tarea no terminó|tareas no terminaron}:	f6add7bc
+main.destination_extraction_may_contain	La carpeta de extracción podría contener archivos incompletos. Revisa su contenido.	3f2bf8f0
+main.removed_unfinished_compression	Se {0:eliminó|eliminaron} {0} {0:archivo temporal de compresión incompleto|archivos temporales de compresión incompletos}.	b7eb9a2b
+main.crash_report_including_memory_dump	El informe de bloqueo (con un volcado de memoria) está en: {0}\nAntes de compartirlo, ten en cuenta que el volcado puede contener rutas de archivo y contenido de la memoria del programa.	7d581963
+main.lycanzip_closed_unexpectedly_last	LycanZip se cerró inesperadamente la última vez	c3563d24
+main.reopen	Volver a abrir {0} {0:archivo comprimido|archivos comprimidos}	bd33ef68
+main.opening_several_archives	Abriendo varios archivos comprimidos	e574ce13
+main.received_archives_at_once_each	Se recibieron {0} archivos comprimidos a la vez. Cada uno se abre en su propia ventana, y muchas ventanas usan más memoria.	8daf18ce
+main.open_first	Abrir los primeros {0}	0fc9e2e0
+main.open_all	Abrir todos ({0})	29644d48
+main.open_only_first	Abrir solo los primeros {0}	8583caf5
+main.later_volume_split_archive	Este es un volumen posterior de un archivo dividido	a9f41e5f
+main.volume_split_archive_one_volume	«{0}» es el volumen {1} de un archivo dividido. Si abres solo este volumen, no verás todo el contenido. ¿Quieres abrir el primer volumen, «{2}»?	89b33ec6
+main.open_first_volume	Abrir el primer volumen	688511ad
+main.open_volume_anyway	Abrir este volumen de todos modos	bd4d8d54
+main.first_volume_was_not_found_only	No se encontró el primer volumen, «{0}». Solo se puede ver parte del contenido de este volumen.	4c778d63
+main.moonlight	Luz de luna	f61a85a3
+main.blood_moon	Luna de sangre	a5c48a63
+main.amber_eyes	Ojos ámbar	e270f95b
+main.aurora	Aurora	eeee9b76
+main.forest	Bosque	f41c4e4d
+main.compression_engine_7_zip	Motor de compresión: 7-Zip	f93f7e5b
+main.7z_dll_not_found	(no se encontró 7z.dll)	72359520
+main.settings_file	Archivo de configuración: {0}	c819d085
+main.not_set	(sin establecer)	7eae163c
+main.already_lycanzip	  ✓ Ya es LycanZip	3e869938
+main.not_registered_yet_turn_on_switch	\n\nTodavía no está registrado. Activa primero la opción de arriba.	fd8f8732
+main.cannot_update_file_associations	No se pueden actualizar las asociaciones de archivos	fc71ec5a
+main.registered	Registrado	a844fcf8
+main.lycanzip_can_now_handle_archives	LycanZip ya puede manejar archivos comprimidos.\n\nWindows no permite que las aplicaciones cambien por sí mismas las aplicaciones predeterminadas. Selecciona «Abrir la configuración de aplicaciones predeterminadas» y elige LycanZip para los formatos que quieras.	0e2f1128
+main.cannot_open_settings	No se puede abrir Configuración	2bf2a15a
+main.please_open_settings_apps_default	Abre manualmente «Configuración → Aplicaciones → Aplicaciones predeterminadas».	9c106eb2
+main.menu_add_to_archive	Agregar a archivo comprimido…	2cdc38ad
+main.compress_name_format	Comprimir en «nombre.formato»	9b854df6
+main.compress_each_separately_when	Comprimir cada uno por separado (si hay varios elementos seleccionados)	c6a4a30f
+main.compress_with_preset	Comprimir con una plantilla	851cb07a
+main.other_formats_tar_gz_tar_xz	Otros formatos (tar.gz / tar.xz / tar.bz2)	e3e3048c
+main.encrypted_archive	Archivo comprimido cifrado…	284a3b16
+main.open_contents_with_lycanzip_exe	Abrir el contenido con LycanZip (.exe, .docx, .jar…)	ac38e546
+main.hash_values_menu_files_archives	Valores hash… (en los menús de archivos y archivos comprimidos)	75b624c9
+main.open	Abrir	cf9b7706
+main.menu_extract_here	Extraer aquí	5221b51b
+main.extract_folders_same_name	Extraer cada uno en una carpeta distinta	96adc4e4
+main.extract_recent_folder	Extraer en una carpeta reciente	6fb3e506
+main.extract_all_into_one_folder_when	Extraer todo en una carpeta (si hay varios archivos comprimidos seleccionados)	ca375cec
+main.context_menu_entries	Entradas del menú contextual	3cfa8784
+main.choose_which_entries_shown_change	Selecciona las entradas que quieres mostrar. Los cambios se aplican la próxima vez que se abra el menú contextual. No hace falta volver a registrar nada.	f0265dc5
+main.format_second_compress_entry	Formato de la segunda entrada «Comprimir en»	5ab68322
+main.format_first_compress_entry	Formato de la primera entrada «Comprimir en»	6dc0d11e
+main.compress_first_format	Comprimir en (primer formato)	5edc11a7
+main.compress_second_format	Comprimir en (segundo formato)	2ced4124
+main.files_folders	Archivos y carpetas	154f56c1
+main.archives	Archivos comprimidos	a50710e7
+main.templates_compress_with_template	Plantillas de la lista «Comprimir con una plantilla»	7eb07671
+main.cannot_update_right_click_menu	No se puede actualizar el menú contextual	41826d22
+main.pc_not_running_windows_11_there	Este equipo no tiene Windows 11, así que no hay menú contextual de estilo nuevo.	92fac2bb
+main.version_has_no_signed_menu_package	Esta versión aún no tiene un paquete de menú firmado, así que no se puede activar.	e2d429cd
+main.store_explorer_note	Esta es la versión de Microsoft Store. Su menú contextual y sus tipos de archivo forman parte del paquete: Windows los agrega al instalar LycanZip y los quita al desinstalarlo, así que no hay que registrar nada aquí.\n• Menú contextual: en Windows 11, en el menú nuevo y en «Mostrar más opciones»; en Windows 10, en el menú normal. El interruptor de abajo lo muestra u oculta; la lista de más abajo elige las entradas.\n• Tipos de archivo: LycanZip aparece en «Abrir con» para los archivos comprimidos. Solo tú puedes convertirla en la aplicación predeterminada, en la configuración de Windows («Abrir la configuración de aplicaciones predeterminadas»).	c2fd0d80
+main.status_built_in	Integrado	6b0c36de
+main.setup_skipped	Configuración omitida	779afd28
+main.you_can_change_everything_later	Puedes cambiarlo todo más adelante en Configuración.\n\nEl menú contextual y las asociaciones de archivos no están activados. Si los quieres, actívalos en la pestaña Explorador de archivos de Configuración.	754fa5fa
+main.right_click_menu	El menú contextual	5c5bc6a1
+main.windows_11_right_click_menu	El menú contextual de Windows 11	02d79a93
+main.some_things_could_not_be_set	No se pudieron configurar algunos elementos	6bb5c1e3
+main.you_can_try_again_on_settings	Puedes volver a intentarlo en la página Configuración.	c8f33bba
+main.language_changes_after_lycanzip	Reinicia LycanZip después de cambiar el idioma.	ff26419c
+main.status_on	Activado.	8ec3f656
+main.status_off	Desactivado.	f4d4f25d
+main.could_not_add_windows_11_context	No se pudo agregar el menú contextual de Windows 11	16b597e8
+main.could_not_remove_windows_11	No se pudo quitar el menú contextual de Windows 11	a7e0b507
+main.added	Agregado	b68734c2
+main.if_menu_does_not_show_up	Si el menú aún no aparece, reinicia el Explorador de archivos (Administrador de tareas → Explorador de Windows → Reiniciar) o cierra la sesión y vuelve a iniciarla.	c27ce2d5
+main.lycanzip_was_moved	Los menús apuntan a otra copia	7a919664
+main.still_point_old_folder_so_right	Estos elementos apuntan a otra copia de LycanZip (o a su carpeta anterior): {0}. Al abrir archivos comprimidos o usar el menú contextual no se usa esta copia. ¿Quieres usar esta copia en su lugar?\n\nEn uso ahora: {2}\nEsta copia: {1}	1b1d1b87
+main.use_current_folder	Usar esta copia	996267fc
+main.do_not_remind_me_again	No volver a recordármelo	f66139f0
+main.later	Más tarde	56e2f5d3
+main.could_not_update_windows_11	No se pudo actualizar el menú contextual de Windows 11	eb3bef67
+main.updated	Actualizado	f2f8570d
+main.if_menu_does_not_show_up_yet_restart_file_explorer_sign_out	Si el menú aún no aparece, reinicia el Explorador de archivos o cierra la sesión y vuelve a iniciarla.	107e9c10
+main.restore_default_settings_title	¿Restaurar la configuración predeterminada?	d97b50c9
+main.defaults_theme_accent_color	Los valores de tema, color de énfasis, fondo, vista, extracción y compresión vuelven a su estado inicial. El menú contextual y las asociaciones de archivos son opciones del sistema y no se cambian.	7b89291d
+main.restore	Restaurar	3cbe6d6b
+main.msix_package_settings_templates	Paquete MSIX: la configuración, las plantillas y el registro se guardan en la carpeta propia del paquete y no se pueden cambiar de ubicación.	7430001e
+main.portable_mode_settings_templates	Modo portátil: la configuración, las plantillas, los informes de bloqueo y el registro se guardan en la carpeta del programa, así que puedes llevarte la carpeta entera.	4a5534fd
+main.normal_mode_settings_templates	Modo normal: la configuración, las plantillas, los informes de bloqueo y el registro se guardan en tu carpeta de usuario.	37ba2b42
+main.folder_settings	Carpeta de configuración: {0}	6a708aef
+main.switch_normal_mode_user_folder	Cambiar al modo normal (carpeta de usuario)	2b689843
+main.switch_portable_mode_program	Cambiar al modo portátil (carpeta del programa)	2961749a
+main.program_folder_cannot_be_written	No se puede escribir en la carpeta del programa ({0}), así que no se puede cambiar al modo portátil.	95fb9ba1
+main.switching_copies_settings	Al cambiar, la configuración y las plantillas se copian en la nueva ubicación (los archivos de la ubicación anterior se conservan) y LycanZip se reinicia. El menú contextual, las asociaciones de archivos y las últimas carpetas que recuerda Windows no se trasladan.	ad1754f6
+main.wait_tasks_end_cancel_them_before	Espera a que terminen las tareas (o cancélalas) antes de cambiar la ubicación de los datos. LycanZip se reinicia después del cambio.	fb634605
+main.switch_data_location	Cambiar la ubicación de los datos	b9ccb0f5
+main.settings_templates_copied_program	La configuración y las plantillas se copian en la carpeta del programa:\n{0}\n\nLos archivos de la ubicación anterior no se eliminan.	19168b9b
+main.settings_templates_copied_user	La configuración y las plantillas se copian en la carpeta de usuario:\n{0}\n\nLos archivos de la carpeta del programa no se eliminan.	77af4ecc
+main.if_new_place_has_settings_files	Si la nueva ubicación ya tiene archivos de configuración, primero se les cambia el nombre a .bak. Después LycanZip se reinicia.	331623d5
+main.switch_restart	Cambiar y reiniciar	0af9174e
+main.could_not_switch	No se pudo cambiar	dc903253
+main.new_place_cannot_be_written	No se puede escribir en la nueva ubicación.	922ca063
+main.copying_settings_failed	No se pudo copiar la configuración.	7cf94c4d
+main.flag_file_portable_mode_lycanzip	No se pudo crear ni eliminar el archivo indicador del modo portátil (LycanZip.portable).	7e4a9017
+main.release_process	Suelta para procesar	0b69ba01
+main.password_required	Se necesita una contraseña	b9a6ccd9
+main.wrong_password_please_try_again	Contraseña incorrecta. Vuelve a intentarlo.	0cb4d870
+main.file_format_unrecognized_file_damaged	No se reconoce el formato de archivo o el archivo está dañado.	ba46df31
+main.solid_archive	  ·  Archivo sólido	06afd404
+main.encrypted	  ·  Cifrado	6a7165de
+main.filename_encoding_uncertain	Codificación de nombres de archivo dudosa	b637fd26
+main.filename_encoding_detected	Codificación de nombres de archivo detectada automáticamente	c41d79fe
+main.currently_using_if_file_names_look	Se está usando {0}. Si los nombres de archivo se ven ilegibles, cambia la codificación arriba a la derecha.	0e4991b7
+main.found_matching_including	Se {0:encontró|encontraron} {0} {0:elemento|elementos} que coinciden con «{1}» (incluidas las subcarpetas)	4962ec29
+main.list_all_suffix	(mostrar todo)	c0df9304
+main.image_thumbnails_on_but_double	Las miniaturas de imágenes están activadas, pero {0}. Haz doble clic en una imagen para previsualizarla.	8f08dad3
+main.archive_solid_so_no_thumbnails	es un archivo sólido, así que las miniaturas están desactivadas (leer una sola imagen exige descomprimir todos los datos anteriores)	3d10c64f
+main.archive_format_cannot_read_single	este formato no puede leer una sola imagen por separado, así que no se crean miniaturas	dd45aa8f
+main.show_image_thumbnails_icon_view_not_supported_by_archive	Mostrar miniaturas de imágenes en la vista de iconos (no admitido por este archivo comprimido: {0})	7b2d680e
+main.solid_compression	compresión sólida	d4b061ba
+main.format_limitation	limitación del formato	77990b7f
+main.selected	{0} {0:seleccionado|seleccionados} ({1})	473c83af
+main.opened_with_associated_app_instead	«{0}»: {1}. Se abrió con la aplicación asociada.	a21d068c
+main.cannot_open	No se puede abrir	2d89e8d4
+main.file_s_name_unsafe_was_rejected	Se rechazó un nombre de archivo no seguro: {0}	cf8dc0a1
+main.run_program	¿Ejecutar este programa?	46ca4a8c
+main.comes_from_archive_will_run	«{0}» está dentro de un archivo comprimido y se ejecutará al abrirlo. Ejecútalo solo si confías en el origen de este archivo comprimido.	10f4b5fe
+main.which_files_should_be_extracted	¿Qué archivos se deben extraer?	1229b4ee
+main.needed_when_program_uses_files	Necesario si el programa usa archivos de la misma carpeta (DLL, archivos de datos)	8b6ce301
+main.faster_but_program_may_not_find	Más rápido, pero el programa podría no encontrar los archivos que necesita	4c00f206
+main.do_not_warn_again_can_be	No volver a advertir (se puede reactivar en Configuración)	bec2f6f9
+main.extract_run	Extraer y ejecutar	981f5190
+main.folder_large	La carpeta es grande	2e4d06e1
+main.folder_program_extract_all	La carpeta de este programa ocupa {0}. ¿Extraer toda la carpeta en una ubicación temporal?	d10693c7
+main.extract_whole_folder	Extraer toda la carpeta	4f31642e
+main.temporary_folder_not_found	No se encontró la carpeta temporal.	79302ba5
+main.global	General	5f1184f7
+main.open_archive_on_new_archive_page	Abrir un archivo comprimido (en la página Nuevo archivo comprimido: agregar archivos)	a4518fd3
+main.new_archive_choose_files	Nuevo archivo comprimido (seleccionar archivos)	b9c7a9ba
+main.new_archive_choose_folder	Nuevo archivo comprimido (seleccionar carpeta)	6605bd77
+main.open_close_settings	Abrir / cerrar la configuración	e0ce3034
+main.go_back_close_current_page	Atrás / cerrar la página actual (configuración, nuevo archivo comprimido); borrar la selección	6a8d6fc4
+main.show_collapse_task_panel	Mostrar / contraer el panel de tareas	72198a66
+main.clear_finished_tasks	Borrar las tareas terminadas	f74ece90
+main.paste_files_folders_new_archive	Pegar archivos y carpetas (página Nuevo archivo comprimido: los agrega como origen; vista del archivo comprimido: los agrega a la carpeta actual)	0bf8a669
+main.open_selected_item_file_enter	Abrir el elemento seleccionado (archivo / entrar en la carpeta)	ef8adbe5
+main.rename_selected_item_zip_7z_tar	Cambiar el nombre del elemento seleccionado (directamente en ZIP, 7z y TAR)	69f94962
+main.delete_selected_items_from_archive	Eliminar del archivo comprimido los elementos seleccionados	375cf716
+main.extract_here_only_selected_items	Extraer aquí (solo los elementos seleccionados, si los hay)	04e856b3
+main.extract_only_selection_when	Extraer en… (solo los elementos seleccionados, si los hay)	6d103e1a
+main.image_preview_selected_image_first	Vista previa de imagen (la imagen seleccionada o la primera)	f69ab870
+main.audio_preview_selected_audio_file	Vista previa de audio (el archivo de audio seleccionado o el primero)	9c2bf077
+main.properties_with_nothing_selected	Propiedades (sin nada seleccionado: información del archivo comprimido)	ca0275f1
+main.view_details	Vista: Detalles	9e796f77
+main.view_list	Vista: Lista	f4dbfacf
+main.view_icons	Vista: Iconos	8c3db71f
+main.list_all_flatten_all_levels	Mostrar todo (todos los niveles en una lista)	529ca6af
+main.show_hide_folder_tree	Mostrar / ocultar el árbol de carpetas	c5494f49
+main.close_archive_return_home_page	Cerrar el archivo comprimido y volver a la página de inicio	04638611
+main.new_archive_page	Página Nuevo archivo comprimido	f947afdb
+main.save_as_new_template	Guardar como plantilla nueva	17ba4ccc
+main.image_preview_window	Ventana de vista previa de imagen	ec61a865
+main.previous_next	Anterior / siguiente	7c1da99c
+main.space_pageup_pagedown_mouse_wheel	← ↑ / → ↓  Barra espaciadora  RePág / AvPág  Rueda del ratón	f908d0de
+main.first_last	Primera / última	14f40dcd
+main.view_mode_fit_window_actual_size	Modo de vista: ajustar a la ventana / tamaño real / ajustar al ancho / ajustar al alto (F alterna entre ajustar y tamaño real; también al hacer doble clic en la imagen)	fa6029fa
+main.zoom_out_when_zoomed_drag_use	Acercar / alejar (con zoom, arrastra o usa las teclas de dirección para desplazarte)	5a2fa0f2
+main.ctrl_wheel	+ / −  Ctrl + rueda	bc638ffc
+main.rotate_changes_display_only	Girar (solo cambia la visualización)	405dfb25
+main.full_screen_thumbnail_strip	Pantalla completa / tira de miniaturas	88913a74
+main.copy_image_copy_path	Copiar imagen / copiar ruta	09e858fb
+main.save_image_as_open_with_associated	Guardar imagen como… / Abrir con la aplicación asociada	53dc2b40
+main.animations_gif_animated_webp_play	Reproducir / pausar animaciones (GIF, WebP animado)	1d607f16
+main.image_info_size_format_photo_info	Información de la imagen (tamaño, formato, datos de la foto…)	0a6c72d5
+main.menu_button_at_top_right_right	Menú (el botón «⋯» de arriba a la derecha o clic derecho en la imagen): incluye todas las acciones anteriores y la información de la imagen	ee9b5c43
+main.right_click	Clic derecho	602314c6
+main.close_leaves_full_screen_first	Cerrar (en pantalla completa, primero sale de ella)	55020fc9
+main.dialogs	Cuadros de diálogo	0fd66db1
+main.ok_cancel	Aceptar / Cancelar	00e849be
+main.open_archive_ctrl_o	Abrir un archivo comprimido (Ctrl+O)	12c2f60d
+main.new_archive_ctrl_n	Nuevo archivo comprimido (Ctrl+N)	d8dca725
+main.settings_ctrl	Configuración (Ctrl+,)	ea5e4c7d
+main.back_home_ctrl_w	Volver al inicio (Ctrl+W)	531d2d2a
+main.extract_ctrl_shift_e	Extraer en… (Ctrl+Mayús+E)	7bf5df69
+main.up_one_level_backspace_alt	Subir un nivel (Retroceso / Alt+↑)	55c26440
+main.collapse_expand_ctrl_j	Contraer / expandir (Ctrl+J)	b5073496
+main.start_compressing_ctrl_enter	Empezar a comprimir (Ctrl+Entrar)	ebaa754f
+main.cancel_esc	Cancelar (Esc)	9c2c5ec0
+main.back_esc	Atrás (Esc)	7cfd2c37
+main.self_extracting_archive	¿Es un archivo autoextraíble?	2ffbf2b6
+main.contains_compressed_data_format	«{0}» contiene datos comprimidos (formato: {1}).\n\nAl abrir el contenido se muestran los archivos que hay dentro. El programa no se ejecuta.	3a8b37b3
+main.open_contents	Abrir el contenido	664328f0
+main.add_to_archive_title	Agregar a archivo comprimido	b17b8c86
+main.no_images_preview	No hay imágenes para previsualizar	db66f618
+main.there_no_images_current_folder	No hay imágenes en la carpeta actual (ni en los resultados de búsqueda).	558dab0e
+main.no_audio_preview	No hay audio para previsualizar	929bfe99
+main.there_no_audio_files_current	No hay archivos de audio en la carpeta actual (ni en los resultados de búsqueda).	10df04a2
+main.cannot_preview_use_open_with	No se puede previsualizar «{0}»: {1}. Selecciona «Abrir con la aplicación asociada» en el menú contextual.	32b8bd8e
+main.sort_by	Ordenar por	a2a5bdec
+main.packed_size	Tamaño comprimido	9fc7e0d3
+main.switch_single_level_browsing	Cambiar a la exploración de un solo nivel	91da4dea
+main.edit_put_back_into_archive	Editar y actualizar en el archivo comprimido	81ca35a9
+main.calculate_hash_values	Calcular valores hash…	78ef4a80
+main.go_containing_folder	Ir a la carpeta contenedora	c294be0e
+main.properties	Propiedades	bc6c88db
+main.add_files_folder	Agregar archivos a esta carpeta…	6c361b03
+main.rename	Cambiar nombre	d3f4cb89
+main.delete	Eliminar	f6fdbe48
+main.show_explorer	Mostrar en el Explorador de archivos	7e922b30
+main.copy_file_path	Copiar la ruta del archivo	41884566
+main.delete_archive	Eliminar archivo comprimido…	82ce5b59
+main.delete_archive_title	¿Eliminar el archivo comprimido?	0eb59598
+main.move_archive_recycle_bin_you_can	¿Mover este archivo comprimido a la Papelera de reciclaje? Podrás restaurarlo desde allí.	88413552
+main.drive_archive_has_no_recycle_bin	⚠ La unidad de este archivo comprimido no tiene Papelera de reciclaje. Después de eliminarlo no se podrá restaurar.	541c1b51
+main.delete_without_asking_from_now_on	Eliminar sin preguntar a partir de ahora	02d8001c
+main.move_recycle_bin	Mover a la Papelera de reciclaje	9176708b
+main.delete_permanently	Eliminar de forma permanente	e63b5153
+main.archive_could_not_be_deleted	No se pudo eliminar el archivo comprimido	28085c64
+main.file_may_be_use_by_another	Puede que otro programa esté usando el archivo o que no tengas permiso.	2513b6ea
+main.archive_being_changed_please_wait	Se está modificando el archivo comprimido. Espera a que termine.	9a12ea3e
+main.archive_cannot_be_changed_directly	Este archivo comprimido no se puede modificar directamente	264c796a
+main.cannot_be_changed_place_only_zip	«{0}» no se puede modificar directamente (solo se admiten archivos ZIP, 7z y TAR de un solo volumen, no archivos divididos ni formatos compuestos como .tar.gz). Extráelo primero y crea un archivo comprimido nuevo.	8addc9e6
+main.archive_read_only	El archivo comprimido es de solo lectura	00d01975
+main.file_set_read_only_cannot_be	Este archivo es de solo lectura y no se puede modificar. Desactiva primero «Solo lectura» en las propiedades del archivo.	08f46060
+main.archive_could_not_be_changed	No se pudo modificar el archivo comprimido	d2a95613
+main.will_take_while	Esto llevará un tiempo	4363058a
+main.about_solid_archive_has_be	Hay que descomprimir y volver a comprimir unos {0} de este archivo sólido, lo que lleva un tiempo. ¿Continuar?	d7babaad
+main.nothing_update	No hay nada que actualizar	ca4c07dd
+main.files_archive_up_date_none_files	Todos los archivos del archivo comprimido ya están actualizados (no hay archivos más recientes en el disco). No se cambió nada.	66b74d9d
+main.some_files_were_not_added	Algunos archivos no se agregaron	8bfa612a
+main.archive_was_changed_but_file_s	El archivo comprimido se modificó, pero {0} {0:archivo no se pudo leer y no se agregó|archivos no se pudieron leer y no se agregaron}:\n{1}	01f83dfe
+main.status_added	{0} {0:agregado|agregados}	3f289bed
+main.deleted	{0} {0:eliminado|eliminados}	a7b9b638
+main.renamed	{0} con nombre cambiado	d7b112a0
+main.new_folder_s	{0} {0:carpeta nueva|carpetas nuevas}	c9f13ba4
+main.unchanged	{0} sin cambios	19d70cc2
+main.archive_changed	Archivo comprimido modificado: {0}	96d0198b
+main.already_compressed_file_s_stored	 ({0} {0:archivo ya comprimido almacenado|archivos ya comprimidos almacenados} directamente)	2adb9906
+main.items_with_same_name	Elementos con el mismo nombre	d15d9d1f
+main.archive_already_has_items_with	El archivo comprimido ya contiene {0} {0:elemento|elementos} con el mismo nombre. Las carpetas con el mismo nombre se combinarán. ¿Qué hacer con los archivos en conflicto?	955b341f
+main.replace_add	Reemplazar y agregar	a99afac9
+main.files_same_name_always_replaced	Sobrescribe los archivos existentes con el mismo nombre y agrega los nuevos.	5b8ba483
+main.update_add	Actualizar y agregar	88959e8b
+main.file_replaced_only_if_one_on	Sobrescribe los archivos existentes solo si la versión del disco es más reciente, y agrega los nuevos.	32cb83f7
+main.update_existing_only	Actualizar solo los existentes	0500c630
+main.only_files_archive_newer_on_disk	Solo se actualizan los archivos que ya están en el archivo comprimido y son más recientes en el disco. No se agregan archivos nuevos.	35f981f8
+main.file_already_exists	El archivo ya existe	b1b0ec61
+main.add_to_this_archive	Agregar a este archivo comprimido	5a23e49d
+main.add_these_files_what_not	Agrega estos archivos al archivo comprimido existente sin volver a comprimir el contenido actual (abajo eliges qué hacer con los nombres en conflicto).	c38aabe2
+main.save_as_new_file	Guardar como un archivo nuevo	ae076f13
+main.saved_as	Guardado como «{0}».	cc3ec09c
+main.replace	Reemplazarlo	5e4bd6c5
+main.old_archive_replaced_by_one	El archivo comprimido anterior se reemplaza por este.	ffe726e3
+main.replace_add_files_same_name_always	Reemplazar y agregar: los archivos con el mismo nombre siempre se reemplazan	cc6a9b1f
+main.update_add_replace_only_if_newer	Actualizar y agregar: reemplazar solo si es más reciente en el disco, y agregar los nuevos	5a9b4e05
+main.update_existing_only_only_files	Actualizar solo los existentes: actualizar solo los archivos que ya están en el archivo comprimido y son más recientes	31f64ae0
+main.synchronize_make_archive_match	Sincronizar: hacer que el archivo comprimido coincida con este contenido (reemplazar lo distinto y eliminar lo sobrante)	6340c109
+main.how_treat_files_same_name	Cuando hay nombres de archivo en conflicto	0eb02b54
+main.cannot_synchronize	No se puede sincronizar	5dab3b72
+main.synchronizing_deletes_items_from	Sincronizar elimina elementos del archivo comprimido	83743985
+main.items_archive_no_longer_exist	{0} {0:elemento del archivo comprimido ya no existe|elementos del archivo comprimido ya no existen} en la carpeta. Al sincronizar se {0:elimina|eliminan} ({1} más agregados, {2} reemplazados, {3} sin cambios).	04186ca2
+main.more	…y {0} más	f459eedf
+main.synchronize	Sincronizar	8dd29207
+main.choose_folder_add	Selecciona la carpeta que quieres agregar	f8d6f042
+main.name_cannot_be_empty_contain	El nombre no puede estar vacío ni contener barras diagonales inversas, comillas ni / : * ? < > |.	fb27523c
+main.new_folder_name	Nueva carpeta	a711999b
+main.name_already_exists	El nombre ya existe	1be78559
+main.there_already_item_called_here	Ya hay un elemento llamado «{0}» aquí.	38378553
+main.delete_from_archive	¿Eliminar del archivo comprimido?	83290f91
+main.delete_one_from_archive	¿Eliminar «{0}» del archivo comprimido?	5bb9cc9c
+main.delete_these_items_from_archive	¿Eliminar estos {0} elementos del archivo comprimido?	e9d5f1d5
+main.items_taken_out_archive_itself_not	Los elementos seleccionados se quitarán de forma permanente del archivo comprimido (no van a la Papelera de reciclaje). Se hará una copia de seguridad del archivo original como .bak.	5e7d72d9
+main.items_taken_out_archive_itself_not_moved_recycle_bin_cannot_be	Los elementos seleccionados se quitarán de forma permanente del archivo comprimido (no van a la Papelera de reciclaje) y no se podrán recuperar.	0f5da694
+main.editing_after_you_save_you_asked	Editando «{0}». Al guardar, se te preguntará si quieres actualizarlo en el archivo comprimido.	586def92
+main.archive_was_changed	El archivo comprimido cambió	366dc893
+main.while_was_being_edited_another	Mientras «{0}» estaba abierto para editarlo, otro programa modificó el archivo comprimido, así que los cambios no se pueden guardar en él. Tu archivo editado está guardado en:\n{1}	24f0efc0
+main.file_no_longer_archive	El archivo ya no está en el archivo comprimido	f9987d8f
+main.no_longer_archive_deleted_renamed	«{0}» ya no está en el archivo comprimido (se eliminó o se le cambió el nombre), así que los cambios no se pueden guardar en él. Tu archivo editado está guardado en:\n{1}	ac36e3a6
+main.put_back_into_archive	¿Actualizar el archivo en el archivo comprimido?	3c42975b
+main.was_changed_put_back_into_archive	«{0}» se modificó. ¿Actualizarlo en el archivo comprimido?	62e00081
+main.put_back_without_asking_from_now	Actualizar siempre sin preguntar	819757d5
+main.put_back	Actualizar el archivo comprimido	7ac2f9d6
+main.not_now	Ahora no	e4571490
+main.changes_not_yet_put_back_into	Cambios sin guardar en un archivo del archivo comprimido	22e53f53
+main.file_you_edited_has_not_been	El archivo que editaste aún no se actualizó en el archivo comprimido. Si cierras ahora, el archivo comprimido no cambiará.	bf9dfbb6
+main.close_without_putting_back	Cerrar sin actualizar	8f179b2b
+main.path	Ruta: {0}\n	e0db47b5
+main.type_folder	Tipo: carpeta\n	94ff5341
+main.contains_total	Contiene: {0} {0:archivo|archivos}, {1} en total\n	4259cf09
+main.type_file	Tipo: archivo\n	7a6a1e42
+main.info_size	Tamaño: {0} ({1} {1:byte|bytes})\n	9d5aef53
+main.info_packed	Comprimido: {0}	44e26b42
+main.info_modified	Modificado: {0}\n	c8e8d841
+main.info_encrypted	Cifrado\n	4f568b30
+main.crc_32_stored_archive	CRC-32 (guardado en el archivo comprimido): {0}\n	dbeb7ece
+main.after_completion_show_explorer	Al terminar: mostrar en el Explorador de archivos	d67b4ad6
+main.after_completion_test_integrity	Al terminar: comprobar la integridad	5c3adc49
+main.close_window	Cerrar la ventana	e3896a93
+main.after_completion_close_window	Al terminar: cerrar la ventana	1a56e2f5
+main.extract_here_no_folder	Extraer aquí (sin carpeta)	158be682
+main.extract_folder	Extraer en la carpeta «{0}»	28142937
+main.extract_here_automatic	Extraer aquí (automático)	cc88ab76
+main.extract_here_straight_into_folder	Extraer aquí, directamente en esta carpeta sin crear otra (Ctrl+E)	60c2166e
+main.extract_here_always_into_folder	Extraer aquí, siempre en una carpeta con el nombre del archivo comprimido (Ctrl+E)	e6c93a87
+main.extract_here_ctrl_e_creates_name	Extraer aquí (Ctrl+E): crea una carpeta con el nombre del archivo comprimido solo si este tiene varios elementos en el nivel superior	d61281e2
+main.scan_could_not_run	No se pudo realizar el análisis	464a3106
+main.scan_hands_files_antivirus_product	El análisis envía los archivos al antivirus instalado. LycanZip no tiene motor de análisis propio.	1da8ab74
+main.blocked_by_system_policy	 (bloqueado por una directiva del sistema)	593a966e
+main.threat_names_logged_by_windows	Nombres de amenazas registrados por Windows Defender: {0}	d37f8e79
+main.suspicious_files_found	Se encontraron archivos sospechosos	8da644aa
+main.installed_antivirus_product_thinks	El antivirus instalado informa de un problema con {0} {0:archivo|archivos} de este archivo comprimido:	4fe67854
+main.do_not_open_these_files_antivirus	No abras estos archivos. Es el criterio del antivirus y podría ser erróneo. Tampoco se garantiza que los archivos que no aparecen sean seguros.	9e59a0a4
+main.ask_every_time_no_automatic_choice	Preguntar siempre (sin elección automática)	81733972
+main.keep_newer	Conservar el más reciente	f1be0c4d
+main.keep_older	Conservar el más antiguo	c09ddf2c
+main.keep_larger	Conservar el más grande	49e494d8
+main.keep_smaller	Conservar el más pequeño	6a8207d4
+main.skip_if_contents_identical	Omitir si el contenido es idéntico; si no, conservar ambos	0819267c
+main.archive_unpacks_something_very_big	Este archivo comprimido ocupa muchísimo al descomprimirlo	0fd7d9d3
+main.archive_only_unpacks_about_times	El archivo comprimido ocupa solo {0}, pero al descomprimirlo ocupa unos {1} ({2} veces más).	a8955bec
+main.unpacks_about	Al descomprimirlo ocupa unos {0}.	5e6f45a7
+main.far_more_than_normal_archive_may	Es mucho más que en un archivo comprimido normal. Podría ser una bomba de compresión (un archivo hecho pequeño a propósito que llena el disco al descomprimirlo) o algo legítimo, como la imagen de disco de una máquina virtual. Si no sabes de dónde viene, cancela.	3766aeb6
+main.do_not_check_again_can_be	No volver a comprobar (se puede reactivar en Configuración)	393f5426
+main.continue_extracting	Continuar la extracción	fa29f5e2
+main.conflict_title	El archivo ya existe	b1b0ec61
+main.same_size	mismo tamaño	e9c1aa54
+main.larger	más grande	acd1be8c
+main.smaller	más pequeño	9c3c295f
+main.existing_file	Archivo existente	d49f7a8d
+main.newer	Más reciente	56b079ac
+main.version_archive	Versión del archivo comprimido	27d73a30
+main.older	Más antiguo	63f34dd2
+main.same_time	Misma fecha	d10b2ff6
+main.conflict_archive_version	La versión del archivo comprimido: {0}.	bfce5d04
+main.what_would_you_like_do	¿Qué quieres hacer?	7b52603b
+main.overwrite_existing_file	Sobrescribir el archivo existente	a232a5a5
+main.replace_with_version_archive	Reemplazarlo con la versión del archivo comprimido	ab8f8b33
+main.keep_both	Conservar ambos	60c801a8
+main.new_file_renamed_automatically	Al archivo nuevo se le cambia el nombre automáticamente y no se pierde nada	eee3a7ca
+main.skip_file	Omitir este archivo	23150e3b
+main.keep_existing_file_do_not_extract	Conservar el archivo existente y no extraer este	4d4262b7
+main.apply_same_choice_all_later	Aplicar la misma elección a todos los conflictos siguientes	8dfd3ccc
+main.choose_automatically	O seleccionar automáticamente	0598ff5b
+main.automatic_choice	Elección automática	0c5a72b3
+main.cancel_extraction	Cancelar la extracción	89ecef59
+main.choose_folder_compress	Selecciona la carpeta que quieres comprimir	c24a7020
+main.smallest_size	Tamaño mínimo	ba07b565
+main.balanced	Equilibrado	03342dbb
+main.store_only	Solo almacenar	6aadc26d
+main.level	Nivel {0}	8051c09f
+main.single_solid_block	Un único bloque sólido	82518e40
+main.non_solid	No sólido	0226bd71
+main.password_protected_incl_file_names	Protegido con contraseña (incluidos los nombres de archivo)	19e5f976
+main.password_protected	Protegido con contraseña	09d9e174
+main.split	Dividido en partes de {0}	678d4e6a
+main.full_path	Ruta completa	29e5ac46
+main.by_mode_default	Según el modo (predeterminado)	54270810
+main.store_only_no_compression	Solo almacenar (sin compresión)	e3e66261
+main.1_fastest	1  Más rápido	04d90b7d
+main.3_fast	3  Rápido	5385054d
+main.5_normal	5  Normal	530f5284
+main.7_maximum	7  Máximo	5d52542d
+main.9_ultra	9  Ultra	d39524fd
+main.auto	Automático	c614ba7c
+main.non_solid_each_file_separately	No sólido (cada archivo por separado)	c7d92841
+main.all_single_block_smallest	Todo (un único bloque, mínimo)	189a729d
+main.by_mode_aes_256	Según el modo (AES-256)	0bbe88ff
+main.zipcrypto_compatible_with_old	ZipCrypto (compatible con programas antiguos)	8d6b9b84
+main.relative_path	Ruta relativa	da42f64e
+main.full_path_without_drive_letter	Ruta completa (sin la letra de unidad)	3809d0df
+main.do_not_split	No dividir	c6e64721
+main.25_mb_e_mail_attachment	25 MB (adjunto de correo)	41991e74
+main.4_gb_fat32_limit	4 GB (límite de FAT32)	2ef4a47e
+main.custom	Personalizado…	dce04fd3
+main.choose_output_folder_archive	Selecciona la carpeta de salida del archivo comprimido	595ed9c9
+main.menu_save_as_new_template	Guardar como plantilla nueva…	062f4db3
+main.update_template_with_current	Actualizar esta plantilla con la configuración actual	e0496ccb
+main.menu_rename_template	Cambiar nombre…	94ac9a58
+main.delete_template	Eliminar esta plantilla	9414be5d
+main.show_right_click_menu_compress	Mostrar en el menú contextual, en «Comprimir con una plantilla»	3bfd9a94
+main.fixed_format	(fijo para este formato)	383cd7ca
+main.two_passwords_do_not_match	Las dos contraseñas no coinciden.	4edbd2dc
+main.zip_passwords_can_only_use_letters	Las contraseñas ZIP solo pueden usar letras, dígitos y símbolos comunes. Elige 7z para usar otros caracteres.	49150c83
+main.zipcrypto_weakly_encrypted	El cifrado ZipCrypto es débil. Para mayor seguridad, usa AES-256 (modo «Equilibrado» con cifrado «AES-256»).	eb3cf368
+main.iso_images_not_compressed_do_not	Las imágenes ISO no se comprimen y no admiten contraseñas ni división.	ef7b274d
+main.tar_family_does_not_support	La familia TAR no admite contraseñas ni división.	971a8929
+main.no_password_entered_yet_so_file	No se ha escrito ninguna contraseña, así que los nombres de archivo no se cifrarán.	39a1b880
+main.save	Guardar en: {0}	a01152d1
+main.invalid_file_name_chars	El nombre no puede estar vacío ni contener \\ / : * ? " < > |	6e20e19f
+main.output_file	Archivo de salida: {0}	33bf7452
+main.split_into_001_002	(dividido en .001, .002…)	fbc7ce35
+main.invalid_file_name	Nombre de archivo no válido.	a1bff97e
+main.please_add_files_folders_compress	Agrega primero los archivos o carpetas que quieres comprimir.	67c7cad5
+main.invalid_split_size_enter_size_like	Tamaño de división no válido. Escribe un tamaño como «50 MB» o «1,5 GB» (como mínimo 64 KB; sin unidad, se supone MB).	f35af639
+main.custom_parameters_set_if_they_do	Hay parámetros personalizados. Si no son válidos para este formato, la compresión fallará y explicará el motivo.	a4d08a9d
+main.sources	Orígenes ({0})	ba3b4da5
+main.remove	Quitar	e963907d
+main.and_n_more_sources	…y {0} más	f459eedf
+main.calculating	Calculando…	c5737794
+main.delete_originals	Eliminar los originales	150eb4d3
+main.some_items_were_skipped_so	  (Se omitieron algunos elementos, así que no se ofrece eliminar los originales)	249c1c7d
+main.integrity_test_passed	  Comprobación de integridad superada	a3039500
+main.data_after_end_compressed_stream	, {0} {0:elemento tiene|elementos tienen} datos después del final del flujo comprimido (el contenido está completo)	a13e3dd4
+main.integrity_test_failed	  ⚠ Error en la comprobación de integridad: {0}	cf1323ef
+main.integrity_test_cancelled	  (Comprobación de integridad cancelada)	556b443a
+main.nothing_delete	No hay nada que eliminar	7acb2e0c
+main.originals_no_longer_exist_they	Los originales ya no existen o contienen el nuevo archivo comprimido.	94521e2c
+main.new_archive_was_not_found	No se encontró el nuevo archivo comprimido	db4dd6ab
+main.new_archive_gone_so_originals_will	El nuevo archivo comprimido ya no está, así que los originales no se eliminarán.	06ab4c73
+main.delete_originals_title	¿Eliminar los originales?	500d32bc
+main.delete_original_archive_title	¿Eliminar el archivo comprimido original?	e09267fc
+main.move_recycle_bin_you_can_restore	¿Mover {0} {0:elemento|elementos} a la Papelera de reciclaje? Podrás {0:restaurarlo|restaurarlos} desde allí.	49ce89f1
+main.drive_cannot_use_recycle_bin	⚠ La unidad de {0} {0:elemento|elementos} no puede usar la Papelera de reciclaje. La eliminación es permanente y no se puede deshacer.	60f2dd07
+main.new_archive_passed_integrity_test	El nuevo archivo comprimido superó la comprobación de integridad.	95a88575
+main.integrity_test_new_archive_failed	⚠ El nuevo archivo comprimido no superó la comprobación de integridad. Puede que los originales sean la única copia intacta, así que no se recomienda eliminarlos.	bfd538a9
+main.new_archive_has_not_been_tested	⚠ El nuevo archivo comprimido aún no se ha verificado. Ejecuta primero «Comprobar integridad» antes de eliminar los archivos originales.	7cc91b5c
+main.new_archive_inside_one_source	El nuevo archivo comprimido está dentro de una de las carpetas de origen. Ese origen no se eliminará.	dd7521da
+main.moved_recycle_bin	  {0} {0:elemento movido|elementos movidos} a la Papelera de reciclaje	0172199d
+main.status_deleted_items	  {0} {0:elemento eliminado|elementos eliminados}	ff13ae6b
+main.not_deleted	  ({0} {0:elemento no se eliminó|elementos no se eliminaron})	e3b12b2b
+main.template_name	Nombre de la plantilla	954ab955
+main.up_40_characters_no_allowed	Hasta 40 caracteres; no se permite [ ]. Una plantilla solo guarda opciones de compresión, nunca contraseñas.	56660810
+main.my_template	Mi plantilla	feab8114
+main.invalid_name	Nombre no válido	bb1826ee
+main.name_cannot_be_empty_contain_line	El nombre no puede estar vacío ni contener [ ] ni saltos de línea. Puede tener hasta 40 caracteres, sin espacios al principio ni al final.	20720a40
+main.template_with_name_already_exists	Ya existe una plantilla con ese nombre. Usa otro nombre.	1eef553b
+main.rename_template	Cambiar el nombre de la plantilla	1e32c6e1
+main.delete_template_title	¿Eliminar la plantilla?	56396035
+main.delete_template_cannot_be_undone	¿Eliminar la plantilla «{0}»? No se puede deshacer.	e50df843
+main.wrong_password	Contraseña incorrecta	fc2066fe
+main.archive_could_not_be_opened_with	No se pudo abrir este archivo comprimido con la contraseña que acabas de escribir. Selecciona Extraer de nuevo y vuelve a escribir la contraseña.	34ba58c8
+main.delete_original_archive	Eliminar el archivo comprimido original	132fc098
+main.some_items_could_not_be_processed	No se pudieron procesar algunos elementos	91b6c84e
+main.change_archive	Modificar archivo comprimido	ea98cf6d
+main.op_failed	{0}: error	64e16e18
+main.complete	{0}: completado	adf4aeab
+main.succeeded	{0} correctos	70835f42
+main.suffix_n_failed	, {0} con errores	f41037c2
+main.progress	{0} en curso	6ba4b16f
+main.n_failed	{0} con errores	64e16e18
+main.all_done	Todo listo	7268efa6
+main.hash_values	Valores hash	c7455cfb
+main.item_s_archive	{1} {1:elemento|elementos} en «{0}»	0b9e61f3
+main.paste_hash_value_compare	Pega un valor hash para comparar	8b1ffac1
+main.example_sha_256_written_on_website	Por ejemplo, el SHA-256 de un sitio web (la longitud identifica el algoritmo)	838740ff
+main.hash_value_compare	Valor hash para comparar	3e0522ec
+main.match_only_means_file_same_as	Una coincidencia solo significa que el archivo es igual al valor pegado. Que ese valor sea de fiar depende de su origen. MD5 y SHA-1 detectan un archivo dañado, pero no impiden que alguien modifique un archivo a propósito.	294fb115
+main.more_file_s_not_listed_save	…{0} {0:archivo más no aparece|archivos más no aparecen} en la lista («Guardar como archivo de suma de comprobación» los incluye todos)	fc8359d8
+main.not_hash_value_only_0_9	Esto no es un valor hash. Solo se permiten 0–9 y a–f (se admiten espacios, guiones o un 0x inicial).	8db4145b
+main.length_digits_matches_no_algorithm	Una longitud de {0} dígitos no corresponde a ningún algoritmo. CRC-32 tiene 8, MD5 32, SHA-1 40, SHA-256 64, SHA-384 96 y SHA-512 128.	86ef5264
+main.still_calculating	Todavía calculando…	624c0ce1
+main.match	✓ Coincide: {0} ({1})	5d3acc60
+main.has_not_been_calculated_tick_above	{0} no se ha calculado. Selecciónalo arriba.	3f6489aa
+main.no_match_no_file_has	✗ No coincide: ningún archivo tiene este {0}.	133cb393
+main.save_as	Guardar como .{0}…	f0bdc77f
+main.calculating_progress	Calculando… {0} % ({1} / {2})	c8a8358b
+main.there_nothing_calculate	No hay nada que calcular.	6fc8debb
+main.done_file_s	Listo: {0} {0:archivo|archivos}, {1}	739e7fd5
+main.could_not_be_calculated	; {0} no se pudieron calcular	fb91acb6
+main.copy_all	Copiar todo	9da9f044
+main.copied_to_clipboard_period	Copiado al portapapeles.	fee2a7f7
+main.save_checksum_file	Guardar el archivo de suma de comprobación	f3f3218a
+main.could_not_save	No se pudo guardar	3b89fc9a
+main.could_not_write	No se pudo escribir «{0}».	84647b8c
+main.saved	Guardado: {0}	7810f2d3
+main.info_location	Ubicación	d219c681
+main.file_size	Tamaño del archivo	45d0df35
+main.file_s_folder_s	{0} {0:archivo|archivos}, {1} {1:carpeta|carpetas}	48e27f88
+main.archive	; comprimido al {0} % del original	ecc6d261
+main.original_size	Tamaño original	983bb440
+main.yes	Sí	5397e058
+main.no	No	816c52fd
+main.block_s	 ({0} {0:bloque|bloques})	d74365de
+main.solid	Sólido	d0063586
+main.info_encrypted_label	Cifrado	bde2fbb6
+main.yes_encrypted_file_s	Sí ({0} {0:archivo cifrado|archivos cifrados})	545f5a09
+main.volumes	Volúmenes	39c0ee03
+main.volume_s	{0} {0:volumen|volúmenes}	65a2cc5a
+main.can_be_changed	Se puede modificar	0bb21756
+main.yes_files_can_be_added_deleted	Sí (se pueden agregar, eliminar y cambiar de nombre archivos)	f5cd1343
+main.no_format_can_only_be_extracted	No (este formato solo se puede extraer)	b75cf7d1
+main.archive_comment	Comentario del archivo comprimido	7ec7e1af
+## welcome
+welcome.welcome_lycanzip	Te damos la bienvenida a LycanZip	2a1448ba
+welcome.free_open_source_ad_free_light	Un compresor gratuito, de código abierto, sin anuncios y ligero. Elige la configuración que prefieras. Puedes cambiarla toda más adelante.	f8c5f342
+welcome.language_changes_after_restart	Reinicia después de cambiar el idioma.	8fd16493
+welcome.short_sound_when_task_finishes	Un sonido breve cuando una tarea termina o falla. Al activarlo se reproduce una muestra.	12bb78d5
+welcome.when_show_animations_off_windows	Si «Mostrar animaciones» está desactivado en Windows, no se anima nada, sea cual sea la opción elegida aquí.	87e4ec47
+welcome.double_click_picture_opens_preview	Al hacer doble clic en una imagen, se abre en la ventana de vista previa	4d368b3b
+welcome.double_click_picture_opens	Al hacer doble clic en una imagen, se abre en la aplicación asociada	717eddfc
+welcome.double_click_audio_file_plays	Al hacer doble clic en un archivo de audio, se reproduce en el reproductor integrado	885b47e1
+welcome.double_click_audio_file_opens	Al hacer doble clic en un archivo de audio, se abre en la aplicación asociada	6fe22413
+welcome.view_preview	Vista y vista previa	ed24cabc
+welcome.how_archive_shown_when_opened	Cómo se muestra un archivo comprimido al abrirlo.	78eef94a
+welcome.pictures_show_thumbnails_other	Las imágenes muestran miniaturas; los demás archivos, iconos del mismo tamaño.	1f63a826
+welcome.default_format	Formato predeterminado	8cb4e197
+welcome.zip_works_everywhere_7z_compresses	ZIP funciona en todas partes; 7z comprime más.	fdfb81fa
+welcome.double_click_picture_archive_open	Haz doble clic en una imagen de un archivo comprimido para abrirla en la ventana de vista previa.	c3ec0168
+welcome.double_click_audio_file_archive	Haz doble clic en un archivo de audio de un archivo comprimido para reproducirlo en el reproductor integrado.	44a51cab
+welcome.integrate_with_windows	Integrar con Windows	8840c0f7
+welcome.only_step_changes_system_nothing	Es el único paso que modifica el sistema. No se escribe nada hasta que seleccionas Finalizar, y Omitir no cambia nada.	68a28da9
+welcome.classic_right_click_menu	Menú contextual clásico	870ea56e
+welcome.right_click_files_compress_extract	Haz clic derecho en los archivos para comprimirlos o extraerlos.	695499c8
+welcome.windows_11_right_click_menu	Menú contextual de Windows 11	1889983f
+welcome.visible_without_choosing_show_more	Visible sin seleccionar «Mostrar más opciones».	b682df71
+welcome.file_associations_open_with	Asociaciones de archivos (Abrir con)	fec45671
+welcome.only_lists_lycanzip_under_open	Registra LycanZip en «Abrir con» y en «Aplicaciones predeterminadas». Windows no permite que las aplicaciones se establezcan a sí mismas como predeterminadas, así que tendrás que seleccionar LycanZip en Configuración de Windows.	d936e855
+welcome.all	…{0} en total	f51eb1e2
+welcome.which_items_right_click_menu_shows	Los elementos que muestra el menú contextual se pueden cambiar más adelante en la pestaña Explorador de archivos de Configuración.	b241e0c8
+welcome.extract_name	Extraer en «nombre\\»	252257c4
+welcome.compress_zip	Comprimir en ZIP	ed33ffa5
+welcome.compress_7z	Comprimir en 7z	7e9babaa
+welcome.back	Atrás	b52b36b7
+welcome.next	Siguiente	bc981983
+## task
+task.under_1_second	Menos de 1 segundo	c9246acd
+task.min_s	{0} min {1} s	3f40e738
+task.h_min	{0} h {1} min	21a0c7a3
+task.test	Comprobar	640ab2ba
+task.waiting	En espera	33d30632
+task.s	  ·  {0}/s	f6b14876
+task.left	  ·  quedan {0}	d6fd86cd
+task.working	En curso…  {0}	0e2ccf83
+task.paused	En pausa  {0}	155921b8
+task.done	Listo  {0} {0:archivo|archivos}	2e3f901c
+task.skipped	, {0} {0:omitido|omitidos}	75589066
+task.macos_metadata_item_s_skipped	, {0} {0:elemento de metadatos de macOS omitido|elementos de metadatos de macOS omitidos}	732f30fa
+task.unsafe_rejected	, {0} {0:ruta no segura rechazada|rutas no seguras rechazadas}	84be0dca
+task.renamed	, {0} con nombre cambiado	7cf420b8
+task.done_sizes	Listo  {0} {0:archivo|archivos}  {1} → {2}	43858f28
+task.already_compressed_file_s_stored	, {0} {0:archivo ya comprimido almacenado|archivos ya comprimidos almacenados} directamente	ef250d9f
+task.thumbs_db_skipped	, {0} Thumbs.db {0:omitido|omitidos}	d4450d3b
+task.done_plain	Listo  	2d6f6fac
+task.new_files_not_added	{0} {0:archivo nuevo no agregado|archivos nuevos no agregados}	fd5b8cc5
+task.integrity_test_passed	Comprobación de integridad superada	d62ca692
+task.failed	Error  {0}	eee308fd
+task.failed_wrong_password_start_again	Error  Contraseña incorrecta. Vuelve a empezar y escribe la contraseña correcta	d4634a7a
+task.extracted_kept	{0} {0:archivo con un error se extrajo y se conservó|archivos con errores se extrajeron y se conservaron}: {1}	24e63e29
+task.failed_plain	Error  	4553638b
+task.cancelled	Cancelado	f840ac65
+## preview
+preview.stable_diffusion_webui_a1111_forge	Stable Diffusion WebUI (formato A1111 / Forge)	8098eb0a
+preview.embedded_text_data	Datos de texto incrustados ({0})	ccc838d5
+preview.previous	Anterior (←)	6603747f
+preview.next	Siguiente (→)	b24e35e3
+preview.fit_window	Ajustar a la ventana	54983cda
+preview.switch_f_between_fit_window_width	Alternar (F) entre «Ajustar» (ventana / ancho / alto; desde el menú o Ctrl+0 / 2 / 3) y «Tamaño real» (Ctrl+1). El zoom actual se muestra en el botón	f59713cc
+preview.actual_size	Tamaño real	e18d1468
+preview.menu_you_can_also_right_click	Menú (también puedes hacer clic derecho en la imagen)	a5260417
+preview.menu	Menú	57f5f5ef
+preview.thumbnail_strip	Tira de miniaturas	70cc2f0c
+preview.fit_width	Ajustar al ancho	4d6ed0ab
+preview.fit_height	Ajustar al alto	e6a94f84
+preview.actual_size_percent	Tamaño real ({0})	13668eb2
+preview.animation_too_large_only_first	Esta animación es demasiado grande, así que solo se muestra el primer fotograma	0e92ed52
+preview.paused_press_p_resume	En pausa (pulsa P para reanudar)	dcfec256
+preview.playing	Reproduciendo	298c3905
+preview.previous_name	Anterior	50f94286
+preview.next_name	Siguiente	bc981983
+preview.first	Primera	916a78d7
+preview.last	Última	d1c69a85
+preview.actual_size_name	Tamaño real	e18d1468
+preview.zoom	Acercar	4fc05f27
+preview.zoom_out	Alejar	a4ae4b24
+preview.rotate_clockwise	Girar a la derecha	acf3bc67
+preview.rotate_counterclockwise	Girar a la izquierda	e26261ca
+preview.full_screen	Pantalla completa	d15f886d
+preview.play_animation	Reproducir animación	1d44b58b
+preview.copy_image	Copiar imagen	883f2df0
+preview.save_image_as	Guardar imagen como…	82c99fbc
+preview.image_info	Información de la imagen	9ab2a0d2
+preview.copy	Copiar	af74f7c5
+preview.copy_what	Copiar {0}	37daa938
+preview.grayscale	Escala de grises	c8b0f2ed
+preview.16_bits_channel	16 bits / canal	f43e0282
+preview.color_8_bits_channel	Color (8 bits / canal)	b4c50510
+preview.with_transparency	, con transparencia	4961855d
+preview.date_taken	Fecha de captura	76edfcab
+preview.camera	Cámara	4da9c9af
+preview.aperture	Apertura	aae12633
+preview.1_s	1/{0} s	2f466ea0
+preview.s	{0} s	5cd8bcda
+preview.shutter	Velocidad de obturación	7116fe95
+preview.iso	ISO	4f325d99
+preview.focal_length	Distancia focal	9bd85a7d
+preview.file	Archivo	2c3cafa4
+preview.path_archive	Ruta en el archivo comprimido	ea550c9c
+preview.image	Imagen	50e19fda
+preview.dimensions	Dimensiones	9f4ca9ec
+preview.px_megapixels	{0} × {1} px ({2} megapíxeles)	fc3a73cc
+preview.color	Color	1d0c8304
+preview.resolution	Resolución	516aae52
+preview.status	Estado	bae7d5be
+preview.not_fully_loaded_yet	Aún no se ha cargado del todo	a5972e0a
+preview.photo_info	Información de la foto	60fddc09
+preview.ai_generation_info	Información de generación por IA	2c56ead3
+preview.source	Origen	6da13add
+preview.prompt	Prompt	a817d7eb
+preview.negative_prompt	Prompt negativo	e083520d
+preview.raw_data	Datos sin procesar	d88d5638
+preview.other_text_data	Otros datos de texto	9879c423
+preview.image_copied	Imagen copiada	a607eb31
+preview.path_copied	Ruta copiada	12ec0d2e
+preview.save_dialog_title	Guardar imagen como	b8184460
+preview.saved	Guardado en {0}	136c4303
+preview.could_not_save	No se pudo guardar	3b89fc9a
+preview.file_too_large_preview_limit_64	Este archivo es demasiado grande ({0}). El límite de la vista previa es de 64 MB.	6329212f
+preview.image_too_large_exceeds_preview	Esta imagen es demasiado grande; supera el límite de la vista previa.	bd25df65
+preview.use_open_with_associated_app_file	{0}.\n\nSelecciona «Abrir con la aplicación asociada» en el menú contextual de la lista de archivos.	a12b1655
+preview.cannot_display_image_file_may_be	No se puede mostrar esta imagen. Puede que el archivo esté dañado.	0d642a27
+preview.jpeg_xl_images_need_jpeg_xl	Para previsualizar imágenes JPEG XL, instala «JPEG XL Image Extension» desde Microsoft Store	3b2ae038
+preview.avif_images_need_av1_video	Para previsualizar imágenes AVIF, instala «AV1 Video Extension» desde Microsoft Store	22f5bb11
+preview.heic_heif_images_need_heif_image	Para previsualizar imágenes HEIC / HEIF, instala «HEIF Image Extensions» desde Microsoft Store (puede que también se necesite «HEVC Video Extensions»)	c6869eb3
+preview.webp_images_need_webp_image	Para previsualizar imágenes WebP, instala «WebP Image Extensions» desde Microsoft Store	7abdfe5a
+preview.pc_has_no_decoder_can_preview	Este equipo no tiene ningún descodificador que pueda previsualizar este tipo de imagen	9a95035e
+preview.file_too_large	Archivo demasiado grande	a0704a4e
+preview.wrong_password_file_cannot_be_read	Contraseña incorrecta. No se puede leer este archivo.	b6d065bf
+preview.failed_read_file	No se pudo leer el archivo: {0}	46c4e52b
+preview.failed_read_file_plain	No se pudo leer el archivo.	9c3f8d17
+## audio
+audio.audio_files	Archivos de audio	e7b16352
+audio.playback_position	Posición de reproducción	61d5ff75
+audio.previous_track_ctrl_left	Pista anterior (Ctrl+Izquierda)	1e5f9e32
+audio.play	Reproducir	5d12bd53
+audio.next_track_ctrl_right	Pista siguiente (Ctrl+Derecha)	d23b38e8
+audio.mute_m	Silenciar (M)	4b5c1a90
+audio.volume	Volumen	3b18e8e3
+audio.file_too_large_preview_over_256	El archivo es demasiado grande para previsualizarlo (más de 256 MB). Selecciona «Abrir con la aplicación asociada» en el menú contextual.	5f24eb00
+audio.reading	Leyendo…	ae18b70a
+audio.file_could_not_be_read	No se pudo leer este archivo.	e3744714
+audio.pc_cannot_play_file_decoder_format	Este equipo no puede reproducir este archivo (puede que falte el descodificador de este formato).	a487415a
+audio.reached_last_track	Has llegado a la última pista.	1b15f3e9
+## scan
+scan.cannot_scan_windows_real_time	No se puede analizar: la protección en tiempo real de Windows está desactivada. Actívala en Seguridad de Windows.	e1cd88f6
+scan.cannot_scan_antivirus_product	No se puede analizar: el antivirus instalado no admite AMSI. Windows Defender sí lo admite. Asegúrate de que esté activado.	d761d14d
+scan.cannot_scan_computer_cannot_use	No se puede analizar: este equipo no puede usar la interfaz de análisis antimalware de Windows (AMSI).	3e0a3732
+scan.file_s_scanned	{0} {0:archivo analizado|archivos analizados} ({1})	fac2ea06
+scan.suspicious_file_s_found	, {0} {0:archivo sospechoso encontrado|archivos sospechosos encontrados}	47e1ee76
+scan.nothing_found	, no se encontró nada	4b3809ad
+scan.file_s_skipped_too_big	; {0} {0:archivo omitido|archivos omitidos} (demasiado grandes)	21fcc6c0
+scan.file_s_skipped_encrypted	; {0} {0:archivo omitido|archivos omitidos} (cifrados)	5ef5c1ee
+scan.could_not_be_read	; {0} no se pudieron leer	45b47d1a
+scan.could_not_be_scanned	; {0} no se pudieron analizar	c00f2a01
+## assoc
+assoc.writing_registry_failed	Error al escribir en el Registro ({0}): HKCU\\{1}	b227d1e2
+assoc.lycanzip_split_archive_001	Archivo dividido de LycanZip (.001)	2923f4fe
+assoc.lycanzip_comic_book_archive	Archivo de cómic {0} de LycanZip	7c877261
+assoc.lycanzip_archive	Archivo comprimido {0} de LycanZip	bfcd176b
+assoc.path_lycanzip_exe_was_not_given	No se indicó la ruta de LycanZip.exe	bdd9f137
+assoc.open_source_ad_free_lightweight	Compresión y extracción de código abierto, sin anuncios y ligera	c79109cd
+assoc.could_not_remove	No se pudo quitar {0} ({1})	b99ee88b
+## app
+app.lycanzip_task_s_running	LycanZip: {0} {0:tarea en curso|tareas en curso}, {1} %	f9c7a519
+app.lycanzip_tasks_running_no_percent	LycanZip: {0} {0:tarea en curso|tareas en curso}	6c03fab4
+app.tasks_finished	Tareas terminadas	3943ba15
+app.all_tasks_finished	Todas las tareas han terminado.	e4026e4d
+app.lycanzip_still_has_tasks_running	LycanZip todavía tiene tareas en curso	9c8e7265
+app.show_window	Mostrar ventana	0502f5ca
+app.cancel_all_tasks	Cancelar todas las tareas	85159977
+app.exit_lycanzip	Salir de LycanZip	842a20fa
+## win11
+win11.error_code	Código de error {0}	bf62a269
+win11.not_windows_11_new_style_context	No es Windows 11. El menú contextual de estilo nuevo solo está disponible en Windows 11.	3072296c
+win11.was_not_found	No se encontró {0}	74587794
+win11.was_not_found_version_has_no	No se encontró {0}. Esta versión aún no tiene un paquete firmado de menú de estilo nuevo.	1242f165
+## drag
+drag.items	{0} elementos	026a1b0e
+drag.folder	Carpeta	30baa249
+## preset
+preset.general_zip	ZIP general	f75cf2d3
+preset.general_7z	7z general	773f446e
+preset.fast	Rápido	8db6a2f1
+preset.e_mail_share	Correo / compartir	bd390aae
+preset.backup	Copia de seguridad	dd96994d
+preset.store_only_no_compression	Solo almacenar, sin compresión	05d2dfd8
+## lang
+lang.zh_tw	繁體中文	1f7e4a4c
+lang.en_us	English	649df08a
+lang.zh_cn	简体中文	93659150
+lang.ja_jp	日本語	c12140a0
+lang.ko_kr	한국어	6e081b59
+lang.de_de	Deutsch	a6a77092
+lang.es_es	Español	2001ca08
+lang.fr_fr	Français	2ca514eb
+## fmt
+fmt.value_paren	{0} ({1})	4aec5d0a
+fmt.size_bytes	{0} ({1} {1:byte|bytes})	a94a0670
+fmt.n_files	{0} {0:archivo|archivos}	113de731
+fmt.and_n_folders	, {0} {0:carpeta|carpetas}	8bf5d515
+fmt.paren	 ({0})	1ced71b6
+fmt.status_items_size	  ·  {0} {0:elemento|elementos}  ·  {1}	c2148bb6
+fmt.n_items_short	{0} {0:elemento|elementos}	79a3ecf0
+fmt.n_items	{0} {0:elemento|elementos}	79a3ecf0
+fmt.percent_paren	 ({0} %)	2955fcd7
+fmt.n_sources	  |  {0} {0:origen|orígenes}	4065a811
+fmt.colon_value	: {0}	4f5acaf5
+## sums
+sums.verify_title	Verificar archivos de suma de comprobación	6a43bbf1
+sums.checking	Comprobando…	820d6004
+sums.checking_progress	Comprobando… {0} % ({1} / {2})	7d7f4ea5
+sums.error_unreadable	No se pudo leer el archivo de suma de comprobación.	32f68ef2
+sums.error_too_big	El archivo de suma de comprobación es demasiado grande.	a62b533e
+sums.error_no_lines	No parece un archivo de suma de comprobación: no tiene ninguna línea con un valor hash.	88a7b6d0
+sums.all_match	✓ {0} {0:archivo coincide|archivos coinciden}.	4c5be580
+sums.bytes_read	{0} leídos	bce96785
+sums.some_match	✗ {0} de {1} {1:archivo coincide|archivos coinciden}.	7077b230
+sums.differs	No coincide	d15ff640
+sums.not_found	No se encontró	475c8486
+sums.could_not_read	No se pudo leer: {0}	65d7b999
+sums.more_not_listed	…{0} más no aparecen en la lista	0bba02be
+sums.extra_files	{0} {0:archivo está|archivos están} en el archivo comprimido pero no en el archivo de suma de comprobación:	ec12fe42
+sums.names_skip_checksum	Para coincidir con el archivo comprimido, se {0:omitió|omitieron} {0} {0:carpeta inicial|carpetas iniciales} de los nombres del archivo de suma de comprobación.	a45ece3d
+sums.names_skip_archive	Para coincidir con el archivo de suma de comprobación, se {0:omitió|omitieron} {0} {0:carpeta inicial|carpetas iniciales} de las rutas del archivo comprimido.	7a193140
+sums.bad_lines	{0} {0:línea no se entendió y se omitió|líneas no se entendieron y se omitieron}.	53c549af
+sums.summary_many	{0} de {1} archivos de suma de comprobación coinciden por completo.	d5d2dbe9
+sums.of_archive	Los archivos dentro de «{0}»	5dcf2a18
+sums.of_folder	Los archivos junto al archivo de suma de comprobación, en {0}	9e2ca60d
+sums.n_checksum_files	{0} archivos de suma de comprobación	b9bc0f41
+sums.names_not_found	La mayoría de los nombres del archivo de suma de comprobación no se encontraron en el archivo comprimido. Si las rutas de carpeta son distintas, indica abajo un prefijo para quitar o agregar.	93e716cd
+sums.strip_prefix	Prefijo que se quita de las rutas de la suma de comprobación	d27f48c7
+sums.strip_example	Por ejemplo, backup/2025/	3eb331e6
+sums.add_prefix	Prefijo que se agrega a las rutas de la suma de comprobación	c03022f0
+sums.add_example	Por ejemplo, photos/	fb0d3a26
+sums.check_again	Volver a comprobar	e185048c
+sums.match_only_means	Una coincidencia significa que el archivo es igual que cuando se creó el archivo de suma de comprobación. Que este sea de fiar depende de su origen.	92da1fdc
+sums.verify_archive_with	Verificar el archivo comprimido con {0}	82b71eac
+sums.verify_files_with	Verificar los archivos con {0}	cdcbf4f6
+sums.banner_title	Hay un archivo de suma de comprobación junto a este archivo comprimido	5f7afa0a
+sums.folder_files	Carpeta «{0}»: {1} {1:archivo|archivos}	d1be963b
+sums.no_files_to_hash	No hay archivos para calcular valores hash.	67d9d4ea
+sums.side_unusable	No se pudo usar {0}.	f8388be4
+sums.side_no_entry	{0} no tiene ningún valor para este archivo.	823632ad
+sums.side_waiting	Comprobando con {0}…	722743f7
+sums.side_untick	{0} tiene un valor {1}. Selecciona {1} arriba para compararlo.	80c436a1
+sums.side_match	✓ Coincide con {0} de la misma carpeta.	349ed159
+sums.side_differ	✗ No coincide con {0} de la misma carpeta, que indica {1}.	6804287b
+sums.verify_menu	Verificar un archivo de suma de comprobación…	5ef9d65d
+sums.setting_archive	Crear un archivo de suma de comprobación para el nuevo archivo comprimido	2511268d
+sums.setting_archive_caption	Guarda name.zip.sha256 junto al archivo comprimido con su hash SHA-256 (una línea por volumen en los archivos divididos). Útil para verificar descargas o archivos compartidos. Se aplica a la compresión rápida del menú contextual; las plantillas usan su propia configuración.	ac78b96d
+sums.setting_files	Crear un archivo de suma de comprobación para los archivos comprimidos	9c9c05a1
+sums.setting_files_caption	Guarda name.sha256 junto al archivo comprimido con el hash SHA-256 de cada archivo que contiene. Útil para verificar más adelante el contenido del archivo comprimido. Se aplica a la compresión rápida del menú contextual; las plantillas usan su propia configuración.	aef4dbd2
+sums.card_note_written	 Archivos de suma de comprobación: {0}	7e6782be
+sums.card_note_failed	 No se pudieron escribir los archivos de suma de comprobación.	762c19c5
+sums.link_archive	Verificar el archivo comprimido	d25cf6a5
+sums.link_files	Verificar los archivos	37c5d700
+sums.menu_hash_save	Calcular y guardar como name.sha256 (en ambos menús)	b7b11e23
+sums.save_exists_title	El archivo de suma de comprobación ya existe	e5226fcf
+sums.save_exists	«{0}» ya existe. ¿Quieres reemplazarlo o conservar ambos guardando el nuevo con otro nombre?	2f2622e0
+sums.save_replace	Reemplazar	a7cf7b25
+sums.save_keep_both	Conservar ambos	60c801a8
+sums.save_title	Calcular y guardar las sumas de comprobación	8c086f1c
+sums.save_done	✓ Guardado: {0}	0dbe15ea
+sums.save_done_skipped	 {0} {0:archivo no se pudo leer y no está incluido|archivos no se pudieron leer y no están incluidos}.	fb6a6101
+sums.save_failed_title	No se pudo guardar el archivo de suma de comprobación	018b3be7
+sums.notify_title	Archivo de suma de comprobación guardado	6877922b
+sums.notify_skipped	{0} ({1} {1:archivo no se leyó|archivos no se leyeron})	cf4ba6a2
+preview.this_is_first	Es la primera imagen	230d3949
+preview.this_is_last	Es la última imagen	4ce142e3
+audio.loop_none	Reproducir en orden y detener	5eff807e
+audio.loop_all	Repetir todo	7cce343d
+audio.loop_one	Repetir esta pista	40115bbc
+audio.shuffle	Orden aleatorio	5b772b7b
+audio.playback_mode_tip	Modo de reproducción: {0} (L)	e76eb3c6
+main.night	Noche	1097b553
+main.home	Inicio	70f8bb9a
+main.desktop	Escritorio	532c67fe
+main.documents	Documentos	687c8286
+main.downloads	Descargas	a862c2b2
+main.paste	Pegar	db248300
+scan.affected_item_note	Es posible que tu antivirus muestre «lycanzip-cli.exe» (o LycanZip) como «elemento afectado». Esto solo se debe a que LycanZip pasó el flujo de datos al antivirus para analizarlo: no se escribió nada en el disco y LycanZip no está infectado.	6fba3070
+## core
+core.cannot_list_folder	{0}: no se puede mostrar el contenido de la carpeta	595a3cc5
+core.skipped_link	{0} (vínculo simbólico / unión)	7cc5b706
+core.skipped_output_itself	{0} (el propio archivo de salida)	84b91d26
+core.cannot_compress_drive_root	No se puede comprimir la raíz de una unidad; selecciona una carpeta dentro de ella: {0}	613bacc0
+core.input_not_found	No se encontró la entrada: {0}	f2dace5f
+core.cannot_read_file	{0}: no se puede leer ({1})	4443424a
+core.custom_param_format	Un parámetro personalizado debe tener la forma nombre=valor (separados por espacios): {0}	31f4fa91
+core.custom_param_bad_char	Los parámetros personalizados contienen un carácter no válido	bd954308
+core.format_cannot_create	Esta versión de 7z.dll no puede crear archivos {0}	e340d737
+core.format_cannot_modify	Este formato no se puede modificar	fba21d69
+core.cannot_create_handler	No se pudo inicializar el controlador de compresión	13da818b
+core.zipcrypto_weak	El cifrado ZipCrypto es débil; usa AES-256 cuando la seguridad importe	ad77761a
+core.zipcrypto_weak_compat	El cifrado ZipCrypto (modo de compatibilidad) es débil; usa AES-256 cuando la seguridad importe	01aa2b18
+core.set_properties_failed	No se pudieron aplicar los parámetros de compresión (este formato no admite el método o la combinación de parámetros elegidos)	6f057beb
+core.set_properties_failed_custom	No se pudieron aplicar los parámetros de compresión: revisa si tus parámetros personalizados tienen errores de escritura o son incompatibles con el formato	35f4d0f4
+core.cancelled	Cancelado	f840ac65
+core.disk_full_archive	No hay espacio en disco suficiente para escribir el archivo comprimido	5993ba38
+core.update_failed	No se pudo modificar el archivo comprimido	7b1dee4a
+core.create_failed	No se pudo crear el archivo comprimido	90d456f9
+core.temp_space_plain	No hay espacio temporal suficiente en disco: se usó la compresión normal (los archivos ya comprimidos no se almacenaron directamente)	74e430a7
+core.cannot_read_back_temp	No se pudo volver a leer el archivo comprimido temporal	b0e76526
+core.zip_password_ascii	El cifrado ZIP solo admite caracteres ASCII (letras, dígitos y símbolos comunes); usa 7z para contraseñas con otros caracteres	eb33d87a
+core.zip_aes_password_long	Las contraseñas ZIP AES no pueden superar los 99 caracteres; usa una contraseña más corta o el formato 7z	f09d8efc
+core.no_input	No hay entrada	8dc8debc
+core.iso_no_volumes	ISO no admite volúmenes	32f98325
+core.iso_no_password	ISO no admite contraseñas	2d083ff0
+core.volume_too_small	Un volumen debe tener al menos 64 KB	4d68d5a0
+core.volumes_zip_7z_only	Los volúmenes divididos solo se admiten en ZIP y 7z	8ed1c78f
+core.tar_no_password	Los formatos TAR no admiten contraseñas; usa ZIP o 7z	e51c78ab
+core.nothing_to_compress	No hay nada que comprimir	2672e759
+core.target_exists	El archivo de destino ya existe: {0}	37b33c23
+core.cannot_create_output	No se pudo crear el archivo de salida: {0}	861c3cbf
+core.cannot_create_temp	No se pudo crear el archivo temporal	71288840
+core.cannot_rename_temp_output	No se pudo cambiar el nombre de la salida temporal a: {0}	7554dad7
+core.invalid_name	Nombre no válido: {0}	64268bd2
+core.file_not_found	No se encontró el archivo: {0}	e28dca49
+core.nothing_to_delete	No se indicó ningún elemento para eliminar	a6fb797b
+core.not_in_archive	No se encontró en el archivo comprimido: {0}	d9f85d0b
+core.nothing_to_rename	No se indicó ningún elemento para cambiar de nombre	68c8d63a
+core.cannot_move_into_itself	Una carpeta no se puede mover dentro de sí misma: {0}	60172ad7
+core.name_taken	El archivo comprimido ya tiene un elemento con este nombre: {0}	e16328f5
+core.is_folder_cannot_replace	Es una carpeta: su contenido no se puede reemplazar: {0}	a8d67a24
+core.replacement_is_folder	El reemplazo no puede ser una carpeta: {0}	7e4b64b2
+core.nothing_to_add	No hay archivos para agregar	5f89bc7f
+core.folder_name_taken	El archivo comprimido ya tiene una carpeta con este nombre: {0}	83595597
+core.file_name_taken	El archivo comprimido ya tiene un archivo con este nombre: {0}	b08fb67c
+core.nothing_deleted_unreadable	No se pudieron leer algunos archivos, así que no se eliminó nada del archivo comprimido	5876ea75
+core.archive_not_found	No se encontró el archivo comprimido: {0}	573a9161
+core.archive_cannot_modify	Este tipo de archivo comprimido no se puede modificar: {0}	f552428f
+core.password_needed_to_modify	El archivo comprimido tiene elementos cifrados: se necesita la contraseña para modificarlo	6540948a
+core.wrong_password	Contraseña incorrecta: {0}	74a0ee51
+core.tar_no_password_short	TAR no admite contraseñas	68738544
+core.disk_full_modify	No hay espacio en disco suficiente: modificar el archivo comprimido necesita unos {0} MB (libres: {1} MB)	cf14287c
+core.cannot_create_temp_file	No se pudo crear el archivo temporal: {0}	07f9843a
+core.cannot_replace_archive	No se pudo colocar el archivo comprimido modificado en su lugar (puede que otro programa esté usando el archivo o que no haya permiso de escritura): {0}	ed4f9793
+core.disk_full_target	No hay espacio suficiente en la unidad de destino: se necesitan unos {0} MB y hay {1} MB libres	ec3d2a79
+core.op_ok	Correcto	9ce3bd42
+core.op_unsupported_method	Método de compresión no admitido	ef2a9e38
+core.op_data_error	Error de datos	c778bc80
+core.op_crc_error	Error de CRC	8c725472
+core.op_unavailable	Datos no disponibles	f230d2f1
+core.op_unexpected_end	Fin de datos inesperado	39d93c5f
+core.op_data_after_end	Hay más datos después del final	781b28f4
+core.op_not_archive	No es un archivo comprimido	0ed60af8
+core.op_headers_error	Error de encabezado	93d23602
+core.op_wrong_password	Contraseña incorrecta	fc2066fe
+core.op_unknown	Error desconocido	e5fd9aa2
+core.path_reason	{0}: {1}	4d3c418a
+core.get_items_failed	No se pudo leer el número de elementos	79b3b3df
+core.disk_full_extract	No hay espacio en disco suficiente para escribir los archivos extraídos	f303f678
+core.extract_failed	Error en la extracción	5991eb87
+core.cancelled_no_password	Cancelado (no se escribió ninguna contraseña)	fba45152
+core.temp_write_failed	Error al escribir el archivo temporal	5ff6a944
+core.cannot_open_file	No se pudo abrir el archivo: {0}	f47ed1c3
+core.unknown_format	Formato de archivo comprimido desconocido o archivo dañado: {0}	e81496d0
+core.item_index_out_of_range	El índice del elemento está fuera del intervalo	58869057
+core.read_item_failed	No se pudo leer el elemento: {0}	13501ab1
+core.is_folder	Es una carpeta	e971b3a4
+core.encrypted_needs_password	Cifrado: se necesita una contraseña	5c440053
+core.link_no_content	Un vínculo no tiene contenido	7f28c297
+core.skipped_symlink_policy	{0} (vínculo simbólico, omitido por la configuración de seguridad)	87ffdbd9
+core.skipped_hardlink_policy	{0} (vínculo físico, omitido por la configuración de seguridad)	8df2b6aa
+core.rejected_outside	{0}: la ruta apunta fuera de la carpeta de destino	58fd5dd4
+core.cannot_create_folder	{0}: no se pudo crear la carpeta	e5f475c7
+core.cannot_create_parent	{0}: no se pudo crear la carpeta principal	e52c1873
+core.folder_in_the_way	{0}: ya existe una carpeta con este nombre en el destino	b9c178a7
+core.skipped_exists	{0} (ya existe)	22be83fc
+core.file_exists	{0}: el archivo ya existe	69a42e39
+core.cannot_create_file	{0}: no se pudo crear el archivo ({1})	2d149b96
+core.cannot_replace_file	{0}: no se pudo reemplazar el archivo existente ({1})	af34f55c
+core.bomb_total	El tamaño descomprimido supera el límite; se detuvo (posible bomba de compresión)	aa7db100
+core.bomb_ratio	La relación de compresión es inusualmente alta; se detuvo (posible bomba de compresión)	97e64e36
+core.bomb_actual	El tamaño descomprimido real supera el límite; se detuvo (posible bomba de compresión)	3826ab3c
+core.cannot_create_target	No se pudo crear la carpeta de destino: {0}	75abb342
+core.disk_full	No hay espacio en disco suficiente	a0ec91c6
+core.cannot_write_output	No se pudo escribir el archivo de salida (¿está lleno el disco?)	34b6b5b2
+core.iso_nothing	No hay nada que se pueda incluir en un ISO	1af43464
+core.iso_file_too_big	Un archivo dentro de un ISO no puede superar los 4 GB (esta versión aún no admite UDF): {0}	5c20d6f9
+core.iso_cannot_read	{0} (no se puede leer)	c2f1f002
+core.iso_short_read	{0} (el archivo se truncó durante la lectura o no se pudo leer)	cc9ed007
+core.launch_list_needs_path	--list necesita la ruta de un archivo	39e20492
+core.launch_cannot_read_list	No se pudo leer el archivo de lista: {0}	dfab0013
+core.launch_unknown_option	Opción desconocida: {0}	df63ee43
+core.launch_no_files	No se indicó ningún archivo	62b2324d
+core.path_empty	Ruta vacía	4dd56da4
+core.path_nul	La ruta contiene un carácter NUL	0363e018
+core.path_absolute	Una ruta absoluta o UNC	3fd273c3
+core.path_drive	Contiene una letra de unidad	8e14a535
+core.path_traversal	Salto de directorio (..)	46858ead
+core.path_colon	Contiene un flujo de datos alternativo de NTFS o dos puntos no permitidos	7756e2a5
+core.path_component_empty	Un componente queda vacío tras la limpieza	bac592df
+core.path_no_component	La ruta no tiene ningún componente válido	ec228d1c
+core.path_renamed	El nombre contiene caracteres que Windows no permite o un nombre reservado; se convirtió automáticamente	f43897c6
+core.dll_not_found	No se encontró 7z.dll (define la variable de entorno LYCAN_7Z_DLL o colócalo en la carpeta del exe)	bedf1866
+core.dll_load_failed	No se pudo cargar 7z.dll: {0}	7970328f
+core.dll_missing_exports	A 7z.dll le falta una función necesaria	303fec2b
+core.dll_formats_failed	Error en GetNumberOfFormats	f25e7f29
+core.task_extract_failed	No se pudieron extraer algunos elementos	73d74623
+core.task_test_failed	Algunos elementos no superaron la comprobación	5d96975e
+core.task_unreadable	No se pudieron leer algunos archivos	a0499c76
+core.task_no_amsi	No se puede usar la interfaz de análisis antimalware de Windows (AMSI)	ce19a6fc
+core.task_threat_found	Se encontraron archivos sospechosos	c358268b
+core.task_hash_failed	No se pudo calcular la suma de comprobación de algunos archivos	cfa8f7b7
+core.temp_space_need	No hay espacio temporal suficiente: se necesitan unos {0} MB, pero solo hay {1} MB libres en «{2}»	08f0bbc5
+core.temp_space_full	No hay espacio temporal suficiente: «{2}» está lleno ({1} MB libres)	04139f08
+main.open_preview_key	Abrir el archivo comprimido directamente en la vista previa de imagen	4ec4fba1
+main.open_preview_key_hint	Mantén pulsada esta tecla al abrir un archivo comprimido desde el Explorador de archivos. Los archivos comprimidos sin imágenes se abren de forma normal.	bedba710
+main.key_shift	Mayús	469d5b18
+main.key_ctrl	Ctrl	dd6a02a5
+main.key_none	No se usa	72a86113
+audio.info_format	Formato	041a5dec
+audio.info_bitrate	Velocidad de bits	eddca7c3
+audio.info_sample_rate	Frecuencia de muestreo	7a031620
+audio.info_channels	Canales	18e03e2a
+audio.info_length	Duración	3bade34e
+audio.info_size	Tamaño	b7152342
+audio.kbps	{0} kbps	d6fe6f7a
+audio.khz	{0} kHz	a15a2a00
+audio.mono	Mono	c5c55338
+audio.stereo	Estéreo	f4f390b6
+audio.channels_n	{0} canales	c5f7ad51
+main.lock_open_archive	Bloquear un archivo comprimido mientras está abierto	9a072cd4
+main.lock_open_archive_hint	Mientras un archivo comprimido está abierto en LycanZip, impide que otras aplicaciones lo modifiquen o eliminen. Las aplicaciones de sincronización en la nube (OneDrive, Dropbox, etc.) esperarán a que lo cierres para sincronizar los cambios.	547105a7
+shell.add_to_archive	Agregar a archivo comprimido…	2cdc38ad
+shell.compress_to	Comprimir en «{0}»	26079055
+shell.compress_each	Comprimir cada uno en {0}	71b71810
+shell.compress_with_preset	Comprimir con una plantilla	851cb07a
+shell.hash	Calcular valores hash…	78ef4a80
+shell.hash_save	Calcular y guardar como «{0}»	3bcf70ff
+shell.verify_checksum	Verificar el archivo de suma de comprobación con LycanZip	fa6d1cbb
+shell.other_formats	Otros formatos	ad24dd8d
+shell.group_entry	{0}: {1}	4d3c418a
+shell.encrypted	Archivo comprimido cifrado…	284a3b16
+shell.open_content	Abrir el contenido con LycanZip	b4b5ada3
+shell.open	Abrir	cf9b7706
+shell.extract_here	Extraer aquí	5221b51b
+shell.extract_to_named	Extraer en «{0}\\»	70e9c1e4
+shell.extract_same_name	Extraer cada uno en una carpeta distinta	96adc4e4
+shell.extract_to	Extraer en…	f5015680
+shell.test	Comprobar integridad	ba25de4f
+shell.image_preview	Vista previa de imagen	6c5de6ef
+shell.audio_preview	Vista previa de audio	47fea53e
+shell.extract_recent	Extraer en una carpeta reciente	6fb3e506
+shell.extract_merge	Extraer todo en una carpeta	95dfa5b4
+shell.preset_zip	ZIP general	f75cf2d3
+shell.preset_7z	7z general	773f446e
+shell.preset_smallest	Tamaño mínimo	ba07b565
+shell.preset_fast	Rápido	8db6a2f1
+shell.preset_mail	Correo / compartir	bd390aae
+shell.preset_backup	Copia de seguridad	dd96994d
+shell.preset_store	Solo almacenar, sin compresión	05d2dfd8
+preview.set_wallpaper	Establecer como fondo de escritorio…	a8535aeb
+preview.wallpaper_title	Establecer como fondo de escritorio	bddfd29e
+preview.wallpaper_hint	Esto cambia la imagen del escritorio. Se guarda una copia de la imagen en la carpeta «{0}» para que se conserve al cerrar el archivo comprimido (puedes eliminarla más adelante).	545a014e
+preview.wallpaper_position	Posición de la imagen	57ec5754
+preview.wallpaper_fill	Rellenar	7adb6736
+preview.wallpaper_fit	Ajustar	dab564d8
+preview.wallpaper_stretch	Expandir	b148ed24
+preview.wallpaper_tile	Mosaico	2dd2c660
+preview.wallpaper_center	Centro	a2391118
+preview.wallpaper_span	Extender por todas las pantallas	f9ac80c1
+preview.wallpaper_screen	Pantalla	5cc847f9
+preview.wallpaper_all_screens	Todas las pantallas	36e42090
+preview.wallpaper_screen_n	Pantalla {0}	450737fa
+preview.wallpaper_set	Establecer como fondo de escritorio	bddfd29e
+preview.wallpaper_done	Se cambió el fondo de escritorio	db9a8288
+preview.wallpaper_failed	No se pudo cambiar el fondo de escritorio	fdcbceb4
+preview.save_as_original	Archivo original ({0})	55a52041
+preview.save_as_type	Imagen {0}	4b7c0e56
+main.updates	Actualizaciones	c76d1807
+main.update_check	Buscar versiones nuevas	459eada1
+main.update_check_hint	Una vez por semana, LycanZip pregunta a aegisulf.com el número de la versión más reciente. No se envía nada más. Una copia instalada también descarga la actualización, pero solo la instala cuando tú lo eliges.	ff79bd40
+main.update_check_now	Buscar ahora	2ce5dd0d
+main.update_checking	Buscando...	494d0f68
+main.update_check_failed	No se pudo conectar con el sitio web.	16d35b69
+main.update_up_to_date	LycanZip {0} es la versión más reciente.	c3b654ab
+main.update_available	La versión {0} está disponible	d3f8a66c
+main.update_with_command	Actualizar con: {0}	1d9bdc7c
+main.update_download	Página de descarga	ca074cc1
+main.update_whats_new	Novedades	4d8dc5fe
+main.update_skip	Omitir esta versión	31996a8b
+main.update_skip_tip	No se avisará de esta versión; las más nuevas sí se anunciarán.	495188b9
+fmt.gap	  	099600a1
+fmt.dot_gap	  ·  	c80c74a1
+fmt.bar_gap	  |  	af18a86b
+fmt.list_sep	, 	d3bc9a37
+fmt.comma	, 	d3bc9a37
+main.restart_explorer	Reiniciar el Explorador de archivos	4f2f2310
+main.restart_explorer_hint	Úsalo cuando un cambio del menú contextual aún no se vea: después de activar o desactivar el menú, o después de una actualización.	9826207f
+main.restart_explorer_do	Reiniciar	b134bd55
+main.restart_explorer_title	¿Reiniciar el Explorador de archivos?	1247b286
+main.restart_explorer_question	Las ventanas de carpeta abiertas se cierran y la barra de tareas desaparece un momento. Termina primero lo que estés haciendo en el Explorador de archivos.	bb88d250
+main.menu_updated	Se actualizó el menú contextual	35a346d0
+main.menu_updated_restart_explorer	Reinicia el Explorador de archivos para usar la nueva versión.	81b74c5b
+main.off	Desactivado	e3de5ab0
+main.virustotal_lookup	Buscar en VirusTotal	45155d86
+main.virustotal_lookup_tip	Calcula el SHA-256 y abre VirusTotal en el explorador. Solo se envía el hash, no el archivo. Que VirusTotal no conozca un hash no significa que el archivo sea seguro.	162ec07b
+main.resize_column	Cambiar el ancho de la columna	a352329f
+main.reset_column_widths	Restablecer el ancho de las columnas	0d1aad85
+main.ratio	Proporción	794f65e9
+main.col_encrypted	Cifrado	bde2fbb6
+main.col_crc	CRC	3841eeac
+main.col_method	Método	88306943
+main.sort_by_ratio	Ordenar por proporción	0f42a324
+main.sort_by_encrypted	Ordenar por cifrado	c704964e
+main.sort_by_crc	Ordenar por CRC	4a496c5c
+main.sort_by_method	Ordenar por método	3fefe5e6
+main.info_technical	Información técnica\n	89d4e276
+main.info_created	Creado: {0}\n	76448e49
+main.info_accessed	Último acceso: {0}\n	5702c685
+main.info_method	Método: {0}\n	768c45b6
+main.info_permissions	Permisos: {0}\n	8bdf2fd8
+main.info_host_os	Creado en: {0}\n	c3576d38
+main.info_characteristics	Características: {0}\n	04bb04e0
+main.info_link	Vínculo a: {0}\n	3502a252
+main.info_block	Bloque sólido: {0}\n	81074eb6
+main.info_offset	Empieza en el byte {0} del archivo comprimido\n	5f8618a5
+main.info_comment	Comentario: {0}\n	5491205f
+core.dll_not_pinned	7z.dll no es el que se incluye con LycanZip, así que no se cargó: {0}. Reinstala LycanZip para obtener el archivo correcto	ab86763d
+core.dll_missing_pinned	No se encontró 7z.dll junto a LycanZip. Reinstala LycanZip para recuperarlo	2568bd9b
+main.update_install_now	Instalar ahora	8607e4ba
+main.update_install_title	Instalar la actualización	ac0f0e99
+main.update_install_question	¿Descargar e instalar LycanZip {0} ({1})? LycanZip se cerrará y volverá a abrirse solo.	77267b1b
+main.update_downloading	Descargando la actualización... {0} %	a19e7001
+main.update_not_in_feed	Todavía no hay ninguna versión más reciente para instalar. Vuelve a intentarlo más tarde.	7bc79e7b
+main.update_failed	No se pudo descargar la actualización o no superó la comprobación. No se cambió nada. Vuelve a intentarlo más tarde.	aa9ff9d1
+main.update_tasks_running	Todavía hay tareas en curso. Deja que terminen, o cancélalas, y después instala la actualización.	5f0e8545
+main.update_ready	La versión {0} está lista para instalarse	bb0155f4
+main.update_ready_hint	LycanZip se cierra y vuelve a abrirse para completar la actualización.	2953ac9d
+main.update_restart_now	Reiniciar y actualizar	68d74304
+main.two_copies_title	LycanZip está instalado dos veces	ae047f6d
+main.two_copies_store_owns	La versión de Microsoft Store de LycanZip también está instalada. Esa versión proporciona el menú contextual y los tipos de archivo, así que esta copia desactivó los suyos y el Explorador de archivos muestra LycanZip una sola vez.\n\nEs más sencillo tener una sola copia: puedes quitar la que no uses en Aplicaciones instaladas.\n\nEsta copia: {0}	a26b2e9a
+main.two_copies_other_has_menu	Otra copia de LycanZip tiene registrados su propio menú contextual o sus tipos de archivo, así que el Explorador de archivos podría mostrar LycanZip dos veces. Abre esa copia una vez (los desactiva al encontrar esta versión) o quítala en Aplicaciones instaladas.\n\nLa otra copia: {0}	35d66071
+main.open_installed_apps	Abrir Aplicaciones instaladas	2765c7aa
+main.store_version_provides_menu	La versión de Microsoft Store de LycanZip está instalada: proporciona el menú contextual y los tipos de archivo, así que están desactivados en esta copia.	f670f18e
+main.other_copy_note	Otra copia de LycanZip también tiene registrados un menú contextual o tipos de archivo: {0}\nÁbrela una vez (los desactiva al encontrar esta versión) o quítala, para que el Explorador de archivos muestre LycanZip una sola vez.	883c2d94
+main.store_menu_switch_hint	Muestra u oculta todas las entradas de LycanZip en el Explorador de archivos (el menú contextual y, en Windows 11, también el menú al arrastrar con el botón derecho). Se aplica la próxima vez que se abra un menú; no se registra ni se quita nada.	756e4de1
+main.welcome_offer_title	¿Es la primera vez que usas LycanZip?	e06f512c
+main.welcome_offer_hint	Dedica un minuto a elegir el aspecto, los sonidos y las vistas previas.	ebdcfb8d
+main.welcome_offer_start	Configurar	a5041fda
+main.welcome_offer_no	No, gracias	5f5c4384
+welcome.file_explorer_menu	Menú contextual del Explorador de archivos	7000f59a
+main.view_small_icons	Iconos pequeños	9fd460c2
+main.view_medium_icons	Iconos medianos	66c5bbfe
+main.view_large_icons	Iconos grandes	7d71ad7d
+main.view_huge_icons	Iconos muy grandes	4ec7f1c2
+main.search_settings	Buscar en la configuración	9a6f37a7
+main.search_settings_ctrl_f	Buscar en Configuración (Ctrl+F)	2763171f
+main.no_settings_match	Ninguna opción coincide	ba12d2cd
+main.search_settings_on_page	Buscar en la configuración (en la página Configuración)	862a70e5
+main.preview_pane	Panel de vista previa	b40b3929
+main.preview_pane_toggle	Mostrar u ocultar el panel de vista previa	cad29b53
+main.show_preview_pane	Mostrar el panel de vista previa	d5b62a9a
+main.preview_pane_desc	Muestra el elemento seleccionado bajo el árbol de carpetas en todas las vistas: imágenes, texto, PDF, etiquetas de audio y detalles. Se oculta automáticamente cuando la ventana es demasiado estrecha.	8fe413c6
+main.show_hide_preview_pane	Mostrar / ocultar el panel de vista previa	89f2d82c
+main.drag_resize_preview_pane_double	Arrastra para cambiar el tamaño del panel de vista previa (doble clic para restablecerlo)	aaa0b471
+main.preview_pane_splitter	Divisor del panel de vista previa	ad8cab6b
+preview.pane_text	Vista previa del texto	960373f3
+preview.pane_loading	Cargando	8f26c652
+preview.pane_enlarge	Abrir una vista previa más grande	b7a798a8
+preview.pane_previous_page	Página anterior	81f54719
+preview.pane_next_page	Página siguiente	4bfc194b
+preview.pane_page_of	Página {0} de {1}	c10e7490
+preview.pane_play	Reproducir	5d12bd53
+preview.pane_enter_password	Escribir la contraseña	570591c0
+preview.pane_locked	Cifrado. Escribe la contraseña para previsualizarlo.	0c432e08
+preview.pane_program_not_previewed	Los programas y los instaladores no se previsualizan.	ba76c063
+preview.pane_not_text	Este archivo no parece ser de texto.	533067ba
+preview.pane_text_truncated	(Solo se muestran los primeros {0}).	79ced1ce
+preview.pane_audio_title	Título	768e0c1c
+preview.pane_audio_artist	Artista	6c3f3d32
+preview.pane_audio_album	Álbum	dfb4c9a1
+preview.pane_length	Duración	3bade34e
+preview.pane_pdf_failed	No se puede mostrar este PDF. Puede que esté dañado o protegido.	a741ecac
+preview.pane_window_title	Vista previa	f1fbb2b4
+preview.pane_window_title_name	Vista previa – {0}	d4bdfa4a
+welcome.preview_pane_hint	Muestra la imagen, el texto o el PDF seleccionados bajo el árbol de carpetas	9066fd16
+preview.reading_mode	Modo de lectura	d75871a6
+preview.reading_mode_tip	Modo de lectura (B): todo el archivo comprimido en orden, dos páginas una junto a otra, de derecha a izquierda	d7b46a5e
+preview.reading_on	Modo de lectura activado	8dfdb523
+preview.reading_off	Modo de lectura desactivado	6d526edb
+preview.reading_rtl	De derecha a izquierda	da502a64
+preview.reading_ltr	De izquierda a derecha	34ce1477
+preview.reading_direction_tip	Sentido de lectura (D)	39306b19
+preview.reading_spread_auto	Páginas: automático	f2bfb879
+preview.reading_spread_single	Una página	b6c31c22
+preview.reading_spread_double	Dos páginas	bd8c3aa6
+preview.reading_spread_tip	Páginas una junto a otra (S): automático / una página / dos páginas	3b726cd5
+preview.reading_shift	Desplazar una página	5f7d1b48
+preview.reading_resume	Continuando desde la página {0}	abd0854c
+main.comic_reading_mode	Abrir los archivos de cómic en modo de lectura	410e39d2
+main.comic_reading_mode_desc	Al hacer doble clic en un archivo .cbz, .cb7, .cbr o .cbt, sus imágenes se abren en el modo de lectura de la vista previa de imagen. Desactívalo para ver la lista de archivos.	7c65a9e1
+main.reading_mode_keys	Modo de lectura / sentido / una o dos páginas / desplazar una página	7ffd115a
+main.remember_this_password	Recordar esta contraseña	9c29b204
+main.used_saved_password	Se abrió con una contraseña guardada	8fbc1750
+main.passwords	Contraseñas	02c83041
+main.password_manager	Administrador de contraseñas	17015895
+main.auto_try_saved_passwords	Probar automáticamente las contraseñas guardadas	c5c561d7
+main.auto_try_saved_passwords_desc	Cuando un archivo comprimido necesite una contraseña, probar primero las guardadas (hasta 50 o durante 5 segundos) y preguntar solo si ninguna funciona.	5cd0401d
+main.remember_run_passwords	Recordar las contraseñas usadas en esta sesión	92bf3dab
+main.remember_run_passwords_desc	Las contraseñas que funcionaron se guardan en memoria y se prueban primero hasta que se cierra LycanZip. Nunca se escriben en el disco.	c99abf03
+main.remember_password_default	«Recordar esta contraseña» está seleccionado de forma predeterminada	7f51be69
+main.remember_password_default_desc	En el cuadro de diálogo de contraseña. Si no, una contraseña solo se guarda cuando lo seleccionas.	dbbb2f08
+main.saved_passwords	Contraseñas guardadas	b3c61c55
+main.saved_passwords_desc	Se guardan en passwords.dat junto a la configuración, cifradas para tu cuenta de Windows. Solo esta cuenta en este equipo puede leerlas (una copia portátil llevada a otro equipo no puede). Esto no protege frente a malware que se ejecute con tu cuenta.	c21e27eb
+main.add_password	Agregar contraseña	7b7a8260
+main.import_passwords	Importar…	4834caf8
+main.export_passwords	Exportar…	0a116345
+main.clear_unreadable_passwords	Eliminar las contraseñas guardadas	2063bc45
+main.saved_passwords_unreadable	No se pueden leer las contraseñas guardadas. Las guardó otra cuenta de Windows u otro equipo, o el archivo está dañado.	bf64511e
+main.clear_unreadable_passwords_question	¿Eliminar passwords.dat? Las contraseñas que contiene se perderán. Después podrás guardar otras nuevas.	942eb96f
+main.no_saved_passwords	Todavía no hay contraseñas guardadas. Selecciona «Recordar esta contraseña» al escribir una, o agrégala aquí.	0be995a4
+main.hidden_password	Contraseña oculta	a51156d2
+main.never_used	Nunca usada	984ec5ee
+main.copy_password	Copiar contraseña	cda3abab
+main.edit_password	Editar contraseña	22215170
+main.delete_password	Eliminar contraseña	330753fe
+main.delete_password_question	¿Eliminar esta contraseña guardada?	7330db44
+main.password_copied	Contraseña copiada	9a0081f0
+main.password_note	Nota (opcional)	4e395670
+main.password_note_hint	De dónde viene la contraseña	bd693a41
+main.could_not_save_passwords	No se pudieron guardar las contraseñas.	d5436c25
+main.password_file_too_large	Este archivo es demasiado grande para ser una lista de contraseñas.	1c31e120
+main.passwords_imported	{0:Se importó|Se importaron} {0} {0:contraseña nueva|contraseñas nuevas}.	6d274f3a
+main.export_passwords_warning	El archivo exportado es texto sin formato: cualquiera que pueda abrirlo podrá leer todas las contraseñas. Guárdalo en un lugar seguro y elimínalo cuando ya no lo necesites.	ba640f91
+main.text_file	Archivo de texto	ee3d21a8
+main.passwords_exported	Contraseñas exportadas	1100b2dc
+main.master_password	Contraseña maestra	33acdbd6
+main.master_password_desc	Pide una contraseña antes de probar, mostrar o cambiar las contraseñas guardadas, una vez cada vez que se inicia LycanZip. Si la olvidas, las contraseñas guardadas no se pueden recuperar: solo se pueden eliminar.	453684fb
+main.master_password_off	Desactivada. Las contraseñas guardadas solo están protegidas por tu cuenta de Windows.	8e599348
+main.master_password_unlocked	Activada. Las contraseñas guardadas están desbloqueadas hasta que se cierre LycanZip.	9b1f206e
+main.master_password_locked	Activada. Las contraseñas guardadas están bloqueadas.	d650441e
+main.set_master_password	Establecer contraseña maestra	5867cf47
+main.change_master_password	Cambiar contraseña maestra	318ba37e
+main.turn_off_master_password	Desactivar contraseña maestra	a4c8bd59
+main.lock_now	Bloquear ahora	9217b30d
+main.unlock	Desbloquear	1526a17e
+main.unlock_saved_passwords	Desbloquear contraseñas guardadas	8310b6ac
+main.forgot_master_password	¿Has olvidado la contraseña maestra?	4322007e
+main.reset_saved_passwords_question	Sin la contraseña maestra no se pueden leer las contraseñas guardadas. ¿Eliminar todas las contraseñas guardadas y la contraseña maestra? Esta acción no se puede deshacer.	82c2607e
+main.delete_all	Eliminar todo	08170580
+main.current_master_password	Contraseña maestra actual	78246fe5
+main.new_master_password	Nueva contraseña maestra	a935c72d
+main.master_password_rules	Al menos 4 caracteres. Si la olvidas, las contraseñas guardadas no se pueden recuperar: solo se pueden eliminar.	7d63f663
+main.wrong_master_password	La contraseña maestra no es correcta.	70658a46
+main.master_password_set	Contraseña maestra establecida	48fb5813
+main.master_password_changed	Contraseña maestra cambiada	aeb24a2b
+main.master_password_turned_off	Contraseña maestra desactivada	84fb0020
+main.saved_passwords_locked_now	Contraseñas guardadas bloqueadas	7799a360
+main.saved_passwords_are_locked	Las contraseñas guardadas están bloqueadas. Desbloquéalas con la contraseña maestra para verlas o cambiarlas.	7d5fda6d
+main.unlock_to_try_saved	Tus contraseñas guardadas están bloqueadas. Escribe la contraseña maestra para probarlas.	694ae67a
+main.master_to_remember	Tus contraseñas guardadas están bloqueadas. Para recordar esta contraseña, escribe la contraseña maestra.	a14af63c
+main.enter_master_to_remember	Escribe la contraseña maestra para recordar esta contraseña.	3f28a8b9
+main.unlock_and_try	Desbloquear y probar	2d406384
+main.no_saved_password_fits	Ninguna de las contraseñas guardadas es correcta.	f5d39707
+main.use_saved_password	Usar una contraseña guardada	ccb81a8c
+main.show_passwords	Mostrar las contraseñas	a7656741
+main.save_button	Guardar	efc007a3
+core.repack_damaged	No se {0:pudo|pudieron} leer {0} {0:elemento|elementos} del archivo comprimido ({0:dañado|dañados}). No se ha convertido nada.	abbaaa71
+core.repack_test_failed	El nuevo archivo comprimido no ha superado la comprobación de integridad. El archivo comprimido original no se ha modificado.	41a7b625
+core.repack_count_mismatch	El nuevo archivo comprimido tiene {0} {0:archivo|archivos}; el original tenía {1}.	80a46cfa
+main.convert_archive_format	Convertir el formato del archivo comprimido…	9555ac3f
+main.convert_archive_title	Convertir el formato del archivo comprimido	14c35dc9
+main.remove_archive_password	Quitar la contraseña del archivo comprimido	b7a726b2
+main.upgrade_archive	Actualizar el archivo comprimido	95cf43c8
+main.upgrade_archive_tip	Guarda los nombres de archivo en UTF-8 para que se muestren correctamente en cualquier equipo. Los datos se copian tal cual.	0693060f
+main.upgrade_avoids_problem	 Puedes evitarlo actualizando el archivo comprimido.	3b1ecb4c
+main.convert_password	Contraseña del nuevo archivo comprimido	f99b5cc8
+main.keep_original_password	Mantener la contraseña original	ade86a77
+main.no_password	Sin contraseña	18518368
+main.new_password	Nueva contraseña	d850ee18
+main.convert_each_keeps_name	Cada archivo comprimido conserva su nombre, con la extensión {0}	86eeb4df
+main.password_removed	Contraseña quitada (el nuevo archivo comprimido ha superado la comprobación de integridad)	8451dd24
+main.archive_upgraded	Archivo comprimido actualizado: los nombres de archivo se guardan ahora en UTF-8	abec33f5
+main.items_left_out_original_kept	  (Algunos elementos no se pudieron leer y se omitieron, por lo que no se ofrece eliminar el original)	f4309fa4
+main.conversion	Conversión	9151f843
+main.password_removal	Quitar la contraseña	43970eb1
+task.tested	, comprobado	0d1a310d
+task.left_out	, {0} {0:omitido|omitidos}	170b0356
+shell.convert	Convertir el formato del archivo comprimido…	9555ac3f
+main.start_converting	Empezar a convertir	69bc1019
+main.upgrade_confirm_text	Los nombres de archivo se guardarán en UTF-8 de forma permanente, tal como se muestran abajo. Si se ven ilegibles, elige primero otra codificación.	35846f99
+main.upgrade_encoding_uncertain	La codificación se detectó, pero no es segura: revisa bien los nombres.	28d37b63
+main.upgrade_button	Actualizar	a6f47e00
+main.convert_names_note	Los nombres de archivo se escriben tal como se muestran ahora ({0}). Si se ven ilegibles, vuelve atrás y elige primero otra codificación.	4563f36d
+main.tar_names_title	¿Guardar los nombres de archivo en UTF-8?	1cc12cbc
+main.tar_names_text	Los nombres de archivo de este archivo tar no indican su codificación. Al cambiarlo, todos se guardarán en UTF-8 de forma permanente, tal como se muestran abajo. Si se ven ilegibles, cancela y elige primero otra codificación arriba a la derecha.	85e7fd4d

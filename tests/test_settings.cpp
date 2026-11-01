@@ -65,6 +65,13 @@ int main() {
     s.rememberViewMode = false;
     s.listColumns = 5;
     s.treeWidth = 260;
+    s.previewPane = false;
+    s.previewPaneHeight = 333;
+    s.previewWindowRect = "-1200,40,900,640";
+    s.comicReading = false;
+    s.autoTryPasswords = false;
+    s.rememberRunPasswords = false;
+    s.rememberPasswordDefault = true;
     s.listColWidths = "name=320,type=70";
     s.iconThumbnails = false;
     s.doubleClickAudioPreview = true;
@@ -108,6 +115,8 @@ int main() {
     EXPECT(Settings{}.language == L"auto");  // the language follows the system by default
     EXPECT(Settings{}.addMode == AddMode::Replace && Settings{}.existingOutput == ExistingOutput::Rename);   // the old behaviour is the default
     EXPECT(Settings{}.shellIcons);   // the lists show the icons of Windows by default
+    EXPECT(Settings{}.previewPane && Settings{}.previewPaneHeight == 260 && Settings{}.comicReading);
+    EXPECT(Settings{}.autoTryPasswords && Settings{}.rememberRunPasswords && !Settings{}.rememberPasswordDefault);   // passwords: tried, kept for the run, not saved unless ticked   // the preview pane is on by default (1.1)
     EXPECT(Settings{}.keepDamaged);  // an item with a data error is kept (and reported) by default
     EXPECT(Settings{}.soundSet == SoundSet::Synth);  // the Synth sounds are the default
     EXPECT(Settings{}.animations && !Settings{}.soundEffects && Settings{}.notifications);  // animations on by default, sound off, notifications on
@@ -247,8 +256,9 @@ int main() {
         write(local / "LycanZip" / "settings.ini", "theme=light\n");   // later changes of the other copy are not taken over
         fs::remove(state / "settings.ini");                               // also not when the package's own file is gone (reset)
         EXPECT(!ImportIntoPackageData(local / "LycanZip", state) && !fs::exists(state / "settings.ini"));
-        const fs::path state2 = UserDataDirFor(local, local / "Packages" / "other");   // nothing to copy: only the marker
-        EXPECT(!ImportIntoPackageData(dir / "dl_nothing", state2) && fs::exists(state2 / "imported") && !fs::exists(state2 / "settings.ini"));
+        const fs::path state2 = UserDataDirFor(local, local / "Packages" / "other");   // nothing to copy: no marker, so it looks again later
+        EXPECT(!ImportIntoPackageData(dir / "dl_nothing", state2) && !fs::exists(state2 / "imported") && !fs::exists(state2 / "settings.ini"));
+        EXPECT(ImportIntoPackageData(local / "LycanZip", state2) && read(state2 / "settings.ini") == "theme=light\n" && fs::exists(state2 / "imported"));
         const fs::path state3 = UserDataDirFor(local, local / "Packages" / "third");   // the package has settings already: not replaced
         fs::create_directories(state3);
         write(state3 / "settings.ini", "theme=system\n");
@@ -291,9 +301,11 @@ int main() {
             }
         }
         EXPECT(first == "settings_format=1");
-        EXPECT(sections == (std::vector<std::string>{"appearance", "view", "preview", "extract", "compress", "modify", "safety", "tasks", "explorer", "hash", "diagnostics", "updates", "state"}));
-        EXPECT(where.size() == 73);  // 72 settings and the format line
+        EXPECT(sections == (std::vector<std::string>{"appearance", "view", "preview", "passwords", "extract", "compress", "modify", "safety", "tasks", "explorer", "hash", "diagnostics", "updates", "state"}));
+        EXPECT(where.size() == 80);  // 79 settings and the format line
+        EXPECT(where["auto_try_passwords"] == "passwords" && where["remember_run_passwords"] == "passwords" && where["remember_password_default"] == "passwords");
         EXPECT(where["two_copies_notice_shown"] == "state" && where["shell_menu"] == "explorer");
+        EXPECT(where["preview_pane"] == "view" && where["preview_pane_height"] == "state" && where["preview_window_rect"] == "state" && where["comic_reading_mode"] == "preview");
         EXPECT(where["theme"] == "appearance" && where["update_mode"] == "state" && where["welcome_done"] == "state" && where["bomb_check"] == "extract" && where["dblclick_audio_preview"] == "preview" && where["existing_output"] == "state" && where["shell_icons"] == "view" && where["keep_damaged"] == "extract" && where["sound_set"] == "appearance" && where["view_mode"] == "view" && where["image_prefetch_mb"] == "preview" && where["conflict"] == "extract" &&
                where["default_format"] == "compress" && where["audio_loop"] == "preview" && where["open_preview_key"] == "preview" && where["lock_open_archive"] == "safety" && where["sums_archive"] == "compress" && where["sums_files"] == "compress" && where["editor_path"] == "modify" && where["warn_executable"] == "safety" && where["parallel_tasks"] == "tasks" &&
                where["shell_items"] == "explorer" && where["hash_algos"] == "hash" && where["debug_log"] == "diagnostics" && where["last_preset"] == "state" && where["stale_menu_ignored"] == "state" &&

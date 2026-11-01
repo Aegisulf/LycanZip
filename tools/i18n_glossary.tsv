@@ -1,0 +1,39 @@
+# The words that every translation uses the same way (tools/i18n_review.py puts the row of a language into its review table).
+# Columns: English, then one column per language in the order of the header line. An empty cell: no fixed word yet.
+en-US	ja-JP	ko-KR	de-DE	es-ES	fr-FR
+archive	圧縮ファイル	압축 파일	Archiv	archivo comprimido	archive
+extract	展開	압축 풀기	extrahieren	extraer	extraire
+compress	圧縮	압축	komprimieren	comprimir	compresser
+template	テンプレート	템플릿	Vorlage	plantilla	modèle
+solid archive	ソリッド圧縮ファイル	솔리드 압축 파일	solides Archiv	archivo sólido	archive solide
+task	タスク	작업	Aufgabe	tarea	tâche
+temporary folder	一時フォルダー	임시 폴더	temporärer Ordner	carpeta temporal	dossier temporaire
+context menu	コンテキスト メニュー	상황에 맞는 메뉴	Kontextmenü	menú contextual	menu contextuel
+File Explorer	エクスプローラー	파일 탐색기	Datei-Explorer	Explorador de archivos	Explorateur de fichiers
+Recycle Bin	ごみ箱	휴지통	Papierkorb	Papelera de reciclaje	Corbeille
+folder tree	フォルダー ツリー	폴더 트리	Ordnerstruktur	árbol de carpetas	arborescence des dossiers
+path bar	パス バー	경로 표시줄	Pfadleiste	barra de ruta	barre de chemin
+thumbnail	縮小版	썸네일	Miniatur	miniatura	miniature
+preview	プレビュー	미리 보기	Vorschau	vista previa	aperçu
+preview pane	プレビュー ウィンドウ	미리 보기 창	Vorschaubereich	panel de vista previa	volet de visualisation
+hash value	ハッシュ値	해시 값	Hashwert	valor hash	valeur de hachage
+checksum file	チェックサム ファイル	체크섬 파일	Prüfsummendatei	archivo de suma de comprobación	fichier de sommes de contrôle
+integrity test	整合性テスト	무결성 테스트	Integritätsprüfung	comprobación de integridad	test d’intégrité
+password	パスワード	암호	Kennwort	contraseña	mot de passe
+settings	設定	설정	Einstellungen	configuración	paramètres
+default apps	既定のアプリ	기본 앱	Standard-Apps	aplicaciones predeterminadas	applications par défaut
+portable	ポータブル	휴대용	portabel	portátil	portable
+double-click	ダブルクリック	두 번 클릭	doppelklicken	hacer doble clic	double-cliquer
+damaged	破損	손상	beschädigt	dañado	endommagé
+crash	クラッシュ	충돌	Absturz	bloqueo	plantage
+volume (of a split archive)	ボリューム	볼륨	Teil	volumen	volume
+reading mode	閲覧モード	읽기 모드	Lesemodus	modo de lectura	mode lecture
+welcome window	ウェルカム ウィンドウ	시작 창	Willkommensfenster	ventana de bienvenida	fenêtre d’accueil
+home page (of the app)	ホーム画面	홈 화면	Startseite	página de inicio	page d’accueil
+accent color	アクセント カラー	강조 색	Akzentfarbe	color de énfasis	couleur d’accentuation
+Follow system	システムに合わせる	시스템 설정 사용	Systemeinstellung verwenden	Usar la configuración del sistema	Utiliser le paramètre système
+filename encoding	ファイル名のエンコード	파일 이름 인코딩	Dateinamencodierung	codificación de nombres de archivo	encodage des noms de fichiers
+malware	マルウェア	맬웨어	Schadsoftware	malware	logiciel malveillant
+packed (size)	圧縮後	압축된 크기	gepackt	comprimido	compressé
+item	項目	항목	Element	elemento	élément
+master password	マスター パスワード	마스터 암호	Masterkennwort	contraseña maestra	mot de passe principal

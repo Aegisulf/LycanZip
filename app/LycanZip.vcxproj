@@ -108,6 +108,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="App.xaml.h"><DependentUpon>App.xaml</DependentUpon><SubType>Code</SubType></ClInclude>
     <ClInclude Include="MainWindow.xaml.h"><DependentUpon>MainWindow.xaml</DependentUpon><SubType>Code</SubType></ClInclude>
+    <ClInclude Include="MainWindowShared.h" />
     <ClInclude Include="SingleInstance.h" />
     <ClInclude Include="EntryRow.h" />
     <ClInclude Include="TaskRow.h" />
@@ -117,6 +118,9 @@
     <ClInclude Include="BackgroundHost.h" />
     <ClInclude Include="PreviewReader.h" />
     <ClInclude Include="AudioPreview.h" />
+    <ClInclude Include="PreviewPane.h" />
+    <ClInclude Include="PasswordVault.h" />
+    <ClInclude Include="MenuCursor.h" />
     <ClInclude Include="DragOut.h" />
     <ClInclude Include="OpenTempDir.h" />
     <ClInclude Include="I18nXaml.h" />
@@ -131,6 +135,12 @@
     <ClCompile Include="pch.cpp"><PrecompiledHeader>Create</PrecompiledHeader></ClCompile>
     <ClCompile Include="App.xaml.cpp"><DependentUpon>App.xaml</DependentUpon><SubType>Code</SubType></ClCompile>
     <ClCompile Include="MainWindow.xaml.cpp"><DependentUpon>MainWindow.xaml</DependentUpon><SubType>Code</SubType></ClCompile>
+    <ClCompile Include="MainWindow.Settings.cpp" />
+    <ClCompile Include="MainWindow.Passwords.cpp" />
+    <ClCompile Include="MainWindow.Modify.cpp" />
+    <ClCompile Include="MainWindow.Extract.cpp" />
+    <ClCompile Include="MainWindow.Compress.cpp" />
+    <ClCompile Include="MainWindow.Hash.cpp" />
     <ClCompile Include="EntryRow.cpp" />
     <ClCompile Include="TaskRow.cpp" />
     <ClCompile Include="ContrastTheme.cpp" />
@@ -143,6 +153,8 @@
     <ClCompile Include="CrashHandler.cpp" />
     <ClCompile Include="ImagePreview.cpp" />
     <ClCompile Include="AudioPreview.cpp" />
+    <ClCompile Include="PreviewPane.cpp" />
+    <ClCompile Include="PasswordVault.cpp" />
     <ClCompile Include="DragOut.cpp" />
     <ClCompile Include="AiMeta.cpp" />
     <ClCompile Include="Module.cpp" />

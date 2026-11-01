@@ -1019,6 +1019,11 @@ preset.store_only_no_compression	僅儲存不壓縮	05d2dfd8
 lang.zh_tw	繁體中文	1f7e4a4c
 lang.en_us	English	649df08a
 lang.zh_cn	简体中文	93659150
+lang.ja_jp	日本語	c12140a0
+lang.ko_kr	한국어	6e081b59
+lang.de_de	Deutsch	a6a77092
+lang.es_es	Español	2001ca08
+lang.fr_fr	Français	2ca514eb
 ## fmt
 fmt.value_paren	{0}（{1}）	4aec5d0a
 fmt.size_bytes	{0}（{1} 位元組）	a94a0670
@@ -1372,3 +1377,144 @@ main.view_small_icons	小圖示	9fd460c2
 main.view_medium_icons	中圖示	66c5bbfe
 main.view_large_icons	大圖示	7d71ad7d
 main.view_huge_icons	巨大圖示	4ec7f1c2
+main.search_settings	搜尋設定	9a6f37a7
+main.search_settings_ctrl_f	搜尋設定（Ctrl+F）	2763171f
+main.no_settings_match	沒有符合的設定	ba12d2cd
+main.search_settings_on_page	搜尋設定（在設定頁）	862a70e5
+main.preview_pane	預覽窗格	b40b3929
+main.preview_pane_toggle	預覽窗格開關	cad29b53
+main.show_preview_pane	顯示預覽窗格	d5b62a9a
+main.preview_pane_desc	在資料夾樹下方顯示選取的項目（所有檢視模式）：圖片、文字、PDF、音訊標籤與詳細資料。視窗寬度不足時會自動隱藏。	8fe413c6
+main.show_hide_preview_pane	顯示 / 隱藏預覽窗格	89f2d82c
+main.drag_resize_preview_pane_double	拖曳以調整預覽窗格高度（按兩下可還原）	aaa0b471
+main.preview_pane_splitter	預覽窗格分隔線	ad8cab6b
+preview.pane_text	文字預覽	960373f3
+preview.pane_loading	讀取中	8f26c652
+preview.pane_enlarge	開啟較大的預覽	b7a798a8
+preview.pane_previous_page	上一頁	81f54719
+preview.pane_next_page	下一頁	4bfc194b
+preview.pane_page_of	第 {0} 頁，共 {1} 頁	c10e7490
+preview.pane_play	播放	5d12bd53
+preview.pane_enter_password	輸入密碼	570591c0
+preview.pane_locked	已加密，輸入密碼後即可預覽。	0c432e08
+preview.pane_program_not_previewed	程式與安裝程式不提供預覽。	ba76c063
+preview.pane_not_text	這個檔案看起來不是文字。	533067ba
+preview.pane_text_truncated	（只顯示前 {0}。）	79ced1ce
+preview.pane_audio_title	標題	768e0c1c
+preview.pane_audio_artist	演出者	6c3f3d32
+preview.pane_audio_album	專輯	dfb4c9a1
+preview.pane_length	長度	3bade34e
+preview.pane_pdf_failed	無法顯示這個 PDF，檔案可能已損毀或受保護。	a741ecac
+preview.pane_window_title	預覽	f1fbb2b4
+preview.pane_window_title_name	預覽 – {0}	d4bdfa4a
+welcome.preview_pane_hint	在資料夾樹下方顯示選取的圖片、文字或 PDF	9066fd16
+preview.reading_mode	閱讀模式	d75871a6
+preview.reading_mode_tip	閱讀模式（B）：依順序讀整個壓縮檔、雙頁並排、由右至左	d7b46a5e
+preview.reading_on	已開啟閱讀模式	8dfdb523
+preview.reading_off	已關閉閱讀模式	6d526edb
+preview.reading_rtl	由右至左	da502a64
+preview.reading_ltr	由左至右	34ce1477
+preview.reading_direction_tip	閱讀方向（D）	39306b19
+preview.reading_spread_auto	頁面：自動	f2bfb879
+preview.reading_spread_single	單頁	b6c31c22
+preview.reading_spread_double	雙頁	bd8c3aa6
+preview.reading_spread_tip	雙頁並排（S）：自動 / 單頁 / 雙頁	3b726cd5
+preview.reading_shift	錯開一頁	5f7d1b48
+preview.reading_resume	從第 {0} 頁繼續	abd0854c
+main.comic_reading_mode	漫畫壓縮檔直接以閱讀模式開啟	410e39d2
+main.comic_reading_mode_desc	按兩下 .cbz、.cb7、.cbr 或 .cbt 檔案時，直接以圖形預覽的閱讀模式開啟圖片。關閉則改為顯示檔案清單。	7c65a9e1
+main.reading_mode_keys	閱讀模式 / 方向 / 單頁或雙頁 / 錯開一頁	7ffd115a
+main.remember_this_password	記住這個密碼	9c29b204
+main.used_saved_password	已使用儲存的密碼	8fbc1750
+main.passwords	密碼	02c83041
+main.password_manager	密碼管理員	17015895
+main.auto_try_saved_passwords	自動嘗試已儲存的密碼	c5c561d7
+main.auto_try_saved_passwords_desc	壓縮檔需要密碼時，先試已儲存的密碼（最多 50 個或 5 秒），都不對才詢問。	5cd0401d
+main.remember_run_passwords	記住這次執行期間用過的密碼	92bf3dab
+main.remember_run_passwords_desc	用對的密碼會留在記憶體中並優先嘗試，直到關閉 LycanZip 為止，不會寫入磁碟。	c99abf03
+main.remember_password_default	「記住這個密碼」預設勾選	7f51be69
+main.remember_password_default_desc	在密碼對話框中。關閉時，只有你勾選的密碼才會儲存。	dbbb2f08
+main.saved_passwords	已儲存的密碼	b3c61c55
+main.saved_passwords_desc	存在設定旁的 passwords.dat，以你的 Windows 帳號加密，只有這台電腦的這個帳號能讀取（可攜版搬到別台電腦後讀不出來）。無法防範在你的帳號下執行的惡意程式。	c21e27eb
+main.add_password	新增密碼	7b7a8260
+main.import_passwords	匯入…	4834caf8
+main.export_passwords	匯出…	0a116345
+main.clear_unreadable_passwords	刪除已儲存的密碼	2063bc45
+main.saved_passwords_unreadable	無法讀取已儲存的密碼：它們是在另一個 Windows 帳號或另一台電腦上儲存的，或者檔案已損毀。	bf64511e
+main.clear_unreadable_passwords_question	要刪除 passwords.dat 嗎？裡面的密碼會遺失，之後可以重新儲存新的密碼。	942eb96f
+main.no_saved_passwords	還沒有儲存任何密碼。輸入密碼時勾選「記住這個密碼」，或在這裡新增。	0be995a4
+main.hidden_password	已隱藏的密碼	a51156d2
+main.never_used	尚未使用	984ec5ee
+main.copy_password	複製密碼	cda3abab
+main.edit_password	編輯密碼	22215170
+main.delete_password	刪除密碼	330753fe
+main.delete_password_question	要刪除這個已儲存的密碼嗎？	7330db44
+main.password_copied	已複製密碼	9a0081f0
+main.password_note	備註（選填）	4e395670
+main.password_note_hint	這個密碼的來源	bd693a41
+main.could_not_save_passwords	無法儲存密碼。	d5436c25
+main.password_file_too_large	這個檔案太大，不像是密碼清單。	1c31e120
+main.passwords_imported	已匯入 {0} 個新密碼。	6d274f3a
+main.export_passwords_warning	匯出的檔案是純文字，任何能開啟它的人都能看到所有密碼。請妥善保管，不需要時就刪除。	ba640f91
+main.text_file	文字檔	ee3d21a8
+main.passwords_exported	已匯出密碼	1100b2dc
+main.master_password	主密碼	33acdbd6
+main.master_password_desc	使用、檢視或修改已儲存的密碼前，先要求輸入一組密碼；每次啟動 LycanZip 只需輸入一次。忘記主密碼就無法找回已儲存的密碼，只能全部刪除。	453684fb
+main.master_password_off	關閉。已儲存的密碼只受你的 Windows 帳號保護。	8e599348
+main.master_password_unlocked	開啟。已儲存的密碼已解鎖，直到關閉 LycanZip。	9b1f206e
+main.master_password_locked	開啟。已儲存的密碼已鎖定。	d650441e
+main.set_master_password	設定主密碼	5867cf47
+main.change_master_password	變更主密碼	318ba37e
+main.turn_off_master_password	關閉主密碼	a4c8bd59
+main.lock_now	立即鎖定	9217b30d
+main.unlock	解鎖	1526a17e
+main.unlock_saved_passwords	解鎖已儲存的密碼	8310b6ac
+main.forgot_master_password	忘記主密碼？	4322007e
+main.reset_saved_passwords_question	沒有主密碼就無法讀取已儲存的密碼。要刪除所有已儲存的密碼和主密碼嗎？這個動作無法復原。	82c2607e
+main.delete_all	全部刪除	08170580
+main.current_master_password	目前的主密碼	78246fe5
+main.new_master_password	新的主密碼	a935c72d
+main.master_password_rules	至少 4 個字元。忘記主密碼就無法找回已儲存的密碼，只能全部刪除。	7d63f663
+main.wrong_master_password	主密碼錯誤。	70658a46
+main.master_password_set	已設定主密碼	48fb5813
+main.master_password_changed	已變更主密碼	aeb24a2b
+main.master_password_turned_off	已關閉主密碼	84fb0020
+main.saved_passwords_locked_now	已鎖定已儲存的密碼	7799a360
+main.saved_passwords_are_locked	已儲存的密碼已鎖定。用主密碼解鎖後才能檢視或修改。	7d5fda6d
+main.unlock_to_try_saved	已儲存的密碼已鎖定。輸入主密碼即可自動嘗試。	694ae67a
+main.master_to_remember	已儲存的密碼已鎖定。要記住這個密碼，請輸入主密碼。	a14af63c
+main.enter_master_to_remember	請輸入主密碼才能記住這個密碼。	3f28a8b9
+main.unlock_and_try	解鎖並嘗試	2d406384
+main.no_saved_password_fits	已儲存的密碼都不正確。	f5d39707
+main.use_saved_password	使用已儲存的密碼	ccb81a8c
+main.show_passwords	顯示密碼	a7656741
+main.save_button	儲存	efc007a3
+core.repack_damaged	壓縮檔中有 {0} 個項目無法讀取（已損毀），沒有進行轉換。	abbaaa71
+core.repack_test_failed	新的壓縮檔沒有通過完整性測試，原壓縮檔沒有變更。	41a7b625
+core.repack_count_mismatch	新的壓縮檔有 {0} 個檔案，原壓縮檔有 {1} 個。	80a46cfa
+main.convert_archive_format	轉換壓縮檔格式…	9555ac3f
+main.convert_archive_title	轉換壓縮檔格式	14c35dc9
+main.remove_archive_password	移除壓縮檔的密碼	b7a726b2
+main.upgrade_archive	升級壓縮檔	95cf43c8
+main.upgrade_archive_tip	把檔名改用 UTF-8 儲存，在任何電腦上都能正確顯示。檔案內容原樣保留。	0693060f
+main.upgrade_avoids_problem	可透過升級壓縮檔來避免此問題。	3b1ecb4c
+main.convert_password	新壓縮檔的密碼	f99b5cc8
+main.keep_original_password	沿用原本的密碼	ade86a77
+main.no_password	不加密	18518368
+main.new_password	新的密碼	d850ee18
+main.convert_each_keeps_name	每個壓縮檔沿用原本的檔名，副檔名改為 {0}	86eeb4df
+main.password_removed	已移除密碼（新的壓縮檔已通過完整性測試）	8451dd24
+main.archive_upgraded	已升級壓縮檔：檔名現在以 UTF-8 儲存	abec33f5
+main.items_left_out_original_kept	（有些項目無法讀取而被略過，所以不提供刪除原檔）	f4309fa4
+main.conversion	轉換	9151f843
+main.password_removal	移除密碼	43970eb1
+task.tested	，已測試	0d1a310d
+task.left_out	，略過 {0} 個	170b0356
+shell.convert	轉換壓縮檔格式…	9555ac3f
+main.start_converting	開始轉換	69bc1019
+main.upgrade_confirm_text	升級後檔名會照下面的樣子以 UTF-8 永久儲存。如果看起來是亂碼，請先換一個編碼。	35846f99
+main.upgrade_encoding_uncertain	自動偵測的編碼不確定，請仔細確認檔名。	28d37b63
+main.upgrade_button	升級	a6f47e00
+main.convert_names_note	檔名會照目前顯示的樣子（{0}）寫入。如果看起來是亂碼，請先返回換一個編碼。	4563f36d
+main.tar_names_title	以 UTF-8 儲存檔名？	1cc12cbc
+main.tar_names_text	這個 tar 壓縮檔的檔名沒有編碼標記。修改時所有檔名都會照下面的樣子以 UTF-8 永久儲存。如果看起來是亂碼，請取消，先在右上角換一個編碼。	85e7fd4d

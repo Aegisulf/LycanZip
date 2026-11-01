@@ -97,6 +97,7 @@ LaunchRequest ParseLaunchArgs(const std::vector<std::wstring>& args) {
         {L"--hash", LaunchAction::Hash},
         {L"--verify", LaunchAction::Verify},
         {L"--hash-save", LaunchAction::HashSave},
+        {L"--convert", LaunchAction::Convert},
     };
 
     for (size_t i = 0; i < args.size(); ++i) {

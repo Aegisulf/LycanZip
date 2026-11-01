@@ -74,7 +74,8 @@ namespace winrt::LycanZip::implementation
         using lycan::TaskState;
 
         const wchar_t* verb = info.kind == TaskKind::Extract ? lycan::Tr(L"main.extraction") : info.kind == TaskKind::Compress ? lycan::Tr(L"main.compression")
-                              : info.kind == TaskKind::Update ? lycan::Tr(L"main.change_archive") : info.kind == TaskKind::Scan ? lycan::Tr(L"main.scan_malware") : lycan::Tr(L"task.test");
+                              : info.kind == TaskKind::Update ? lycan::Tr(L"main.change_archive") : info.kind == TaskKind::Scan ? lycan::Tr(L"main.scan_malware")
+                              : info.kind == TaskKind::Repack ? lycan::Tr(info.repackInPlace ? L"main.password_removal" : L"main.conversion") : lycan::Tr(L"task.test");
         title_ = hstring{std::wstring(verb) + std::wstring{lycan::Tr(L"fmt.gap")} + info.title};
 
         std::wstring status;
@@ -130,6 +131,14 @@ namespace winrt::LycanZip::implementation
                 if (!info.compress.warnings.empty()) status += std::wstring{lycan::Tr(L"fmt.gap")} + L"⚠ " + info.compress.warnings[0].Text();
             }
             else if (info.kind == TaskKind::Scan) status = lycan::Tr(L"task.done_plain") + lycan_app::ScanSummary(info.scan, SizeText(info.scan.bytes));
+            else if (info.kind == TaskKind::Repack)
+            {
+                const auto& r = info.repack;
+                status = lycan::Tf(L"task.done_sizes", r.files, SizeText(r.archiveBefore), SizeText(r.archiveAfter));
+                if (r.tested) status += lycan::Tr(L"task.tested");
+                if (!r.skipped.empty()) status += lycan::Tf(L"task.left_out", r.skipped.size());
+                if (!r.warnings.empty()) status += std::wstring{lycan::Tr(L"fmt.gap")} + L"⚠ " + r.warnings[0].Text();
+            }
             else if (info.kind == TaskKind::Update)
             {
                 const auto& u = info.update;
@@ -172,6 +181,7 @@ namespace winrt::LycanZip::implementation
             if (info.kind == TaskKind::Scan)
                 status = info.scan.amsiHr ? lycan_app::ScanProblemText(info.scan.amsiHr) : lycan::Tr(L"task.failed_plain") + lycan_app::ScanSummary(info.scan, SizeText(info.scan.bytes));
             if (info.kind == TaskKind::Update && !info.update.errors.empty()) status += lycan::Tf(L"fmt.paren", info.update.errors[0].Text());
+            if (info.kind == TaskKind::Repack && !info.repack.errors.empty()) status += lycan::Tf(L"fmt.paren", info.repack.errors[0].Text());
             break;
         case TaskState::Cancelled: status = lycan::Tr(L"task.cancelled"); break;
         }

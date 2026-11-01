@@ -40,6 +40,14 @@ size_t Load(const std::filesystem::path& langDir, const std::wstring& code);
 
 const std::wstring& Current();  // the code of the language that is loaded
 bool IsSourceLanguage();        // is it en-US
+// The language tag for the XAML text of the interface (FrameworkElement.Language), when the loaded language is not the one of Windows (which
+// XAML uses by itself); empty otherwise, and for the pseudo language. The font fallback picks its fonts by it, so a Japanese text on a
+// Chinese Windows gets the Japanese forms of the kanji.
+std::wstring UiLanguageTag();
+
+// The English text behind a text of the current language (the text of some id, as it is shown), so that a search also finds the English
+// words in a translated interface. Empty when the language is English or no id has this text. Two ids with the same text: one of them.
+std::wstring EnglishOf(std::wstring_view shown);
 
 }  // namespace i18n
 

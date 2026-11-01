@@ -39,6 +39,7 @@ inline constexpr ShellItemInfo kShellItems[] = {
     {"audio", ShellGroup::Archives, false},    // Audio preview
     {"recent", ShellGroup::Archives, false},   // Extract to a recently used folder >
     {"merge", ShellGroup::Archives, false},    // Extract several archives into one folder
+    {"convert", ShellGroup::Archives, false},  // Convert the archive format (the new archive page)
     // Other
     {"opencontent", ShellGroup::Other, true},  // Open with LycanZip: .exe / .iso / .msi / .docx ... as an archive
     {"hash", ShellGroup::Other, true},         // Hash values (CRC-32, MD5, SHA-1, SHA-256 ...) of the selected files and folders; in both menus

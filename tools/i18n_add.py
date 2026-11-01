@@ -7,8 +7,10 @@ spec.py (a Python file) defines
   REPL = [(file, old code, new code[, count])]   exact text replacements in the sources (file relative to the repository root); count
                                                   = how many times `old` must occur (default 1; 'all' = any number, at least one)
   CAT  = [(id, English, zh-TW, zh-CN, note)]     the new ids (an id that exists already is left as it is)
+  MORE = {id: {'ja-JP': text, 'ko-KR': text, ...}} the texts of the other languages (every language of languages.h needs one, or
+                                                  --check reports it as untranslated)
 The ids go to the end of app/Assets/Lang/en-US.tsv (a section "## area" must exist already or the ids stay in the last one), the
-translations to zh-TW.tsv and zh-CN.tsv, then tools/i18n.py --update and --check run. Do not write backslashes inside a shell here-document
+translations to zh-TW.tsv and zh-CN.tsv and the files of MORE, then tools/i18n.py --update and --check run. Do not write backslashes inside a shell here-document
 (the tool of Claude Code folds them): make the spec file with the Write tool.
 """
 import importlib.util
@@ -74,10 +76,13 @@ def main():
             en += '%s\t%s\t%s\n' % (c[0], esc(c[1]), c[4] if len(c) > 4 else '')
         write(os.path.join(lang, 'en-US.tsv'), en, nl)
     subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'i18n.py'), '--update'], stdout=subprocess.DEVNULL)
-    for code, idx in (('zh-TW', 2), ('zh-CN', 3)):
+    more = getattr(m, 'MORE', {})
+    codes = [('zh-TW', {c[0]: c[2] for c in add}), ('zh-CN', {c[0]: c[3] for c in add})]
+    for code in sorted({code for texts in more.values() for code in texts}):
+        codes.append((code, {k: texts[code] for k, texts in more.items() if code in texts and k in {c[0] for c in add}}))
+    for code, tr in codes:
         p = os.path.join(lang, code + '.tsv')
         s, nl = read(p)
-        tr = {c[0]: c[idx] for c in add}
         out = []
         for l in s.split('\n'):
             k = l.split('\t')[0]

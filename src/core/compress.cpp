@@ -18,6 +18,7 @@
 #include "lycan/junk.h"
 #include "lycan/security.h"
 #include "lycan/archive_source.h"
+#include "lycan/extract.h"
 #include "lycan/tempdir.h"
 #include "lycan/testhooks.h"
 #include "lycan/update.h"
@@ -596,6 +597,9 @@ void UpdateOnce(const wchar_t* formatName, const std::vector<Item>& items, IOutS
         else if (o.solidSize == kSolidAll) props.Str(L"s", L"on");
         else props.Str(L"s", (std::to_wstring(o.solidSize) + L"b").c_str());
     }
+    // Names with characters outside ASCII in UTF-8, marked as such. Without it 7-Zip writes them in the ANSI / OEM code page of this
+    // PC when they fit (Big5 on a Chinese Windows), without a mark: garbled on a PC with another language.
+    if (isZip) props.Bool(L"cu", true);
     ParseCustomParams(o.customParams, props);
     std::wstring password = applyPassword ? o.password : L"";
     if (fn == L"zip" && !password.empty()) {
@@ -1071,9 +1075,12 @@ bool DiskNewer(uint64_t disk, uint64_t arc, bool zip) { return TimesDiffer(disk,
 void BuildPlan(Prepared& pr, const fs::path& archive, const std::vector<UpdateOp>& ops, const UpdateOptions& uo) {
     Plan& p = pr.plan;
     UpdateReport& rep = pr.rep;
-    // Names without a charset mark (old zip / tar) are written as they were decoded: every item gets its name again,
-    // otherwise the new names (UTF-8) and the old ones (a legacy code page) would mix in one archive.
-    const bool renameAll = pr.src->NameEncoding().applicable;
+    // Names without a charset mark (old zip / tar):
+    //   zip: the mark is per item, so the items that are not touched keep their names byte for byte (a wrong encoding chosen in the
+    //        view is never written into them); new and renamed items are in UTF-8 and marked. "Upgrade" (rewriteNames) writes all.
+    //   tar: no mark at all; UTF-8 and a legacy code page in one tar could not be told apart, so every item gets its name again
+    //        as it was decoded (the app asks before the first change).
+    const bool renameAll = pr.src->NameEncoding().applicable && (uo.rewriteNames || pr.type == ArchiveType::Tar);
     for (const Entry& e : pr.src->Entries()) {
         Item it;
         it.srcIndex = e.index;
@@ -1084,6 +1091,7 @@ void BuildPlan(Prepared& pr, const fs::path& archive, const std::vector<UpdateOp
         it.renamed = renameAll;
         p.items.push_back(std::move(it));
     }
+    if (uo.rewriteNames && renameAll) p.changed = true;   // "upgrade": written again with the names in UTF-8
     std::vector<fs::path> exclude{archive};
     {
         fs::path t = archive;
@@ -1372,6 +1380,34 @@ UpdateReport UpdateArchive(const fs::path& archive, const std::vector<UpdateOp>&
     rep.storedFiles = crep.storedFiles;
 
     pr.src.reset();  // the old archive has to be closed before it is replaced
+    if (options.verify) {
+        // the new archive must pass the integrity test before it replaces the old one
+        bool passed = false;
+        try {
+            OpenOptions to;
+            to.nameCodepage = 0;
+            if (!pr.co.password.empty()) {
+                const std::wstring pw = pr.co.password;
+                to.password = [pw](std::wstring& out) { out = pw; return true; };
+            }
+            auto fresh = ArchiveSource::Open(tmp, to);
+            ExtractOptions te;
+            te.password = to.password;
+            te.progress = options.progress;
+            passed = TestArchive(*fresh, te).ok();
+        } catch (Error const& e) {
+            if (e.cancelled()) {
+                std::error_code e2;
+                fs::remove(ToLongPath(tmp), e2);
+                throw;
+            }
+        }
+        if (!passed) {
+            std::error_code e2;
+            fs::remove(ToLongPath(tmp), e2);
+            throw Error(E_FAIL, Message::Make(L"core.repack_test_failed"));
+        }
+    }
     const std::wstring bak = archive.wstring() + L".bak";
     const BOOL swapped = ReplaceFileW(ToLongPath(archive).c_str(), ToLongPath(tmp).c_str(),
                                       options.keepBackup ? ToLongPath(bak).c_str() : nullptr,

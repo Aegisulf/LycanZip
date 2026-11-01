@@ -44,7 +44,7 @@ foreach ($lang in $Languages) {
     if ($gear) {
         Click $gear; Start-Sleep -Milliseconds 800
         $n = 0
-        foreach ($tab in "TabItemGeneral", "TabItemCompress", "TabItemView", "TabItemShell", "TabItemKeys", "TabItemAbout") {
+        foreach ($tab in "TabItemGeneral", "TabItemCompress", "TabItemView", "TabItemShell", "TabItemPasswords", "TabItemKeys", "TabItemAbout") {
             $item = Wait-Id $win $tab
             if (-not $item) { Write-Host "  tab not found: $tab"; continue }
             $sp = $null
@@ -79,7 +79,7 @@ foreach ($lang in $Languages) {
     $env:LYCAN_FORCE_WELCOME = "1"
     $p = Start-Lycan $lang @(); $win = Get-Win $p; Start-Sleep -Seconds 3
     $wel = $null
-    foreach ($w in $AE::RootElement.FindAll($TS::Children, (New-Object Windows.Automation.PropertyCondition($AE::ProcessIdProperty, $p.Id)))) { if ($w.Current.NativeWindowHandle -ne $win.Current.NativeWindowHandle) { $wel = $w } }
+    foreach ($w in $AE::RootElement.FindAll($TS::Children, (New-Object Windows.Automation.PropertyCondition($AE::ProcessIdProperty, $p.Id)))) { if ($w.Current.Name -ne "LycanZip") { $wel = $w } }   # the main window (with no archive) is titled just LycanZip; the welcome window has its own title
     if ($wel) {
         Add-Type -Namespace Native2 -Name W -MemberDefinition '[DllImport("user32.dll")] public static extern bool PrintWindow(IntPtr h, IntPtr dc, uint f); [DllImport("user32.dll")] public static extern bool GetWindowRect(IntPtr h, out R r); [StructLayout(LayoutKind.Sequential)] public struct R { public int L,T,Rr,B; }' -ErrorAction SilentlyContinue
         for ($step = 1; $step -le 3; $step++) {

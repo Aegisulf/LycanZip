@@ -7,6 +7,7 @@
 #include <cstdint>
 #include <filesystem>
 #include <functional>
+#include <memory>
 #include <string>
 #include <vector>
 
@@ -39,6 +40,10 @@ struct PreviewRequest {
     bool thumbReads = true;            // files are read actively for thumbnails only when the archive has random access (not solid)
     const void* owner = nullptr;       // the main window that made the request (several windows: closing a main window closes only its own preview)
     std::function<void()> onClosed;    // the preview window was closed (UI thread)
+    // Reading mode (DESIGN.md "閱讀模式"): every picture of the archive in path order, two pages side by side, right to left
+    std::vector<PreviewItem> book;     // the pages of the reading mode; empty = `items` is the whole archive already
+    bool reading = false;              // start in the reading mode (a comic book archive opened from Explorer)
+    std::filesystem::path readingStore;   // the file that remembers where each book was left (empty = not remembered)
 };
 
 // Whether the extension is a "known picture format" (does not guarantee that this computer has a decoder)
@@ -49,6 +54,17 @@ bool IsImageDecoderAvailable(const std::wstring& name);
 bool CanPreviewImage(const std::wstring& name);
 // The explanation when there is no decoder (what to install); a generic message if there is nothing special. Without a final punctuation mark.
 std::wstring MissingDecoderHint(const std::wstring& name);
+
+// A picture for the preview pane (PreviewPane.h): decoded at most maxWidth pixels wide (same size and pixel limits as the preview
+// window), with the EXIF turn that is still to be applied (rotate = clockwise quarter turns, mirror first). UI thread; throws when the
+// picture cannot be decoded.
+struct PaneImage {
+    winrt::Microsoft::UI::Xaml::Media::ImageSource image{nullptr};
+    uint32_t w = 0, h = 0;   // the size of the picture (upright)
+    int rotate = 0;
+    bool mirror = false;
+};
+winrt::Windows::Foundation::IAsyncAction DecodePaneImage(std::shared_ptr<std::vector<uint8_t>> data, uint32_t maxWidth, std::shared_ptr<PaneImage> out);
 
 // Opens (or reuses the one that is open) the preview window and loads the picture req.start
 void ShowImagePreview(PreviewRequest req);

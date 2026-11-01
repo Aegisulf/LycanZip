@@ -24,6 +24,7 @@
 #include "lycan/diag.h"
 #include "lycan/error.h"
 #include "lycan/taskexec.h"
+#include "lycan/tempdir.h"
 
 namespace lycan {
 namespace fs = std::filesystem;
@@ -291,6 +292,19 @@ HashReport GetHashReport(Reader& r) {
     return h;
 }
 
+void PutRepackReport(Writer& w, const RepackReport& p) {
+    w.U64(p.files); w.U64(p.dirs); w.U64(p.bytes); w.Path(p.output); w.Paths(p.outputs);
+    w.U64(p.archiveBefore); w.U64(p.archiveAfter); w.Bool(p.tested);
+    w.Msgs(p.skipped); w.Msgs(p.warnings); w.Msgs(p.errors);
+}
+RepackReport GetRepackReport(Reader& r) {
+    RepackReport p;
+    p.files = r.U64(); p.dirs = r.U64(); p.bytes = r.U64(); p.output = r.Path(); p.outputs = r.Paths();
+    p.archiveBefore = r.U64(); p.archiveAfter = r.U64(); p.tested = r.Bool();
+    p.skipped = r.Msgs(); p.warnings = r.Msgs(); p.errors = r.Msgs();
+    return p;
+}
+
 void PutCompressOptions(Writer& w, const CompressOptions& c) {
     w.U8(static_cast<uint8_t>(c.type)); w.U8(static_cast<uint8_t>(c.profile)); w.I32(c.level);
     w.Str(c.password); w.Bool(c.encryptFileNames); w.U64(c.volumeSize); w.Bool(c.overwrite); w.U32(c.threads);
@@ -330,7 +344,9 @@ void PutSpec(Writer& w, const TaskSpec& s, TaskPriority priority) {
     const UpdateOptions& u = s.updateOptions;
     PutCompressOptions(w, u.compress);
     w.Bool(u.keepBackup); w.Bool(u.replaceSameName); w.U32(u.nameCodepage); w.U8(static_cast<uint8_t>(u.mode));
+    w.Bool(u.rewriteNames); w.Bool(u.verify);
     w.U32(s.hashAlgos);
+    w.Bool(s.repackInPlace); w.Bool(s.repackSkipDamaged); w.Bool(s.repackTest);
 }
 
 struct WireSpec {
@@ -367,7 +383,9 @@ WireSpec GetSpec(Reader& r) {
     }
     GetCompressOptions(r, s.updateOptions.compress);
     s.updateOptions.keepBackup = r.Bool(); s.updateOptions.replaceSameName = r.Bool(); s.updateOptions.nameCodepage = r.U32(); s.updateOptions.mode = static_cast<UpdateMode>(r.U8());
+    s.updateOptions.rewriteNames = r.Bool(); s.updateOptions.verify = r.Bool();
     s.hashAlgos = r.U32();
+    s.repackInPlace = r.Bool(); s.repackSkipDamaged = r.Bool(); s.repackTest = r.Bool();
     return ws;
 }
 
@@ -551,6 +569,7 @@ public:
                     res.update = GetUpdateReport(r);
                     res.scan = GetScanReport(r);
                     res.hash = GetHashReport(r);
+                    res.repack = GetRepackReport(r);
                     return res;
                 }
             } catch (const std::runtime_error& e) {
@@ -567,6 +586,15 @@ public:
             std::error_code ec;
             WaitForSingleObject(hs.pi.hProcess, 3000);
             fs::remove(fs::path((spec.kind == TaskKind::Update ? spec.archive : spec.output).wstring() + L".lycantmp"), ec);
+        }
+        if (spec.kind == TaskKind::Repack) {
+            // the half-made archive, and the scratch folder of that worker (named after its process id)
+            std::error_code ec;
+            WaitForSingleObject(hs.pi.hProcess, 3000);
+            fs::remove(fs::path((spec.repackInPlace ? spec.archive : spec.output).wstring() + L".lycantmp"), ec);
+            const std::wstring prefix = L"lycan_repack_" + std::to_wstring(hs.pi.dwProcessId) + L"_";
+            for (auto const& d : fs::directory_iterator(ScratchDirectory(spec.openOptions.tempDir), ec))
+                if (d.path().filename().wstring().rfind(prefix, 0) == 0) fs::remove_all(d.path(), ec);
         }
         DWORD code = 0;
         WaitForSingleObject(hs.pi.hProcess, 3000);
@@ -715,6 +743,7 @@ int RunWorker(uintptr_t readHandle, uintptr_t writeHandle) {
         PutUpdateReport(res, r.update);
         PutScanReport(res, r.scan);
         PutHashReport(res, r.hash);
+        PutRepackReport(res, r.repack);
     } catch (const Error& e) {
         if (!e.cancelled()) diag::Warn(L"worker: the task failed: {}", diag::FromUtf8(e.what()));
         res = Writer{};

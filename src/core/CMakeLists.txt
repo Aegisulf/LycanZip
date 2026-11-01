@@ -16,6 +16,8 @@ add_library(lycan_core STATIC
   taskqueue.cpp
   taskexec.cpp
   workerproc.cpp
+  passwords.cpp
+  repack.cpp
   settings.cpp
   presets.cpp
   launch.cpp

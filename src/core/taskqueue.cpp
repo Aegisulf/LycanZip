@@ -251,6 +251,35 @@ uint64_t TaskQueue::EnqueueCompress(fs::path output, std::vector<fs::path> input
     return id;
 }
 
+uint64_t TaskQueue::EnqueueRepack(fs::path archive, fs::path output, CompressOptions target, OpenOptions source, bool inPlace, bool skipDamaged, bool test) {
+    auto t = std::make_shared<Task>();
+    t->info.kind = TaskKind::Repack;
+    t->info.title = archive.filename().wstring();
+    t->info.target = inPlace ? archive : output;
+    t->info.repackInPlace = inPlace;
+    t->spec.kind = TaskKind::Repack;
+    t->spec.archive = std::move(archive);
+    t->spec.output = std::move(output);
+    t->spec.compressOptions = std::move(target);
+    t->spec.openOptions = std::move(source);
+    t->spec.repackInPlace = inPlace;
+    t->spec.repackSkipDamaged = skipDamaged;
+    t->spec.repackTest = test;
+    TaskInfo copy;
+    uint64_t id;
+    {
+        std::lock_guard lk(m_);
+        t->spec.priority = defaultPriority_;
+        t->control.priority = defaultPriority_;
+        id = t->info.id = nextId_++;
+        tasks_[id] = t;
+        copy = t->info;
+    }
+    cv_.notify_all();
+    Notify(copy);
+    return id;
+}
+
 uint64_t TaskQueue::Retry(uint64_t id, const fs::path& tempDir) {
     auto t = std::make_shared<Task>();
     {
@@ -261,6 +290,7 @@ uint64_t TaskQueue::Retry(uint64_t id, const fs::path& tempDir) {
         t->info.kind = it->second->info.kind;
         t->info.title = it->second->info.title;
         t->info.target = it->second->info.target;
+        t->info.repackInPlace = it->second->info.repackInPlace;
     }
     t->spec.openOptions.tempDir = tempDir;
     t->spec.compressOptions.tempDir = tempDir;
@@ -402,6 +432,7 @@ const wchar_t* KindName(TaskKind k) {
         case TaskKind::Update: return L"update";
         case TaskKind::Scan: return L"scan";
         case TaskKind::Hash: return L"hash";
+        case TaskKind::Repack: return L"repack";
     }
     return L"?";
 }
@@ -456,6 +487,7 @@ void TaskQueue::Run(Task& t) {
     UpdateReport urep;
     ScanReport srep;
     HashReport hrep;
+    RepackReport rrep;
     try {
         TaskResult r = executor_->Execute(t.spec, onProgress, t.control);
         finalState = r.state;
@@ -465,6 +497,7 @@ void TaskQueue::Run(Task& t) {
         urep = std::move(r.update);
         srep = std::move(r.scan);
         hrep = std::move(r.hash);
+        rrep = std::move(r.repack);
     } catch (const Error& e) {
         std::lock_guard lk(m_);
         finalState = (e.cancelled() || t.cancelled) ? TaskState::Cancelled : TaskState::Failed;
@@ -498,6 +531,7 @@ void TaskQueue::Run(Task& t) {
         t.info.update = std::move(urep);
         t.info.scan = std::move(srep);
         t.info.hash = std::move(hrep);
+        t.info.repack = std::move(rrep);
         if (finalState == TaskState::Completed && t.info.total) t.info.done = t.info.total;
         done = t.info;
     }

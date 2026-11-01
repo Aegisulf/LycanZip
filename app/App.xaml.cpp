@@ -14,6 +14,7 @@
 
 #include "lycan/crashreport.h"
 #include "lycan/diag.h"
+#include "lycan/fileicons.h"
 #include "lycan/i18n.h"
 #include "lycan/launch.h"
 #include "lycan/settings.h"
@@ -382,6 +383,9 @@ namespace winrt::LycanZip::implementation
             GetEnvironmentVariableW(L"LYCAN_TEST_KEYS", fake, 16);
             const bool testHeld = (vk == VK_SHIFT && _wcsicmp(fake, L"shift") == 0) || (vk == VK_CONTROL && _wcsicmp(fake, L"ctrl") == 0);
             if (vk && (testHeld || (GetAsyncKeyState(vk) & 0x8000) || (vk == VK_SHIFT ? sShiftAtLoad : sCtrlAtLoad))) request.action = lycan::LaunchAction::PreviewImages;
+            // a comic book archive goes straight to the reading mode of the picture preview (setting; PreviewOnlyAsync sees the extension)
+            else if (lycan::IconFamilyForPath(request.paths[0].wstring()) == lycan::IconFamily::Comic && lycan::LoadSettings(lycan::DefaultSettingsPath()).comicReading)
+                request.action = lycan::LaunchAction::PreviewImages;
         }
         lycan::diag::Init(L"app");
         lycan::diag::LogStartup();
@@ -413,6 +417,7 @@ namespace winrt::LycanZip::implementation
 
         Window first = NewWindow(request.valid && request.IsPreviewOnly(), request.valid && request.action != lycan::LaunchAction::None && !request.IsPreviewOnly());
         dispatcher_ = first.DispatcherQueue();
+        if (auto root = first.Content().try_as<FrameworkElement>()) lycan::diag::Debug(L"interface text language: {}", std::wstring(root.Language()));
         MainWindow::sStateChanged = [this] { UpdateCrashSnapshot(); };
         MainWindow::sEnterBackground = [this] { EnterBackground(); };
         MainWindow::sLeaveBackground = [this] { LeaveBackground(); };

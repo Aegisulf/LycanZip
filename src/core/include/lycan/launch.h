@@ -23,6 +23,7 @@
 //   LycanZip.exe --verify <checksum files...>       check .sha256 / .md5 / .sfv ... files (one file or several; a checksum file given alone or
 //                                                   with other checksum files only does this too)
 //   LycanZip.exe --open-content <file>              open an .exe / .iso / .docx ... as an archive
+//   LycanZip.exe --convert <archives...>            convert the archives to another format (shows the new archive page)
 //   Option --list <file>: read the paths from a text file (UTF-8, one per line); avoids the command-line length limit
 #include "lycan/message.h"
 #include <filesystem>
@@ -38,7 +39,8 @@ enum class LaunchAction {
     Compress,  // format / preset in the request
     ExtractHere, ExtractFolder,
     CompressEach, AddEncrypted, ExtractTo, ExtractMerge, Test, PreviewImages, PreviewAudio, OpenContent, Hash, Verify, HashSave,
-    Last = HashSave
+    Convert,
+    Last = Convert
 };
 
 struct LaunchRequest {
@@ -56,7 +58,7 @@ struct LaunchRequest {
         switch (action) {
             case LaunchAction::Add: case LaunchAction::Compress: case LaunchAction::CompressEach: case LaunchAction::AddEncrypted:
             case LaunchAction::ExtractHere: case LaunchAction::ExtractFolder: case LaunchAction::ExtractTo:
-            case LaunchAction::ExtractMerge: case LaunchAction::Test:
+            case LaunchAction::ExtractMerge: case LaunchAction::Test: case LaunchAction::Convert:
                 return true;
             default: return false;
         }

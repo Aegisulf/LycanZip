@@ -84,6 +84,11 @@ void Visit(DependencyObject const& d, Ctx ctx) {
         if (Translated(pw.PlaceholderText(), t)) pw.PlaceholderText(t);
         return;
     }
+    if (auto asb = d.try_as<AutoSuggestBox>()) {
+        if (TranslatedObj(asb.Header(), t)) asb.Header(box_value(t));
+        if (Translated(asb.PlaceholderText(), t)) asb.PlaceholderText(t);
+        return;
+    }
     if (auto nb = d.try_as<NumberBox>()) {
         if (TranslatedObj(nb.Header(), t)) nb.Header(box_value(t));
         return;

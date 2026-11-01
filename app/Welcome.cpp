@@ -97,6 +97,7 @@ public:
         win_.Title(hstring{lycan::Tr(L"welcome.welcome_lycanzip")});
         win_.SystemBackdrop(Microsoft::UI::Xaml::Media::MicaBackdrop{});
         Build();
+        if (auto tag = lycan::i18n::UiLanguageTag(); !tag.empty()) root_.Language(hstring{tag});  // the font fallback picks the fonts by the language
         win_.Content(root_);
         win_.Closed([weak = weak_from_this()](auto&&, auto&&) { if (auto s = weak.lock()) s->OnClosed(); });
 
@@ -390,10 +391,30 @@ private:
         Grid root;
         root.ColumnSpacing(0);
         ColumnDefinition c0, c1;
-        c0.Width(s_.showFolderTree ? GridLength{128, GridUnitType::Pixel} : GridLength{0, GridUnitType::Pixel});
+        const bool left = s_.showFolderTree || s_.previewPane;   // the left column: the tree and / or the preview pane
+        c0.Width(left ? GridLength{128, GridUnitType::Pixel} : GridLength{0, GridUnitType::Pixel});
         c1.Width(GridLength{1, GridUnitType::Star});
         root.ColumnDefinitions().Append(c0);
         root.ColumnDefinitions().Append(c1);
+
+        if (s_.previewPane) {   // under the tree (or alone): the selected picture
+            StackPanel pane;
+            pane.Spacing(3);
+            pane.Padding(ThicknessHelper::FromLengths(6, 6, 6, 4));
+            pane.Margin(ThicknessHelper::FromLengths(6, 0, 2, 6));
+            pane.VerticalAlignment(s_.showFolderTree ? VerticalAlignment::Bottom : VerticalAlignment::Center);
+            pane.CornerRadius(CornerRadiusHelper::FromUniformRadius(4));
+            pane.BorderThickness(ThicknessHelper::FromUniformLength(1));
+            pane.BorderBrush(Application::Current().Resources().Lookup(box_value(L"ControlStrokeColorDefaultBrush")).as<Microsoft::UI::Xaml::Media::Brush>());
+            auto pic = Thumb(1, 104, 64);
+            pic.as<FrameworkElement>().HorizontalAlignment(HorizontalAlignment::Center);
+            pane.Children().Append(pic);
+            auto t = Label(kSamples[1].name, 10, 0.75);
+            t.HorizontalAlignment(HorizontalAlignment::Center);
+            pane.Children().Append(t);
+            Grid::SetColumn(pane, 0);
+            root.Children().Append(pane);
+        }
 
         if (s_.showFolderTree) {
             StackPanel tree;
@@ -499,7 +520,7 @@ private:
             const double th[] = {40, 64, 96, 140}, cell[] = {70, 92, 124, 176};
             const int sz = static_cast<int>(std::clamp(s_.thumbSize, 0u, 3u));
             const double tw = th[sz], tHeight = th[sz] * 0.75, cw = cell[sz], ch = tHeight + 24;
-            const double areaW = (s_.showFolderTree ? 640.0 - 128 : 640.0) - 24;
+            const double areaW = (left ? 640.0 - 128 : 640.0) - 24;
             const int perRow = (std::max)(1, static_cast<int>(areaW / cw));
             const int rows = (std::max)(1, static_cast<int>(150 / ch));
             const int count = (std::min)(8, perRow * rows);
@@ -575,6 +596,7 @@ private:
         };
         add(lycan::Tr(L"main.use_file_icons_windows"), L"", s_.shellIcons, [](lycan::Settings& s, bool v) { s.shellIcons = v; });
         add(lycan::Tr(L"main.show_folder_tree"), L"", s_.showFolderTree, [](lycan::Settings& s, bool v) { s.showFolderTree = v; });
+        add(lycan::Tr(L"main.show_preview_pane"), lycan::Tr(L"welcome.preview_pane_hint"), s_.previewPane, [](lycan::Settings& s, bool v) { s.previewPane = v; });
 
         formatCombo_ = ComboBox{};
         for (auto const* n : {L"ZIP", L"7z", L"TAR.GZ", L"TAR.XZ", L"TAR.BZ2", L"TAR"}) formatCombo_.Items().Append(box_value(hstring{n}));

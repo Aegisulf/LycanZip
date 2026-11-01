@@ -16,12 +16,13 @@
 #include "lycan/compress.h"
 #include "lycan/extract.h"
 #include "lycan/hash.h"
+#include "lycan/repack.h"
 #include "lycan/scan.h"
 #include "lycan/update.h"
 
 namespace lycan {
 
-enum class TaskKind { Extract, Compress, Test, Update, Scan, Hash };
+enum class TaskKind { Extract, Compress, Test, Update, Scan, Hash, Repack };
 enum class TaskState { Queued, Running, Paused, Completed, Failed, Cancelled };
 
 // How much the machine may be used for a task. Only an executor that runs the work in its own process can honour it
@@ -47,6 +48,8 @@ struct TaskSpec {
     std::vector<UpdateOp> updateOps;              // update: change `archive` in place (update.h)
     UpdateOptions updateOptions;
     uint32_t hashAlgos = kHashDefault;            // hash: the algorithms; the files are `inputs`, or the `indices` of the entries of `archive`
+    // repack (repack.h): `archive` -> `output`; compressOptions = the new archive, openOptions = the old one (its tempDir = the scratch folder)
+    bool repackInPlace = false, repackSkipDamaged = false, repackTest = true;
     TaskPriority priority = TaskPriority::Normal; // at start (later changes arrive through TaskControl)
 };
 
@@ -60,6 +63,7 @@ struct TaskResult {
     UpdateReport update;
     ScanReport scan;
     HashReport hash;
+    RepackReport repack;
 };
 
 class TaskExecutor {

@@ -5,7 +5,7 @@
 # Note: needs an interactive desktop (it really operates windows); do not touch the mouse and keyboard while it runs.
 param([ValidateSet("Debug", "Release")][string]$Config = "Debug", [switch]$KeepShots, [string[]]$Section = @(), [switch]$List)
 $ErrorActionPreference = "Stop"
-$AllSections = @("conflict", "settings", "password", "shell", "compress", "instance", "view", "viewmodes", "accent", "open", "listui", "preview", "flicker", "previewmeta", "animated", "fitmodes", "thumbs", "layout", "ctxmenu", "columns", "iconview", "nodecoder", "descend", "encoding", "i18n", "multiwin", "closeguard", "previewleak", "multipreview", "crash", "extractmodes", "compactopts", "afterbuttons", "saveimage", "workerproc", "background", "execopen", "audiopreview", "loadview", "bandfull", "tempdir", "settingstabs", "titlebar", "paste", "tplmenu", "hash", "checksums", "firstframe", "hashsave", "feedbacka", "diaglog", "win11menu", "stalepath", "compactdone", "dataafterend", "keepdamaged", "dragimage", "previewonly", "shiftopen", "stripdrag", "lockopen", "updatecheck", "installupdate", "virustotal", "colscroll", "newcols", "solidstream", "convertwall", "shellitems", "macmeta", "dupnames", "dragorder", "dragtemp", "treemenu", "previewfix", "smartstore", "modify", "editfile", "scan", "volumes", "existingout", "isocreate", "contrast", "welcome", "bombcheck")
+$AllSections = @("conflict", "settings", "password", "shell", "compress", "instance", "view", "viewmodes", "accent", "open", "listui", "preview", "flicker", "previewmeta", "animated", "fitmodes", "thumbs", "layout", "ctxmenu", "columns", "iconview", "nodecoder", "descend", "encoding", "i18n", "multiwin", "closeguard", "previewleak", "multipreview", "crash", "extractmodes", "compactopts", "afterbuttons", "saveimage", "workerproc", "background", "execopen", "audiopreview", "loadview", "bandfull", "tempdir", "previewpane", "settingssearch", "settingstabs", "titlebar", "paste", "tplmenu", "hash", "checksums", "firstframe", "hashsave", "feedbacka", "diaglog", "win11menu", "stalepath", "compactdone", "dataafterend", "keepdamaged", "dragimage", "previewonly", "shiftopen", "passwords", "masterpw", "repack", "reading", "stripdrag", "lockopen", "updatecheck", "installupdate", "virustotal", "colscroll", "newcols", "solidstream", "convertwall", "shellitems", "macmeta", "dupnames", "dragorder", "dragtemp", "treemenu", "previewfix", "smartstore", "modify", "editfile", "scan", "volumes", "existingout", "isocreate", "contrast", "welcome", "bombcheck")
 if ($List) { $AllSections; exit 0 }
 foreach ($sec in $Section) { if ($AllSections -notcontains $sec) { throw "未知的區段: $sec（可用：$($AllSections -join ', ')）" } }
 function Want($n) { return ($Section.Count -eq 0) -or ($Section -contains $n) }
@@ -40,7 +40,7 @@ Set-Content $portable "" ; if (Test-Path $settingsFile) { Remove-Item -LiteralPa
 
 
 # ---- Shared helper functions (any section may use them) ----
-function Reset-State { Get-Process LycanZip -ErrorAction SilentlyContinue | Stop-Process -Force; Start-Sleep -Milliseconds 400; if (Test-Path $settingsFile) { Remove-Item -LiteralPath $settingsFile -Force }; Remove-Item "$exeDir\presets.ini" -Force -ErrorAction SilentlyContinue
+function Reset-State { Get-Process LycanZip -ErrorAction SilentlyContinue | Stop-Process -Force; Start-Sleep -Milliseconds 400; if (Test-Path $settingsFile) { Remove-Item -LiteralPath $settingsFile -Force }; Remove-Item "$exeDir\presets.ini", "$exeDir\passwords.dat", "$exeDir\reading.tsv" -Force -ErrorAction SilentlyContinue
     Set-Content -Path $settingsFile -Value "compact_close_when_done=true`nview_mode=details`nicon_thumbnails=false" -Encoding ascii }   # the details list is the view of most tests (the program starts new users in the icon view with thumbnails: the welcome section and the iconview / thumbs sections set their own)   # the compact window stays open by default now (the Done button); most of the tests are of what happens when it closes by itself (the compactdone section tests the default)
 function Start-Raw([string[]]$argList) { if ($argList -and $argList.Count) { Start-Process $exe -ArgumentList $argList -PassThru } else { Start-Process $exe -PassThru } }
 function Wait-Exit($proc, [int]$sec) { $proc.WaitForExit($sec * 1000) }
@@ -1122,7 +1122,9 @@ try {
     Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue
 
     # .cb7 (7z for comics) must be opened as an archive, not become "add to archive"
+    # (with the reading mode setting off: on, a comic book archive opens in the picture preview, see the section 'reading')
     Push-Location "$pv\src"; 7z a -t7z "$pv\comic.cb7" ".\*" | Out-Null; Pop-Location
+    Set-Content $settingsFile "welcome_done=true`ncomic_reading_mode=false" -Encoding UTF8
     $p = Start-App "$pv\comic.cb7"; $win = Get-Win $p
     Check ($null -ne (Wait-Find $win "解壓縮到此" 10)) "a .cb7 file opens as an archive (not the compress page)"
     Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue
@@ -1612,6 +1614,14 @@ z.close()
         Check ($null -ne (Wait-Find $win "解压到此")) "i18n zh-CN: the toolbar is in Simplified Chinese"
         Check ($null -ne (Find-Row $win "設定")) "i18n zh-CN: the folder keeps its real (Traditional) name"
         Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue
+
+        # the languages added in 1.1: one text each is enough here (all texts are checked by tools\i18n.py --check)
+        foreach ($case in @(@("ja-JP", "ここに展開"), @("ko-KR", "여기에 압축 풀기"), @("de-DE", "Hier extrahieren"), @("es-ES", "Extraer aquí"), @("fr-FR", "Extraire ici"))) {
+            $env:LYCAN_LANG = $case[0]
+            $p = Start-App "$il/l.zip"; $win = Get-Win $p
+            Check ($null -ne (Wait-Find $win $case[1])) ("i18n {0}: the toolbar is in that language ('{1}')" -f $case[0], $case[1])
+            Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue
+        }
     } finally { $env:LYCAN_LANG = "zh-TW" }
 
     # Choose the language on the settings page -> written to the settings file, a restart notice; takes effect after the restart (the first start always uses zh-TW; at the restart the environment variable is not set, so the settings file decides)
@@ -2474,6 +2484,153 @@ wav(os.path.join(d, 'a2.wav'), 40, 'Second Song', 'Second Artist')
     Remove-Item Env:\LYCAN_TEST_FAIL_WRITE_AFTER
     Stop-Process -Id $p.Id -Force
     Reset-State
+    }
+
+    if (Want "previewpane") {
+        Reset-State
+    # ===== Preview pane under the folder tree: archive summary, picture, text, PDF, programs, the larger window, the switch, row height =====
+    $pp = Join-Path $t "previewpane"; New-Item -ItemType Directory "$pp\src\docs" -Force | Out-Null
+    $bmp = New-Object System.Drawing.Bitmap 64, 48; $g = [System.Drawing.Graphics]::FromImage($bmp); $g.Clear([System.Drawing.Color]::CornflowerBlue); $g.Dispose()
+    $bmp.Save("$pp\src\pic1.png", [System.Drawing.Imaging.ImageFormat]::Png); $bmp.Dispose()
+    Set-Content "$pp\src\readme.txt" "hello pane" -Encoding ASCII
+    foreach ($i in 1..8) { Set-Content "$pp\src\t$i.txt" "content-$i" -Encoding ASCII }
+    Set-Content "$pp\src\docs\inner.txt" "inner" -Encoding ASCII
+    [IO.File]::WriteAllBytes("$pp\src\setup.exe", [byte[]](@(0x4D, 0x5A) + (@(0) * 254)))
+    # a one-page PDF (the offsets of the cross-reference table are counted here)
+    $objs = @("1 0 obj<</Type/Catalog/Pages 2 0 R>>endobj`n", "2 0 obj<</Type/Pages/Kids[3 0 R]/Count 1>>endobj`n", "3 0 obj<</Type/Page/Parent 2 0 R/MediaBox[0 0 200 120]>>endobj`n")
+    $pdf = "%PDF-1.4`n"; $offs = @()
+    foreach ($o in $objs) { $offs += $pdf.Length; $pdf += $o }
+    $xref = $pdf.Length
+    $pdf += "xref`n0 4`n0000000000 65535 f `n" + (($offs | ForEach-Object { "{0:D10} 00000 n `n" -f $_ }) -join "") + "trailer<</Size 4/Root 1 0 R>>`nstartxref`n$xref`n%%EOF`n"
+    [IO.File]::WriteAllText("$pp\src\page.pdf", $pdf, [Text.Encoding]::ASCII)
+    Push-Location "$pp\src"; 7z a -tzip "$pp\pane.zip" ".\*" | Out-Null; Pop-Location
+    $p = Start-App "$pp\pane.zip"; $win = Get-Win $p; Wait-Find $win "解壓縮到此" | Out-Null; Start-Sleep -Milliseconds 1200
+    function Pick($name) { $r = Find-Row $win $name; if ($r) { $r.GetCurrentPattern([Windows.Automation.SelectionItemPattern]::Pattern).Select() }; return $r }
+    function Large-Window { $c = New-Object Windows.Automation.PropertyCondition($AE::ProcessIdProperty, $p.Id); foreach ($w in $AE::RootElement.FindAll($TS::Children, $c)) { if ($w.Current.Name -like "預覽 – *" -or $w.Current.Name -eq "預覽") { return $w } }; return $null }
+    # nothing selected: the archive itself
+    Check (Has-Text $win "原始大小" 6) "preview pane: with nothing selected it shows the archive (original size row)"
+    # a picture: decoded, with its size
+    Pick "pic1.png" | Out-Null
+    Check (Has-Text $win "pic1.png, 64 × 48 px" 6) "preview pane: a picture is decoded (its accessible name has the size, 64 × 48 px)"
+    Check (-not (Has-Text $win "CRC" 1)) "preview pane: a picture fills the pane (no name and details under it)"
+    $enl = Wait-Find $win "開啟較大的預覽" 4
+    Check ($null -ne $enl) "preview pane: a picture has the 'larger preview' button"
+    # text
+    Pick "readme.txt" | Out-Null
+    Check (Has-Text $win "hello pane*" 6) "preview pane: a text file shows its content"
+    Check (-not (Has-Text $win "CRC" 1)) "preview pane: a text fills the pane (no details under it)"
+    # a PDF: the first page
+    Pick "page.pdf" | Out-Null
+    Check (Has-Text $win "page.pdf, 第 1 頁，共 1 頁" 8) "preview pane: a PDF shows its first page"
+    # a program is never unpacked for the pane
+    Pick "setup.exe" | Out-Null
+    Check (Has-Text $win "程式與安裝程式不提供預覽。" 6) "preview pane: a program is not previewed"
+    Check (Has-Text $win "CRC" 4) "preview pane: what cannot be previewed keeps its name and details"
+    Check ($null -eq (Find $win "開啟較大的預覽")) "preview pane: a program has no 'larger preview' button"
+    # a folder: its files
+    Pick "docs" | Out-Null
+    Check (Has-Text $win "1 個檔案" 6) "preview pane: a folder shows how many files it has"
+    # selection moving fast (arrow key held): the pane ends on the last item
+    Pick "t1.txt" | Out-Null; Start-Sleep -Milliseconds 300
+    try { (Find-Row $win "t1.txt").SetFocus() } catch { }
+    [System.Windows.Forms.SendKeys]::SendWait("{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}");
+    Check (Has-Text $win "content-6*" 6) "preview pane: after five quick Down arrows it shows the item the selection stopped on (t6.txt)"
+    Check (-not (Has-Text $win "content-3*" 1)) "preview pane: the items passed on the way are not left on the screen"
+    # the larger window follows the selection; Esc closes it
+    Pick "pic1.png" | Out-Null; Start-Sleep -Milliseconds 900
+    $enl = Wait-Find $win "開啟較大的預覽" 4
+    if ($enl) { $enl.GetCurrentPattern([Windows.Automation.InvokePattern]::Pattern).Invoke() }
+    $lw = $null; $end = (Get-Date).AddSeconds(8); do { $lw = Large-Window; if (-not $lw) { Start-Sleep -Milliseconds 250 } } while (-not $lw -and (Get-Date) -lt $end)
+    $names = (@($AE::RootElement.FindAll($TS::Children, (New-Object Windows.Automation.PropertyCondition($AE::ProcessIdProperty, $p.Id)))) | ForEach-Object { $_.Current.Name }) -join " | "
+    Check ($null -ne $lw -and $lw.Current.Name -eq "預覽 – pic1.png") "preview pane: the button opens the larger preview window ('預覽 – pic1.png'; windows: $names; button found: $($null -ne $enl))"
+    if ($lw) {
+        Check (Has-Text $lw "pic1.png, 64 × 48 px" 6) "larger preview: shows the same picture"
+        Check (-not (Has-Text $lw "CRC" 1)) "larger preview: no details under the picture either"
+        Pick "readme.txt" | Out-Null; Start-Sleep -Milliseconds 1200
+        $lw = Large-Window
+        Check ($lw -and $lw.Current.Name -eq "預覽 – readme.txt") "larger preview: follows the selection of the main window"
+        Add-Type -Namespace U5 -Name W -ErrorAction SilentlyContinue -MemberDefinition '[DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr h); [DllImport("user32.dll")] public static extern void keybd_event(byte vk, byte sc, uint fl, UIntPtr ex);'
+        function PP-Activate($w) { [U5.W]::keybd_event(0x12, 0, 0, [UIntPtr]::Zero); [U5.W]::keybd_event(0x12, 0, 2, [UIntPtr]::Zero); [U5.W]::SetForegroundWindow([IntPtr]$w.Current.NativeWindowHandle) | Out-Null; Start-Sleep -Milliseconds 600 }
+        PP-Activate $lw   # (choosing in the main window may have brought that one to the front)
+        [System.Windows.Forms.SendKeys]::SendWait("{ESC}"); Start-Sleep -Milliseconds 800
+        Check ($null -eq (Large-Window)) "larger preview: Esc closes it"
+        PP-Activate $win
+    }
+    # the folder tree rows: 24 high, 26 apart (in DIP)
+    $dpi = [Win.D]::GetDpiForWindow([IntPtr]$win.Current.NativeWindowHandle)
+    $tc = New-Object Windows.Automation.PropertyCondition($AE::ControlTypeProperty, [Windows.Automation.ControlType]::TreeItem)
+    $tr = @($win.FindAll($TS::Descendants, $tc) | ForEach-Object { $_.Current.BoundingRectangle } | Where-Object { $_.Height -gt 0 } | Sort-Object Y)
+    if ($tr.Count -ge 2 -and $dpi) {
+        $pitch = ($tr[1].Y - $tr[0].Y) * 96 / $dpi
+        Check ([math]::Abs($pitch - 26) -le 1) "folder tree: the rows are 26 DIP apart (was 32), measured $([math]::Round($pitch, 1))"
+    } else { Check $false "folder tree: at least two rows to measure (found $($tr.Count))" }
+    # the switch: Ctrl+Shift+P hides the pane (and is remembered), again shows it
+    try { (Find-Row $win "readme.txt").SetFocus() } catch { }; Start-Sleep -Milliseconds 300
+    [System.Windows.Forms.SendKeys]::SendWait("^+p"); Start-Sleep -Milliseconds 900
+    Check (-not (Has-Text $win "hello pane*" 1)) "preview pane: Ctrl+Shift+P hides it"
+    Check ((Get-Content $settingsFile -Raw) -match "preview_pane=false") "preview pane: hiding it is saved (preview_pane=false)"
+    [System.Windows.Forms.SendKeys]::SendWait("^+p"); Start-Sleep -Milliseconds 900
+    Check (Has-Text $win "hello pane*" 6) "preview pane: Ctrl+Shift+P shows it again with the selected item"
+    Shot $p "preview-pane"
+    Stop-Process -Id $p.Id -Force
+    }
+
+    if (Want "settingssearch") {
+        Reset-State
+    # ===== Settings search: the box in the header finds cards on every tab (also by the English words), Enter goes to the first one =====
+    $p = Start-App "$t\sample.zip"; $win = Get-Win $p; Wait-Find $win "解壓縮到此" | Out-Null; Start-Sleep -Milliseconds 600
+    Click (Find $win "設定"); Start-Sleep -Milliseconds 900
+    # the suggestion list is a popup: search all windows of the process
+    function Suggestion($pattern, $sec = 5) {
+        $c = New-Object Windows.Automation.PropertyCondition($AE::ProcessIdProperty, $p.Id)
+        $end = (Get-Date).AddSeconds($sec)
+        do {
+            foreach ($w in $AE::RootElement.FindAll($TS::Children, $c)) {
+                $hit = (All-Elements $w) | Where-Object { $_.Current.Name -like $pattern -and $_.Current.ControlType -eq [Windows.Automation.ControlType]::ListItem } | Select-Object -First 1
+                if ($hit) { return $hit }
+            }
+            Start-Sleep -Milliseconds 250
+        } while ((Get-Date) -lt $end)
+        return $null
+    }
+    function Visible-Setting($name) { $e = Find $win $name; return ($null -ne $e) -and (-not $e.Current.IsOffscreen) }
+    $sbox = Wait-Find $win "搜尋設定" 6
+    Check ($null -ne $sbox) "settings search: the search box is in the header of the settings page"
+    $editCond = New-Object Windows.Automation.PropertyCondition($AE::ControlTypeProperty, [Windows.Automation.ControlType]::Edit)
+    if ($sbox -and $sbox.Current.ControlType -ne [Windows.Automation.ControlType]::Edit) { $inner = $sbox.FindFirst($TS::Descendants, $editCond); if ($inner) { $sbox = $inner } }   # the text box inside the AutoSuggestBox
+    Open-SettingsTab $win "關於"
+    try { (Find $win "開啟設定檔位置").SetFocus() } catch { }; Start-Sleep -Milliseconds 300
+    [System.Windows.Forms.SendKeys]::SendWait("^f"); Start-Sleep -Milliseconds 600
+    $focused = $AE::FocusedElement
+    Check ($focused -and ($focused.Current.Name -eq "搜尋設定" -or $focused.Current.ControlType -eq [Windows.Automation.ControlType]::Edit)) "settings search: Ctrl+F on the settings page focuses the search box"
+    # a setting of another tab, by its Chinese title
+    Type-Into $sbox "同時執行"; Start-Sleep -Milliseconds 700
+    Check ($null -ne (Suggestion "同時執行的工作數*基本*")) "settings search: the suggestions list the card with its tab ('同時執行的工作數 · 基本')"
+    [System.Windows.Forms.SendKeys]::SendWait("{ENTER}"); Start-Sleep -Milliseconds 1200
+    $end = (Get-Date).AddSeconds(3); while (-not (Visible-Setting "同時執行的工作數") -and (Get-Date) -lt $end) { Start-Sleep -Milliseconds 250 }   # the tab change and the scroll can take a moment
+    Check (Visible-Setting "同時執行的工作數") "settings search: Enter goes to the first card (the General tab is shown)"
+    Check (-not (Visible-Setting "開啟設定檔位置")) "settings search: the About tab is not shown any more"
+    # the English words find the translated card
+    Type-Into $sbox "add context menu"; Start-Sleep -Milliseconds 700
+    Check ($null -ne (Suggestion "在右鍵選單加入 LycanZip*檔案總管*")) "settings search: English words find a card of the Chinese interface ('add context menu' -> the Explorer tab)"
+    [System.Windows.Forms.SendKeys]::SendWait("{ENTER}"); Start-Sleep -Milliseconds 1200
+    Check (Visible-Setting "在右鍵選單加入 LycanZip") "settings search: Enter shows the Explorer tab"
+    Start-Sleep -Milliseconds 100; Shot $p "settings-search"   # the card is outlined for a moment
+    # nothing found
+    Type-Into $sbox "zzqqxxyy"; Start-Sleep -Milliseconds 700
+    Check ($null -ne (Suggestion "沒有符合的設定")) "settings search: no match says so"
+    [System.Windows.Forms.SendKeys]::SendWait("{ENTER}"); Start-Sleep -Milliseconds 700
+    Check (Visible-Setting "在右鍵選單加入 LycanZip") "settings search: Enter with no match stays where it was"
+    # Esc: first clears the search, then leaves the settings
+    $sbox.SetFocus(); Start-Sleep -Milliseconds 300
+    $sl = $null; $sp = $sbox; while ($sp -and -not $sp.TryGetCurrentPattern([Windows.Automation.ExpandCollapsePattern]::Pattern, [ref]$sl)) { $sp = [Windows.Automation.TreeWalker]::ControlViewWalker.GetParent($sp) }
+    if ($sl -and $sl.Current.ExpandCollapseState -eq [Windows.Automation.ExpandCollapseState]::Expanded) { [System.Windows.Forms.SendKeys]::SendWait("{ESC}"); Start-Sleep -Milliseconds 400 }   # the first Esc only closes an open suggestion list
+    [System.Windows.Forms.SendKeys]::SendWait("{ESC}"); Start-Sleep -Milliseconds 600
+    $vp = $null; $txt = if ($sbox.TryGetCurrentPattern([Windows.Automation.ValuePattern]::Pattern, [ref]$vp)) { $vp.Current.Value } else { "?" }
+    Check ($txt -eq "" -and $null -ne (Find $win "設定分頁")) "settings search: Esc clears the search and stays on the settings page (text '$txt')"
+    [System.Windows.Forms.SendKeys]::SendWait("{ESC}"); Start-Sleep -Milliseconds 900
+    Check ($null -ne (Find $win "解壓縮到此")) "settings search: Esc in the empty search box leaves the settings (back to the archive)"
+    Stop-Process -Id $p.Id -Force
     }
 
     if (Want "settingstabs") {
@@ -3750,6 +3907,437 @@ for d, color in (("a", (200, 40, 40)), ("b", (40, 80, 200))):
     Reset-State
     }
 
+    if (Want "passwords") {
+        Reset-State
+    # ===== Password manager: "Remember this password" saves it (encrypted); the next archive opens with it, no question; the settings tab =====
+    $store = Join-Path $exeDir "passwords.dat"
+    function Toggle-On($el) { $tp = $null; return ($el -and $el.TryGetCurrentPattern([Windows.Automation.TogglePattern]::Pattern, [ref]$tp) -and $tp.Current.ToggleState -eq [Windows.Automation.ToggleState]::On) }
+    Remove-Item "$t\enc" -Recurse -Force -ErrorAction SilentlyContinue   # (the section 'password' extracts there too)
+    $p = Start-App "$t\enc.zip"; $win = Get-Win $p
+    Wait-Find $win "解壓縮到此" | Out-Null
+    Click (Find $win "解壓縮到此")
+    $pw = Wait-Find $win "密碼" 8
+    $remember = Wait-Find $win "記住這個密碼" 4
+    Check ($null -ne $remember -and -not (Toggle-On $remember)) "passwords: the dialog has 'Remember this password', not ticked by default"
+    if ($pw -and $remember) {
+        $remember.GetCurrentPattern([Windows.Automation.TogglePattern]::Pattern).Toggle(); Start-Sleep -Milliseconds 300
+        Type-Into (Find $win "密碼") "Secret123"; Click (Find $win "確定")
+        $r = Wait-Task $win "^完成　" 20
+        Check ($null -ne $r) "passwords: the extraction with the typed password completes"
+        Check (Test-Path $store) "passwords: ticked, the password is saved (passwords.dat)"
+        $raw = if (Test-Path $store) { [IO.File]::ReadAllBytes($store) } else { @() }
+        $ascii = [Text.Encoding]::ASCII.GetString($raw); $wide = [Text.Encoding]::Unicode.GetString($raw)
+        Check ($raw.Length -gt 0 -and $ascii -notmatch "Secret123" -and $wide -notmatch "Secret123" -and $ascii.StartsWith("LZPW")) "passwords: the file is encrypted (the password does not appear in it)"
+    }
+    Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue; Start-Sleep -Milliseconds 500
+    # another process, an archive with encrypted names and the same password: opened with the saved one, no question
+    $p = Start-App "$t\hdr.7z"; $win = Get-Win $p
+    Check ($null -ne (Wait-Find $win "解壓縮到此" 15)) "passwords: an archive with encrypted names opens with the saved password"
+    Check ($null -eq (Find $win "需要密碼")) "passwords: without asking"
+    Check (Has-Text $win "已使用儲存的密碼" 6) "passwords: and says that a saved password was used"
+    # the settings tab: the saved password is listed hidden, the eye shows it
+    Click (Find $win "設定"); Start-Sleep -Milliseconds 900
+    Open-SettingsTab $win "密碼"; Start-Sleep -Milliseconds 800
+    Check ($null -ne (Wait-Find $win "已隱藏的密碼" 4)) "passwords: the settings tab lists it, hidden"
+    $eye = Find $win "顯示密碼"
+    if ($eye) { $eye.GetCurrentPattern([Windows.Automation.InvokePattern]::Pattern).Invoke(); Start-Sleep -Milliseconds 400 }
+    Check ($null -ne (Wait-Find $win "Secret123" 3)) "passwords: the eye button shows it"
+    Check ($null -ne (Find $win "自動嘗試已儲存的密碼")) "passwords: the tab has the switch 'Try saved passwords automatically'"
+    Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue; Start-Sleep -Milliseconds 500
+    # trying switched off: the question comes again
+    Set-Content $settingsFile "welcome_done=true`nauto_try_passwords=false" -Encoding UTF8
+    $p = Start-App "$t\hdr.7z"; $win = Get-Win $p
+    Check ($null -ne (Wait-Find $win "需要密碼" 10)) "passwords: with 'Try saved passwords' off the archive asks again"
+    Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue
+    Reset-State
+    }
+
+    if (Want "masterpw") {
+        Reset-State
+    # ===== Master password: set it; a locked list is unlocked in the password dialog and then tried; lock / unlock / turn off; a new
+    # archive takes a saved password; forgotten: everything is deleted =====
+    $store = Join-Path $exeDir "passwords.dat"
+    function Scheme() { if (Test-Path $store) { [IO.File]::ReadAllBytes($store)[8] } else { -1 } }
+    function Enabled($el) { $el -and $el.Current.IsEnabled }
+    function Find-Edit($w, $name) { $w.FindFirst($TS::Descendants, (New-Object Windows.Automation.AndCondition((ByName $name), (New-Object Windows.Automation.PropertyCondition($AE::ControlTypeProperty, [Windows.Automation.ControlType]::Edit))))) }
+    function Wait-Edit($w, $name, [int]$sec = 6) { $end = (Get-Date).AddSeconds($sec); do { $e = Find-Edit $w $name; if ($e) { return $e }; Start-Sleep -Milliseconds 150 } while ((Get-Date) -lt $end); return $null }
+    function Find-InProc($proc, $name, [int]$sec = 6) {   # a flyout is a window of its own, not under the main window
+        $pc = New-Object Windows.Automation.PropertyCondition($AE::ProcessIdProperty, $proc.Id); $end = (Get-Date).AddSeconds($sec)
+        do { foreach ($w in $AE::RootElement.FindAll($TS::Children, $pc)) { $e = $w.FindFirst($TS::Descendants, (ByName $name)); if ($e) { return $e } }; Start-Sleep -Milliseconds 200 } while ((Get-Date) -lt $end)
+        return $null
+    }
+    Remove-Item "$t\enc" -Recurse -Force -ErrorAction SilentlyContinue
+    # a saved password first ("Remember this password")
+    $p = Start-App "$t\enc.zip"; $win = Get-Win $p
+    Wait-Find $win "解壓縮到此" | Out-Null
+    Click (Find $win "解壓縮到此")
+    if (Wait-Find $win "記住這個密碼" 8) {
+        Click (Find $win "記住這個密碼"); Start-Sleep -Milliseconds 300
+        Type-Into (Find-Edit $win "密碼") "Secret123"; Click (Find $win "確定")
+        Wait-Task $win "^完成　" 20 | Out-Null
+    }
+    Check ((Scheme) -eq 1) "master password: a saved password, without a master password (DPAPI only)"
+    # set the master password: OK only when it is long enough and typed twice the same
+    Click (Find $win "設定"); Start-Sleep -Milliseconds 900
+    Open-SettingsTab $win "密碼"; Start-Sleep -Milliseconds 600
+    Check (Has-Text $win "關閉。已儲存的密碼只受*" 4) "master password: the card says it is off"
+    # (the dialog that adds a password: its button says Save, not the "Save to: {0}" of the new archive page)
+    Click (Find $win "新增密碼")
+    if (Wait-Find $win "儲存" 4) { Check (-not (Has-Text $win "儲存到*" 1)) "passwords: the add dialog's button is 'Save'"; Click (Find $win "取消") }
+    else { Check $false "passwords: the add dialog's button is 'Save'" }
+    Start-Sleep -Milliseconds 500
+    Click (Find $win "設定主密碼")
+    $new = Wait-Edit $win "新的主密碼"
+    if ($new) {
+        Type-Into $new "abc"; Type-Into (Find-Edit $win "再次輸入密碼") "abc"
+        Check (-not (Enabled (Find $win "確定"))) "master password: 3 characters are too short (OK disabled)"
+        $before = $new.Current.BoundingRectangle
+        Type-Into $new "d1"; Type-Into (Find-Edit $win "再次輸入密碼") "d2"
+        $after = $new.Current.BoundingRectangle
+        Check ($before.Width -eq $after.Width -and $before.Y -eq $after.Y) "master password: the dialog keeps its size when the mismatch note appears"
+        Check (-not (Enabled (Find $win "確定"))) "master password: two different entries (OK disabled)"
+        Check (Has-Text $win "兩次輸入的密碼不一致*" 2) "master password: and it says they don't match"
+        (Find-Edit $win "再次輸入密碼").SetFocus(); [System.Windows.Forms.SendKeys]::SendWait("{BACKSPACE}1"); Start-Sleep -Milliseconds 300
+        Check (Enabled (Find $win "確定")) "master password: the same 5 characters twice (OK enabled)"
+        Click (Find $win "確定")
+    } else { Check $false "master password: the dialog to set it opens" }
+    Check (Has-Text $win "開啟。已儲存的密碼已解鎖*" 6) "master password: set, the card says the list is unlocked until LycanZip closes"
+    Check ((Scheme) -eq 2) "master password: passwords.dat is saved under the master password (scheme 2)"
+    $raw = if (Test-Path $store) { [IO.File]::ReadAllBytes($store) } else { @() }
+    Check ($raw.Length -gt 0 -and [Text.Encoding]::Unicode.GetString($raw) -notmatch "Secret123" -and [Text.Encoding]::ASCII.GetString($raw) -notmatch "Secret123") "master password: the password does not appear in the file"
+    # lock now: the list is hidden; unlock: a wrong master password is refused, the right one shows it again
+    Click (Find $win "立即鎖定"); Start-Sleep -Milliseconds 500
+    Check (Has-Text $win "已儲存的密碼已鎖定。用主密碼解鎖*" 4) "master password: locked, the list says so instead of the passwords"
+    Check ($null -eq (Find $win "已隱藏的密碼")) "master password: and no saved password is listed"
+    Click (Find $win "解鎖")
+    $mb = Wait-Edit $win "主密碼"
+    if ($mb) {
+        Type-Into $mb "wrong"; Click (Find $win "解鎖")
+        Check (Has-Text $win "主密碼錯誤。" 8) "master password: a wrong master password is refused"
+        Type-Into (Find-Edit $win "主密碼") "abcd1"; Click (Find $win "解鎖")
+    }
+    Check ($null -ne (Wait-Find $win "已隱藏的密碼" 8)) "master password: unlocked, the saved password is listed again"
+    Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue; Start-Sleep -Milliseconds 500
+
+    # another run: locked; the password dialog of an archive can unlock the list, and then the saved password is used
+    $p = Start-App "$t\hdr.7z"; $win = Get-Win $p
+    Check ($null -ne (Wait-Find $win "需要密碼" 12)) "master password: locked, an archive with encrypted names asks"
+    $mb = Wait-Edit $win "主密碼" 4
+    Check ($null -ne $mb -and $null -ne (Find $win "解鎖並嘗試")) "master password: the dialog has the master password field and 'Unlock and try'"
+    if ($mb) {
+        Type-Into $mb "wrong"; Click (Find $win "解鎖並嘗試")
+        Check (Has-Text $win "主密碼錯誤。" 8) "master password: in the dialog a wrong master password is refused"
+        Type-Into (Find-Edit $win "主密碼") "abcd1"; Click (Find $win "解鎖並嘗試")
+        Check ($null -ne (Wait-Find $win "解壓縮到此" 15)) "master password: unlocked in the dialog, the archive opens with the saved password"
+        Check (Has-Text $win "已使用儲存的密碼" 6) "master password: and says that a saved password was used"
+    }
+    # a new archive: "Use a saved password" fills the password (the list is unlocked in this run)
+    $cm = Join-Path $t "masterpw_add"; New-Item -ItemType Directory $cm -Force | Out-Null; Set-Content "$cm\a.txt" "hello"
+    Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue; Start-Sleep -Milliseconds 500
+    $p = Start-Raw @("--add", (Q "$cm\a.txt")); $w2 = Get-Win $p
+    Wait-Find $w2 "新增壓縮檔" 10 | Out-Null; Start-Sleep -Milliseconds 1000
+    $pick = Wait-Find $w2 "使用已儲存的密碼" 6
+    Check ($null -ne $pick) "master password: the new archive page has 'Use a saved password'"
+    if ($pick) {
+        Click $pick
+        $mb = Wait-Edit $w2 "主密碼"
+        Check ($null -ne $mb) "master password: locked (a new run), picking asks for the master password first"
+        if ($mb) { Type-Into $mb "abcd1"; Click (Find $w2 "解鎖") }
+        $item = Find-InProc $p "已隱藏的密碼" 8
+        Check ($null -ne $item -and $null -ne (Find-InProc $p "S••••3" 2)) "master password: the list shows the saved one as its first and last character"
+        if ($item) { Click $item; Start-Sleep -Milliseconds 500 }
+        $pwBox = Find-Edit $w2 "密碼"
+        $vp = $null
+        Check ($pwBox -and $pwBox.TryGetCurrentPattern([Windows.Automation.ValuePattern]::Pattern, [ref]$vp) -and $vp.Current.Value -eq "Secret123") "master password: choosing it fills the password of the new archive"
+    }
+    Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue; Start-Sleep -Milliseconds 500
+
+    # turn it off (needs the master password): DPAPI only again, the saved password stays
+    $p = Start-App; $win = Get-Win $p
+    Click (Find $win "設定"); Start-Sleep -Milliseconds 900
+    Open-SettingsTab $win "密碼"; Start-Sleep -Milliseconds 600
+    Click (Find $win "解鎖")
+    if ($mb = Wait-Edit $win "主密碼") { Type-Into $mb "abcd1"; Click (Find $win "解鎖") }
+    Wait-Find $win "關閉主密碼" 8 | Out-Null
+    Click (Find $win "關閉主密碼")
+    if ($cur = Wait-Edit $win "目前的主密碼") { Type-Into $cur "abcd1"; Click (Find $win "確定") }
+    Check (Has-Text $win "關閉。已儲存的密碼只受*" 8) "master password: turned off with the master password"
+    Check ((Scheme) -eq 1 -and $null -ne (Find $win "已隱藏的密碼")) "master password: the file is DPAPI only again and the saved password stays"
+    # set again, then forgotten: in a new run the list is locked; "Forgot" deletes everything
+    Click (Find $win "設定主密碼")
+    if ($new = Wait-Edit $win "新的主密碼") { Type-Into $new "zzzz"; Type-Into (Find-Edit $win "再次輸入密碼") "zzzz"; Click (Find $win "確定") }
+    Wait-Find $win "立即鎖定" 8 | Out-Null
+    Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue; Start-Sleep -Milliseconds 500
+    $p = Start-App; $win = Get-Win $p
+    Click (Find $win "設定"); Start-Sleep -Milliseconds 900
+    Open-SettingsTab $win "密碼"; Start-Sleep -Milliseconds 600
+    Check (Has-Text $win "開啟。已儲存的密碼已鎖定。" 4) "master password: a new run starts locked"
+    Click (Find $win "忘記主密碼？")
+    if ($del = Wait-Find $win "全部刪除" 6) { Click $del }
+    Check (Has-Text $win "關閉。已儲存的密碼只受*" 6) "master password: forgotten, the master password is gone"
+    Check (-not (Test-Path $store)) "master password: and with it every saved password (passwords.dat deleted)"
+    Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue
+    Remove-Item $store -ErrorAction SilentlyContinue
+    Reset-State
+    }
+
+    if (Want "repack") {
+        Reset-State
+    # ===== Repacking: convert an encrypted zip to 7z (the password kept), remove the password in place, upgrade an old Shift-JIS zip,
+    # convert several archives from the command line (the context menu), and the menu item is off by default =====
+    function Find-InProc($proc, $name, [int]$sec = 6) {   # menus and flyouts are windows of their own
+        $pc = New-Object Windows.Automation.PropertyCondition($AE::ProcessIdProperty, $proc.Id); $end = (Get-Date).AddSeconds($sec)
+        do { foreach ($w in $AE::RootElement.FindAll($TS::Children, $pc)) { $e = $w.FindFirst($TS::Descendants, (ByName $name)); if ($e) { return $e } }; Start-Sleep -Milliseconds 200 } while ((Get-Date) -lt $end)
+        return $null
+    }
+    function Find-Edit($w, $name) { $w.FindFirst($TS::Descendants, (New-Object Windows.Automation.AndCondition((ByName $name), (New-Object Windows.Automation.PropertyCondition($AE::ControlTypeProperty, [Windows.Automation.ControlType]::Edit))))) }
+    function More-Item($proc, $win, $name) {   # opens "More options" and returns the item (null when it is not shown)
+        Click (Find $win "其他選項"); Start-Sleep -Milliseconds 600
+        $i = Find-InProc $proc $name 2
+        if ($i -and -not $i.Current.IsOffscreen) { return $i }
+        [System.Windows.Forms.SendKeys]::SendWait("{ESC}"); Start-Sleep -Milliseconds 300
+        return $null
+    }
+    function Seven-Ok($file, $pw) { cmd /c "7z t -p$pw `"$file`" >nul 2>&1"; return $LASTEXITCODE -eq 0 }   # (through cmd: the error output of 7z would stop the script)
+    $rp = Join-Path $t "repack"; Remove-Item $rp -Recurse -Force -ErrorAction SilentlyContinue; New-Item -ItemType Directory $rp | Out-Null
+    Copy-Item "$t\enc.zip" "$rp\conv.zip"
+    Copy-Item "$t\enc.zip" "$rp\nopw.zip"
+
+    # convert from the main window: the menu items of an encrypted zip
+    $p = Start-App "$rp\conv.zip"; $win = Get-Win $p
+    Wait-Find $win "解壓縮到此" 15 | Out-Null
+    $item = More-Item $p $win "轉換壓縮檔格式…"
+    Check ($null -ne $item) "repack: More options has 'Convert archive format...'"
+    if ($item) { [System.Windows.Forms.SendKeys]::SendWait("{ESC}"); Start-Sleep -Milliseconds 300 }
+    Check ($null -ne (More-Item $p $win "移除壓縮檔的密碼")) "repack: an encrypted zip offers 'Remove archive password'"
+    [System.Windows.Forms.SendKeys]::SendWait("{ESC}"); Start-Sleep -Milliseconds 300
+    Check ($null -eq (More-Item $p $win "升級壓縮檔")) "repack: a zip with UTF-8 names offers no upgrade"
+    $item = More-Item $p $win "轉換壓縮檔格式…"
+    if ($item) {
+        Click $item
+        $pwBox = Wait-Find $win "密碼" 8
+        if ($pwBox -and (Wait-Find $win "需要密碼" 2)) { Type-Into (Find-Edit $win "密碼") "Secret123"; Click (Find $win "確定") }
+        Check (Has-Text $win "轉換壓縮檔格式" 8) "repack: the page is titled 'Convert archive format'"
+        Check ($null -ne (Wait-Find $win "新壓縮檔的密碼" 4)) "repack: the page asks what the new archive's password is"
+        Check ($null -eq (Find $win "加入檔案")) "repack: no 'add files' in the convert mode"
+        Select-Combo $win "範本" "一般 7z"; Start-Sleep -Milliseconds 400
+        Click (Find $win "開始轉換")
+        $r = Wait-Task $win "^完成　" 30
+        Check ($null -ne $r) "repack: the conversion completes ($r)"
+        Check ((Test-Path "$rp\conv.7z") -and (Seven-Ok "$rp\conv.7z" "Secret123") -and -not (Seven-Ok "$rp\conv.7z" "")) "repack: conv.7z is made, with the original password"
+        Check (Test-Path "$rp\conv.zip") "repack: the original stays"
+        $del = Wait-Find $win "刪除原壓縮檔" 4
+        Check ($null -ne $del) "repack: the card offers 'Delete the original archive'"
+        if ($del) {
+            Click $del
+            Check (Has-Text $win "刪除原壓縮檔？" 4) "repack: deleting asks first"
+            Check (Has-Text $win "新的壓縮檔已經通過完整性測試*" 2) "repack: and says the new archive passed the test"
+            Click (Find $win "取消"); Start-Sleep -Milliseconds 400
+        }
+    } else { Check $false "repack: the convert item can be clicked" }
+    Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue; Start-Sleep -Milliseconds 500
+
+    # remove the password: no question, replaced after the test, opened again without a password
+    $p = Start-App "$rp\nopw.zip"; $win = Get-Win $p
+    Wait-Find $win "解壓縮到此" 15 | Out-Null
+    $item = More-Item $p $win "移除壓縮檔的密碼"
+    if ($item) {
+        Click $item
+        if (Wait-Find $win "需要密碼" 6) { Type-Into (Find-Edit $win "密碼") "Secret123"; Click (Find $win "確定") }
+        Check (Has-Text $win "已移除密碼*" 30) "repack: removing the password says it was done (tested)"
+        Check ((Seven-Ok "$rp\nopw.zip" "") -and -not (Test-Path "$rp\nopw.zip.lycantmp")) "repack: the archive opens without a password now, no scratch file left"
+        Check ($null -eq (More-Item $p $win "移除壓縮檔的密碼")) "repack: and no longer offers to remove a password"
+        [System.Windows.Forms.SendKeys]::SendWait("{ESC}")
+    } else { Check $false "repack: 'Remove archive password' can be clicked" }
+    Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue; Start-Sleep -Milliseconds 500
+
+    # upgrade: an old zip whose names are Shift-JIS without the UTF-8 mark
+    $sj = Join-Path $rp "sjis"; New-Item -ItemType Directory "$sj\テスト" -Force | Out-Null
+    foreach ($n in @("日本語のファイル.txt", "テスト\説明書.txt", "アーカイブの中身.txt")) { Set-Content -LiteralPath (Join-Path $sj $n) "x" }
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+    [System.IO.Compression.ZipFile]::CreateFromDirectory($sj, "$rp\old.zip", [System.IO.Compression.CompressionLevel]::Optimal, $false, [Text.Encoding]::GetEncoding(932))
+    $p = Start-App "$rp\old.zip"; $win = Get-Win $p
+    Wait-Find $win "解壓縮到此" 15 | Out-Null
+    Check (Has-Text $win "*可透過升級壓縮檔來避免此問題。" 6) "repack: the encoding notice says that upgrading avoids the problem"
+    $link = Wait-Find $win "升級壓縮檔" 4
+    Check ($null -ne $link) "repack: and has an 'Upgrade archive' link"
+    if ($link) {
+        Click $link
+        # first a dialog: the names as they will be stored, with the encoding to choose (it cannot be undone)
+        Check (Has-Text $win "升級後檔名會照下面的樣子*" 6) "repack: upgrading asks first, showing how the names will be stored"
+        Check ($null -ne (Wait-Find $win "日本語のファイル.txt" 3)) "repack: the dialog lists the names decoded as detected (Shift-JIS)"
+        $dlgCombo = $null
+        foreach ($c in $win.FindAll($TS::Descendants, (New-Object Windows.Automation.PropertyCondition($AE::ControlTypeProperty, [Windows.Automation.ControlType]::ComboBox)))) { if ($c.Current.Name -eq "檔名編碼" -and -not $c.Current.IsOffscreen) { $dlgCombo = $c } }
+        function Count-Name($n) { @($win.FindAll($TS::Descendants, (ByName $n))).Count }   # (the list behind the dialog shows the names too)
+        $before = Count-Name "日本語のファイル.txt"
+        if ($dlgCombo) {
+            $dlgCombo.GetCurrentPattern([Windows.Automation.ExpandCollapsePattern]::Pattern).Expand(); Start-Sleep -Milliseconds 400
+            $opt = Find-InProc $p "Big5 (繁體中文)" 3
+            if ($opt) { $opt.GetCurrentPattern([Windows.Automation.SelectionItemPattern]::Pattern).Select(); Start-Sleep -Milliseconds 500 }
+            Check ((Count-Name "日本語のファイル.txt") -lt $before) "repack: another encoding in the dialog changes the names shown"
+            $dlgCombo.GetCurrentPattern([Windows.Automation.ExpandCollapsePattern]::Pattern).Expand(); Start-Sleep -Milliseconds 400
+            $opt = Find-InProc $p "Shift-JIS (日文)" 3
+            if ($opt) { $opt.GetCurrentPattern([Windows.Automation.SelectionItemPattern]::Pattern).Select(); Start-Sleep -Milliseconds 500 }
+        } else { Check $false "repack: the dialog has an encoding drop-down" }
+        Click (Find $win "升級")
+        Check (Has-Text $win "已升級壓縮檔*" 20) "repack: upgraded (tested, opened again)"
+        $z = [System.IO.Compression.ZipFile]::OpenRead("$rp\old.zip")
+        $names = @($z.Entries | ForEach-Object { $_.FullName }); $z.Dispose()
+        Check ($names -contains "日本語のファイル.txt") "repack: the names are UTF-8 now (read without a code page)"
+        Check ($null -eq (More-Item $p $win "升級壓縮檔")) "repack: nothing to upgrade any more"
+        [System.Windows.Forms.SendKeys]::SendWait("{ESC}")
+    }
+    Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue; Start-Sleep -Milliseconds 500
+
+    # converting an old zip from the window: the page says the names are written as they are shown now
+    [System.IO.Compression.ZipFile]::CreateFromDirectory($sj, "$rp\old2.zip", [System.IO.Compression.CompressionLevel]::Optimal, $false, [Text.Encoding]::GetEncoding(932))
+    $p = Start-App "$rp\old2.zip"; $win = Get-Win $p
+    Wait-Find $win "解壓縮到此" 15 | Out-Null
+    $item = More-Item $p $win "轉換壓縮檔格式…"
+    if ($item) { Click $item }
+    Check (Has-Text $win "*檔名會照目前顯示的樣子*" 8) "repack: converting an old zip warns that the names are written as shown now"
+    Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue; Start-Sleep -Milliseconds 500
+
+    # changing an old archive: a Shift-JIS zip keeps its names without asking; a Shift-JIS tar asks before writing every name in UTF-8
+    function New-Folder($win, $name) {
+        Click (Find $win "加入到壓縮檔"); Start-Sleep -Milliseconds 400
+        Click (Wait-Find $win "新增資料夾…" 5)
+        if ($box = Wait-Find $win "名稱" 6) { Type-Into $box $name; Click (Find $win "確定") }
+    }
+    [System.IO.Compression.ZipFile]::CreateFromDirectory($sj, "$rp\old3.zip", [System.IO.Compression.CompressionLevel]::Optimal, $false, [Text.Encoding]::GetEncoding(932))
+    $p = Start-App "$rp\old3.zip"; $win = Get-Win $p
+    Wait-Find $win "解壓縮到此" 15 | Out-Null; Start-Sleep -Milliseconds 800
+    New-Folder $win "new"
+    Check ((Has-Text $win "已修改壓縮檔*" 15) -and $null -eq (Find $win "以 UTF-8 儲存檔名？")) "repack: changing an old zip asks nothing"
+    $z = [System.IO.Compression.ZipFile]::Open("$rp\old3.zip", "Read", [Text.Encoding]::GetEncoding(932))
+    $names = @($z.Entries | ForEach-Object { $_.FullName }); $z.Dispose()
+    Check ($names -contains "日本語のファイル.txt") "repack: and its old names stay Shift-JIS (read as Shift-JIS)"
+    Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue; Start-Sleep -Milliseconds 500
+    $tarPy = Join-Path $rp "mktar.py"
+    Set-Content $tarPy -Encoding UTF8 -Value @'
+import sys, tarfile, io
+with tarfile.open(sys.argv[1], "w", format=tarfile.GNU_FORMAT, encoding="cp932") as t:
+    for n in ["日本語のファイル.txt", "テスト/説明書.txt", "アーカイブの中身.txt"]:
+        data = b"x"
+        i = tarfile.TarInfo(n); i.size = len(data); t.addfile(i, io.BytesIO(data))
+'@
+    python $tarPy "$rp\old.tar"
+    $p = Start-App "$rp\old.tar"; $win = Get-Win $p
+    Wait-Find $win "解壓縮到此" 15 | Out-Null; Start-Sleep -Milliseconds 800
+    New-Folder $win "new"
+    Check (Has-Text $win "以 UTF-8 儲存檔名？" 6) "repack: changing an old tar asks first (all names become UTF-8)"
+    Check ($null -ne (Wait-Find $win "日本語のファイル.txt" 2)) "repack: the question shows the names as they will be stored"
+    Click (Find $win "取消"); Start-Sleep -Milliseconds 800
+    Check (-not (Has-Text $win "已修改壓縮檔*" 2)) "repack: cancelling changes nothing"
+    New-Folder $win "new"
+    if (Wait-Find $win "以 UTF-8 儲存檔名？" 6) { Click (Find $win "繼續") }
+    Check (Has-Text $win "已修改壓縮檔*" 15) "repack: continuing changes the tar"
+    New-Folder $win "new2"
+    Check ((Has-Text $win "已修改壓縮檔*" 15) -and $null -eq (Find $win "以 UTF-8 儲存檔名？")) "repack: the question comes only once"
+    Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue; Start-Sleep -Milliseconds 500
+
+    # the context menu: --convert with two archives, each keeps its name
+    Push-Location $sj; 7z a -tzip "$rp\a1.zip" . | Out-Null; 7z a -tzip "$rp\a2.zip" . | Out-Null; Pop-Location
+    $p = Start-Raw @("--convert", (Q "$rp\a1.zip"), (Q "$rp\a2.zip")); $w2 = Get-Win $p
+    Check (Has-Text $w2 "轉換壓縮檔格式" 10) "repack: --convert shows the convert page"
+    Select-Combo $w2 "範本" "一般 7z"; Start-Sleep -Milliseconds 400
+    Check (Has-Text $w2 "每個壓縮檔沿用原本的檔名*" 4) "repack: with two archives each keeps its name"
+    Click (Find $w2 "開始轉換")
+    $end = (Get-Date).AddSeconds(30); do { Start-Sleep -Milliseconds 400 } while (-not ((Test-Path "$rp\a1.7z") -and (Test-Path "$rp\a2.7z")) -and (Get-Date) -lt $end)
+    Check ((Seven-Ok "$rp\a1.7z" "") -and (Seven-Ok "$rp\a2.7z" "")) "repack: both archives are converted (a1.7z, a2.7z)"
+    Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue; Start-Sleep -Milliseconds 500
+
+    # the context menu item is off by default (settings, Explorer tab)
+    $p = Start-App; $win = Get-Win $p
+    Click (Find $win "設定"); Start-Sleep -Milliseconds 900
+    Open-SettingsTab $win "檔案總管"; Start-Sleep -Milliseconds 600
+    $cb = Wait-Find $win "轉換壓縮檔格式…" 4
+    $tp = $null
+    Check ($cb -and $cb.TryGetCurrentPattern([Windows.Automation.TogglePattern]::Pattern, [ref]$tp) -and $tp.Current.ToggleState -eq [Windows.Automation.ToggleState]::Off) "repack: the context menu item exists and is off by default"
+    Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue
+    Reset-State
+    }
+
+    if (Want "reading") {
+        Reset-State
+    # ===== Reading mode: a comic book archive opens in it; the whole book in order, two pages side by side, right to left, remembered =====
+    $rd = Join-Path $t "reading"; New-Item -ItemType Directory "$rd/src/ch1", "$rd/src/ch2" -Force | Out-Null
+    Remove-Item (Join-Path $exeDir "reading.tsv") -ErrorAction SilentlyContinue
+    # eight pages: seven upright ones (each a different width, so the status line tells them apart), the last one a two-page picture
+    foreach ($n in 1..8) {
+        $folder = if ($n -le 5) { "ch1" } else { "ch2" }
+        $w = if ($n -eq 8) { 240 } else { 60 + $n }
+        $bmp = New-Object System.Drawing.Bitmap $w, 120; $g = [System.Drawing.Graphics]::FromImage($bmp); $g.Clear([System.Drawing.Color]::SteelBlue); $g.Dispose()
+        $bmp.Save("$rd\src\$folder\p0$n.png", [System.Drawing.Imaging.ImageFormat]::Png); $bmp.Dispose()
+    }
+    Push-Location "$rd\src"; 7z a -tzip "$rd\book.cbz" ".\ch1" ".\ch2" | Out-Null; Pop-Location
+    function Reader-Windows($proc) { $c = New-Object Windows.Automation.PropertyCondition($AE::ProcessIdProperty, $proc.Id); @($AE::RootElement.FindAll($TS::Children, $c)) }
+    function Wait-Reader($proc, [int]$sec = 12) {
+        $end = (Get-Date).AddSeconds($sec)
+        do { foreach ($w in (Reader-Windows $proc)) { if ($w.Current.Name -like "p0*.png*") { return $w } }; Start-Sleep -Milliseconds 250 } while ((Get-Date) -lt $end)
+        return $null
+    }
+    function Counter-Is($w, $text, $sec = 6) { Has-Text $w $text $sec }
+    Add-Type -Namespace U6 -Name W -ErrorAction SilentlyContinue -MemberDefinition '[DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr h); [DllImport("user32.dll")] public static extern void keybd_event(byte vk, byte sc, uint fl, UIntPtr ex);'
+    function Front($w) { [U6.W]::keybd_event(0x12, 0, 0, [UIntPtr]::Zero); [U6.W]::keybd_event(0x12, 0, 2, [UIntPtr]::Zero); [U6.W]::SetForegroundWindow([IntPtr]$w.Current.NativeWindowHandle) | Out-Null; Start-Sleep -Milliseconds 500 }
+    function Press($w, $keys) { Front $w; [System.Windows.Forms.SendKeys]::SendWait($keys); Start-Sleep -Milliseconds 900 }
+
+    $p = Start-Raw @((Q "$rd\book.cbz"))
+    $rw = Wait-Reader $p
+    Check ($null -ne $rw) "reading: a .cbz opens straight in the picture preview"
+    if ($rw) {
+        $rb = Wait-Find $rw "閱讀模式" 6
+        $tp = $null
+        Check ($rb -and $rb.TryGetCurrentPattern([Windows.Automation.TogglePattern]::Pattern, [ref]$tp) -and $tp.Current.ToggleState -eq [Windows.Automation.ToggleState]::On) "reading: in the reading mode"
+        Check (Counter-Is $rw "1 / 8") "reading: the cover is alone (1 / 8)"
+        Press $rw " "
+        Check (Counter-Is $rw "2–3 / 8") "reading: the next spread shows two pages (2–3 / 8)"
+        Press $rw " "
+        Check (Counter-Is $rw "4–5 / 8") "reading: and the next two (4–5 / 8)"
+        Press $rw " "
+        Check (Has-Text $rw "ch2" 3) "reading: entering another folder names it (ch2)"
+        Check (Counter-Is $rw "6–7 / 8") "reading: the book goes on across folders (6–7 / 8)"
+        Press $rw " "
+        Check (Counter-Is $rw "8 / 8") "reading: a two-page picture is shown alone (8 / 8)"
+        Press $rw " "
+        Check (Has-Text $rw "這是最後一張圖片" 3) "reading: at the end it says so instead of starting again"
+        Check (Counter-Is $rw "8 / 8" 2) "reading: and stays on the last page"
+        Press $rw "{HOME}"
+        Press $rw "{LEFT}"
+        Check (Counter-Is $rw "2–3 / 8") "reading: right to left, the left arrow is the next page"
+        Press $rw "d"
+        Check ($null -ne (Wait-Find $rw "由左至右" 4)) "reading: D switches the direction (left to right)"
+        Press $rw "{RIGHT}"
+        Check (Counter-Is $rw "4–5 / 8") "reading: left to right, the right arrow is the next page"
+        Press $rw "s"
+        Check (Counter-Is $rw "4 / 8") "reading: S switches to one page at a time"
+        Press $rw "{ESC}"
+        Start-Sleep -Milliseconds 800
+        $store = Join-Path $exeDir "reading.tsv"
+        Check ((Test-Path $store) -and ((Get-Content $store -Raw -Encoding UTF8) -match "ch1/p04\.png\t0\t1")) "reading: closing remembers the page, the direction and one page (reading.tsv)"
+    }
+    Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue; Start-Sleep -Milliseconds 600
+    $p = Start-Raw @((Q "$rd\book.cbz"))
+    $rw = Wait-Reader $p
+    if ($rw) {
+        Check (Has-Text $rw "從第 4 頁繼續" 4) "reading: opening the book again continues where it was left"
+        Check (Counter-Is $rw "4 / 8") "reading: on that page, one page at a time as it was left"
+        Check ($null -ne (Wait-Find $rw "由左至右" 4)) "reading: with the direction it was left in"
+        Press $rw "b"
+        $tp = $null; $rb = Find $rw "閱讀模式"
+        Check ($rb -and $rb.TryGetCurrentPattern([Windows.Automation.TogglePattern]::Pattern, [ref]$tp) -and $tp.Current.ToggleState -eq [Windows.Automation.ToggleState]::Off) "reading: B switches the reading mode off"
+    } else { Check $false "reading: the book opens again" }
+    Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue; Start-Sleep -Milliseconds 600
+    # the setting off: a comic book archive opens the file list
+    Set-Content $settingsFile "welcome_done=true`ncomic_reading_mode=false" -Encoding UTF8
+    $p = Start-Raw @((Q "$rd\book.cbz")); $w = Get-Win $p
+    Check ($null -ne (Wait-Find $w "ch1" 12)) "reading: with the setting off a comic book archive opens in the normal window"
+    Check ($null -eq (Wait-Reader $p 2)) "reading: and no preview window"
+    Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue
+    Remove-Item (Join-Path $exeDir "reading.tsv") -ErrorAction SilentlyContinue
+    Reset-State
+    }
+
     if (Want "stripdrag") {
         Reset-State
     # ===== B batch: a picture is dragged out of the thumbnail strip of the preview window into Explorer =====
@@ -3960,6 +4548,15 @@ for d, color in (("a", (200, 40, 40)), ("b", (40, 80, 200))):
             foreach ($n in $saved.Keys) { [Environment]::SetEnvironmentVariable($n, $saved[$n]) }
             Stop-Process -Id $srvI.Id -Force -ErrorAction SilentlyContinue
             Get-Process LycanZip -ErrorAction SilentlyContinue | Stop-Process -Force
+            # Velopack's own update program registers what it applied like an installed app (Installed apps, Start menu and desktop
+            # shortcuts of the test package): none of that may stay behind on the machine. It does that after the test is done with it, so
+            # first wait (up to 30 s) until nothing runs from the test folder any more
+            $endInst = (Get-Date).AddSeconds(30)
+            while ((Get-Process | Where-Object { $_.Path -and $_.Path.StartsWith($inst, [StringComparison]::OrdinalIgnoreCase) }) -and (Get-Date) -lt $endInst) { Start-Sleep -Milliseconds 500 }
+            Get-Process | Where-Object { $_.Path -and $_.Path.StartsWith($inst, [StringComparison]::OrdinalIgnoreCase) } | Stop-Process -Force -ErrorAction SilentlyContinue
+            Start-Sleep -Milliseconds 500
+            Remove-Item "HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\Aegisulf.LycanZipTest" -Recurse -Force -ErrorAction SilentlyContinue
+            Remove-Item "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Aegisulf.LycanZipTest.lnk", "$([Environment]::GetFolderPath('Desktop'))\Aegisulf.LycanZipTest.lnk" -Force -ErrorAction SilentlyContinue
         }
     }
     Reset-State

@@ -38,6 +38,8 @@ struct TaskInfo {
     UpdateReport update;
     ScanReport scan;
     HashReport hash;
+    RepackReport repack;
+    bool repackInPlace = false;  // repack: the archive itself is replaced (removing the password)
     bool Finished() const { return state == TaskState::Completed || state == TaskState::Failed || state == TaskState::Cancelled; }
 };
 
@@ -70,6 +72,9 @@ public:
     uint64_t EnqueueHashFiles(std::vector<std::filesystem::path> files, uint32_t algos);
     uint64_t EnqueueHashEntries(std::filesystem::path archive, std::vector<uint32_t> indices, uint32_t algos, OpenOptions open = {});
     uint64_t EnqueueUpdate(std::filesystem::path archive, std::vector<UpdateOp> ops, UpdateOptions options = {});
+    // Converts / repacks an archive (see repack.h): `output` is the new archive (ignored with inPlace)
+    uint64_t EnqueueRepack(std::filesystem::path archive, std::filesystem::path output, CompressOptions target, OpenOptions source,
+                           bool inPlace, bool skipDamaged, bool test);
     // Runs a finished task again with another scratch folder (a new task; the old one stays as it is). 0 = unknown task.
     uint64_t Retry(uint64_t id, const std::filesystem::path& tempDir);
 

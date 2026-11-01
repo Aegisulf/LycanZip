@@ -340,6 +340,7 @@ private:
         key(VK::L, [](AudioWindow& s) { s.CycleLoop(); });
         root_.KeyboardAcceleratorPlacementMode(Input::KeyboardAcceleratorPlacementMode::Hidden);
 
+        if (auto tag = lycan::i18n::UiLanguageTag(); !tag.empty()) root_.Language(hstring{tag});  // the font fallback picks the fonts by the language
         win_.Content(root_);
         auto tb = win_.AppWindow().TitleBar();
         const Windows::UI::Color clear{0, 0, 0, 0};
@@ -759,6 +760,8 @@ bool IsPreviewableAudioName(const std::wstring& name) {
         if (e == x) return true;
     return false;
 }
+
+const wchar_t* AudioContentType(const std::wstring& name) { return ContentType(name); }
 
 void ShowAudioPreview(AudioRequest req) {
     if (req.items.empty()) return;

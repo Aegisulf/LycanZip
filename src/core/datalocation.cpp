@@ -56,7 +56,10 @@ bool ImportIntoPackageData(const fs::path& from, const fs::path& to) {
             fs::copy_file(from / name, to / name, fs::copy_options::skip_existing, ec);
             copied = copied || !ec;
         }
-    std::ofstream(marker, std::ios::binary | std::ios::trunc) << "The settings and presets of %LOCALAPPDATA%\\LycanZip were copied here once.\n";
+    // Only when something was copied: with nothing to take over, the check runs again at the next start, until the package has saved
+    // its own settings.ini (an installed copy set up later is then taken over once)
+    if (copied)
+        std::ofstream(marker, std::ios::binary | std::ios::trunc) << "The settings and presets of %LOCALAPPDATA%\\LycanZip were copied here once.\n";
     return copied;
 }
 

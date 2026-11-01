@@ -299,6 +299,7 @@
                                     <MenuFlyout>
                                         <ToggleMenuFlyoutItem x:Name="FlatToggle" Text="main.list_all" KeyboardAcceleratorTextOverride="Ctrl+Shift+F" Click="OnFlatToggleClick" AutomationProperties.Name="main.list_all" />
                                         <ToggleMenuFlyoutItem x:Name="TreeToggle" Text="main.folder_tree" KeyboardAcceleratorTextOverride="Ctrl+B" Click="OnTreeToggleClick" AutomationProperties.Name="main.folder_tree_toggle" />
+                                        <ToggleMenuFlyoutItem x:Name="PaneToggle" Text="main.preview_pane" KeyboardAcceleratorTextOverride="Ctrl+Shift+P" Click="OnPaneToggleClick" AutomationProperties.Name="main.preview_pane_toggle" />
                                         <ToggleMenuFlyoutItem x:Name="MacMetaItem" Text="main.show_macos_metadata" Click="OnMacMetaItemClick" AutomationProperties.Name="main.show_macos_metadata" />
                                         <MenuFlyoutSeparator />
                                         <RadioMenuFlyoutItem x:Name="ViewDetailsItem" Text="main.details" GroupName="view" Tag="v0" Click="OnViewMenuClick" />
@@ -348,6 +349,18 @@
                                         <MenuFlyoutItem x:Name="VirusTotalItem" Text="main.virustotal_lookup" Click="OnVirusTotalArchiveClick"
                                                         ToolTipService.ToolTip="main.virustotal_lookup_tip">
                                             <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE774;" Foreground="{ThemeResource SystemFillColorCautionBrush}" /></MenuFlyoutItem.Icon>
+                                        </MenuFlyoutItem>
+                                        <MenuFlyoutSeparator />
+                                        <!-- Repacking (DESIGN.md "重新封裝"): shown by ShowArchive for the archives they apply to -->
+                                        <MenuFlyoutItem x:Name="ConvertItem" Text="main.convert_archive_format" Click="OnConvertClick">
+                                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE8AB;" /></MenuFlyoutItem.Icon>
+                                        </MenuFlyoutItem>
+                                        <MenuFlyoutItem x:Name="RemovePasswordItem" Text="main.remove_archive_password" Click="OnRemovePasswordClick" Visibility="Collapsed">
+                                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE785;" /></MenuFlyoutItem.Icon>
+                                        </MenuFlyoutItem>
+                                        <MenuFlyoutItem x:Name="UpgradeItem" Text="main.upgrade_archive" Click="OnUpgradeClick" Visibility="Collapsed"
+                                                        ToolTipService.ToolTip="main.upgrade_archive_tip">
+                                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE74A;" /></MenuFlyoutItem.Icon>
                                         </MenuFlyoutItem>
                                     </MenuFlyout>
                                 </DropDownButton.Flyout>
@@ -415,20 +428,34 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
+                    <!-- Left column: the folder tree on top, the preview pane below (either can be off; alone it takes the whole column) -->
+                    <Grid x:Name="LeftPane">
+                    <Grid.RowDefinitions>
+                        <RowDefinition x:Name="TreeRow" Height="*" />
+                        <RowDefinition x:Name="PaneSplitRow" Height="8" />
+                        <RowDefinition x:Name="PaneRow" Height="260" />
+                    </Grid.RowDefinitions>
                     <Border x:Name="TreePane" CornerRadius="8" BorderThickness="1" Padding="4,6"
                             BorderBrush="{ThemeResource ControlStrokeColorDefaultBrush}"
                             Background="{ThemeResource LayerFillColorDefaultBrush}">
                         <TreeView x:Name="FolderTree" SelectionMode="Single" Expanding="OnTreeExpanding" ItemInvoked="OnTreeItemInvoked"
                                   CanDragItems="True" DragItemsStarting="OnTreeDragStarting" DragItemsCompleted="OnTreeDragCompleted" ContextRequested="OnTreeContextRequested"
                                   AutomationProperties.Name="main.folder_tree">
+                            <!-- Shorter rows than the WinUI default (28 + margins = 32 px a row): 24 + 2 = 26 px -->
+                            <TreeView.Resources>
+                                <x:Double x:Key="TreeViewItemMinHeight">24</x:Double>
+                                <x:Double x:Key="TreeViewItemMultiSelectCheckBoxMinHeight">24</x:Double>
+                                <Thickness x:Key="TreeViewItemPresenterMargin">4,1</Thickness>
+                                <Thickness x:Key="TreeViewItemPresenterPadding">0,2,0,2</Thickness>
+                            </TreeView.Resources>
                             <TreeView.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal" Spacing="8">
-                                        <Grid Width="18" Height="18" VerticalAlignment="Center">
-                                            <Border CornerRadius="4" Width="20" Height="20" Background="{Binding Content.GlyphBrush}" Opacity="0.2" Visibility="{Binding Content.TreeGlyphVisibility}" />
-                                            <FontIcon Glyph="{Binding Content.Glyph}" FontSize="14" Foreground="{Binding Content.GlyphBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding Content.TreeGlyphVisibility}" />
-                                            <Image Width="18" Height="18" Source="{Binding Content.RootIcon}" Visibility="{Binding Content.RootIconVisibility}" />
-                                            <Image Width="18" Height="18" Source="{Binding Content.ShellIcon}" Visibility="{Binding Content.ShellIconVisibility}" />
+                                        <Grid Width="16" Height="16" VerticalAlignment="Center">
+                                            <Border CornerRadius="4" Width="18" Height="18" Background="{Binding Content.GlyphBrush}" Opacity="0.2" Visibility="{Binding Content.TreeGlyphVisibility}" />
+                                            <FontIcon Glyph="{Binding Content.Glyph}" FontSize="13" Foreground="{Binding Content.GlyphBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding Content.TreeGlyphVisibility}" />
+                                            <Image Width="16" Height="16" Source="{Binding Content.RootIcon}" Visibility="{Binding Content.RootIconVisibility}" />
+                                            <Image Width="16" Height="16" Source="{Binding Content.ShellIcon}" Visibility="{Binding Content.ShellIconVisibility}" />
                                         </Grid>
                                         <TextBlock Text="{Binding Content.Name}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
                                     </StackPanel>
@@ -436,6 +463,15 @@
                             </TreeView.ItemTemplate>
                         </TreeView>
                     </Border>
+                    <!-- Splitter between the tree and the preview pane: drag up / down (remembered), double click to restore -->
+                    <Border x:Name="PaneSplitter" Grid.Row="1" Background="Transparent" ToolTipService.ToolTip="main.drag_resize_preview_pane_double" AutomationProperties.Name="main.preview_pane_splitter">
+                        <Rectangle x:Name="PaneSplitterLine" Height="2" RadiusX="1" RadiusY="1" VerticalAlignment="Center" Margin="12,0" Opacity="0"
+                                   Fill="{ThemeResource AccentFillColorDefaultBrush}" />
+                    </Border>
+                    <Border x:Name="PreviewPaneHost" Grid.Row="2" CornerRadius="8" BorderThickness="1" Padding="8"
+                            BorderBrush="{ThemeResource ControlStrokeColorDefaultBrush}"
+                            Background="{ThemeResource LayerFillColorDefaultBrush}" AutomationProperties.Name="main.preview_pane" />
+                    </Grid>
 
                     <!-- Splitter between the folder tree and the list: drag left / right to change the width of the tree (remembered) -->
                     <Border x:Name="TreeSplitter" Grid.Column="1" Background="Transparent" ToolTipService.ToolTip="main.drag_resize_folder_tree_double" AutomationProperties.Name="main.folder_tree_splitter">
@@ -614,18 +650,26 @@
             <!-- the header (back / title / reset) stays on top while the settings scroll -->
             <Grid x:Name="SettingsPanel" Visibility="Collapsed" RowSpacing="8">
             <Grid.RowDefinitions><RowDefinition Height="Auto" /><RowDefinition Height="Auto" /><RowDefinition Height="*" /></Grid.RowDefinitions>
-            <StackPanel Orientation="Horizontal" Spacing="12" Margin="0,0,0,4">
-                <Button x:Name="SettingsBackButton" Click="OnSettingsBackClick" ToolTipService.ToolTip="main.back" AutomationProperties.Name="main.back">
-                    <FontIcon Glyph="&#xE72B;" FontSize="14" />
-                </Button>
-                <TextBlock Text="main.settings" Style="{StaticResource TitleTextBlockStyle}" VerticalAlignment="Center" />
-                <Button Content="main.restore_default_settings" Click="OnResetSettingsClick" Margin="16,0,0,0" VerticalAlignment="Center" AutomationProperties.Name="main.restore_default_settings" />
-            </StackPanel>
+            <Grid ColumnSpacing="16" Margin="0,0,16,4">
+                <Grid.ColumnDefinitions><ColumnDefinition Width="Auto" /><ColumnDefinition Width="*" /><ColumnDefinition x:Name="SettingsSearchColumn" Width="*" MinWidth="160" MaxWidth="320" /></Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" Spacing="12">
+                    <Button x:Name="SettingsBackButton" Click="OnSettingsBackClick" ToolTipService.ToolTip="main.back" AutomationProperties.Name="main.back">
+                        <FontIcon Glyph="&#xE72B;" FontSize="14" />
+                    </Button>
+                    <TextBlock Text="main.settings" Style="{StaticResource TitleTextBlockStyle}" VerticalAlignment="Center" />
+                    <Button Content="main.restore_default_settings" Click="OnResetSettingsClick" Margin="16,0,0,0" VerticalAlignment="Center" AutomationProperties.Name="main.restore_default_settings" />
+                </StackPanel>
+                <!-- Search: the cards of all tabs whose texts (title, description, choices; also the English of a translated text) have every word -->
+                <AutoSuggestBox x:Name="SettingsSearch" Grid.Column="2" VerticalAlignment="Center"
+                                PlaceholderText="main.search_settings_ctrl_f" QueryIcon="Find" UpdateTextOnSelect="False"
+                                TextChanged="OnSettingsSearchTextChanged" QuerySubmitted="OnSettingsSearchSubmitted" PreviewKeyDown="OnSettingsSearchKeyDown" AutomationProperties.Name="main.search_settings" />
+            </Grid>
             <SelectorBar x:Name="SettingsTabs" Grid.Row="1" SelectionChanged="OnSettingsTabChanged" AutomationProperties.Name="main.settings_tabs">
                 <SelectorBarItem x:Name="TabItemGeneral" Text="main.general"><SelectorBarItem.Icon><FontIcon Glyph="&#xE713;" /></SelectorBarItem.Icon></SelectorBarItem>
                 <SelectorBarItem x:Name="TabItemCompress" Text="main.compression"><SelectorBarItem.Icon><FontIcon Glyph="&#xE7B8;" /></SelectorBarItem.Icon></SelectorBarItem>
                 <SelectorBarItem x:Name="TabItemView" Text="main.view"><SelectorBarItem.Icon><FontIcon Glyph="&#xE890;" /></SelectorBarItem.Icon></SelectorBarItem>
                 <SelectorBarItem x:Name="TabItemShell" Text="main.file_explorer"><SelectorBarItem.Icon><FontIcon Glyph="&#xE838;" /></SelectorBarItem.Icon></SelectorBarItem>
+                <SelectorBarItem x:Name="TabItemPasswords" Text="main.passwords"><SelectorBarItem.Icon><FontIcon Glyph="&#xE72E;" /></SelectorBarItem.Icon></SelectorBarItem>
                 <SelectorBarItem x:Name="TabItemKeys" Text="main.shortcuts"><SelectorBarItem.Icon><FontIcon Glyph="&#xE765;" /></SelectorBarItem.Icon></SelectorBarItem>
                 <SelectorBarItem x:Name="TabItemAbout" Text="main.about"><SelectorBarItem.Icon><FontIcon Glyph="&#xE946;" /></SelectorBarItem.Icon></SelectorBarItem>
             </SelectorBar>
@@ -984,6 +1028,13 @@
                     <Border Style="{StaticResource SettingCard}">
                         <Grid ColumnSpacing="16">
                             <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.show_preview_pane" /><TextBlock Text="main.preview_pane_desc" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="PreviewPaneToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.show_preview_pane" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
                             <StackPanel VerticalAlignment="Center"><TextBlock Text="main.hide_macos_metadata" /><TextBlock Text="main.do_not_show_macosx_folder_files" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
                             <ToggleSwitch x:Name="HideMacMetaToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.hide_macos_metadata" />
                         </Grid>
@@ -1002,6 +1053,13 @@
                             <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
                             <StackPanel><TextBlock Text="main.double_clicking_image" /><TextBlock Text="main.what_happens_when_you_double_click" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
                             <ComboBox x:Name="DblPreviewCombo" Grid.Column="1" MinWidth="200" SelectionChanged="OnSettingComboChanged" AutomationProperties.Name="main.double_clicking_image"><ComboBoxItem Content="main.open_image_preview" /><ComboBoxItem Content="main.open_with_associated_app" /></ComboBox>
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.comic_reading_mode" /><TextBlock Text="main.comic_reading_mode_desc" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="ComicReadingToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.comic_reading_mode" />
                         </Grid>
                     </Border>
                     <Border Style="{StaticResource SettingCard}">
@@ -1106,6 +1164,61 @@
                     <StackPanel x:Name="ShellItemsPanel" Spacing="8" />
 
                     </StackPanel>
+                    <!-- Passwords: the password manager (PasswordVault.h); the list is built in code (RebuildPasswordList) -->
+                    <StackPanel x:Name="TabPasswords" Spacing="8" Padding="0,0,16,16" Visibility="Collapsed">
+                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,4,0,4"><FontIcon Glyph="&#xE72E;" FontSize="15" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" VerticalAlignment="Center" /><TextBlock Text="main.password_manager" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Center" /></StackPanel>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.auto_try_saved_passwords" /><TextBlock Text="main.auto_try_saved_passwords_desc" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="AutoTryPasswordsToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.auto_try_saved_passwords" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.remember_run_passwords" /><TextBlock Text="main.remember_run_passwords_desc" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="RunPasswordsToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.remember_run_passwords" />
+                        </Grid>
+                    </Border>
+                    <Border Style="{StaticResource SettingCard}">
+                        <Grid ColumnSpacing="16">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel><TextBlock Text="main.remember_password_default" /><TextBlock Text="main.remember_password_default_desc" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" /></StackPanel>
+                            <ToggleSwitch x:Name="RememberPasswordDefaultToggle" Grid.Column="1" OnContent="" OffContent="" HorizontalAlignment="Right" MinWidth="0" Toggled="OnSettingToggled" AutomationProperties.Name="main.remember_password_default" />
+                        </Grid>
+                    </Border>
+                    <!-- The master password (optional): the buttons shown depend on the state (RebuildPasswordList) -->
+                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,16,0,4"><FontIcon Glyph="&#xE72E;" FontSize="15" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" VerticalAlignment="Center" /><TextBlock Text="main.master_password" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Center" /></StackPanel>
+                    <Border Style="{StaticResource SettingCard}">
+                        <StackPanel Spacing="10">
+                            <TextBlock x:Name="MasterPasswordState" TextWrapping="Wrap" />
+                            <TextBlock Text="main.master_password_desc" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" />
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <Button x:Name="SetMasterButton" Click="OnSetMasterClick" Content="main.set_master_password" AutomationProperties.Name="main.set_master_password" />
+                                <Button x:Name="UnlockPasswordsButton" Click="OnUnlockPasswordsClick" Content="main.unlock" AutomationProperties.Name="main.unlock" />
+                                <Button x:Name="LockPasswordsButton" Click="OnLockPasswordsClick" Content="main.lock_now" AutomationProperties.Name="main.lock_now" />
+                                <Button x:Name="ChangeMasterButton" Click="OnChangeMasterClick" Content="main.change_master_password" AutomationProperties.Name="main.change_master_password" />
+                                <Button x:Name="RemoveMasterButton" Click="OnRemoveMasterClick" Content="main.turn_off_master_password" AutomationProperties.Name="main.turn_off_master_password" />
+                            </StackPanel>
+                            <HyperlinkButton x:Name="ResetMasterButton" Click="OnResetMasterClick" Content="main.forgot_master_password" Padding="0" AutomationProperties.Name="main.forgot_master_password" />
+                        </StackPanel>
+                    </Border>
+                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,16,0,4"><FontIcon Glyph="&#xE8F1;" FontSize="15" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" VerticalAlignment="Center" /><TextBlock Text="main.saved_passwords" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Center" /></StackPanel>
+                    <Border Style="{StaticResource SettingCard}">
+                        <StackPanel Spacing="10">
+                            <TextBlock Text="main.saved_passwords_desc" Opacity="0.65" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" />
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <Button x:Name="AddPasswordButton" Click="OnAddPasswordClick" AutomationProperties.Name="main.add_password"><StackPanel Orientation="Horizontal" Spacing="6"><FontIcon Glyph="&#xE710;" FontSize="14" /><TextBlock Text="main.add_password" /></StackPanel></Button>
+                                <Button x:Name="ImportPasswordsButton" Click="OnImportPasswordsClick" Content="main.import_passwords" AutomationProperties.Name="main.import_passwords" />
+                                <Button x:Name="ExportPasswordsButton" Click="OnExportPasswordsClick" Content="main.export_passwords" AutomationProperties.Name="main.export_passwords" />
+                            </StackPanel>
+                            <TextBlock x:Name="PasswordsStatus" TextWrapping="Wrap" Visibility="Collapsed" Foreground="{ThemeResource SystemFillColorCautionBrush}" />
+                            <Button x:Name="ClearPasswordsButton" Click="OnClearUnreadablePasswordsClick" Content="main.clear_unreadable_passwords" Visibility="Collapsed" AutomationProperties.Name="main.clear_unreadable_passwords" />
+                            <StackPanel x:Name="PasswordList" Spacing="2" AutomationProperties.Name="main.saved_passwords" />
+                        </StackPanel>
+                    </Border>
+                    </StackPanel>
                     <StackPanel x:Name="TabKeys" Spacing="8" Padding="0,0,16,16" Visibility="Collapsed">
                     <StackPanel x:Name="ShortcutPanel" Spacing="8" />
 
@@ -1178,7 +1291,7 @@
                 <Grid.RowDefinitions><RowDefinition Height="Auto" /><RowDefinition Height="*" /><RowDefinition Height="Auto" /></Grid.RowDefinitions>
                 <StackPanel Orientation="Horizontal" Spacing="12">
                     <Button x:Name="CBackButton" ToolTipService.ToolTip="main.back" AutomationProperties.Name="main.back"><FontIcon Glyph="&#xE72B;" FontSize="14" /></Button>
-                    <TextBlock Text="main.new_archive" Style="{StaticResource TitleTextBlockStyle}" VerticalAlignment="Center" />
+                    <TextBlock x:Name="CTitle" Text="main.new_archive" Style="{StaticResource TitleTextBlockStyle}" VerticalAlignment="Center" />
                 </StackPanel>
                 <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" HorizontalScrollMode="Disabled">
                     <Grid ColumnSpacing="24">
@@ -1237,9 +1350,11 @@
                     <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,12,0,2"><FontIcon Glyph="&#xE72E;" FontSize="15" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" VerticalAlignment="Center" /><TextBlock Text="main.protection" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Center" /></StackPanel>
                             <Border Style="{StaticResource SettingCard}">
                                 <StackPanel Spacing="10">
+                                    <ComboBox x:Name="CConvertPwCombo" Header="main.convert_password" MinWidth="260" Visibility="Collapsed" AutomationProperties.Name="main.convert_password" />
                                     <TextBox x:Name="CPwText" Header="main.password_optional" AutomationProperties.Name="main.password" />
                                     <PasswordBox x:Name="CPwBox" Header="main.password_optional" PasswordRevealMode="Peek" AutomationProperties.Name="main.password" Visibility="Collapsed" />
                                     <PasswordBox x:Name="CPwConfirm" Header="main.re_enter_password" PasswordRevealMode="Peek" AutomationProperties.Name="main.re_enter_password" Visibility="Collapsed" />
+                                    <Button x:Name="CPwPick" Click="OnPickSavedPasswordClick" Visibility="Collapsed" AutomationProperties.Name="main.use_saved_password"><StackPanel Orientation="Horizontal" Spacing="6"><FontIcon Glyph="&#xE8F1;" FontSize="14" /><TextBlock Text="main.use_saved_password" /></StackPanel></Button>
                                     <CheckBox x:Name="CShowPw" Content="main.show_password_keep_checked_when" AutomationProperties.Name="main.show_password" />
                                     <ToggleSwitch x:Name="CEncNames" Header="main.encrypt_file_names_too_7z_only" OnContent="" OffContent="" AutomationProperties.Name="main.encrypt_file_names" />
                                     <TextBlock x:Name="CPwNote" Opacity="0.8" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" Visibility="Collapsed" />

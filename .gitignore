@@ -15,3 +15,6 @@ CMakeUserPresets.json
 /third_party/7zip-bin/
 /third_party/velopack/
 /dist/
+__pycache__/
+
+graphify-out/

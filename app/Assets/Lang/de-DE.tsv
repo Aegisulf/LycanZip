@@ -1,0 +1,1520 @@
+# LycanZip 简体中文 (de-DE)。每行一条：id、Tab、译文、Tab、英文原文的哈希（由 tools/i18n.py 维护）。转义：反斜线加 n、反斜线加 t、两个反斜线。
+## main
+main.select	Auswählen	85982229
+main.pause	Anhalten	781961bc
+main.resume	Fortsetzen	b3bd0b5a
+main.cancel	Abbrechen	77dfd213
+main.open_folder	Ordner öffnen	f9630141
+main.test_integrity	Integrität prüfen	ba25de4f
+main.settings	Einstellungen	c7f73bb5
+main.drag_files_here	Dateien hierher ziehen	0636917e
+main.archive_open_extract_files_folders	Archiv → öffnen und extrahieren  ·  Dateien oder Ordner → Archiv erstellen	238fcb94
+main.open_archive	Archiv öffnen	7f60c24c
+main.new_archive	Neues Archiv	b9ec2a94
+main.choose_files	Dateien auswählen…	20be8b95
+main.choose_folder	Ordner auswählen…	3a95ac72
+main.back	Zurück	b52b36b7
+main.extract_here	Hier extrahieren	5221b51b
+main.extract	Extrahieren nach…	f5015680
+main.add_files_folders_archive_you_can	Dateien oder Ordner zu diesem Archiv hinzufügen (oder hierher ziehen)	b3ba97f0
+main.add_archive	Zum Archiv hinzufügen	b17b8c86
+main.add	Hinzufügen	61cc55aa
+main.add_files	Dateien hinzufügen…	9fdaa230
+main.add_folder	Ordner hinzufügen…	1c0da9c5
+main.new_folder	Neuer Ordner…	fea7178e
+main.preview	Vorschau	f1fbb2b4
+main.image_preview	Bildvorschau	6c5de6ef
+main.audio_preview	Audiovorschau	47fea53e
+main.view	Ansicht	69bd4ef9
+main.list_all	Alle auflisten	04466388
+main.folder_tree	Ordnerstruktur	9c23f9bb
+main.folder_tree_toggle	Ordnerstruktur ein-/ausblenden	36af87a8
+main.show_macos_metadata	macOS-Metadaten anzeigen	720609b5
+main.details	Details	dc3decbb
+main.list	Liste	a1fffaaa
+main.show_image_thumbnails_icon_view	Bildminiaturen in der Symbolansicht anzeigen	9ac42949
+main.sort_by_name	Nach Name sortieren	d3b65f5c
+main.sort_by_size	Nach Größe sortieren	2d08ec84
+main.sort_by_packed_size	Nach gepackter Größe sortieren	efa7243d
+main.sort_by_modified_date	Nach Änderungsdatum sortieren	d254e057
+main.sort_by_type	Nach Typ sortieren	0b1fc8b5
+main.ascending	Aufsteigend	2b226c79
+main.descending	Absteigend	36377adf
+main.more_options	Weitere Optionen	86c0a35e
+main.archive_information	Archivinformationen…	c03fec02
+main.hash_values_archive	Hashwerte des Archivs…	13da45e4
+main.scan_malware	Auf Schadsoftware prüfen	fafc5d2f
+main.hands_every_file_archive_antivirus	Sendet jede Datei im Archiv zur Prüfung an die installierte Antivirensoftware (über Windows AMSI). Der Echtzeitschutz muss aktiviert sein, Dateien über 128 MB werden übersprungen. LycanZip hat keine eigene Prüf-Engine, daher garantiert ein unauffälliges Ergebnis keine Sicherheit. Der Cloudschutz von Windows Defender sendet verdächtige Proben möglicherweise an Microsoft.	fccf6c01
+main.filename_encoding	Dateinamencodierung	f1290c20
+main.up_one_level_backspace	Eine Ebene nach oben (Rücktaste)	64d8b297
+main.up_one_level	Eine Ebene nach oben	71f23258
+main.current_location	Aktueller Speicherort	75ea6a18
+main.search_ctrl_f	Suchen (Strg+F)	2b439fd3
+main.search	Suchen	bce06414
+main.drag_resize_folder_tree_double	Ziehen, um die Breite der Ordnerstruktur zu ändern (Doppelklick setzt sie zurück)	7c895e33
+main.folder_tree_splitter	Trennlinie der Ordnerstruktur	b2a2647a
+main.select_all	Alle auswählen	913afff1
+main.select_all_clear_selection	Alle auswählen / Auswahl aufheben	faf3477b
+main.name	Name	709a2322
+main.sort_by_location	Nach Speicherort sortieren	e01625c5
+main.location	Speicherort	d219c681
+main.type	Typ	3deb7456
+main.size	Größe	b7152342
+main.packed	Gepackt	ac9f7c98
+main.modified	Geändert	19a532c8
+main.archive_contents	Archivinhalt	c451d872
+main.archive_contents_list_icons	Archivinhalt (Liste / Symbole)	f99fa9aa
+main.extract_selected_items_here	Ausgewählte Elemente hier extrahieren	7ef75e2c
+main.extract_selected_items	Ausgewählte Elemente extrahieren nach…	d48f0e52
+main.copy_path	Pfad kopieren	9804556f
+main.clear_selection	Auswahl aufheben	247fd631
+main.restore_default_settings	Standardeinstellungen wiederherstellen	7dc68a00
+main.settings_tabs	Registerkarten der Einstellungen	bd140503
+main.general	Allgemein	9239ee2c
+main.compression	Komprimierung	46ead404
+main.file_explorer	Datei-Explorer	700869dc
+main.shortcuts	Tastenkombinationen	90c93523
+main.about	Info	6b21fb79
+main.appearance	Darstellung	41def7a0
+main.language	Sprache	89b86ab0
+main.interface_language_restart	Sprache der Benutzeroberfläche. Starten Sie LycanZip nach einer Änderung neu.	522335fd
+main.saved_takes_effect_after	Gespeichert. Wird nach einem Neustart wirksam.	636c48e5
+main.follow_system	Systemeinstellung verwenden	1b16bcb0
+main.theme	Design	a797e309
+main.follow_system_fixed_light_dark	Systemeinstellung verwenden oder hell, dunkel bzw. hoher Kontrast	595f2484
+main.light	Hell	a36ef8ab
+main.dark	Dunkel	ae1ef014
+main.high_contrast_black	Hoher Kontrast (schwarz)	c341a6f4
+main.accent_color	Akzentfarbe	e49578ed
+main.accent_color_buttons_selection	Die Akzentfarbe für Schaltflächen, Auswahl, Fortschritt und Links. „Systemeinstellung verwenden“ übernimmt die Windows-Akzentfarbe.	b47a1f66
+main.background	Hintergrund	64dd60fe
+main.full_gradient_plus_moonlit_scene	Vollständig: Farbverlauf und die Mondscheinszene auf der Startseite. Nur Farbverlauf: nur die Hintergrundfarbe. Aus: Systemmaterial (Mica). Der Farbverlauf folgt der Akzentfarbe und dem hellen oder dunklen Modus.	142c9f0e
+main.full	Vollständig	10b28a8c
+main.gradient_only	Nur Farbverlauf	aad06254
+main.close	Schließen	bbfa773e
+main.animations	Animationen	c77dcded
+main.page_transitions_list_loading_drag	Seiten- und Registerkartenwechsel, Wechsel zwischen Ordnern, Hinweise, Aufgabenkarten, die Schritte des Willkommensfensters, das nächste Bild der Vorschau und ein paar funkelnde Sterne auf der Startseite. Wird nicht abgespielt, wenn Animationen in Windows deaktiviert sind.	695074f5
+main.sound_effects	Soundeffekte	a41e30af
+main.sounds_opening_completion_errors	Sounds beim Öffnen, bei Abschluss, bei Fehlern und anderen Ereignissen. Standardmäßig aus.	f2ce9860
+main.sound_set	Soundset	0b3e2886
+main.synth_default_set_synthesized	Synth ist das Standardset mit synthetischen Klängen. Wave ist ein einfacheres Set mit Tönen. Beim Auswählen eines Sets wird der Abschlusssound abgespielt.	bd241e88
+main.system_notifications	Systembenachrichtigungen	78adbf5b
+main.show_notification_when_tasks	Eine Benachrichtigung anzeigen, wenn Aufgaben fertig sind, während LycanZip nicht im Vordergrund ist (bei Fehlern immer). Die Fortschrittsanzeige und das Blinken in der Taskleiste sind davon nicht betroffen.	048330e2
+main.multiple_windows	Mehrere Fenster	3fd4f2a6
+main.when_opening_another_archive	Beim Öffnen eines weiteren Archivs	975f569a
+main.when_window_already_use_open	Wie ein Archiv geöffnet wird, wenn ein Fenster bereits verwendet wird: in einem neuen Fenster öffnen oder den Inhalt des aktuellen Fensters ersetzen. Wenn in einem Fenster Aufgaben laufen oder mehrere Archive gleichzeitig geöffnet werden, werden immer neue Fenster verwendet.	ff0b05f3
+main.open_new_window	In neuem Fenster öffnen	cb4c1f20
+main.replace_current_window	Aktuelles Fenster ersetzen	a92596ce
+main.performance	Leistung	63c90455
+main.simultaneous_tasks	Gleichzeitige Aufgaben	8868bc1f
+main.disk_bottleneck_so_1_run_one	Meist ist die Datenträgergeschwindigkeit der Engpass. 1 (eine Aufgabe nach der anderen) wird empfohlen.	83d28fbd
+main.task_priority	Aufgabenpriorität	37e4e62c
+main.how_much_machine_compress_extract	Wie viele Systemressourcen Aufgaben zum Komprimieren, Extrahieren und Prüfen verwenden. „Niedriger“ oder „Hintergrund“ verringert die Auswirkung auf andere Apps, die Aufgaben dauern aber länger.	0d1c783e
+main.normal	Normal	45e118d0
+main.lower_leaves_some_cpu_others	Niedriger (weniger CPU)	00d8c45a
+main.background_lowest_also_saves_disk	Hintergrund (am niedrigsten; auch weniger Datenträger- und Stromverbrauch)	6786f633
+main.temporary_folder	Temporärer Ordner	f9b015fa
+main.used_when_opening_files_from	Wird beim Öffnen oder Herausziehen von Dateien aus einem Archiv sowie beim Öffnen oder Erstellen von .tar.gz-Archiven verwendet. Standard ist der temporäre Ordner des Systems. Netzwerk- oder USB-Laufwerke werden nicht empfohlen (langsam).	768d718e
+main.choose	Auswählen…	349ac8fb
+main.choose_temporary_folder	Temporären Ordner auswählen	ce762b1e
+main.reset	Zurücksetzen	44c57abd
+main.reset_temporary_folder	Temporären Ordner zurücksetzen	e7a126ec
+main.clear_temporary_files	Temporäre Dateien löschen	242e5902
+main.extraction	Extrahieren	2552a425
+main.when_file_with_same_name_already	Wenn bereits eine Datei mit demselben Namen vorhanden ist	6310186a
+main.ask_me_shows_options_on_every	„Nachfragen“ fragt bei jedem Konflikt nach und kann die Auswahl auf alle verbleibenden Konflikte anwenden.	41badf73
+main.file_conflict_handling	Umgang mit Dateikonflikten	4af14a87
+main.ask_me	Nachfragen	10a8fd63
+main.skip	Überspringen	3da47453
+main.overwrite	Überschreiben	0625c54e
+main.rename_automatically	Automatisch umbenennen	eaecf2b5
+main.when_extracting_here	Beim Extrahieren hierher	85622c6d
+main.automatic_single_top_level_folder	Automatisch: Enthält das Archiv auf oberster Ebene nur einen Ordner, wird er direkt hier extrahiert; sonst wird ein Ordner mit dem Namen des Archivs erstellt. Weitere Optionen über den Pfeil neben der Schaltfläche.	18b0d690
+main.automatic_recommended	Automatisch (empfohlen)	a068f350
+main.do_not_create_folder	Keinen Ordner erstellen	c4f1ccef
+main.create_folder_named_after_archive	Ordner mit dem Namen des Archivs erstellen	80c9b557
+main.check_unusually_big_archives	Ungewöhnlich große Archive vor dem Extrahieren prüfen	54593980
+main.when_archive_would_unpack_far_more	Vor dem Extrahieren nachfragen, wenn ein Archiv entpackt viel größer wäre (mindestens 1 GB und mehr als das 500-Fache der gepackten Größe, oder 1 TB und mehr). Das kann eine Komprimierungsbombe sein oder eine legitime große Datei wie das Datenträgerabbild eines virtuellen Computers.	548960de
+main.open_folder_when_done	Ordner nach Abschluss öffnen	a3de0246
+main.skip_macos_metadata_when	macOS-Metadaten beim Extrahieren überspringen	0ad03852
+main.macosx_folder_files_starting_with	In Archiven, die unter macOS erstellt wurden, werden der Ordner __MACOSX, .DS_Store und Dateien, die mit ._ beginnen, unter Windows nicht benötigt. Wenn aktiviert, werden sie beim Extrahieren übersprungen und bei der Prüfung auf einen einzelnen Ordner ignoriert.	55d759da
+main.keep_files_have_data_error	Dateien mit Datenfehlern behalten	a8ffe63f
+main.when_archive_damaged_cut_off_what	Wenn ein Archiv beschädigt oder unvollständig ist, die extrahierbaren Daten behalten (Bilder, Videos und Textdateien sind oft noch teilweise nutzbar). Dateien mit Fehlern werden nach Abschluss aufgelistet. Wenn deaktiviert, werden beschädigte Dateien gelöscht. Bei falschem Kennwort, abgebrochenen Aufgaben oder vollem Datenträger werden unvollständige Dateien immer gelöscht.	bf3654cc
+main.ask_before_deleting_archive	Vor dem Löschen eines Archivs nachfragen	1571593e
+main.ask_once_when_delete_archive	Einmal nachfragen, wenn beim Archiv oben in der Ordnerstruktur „Archiv löschen“ ausgewählt wird (es wird in den Papierkorb verschoben). Wenn deaktiviert, wird das Archiv sofort gelöscht und Sie kehren zur Startseite zurück.	91b986fd
+main.ask_before_deleting_items_from	Vor dem Löschen von Elementen aus einem Archiv nachfragen	887aebad
+main.ask_once_when_delete_pressed	Einmal nachfragen, wenn Entf gedrückt oder „Löschen“ ausgewählt wird. Elemente werden direkt aus dem Archiv entfernt. Sie landen nicht im Papierkorb und können nicht wiederhergestellt werden (außer die Sicherung unten ist aktiviert).	9963cc68
+main.keep_backup_when_archive_changed	Sicherung behalten, wenn ein Archiv geändert wird	0901745b
+main.when_files_archive_added_deleted	Wenn Dateien in einem Archiv hinzugefügt, gelöscht, umbenannt oder bearbeitet werden, das Archiv im vorherigen Zustand im selben Ordner behalten (mit .bak am Namen). Jede Änderung überschreibt die vorherige Sicherung.	79f9d4e3
+main.program_editing	Programm zum Bearbeiten	aad87903
+main.which_program_edit_item_right	Die App für „Bearbeiten“ im Kontextmenü. Wenn leer, werden Textdateien im Editor und andere Dateien in ihrer Standard-App geöffnet. Vollständige Pfade werden unterstützt (z. B. C:\\Program Files\\Notepad++\\notepad++.exe).	598afdb5
+main.ask_before_edited_file_goes_back	Vor dem Aktualisieren bearbeiteter Dateien im Archiv nachfragen	d41240a6
+main.after_edited_file_saved_ask_once	Nach dem Speichern einer bearbeiteten Datei fragen, ob sie im Archiv aktualisiert werden soll. Wenn deaktiviert, wird sie automatisch aktualisiert.	9bddade2
+main.warn_before_opening_programs	Vor dem Öffnen von Programmen, Installationsprogrammen und Skripts warnen	6a5fabb4
+main.ask_first_when_you_double_click	Bestätigung anfordern, wenn auf eine ausführbare Datei (.exe, .msi, .bat usw.) in einem Archiv doppelgeklickt wird.	08615072
+main.warn_before_opening_programs_short	Vor dem Öffnen von Programmen warnen	a2f7b94b
+main.what_extract_when_opening_program	Was beim Öffnen eines Programms extrahiert wird	0315b5cf
+main.programs_often_need_files_next	Programme benötigen oft Dateien im selben Ordner (DLLs, Datendateien). „Selber Ordner“ extrahiert den Ordner samt Unterordnern in einen temporären Ordner, bevor das Programm gestartet wird.	4122dec3
+main.files_same_folder_recommended	Dateien im selben Ordner (empfohlen)	75241d55
+main.extract_only_file	Nur diese Datei extrahieren	88665a9b
+main.close_window_automatically_after	Fenster nach einer Kontextmenüaktion automatisch schließen	da7d1f80
+main.when_you_extract_compress_from	Beim Extrahieren oder Komprimieren über das Kontextmenü das kleine Fenster automatisch schließen, wenn alles erfolgreich war. Deaktivieren Sie dies, um das Fenster offen zu lassen und das Ergebnis zu sehen.	17b6bcbc
+main.default_format	Standardformat	8cb4e197
+main.show_new_archive_file_explorer	Neues Archiv nach dem Komprimieren im Datei-Explorer anzeigen	900b4e40
+main.test_integrity_after_compressing	Integrität nach dem Komprimieren prüfen	e1b0ecf4
+main.after_compressing_new_archive_read	Nach dem Komprimieren das neue Archiv lesen, um sicherzustellen, dass es intakt ist.	120ae65a
+main.skip_thumbs_db_automatically	Thumbs.db automatisch überspringen	a643400e
+main.windows_thumbnail_cache_thumbs_db	Beim Hinzufügen von Ordnern die Windows-Miniaturansichtscachedatei Thumbs.db überspringen (eine selbst ausgewählte Thumbs.db wird trotzdem hinzugefügt).	c6a7657e
+main.default_compression_mode	Standard-Komprimierungsmodus	44f064cc
+main.balanced_recommended	Ausgewogen (empfohlen)	54966d31
+main.compatibility_first	Kompatibilität zuerst	87d2fc57
+main.smallest_size_slower	Kleinste Größe (langsamer)	db436898
+main.fastest	Am schnellsten	4cb3bb0f
+main.archive_view	Archivansicht	2c4e1be2
+main.remember_last_chosen_view	Zuletzt gewählte Ansicht merken	46d5eed2
+main.layout_you_pick_view_menu_details	Das im Menü „Ansicht“ gewählte Layout (Details / Liste / Symbole) wird beim nächsten Öffnen eines Archivs verwendet. Wenn aktiviert, folgt „Standardansicht“ unten Ihrer letzten Wahl.	84a38711
+main.default_view	Standardansicht	343256a5
+main.details_has_columns_sorting_list	„Details“ zeigt Spalten und ermöglicht das Sortieren. „Liste“ ist am kompaktesten. „Symbole“ zeigt große Symbole. Sie können jederzeit über das Menü „Ansicht“ wechseln.	ee3a428f
+main.default_browsing_mode	Standard-Navigationsmodus	0b61ca9a
+main.single_level_shows_one_folder_at	„Eine Ebene“ zeigt jeweils einen Ordner; navigieren Sie mit der Ordnerstruktur links oder der Pfadleiste. „Alle auflisten“ zeigt die Dateien aller Ebenen in einer Liste. Sie können jederzeit über die Symbolleiste wechseln.	636ff574
+main.single_level_folder_navigation	Eine Ebene (Ordnernavigation)	9bab0a04
+main.use_file_icons_windows	Windows-Dateisymbole verwenden	eb264ce6
+main.files_folders_lists_folder_tree	Für Dateien und Ordner in der Liste und der Ordnerstruktur die Symbole des Datei-Explorers verwenden (abhängig von installierten Apps). Wenn deaktiviert, verwendet LycanZip eigene farbige Symbole.	d3c508e7
+main.only_works_non_solid_archives	Gilt nur für nicht solide Archive (um ein Bild aus einem soliden Archiv zu lesen, müssen die Daten davor decodiert werden, daher werden keine Miniaturen erstellt). Wird nur bei Bedarf im Hintergrund gelesen.	779ea938
+main.row_height	Zeilenhöhe	0c1073d4
+main.compact_shows_more_items_at_once	„Kompakt“ zeigt mehr Elemente gleichzeitig	7892119a
+main.compact	Kompakt	1df39aa5
+main.comfortable	Komfortabel	2313707a
+main.show_folder_tree	Ordnerstruktur anzeigen	62e23424
+main.hidden_automatically_when_window	Wird automatisch ausgeblendet, wenn das Fenster zu schmal ist	8351f46b
+main.hide_macos_metadata	macOS-Metadaten ausblenden	9a117a48
+main.do_not_show_macosx_folder_files	Den Ordner __MACOSX, Dateien, die mit ._ beginnen, und .DS_Store nicht anzeigen. Bild- und Audiovorschau enthalten sie nie. Auch über das Menü „Ansicht“ in der Symbolleiste verfügbar.	4aff2a0a
+main.stream_files_when_dragging_them	Dateien beim Herausziehen streamen (ohne vorheriges Entpacken)	5f7fc9b6
+main.when_dropped_on_explorer_desktop	Beim Ziehen in den Datei-Explorer oder auf den Desktop werden Dateien während des Kopierens extrahiert, sodass große Dateien nicht zuerst in einen temporären Ordner entpackt werden müssen. Manche Apps akzeptieren nur normale Dateien auf dem Datenträger – wenn Drag & Drop fehlschlägt, deaktivieren Sie dies.	494e8de9
+main.stream_files_when_dragging_them_out	Dateien beim Herausziehen streamen	51bfaabc
+main.image_preview_heading	Bildvorschau	6c5de6ef
+main.double_clicking_image	Doppelklick auf ein Bild	172ce1b9
+main.what_happens_when_you_double_click	Wie ein Bild in einem Archiv bei Doppelklick (oder Eingabetaste) geöffnet wird. Das Kontextmenü bietet immer die andere Möglichkeit.	a9d91a70
+main.open_image_preview	In der Bildvorschau öffnen	73779e96
+main.open_with_associated_app	Mit der zugeordneten App öffnen	dfc8591f
+main.when_audio_file_double_clicked	Doppelklick auf eine Audiodatei	a45d93b9
+main.how_audio_file_inside_archive	Wie eine Audiodatei in einem Archiv bei Doppelklick (oder Eingabetaste) geöffnet wird. Das Kontextmenü bietet immer die andere Möglichkeit.	4e092015
+main.open_audio_preview	In der Audiovorschau öffnen	2866b8c6
+main.enlarge_small_images_too	Auch kleine Bilder vergrößern	39504dba
+main.by_default_fit_window_width_height	Standardmäßig verkleinert „An Fenster / Breite / Höhe anpassen“ nur große Bilder und vergrößert kleine nicht. Wenn aktiviert, werden auch kleine Bilder passend vergrößert.	33ef5d12
+main.read_ahead_faster_paging	Vorauslesen (schnelleres Blättern)	56bba25f
+main.while_previewing_nearby_images	Benachbarte Bilder im Hintergrund vorladen, um schneller zu blättern. Legt den maximalen Speicher für vorgeladene Bilder fest. Wenn deaktiviert, werden Bilder bei Bedarf geladen.	ec1e2e27
+main.read_ahead	Vorauslesen	8975dc30
+main.256_mb_default	256 MB (Standard)	acf42636
+main.2_gb_maximum	2 GB (Maximum)	dedbdffa
+main.file_associations	Dateizuordnungen	4d95177a
+main.register_lycanzip_as_archive_app	LycanZip als Archiv-App registrieren	b46759ab
+main.after_registering_lycanzip_appears	Nach der Registrierung erscheint LycanZip unter „Öffnen mit“ und „Standard-Apps“. Windows verlangt, dass Sie Standard-Apps selbst in den Systemeinstellungen festlegen.	6ad5db2f
+main.current_default_apps	Aktuelle Standard-Apps	2da60cf8
+main.open_default_apps_settings	Einstellungen für Standard-Apps öffnen	c91c60a7
+main.add_lycanzip_right_click_menu	LycanZip zum Kontextmenü hinzufügen	7e341f23
+main.files_add_archive_compress_zip_7z	Dateien: zum Archiv hinzufügen, als ZIP / 7z komprimieren und mehr. Archive: öffnen, extrahieren, prüfen, Vorschau und mehr. Betrifft nur den aktuellen Benutzer und kann jederzeit deaktiviert werden. Unter Windows 11 erscheint es unter „Weitere Optionen anzeigen“.	15d4a5c4
+main.add_lycanzip_windows_11_context	LycanZip zum Kontextmenü von Windows 11 hinzufügen	80b4da17
+main.shown_at_top_level_windows_11	Wird auf der obersten Ebene des Kontextmenüs von Windows 11 angezeigt, ohne „Weitere Optionen anzeigen“ auszuwählen. Erfordert ein signiertes Menüpaket. Betrifft nur den aktuellen Benutzer und kann jederzeit deaktiviert werden. Die Einträge sind dieselben wie im Menü oben, beide können gleichzeitig aktiviert sein.	478467a0
+main.open_settings_file_location	Speicherort der Einstellungsdatei öffnen	3d1c0853
+main.web_site	Website	f1a2cbc2
+main.source_code_on_github	Quellcode auf GitHub	b82f9244
+main.show_welcome_window_again	Willkommensfenster erneut anzeigen	60680018
+main.data_location	Datenspeicherort	043485f6
+main.diagnostics	Diagnose	3af2279f
+main.detailed_debug_log	Ausführliches Debugprotokoll	e93621ed
+main.only_errors_warnings_logged_by	Standardmäßig werden nur Fehler und Warnungen protokolliert. Wenn aktiviert, enthält das Protokoll auch, was geöffnet wurde, wann Aufgaben beginnen und enden und wie lange sie dauern. Hilfreich beim Melden eines Problems.	695c5237
+main.log_full_paths	Vollständige Pfade protokollieren	b1556b47
+main.only_file_names_logged_by_default	Standardmäßig werden nur Dateinamen protokolliert. Das Protokoll enthält nie Kennwörter oder Dateiinhalte, kann aber Dateinamen enthalten. Prüfen Sie es, bevor Sie es weitergeben.	433b5937
+main.open_report_folder	Berichtsordner öffnen	17984672
+main.copy_diagnostic_information	Diagnoseinformationen kopieren	4688ca9e
+main.copied_clipboard	In die Zwischenablage kopiert	e9dd5680
+main.open_source_mit_compression_engine	Open Source (MIT). Die Komprimierungs-Engine ist 7-Zip (LGPL); RAR kann nur extrahiert werden.	0ea369ab
+main.template	Vorlage	3ec1ae06
+main.apply_whole_set_settings_at_once	Eine ganze Gruppe von Einstellungen auf einmal anwenden	c061c181
+main.template_modified	Geändert	19a532c8
+main.template_options	Vorlagenoptionen	71806c9b
+main.output	Ausgabe	4bed3361
+main.file_name_without_extension	Dateiname (ohne Erweiterung)	8d28b6a9
+main.file_name_short	Dateiname	09979a78
+main.change_location	Speicherort ändern…	cf2f5d22
+main.change_location_tip	Speicherort ändern	04410a88
+main.format_mode	Format und Modus	4b4d4074
+main.format	Format	041a5dec
+main.zip_most_compatible_7z_compresses	ZIP ist am kompatibelsten; 7z komprimiert besser und kann Dateinamen verschlüsseln; die TAR-Familie ist unter Linux / macOS verbreitet.	ca896635
+main.mode	Modus	a7b93d21
+main.no_need_understand_parameters_just	Komplizierte Parameter müssen Sie nicht anpassen – wählen Sie einfach den passenden Modus.	be399537
+main.volume_label_optional	Volumebezeichnung (optional)	da788598
+main.file_name_by_default	Standardmäßig der Dateiname	7ce76df4
+main.volume_label	Volumebezeichnung	ac51eb2d
+main.keep_modified_times_files	Änderungszeiten der Dateien beibehalten	3cde1626
+main.iso_image_not_compressed_names_can	Ein ISO-Abbild wird nicht komprimiert. Dateinamen dürfen lang sein und jede Sprache enthalten, eine einzelne Datei muss kleiner als 4 GB sein.	0997b2d3
+main.protection	Schutz	0f8cc4f3
+main.password_optional	Kennwort (optional)	408255ed
+main.password	Kennwort	8be3c943
+main.re_enter_password	Kennwort erneut eingeben	aefce7f7
+main.show_password_keep_checked_when	Kennwort anzeigen (aktiviert lassen, wenn Sie Nicht-ASCII-Zeichen eingeben)	87f14436
+main.show_password	Kennwort anzeigen	044b852f
+main.encrypt_file_names_too_7z_only	Auch Dateinamen verschlüsseln (nur 7z)	d41e19ce
+main.encrypt_file_names	Dateinamen verschlüsseln	dd32ed5f
+main.new_archive_read_once_after	Das neue Archiv nach dem Erstellen prüfen, um sicherzustellen, dass es intakt ist.	cae26887
+main.advanced_options	Erweiterte Optionen	63c9e0ba
+main.rarely_needed_leave_defaults_if	Selten nötig. Behalten Sie im Zweifel die Standardwerte bei.	b7a59502
+main.compression_method	Komprimierungsmethode	9d0a4081
+main.auto_picks_by_format_mode_deflate	„Automatisch“ wählt nach Format und Modus (Deflate für ZIP, LZMA2 für 7z).	d621daf6
+main.compression_level	Komprimierungsstufe	bd95ecae
+main.overrides_level_mode_store_only	Ersetzt die Standard-Komprimierungsstufe des Modus. „Nur speichern“ packt Dateien ohne Komprimierung.	0605216f
+main.dictionary_size	Wörterbuchgröße	b45d8fe0
+main.larger_usually_compresses_better	Ein größerer Wert komprimiert meist besser, braucht aber beim Komprimieren und beim Extrahieren mehr Speicher. Gilt nur für LZMA / LZMA2 / PPMd.	1b67795e
+main.word_size	Wortgröße	b40db3a8
+main.larger_usually_compresses_better_but_slower_ppmd_model_order	Ein größerer Wert komprimiert meist besser, ist aber langsamer. Bei PPMd ist dies die Modellordnung.	5f25893d
+main.solid_block	Solider Block	afb6cd9f
+main.compress_several_files_as_one	Mehrere Dateien als einen durchgehenden Datenstrom komprimieren (nur 7z). Je ähnlicher die Dateien, desto kleiner das Ergebnis, aber beim Extrahieren einer einzelnen Datei werden mehr Daten gelesen.	779cfd97
+main.store_files_compressed_already	Bereits komprimierte Dateien ohne erneute Komprimierung speichern	050996e6
+main.photos_music_video_archives_other	Fotos, Audio, Videos, Archive und andere bereits komprimierte Dateien (ab 64 KB) werden ohne erneute Komprimierung direkt gespeichert. Das ist schneller bei kaum größerem Ergebnis und erhält Bildminiaturen in 7z-Archiven (nur ZIP / 7z).	d10ed811
+main.cpu_threads	CPU-Threads	56bf097a
+main.how_many_processor_cores_use_auto	Die Anzahl der zu verwendenden Prozessorkerne. „Automatisch“ ist meist am besten.	117a51b9
+main.zip_encryption_method	ZIP-Verschlüsselungsmethode	5e788827
+main.aes_256_secure_zipcrypto_weak_use	AES-256 wird dringend empfohlen. ZipCrypto ist schwach – verwenden Sie es nur für die Kompatibilität mit älterer Software.	b4a86163
+main.path_mode	Pfadmodus	d86f49da
+main.relative_records_only_names_files	„Relativer Pfad“ speichert nur die Namen der ausgewählten Dateien und Ordner. „Vollständiger Pfad“ speichert auch die übergeordneten Ordner (ohne Laufwerksbuchstaben).	70a31205
+main.split_archive	Archiv aufteilen	76b8ba2d
+main.cut_into_several_fixed_size_files	Teilt das Archiv in mehrere Dateien fester Größe auf (nur ZIP / 7z), etwa zum Versenden per E-Mail oder zum Speichern auf kleinen USB-Laufwerken.	a79972a1
+main.e_g_50_mb_1_5	z. B. 50 MB, 1,5 GB	9115d30d
+main.custom_split_size	Benutzerdefinierte Teilgröße	a0643650
+main.custom_7_zip_parameters	Benutzerdefinierte 7-Zip-Parameter	6b3f8ed7
+main.e_g_mx_9_fb_64	z. B. mx=9 fb=64 (Name=Wert, durch Leerzeichen getrennt)	24af3d9a
+main.custom_parameters	Benutzerdefinierte Parameter	3a766c13
+main.passed_straight_compression_engine	Werden direkt an die Komprimierungs-Engine übergeben und ersetzen die Einstellungen oben. Ungültige oder nicht unterstützte Parameter lassen die Komprimierung mit einer Fehlermeldung scheitern.	eff850cb
+main.restore_template_s_settings	Einstellungen dieser Vorlage wiederherstellen	1b4a6951
+main.add_files_button	Dateien hinzufügen	c06342c8
+main.add_folder_button	Ordner hinzufügen	03eb1a44
+main.you_can_also_paste_files_with	Sie können Dateien auch mit Strg+V einfügen	8a2b7931
+main.start_compressing	Komprimierung starten	320e1feb
+main.tasks	Aufgaben	090ec5f5
+main.run_background	Im Hintergrund ausführen	2168ebb5
+main.hide_window_tasks_keep_running	Fenster ausblenden. Aufgaben laufen im Hintergrund weiter, nach Abschluss erscheint eine Benachrichtigung.	40198391
+main.clear_finished	Abgeschlossene entfernen	f2630670
+main.collapse_expand	Reduzieren / erweitern	66e60822
+main.collapse_task_panel	Aufgabenbereich reduzieren	9212c96f
+main.when_done	Nach Abschluss:	bb608489
+main.done	Fertig	e9b450d1
+main.go	Zu {0} wechseln	5d459e5f
+main.unknown	Unbekannt	bc7819b3
+main.auto_detect	Automatisch erkennen	7dbcac72
+main.big5_traditional_chinese	Big5 (traditionelles Chinesisch)	10ca6be7
+main.gbk_simplified_chinese	GBK (vereinfachtes Chinesisch)	7b7afee6
+main.shift_jis_japanese	Shift-JIS (Japanisch)	f3beb558
+main.euc_kr_korean	EUC-KR (Koreanisch)	beca3484
+main.opening	„{0}“ wird geöffnet…	bf854cfc
+main.total	, insgesamt {0}	4e479839
+main.many_items_only_part_were_counted	(zu viele Elemente; nur teilweise gezählt)	dda11ef4
+main.ok	OK	9ce3bd42
+main.invalid_command_line_arguments	Ungültige Befehlszeilenargumente	24f65860
+main.no_files	Keine Dateien	ccc17f61
+main.choose_folder_extract	Zielordner zum Extrahieren auswählen	a743f77c
+main.cannot_open_archive	Das Archiv kann nicht geöffnet werden	6e9e4903
+main.file_format_unrecognized_file	Das Dateiformat wird nicht erkannt oder die Datei ist beschädigt: {0}	3e6485f9
+main.cannot_write_settings_file	⚠ Die Einstellungsdatei kann nicht geschrieben werden: {0}	db6c0352
+main.there_no_audio_preview_archive	In diesem Archiv gibt es keine Audiodateien für die Vorschau	267daa15
+main.there_no_images_preview_archive	In diesem Archiv gibt es keine Bilder für die Vorschau	5f6025fe
+main.system_temporary_folder	Der temporäre Ordner des Systems	800560c4
+main.use_opened_dragged_files	Belegt: {0} (geöffnete und herausgezogene Dateien)	4105ba89
+main.location_slow	Dieser Speicherort ist langsam	0fa2c041
+main.network_removable_drive_temporary	„{0}“ befindet sich auf einem Netzlaufwerk oder Wechseldatenträger. Temporäre Dateien dort sind langsam, besonders bei großen Archiven. Trotzdem verwenden?	2d979968
+main.use_anyway	Trotzdem verwenden	851fa167
+main.temporary_files_cleared	Temporäre Dateien gelöscht	ea9cd63a
+main.freed_files_use_not_deleted	{0} freigegeben. Verwendete Dateien werden nicht gelöscht.	d4eb8d2f
+main.not_enough_room_temporary_files	Nicht genug Platz für temporäre Dateien	8a890f62
+main.about_intermediate_data_has_be_put	Es werden etwa {0} temporärer Speicherplatz benötigt, aber auf „{1}“ sind nur {2} frei.	5871d099
+main.temporary_location_full_left	Der temporäre Speicherort „{0}“ ist voll ({1} frei).	907bde7d
+main.where_use_instead_local_disks_only	Anderen Speicherort auswählen (nur lokale Datenträger)	75badc65
+main.free	{0} ({1} frei)	43a497f5
+main.no_other_local_disk_has_enough	Kein anderer lokaler Datenträger hat genug Platz. Wählen Sie einen anderen Ordner, geben Sie Speicherplatz frei oder verwenden Sie das ZIP- oder 7z-Format (dafür sind keine temporären Dateien nötig).	067eee04
+main.network_removable_drive_temporary_files_will_be_slow	Dies ist ein Netzlaufwerk oder Wechseldatenträger. Temporäre Dateien sind dort langsam.	fb869f7f
+main.choose_another_folder	Anderen Ordner auswählen…	dede39e2
+main.always_use_temporary_location	Diesen temporären Speicherort immer verwenden	74fed9dd
+main.use_location_try_again	Diesen Speicherort verwenden und erneut versuchen	8c4ca207
+main.chosen	Ausgewählt: {0}	1888501e
+main.tasks_still_running	Es laufen noch Aufgaben	5071b7ce
+main.still_unfinished_closing_now	{0} {0:Aufgabe ist|Aufgaben sind} noch nicht abgeschlossen. Beim Schließen {0:wird sie|werden sie} abgebrochen, und unfertige Ausgaben können unvollständig sein.	438e1616
+main.cancel_tasks_close	Aufgaben abbrechen und schließen	13c10e10
+main.keep_waiting	Weiter warten	9be1abba
+main.integrity_test	Integritätsprüfung	911e049a
+main.lycanzip_closed_unexpectedly_at	LycanZip wurde um {0} unerwartet beendet.	00a441fb
+main.open_at_time	{0} {0:Archiv war|Archive waren} zu diesem Zeitpunkt geöffnet:	2d012cbd
+main.not_finished	{0} {0:Aufgabe wurde|Aufgaben wurden} nicht abgeschlossen:	f6add7bc
+main.destination_extraction_may_contain	Der Zielordner der Extraktion enthält möglicherweise unvollständige Dateien. Bitte prüfen Sie seinen Inhalt.	3f2bf8f0
+main.removed_unfinished_compression	{0} {0:unvollständige temporäre Komprimierungsdatei|unvollständige temporäre Komprimierungsdateien} entfernt.	b7eb9a2b
+main.crash_report_including_memory_dump	Der Absturzbericht (mit Speicherabbild) befindet sich hier: {0}\nBeachten Sie vor der Weitergabe, dass das Abbild Dateipfade und Speicherinhalte des Programms enthalten kann.	7d581963
+main.lycanzip_closed_unexpectedly_last	LycanZip wurde beim letzten Mal unerwartet beendet	c3563d24
+main.reopen	{0} {0:Archiv|Archive} erneut öffnen	bd33ef68
+main.opening_several_archives	Mehrere Archive werden geöffnet	e574ce13
+main.received_archives_at_once_each	{0} Archive auf einmal erhalten. Jedes Archiv wird in einem eigenen Fenster geöffnet, und viele Fenster benötigen mehr Speicher.	8daf18ce
+main.open_first	Die ersten {0} öffnen	0fc9e2e0
+main.open_all	Alle öffnen ({0})	29644d48
+main.open_only_first	Nur die ersten {0} öffnen	8583caf5
+main.later_volume_split_archive	Dies ist ein späteres Teilarchiv eines geteilten Archivs	a9f41e5f
+main.volume_split_archive_one_volume	„{0}“ ist Teil {1} eines geteilten Archivs. Wird nur dieser Teil geöffnet, ist nicht der gesamte Inhalt sichtbar. Den ersten Teil „{2}“ öffnen?	89b33ec6
+main.open_first_volume	Ersten Teil öffnen	688511ad
+main.open_volume_anyway	Diesen Teil trotzdem öffnen	bd4d8d54
+main.first_volume_was_not_found_only	Der erste Teil „{0}“ wurde nicht gefunden. Vom Inhalt dieses Teils ist nur ein Teil sichtbar.	4c778d63
+main.moonlight	Mondlicht	f61a85a3
+main.blood_moon	Blutmond	a5c48a63
+main.amber_eyes	Bernsteinaugen	e270f95b
+main.aurora	Polarlicht	eeee9b76
+main.forest	Wald	f41c4e4d
+main.compression_engine_7_zip	Komprimierungs-Engine: 7-Zip	f93f7e5b
+main.7z_dll_not_found	(7z.dll nicht gefunden)	72359520
+main.settings_file	Einstellungsdatei: {0}	c819d085
+main.not_set	(nicht festgelegt)	7eae163c
+main.already_lycanzip	  ✓ Bereits LycanZip	3e869938
+main.not_registered_yet_turn_on_switch	\n\nNoch nicht registriert. Aktivieren Sie zuerst die Option oben.	fd8f8732
+main.cannot_update_file_associations	Dateizuordnungen können nicht aktualisiert werden	fc71ec5a
+main.registered	Registriert	a844fcf8
+main.lycanzip_can_now_handle_archives	LycanZip kann jetzt Archive verarbeiten.\n\nWindows erlaubt Apps nicht, die Standard-Apps selbst zu ändern. Wählen Sie „Einstellungen für Standard-Apps öffnen“ und dort LycanZip für die gewünschten Formate.	0e2f1128
+main.cannot_open_settings	Einstellungen können nicht geöffnet werden	2bf2a15a
+main.please_open_settings_apps_default	Öffnen Sie „Einstellungen → Apps → Standard-Apps“ manuell.	9c106eb2
+main.menu_add_to_archive	Zum Archiv hinzufügen…	2cdc38ad
+main.compress_name_format	Komprimieren als „Name.Format“	9b854df6
+main.compress_each_separately_when	Jedes einzeln komprimieren (wenn mehrere Elemente ausgewählt sind)	c6a4a30f
+main.compress_with_preset	Mit einer Vorlage komprimieren	851cb07a
+main.other_formats_tar_gz_tar_xz	Weitere Formate (tar.gz / tar.xz / tar.bz2)	e3e3048c
+main.encrypted_archive	Verschlüsseltes Archiv…	284a3b16
+main.open_contents_with_lycanzip_exe	Inhalt mit LycanZip öffnen (.exe, .docx, .jar, …)	ac38e546
+main.hash_values_menu_files_archives	Hashwerte… (in den Menüs von Dateien und Archiven)	75b624c9
+main.open	Öffnen	cf9b7706
+main.menu_extract_here	Hier extrahieren	5221b51b
+main.extract_folders_same_name	Jedes in einen eigenen Ordner extrahieren	96adc4e4
+main.extract_recent_folder	In einen zuletzt verwendeten Ordner extrahieren	6fb3e506
+main.extract_all_into_one_folder_when	Alle in einen Ordner extrahieren (wenn mehrere Archive ausgewählt sind)	ca375cec
+main.context_menu_entries	Einträge im Kontextmenü	3cfa8784
+main.choose_which_entries_shown_change	Wählen Sie die anzuzeigenden Einträge aus. Eine Änderung wird beim nächsten Öffnen des Kontextmenüs wirksam. Es muss nichts neu registriert werden.	f0265dc5
+main.format_second_compress_entry	Format des zweiten Eintrags „Komprimieren als“	5ab68322
+main.format_first_compress_entry	Format des ersten Eintrags „Komprimieren als“	6dc0d11e
+main.compress_first_format	Komprimieren als (erstes Format)	5edc11a7
+main.compress_second_format	Komprimieren als (zweites Format)	2ced4124
+main.files_folders	Dateien und Ordner	154f56c1
+main.archives	Archive	a50710e7
+main.templates_compress_with_template	Vorlagen in der Liste „Mit einer Vorlage komprimieren“	7eb07671
+main.cannot_update_right_click_menu	Das Kontextmenü kann nicht aktualisiert werden	41826d22
+main.pc_not_running_windows_11_there	Auf diesem PC läuft nicht Windows 11, daher gibt es kein Kontextmenü im neuen Stil.	92fac2bb
+main.version_has_no_signed_menu_package	Diese Version hat noch kein signiertes Menüpaket und kann daher nicht aktiviert werden.	e2d429cd
+main.store_explorer_note	Dies ist die Microsoft Store-Version. Ihr Kontextmenü und ihre Dateitypen gehören zum Paket: Windows fügt sie bei der Installation von LycanZip hinzu und entfernt sie bei der Deinstallation, daher muss hier nichts registriert werden.\n• Kontextmenü: unter Windows 11 im neuen Menü und unter „Weitere Optionen anzeigen“, unter Windows 10 im normalen Menü. Der Schalter unten blendet es ein oder aus; die Liste weiter unten wählt die Einträge.\n• Dateitypen: LycanZip wird für Archive unter „Öffnen mit“ aufgeführt. Nur Sie selbst können es zur Standard-App machen, in den Windows-Einstellungen („Einstellungen für Standard-Apps öffnen“).	c2fd0d80
+main.status_built_in	Integriert	6b0c36de
+main.setup_skipped	Einrichtung übersprungen	779afd28
+main.you_can_change_everything_later	Sie können alles später in den Einstellungen ändern.\n\nKontextmenü und Dateizuordnungen sind nicht aktiviert. Wenn Sie sie möchten, aktivieren Sie sie auf der Registerkarte „Datei-Explorer“ der Einstellungen.	754fa5fa
+main.right_click_menu	Das Kontextmenü	5c5bc6a1
+main.windows_11_right_click_menu	Das Kontextmenü von Windows 11	02d79a93
+main.some_things_could_not_be_set	Einige Elemente konnten nicht eingerichtet werden	6bb5c1e3
+main.you_can_try_again_on_settings	Sie können es auf der Einstellungsseite erneut versuchen.	c8f33bba
+main.language_changes_after_lycanzip	Starten Sie LycanZip nach dem Ändern der Sprache neu.	ff26419c
+main.status_on	Ein.	8ec3f656
+main.status_off	Aus.	f4d4f25d
+main.could_not_add_windows_11_context	Das Kontextmenü von Windows 11 konnte nicht hinzugefügt werden	16b597e8
+main.could_not_remove_windows_11	Das Kontextmenü von Windows 11 konnte nicht entfernt werden	a7e0b507
+main.added	Hinzugefügt	b68734c2
+main.if_menu_does_not_show_up	Wenn das Menü noch nicht erscheint, starten Sie den Datei-Explorer neu (Task-Manager → Windows-Explorer → Neu starten) oder melden Sie sich ab und wieder an.	c27ce2d5
+main.lycanzip_was_moved	Die Menüs verweisen auf eine andere Kopie	7a919664
+main.still_point_old_folder_so_right	Folgendes verweist auf eine andere Kopie von LycanZip (oder auf deren alten Ordner): {0}. Beim Öffnen von Archiven oder im Kontextmenü wird diese Kopie nicht verwendet. Stattdessen diese Kopie verwenden?\n\nDerzeit verwendet: {2}\nDiese Kopie: {1}	1b1d1b87
+main.use_current_folder	Diese Kopie verwenden	996267fc
+main.do_not_remind_me_again	Nicht mehr erinnern	f66139f0
+main.later	Später	56e2f5d3
+main.could_not_update_windows_11	Das Kontextmenü von Windows 11 konnte nicht aktualisiert werden	eb3bef67
+main.updated	Aktualisiert	f2f8570d
+main.if_menu_does_not_show_up_yet_restart_file_explorer_sign_out	Wenn das Menü noch nicht erscheint, starten Sie den Datei-Explorer neu oder melden Sie sich ab und wieder an.	107e9c10
+main.restore_default_settings_title	Standardeinstellungen wiederherstellen?	d97b50c9
+main.defaults_theme_accent_color	Design, Akzentfarbe, Hintergrund, Ansicht, Extraktion und Komprimierung werden auf den Ausgangszustand zurückgesetzt. Kontextmenü und Dateizuordnungen sind Systemeinstellungen und werden nicht geändert.	7b89291d
+main.restore	Wiederherstellen	3cbe6d6b
+main.msix_package_settings_templates	MSIX-Paket: Einstellungen, Vorlagen und Protokoll liegen im eigenen Ordner des Pakets und können nicht umgestellt werden.	7430001e
+main.portable_mode_settings_templates	Portabler Modus: Einstellungen, Vorlagen, Absturzberichte und Protokoll liegen im Programmordner, sodass der ganze Ordner mitgenommen werden kann.	4a5534fd
+main.normal_mode_settings_templates	Normaler Modus: Einstellungen, Vorlagen, Absturzberichte und Protokoll liegen in Ihrem Benutzerordner.	37ba2b42
+main.folder_settings	Einstellungsordner: {0}	6a708aef
+main.switch_normal_mode_user_folder	Zum normalen Modus wechseln (Benutzerordner)	2b689843
+main.switch_portable_mode_program	Zum portablen Modus wechseln (Programmordner)	2961749a
+main.program_folder_cannot_be_written	In den Programmordner ({0}) kann nicht geschrieben werden, daher ist kein Wechsel zum portablen Modus möglich.	95fb9ba1
+main.switching_copies_settings	Beim Wechsel werden Einstellungen und Vorlagen an den neuen Speicherort kopiert (die Dateien am alten Speicherort bleiben erhalten) und LycanZip wird neu gestartet. Kontextmenü, Dateizuordnungen und die zuletzt von Windows gemerkten Ordner werden nicht mit verschoben.	ad1754f6
+main.wait_tasks_end_cancel_them_before	Warten Sie, bis die Aufgaben beendet sind (oder brechen Sie sie ab), bevor Sie den Datenspeicherort wechseln. LycanZip wird nach dem Wechsel neu gestartet.	fb634605
+main.switch_data_location	Datenspeicherort wechseln	b9ccb0f5
+main.settings_templates_copied_program	Einstellungen und Vorlagen werden in den Programmordner kopiert:\n{0}\n\nDie Dateien am alten Speicherort werden nicht gelöscht.	19168b9b
+main.settings_templates_copied_user	Einstellungen und Vorlagen werden in den Benutzerordner kopiert:\n{0}\n\nDie Dateien im Programmordner werden nicht gelöscht.	77af4ecc
+main.if_new_place_has_settings_files	Wenn am neuen Speicherort bereits Einstellungsdateien vorhanden sind, werden sie zuerst in .bak umbenannt. Danach wird LycanZip neu gestartet.	331623d5
+main.switch_restart	Wechseln und neu starten	0af9174e
+main.could_not_switch	Wechsel nicht möglich	dc903253
+main.new_place_cannot_be_written	In den neuen Speicherort kann nicht geschrieben werden.	922ca063
+main.copying_settings_failed	Die Einstellungen konnten nicht kopiert werden.	7cf94c4d
+main.flag_file_portable_mode_lycanzip	Die Kennzeichnungsdatei für den portablen Modus (LycanZip.portable) konnte nicht erstellt oder gelöscht werden.	7e4a9017
+main.release_process	Zum Verarbeiten loslassen	0b69ba01
+main.password_required	Kennwort erforderlich	b9a6ccd9
+main.wrong_password_please_try_again	Falsches Kennwort. Versuchen Sie es erneut.	0cb4d870
+main.file_format_unrecognized_file_damaged	Das Dateiformat wird nicht erkannt oder die Datei ist beschädigt.	ba46df31
+main.solid_archive	  ·  Solides Archiv	06afd404
+main.encrypted	  ·  Verschlüsselt	6a7165de
+main.filename_encoding_uncertain	Dateinamencodierung unsicher	b637fd26
+main.filename_encoding_detected	Dateinamencodierung automatisch erkannt	c41d79fe
+main.currently_using_if_file_names_look	Derzeit wird {0} verwendet. Wenn Dateinamen unleserlich aussehen, wechseln Sie oben rechts die Codierung.	0e4991b7
+main.found_matching_including	{0} {0:Element|Elemente} gefunden, die „{1}“ entsprechen (einschließlich Unterordnern)	4962ec29
+main.list_all_suffix	(alle auflisten)	c0df9304
+main.image_thumbnails_on_but_double	Bildminiaturen sind aktiviert, aber {0}. Doppelklicken Sie auf ein Bild, um es in der Vorschau anzuzeigen.	8f08dad3
+main.archive_solid_so_no_thumbnails	dies ist ein solides Archiv, daher sind Miniaturen deaktiviert (für ein einzelnes Bild müssten alle vorherigen Daten entpackt werden)	3d10c64f
+main.archive_format_cannot_read_single	dieses Archivformat kann kein einzelnes Bild für sich lesen, daher werden keine Miniaturen erstellt	dd45aa8f
+main.show_image_thumbnails_icon_view_not_supported_by_archive	Bildminiaturen in der Symbolansicht anzeigen (von diesem Archiv nicht unterstützt: {0})	7b2d680e
+main.solid_compression	solide Komprimierung	d4b061ba
+main.format_limitation	Einschränkung des Formats	77990b7f
+main.selected	{0} ausgewählt ({1})	473c83af
+main.opened_with_associated_app_instead	„{0}“: {1}. Stattdessen mit der zugeordneten App geöffnet.	a21d068c
+main.cannot_open	Kann nicht geöffnet werden	2d89e8d4
+main.file_s_name_unsafe_was_rejected	Unsicherer Dateiname abgelehnt: {0}	cf8dc0a1
+main.run_program	Dieses Programm ausführen?	46ca4a8c
+main.comes_from_archive_will_run	„{0}“ befindet sich in einem Archiv und wird beim Öffnen ausgeführt. Führen Sie es nur aus, wenn Sie der Quelle dieses Archivs vertrauen.	10f4b5fe
+main.which_files_should_be_extracted	Welche Dateien sollen extrahiert werden?	1229b4ee
+main.needed_when_program_uses_files	Erforderlich, wenn das Programm Dateien im selben Ordner verwendet (DLLs, Datendateien)	8b6ce301
+main.faster_but_program_may_not_find	Schneller, aber das Programm findet benötigte Dateien möglicherweise nicht	4c00f206
+main.do_not_warn_again_can_be	Nicht mehr warnen (kann in den Einstellungen wieder aktiviert werden)	bec2f6f9
+main.extract_run	Extrahieren und ausführen	981f5190
+main.folder_large	Der Ordner ist groß	2e4d06e1
+main.folder_program_extract_all	Der Ordner dieses Programms ist {0} groß. Den gesamten Ordner an einen temporären Speicherort extrahieren?	d10693c7
+main.extract_whole_folder	Gesamten Ordner extrahieren	4f31642e
+main.temporary_folder_not_found	Temporärer Ordner nicht gefunden.	79302ba5
+main.global	Global	5f1184f7
+main.open_archive_on_new_archive_page	Archiv öffnen (auf der Seite „Neues Archiv“: Dateien hinzufügen)	a4518fd3
+main.new_archive_choose_files	Neues Archiv (Dateien auswählen)	b9c7a9ba
+main.new_archive_choose_folder	Neues Archiv (Ordner auswählen)	6605bd77
+main.open_close_settings	Einstellungen öffnen / schließen	e0ce3034
+main.go_back_close_current_page	Zurück / aktuelle Seite schließen (Einstellungen, neues Archiv); Auswahl aufheben	6a8d6fc4
+main.show_collapse_task_panel	Aufgabenbereich anzeigen / reduzieren	72198a66
+main.clear_finished_tasks	Abgeschlossene Aufgaben entfernen	f74ece90
+main.paste_files_folders_new_archive	Dateien und Ordner einfügen (Seite „Neues Archiv“: als Quellen hinzufügen; Archivansicht: zum aktuellen Ordner hinzufügen)	0bf8a669
+main.open_selected_item_file_enter	Ausgewähltes Element öffnen (Datei / Ordner öffnen)	ef8adbe5
+main.rename_selected_item_zip_7z_tar	Ausgewähltes Element umbenennen (direkt möglich für ZIP, 7z und TAR)	69f94962
+main.delete_selected_items_from_archive	Ausgewählte Elemente aus dem Archiv löschen	375cf716
+main.extract_here_only_selected_items	Hier extrahieren (nur die ausgewählten Elemente, falls welche ausgewählt sind)	04e856b3
+main.extract_only_selection_when	Extrahieren nach… (nur die ausgewählten Elemente, falls welche ausgewählt sind)	6d103e1a
+main.image_preview_selected_image_first	Bildvorschau (das ausgewählte Bild oder das erste)	f69ab870
+main.audio_preview_selected_audio_file	Audiovorschau (die ausgewählte Audiodatei oder die erste)	9c2bf077
+main.properties_with_nothing_selected	Eigenschaften (ohne Auswahl: Archivinformationen)	ca0275f1
+main.view_details	Ansicht: Details	9e796f77
+main.view_list	Ansicht: Liste	f4dbfacf
+main.view_icons	Ansicht: Symbole	8c3db71f
+main.list_all_flatten_all_levels	Alle auflisten (alle Ebenen in einer Liste)	529ca6af
+main.show_hide_folder_tree	Ordnerstruktur ein- / ausblenden	c5494f49
+main.close_archive_return_home_page	Archiv schließen und zur Startseite zurückkehren	04638611
+main.new_archive_page	Seite „Neues Archiv“	f947afdb
+main.save_as_new_template	Als neue Vorlage speichern	17ba4ccc
+main.image_preview_window	Bildvorschaufenster	ec61a865
+main.previous_next	Vorheriges / nächstes	7c1da99c
+main.space_pageup_pagedown_mouse_wheel	← ↑ / → ↓  Leertaste  Bild↑ / Bild↓  Mausrad	f908d0de
+main.first_last	Erstes / letztes	14f40dcd
+main.view_mode_fit_window_actual_size	Ansichtsmodus: an Fenster anpassen / Originalgröße / an Breite anpassen / an Höhe anpassen (F wechselt zwischen Anpassen und Originalgröße; Doppelklick auf das Bild ebenso)	fa6029fa
+main.zoom_out_when_zoomed_drag_use	Vergrößern / verkleinern (im vergrößerten Zustand mit Ziehen oder den Pfeiltasten verschieben)	5a2fa0f2
+main.ctrl_wheel	+ / −  Strg + Mausrad	bc638ffc
+main.rotate_changes_display_only	Drehen (ändert nur die Anzeige)	405dfb25
+main.full_screen_thumbnail_strip	Vollbild / Miniaturleiste	88913a74
+main.copy_image_copy_path	Bild kopieren / Pfad kopieren	09e858fb
+main.save_image_as_open_with_associated	Bild speichern unter… / Mit der zugeordneten App öffnen	53dc2b40
+main.animations_gif_animated_webp_play	Animationen (GIF, animiertes WebP) abspielen / anhalten	1d607f16
+main.image_info_size_format_photo_info	Bildinformationen (Größe, Format, Fotoinformationen…)	0a6c72d5
+main.menu_button_at_top_right_right	Menü (die Schaltfläche „⋯“ oben rechts oder Rechtsklick auf das Bild): enthält alle obigen Aktionen und die Bildinformationen	ee9b5c43
+main.right_click	Rechtsklick	602314c6
+main.close_leaves_full_screen_first	Schließen (im Vollbild zuerst das Vollbild verlassen)	55020fc9
+main.dialogs	Dialogfelder	0fd66db1
+main.ok_cancel	OK / Abbrechen	00e849be
+main.open_archive_ctrl_o	Archiv öffnen (Strg+O)	12c2f60d
+main.new_archive_ctrl_n	Neues Archiv (Strg+N)	d8dca725
+main.settings_ctrl	Einstellungen (Strg+,)	ea5e4c7d
+main.back_home_ctrl_w	Zurück zur Startseite (Strg+W)	531d2d2a
+main.extract_ctrl_shift_e	Extrahieren nach… (Strg+Umschalt+E)	7bf5df69
+main.up_one_level_backspace_alt	Eine Ebene nach oben (Rücktaste / Alt+↑)	55c26440
+main.collapse_expand_ctrl_j	Reduzieren / erweitern (Strg+J)	b5073496
+main.start_compressing_ctrl_enter	Komprimierung starten (Strg+Eingabe)	ebaa754f
+main.cancel_esc	Abbrechen (Esc)	9c2c5ec0
+main.back_esc	Zurück (Esc)	7cfd2c37
+main.self_extracting_archive	Ist dies ein selbstentpackendes Archiv?	2ffbf2b6
+main.contains_compressed_data_format	„{0}“ enthält komprimierte Daten (Format: {1}).\n\nBeim Öffnen des Inhalts werden die enthaltenen Dateien aufgelistet. Das Programm wird nicht ausgeführt.	3a8b37b3
+main.open_contents	Inhalt öffnen	664328f0
+main.add_to_archive_title	Zum Archiv hinzufügen	b17b8c86
+main.no_images_preview	Keine Bilder für die Vorschau	db66f618
+main.there_no_images_current_folder	Im aktuellen Ordner (oder in den Suchergebnissen) gibt es keine Bilder.	558dab0e
+main.no_audio_preview	Kein Audio für die Vorschau	929bfe99
+main.there_no_audio_files_current	Im aktuellen Ordner (oder in den Suchergebnissen) gibt es keine Audiodateien.	10df04a2
+main.cannot_preview_use_open_with	Für „{0}“ ist keine Vorschau möglich: {1}. Wählen Sie im Kontextmenü „Mit der zugeordneten App öffnen“.	32b8bd8e
+main.sort_by	Sortieren nach	a2a5bdec
+main.packed_size	Gepackte Größe	9fc7e0d3
+main.switch_single_level_browsing	Zur Ansicht mit einer Ebene wechseln	91da4dea
+main.edit_put_back_into_archive	Bearbeiten und im Archiv aktualisieren	81ca35a9
+main.calculate_hash_values	Hashwerte berechnen…	78ef4a80
+main.go_containing_folder	Zum übergeordneten Ordner wechseln	c294be0e
+main.properties	Eigenschaften	bc6c88db
+main.add_files_folder	Dateien zu diesem Ordner hinzufügen…	6c361b03
+main.rename	Umbenennen	d3f4cb89
+main.delete	Löschen	f6fdbe48
+main.show_explorer	Im Datei-Explorer anzeigen	7e922b30
+main.copy_file_path	Dateipfad kopieren	41884566
+main.delete_archive	Archiv löschen…	82ce5b59
+main.delete_archive_title	Archiv löschen?	0eb59598
+main.move_archive_recycle_bin_you_can	Dieses Archiv in den Papierkorb verschieben? Sie können es von dort wiederherstellen.	88413552
+main.drive_archive_has_no_recycle_bin	⚠ Das Laufwerk dieses Archivs hat keinen Papierkorb. Nach dem Löschen kann es nicht wiederhergestellt werden.	541c1b51
+main.delete_without_asking_from_now_on	Ab jetzt ohne Nachfrage löschen	02d8001c
+main.move_recycle_bin	In den Papierkorb verschieben	9176708b
+main.delete_permanently	Endgültig löschen	e63b5153
+main.archive_could_not_be_deleted	Das Archiv konnte nicht gelöscht werden	28085c64
+main.file_may_be_use_by_another	Die Datei wird möglicherweise von einem anderen Programm verwendet, oder Sie haben keine Berechtigung.	2513b6ea
+main.archive_being_changed_please_wait	Das Archiv wird gerade geändert. Warten Sie, bis der Vorgang abgeschlossen ist.	9a12ea3e
+main.archive_cannot_be_changed_directly	Dieses Archiv kann nicht direkt geändert werden	264c796a
+main.cannot_be_changed_place_only_zip	„{0}“ kann nicht direkt geändert werden (unterstützt werden nur einteilige ZIP-, 7z- und TAR-Archive, keine geteilten Archive oder zusammengesetzten Formate wie .tar.gz). Extrahieren Sie es zuerst und erstellen Sie ein neues Archiv.	8addc9e6
+main.archive_read_only	Das Archiv ist schreibgeschützt	00d01975
+main.file_set_read_only_cannot_be	Diese Datei ist schreibgeschützt und kann nicht geändert werden. Deaktivieren Sie zuerst „Schreibgeschützt“ in den Eigenschaften der Datei.	08f46060
+main.archive_could_not_be_changed	Das Archiv konnte nicht geändert werden	d2a95613
+main.will_take_while	Das dauert eine Weile	4363058a
+main.about_solid_archive_has_be	Etwa {0} dieses soliden Archivs müssen entpackt und erneut gepackt werden, was eine Weile dauert. Fortfahren?	d7babaad
+main.nothing_update	Nichts zu aktualisieren	ca4c07dd
+main.files_archive_up_date_none_files	Alle Dateien im Archiv sind bereits aktuell (keine neueren Dateien auf dem Datenträger). Es wurde nichts geändert.	66b74d9d
+main.some_files_were_not_added	Einige Dateien wurden nicht hinzugefügt	8bfa612a
+main.archive_was_changed_but_file_s	Das Archiv wurde geändert, aber {0} {0:Datei konnte|Dateien konnten} nicht gelesen werden und {0:wurde|wurden} nicht hinzugefügt:\n{1}	01f83dfe
+main.status_added	{0} hinzugefügt	3f289bed
+main.deleted	{0} gelöscht	a7b9b638
+main.renamed	{0} umbenannt	d7b112a0
+main.new_folder_s	{0} {0:neuer Ordner|neue Ordner}	c9f13ba4
+main.unchanged	{0} unverändert	19d70cc2
+main.archive_changed	Archiv geändert: {0}	96d0198b
+main.already_compressed_file_s_stored	 ({0} bereits {0:komprimierte Datei|komprimierte Dateien} direkt gespeichert)	2adb9906
+main.items_with_same_name	Elemente mit demselben Namen	d15d9d1f
+main.archive_already_has_items_with	Das Archiv enthält bereits {0} {0:Element|Elemente} mit demselben Namen. Ordner mit demselben Namen werden zusammengeführt. Wie sollen Dateikonflikte behandelt werden?	955b341f
+main.replace_add	Ersetzen und hinzufügen	a99afac9
+main.files_same_name_always_replaced	Vorhandene Dateien mit demselben Namen überschreiben und neue Dateien hinzufügen.	5b8ba483
+main.update_add	Aktualisieren und hinzufügen	88959e8b
+main.file_replaced_only_if_one_on	Vorhandene Dateien nur überschreiben, wenn die Version auf dem Datenträger neuer ist, und neue Dateien hinzufügen.	32cb83f7
+main.update_existing_only	Nur vorhandene aktualisieren	0500c630
+main.only_files_archive_newer_on_disk	Nur Dateien, die bereits im Archiv sind und auf dem Datenträger neuer sind, werden aktualisiert. Neue Dateien werden nicht hinzugefügt.	35f981f8
+main.file_already_exists	Die Datei ist bereits vorhanden	b1b0ec61
+main.add_to_this_archive	Zu diesem Archiv hinzufügen	5a23e49d
+main.add_these_files_what_not	Diese Dateien dem vorhandenen Archiv hinzufügen, ohne den bisherigen Inhalt neu zu komprimieren (wie mit Namenskonflikten umgegangen wird, wählen Sie unten).	c38aabe2
+main.save_as_new_file	Als neue Datei speichern	ae076f13
+main.saved_as	Gespeichert als „{0}“.	cc3ec09c
+main.replace	Ersetzen	5e4bd6c5
+main.old_archive_replaced_by_one	Das alte Archiv wird durch dieses ersetzt.	ffe726e3
+main.replace_add_files_same_name_always	Ersetzen und hinzufügen: Dateien mit demselben Namen werden immer ersetzt	cc6a9b1f
+main.update_add_replace_only_if_newer	Aktualisieren und hinzufügen: nur ersetzen, wenn auf dem Datenträger neuer, und neue Dateien hinzufügen	5a9b4e05
+main.update_existing_only_only_files	Nur vorhandene aktualisieren: nur Dateien aktualisieren, die bereits im Archiv sind und neuer sind	31f64ae0
+main.synchronize_make_archive_match	Synchronisieren: das Archiv an diesen Inhalt angleichen (Abweichendes ersetzen, Überzähliges löschen)	6340c109
+main.how_treat_files_same_name	Bei Namenskonflikten	0eb02b54
+main.cannot_synchronize	Synchronisieren nicht möglich	5dab3b72
+main.synchronizing_deletes_items_from	Beim Synchronisieren werden Elemente aus dem Archiv gelöscht	83743985
+main.items_archive_no_longer_exist	{0} {0:Element|Elemente} im Archiv {0:ist|sind} im Ordner nicht mehr vorhanden. Beim Synchronisieren {0:wird es|werden sie} gelöscht ({1} weitere hinzugefügt, {2} ersetzt, {3} unverändert).	04186ca2
+main.more	…und {0} weitere	f459eedf
+main.synchronize	Synchronisieren	8dd29207
+main.choose_folder_add	Hinzuzufügenden Ordner auswählen	f8d6f042
+main.name_cannot_be_empty_contain	Der Name darf nicht leer sein und keine umgekehrten Schrägstriche, Anführungszeichen oder / : * ? < > | enthalten.	fb27523c
+main.new_folder_name	Neuer Ordner	a711999b
+main.name_already_exists	Der Name ist bereits vorhanden	1be78559
+main.there_already_item_called_here	Hier ist bereits ein Element namens „{0}“ vorhanden.	38378553
+main.delete_from_archive	Aus dem Archiv löschen?	83290f91
+main.delete_one_from_archive	„{0}“ aus dem Archiv löschen?	5bb9cc9c
+main.delete_these_items_from_archive	Diese {0} Elemente aus dem Archiv löschen?	e9d5f1d5
+main.items_taken_out_archive_itself_not	Die ausgewählten Elemente werden endgültig aus dem Archiv entfernt (nicht in den Papierkorb verschoben). Das ursprüngliche Archiv wird als .bak gesichert.	5e7d72d9
+main.items_taken_out_archive_itself_not_moved_recycle_bin_cannot_be	Die ausgewählten Elemente werden endgültig aus dem Archiv entfernt (nicht in den Papierkorb verschoben) und können nicht wiederhergestellt werden.	0f5da694
+main.editing_after_you_save_you_asked	„{0}“ wird bearbeitet. Nach dem Speichern werden Sie gefragt, ob die Datei im Archiv aktualisiert werden soll.	586def92
+main.archive_was_changed	Das Archiv wurde geändert	366dc893
+main.while_was_being_edited_another	Während „{0}“ zur Bearbeitung geöffnet war, wurde das Archiv von einem anderen Programm geändert, daher können die Änderungen nicht zurückgeschrieben werden. Ihre bearbeitete Datei ist hier gespeichert:\n{1}	24f0efc0
+main.file_no_longer_archive	Die Datei ist nicht mehr im Archiv	f9987d8f
+main.no_longer_archive_deleted_renamed	„{0}“ ist nicht mehr im Archiv (gelöscht oder umbenannt), daher können die Änderungen nicht zurückgeschrieben werden. Ihre bearbeitete Datei ist hier gespeichert:\n{1}	ac36e3a6
+main.put_back_into_archive	Datei im Archiv aktualisieren?	3c42975b
+main.was_changed_put_back_into_archive	„{0}“ wurde geändert. Im Archiv aktualisieren?	62e00081
+main.put_back_without_asking_from_now	Immer ohne Nachfrage aktualisieren	819757d5
+main.put_back	Archiv aktualisieren	7ac2f9d6
+main.not_now	Nicht jetzt	e4571490
+main.changes_not_yet_put_back_into	Nicht gespeicherte Änderungen an einer Datei im Archiv	22e53f53
+main.file_you_edited_has_not_been	Die bearbeitete Datei wurde noch nicht im Archiv aktualisiert. Wenn Sie jetzt schließen, bleibt das Archiv unverändert.	bf9dfbb6
+main.close_without_putting_back	Ohne Aktualisieren schließen	8f179b2b
+main.path	Pfad: {0}\n	e0db47b5
+main.type_folder	Typ: Ordner\n	94ff5341
+main.contains_total	Enthält: {0} {0:Datei|Dateien}, insgesamt {1}\n	4259cf09
+main.type_file	Typ: Datei\n	7a6a1e42
+main.info_size	Größe: {0} ({1} {1:Byte|Bytes})\n	9d5aef53
+main.info_packed	Gepackt: {0}	44e26b42
+main.info_modified	Geändert: {0}\n	c8e8d841
+main.info_encrypted	Verschlüsselt\n	4f568b30
+main.crc_32_stored_archive	CRC-32 (im Archiv gespeichert): {0}\n	dbeb7ece
+main.after_completion_show_explorer	Nach Abschluss: im Datei-Explorer anzeigen	d67b4ad6
+main.after_completion_test_integrity	Nach Abschluss: Integrität prüfen	5c3adc49
+main.close_window	Fenster schließen	e3896a93
+main.after_completion_close_window	Nach Abschluss: Fenster schließen	1a56e2f5
+main.extract_here_no_folder	Hier extrahieren (ohne Ordner)	158be682
+main.extract_folder	In den Ordner „{0}“ extrahieren	28142937
+main.extract_here_automatic	Hier extrahieren (automatisch)	cc88ab76
+main.extract_here_straight_into_folder	Hier extrahieren, direkt in diesen Ordner, ohne einen neuen zu erstellen (Strg+E)	60c2166e
+main.extract_here_always_into_folder	Hier extrahieren, immer in einen Ordner mit dem Namen des Archivs (Strg+E)	e6c93a87
+main.extract_here_ctrl_e_creates_name	Hier extrahieren (Strg+E): Ein Ordner mit dem Namen des Archivs wird nur erstellt, wenn das Archiv auf oberster Ebene mehrere Elemente hat	d61281e2
+main.scan_could_not_run	Die Prüfung konnte nicht ausgeführt werden	464a3106
+main.scan_hands_files_antivirus_product	Bei einer Prüfung werden die Dateien an die installierte Antivirensoftware gesendet. LycanZip hat keine eigene Prüf-Engine.	1da8ab74
+main.blocked_by_system_policy	 (durch eine Systemrichtlinie blockiert)	593a966e
+main.threat_names_logged_by_windows	Von Windows Defender protokollierte Bedrohungsnamen: {0}	d37f8e79
+main.suspicious_files_found	Verdächtige Dateien gefunden	8da644aa
+main.installed_antivirus_product_thinks	Die installierte Antivirensoftware meldet ein Problem mit {0} {0:Datei|Dateien} in diesem Archiv:	4fe67854
+main.do_not_open_these_files_antivirus	Öffnen Sie diese Dateien nicht. Dies ist die Einschätzung der Antivirensoftware und kann falsch sein. Auch nicht aufgeführte Dateien sind nicht garantiert sicher.	9e59a0a4
+main.ask_every_time_no_automatic_choice	Jedes Mal fragen (keine automatische Auswahl)	81733972
+main.keep_newer	Neuere Datei behalten	f1be0c4d
+main.keep_older	Ältere Datei behalten	c09ddf2c
+main.keep_larger	Größere Datei behalten	49e494d8
+main.keep_smaller	Kleinere Datei behalten	6a8207d4
+main.skip_if_contents_identical	Bei identischem Inhalt überspringen, sonst beide behalten	0819267c
+main.archive_unpacks_something_very_big	Dieses Archiv wird entpackt ungewöhnlich groß	0fd7d9d3
+main.archive_only_unpacks_about_times	Das Archiv ist nur {0} groß, wird entpackt aber etwa {1} groß ({2}-mal so groß).	a8955bec
+main.unpacks_about	Entpackt wird es etwa {0} groß.	5e6f45a7
+main.far_more_than_normal_archive_may	Das ist weit mehr als bei einem normalen Archiv. Es könnte eine Komprimierungsbombe sein (eine absichtlich klein gemachte Datei, die beim Entpacken den Datenträger füllt) oder etwas Legitimes, etwa das Datenträgerabbild eines virtuellen Computers. Wenn Sie nicht sicher sind, woher es stammt, brechen Sie ab.	3766aeb6
+main.do_not_check_again_can_be	Nicht mehr prüfen (kann in den Einstellungen wieder aktiviert werden)	393f5426
+main.continue_extracting	Extrahieren fortsetzen	fa29f5e2
+main.conflict_title	Die Datei ist bereits vorhanden	b1b0ec61
+main.same_size	gleich groß	e9c1aa54
+main.larger	größer	acd1be8c
+main.smaller	kleiner	9c3c295f
+main.existing_file	Vorhandene Datei	d49f7a8d
+main.newer	Neuer	56b079ac
+main.version_archive	Version im Archiv	27d73a30
+main.older	Älter	63f34dd2
+main.same_time	Gleiche Zeit	d10b2ff6
+main.conflict_archive_version	Die Version im Archiv: {0}.	bfce5d04
+main.what_would_you_like_do	Was möchten Sie tun?	7b52603b
+main.overwrite_existing_file	Vorhandene Datei überschreiben	a232a5a5
+main.replace_with_version_archive	Durch die Version im Archiv ersetzen	ab8f8b33
+main.keep_both	Beide behalten	60c801a8
+main.new_file_renamed_automatically	Die neue Datei wird automatisch umbenannt, es geht nichts verloren	eee3a7ca
+main.skip_file	Diese Datei überspringen	23150e3b
+main.keep_existing_file_do_not_extract	Die vorhandene Datei behalten und diese nicht extrahieren	4d4262b7
+main.apply_same_choice_all_later	Dieselbe Auswahl auf alle weiteren Konflikte anwenden	8dfd3ccc
+main.choose_automatically	Oder automatisch auswählen	0598ff5b
+main.automatic_choice	Automatische Auswahl	0c5a72b3
+main.cancel_extraction	Extraktion abbrechen	89ecef59
+main.choose_folder_compress	Zu komprimierenden Ordner auswählen	c24a7020
+main.smallest_size	Kleinste Größe	ba07b565
+main.balanced	Ausgewogen	03342dbb
+main.store_only	Nur speichern	6aadc26d
+main.level	Stufe {0}	8051c09f
+main.single_solid_block	Ein solider Block	82518e40
+main.non_solid	Nicht solide	0226bd71
+main.password_protected_incl_file_names	Kennwortgeschützt (einschl. Dateinamen)	19e5f976
+main.password_protected	Kennwortgeschützt	09d9e174
+main.split	Teilgröße {0}	678d4e6a
+main.full_path	Vollständiger Pfad	29e5ac46
+main.by_mode_default	Nach Modus (Standard)	54270810
+main.store_only_no_compression	Nur speichern (keine Komprimierung)	e3e66261
+main.1_fastest	1  Am schnellsten	04d90b7d
+main.3_fast	3  Schnell	5385054d
+main.5_normal	5  Normal	530f5284
+main.7_maximum	7  Maximal	5d52542d
+main.9_ultra	9  Ultra	d39524fd
+main.auto	Automatisch	c614ba7c
+main.non_solid_each_file_separately	Nicht solide (jede Datei einzeln)	c7d92841
+main.all_single_block_smallest	Alle (ein Block, am kleinsten)	189a729d
+main.by_mode_aes_256	Nach Modus (AES-256)	0bbe88ff
+main.zipcrypto_compatible_with_old	ZipCrypto (kompatibel mit alten Programmen)	8d6b9b84
+main.relative_path	Relativer Pfad	da42f64e
+main.full_path_without_drive_letter	Vollständiger Pfad (ohne Laufwerksbuchstaben)	3809d0df
+main.do_not_split	Nicht teilen	c6e64721
+main.25_mb_e_mail_attachment	25 MB (E-Mail-Anhang)	41991e74
+main.4_gb_fat32_limit	4 GB (FAT32-Grenze)	2ef4a47e
+main.custom	Benutzerdefiniert…	dce04fd3
+main.choose_output_folder_archive	Ausgabeordner für das Archiv auswählen	595ed9c9
+main.menu_save_as_new_template	Als neue Vorlage speichern…	062f4db3
+main.update_template_with_current	Diese Vorlage mit den aktuellen Einstellungen aktualisieren	e0496ccb
+main.menu_rename_template	Umbenennen…	94ac9a58
+main.delete_template	Diese Vorlage löschen	9414be5d
+main.show_right_click_menu_compress	Im Kontextmenü unter „Mit einer Vorlage komprimieren“ anzeigen	3bfd9a94
+main.fixed_format	(für dieses Format festgelegt)	383cd7ca
+main.two_passwords_do_not_match	Die beiden Kennwörter stimmen nicht überein.	4edbd2dc
+main.zip_passwords_can_only_use_letters	ZIP-Kennwörter dürfen nur Buchstaben, Ziffern und gängige Symbole enthalten. Wählen Sie 7z, um andere Zeichen zu verwenden.	49150c83
+main.zipcrypto_weakly_encrypted	Die ZipCrypto-Verschlüsselung ist schwach. Für mehr Sicherheit verwenden Sie AES-256 (Modus „Ausgewogen“ mit Verschlüsselung „AES-256“).	eb3cf368
+main.iso_images_not_compressed_do_not	ISO-Abbilder werden nicht komprimiert und unterstützen weder Kennwörter noch Teilen.	ef7b274d
+main.tar_family_does_not_support	Die TAR-Familie unterstützt weder Kennwörter noch Teilen.	971a8929
+main.no_password_entered_yet_so_file	Es wurde kein Kennwort eingegeben, daher werden die Dateinamen nicht verschlüsselt.	39a1b880
+main.save	Speichern unter: {0}	a01152d1
+main.invalid_file_name_chars	Der Name darf nicht leer sein und keines dieser Zeichen enthalten: \\ / : * ? " < > |	6e20e19f
+main.output_file	Ausgabedatei: {0}	33bf7452
+main.split_into_001_002	(geteilt in .001, .002…)	fbc7ce35
+main.invalid_file_name	Ungültiger Dateiname.	a1bff97e
+main.please_add_files_folders_compress	Fügen Sie zuerst die zu komprimierenden Dateien oder Ordner hinzu.	67c7cad5
+main.invalid_split_size_enter_size_like	Ungültige Teilgröße. Geben Sie eine Größe wie „50 MB“ oder „1,5 GB“ ein (mindestens 64 KB; ohne Einheit gilt MB).	f35af639
+main.custom_parameters_set_if_they_do	Benutzerdefinierte Parameter sind festgelegt. Passen sie nicht zu diesem Format, schlägt die Komprimierung fehl und nennt den Grund.	a4d08a9d
+main.sources	Quellen ({0})	ba3b4da5
+main.remove	Entfernen	e963907d
+main.and_n_more_sources	…und {0} weitere	f459eedf
+main.calculating	Wird berechnet…	c5737794
+main.delete_originals	Originale löschen	150eb4d3
+main.some_items_were_skipped_so	  (Einige Elemente wurden übersprungen, daher wird das Löschen der Originale nicht angeboten)	249c1c7d
+main.integrity_test_passed	  Integritätsprüfung bestanden	a3039500
+main.data_after_end_compressed_stream	, {0} {0:Element hat|Elemente haben} Daten nach dem Ende des komprimierten Datenstroms (der Inhalt ist vollständig)	a13e3dd4
+main.integrity_test_failed	  ⚠ Integritätsprüfung fehlgeschlagen: {0}	cf1323ef
+main.integrity_test_cancelled	  (Integritätsprüfung abgebrochen)	556b443a
+main.nothing_delete	Nichts zu löschen	7acb2e0c
+main.originals_no_longer_exist_they	Die Originale sind nicht mehr vorhanden oder enthalten das neue Archiv.	94521e2c
+main.new_archive_was_not_found	Das neue Archiv wurde nicht gefunden	db4dd6ab
+main.new_archive_gone_so_originals_will	Das neue Archiv ist nicht mehr vorhanden, daher werden die Originale nicht gelöscht.	06ab4c73
+main.delete_originals_title	Originale löschen?	500d32bc
+main.delete_original_archive_title	Ursprüngliches Archiv löschen?	e09267fc
+main.move_recycle_bin_you_can_restore	{0} {0:Element|Elemente} in den Papierkorb verschieben? Sie können {0:es|sie} aus dem Papierkorb wiederherstellen.	49ce89f1
+main.drive_cannot_use_recycle_bin	⚠ Das Laufwerk von {0} {0:Element|Elementen} kann den Papierkorb nicht verwenden. Das Löschen ist endgültig und kann nicht rückgängig gemacht werden.	60f2dd07
+main.new_archive_passed_integrity_test	Das neue Archiv hat die Integritätsprüfung bestanden.	95a88575
+main.integrity_test_new_archive_failed	⚠ Das neue Archiv hat die Integritätsprüfung nicht bestanden. Die Originale sind möglicherweise die einzige intakte Kopie, daher wird vom Löschen abgeraten.	bfd538a9
+main.new_archive_has_not_been_tested	⚠ Das neue Archiv wurde noch nicht geprüft. Führen Sie zuerst „Integrität prüfen“ aus, bevor Sie die Originaldateien löschen.	7cc91b5c
+main.new_archive_inside_one_source	Das neue Archiv liegt in einem der Quellordner. Diese Quelle wird nicht gelöscht.	dd7521da
+main.moved_recycle_bin	  {0} {0:Element|Elemente} in den Papierkorb verschoben	0172199d
+main.status_deleted_items	  {0} {0:Element|Elemente} gelöscht	ff13ae6b
+main.not_deleted	  ({0} {0:Element wurde|Elemente wurden} nicht gelöscht)	e3b12b2b
+main.template_name	Vorlagenname	954ab955
+main.up_40_characters_no_allowed	Bis zu 40 Zeichen, [ ] ist nicht erlaubt. Eine Vorlage speichert nur Komprimierungseinstellungen, niemals Kennwörter.	56660810
+main.my_template	Meine Vorlage	feab8114
+main.invalid_name	Ungültiger Name	bb1826ee
+main.name_cannot_be_empty_contain_line	Der Name darf nicht leer sein und weder [ ] noch Zeilenumbrüche enthalten. Er darf bis zu 40 Zeichen lang sein, ohne Leerzeichen am Anfang oder Ende.	20720a40
+main.template_with_name_already_exists	Eine Vorlage mit diesem Namen ist bereits vorhanden. Verwenden Sie einen anderen Namen.	1eef553b
+main.rename_template	Vorlage umbenennen	1e32c6e1
+main.delete_template_title	Vorlage löschen?	56396035
+main.delete_template_cannot_be_undone	Die Vorlage „{0}“ löschen? Dies kann nicht rückgängig gemacht werden.	e50df843
+main.wrong_password	Falsches Kennwort	fc2066fe
+main.archive_could_not_be_opened_with	Dieses Archiv konnte mit dem eben eingegebenen Kennwort nicht geöffnet werden. Wählen Sie erneut „Extrahieren“ und geben Sie das Kennwort noch einmal ein.	34ba58c8
+main.delete_original_archive	Ursprüngliches Archiv löschen	132fc098
+main.some_items_could_not_be_processed	Einige Elemente konnten nicht verarbeitet werden	91b6c84e
+main.change_archive	Archiv ändern	ea98cf6d
+main.op_failed	{0} fehlgeschlagen	64e16e18
+main.complete	{0} abgeschlossen	adf4aeab
+main.succeeded	{0} erfolgreich	70835f42
+main.suffix_n_failed	, {0} fehlgeschlagen	f41037c2
+main.progress	{0} in Bearbeitung	6ba4b16f
+main.n_failed	{0} fehlgeschlagen	64e16e18
+main.all_done	Alles erledigt	7268efa6
+main.hash_values	Hashwerte	c7455cfb
+main.item_s_archive	{1} {1:Element|Elemente} in „{0}“	0b9e61f3
+main.paste_hash_value_compare	Hashwert zum Vergleichen einfügen	8b1ffac1
+main.example_sha_256_written_on_website	Zum Beispiel der SHA-256-Wert von einer Website (die Länge bestimmt den Algorithmus)	838740ff
+main.hash_value_compare	Hashwert zum Vergleichen	3e0522ec
+main.match_only_means_file_same_as	Eine Übereinstimmung bedeutet nur, dass die Datei dem eingefügten Wert entspricht. Ob dieser Wert vertrauenswürdig ist, hängt von seiner Herkunft ab. MD5 und SHA-1 erkennen beschädigte Dateien, verhindern aber keine absichtliche Änderung.	294fb115
+main.more_file_s_not_listed_save	…{0} weitere {0:Datei ist|Dateien sind} nicht aufgeführt („Als Prüfsummendatei speichern“ enthält alle)	fc8359d8
+main.not_hash_value_only_0_9	Das ist kein Hashwert. Nur 0–9 und a–f sind erlaubt (Leerzeichen, Bindestriche oder ein vorangestelltes 0x sind in Ordnung).	8db4145b
+main.length_digits_matches_no_algorithm	Eine Länge von {0} Stellen passt zu keinem Algorithmus. CRC-32 hat 8, MD5 32, SHA-1 40, SHA-256 64, SHA-384 96 und SHA-512 128.	86ef5264
+main.still_calculating	Wird noch berechnet…	624c0ce1
+main.match	✓ Übereinstimmung: {0} ({1})	5d3acc60
+main.has_not_been_calculated_tick_above	{0} wurde nicht berechnet. Wählen Sie es oben aus.	3f6489aa
+main.no_match_no_file_has	✗ Keine Übereinstimmung: Keine Datei hat diesen {0}-Wert.	133cb393
+main.save_as	Als .{0} speichern…	f0bdc77f
+main.calculating_progress	Wird berechnet… {0} % ({1} / {2})	c8a8358b
+main.there_nothing_calculate	Es gibt nichts zu berechnen.	6fc8debb
+main.done_file_s	Fertig: {0} {0:Datei|Dateien}, {1}	739e7fd5
+main.could_not_be_calculated	; {0} konnten nicht berechnet werden	fb91acb6
+main.copy_all	Alles kopieren	9da9f044
+main.copied_to_clipboard_period	In die Zwischenablage kopiert.	fee2a7f7
+main.save_checksum_file	Prüfsummendatei speichern	f3f3218a
+main.could_not_save	Speichern nicht möglich	3b89fc9a
+main.could_not_write	„{0}“ konnte nicht geschrieben werden.	84647b8c
+main.saved	Gespeichert: {0}	7810f2d3
+main.info_location	Speicherort	d219c681
+main.file_size	Dateigröße	45d0df35
+main.file_s_folder_s	{0} {0:Datei|Dateien}, {1} {1:Ordner|Ordner}	48e27f88
+main.archive	; komprimiert auf {0} % der Originalgröße	ecc6d261
+main.original_size	Originalgröße	983bb440
+main.yes	Ja	5397e058
+main.no	Nein	816c52fd
+main.block_s	 ({0} {0:Block|Blöcke})	d74365de
+main.solid	Solide	d0063586
+main.info_encrypted_label	Verschlüsselt	bde2fbb6
+main.yes_encrypted_file_s	Ja ({0} {0:verschlüsselte Datei|verschlüsselte Dateien})	545f5a09
+main.volumes	Teile	39c0ee03
+main.volume_s	{0} {0:Teil|Teile}	65a2cc5a
+main.can_be_changed	Änderbar	0bb21756
+main.yes_files_can_be_added_deleted	Ja (Dateien können hinzugefügt, gelöscht und umbenannt werden)	f5cd1343
+main.no_format_can_only_be_extracted	Nein (dieses Format kann nur extrahiert werden)	b75cf7d1
+main.archive_comment	Archivkommentar	7ec7e1af
+## welcome
+welcome.welcome_lycanzip	Willkommen bei LycanZip	2a1448ba
+welcome.free_open_source_ad_free_light	Ein kostenloser, quelloffener, werbefreier und schlanker Archivierer. Wählen Sie die Einstellungen, die Ihnen gefallen. Sie können alles später ändern.	f8c5f342
+welcome.language_changes_after_restart	Nach dem Ändern der Sprache neu starten.	8fd16493
+welcome.short_sound_when_task_finishes	Ein kurzer Ton, wenn eine Aufgabe fertig ist oder fehlschlägt. Beim Aktivieren wird eine Probe abgespielt.	12bb78d5
+welcome.when_show_animations_off_windows	Wenn „Animationen anzeigen“ in Windows deaktiviert ist, wird unabhängig von dieser Einstellung nichts animiert.	87e4ec47
+welcome.double_click_picture_opens_preview	Doppelklick auf ein Bild öffnet es im Vorschaufenster	4d368b3b
+welcome.double_click_picture_opens	Doppelklick auf ein Bild öffnet es in der zugeordneten App	717eddfc
+welcome.double_click_audio_file_plays	Doppelklick auf eine Audiodatei spielt sie im integrierten Player ab	885b47e1
+welcome.double_click_audio_file_opens	Doppelklick auf eine Audiodatei öffnet sie in der zugeordneten App	6fe22413
+welcome.view_preview	Ansicht und Vorschau	ed24cabc
+welcome.how_archive_shown_when_opened	Wie ein Archiv beim Öffnen angezeigt wird.	78eef94a
+welcome.pictures_show_thumbnails_other	Bilder zeigen Miniaturen, andere Dateien gleich große Symbole.	1f63a826
+welcome.default_format	Standardformat	8cb4e197
+welcome.zip_works_everywhere_7z_compresses	ZIP funktioniert überall; 7z komprimiert stärker.	fdfb81fa
+welcome.double_click_picture_archive_open	Doppelklicken Sie auf ein Bild im Archiv, um es im Vorschaufenster zu öffnen.	c3ec0168
+welcome.double_click_audio_file_archive	Doppelklicken Sie auf eine Audiodatei im Archiv, um sie im integrierten Player abzuspielen.	44a51cab
+welcome.integrate_with_windows	In Windows integrieren	8840c0f7
+welcome.only_step_changes_system_nothing	Dies ist der einzige Schritt, der das System ändert. Es wird nichts geschrieben, bevor Sie „Fertig stellen“ wählen, und „Überspringen“ ändert nichts.	68a28da9
+welcome.classic_right_click_menu	Klassisches Kontextmenü	870ea56e
+welcome.right_click_files_compress_extract	Dateien per Rechtsklick komprimieren oder extrahieren.	695499c8
+welcome.windows_11_right_click_menu	Kontextmenü von Windows 11	1889983f
+welcome.visible_without_choosing_show_more	Sichtbar, ohne „Weitere Optionen anzeigen“ auszuwählen.	b682df71
+welcome.file_associations_open_with	Dateizuordnungen (Öffnen mit)	fec45671
+welcome.only_lists_lycanzip_under_open	Registriert LycanZip unter „Öffnen mit“ und „Standard-Apps“. Windows erlaubt Apps nicht, sich selbst als Standard festzulegen, daher müssen Sie LycanZip in den Windows-Einstellungen auswählen.	d936e855
+welcome.all	…insgesamt {0}	f51eb1e2
+welcome.which_items_right_click_menu_shows	Welche Einträge das Kontextmenü zeigt, können Sie später auf der Registerkarte „Datei-Explorer“ der Einstellungen ändern.	b241e0c8
+welcome.extract_name	Extrahieren nach „Name\\“	252257c4
+welcome.compress_zip	Als ZIP komprimieren	ed33ffa5
+welcome.compress_7z	Als 7z komprimieren	7e9babaa
+welcome.back	Zurück	b52b36b7
+welcome.next	Weiter	bc981983
+## task
+task.under_1_second	Unter 1 Sekunde	c9246acd
+task.min_s	{0} Min. {1} Sek.	3f40e738
+task.h_min	{0} Std. {1} Min.	21a0c7a3
+task.test	Prüfen	640ab2ba
+task.waiting	Wartet	33d30632
+task.s	  ·  {0}/s	f6b14876
+task.left	  ·  noch {0}	d6fd86cd
+task.working	Wird ausgeführt…  {0}	0e2ccf83
+task.paused	Angehalten  {0}	155921b8
+task.done	Fertig  {0} {0:Datei|Dateien}	2e3f901c
+task.skipped	, {0} übersprungen	75589066
+task.macos_metadata_item_s_skipped	, {0} {0:macOS-Metadatenelement|macOS-Metadatenelemente} übersprungen	732f30fa
+task.unsafe_rejected	, {0} {0:unsicherer Pfad|unsichere Pfade} abgelehnt	84be0dca
+task.renamed	, {0} umbenannt	7cf420b8
+task.done_sizes	Fertig  {0} {0:Datei|Dateien}  {1} → {2}	43858f28
+task.already_compressed_file_s_stored	, {0} bereits {0:komprimierte Datei|komprimierte Dateien} direkt gespeichert	ef250d9f
+task.thumbs_db_skipped	, {0} Thumbs.db übersprungen	d4450d3b
+task.done_plain	Fertig  	2d6f6fac
+task.new_files_not_added	{0} {0:neue Datei|neue Dateien} nicht hinzugefügt	fd5b8cc5
+task.integrity_test_passed	Integritätsprüfung bestanden	d62ca692
+task.failed	Fehlgeschlagen  {0}	eee308fd
+task.failed_wrong_password_start_again	Fehlgeschlagen  Falsches Kennwort. Starten Sie erneut und geben Sie das richtige Kennwort ein	d4634a7a
+task.extracted_kept	{0} {0:Datei mit einem Fehler wurde|Dateien mit Fehlern wurden} extrahiert und behalten: {1}	24e63e29
+task.failed_plain	Fehlgeschlagen  	4553638b
+task.cancelled	Abgebrochen	f840ac65
+## preview
+preview.stable_diffusion_webui_a1111_forge	Stable Diffusion WebUI (Format A1111 / Forge)	8098eb0a
+preview.embedded_text_data	Eingebettete Textdaten ({0})	ccc838d5
+preview.previous	Zurück (←)	6603747f
+preview.next	Weiter (→)	b24e35e3
+preview.fit_window	An Fenster anpassen	54983cda
+preview.switch_f_between_fit_window_width	Mit F zwischen „Anpassen“ (Fenster / Breite / Höhe; über das Menü oder Strg+0 / 2 / 3) und „Originalgröße“ (Strg+1) wechseln. Der aktuelle Zoom wird auf der Schaltfläche angezeigt	f59713cc
+preview.actual_size	Originalgröße	e18d1468
+preview.menu_you_can_also_right_click	Menü (auch per Rechtsklick auf das Bild)	a5260417
+preview.menu	Menü	57f5f5ef
+preview.thumbnail_strip	Miniaturleiste	70cc2f0c
+preview.fit_width	An Breite anpassen	4d6ed0ab
+preview.fit_height	An Höhe anpassen	e6a94f84
+preview.actual_size_percent	Originalgröße ({0})	13668eb2
+preview.animation_too_large_only_first	Diese Animation ist zu groß, daher wird nur das erste Bild angezeigt	0e92ed52
+preview.paused_press_p_resume	Angehalten (P zum Fortsetzen)	dcfec256
+preview.playing	Wird abgespielt	298c3905
+preview.previous_name	Zurück	50f94286
+preview.next_name	Weiter	bc981983
+preview.first	Erstes	916a78d7
+preview.last	Letztes	d1c69a85
+preview.actual_size_name	Originalgröße	e18d1468
+preview.zoom	Vergrößern	4fc05f27
+preview.zoom_out	Verkleinern	a4ae4b24
+preview.rotate_clockwise	Im Uhrzeigersinn drehen	acf3bc67
+preview.rotate_counterclockwise	Gegen den Uhrzeigersinn drehen	e26261ca
+preview.full_screen	Vollbild	d15f886d
+preview.play_animation	Animation abspielen	1d44b58b
+preview.copy_image	Bild kopieren	883f2df0
+preview.save_image_as	Bild speichern unter…	82c99fbc
+preview.image_info	Bildinformationen	9ab2a0d2
+preview.copy	Kopieren	af74f7c5
+preview.copy_what	{0} kopieren	37daa938
+preview.grayscale	Graustufen	c8b0f2ed
+preview.16_bits_channel	16 Bit / Kanal	f43e0282
+preview.color_8_bits_channel	Farbe (8 Bit / Kanal)	b4c50510
+preview.with_transparency	, mit Transparenz	4961855d
+preview.date_taken	Aufnahmedatum	76edfcab
+preview.camera	Kamera	4da9c9af
+preview.aperture	Blende	aae12633
+preview.1_s	1/{0} s	2f466ea0
+preview.s	{0} s	5cd8bcda
+preview.shutter	Belichtungszeit	7116fe95
+preview.iso	ISO	4f325d99
+preview.focal_length	Brennweite	9bd85a7d
+preview.file	Datei	2c3cafa4
+preview.path_archive	Pfad im Archiv	ea550c9c
+preview.image	Bild	50e19fda
+preview.dimensions	Abmessungen	9f4ca9ec
+preview.px_megapixels	{0} × {1} px ({2} Megapixel)	fc3a73cc
+preview.color	Farbe	1d0c8304
+preview.resolution	Auflösung	516aae52
+preview.status	Status	bae7d5be
+preview.not_fully_loaded_yet	Noch nicht vollständig geladen	a5972e0a
+preview.photo_info	Fotoinformationen	60fddc09
+preview.ai_generation_info	KI-Generierungsinformationen	2c56ead3
+preview.source	Quelle	6da13add
+preview.prompt	Prompt	a817d7eb
+preview.negative_prompt	Negativer Prompt	e083520d
+preview.raw_data	Rohdaten	d88d5638
+preview.other_text_data	Weitere Textdaten	9879c423
+preview.image_copied	Bild kopiert	a607eb31
+preview.path_copied	Pfad kopiert	12ec0d2e
+preview.save_dialog_title	Bild speichern unter	b8184460
+preview.saved	Gespeichert unter {0}	136c4303
+preview.could_not_save	Speichern nicht möglich	3b89fc9a
+preview.file_too_large_preview_limit_64	Diese Datei ist zu groß ({0}). Die Vorschaugrenze liegt bei 64 MB.	6329212f
+preview.image_too_large_exceeds_preview	Dieses Bild ist zu groß; es überschreitet die Vorschaugrenze.	bd25df65
+preview.use_open_with_associated_app_file	{0}.\n\nWählen Sie im Kontextmenü der Dateiliste „Mit der zugeordneten App öffnen“.	a12b1655
+preview.cannot_display_image_file_may_be	Dieses Bild kann nicht angezeigt werden. Die Datei ist möglicherweise beschädigt.	0d642a27
+preview.jpeg_xl_images_need_jpeg_xl	Um JPEG XL-Bilder anzuzeigen, installieren Sie die „JPEG XL Image Extension“ aus dem Microsoft Store	3b2ae038
+preview.avif_images_need_av1_video	Um AVIF-Bilder anzuzeigen, installieren Sie die „AV1 Video Extension“ aus dem Microsoft Store	22f5bb11
+preview.heic_heif_images_need_heif_image	Um HEIC- / HEIF-Bilder anzuzeigen, installieren Sie die „HEIF Image Extensions“ aus dem Microsoft Store (eventuell sind auch die „HEVC Video Extensions“ nötig)	c6869eb3
+preview.webp_images_need_webp_image	Um WebP-Bilder anzuzeigen, installieren Sie die „WebP Image Extensions“ aus dem Microsoft Store	7abdfe5a
+preview.pc_has_no_decoder_can_preview	Auf diesem PC gibt es keinen Decoder, der diese Art von Bild anzeigen kann	9a95035e
+preview.file_too_large	Datei zu groß	a0704a4e
+preview.wrong_password_file_cannot_be_read	Falsches Kennwort. Diese Datei kann nicht gelesen werden.	b6d065bf
+preview.failed_read_file	Die Datei konnte nicht gelesen werden: {0}	46c4e52b
+preview.failed_read_file_plain	Die Datei konnte nicht gelesen werden.	9c3f8d17
+## audio
+audio.audio_files	Audiodateien	e7b16352
+audio.playback_position	Wiedergabeposition	61d5ff75
+audio.previous_track_ctrl_left	Vorheriger Titel (Strg+Nach-links)	1e5f9e32
+audio.play	Wiedergabe	5d12bd53
+audio.next_track_ctrl_right	Nächster Titel (Strg+Nach-rechts)	d23b38e8
+audio.mute_m	Stummschalten (M)	4b5c1a90
+audio.volume	Lautstärke	3b18e8e3
+audio.file_too_large_preview_over_256	Die Datei ist für eine Vorschau zu groß (über 256 MB). Wählen Sie im Kontextmenü „Mit der zugeordneten App öffnen“.	5f24eb00
+audio.reading	Wird gelesen…	ae18b70a
+audio.file_could_not_be_read	Diese Datei konnte nicht gelesen werden.	e3744714
+audio.pc_cannot_play_file_decoder_format	Dieser PC kann diese Datei nicht abspielen (der Decoder für dieses Format fehlt möglicherweise).	a487415a
+audio.reached_last_track	Der letzte Titel ist erreicht.	1b15f3e9
+## scan
+scan.cannot_scan_windows_real_time	Prüfung nicht möglich: Der Echtzeitschutz von Windows ist deaktiviert. Aktivieren Sie ihn in Windows-Sicherheit.	e1cd88f6
+scan.cannot_scan_antivirus_product	Prüfung nicht möglich: Die installierte Antivirensoftware unterstützt AMSI nicht. Windows Defender unterstützt es. Stellen Sie sicher, dass er aktiviert ist.	d761d14d
+scan.cannot_scan_computer_cannot_use	Prüfung nicht möglich: Dieser PC kann die Windows-Schnittstelle zur Schadsoftwareprüfung (AMSI) nicht verwenden.	3e0a3732
+scan.file_s_scanned	{0} {0:Datei|Dateien} geprüft ({1})	fac2ea06
+scan.suspicious_file_s_found	, {0} {0:verdächtige Datei|verdächtige Dateien} gefunden	47e1ee76
+scan.nothing_found	, nichts gefunden	4b3809ad
+scan.file_s_skipped_too_big	; {0} {0:Datei|Dateien} übersprungen (zu groß)	21fcc6c0
+scan.file_s_skipped_encrypted	; {0} {0:Datei|Dateien} übersprungen (verschlüsselt)	5ef5c1ee
+scan.could_not_be_read	; {0} konnten nicht gelesen werden	45b47d1a
+scan.could_not_be_scanned	; {0} konnten nicht geprüft werden	c00f2a01
+## assoc
+assoc.writing_registry_failed	Schreiben in die Registrierung fehlgeschlagen ({0}): HKCU\\{1}	b227d1e2
+assoc.lycanzip_split_archive_001	LycanZip-Teilarchiv (.001)	2923f4fe
+assoc.lycanzip_comic_book_archive	LycanZip-{0}-Comicarchiv	7c877261
+assoc.lycanzip_archive	LycanZip-{0}-Archiv	bfcd176b
+assoc.path_lycanzip_exe_was_not_given	Der Pfad von LycanZip.exe wurde nicht angegeben	bdd9f137
+assoc.open_source_ad_free_lightweight	Quelloffen, werbefrei, schlank: Komprimieren und Extrahieren	c79109cd
+assoc.could_not_remove	{0} konnte nicht entfernt werden ({1})	b99ee88b
+## app
+app.lycanzip_task_s_running	LycanZip: {0} {0:Aufgabe läuft|Aufgaben laufen}, {1} %	f9c7a519
+app.lycanzip_tasks_running_no_percent	LycanZip: {0} {0:Aufgabe läuft|Aufgaben laufen}	6c03fab4
+app.tasks_finished	Aufgaben abgeschlossen	3943ba15
+app.all_tasks_finished	Alle Aufgaben sind abgeschlossen.	e4026e4d
+app.lycanzip_still_has_tasks_running	In LycanZip laufen noch Aufgaben	9c8e7265
+app.show_window	Fenster anzeigen	0502f5ca
+app.cancel_all_tasks	Alle Aufgaben abbrechen	85159977
+app.exit_lycanzip	LycanZip beenden	842a20fa
+## win11
+win11.error_code	Fehlercode {0}	bf62a269
+win11.not_windows_11_new_style_context	Dies ist nicht Windows 11. Das Kontextmenü im neuen Stil gibt es nur unter Windows 11.	3072296c
+win11.was_not_found	{0} wurde nicht gefunden	74587794
+win11.was_not_found_version_has_no	{0} wurde nicht gefunden. Diese Version hat noch kein signiertes Menüpaket im neuen Stil.	1242f165
+## drag
+drag.items	{0} Elemente	026a1b0e
+drag.folder	Ordner	30baa249
+## preset
+preset.general_zip	Standard-ZIP	f75cf2d3
+preset.general_7z	Standard-7z	773f446e
+preset.fast	Schnell	8db6a2f1
+preset.e_mail_share	E-Mail / Teilen	bd390aae
+preset.backup	Sicherung	dd96994d
+preset.store_only_no_compression	Nur speichern, keine Komprimierung	05d2dfd8
+## lang
+lang.zh_tw	繁體中文	1f7e4a4c
+lang.en_us	English	649df08a
+lang.zh_cn	简体中文	93659150
+lang.ja_jp	日本語	c12140a0
+lang.ko_kr	한국어	6e081b59
+lang.de_de	Deutsch	a6a77092
+lang.es_es	Español	2001ca08
+lang.fr_fr	Français	2ca514eb
+## fmt
+fmt.value_paren	{0} ({1})	4aec5d0a
+fmt.size_bytes	{0} ({1} {1:Byte|Bytes})	a94a0670
+fmt.n_files	{0} {0:Datei|Dateien}	113de731
+fmt.and_n_folders	, {0} {0:Ordner|Ordner}	8bf5d515
+fmt.paren	 ({0})	1ced71b6
+fmt.status_items_size	  ·  {0} {0:Element|Elemente}  ·  {1}	c2148bb6
+fmt.n_items_short	{0} {0:Element|Elemente}	79a3ecf0
+fmt.n_items	{0} {0:Element|Elemente}	79a3ecf0
+fmt.percent_paren	 ({0} %)	2955fcd7
+fmt.n_sources	  |  {0} {0:Quelle|Quellen}	4065a811
+fmt.colon_value	: {0}	4f5acaf5
+## sums
+sums.verify_title	Prüfsummendateien überprüfen	6a43bbf1
+sums.checking	Wird geprüft…	820d6004
+sums.checking_progress	Wird geprüft… {0} % ({1} / {2})	7d7f4ea5
+sums.error_unreadable	Die Prüfsummendatei konnte nicht gelesen werden.	32f68ef2
+sums.error_too_big	Die Prüfsummendatei ist zu groß.	a62b533e
+sums.error_no_lines	Das sieht nicht wie eine Prüfsummendatei aus: Sie enthält keine Zeile mit einem Hashwert.	88a7b6d0
+sums.all_match	✓ Alle {0} {0:Datei stimmt|Dateien stimmen} überein.	4c5be580
+sums.bytes_read	{0} gelesen	bce96785
+sums.some_match	✗ {0} von {1} {1:Datei stimmt|Dateien stimmen} überein.	7077b230
+sums.differs	Stimmt nicht überein	d15ff640
+sums.not_found	Nicht gefunden	475c8486
+sums.could_not_read	Konnte nicht gelesen werden: {0}	65d7b999
+sums.more_not_listed	…{0} weitere nicht aufgeführt	0bba02be
+sums.extra_files	{0} {0:Datei ist|Dateien sind} im Archiv, aber nicht in der Prüfsummendatei:	ec12fe42
+sums.names_skip_checksum	Zum Abgleich mit dem Archiv wurden die ersten {0} {0:Ordner|Ordner} der Namen in der Prüfsummendatei weggelassen.	a45ece3d
+sums.names_skip_archive	Zum Abgleich mit der Prüfsummendatei wurden die ersten {0} {0:Ordner|Ordner} der Pfade im Archiv weggelassen.	7a193140
+sums.bad_lines	{0} {0:Zeile wurde|Zeilen wurden} nicht verstanden und übersprungen.	53c549af
+sums.summary_many	{0} von {1} Prüfsummendateien stimmen vollständig überein.	d5d2dbe9
+sums.of_archive	Die Dateien in „{0}“	5dcf2a18
+sums.of_folder	Die Dateien neben der Prüfsummendatei, in {0}	9e2ca60d
+sums.n_checksum_files	{0} Prüfsummendateien	b9bc0f41
+sums.names_not_found	Die meisten Dateinamen der Prüfsummendatei wurden im Archiv nicht gefunden. Wenn sich die Ordnerpfade unterscheiden, geben Sie unten ein Präfix zum Entfernen oder Hinzufügen an.	93e716cd
+sums.strip_prefix	Präfix, das aus den Prüfsummenpfaden entfernt wird	d27f48c7
+sums.strip_example	Zum Beispiel backup/2025/	3eb331e6
+sums.add_prefix	Präfix, das den Prüfsummenpfaden hinzugefügt wird	c03022f0
+sums.add_example	Zum Beispiel photos/	fb0d3a26
+sums.check_again	Erneut prüfen	e185048c
+sums.match_only_means	Eine Übereinstimmung bedeutet, dass die Datei dieselbe ist wie beim Erstellen der Prüfsummendatei. Ob die Prüfsummendatei vertrauenswürdig ist, hängt von ihrer Herkunft ab.	92da1fdc
+sums.verify_archive_with	Archiv mit {0} überprüfen	82b71eac
+sums.verify_files_with	Dateien mit {0} überprüfen	cdcbf4f6
+sums.banner_title	Neben diesem Archiv liegt eine Prüfsummendatei	5f7afa0a
+sums.folder_files	Ordner „{0}“: {1} {1:Datei|Dateien}	d1be963b
+sums.no_files_to_hash	Es gibt keine Dateien, für die Hashwerte berechnet werden können.	67d9d4ea
+sums.side_unusable	{0} konnte nicht verwendet werden.	f8388be4
+sums.side_no_entry	{0} enthält keinen Wert für diese Datei.	823632ad
+sums.side_waiting	Abgleich mit {0}…	722743f7
+sums.side_untick	{0} enthält einen {1}-Wert. Wählen Sie oben {1} aus, um ihn zu vergleichen.	80c436a1
+sums.side_match	✓ Stimmt mit {0} im selben Ordner überein.	349ed159
+sums.side_differ	✗ Stimmt nicht mit {0} im selben Ordner überein, dort steht {1}.	6804287b
+sums.verify_menu	Prüfsummendatei überprüfen…	5ef9d65d
+sums.setting_archive	Prüfsummendatei für das neue Archiv erstellen	2511268d
+sums.setting_archive_caption	Speichert name.zip.sha256 mit dem SHA-256-Hash des Archivs daneben (bei geteilten Archiven eine Zeile pro Teil). Nützlich zum Überprüfen von Downloads oder geteilten Dateien. Gilt für die schnelle Komprimierung über das Kontextmenü; Vorlagen verwenden ihre eigenen Einstellungen.	ac78b96d
+sums.setting_files	Prüfsummendatei für die archivierten Dateien erstellen	9c9c05a1
+sums.setting_files_caption	Speichert name.sha256 mit dem SHA-256-Hash jeder enthaltenen Datei neben dem Archiv. Nützlich, um den Archivinhalt später zu überprüfen. Gilt für die schnelle Komprimierung über das Kontextmenü; Vorlagen verwenden ihre eigenen Einstellungen.	aef4dbd2
+sums.card_note_written	 Prüfsummendateien: {0}	7e6782be
+sums.card_note_failed	 Die Prüfsummendateien konnten nicht geschrieben werden.	762c19c5
+sums.link_archive	Archiv überprüfen	d25cf6a5
+sums.link_files	Dateien überprüfen	37c5d700
+sums.menu_hash_save	Berechnen und als name.sha256 speichern (in beiden Menüs)	b7b11e23
+sums.save_exists_title	Die Prüfsummendatei ist bereits vorhanden	e5226fcf
+sums.save_exists	„{0}“ ist bereits vorhanden. Ersetzen oder beide behalten, indem die neue Datei unter einem anderen Namen gespeichert wird?	2f2622e0
+sums.save_replace	Ersetzen	a7cf7b25
+sums.save_keep_both	Beide behalten	60c801a8
+sums.save_title	Prüfsummen berechnen und speichern	8c086f1c
+sums.save_done	✓ Gespeichert: {0}	0dbe15ea
+sums.save_done_skipped	 {0} {0:Datei konnte|Dateien konnten} nicht gelesen werden und {0:ist|sind} nicht enthalten.	fb6a6101
+sums.save_failed_title	Die Prüfsummendatei konnte nicht gespeichert werden	018b3be7
+sums.notify_title	Prüfsummendatei gespeichert	6877922b
+sums.notify_skipped	{0} ({1} {1:Datei wurde|Dateien wurden} nicht gelesen)	cf4ba6a2
+preview.this_is_first	Dies ist das erste Bild	230d3949
+preview.this_is_last	Dies ist das letzte Bild	4ce142e3
+audio.loop_none	Der Reihe nach abspielen, dann stoppen	5eff807e
+audio.loop_all	Alle wiederholen	7cce343d
+audio.loop_one	Diesen Titel wiederholen	40115bbc
+audio.shuffle	Zufällige Wiedergabe	5b772b7b
+audio.playback_mode_tip	Wiedergabemodus: {0} (L)	e76eb3c6
+main.night	Nacht	1097b553
+main.home	Startseite	70f8bb9a
+main.desktop	Desktop	532c67fe
+main.documents	Dokumente	687c8286
+main.downloads	Downloads	a862c2b2
+main.paste	Einfügen	db248300
+scan.affected_item_note	Ihre Antivirensoftware zeigt möglicherweise „lycanzip-cli.exe“ (oder LycanZip) als „betroffenes Element“ an. Das liegt nur daran, dass LycanZip den Datenstrom zur Prüfung an die Antivirensoftware übergeben hat – es wurde nichts auf den Datenträger geschrieben, und LycanZip selbst ist nicht infiziert.	6fba3070
+## core
+core.cannot_list_folder	{0}: Ordnerinhalt kann nicht aufgelistet werden	595a3cc5
+core.skipped_link	{0} (symbolische Verknüpfung / Junction)	7cc5b706
+core.skipped_output_itself	{0} (die Ausgabedatei selbst)	84b91d26
+core.cannot_compress_drive_root	Das Stammverzeichnis eines Laufwerks kann nicht komprimiert werden; wählen Sie einen Ordner darin aus: {0}	613bacc0
+core.input_not_found	Eingabe nicht gefunden: {0}	f2dace5f
+core.cannot_read_file	{0}: kann nicht gelesen werden ({1})	4443424a
+core.custom_param_format	Ein benutzerdefinierter Parameter muss die Form name=wert haben (durch Leerzeichen getrennt): {0}	31f4fa91
+core.custom_param_bad_char	Die benutzerdefinierten Parameter enthalten ein ungültiges Zeichen	bd954308
+core.format_cannot_create	Diese Version von 7z.dll kann keine {0}-Archive erstellen	e340d737
+core.format_cannot_modify	Dieses Format kann nicht geändert werden	fba21d69
+core.cannot_create_handler	Der Komprimierungshandler konnte nicht initialisiert werden	13da818b
+core.zipcrypto_weak	Die ZipCrypto-Verschlüsselung ist schwach; verwenden Sie AES-256, wenn Sicherheit wichtig ist	ad77761a
+core.zipcrypto_weak_compat	Die ZipCrypto-Verschlüsselung (Kompatibilitätsmodus) ist schwach; verwenden Sie AES-256, wenn Sicherheit wichtig ist	01aa2b18
+core.set_properties_failed	Die Komprimierungsparameter konnten nicht angewendet werden (dieses Format unterstützt die gewählte Methode oder Parameterkombination nicht)	6f057beb
+core.set_properties_failed_custom	Die Komprimierungsparameter konnten nicht angewendet werden: Prüfen Sie Ihre benutzerdefinierten Parameter auf Tippfehler oder Formatkompatibilität	35f4d0f4
+core.cancelled	Abgebrochen	f840ac65
+core.disk_full_archive	Nicht genug Speicherplatz zum Schreiben des Archivs	5993ba38
+core.update_failed	Das Archiv konnte nicht geändert werden	7b1dee4a
+core.create_failed	Das Archiv konnte nicht erstellt werden	90d456f9
+core.temp_space_plain	Nicht genug temporärer Speicherplatz: Es wurde auf normale Komprimierung zurückgegriffen (bereits komprimierte Dateien wurden nicht direkt gespeichert)	74e430a7
+core.cannot_read_back_temp	Das temporäre Archiv konnte nicht zurückgelesen werden	b0e76526
+core.zip_password_ascii	Die ZIP-Verschlüsselung unterstützt nur ASCII-Zeichen (Buchstaben, Ziffern und gängige Symbole); verwenden Sie 7z für Kennwörter mit anderen Zeichen	eb33d87a
+core.zip_aes_password_long	ZIP-AES-Kennwörter dürfen höchstens 99 Zeichen lang sein; verwenden Sie ein kürzeres Kennwort oder das 7z-Format	f09d8efc
+core.no_input	Keine Eingabe vorhanden	8dc8debc
+core.iso_no_volumes	ISO unterstützt kein Teilen	32f98325
+core.iso_no_password	ISO unterstützt keine Kennwörter	2d083ff0
+core.volume_too_small	Ein Teil muss mindestens 64 KB groß sein	4d68d5a0
+core.volumes_zip_7z_only	Teilen wird nur für ZIP und 7z unterstützt	8ed1c78f
+core.tar_no_password	TAR-Formate unterstützen keine Kennwörter; verwenden Sie ZIP oder 7z	e51c78ab
+core.nothing_to_compress	Es gibt nichts zu komprimieren	2672e759
+core.target_exists	Die Zieldatei ist bereits vorhanden: {0}	37b33c23
+core.cannot_create_output	Die Ausgabedatei konnte nicht erstellt werden: {0}	861c3cbf
+core.cannot_create_temp	Die temporäre Datei konnte nicht erstellt werden	71288840
+core.cannot_rename_temp_output	Die temporäre Ausgabe konnte nicht umbenannt werden in: {0}	7554dad7
+core.invalid_name	Ungültiger Name: {0}	64268bd2
+core.file_not_found	Datei nicht gefunden: {0}	e28dca49
+core.nothing_to_delete	Es wurde kein zu löschendes Element angegeben	a6fb797b
+core.not_in_archive	Im Archiv nicht gefunden: {0}	d9f85d0b
+core.nothing_to_rename	Es wurde kein umzubenennendes Element angegeben	68c8d63a
+core.cannot_move_into_itself	Ein Ordner kann nicht in sich selbst verschoben werden: {0}	60172ad7
+core.name_taken	Das Archiv enthält bereits ein Element mit diesem Namen: {0}	e16328f5
+core.is_folder_cannot_replace	Dies ist ein Ordner; sein Inhalt kann nicht ersetzt werden: {0}	a8d67a24
+core.replacement_is_folder	Der Ersatz darf kein Ordner sein: {0}	7e4b64b2
+core.nothing_to_add	Es gibt keine Dateien zum Hinzufügen	5f89bc7f
+core.folder_name_taken	Das Archiv enthält bereits einen Ordner mit diesem Namen: {0}	83595597
+core.file_name_taken	Das Archiv enthält bereits eine Datei mit diesem Namen: {0}	b08fb67c
+core.nothing_deleted_unreadable	Einige Dateien konnten nicht gelesen werden, daher wurde nichts aus dem Archiv gelöscht	5876ea75
+core.archive_not_found	Archiv nicht gefunden: {0}	573a9161
+core.archive_cannot_modify	Diese Art von Archiv kann nicht geändert werden: {0}	f552428f
+core.password_needed_to_modify	Das Archiv enthält verschlüsselte Elemente: Zum Ändern wird das Kennwort benötigt	6540948a
+core.wrong_password	Falsches Kennwort: {0}	74a0ee51
+core.tar_no_password_short	TAR unterstützt keine Kennwörter	68738544
+core.disk_full_modify	Nicht genug Speicherplatz: Zum Ändern des Archivs werden etwa {0} MB benötigt (frei: {1} MB)	cf14287c
+core.cannot_create_temp_file	Die temporäre Datei konnte nicht erstellt werden: {0}	07f9843a
+core.cannot_replace_archive	Das geänderte Archiv konnte nicht an seine Stelle gesetzt werden (die Datei wird möglicherweise von einem anderen Programm verwendet, oder es fehlt die Schreibberechtigung): {0}	ed4f9793
+core.disk_full_target	Nicht genug Platz auf dem Ziellaufwerk: etwa {0} MB benötigt, {1} MB frei	ec3d2a79
+core.op_ok	OK	9ce3bd42
+core.op_unsupported_method	Nicht unterstützte Komprimierungsmethode	ef2a9e38
+core.op_data_error	Datenfehler	c778bc80
+core.op_crc_error	CRC-Fehler	8c725472
+core.op_unavailable	Daten nicht verfügbar	f230d2f1
+core.op_unexpected_end	Unerwartetes Ende der Daten	39d93c5f
+core.op_data_after_end	Weitere Daten nach dem Ende	781b28f4
+core.op_not_archive	Kein Archiv	0ed60af8
+core.op_headers_error	Headerfehler	93d23602
+core.op_wrong_password	Falsches Kennwort	fc2066fe
+core.op_unknown	Unbekannter Fehler	e5fd9aa2
+core.path_reason	{0}: {1}	4d3c418a
+core.get_items_failed	Die Anzahl der Elemente konnte nicht gelesen werden	79b3b3df
+core.disk_full_extract	Nicht genug Speicherplatz zum Schreiben der extrahierten Dateien	f303f678
+core.extract_failed	Extraktion fehlgeschlagen	5991eb87
+core.cancelled_no_password	Abgebrochen (kein Kennwort eingegeben)	fba45152
+core.temp_write_failed	Schreiben der temporären Datei fehlgeschlagen	5ff6a944
+core.cannot_open_file	Die Datei konnte nicht geöffnet werden: {0}	f47ed1c3
+core.unknown_format	Unbekanntes Archivformat oder die Datei ist beschädigt: {0}	e81496d0
+core.item_index_out_of_range	Der Elementindex liegt außerhalb des gültigen Bereichs	58869057
+core.read_item_failed	Das Element konnte nicht gelesen werden: {0}	13501ab1
+core.is_folder	Dies ist ein Ordner	e971b3a4
+core.encrypted_needs_password	Verschlüsselt: Ein Kennwort ist erforderlich	5c440053
+core.link_no_content	Eine Verknüpfung hat keinen Inhalt	7f28c297
+core.skipped_symlink_policy	{0} (symbolische Verknüpfung, durch die Sicherheitseinstellungen übersprungen)	87ffdbd9
+core.skipped_hardlink_policy	{0} (feste Verknüpfung, durch die Sicherheitseinstellungen übersprungen)	8df2b6aa
+core.rejected_outside	{0}: Pfad zeigt außerhalb des Zielordners	58fd5dd4
+core.cannot_create_folder	{0}: Ordner konnte nicht erstellt werden	e5f475c7
+core.cannot_create_parent	{0}: übergeordneter Ordner konnte nicht erstellt werden	e52c1873
+core.folder_in_the_way	{0}: Am Ziel ist bereits ein Ordner mit diesem Namen vorhanden	b9c178a7
+core.skipped_exists	{0} (bereits vorhanden)	22be83fc
+core.file_exists	{0}: Datei ist bereits vorhanden	69a42e39
+core.cannot_create_file	{0}: Datei konnte nicht erstellt werden ({1})	2d149b96
+core.cannot_replace_file	{0}: vorhandene Datei konnte nicht ersetzt werden ({1})	af34f55c
+core.bomb_total	Die entpackte Größe überschreitet die Grenze; angehalten (möglicherweise eine Komprimierungsbombe)	aa7db100
+core.bomb_ratio	Das Komprimierungsverhältnis ist ungewöhnlich hoch; angehalten (möglicherweise eine Komprimierungsbombe)	97e64e36
+core.bomb_actual	Die tatsächliche entpackte Größe überschreitet die Grenze; angehalten (möglicherweise eine Komprimierungsbombe)	3826ab3c
+core.cannot_create_target	Der Zielordner konnte nicht erstellt werden: {0}	75abb342
+core.disk_full	Nicht genug Speicherplatz	a0ec91c6
+core.cannot_write_output	Die Ausgabedatei konnte nicht geschrieben werden (ist der Datenträger voll?)	34b6b5b2
+core.iso_nothing	Es gibt nichts, was in ein ISO aufgenommen werden kann	1af43464
+core.iso_file_too_big	Eine einzelne Datei in einem ISO darf nicht größer als 4 GB sein (diese Version unterstützt UDF noch nicht): {0}	5c20d6f9
+core.iso_cannot_read	{0} (kann nicht gelesen werden)	c2f1f002
+core.iso_short_read	{0} (Datei wurde beim Lesen gekürzt oder konnte nicht gelesen werden)	cc9ed007
+core.launch_list_needs_path	--list benötigt den Pfad einer Datei	39e20492
+core.launch_cannot_read_list	Die Listendatei konnte nicht gelesen werden: {0}	dfab0013
+core.launch_unknown_option	Unbekannte Option: {0}	df63ee43
+core.launch_no_files	Es wurde keine Datei angegeben	62b2324d
+core.path_empty	Leerer Pfad	4dd56da4
+core.path_nul	Der Pfad enthält ein NUL-Zeichen	0363e018
+core.path_absolute	Ein absoluter oder UNC-Pfad	3fd273c3
+core.path_drive	Enthält einen Laufwerksbuchstaben	8e14a535
+core.path_traversal	Pfadüberschreitung (..)	46858ead
+core.path_colon	Enthält einen alternativen NTFS-Datenstrom oder einen unzulässigen Doppelpunkt	7756e2a5
+core.path_component_empty	Ein Bestandteil ist nach der Bereinigung leer	bac592df
+core.path_no_component	Der Pfad hat keinen gültigen Bestandteil	ec228d1c
+core.path_renamed	Der Name enthält Zeichen, die Windows nicht erlaubt, oder einen reservierten Namen; er wurde automatisch umgewandelt	f43897c6
+core.dll_not_found	7z.dll wurde nicht gefunden (legen Sie die Umgebungsvariable LYCAN_7Z_DLL fest oder legen Sie die Datei in den Ordner der EXE-Datei)	bedf1866
+core.dll_load_failed	7z.dll konnte nicht geladen werden: {0}	7970328f
+core.dll_missing_exports	In 7z.dll fehlt eine benötigte Funktion	303fec2b
+core.dll_formats_failed	GetNumberOfFormats ist fehlgeschlagen	f25e7f29
+core.task_extract_failed	Einige Elemente konnten nicht extrahiert werden	73d74623
+core.task_test_failed	Einige Elemente haben die Prüfung nicht bestanden	5d96975e
+core.task_unreadable	Einige Dateien konnten nicht gelesen werden	a0499c76
+core.task_no_amsi	Die Windows-Schnittstelle zur Schadsoftwareprüfung (AMSI) kann nicht verwendet werden	ce19a6fc
+core.task_threat_found	Verdächtige Dateien wurden gefunden	c358268b
+core.task_hash_failed	Die Prüfsumme einiger Dateien konnte nicht berechnet werden	cfa8f7b7
+core.temp_space_need	Nicht genug temporärer Speicherplatz: etwa {0} MB benötigt, aber auf „{2}“ sind nur {1} MB frei	08f0bbc5
+core.temp_space_full	Nicht genug temporärer Speicherplatz: „{2}“ ist voll ({1} MB frei)	04139f08
+main.open_preview_key	Archiv direkt in der Bildvorschau öffnen	4ec4fba1
+main.open_preview_key_hint	Halten Sie diese Taste gedrückt, während Sie ein Archiv aus dem Datei-Explorer öffnen. Archive ohne Bilder werden normal geöffnet.	bedba710
+main.key_shift	Umschalt	469d5b18
+main.key_ctrl	Strg	dd6a02a5
+main.key_none	Nicht verwendet	72a86113
+audio.info_format	Format	041a5dec
+audio.info_bitrate	Bitrate	eddca7c3
+audio.info_sample_rate	Abtastrate	7a031620
+audio.info_channels	Kanäle	18e03e2a
+audio.info_length	Länge	3bade34e
+audio.info_size	Größe	b7152342
+audio.kbps	{0} kBit/s	d6fe6f7a
+audio.khz	{0} kHz	a15a2a00
+audio.mono	Mono	c5c55338
+audio.stereo	Stereo	f4f390b6
+audio.channels_n	{0} Kanäle	c5f7ad51
+main.lock_open_archive	Geöffnetes Archiv sperren	9a072cd4
+main.lock_open_archive_hint	Solange ein Archiv in LycanZip geöffnet ist, können andere Apps es nicht ändern oder löschen. Cloud-Synchronisierungs-Apps (OneDrive, Dropbox usw.) warten mit dem Synchronisieren, bis Sie das Archiv schließen.	547105a7
+shell.add_to_archive	Zum Archiv hinzufügen…	2cdc38ad
+shell.compress_to	Komprimieren als „{0}“	26079055
+shell.compress_each	Jedes einzeln als {0} komprimieren	71b71810
+shell.compress_with_preset	Mit einer Vorlage komprimieren	851cb07a
+shell.hash	Hashwerte berechnen…	78ef4a80
+shell.hash_save	Berechnen und als „{0}“ speichern	3bcf70ff
+shell.verify_checksum	Prüfsummendatei mit LycanZip überprüfen	fa6d1cbb
+shell.other_formats	Weitere Formate	ad24dd8d
+shell.group_entry	{0}: {1}	4d3c418a
+shell.encrypted	Verschlüsseltes Archiv…	284a3b16
+shell.open_content	Inhalt mit LycanZip öffnen	b4b5ada3
+shell.open	Öffnen	cf9b7706
+shell.extract_here	Hier extrahieren	5221b51b
+shell.extract_to_named	Extrahieren nach „{0}\\“	70e9c1e4
+shell.extract_same_name	Jedes in einen eigenen Ordner extrahieren	96adc4e4
+shell.extract_to	Extrahieren nach…	f5015680
+shell.test	Integrität prüfen	ba25de4f
+shell.image_preview	Bildvorschau	6c5de6ef
+shell.audio_preview	Audiovorschau	47fea53e
+shell.extract_recent	In einen zuletzt verwendeten Ordner extrahieren	6fb3e506
+shell.extract_merge	Alle in einen Ordner extrahieren	95dfa5b4
+shell.preset_zip	Standard-ZIP	f75cf2d3
+shell.preset_7z	Standard-7z	773f446e
+shell.preset_smallest	Kleinste Größe	ba07b565
+shell.preset_fast	Schnell	8db6a2f1
+shell.preset_mail	E-Mail / Teilen	bd390aae
+shell.preset_backup	Sicherung	dd96994d
+shell.preset_store	Nur speichern, keine Komprimierung	05d2dfd8
+preview.set_wallpaper	Als Desktophintergrund festlegen…	a8535aeb
+preview.wallpaper_title	Als Desktophintergrund festlegen	bddfd29e
+preview.wallpaper_hint	Dadurch wird das Bild Ihres Desktops geändert. Eine Kopie des Bildes wird im Ordner „{0}“ gespeichert, damit es auch nach dem Schließen des Archivs erhalten bleibt (Sie können sie später löschen).	545a014e
+preview.wallpaper_position	Bildposition	57ec5754
+preview.wallpaper_fill	Ausfüllen	7adb6736
+preview.wallpaper_fit	Anpassen	dab564d8
+preview.wallpaper_stretch	Strecken	b148ed24
+preview.wallpaper_tile	Kacheln	2dd2c660
+preview.wallpaper_center	Zentrieren	a2391118
+preview.wallpaper_span	Über alle Bildschirme strecken	f9ac80c1
+preview.wallpaper_screen	Bildschirm	5cc847f9
+preview.wallpaper_all_screens	Alle Bildschirme	36e42090
+preview.wallpaper_screen_n	Bildschirm {0}	450737fa
+preview.wallpaper_set	Als Desktophintergrund festlegen	bddfd29e
+preview.wallpaper_done	Der Desktophintergrund wurde geändert	db9a8288
+preview.wallpaper_failed	Der Desktophintergrund konnte nicht geändert werden	fdcbceb4
+preview.save_as_original	Originaldatei ({0})	55a52041
+preview.save_as_type	{0}-Bild	4b7c0e56
+main.updates	Aktualisierungen	c76d1807
+main.update_check	Nach neuen Versionen suchen	459eada1
+main.update_check_hint	Einmal pro Woche fragt LycanZip bei aegisulf.com die Nummer der neuesten Version ab. Sonst wird nichts gesendet. Eine installierte Kopie lädt das Update auch herunter, installiert es aber nur, wenn Sie es auswählen.	ff79bd40
+main.update_check_now	Jetzt suchen	2ce5dd0d
+main.update_checking	Wird gesucht...	494d0f68
+main.update_check_failed	Die Website war nicht erreichbar.	16d35b69
+main.update_up_to_date	LycanZip {0} ist die neueste Version.	c3b654ab
+main.update_available	Version {0} ist verfügbar	d3f8a66c
+main.update_with_command	Aktualisieren mit: {0}	1d9bdc7c
+main.update_download	Downloadseite	ca074cc1
+main.update_whats_new	Neuerungen	4d8dc5fe
+main.update_skip	Diese Version überspringen	31996a8b
+main.update_skip_tip	Kein Hinweis für diese Version; eine neuere wird trotzdem angekündigt.	495188b9
+fmt.gap	  	099600a1
+fmt.dot_gap	  ·  	c80c74a1
+fmt.bar_gap	  |  	af18a86b
+fmt.list_sep	, 	d3bc9a37
+fmt.comma	, 	d3bc9a37
+main.restart_explorer	Datei-Explorer neu starten	4f2f2310
+main.restart_explorer_hint	Verwenden Sie dies, wenn eine Änderung des Kontextmenüs noch nicht sichtbar ist: nach dem Ein- oder Ausschalten des Menüs oder nach einem Update.	9826207f
+main.restart_explorer_do	Neu starten	b134bd55
+main.restart_explorer_title	Datei-Explorer neu starten?	1247b286
+main.restart_explorer_question	Die geöffneten Ordnerfenster werden geschlossen, und die Taskleiste verschwindet kurz. Schließen Sie zuerst ab, was Sie im Datei-Explorer gerade tun.	bb88d250
+main.menu_updated	Das Kontextmenü wurde aktualisiert	35a346d0
+main.menu_updated_restart_explorer	Starten Sie den Datei-Explorer neu, um die neue Version zu verwenden.	81b74c5b
+main.off	Aus	e3de5ab0
+main.virustotal_lookup	Bei VirusTotal nachschlagen	45155d86
+main.virustotal_lookup_tip	Berechnet den SHA-256-Wert und öffnet VirusTotal in Ihrem Browser. Gesendet wird nur der Hash, nicht die Datei. Ein Hash, den VirusTotal nicht kennt, bedeutet nicht, dass die Datei sicher ist.	162ec07b
+main.resize_column	Spaltenbreite ändern	a352329f
+main.reset_column_widths	Spaltenbreiten zurücksetzen	0d1aad85
+main.ratio	Verhältnis	794f65e9
+main.col_encrypted	Verschlüsselt	bde2fbb6
+main.col_crc	CRC	3841eeac
+main.col_method	Methode	88306943
+main.sort_by_ratio	Nach Verhältnis sortieren	0f42a324
+main.sort_by_encrypted	Nach Verschlüsselung sortieren	c704964e
+main.sort_by_crc	Nach CRC sortieren	4a496c5c
+main.sort_by_method	Nach Methode sortieren	3fefe5e6
+main.info_technical	Technische Informationen\n	89d4e276
+main.info_created	Erstellt: {0}\n	76448e49
+main.info_accessed	Letzter Zugriff: {0}\n	5702c685
+main.info_method	Methode: {0}\n	768c45b6
+main.info_permissions	Berechtigungen: {0}\n	8bdf2fd8
+main.info_host_os	Erstellt unter: {0}\n	c3576d38
+main.info_characteristics	Merkmale: {0}\n	04bb04e0
+main.info_link	Verknüpfung mit: {0}\n	3502a252
+main.info_block	Solider Block: {0}\n	81074eb6
+main.info_offset	Beginnt bei Byte {0} des Archivs\n	5f8618a5
+main.info_comment	Kommentar: {0}\n	5491205f
+core.dll_not_pinned	7z.dll ist nicht die mit LycanZip gelieferte Datei und wurde daher nicht geladen: {0}. Installieren Sie LycanZip neu, um die richtige Datei zu erhalten	ab86763d
+core.dll_missing_pinned	7z.dll wurde neben LycanZip nicht gefunden. Installieren Sie LycanZip neu, um sie wiederherzustellen	2568bd9b
+main.update_install_now	Jetzt installieren	8607e4ba
+main.update_install_title	Update installieren	ac0f0e99
+main.update_install_question	LycanZip {0} ({1}) herunterladen und installieren? LycanZip wird geschlossen und startet von selbst neu.	77267b1b
+main.update_downloading	Das Update wird heruntergeladen... {0} %	a19e7001
+main.update_not_in_feed	Es gibt noch keine neuere Version zum Installieren. Versuchen Sie es später erneut.	7bc79e7b
+main.update_failed	Das Update konnte nicht heruntergeladen werden oder hat die Prüfung nicht bestanden. Es wurde nichts geändert. Versuchen Sie es später erneut.	aa9ff9d1
+main.update_tasks_running	Es laufen noch Aufgaben. Lassen Sie sie fertig werden oder brechen Sie sie ab, und installieren Sie dann das Update.	5f0e8545
+main.update_ready	Version {0} ist bereit zur Installation	bb0155f4
+main.update_ready_hint	LycanZip wird geschlossen und neu gestartet, um das Update abzuschließen.	2953ac9d
+main.update_restart_now	Neu starten und aktualisieren	68d74304
+main.two_copies_title	LycanZip ist zweimal installiert	ae047f6d
+main.two_copies_store_owns	Die Microsoft Store-Version von LycanZip ist ebenfalls installiert. Sie stellt das Kontextmenü und die Dateitypen bereit, daher hat diese Kopie ihre eigenen deaktiviert, und der Datei-Explorer zeigt LycanZip nur einmal an.\n\nEine einzige Kopie ist einfacher: Die nicht verwendete können Sie unter „Installierte Apps“ entfernen.\n\nDiese Kopie: {0}	a26b2e9a
+main.two_copies_other_has_menu	Eine andere Kopie von LycanZip hat ein eigenes Kontextmenü oder eigene Dateitypen registriert, daher zeigt der Datei-Explorer LycanZip möglicherweise zweimal an. Starten Sie diese Kopie einmal (sie deaktiviert sie, wenn sie diese Version findet), oder entfernen Sie sie unter „Installierte Apps“.\n\nDie andere Kopie: {0}	35d66071
+main.open_installed_apps	Installierte Apps öffnen	2765c7aa
+main.store_version_provides_menu	Die Microsoft Store-Version von LycanZip ist installiert: Sie stellt das Kontextmenü und die Dateitypen bereit, daher sind diese in dieser Kopie deaktiviert.	f670f18e
+main.other_copy_note	Eine andere Kopie von LycanZip hat ebenfalls ein Kontextmenü oder Dateitypen registriert: {0}\nStarten Sie sie einmal (sie deaktiviert sie, wenn sie diese Version findet) oder entfernen Sie sie, damit der Datei-Explorer LycanZip nur einmal anzeigt.	883c2d94
+main.store_menu_switch_hint	Blendet alle LycanZip-Einträge im Datei-Explorer ein oder aus (das Kontextmenü und unter Windows 11 auch das Menü beim Ziehen mit der rechten Maustaste). Gilt beim nächsten Öffnen eines Menüs; es wird nichts registriert oder entfernt.	756e4de1
+main.welcome_offer_title	Zum ersten Mal mit LycanZip?	e06f512c
+main.welcome_offer_hint	Nehmen Sie sich kurz Zeit, um Aussehen, Sounds und Vorschauen auszuwählen.	ebdcfb8d
+main.welcome_offer_start	Einrichten	a5041fda
+main.welcome_offer_no	Nein, danke	5f5c4384
+welcome.file_explorer_menu	Kontextmenü des Datei-Explorers	7000f59a
+main.view_small_icons	Kleine Symbole	9fd460c2
+main.view_medium_icons	Mittelgroße Symbole	66c5bbfe
+main.view_large_icons	Große Symbole	7d71ad7d
+main.view_huge_icons	Extra große Symbole	4ec7f1c2
+main.search_settings	Einstellungen durchsuchen	9a6f37a7
+main.search_settings_ctrl_f	Einstellungen durchsuchen (Strg+F)	2763171f
+main.no_settings_match	Keine passenden Einstellungen	ba12d2cd
+main.search_settings_on_page	Einstellungen durchsuchen (auf der Einstellungsseite)	862a70e5
+main.preview_pane	Vorschaubereich	b40b3929
+main.preview_pane_toggle	Vorschaubereich ein-/ausblenden	cad29b53
+main.show_preview_pane	Vorschaubereich anzeigen	d5b62a9a
+main.preview_pane_desc	Zeigt das ausgewählte Element in jeder Ansicht unter der Ordnerstruktur an: Bilder, Text, PDF, Audio-Tags und Details. Wird automatisch ausgeblendet, wenn das Fenster zu schmal ist.	8fe413c6
+main.show_hide_preview_pane	Vorschaubereich ein- / ausblenden	89f2d82c
+main.drag_resize_preview_pane_double	Ziehen, um die Größe des Vorschaubereichs zu ändern (Doppelklick setzt sie zurück)	aaa0b471
+main.preview_pane_splitter	Trennlinie des Vorschaubereichs	ad8cab6b
+preview.pane_text	Textvorschau	960373f3
+preview.pane_loading	Wird geladen	8f26c652
+preview.pane_enlarge	Größere Vorschau öffnen	b7a798a8
+preview.pane_previous_page	Vorherige Seite	81f54719
+preview.pane_next_page	Nächste Seite	4bfc194b
+preview.pane_page_of	Seite {0} von {1}	c10e7490
+preview.pane_play	Wiedergabe	5d12bd53
+preview.pane_enter_password	Kennwort eingeben	570591c0
+preview.pane_locked	Verschlüsselt. Geben Sie das Kennwort ein, um die Vorschau anzuzeigen.	0c432e08
+preview.pane_program_not_previewed	Für Programme und Installationsprogramme gibt es keine Vorschau.	ba76c063
+preview.pane_not_text	Diese Datei scheint kein Text zu sein.	533067ba
+preview.pane_text_truncated	(Nur die ersten {0} werden angezeigt.)	79ced1ce
+preview.pane_audio_title	Titel	768e0c1c
+preview.pane_audio_artist	Interpret	6c3f3d32
+preview.pane_audio_album	Album	dfb4c9a1
+preview.pane_length	Länge	3bade34e
+preview.pane_pdf_failed	Dieses PDF kann nicht angezeigt werden. Es ist möglicherweise beschädigt oder geschützt.	a741ecac
+preview.pane_window_title	Vorschau	f1fbb2b4
+preview.pane_window_title_name	Vorschau – {0}	d4bdfa4a
+welcome.preview_pane_hint	Zeigt das ausgewählte Bild, den Text oder das PDF unter der Ordnerstruktur an	9066fd16
+preview.reading_mode	Lesemodus	d75871a6
+preview.reading_mode_tip	Lesemodus (B): das ganze Archiv der Reihe nach, zwei Seiten nebeneinander, von rechts nach links	d7b46a5e
+preview.reading_on	Lesemodus ein	8dfdb523
+preview.reading_off	Lesemodus aus	6d526edb
+preview.reading_rtl	Rechts nach links	da502a64
+preview.reading_ltr	Links nach rechts	34ce1477
+preview.reading_direction_tip	Leserichtung (D)	39306b19
+preview.reading_spread_auto	Seiten: automatisch	f2bfb879
+preview.reading_spread_single	Eine Seite	b6c31c22
+preview.reading_spread_double	Zwei Seiten	bd8c3aa6
+preview.reading_spread_tip	Seiten nebeneinander (S): automatisch / eine Seite / zwei Seiten	3b726cd5
+preview.reading_shift	Um eine Seite verschieben	5f7d1b48
+preview.reading_resume	Fortsetzung ab Seite {0}	abd0854c
+main.comic_reading_mode	Comicarchive im Lesemodus öffnen	410e39d2
+main.comic_reading_mode_desc	Ein Doppelklick auf eine .cbz-, .cb7-, .cbr- oder .cbt-Datei öffnet ihre Bilder im Lesemodus der Bildvorschau. Deaktivieren Sie dies, um stattdessen die Dateiliste zu sehen.	7c65a9e1
+main.reading_mode_keys	Lesemodus / Leserichtung / eine oder zwei Seiten / um eine Seite verschieben	7ffd115a
+main.remember_this_password	Dieses Kennwort speichern	9c29b204
+main.used_saved_password	Mit einem gespeicherten Kennwort geöffnet	8fbc1750
+main.passwords	Kennwörter	02c83041
+main.password_manager	Kennwortverwaltung	17015895
+main.auto_try_saved_passwords	Gespeicherte Kennwörter automatisch ausprobieren	c5c561d7
+main.auto_try_saved_passwords_desc	Wenn ein Archiv ein Kennwort benötigt, zuerst die gespeicherten ausprobieren (bis zu 50 oder 5 Sekunden lang) und nur nachfragen, wenn keines passt.	5cd0401d
+main.remember_run_passwords	In dieser Sitzung verwendete Kennwörter merken	92bf3dab
+main.remember_run_passwords_desc	Kennwörter, die funktioniert haben, bleiben bis zum Schließen von LycanZip im Speicher und werden zuerst ausprobiert. Sie werden nie auf den Datenträger geschrieben.	c99abf03
+main.remember_password_default	„Dieses Kennwort speichern“ ist standardmäßig ausgewählt	7f51be69
+main.remember_password_default_desc	Im Kennwortdialog. Andernfalls wird ein Kennwort nur gespeichert, wenn Sie die Option auswählen.	dbbb2f08
+main.saved_passwords	Gespeicherte Kennwörter	b3c61c55
+main.saved_passwords_desc	Gespeichert in passwords.dat neben den Einstellungen, verschlüsselt für Ihr Windows-Konto. Nur dieses Konto auf diesem PC kann sie lesen (eine auf einen anderen PC verschobene portable Kopie kann es nicht). Kein Schutz vor Schadsoftware, die unter Ihrem Konto läuft.	c21e27eb
+main.add_password	Kennwort hinzufügen	7b7a8260
+main.import_passwords	Importieren…	4834caf8
+main.export_passwords	Exportieren…	0a116345
+main.clear_unreadable_passwords	Gespeicherte Kennwörter löschen	2063bc45
+main.saved_passwords_unreadable	Die gespeicherten Kennwörter können nicht gelesen werden. Sie wurden von einem anderen Windows-Konto oder auf einem anderen PC gespeichert, oder die Datei ist beschädigt.	bf64511e
+main.clear_unreadable_passwords_question	passwords.dat löschen? Die darin enthaltenen Kennwörter gehen verloren. Danach können neue gespeichert werden.	942eb96f
+main.no_saved_passwords	Noch keine gespeicherten Kennwörter. Wählen Sie „Dieses Kennwort speichern“, wenn Sie eines eingeben, oder fügen Sie es hier hinzu.	0be995a4
+main.hidden_password	Verborgenes Kennwort	a51156d2
+main.never_used	Nie verwendet	984ec5ee
+main.copy_password	Kennwort kopieren	cda3abab
+main.edit_password	Kennwort bearbeiten	22215170
+main.delete_password	Kennwort löschen	330753fe
+main.delete_password_question	Dieses gespeicherte Kennwort löschen?	7330db44
+main.password_copied	Kennwort kopiert	9a0081f0
+main.password_note	Notiz (optional)	4e395670
+main.password_note_hint	Woher das Kennwort stammt	bd693a41
+main.could_not_save_passwords	Die Kennwörter konnten nicht gespeichert werden.	d5436c25
+main.password_file_too_large	Diese Datei ist zu groß für eine Kennwortliste.	1c31e120
+main.passwords_imported	{0} {0:neues Kennwort|neue Kennwörter} importiert.	6d274f3a
+main.export_passwords_warning	Die exportierte Datei ist reiner Text: Jeder, der sie öffnen kann, kann alle Kennwörter lesen. Bewahren Sie sie sicher auf und löschen Sie sie, wenn Sie sie nicht mehr brauchen.	ba640f91
+main.text_file	Textdatei	ee3d21a8
+main.passwords_exported	Kennwörter exportiert	1100b2dc
+main.master_password	Masterkennwort	33acdbd6
+main.master_password_desc	Fragt nach einem Kennwort, bevor gespeicherte Kennwörter ausprobiert, angezeigt oder geändert werden – einmal bei jedem Start von LycanZip. Wenn Sie es vergessen, können die gespeicherten Kennwörter nicht wiederhergestellt, sondern nur gelöscht werden.	453684fb
+main.master_password_off	Aus. Die gespeicherten Kennwörter sind nur durch Ihr Windows-Konto geschützt.	8e599348
+main.master_password_unlocked	Ein. Die gespeicherten Kennwörter sind entsperrt, bis LycanZip geschlossen wird.	9b1f206e
+main.master_password_locked	Ein. Die gespeicherten Kennwörter sind gesperrt.	d650441e
+main.set_master_password	Masterkennwort festlegen	5867cf47
+main.change_master_password	Masterkennwort ändern	318ba37e
+main.turn_off_master_password	Masterkennwort deaktivieren	a4c8bd59
+main.lock_now	Jetzt sperren	9217b30d
+main.unlock	Entsperren	1526a17e
+main.unlock_saved_passwords	Gespeicherte Kennwörter entsperren	8310b6ac
+main.forgot_master_password	Masterkennwort vergessen?	4322007e
+main.reset_saved_passwords_question	Ohne das Masterkennwort können die gespeicherten Kennwörter nicht gelesen werden. Alle gespeicherten Kennwörter und das Masterkennwort löschen? Dies kann nicht rückgängig gemacht werden.	82c2607e
+main.delete_all	Alle löschen	08170580
+main.current_master_password	Aktuelles Masterkennwort	78246fe5
+main.new_master_password	Neues Masterkennwort	a935c72d
+main.master_password_rules	Mindestens 4 Zeichen. Wenn Sie es vergessen, können die gespeicherten Kennwörter nicht wiederhergestellt, sondern nur gelöscht werden.	7d63f663
+main.wrong_master_password	Falsches Masterkennwort.	70658a46
+main.master_password_set	Masterkennwort festgelegt	48fb5813
+main.master_password_changed	Masterkennwort geändert	aeb24a2b
+main.master_password_turned_off	Masterkennwort deaktiviert	84fb0020
+main.saved_passwords_locked_now	Gespeicherte Kennwörter gesperrt	7799a360
+main.saved_passwords_are_locked	Die gespeicherten Kennwörter sind gesperrt. Entsperren Sie sie mit dem Masterkennwort, um sie anzuzeigen oder zu ändern.	7d5fda6d
+main.unlock_to_try_saved	Ihre gespeicherten Kennwörter sind gesperrt. Geben Sie das Masterkennwort ein, um sie auszuprobieren.	694ae67a
+main.master_to_remember	Ihre gespeicherten Kennwörter sind gesperrt. Geben Sie das Masterkennwort ein, um dieses Kennwort zu speichern.	a14af63c
+main.enter_master_to_remember	Geben Sie das Masterkennwort ein, um dieses Kennwort zu speichern.	3f28a8b9
+main.unlock_and_try	Entsperren und ausprobieren	2d406384
+main.no_saved_password_fits	Keines der gespeicherten Kennwörter passt.	f5d39707
+main.use_saved_password	Gespeichertes Kennwort verwenden	ccb81a8c
+main.show_passwords	Kennwörter anzeigen	a7656741
+main.save_button	Speichern	efc007a3
+core.repack_damaged	{0} {0:Element|Elemente} des Archivs {0:konnte|konnten} nicht gelesen werden (beschädigt). Es wurde nichts konvertiert.	abbaaa71
+core.repack_test_failed	Das neue Archiv hat die Integritätsprüfung nicht bestanden. Das ursprüngliche Archiv wurde nicht geändert.	41a7b625
+core.repack_count_mismatch	Das neue Archiv enthält {0} {0:Datei|Dateien}, das ursprüngliche enthielt {1}.	80a46cfa
+main.convert_archive_format	Archivformat konvertieren…	9555ac3f
+main.convert_archive_title	Archivformat konvertieren	14c35dc9
+main.remove_archive_password	Archivkennwort entfernen	b7a726b2
+main.upgrade_archive	Archiv aktualisieren	95cf43c8
+main.upgrade_archive_tip	Speichert die Dateinamen in UTF-8, damit sie auf jedem PC richtig angezeigt werden. Die Daten werden unverändert übernommen.	0693060f
+main.upgrade_avoids_problem	 Sie können dies vermeiden, indem Sie das Archiv aktualisieren.	3b1ecb4c
+main.convert_password	Kennwort des neuen Archivs	f99b5cc8
+main.keep_original_password	Ursprüngliches Kennwort beibehalten	ade86a77
+main.no_password	Kein Kennwort	18518368
+main.new_password	Neues Kennwort	d850ee18
+main.convert_each_keeps_name	Jedes Archiv behält seinen Namen, mit der Erweiterung {0}	86eeb4df
+main.password_removed	Kennwort entfernt (das neue Archiv hat die Integritätsprüfung bestanden)	8451dd24
+main.archive_upgraded	Archiv aktualisiert: Die Dateinamen sind jetzt in UTF-8 gespeichert	abec33f5
+main.items_left_out_original_kept	  (Einige Elemente konnten nicht gelesen werden und fehlen, daher wird das Löschen des Originals nicht angeboten)	f4309fa4
+main.conversion	Konvertierung	9151f843
+main.password_removal	Kennwort entfernen	43970eb1
+task.tested	, geprüft	0d1a310d
+task.left_out	, {0} ausgelassen	170b0356
+shell.convert	Archivformat konvertieren…	9555ac3f
+main.start_converting	Konvertierung starten	69bc1019
+main.upgrade_confirm_text	Die Dateinamen werden dauerhaft in UTF-8 gespeichert, genau wie unten angezeigt. Wenn sie unleserlich aussehen, wählen Sie zuerst eine andere Codierung.	35846f99
+main.upgrade_encoding_uncertain	Die Codierung wurde erkannt, ist aber nicht sicher: Prüfen Sie die Namen sorgfältig.	28d37b63
+main.upgrade_button	Aktualisieren	a6f47e00
+main.convert_names_note	Die Dateinamen werden so geschrieben, wie sie jetzt angezeigt werden ({0}). Wenn sie unleserlich aussehen, gehen Sie zurück und wählen Sie zuerst eine andere Codierung.	4563f36d
+main.tar_names_title	Dateinamen in UTF-8 speichern?	1cc12cbc
+main.tar_names_text	Die Dateinamen dieses tar-Archivs haben keine Codierungskennzeichnung. Beim Ändern werden alle dauerhaft in UTF-8 gespeichert, genau wie unten angezeigt. Wenn sie unleserlich aussehen, brechen Sie ab und wählen Sie zuerst oben rechts eine andere Codierung.	85e7fd4d

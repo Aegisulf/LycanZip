@@ -17,6 +17,7 @@
 #include <string>
 
 #include "ImagePreview.h"
+#include "PreviewPane.h"
 #include "ShellNotify.h"
 #include "lycan/archive_source.h"
 #include "lycan/crashreport.h"
@@ -117,6 +118,9 @@ namespace winrt::LycanZip::implementation
         void OnTaskCollapseClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
         void OnClearFinishedClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
         void OnSettingsTabChanged(Microsoft::UI::Xaml::Controls::SelectorBar const&, Microsoft::UI::Xaml::Controls::SelectorBarSelectionChangedEventArgs const&);
+        void OnSettingsSearchTextChanged(Microsoft::UI::Xaml::Controls::AutoSuggestBox const&, Microsoft::UI::Xaml::Controls::AutoSuggestBoxTextChangedEventArgs const&);
+        void OnSettingsSearchSubmitted(Microsoft::UI::Xaml::Controls::AutoSuggestBox const&, Microsoft::UI::Xaml::Controls::AutoSuggestBoxQuerySubmittedEventArgs const&);
+        void OnSettingsSearchKeyDown(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::Input::KeyRoutedEventArgs const&);
         // ---- temporary files (settings page + the "not enough room" question) ----
         fire_and_forget OnTempChooseClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
         void OnTempResetClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
@@ -166,6 +170,7 @@ namespace winrt::LycanZip::implementation
         void OnFlatToggleClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
         void OnViewMenuClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
         void OnTreeToggleClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        void OnPaneToggleClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
         void OnPreviewImagesClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
         void OnPreviewAudioClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
         void OnContainerChanging(Microsoft::UI::Xaml::Controls::ListViewBase const&, Microsoft::UI::Xaml::Controls::ContainerContentChangingEventArgs const&);
@@ -307,6 +312,7 @@ namespace winrt::LycanZip::implementation
             std::filesystem::path openFile;  // not empty: this is a temporary extraction for "open with the default program"; open this file when done
             bool deletable = false;          // finished cleanly: the "delete the archive" button is offered
             bool isUpdate = false;           // changing the archive: after it, open it again
+            bool upgrade = false;            // ... the names were written again in UTF-8 ("upgrade the archive")
             std::wstring editEntry;          // non-empty: openFile is extracted to be edited (the item of the archive)
             std::wstring restoreFolder;      // ... in this folder
             std::vector<std::wstring> selectPaths;  // ... with these items selected
@@ -343,7 +349,7 @@ namespace winrt::LycanZip::implementation
         bool CanModifyNow(bool explain);
         lycan::UpdateOptions MakeUpdateOptions(lycan::UpdateMode mode = lycan::UpdateMode::AddReplace);
         std::wstring CurrentFolderPath() const;
-        fire_and_forget RunUpdateAsync(std::vector<lycan::UpdateOp> ops, TaskMeta meta, lycan::UpdateMode mode = lycan::UpdateMode::AddReplace);
+        fire_and_forget RunUpdateAsync(std::vector<lycan::UpdateOp> ops, TaskMeta meta, lycan::UpdateMode mode = lycan::UpdateMode::AddReplace, bool upgrade = false);
         // Adding to an archive that has items of the same name: what to do with them (0..2 = AddReplace / UpdateAdd / Freshen, -1 = cancelled)
         Windows::Foundation::IAsyncOperation<int32_t> ChooseAddModeAsync(int clashes);
         // Making an archive whose file exists already: 0 = cancelled, 1 = save under a new name, 2 = replace it, 3 + UpdateMode = add to it (canUpdate: zip, 7z, tar)
@@ -374,6 +380,7 @@ namespace winrt::LycanZip::implementation
         void SetBusy(bool busy);
         void LoadBrandImages();
         void ResizeToDefault();
+        static int CompactWidthDip();
         void UpdateTitleDragRects();
         void UpdateArchiveIcon();
         void ResizeDip(int widthDip, int heightDip);
@@ -415,7 +422,46 @@ namespace winrt::LycanZip::implementation
         fire_and_forget ShowMessage(hstring title, hstring body);
 
         // Password
-        Windows::Foundation::IAsyncOperation<hstring> AskPasswordAsync(hstring name, bool previousWasWrong);
+        // `works` tells whether a password is right: with it, a locked saved list can be unlocked in the dialog and its passwords tried
+        Windows::Foundation::IAsyncOperation<hstring> AskPasswordAsync(hstring name, bool previousWasWrong, std::function<bool(std::wstring const&)> works = {});
+        Windows::Foundation::IAsyncOperation<hstring> AskPasswordDialogAsync(hstring name, bool previousWasWrong, bool canUnlock, bool noneFits);
+        // Password manager (PasswordVault.h): try the known passwords before asking; remember the one that worked
+        Windows::Foundation::IAsyncOperation<hstring> TryKnownPasswordsAsync(std::function<bool(std::wstring const&)> works);
+        void PasswordWorked(std::wstring const& pw);
+        // the master password: unlock the saved list (the key is derived off the UI thread)
+        Windows::Foundation::IAsyncOperation<bool> UnlockVaultAsync(hstring master);
+        Windows::Foundation::IAsyncOperation<bool> AskUnlockVaultAsync();   // a dialog for the master password; true = unlocked
+        fire_and_forget UnlockFromPasswordDialogAsync(Microsoft::UI::Xaml::Controls::ContentDialog dlg, Microsoft::UI::Xaml::Controls::PasswordBox master,
+                                                      Microsoft::UI::Xaml::Controls::TextBlock note, Microsoft::UI::Xaml::Controls::Button button);
+        fire_and_forget UnlockToRememberAsync(Microsoft::UI::Xaml::Controls::ContentDialogButtonClickEventArgs args,
+                                              Microsoft::UI::Xaml::Controls::ContentDialogButtonClickDeferral deferral, hstring master,
+                                              Microsoft::UI::Xaml::Controls::TextBlock note);
+        Microsoft::UI::Xaml::Controls::ContentDialog MakeMasterDialog(hstring title, std::vector<const wchar_t*> headers, bool newPassword,
+                                                                     std::vector<Microsoft::UI::Xaml::Controls::PasswordBox>& boxes);
+        bool askUnlocked_ = false;      // the password dialog closed because the saved list was unlocked (try its passwords)
+        // the "Passwords" tab of the settings
+        void RebuildPasswordList();
+        fire_and_forget EditPasswordAsync(std::wstring original);   // empty = add a new one
+        fire_and_forget DeletePasswordAsync(std::wstring password);
+        Windows::Foundation::IAsyncOperation<bool> ConfirmAsync(hstring title, hstring body, hstring yes);
+    public:
+        void OnAddPasswordClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        fire_and_forget OnImportPasswordsClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        fire_and_forget OnExportPasswordsClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        fire_and_forget OnConvertClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        fire_and_forget OnRemovePasswordClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        fire_and_forget OnUpgradeClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        fire_and_forget OnClearUnreadablePasswordsClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        fire_and_forget OnSetMasterClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        fire_and_forget OnChangeMasterClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        fire_and_forget OnRemoveMasterClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        void OnLockPasswordsClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        fire_and_forget OnUnlockPasswordsClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        fire_and_forget OnResetMasterClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        fire_and_forget OnPickSavedPasswordClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+    private:
+        std::wstring askedPassword_;    // the last password typed in the dialog, and whether "Remember this password" was ticked
+        bool askedRemember_ = false;
         Windows::Foundation::IAsyncOperation<bool> EnsurePasswordAsync();  // encrypted content: ask and verify, store in password_ on success
 
         // Conflict question (called from the worker thread, blocks until the user answers)
@@ -488,6 +534,20 @@ namespace winrt::LycanZip::implementation
         fire_and_forget OnPresetDelete();
         Windows::Foundation::IAsyncOperation<hstring> AskNameAsync(hstring title, hstring initial);
         void FinishCompressTask(lycan::TaskInfo const& info);
+        // Repacking (DESIGN.md "重新封裝"): the new archive page in "convert" mode, removing the password, upgrading the names
+        void OpenConvertPage(std::vector<std::filesystem::path> archives);
+        void ApplyConvertMode();
+        fire_and_forget StartConvertAsync();
+        Windows::Foundation::IAsyncOperation<hstring> SourcePasswordAsync(std::filesystem::path archive);
+        void FinishRepackTask(lycan::TaskInfo const& info);
+        bool cConvert_ = false;
+        bool convertPwCancelled_ = false;
+        std::map<std::filesystem::path, std::wstring> cConvertPw_;   // passwords known already (the archive of the window)
+        std::map<std::filesystem::path, unsigned> cConvertCp_;       // the encoding chosen for its names
+        Windows::Foundation::IAsyncOperation<bool> ConfirmTarNamesAsync();   // a tar with unmarked names: all of them are written again in UTF-8
+        std::filesystem::path tarNamesOkFor_;   // ... the user agreed for this archive (asked again after the encoding is changed)
+        std::wstring cConvertNote_;   // converting an archive whose names have no encoding mark: they are written as they are decoded now
+        std::set<uint64_t> repackShown_;
         std::wstring CompressPassword();
         void SetCompressPassword(std::wstring const& pw);
         void ApplyPasswordMode();
@@ -509,6 +569,7 @@ namespace winrt::LycanZip::implementation
             bool testAfter = false;
             bool sumsArchive = false, sumsFiles = false;   // write the checksum files next to the new archive when it is done
             int testState = 0;                           // 0 not tested, 1 passed, 2 failed
+            bool convert = false;                        // a converted archive: the source is the original archive
         };
         std::map<uint64_t, CompressMeta> compressMeta_;
         std::map<uint64_t, uint64_t> testFor_;  // follow-up test task -> the card (finished task) that shows it
@@ -560,6 +621,32 @@ namespace winrt::LycanZip::implementation
         bool treeDragging_ = false;
         double treeDragStartX_ = 0, treeDragStartW_ = 0;
         void InitTreeSplitter();
+
+        // The preview pane under the folder tree (PreviewPane.h): shows the selection once it stops moving
+        std::unique_ptr<lycan_app::PreviewPane> previewPane_;
+        std::wstring paneKey_;   // the archive, password and code page its reader was set up for
+        Microsoft::UI::Dispatching::DispatcherQueueTimer paneTimer_{nullptr};
+        bool paneDragging_ = false;
+        bool paneShown_ = false;   // the pane is on the screen (setting on, window wide enough, an archive view)
+        double paneDragStartY_ = 0, paneDragStartH_ = 0;
+        void InitPreviewPane();
+        void SchedulePanePreview();
+        void UpdatePanePreview();
+        void OpenLargePreview();
+        double PaneHeight();
+
+        // Search in the settings: a setting is one card (Border with the SettingCard style) of a tab; its texts are read from the page
+        struct SettingHit {
+            Microsoft::UI::Xaml::Controls::SelectorBarItem tab{nullptr};
+            Microsoft::UI::Xaml::Controls::Border card{nullptr};
+            std::wstring label;   // what the suggestion list shows: title · tab
+        };
+        std::vector<SettingHit> settingHits_;   // the suggestions shown now, in their order
+        std::vector<SettingHit> FindSettings(std::wstring const& query);
+        void GoToSetting(SettingHit const& hit);
+        Microsoft::UI::Dispatching::DispatcherQueueTimer settingFlashTimer_{nullptr};
+        Microsoft::UI::Xaml::Controls::Border settingFlashCard_{nullptr};
+
         bool bandPending_ = false;  // pressed on an empty part of an item: the band selection starts after a small move (a simple click still selects that row)
         Windows::Foundation::Point bandPressPos_{};
 
@@ -650,6 +737,7 @@ namespace winrt::LycanZip::implementation
         Windows::UI::ViewManagement::AccessibilitySettings hcWatch_{nullptr};   // keeps the high contrast notification alive
         lycan::Settings settings_;
         std::filesystem::path settingsPath_;
+        std::filesystem::path ReadingStorePath() const { return settingsPath_.parent_path() / L"reading.tsv"; }   // where each book was left (reading mode)
         bool loadingSettings_ = false;
         View view_ = View::Home;
         View viewBeforeSettings_ = View::Home;

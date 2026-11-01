@@ -1019,6 +1019,11 @@ preset.store_only_no_compression	Store only, no compression
 lang.zh_tw	繁體中文	The name of a language in that language: the same text in every language file
 lang.en_us	English
 lang.zh_cn	简体中文
+lang.ja_jp	日本語
+lang.ko_kr	한국어
+lang.de_de	Deutsch
+lang.es_es	Español
+lang.fr_fr	Français
 ## fmt
 fmt.value_paren	{0} ({1})	
 fmt.size_bytes	{0} ({1} {1:byte|bytes})	
@@ -1233,8 +1238,8 @@ core.temp_space_need	Not enough temporary space: about {0} MB needed, but only {
 core.temp_space_full	Not enough temporary space: "{2}" is full ({1} MB free)	Args 3 and 4 are numbers for the program (bytes)
 main.open_preview_key	Open archive directly in image preview	A setting in the picture preview section
 main.open_preview_key_hint	Hold this key while opening an archive from File Explorer. Archives without images will open normally.	
-main.key_shift	Shift	The name of a key; not translated
-main.key_ctrl	Ctrl	The name of a key; not translated
+main.key_shift	Shift	The name of a key, as printed on keyboards in the language (German Strg, French Maj); only shown, the setting is kept by position
+main.key_ctrl	Ctrl	The name of a key, as printed on keyboards in the language (German Strg, French Maj); only shown, the setting is kept by position
 main.key_none	Not used	
 audio.info_format	Format	Audio info card: the kind of file
 audio.info_bitrate	Bit rate	
@@ -1372,3 +1377,144 @@ main.view_small_icons	Small icons	View menu, settings and welcome window: the ic
 main.view_medium_icons	Medium icons	The icon view, medium
 main.view_large_icons	Large icons	The icon view, large
 main.view_huge_icons	Extra large icons	The icon view, extra large
+main.search_settings	Search settings	Accessible name of the search box on the Settings page
+main.search_settings_ctrl_f	Search settings (Ctrl+F)	Placeholder text of the search box on the Settings page
+main.no_settings_match	No settings match	Shown in the suggestion list of the settings search when nothing is found
+main.search_settings_on_page	Search the settings (on the Settings page)	A row of the keyboard shortcut list
+main.preview_pane	Preview pane	The pane under the folder tree that shows the selected item; also the View menu item
+main.preview_pane_toggle	Preview pane toggle	Accessible name of the View menu item
+main.show_preview_pane	Show the preview pane	Settings, View tab
+main.preview_pane_desc	Shows the selected item under the folder tree in every view: pictures, text, PDF, audio tags and details. Automatically hidden when the window is too narrow.	Description of the setting
+main.show_hide_preview_pane	Show / hide the preview pane	A row of the keyboard shortcut list
+main.drag_resize_preview_pane_double	Drag to resize the preview pane (double-click to reset)	Tooltip of the splitter between the folder tree and the preview pane
+main.preview_pane_splitter	Preview pane splitter	Accessible name of that splitter
+preview.pane_text	Text preview	Accessible name of the text shown in the preview pane
+preview.pane_loading	Loading	Accessible name of the progress ring of the preview pane
+preview.pane_enlarge	Open a larger preview	Button in the corner of the preview pane: opens a window with the same preview
+preview.pane_previous_page	Previous page	PDF in the larger preview window
+preview.pane_next_page	Next page	PDF in the larger preview window
+preview.pane_page_of	Page {0} of {1}	PDF page number in the larger preview window
+preview.pane_play	Play	Button of an audio file in the preview pane (opens the audio preview)
+preview.pane_enter_password	Enter password	Button of an encrypted item in the preview pane
+preview.pane_locked	Encrypted. Enter the password to preview it.	Preview pane, encrypted item before the password is known
+preview.pane_program_not_previewed	Programs and installers aren't previewed.	Preview pane, an executable file: it is never unpacked automatically
+preview.pane_not_text	This file doesn't look like text.	Preview pane, a file with a text extension that contains binary data
+preview.pane_text_truncated	(Only the first {0} are shown.)	Preview pane, end of a long text file; {0} is a size such as 64.0 KB
+preview.pane_audio_title	Title	Detail row of an audio file (tag)
+preview.pane_audio_artist	Artist	Detail row of an audio file (tag)
+preview.pane_audio_album	Album	Detail row of an audio file (tag)
+preview.pane_length	Length	Detail row of an audio file (play time)
+preview.pane_pdf_failed	This PDF can't be shown. It might be damaged or protected.	Preview pane
+preview.pane_window_title	Preview	Title of the larger preview window when nothing is selected
+preview.pane_window_title_name	Preview – {0}	Title of the larger preview window; {0} is the name of the item
+welcome.preview_pane_hint	Shows the selected picture, text or PDF under the folder tree	Welcome window, step 2: hint under the preview pane switch
+preview.reading_mode	Reading mode	Picture preview: read a comic / a book of pictures (the whole archive in order, two pages side by side)
+preview.reading_mode_tip	Reading mode (B): the whole archive in order, two pages side by side, right to left	Tooltip of the reading mode button
+preview.reading_on	Reading mode on	Short note when the reading mode is switched on
+preview.reading_off	Reading mode off	Short note when the reading mode is switched off
+preview.reading_rtl	Right to left	Reading direction (manga); button text and menu item
+preview.reading_ltr	Left to right	Reading direction (western comics); button text
+preview.reading_direction_tip	Reading direction (D)	Tooltip of the direction button
+preview.reading_spread_auto	Pages: auto	Button text: two pages side by side when the window is wider than high, otherwise one
+preview.reading_spread_single	One page	Button text: one page at a time
+preview.reading_spread_double	Two pages	Button text: always two pages side by side
+preview.reading_spread_tip	Pages side by side (S): auto / one page / two pages	Tooltip of the pages button and menu item
+preview.reading_shift	Shift by one page	Menu item and note (O): for books whose spreads are off by one page
+preview.reading_resume	Continuing from page {0}	Note when a book is opened again where it was left
+main.comic_reading_mode	Open comic book archives in reading mode	Settings, picture preview
+main.comic_reading_mode_desc	Double-clicking a .cbz, .cb7, .cbr or .cbt file opens its pictures in the reading mode of the picture preview. Turn this off to see the file list instead.	Description of the setting
+main.reading_mode_keys	Reading mode / direction / one or two pages / shift by one page	A row of the keyboard shortcut list (picture preview window)
+main.remember_this_password	Remember this password	Check box of the password dialog: save it (encrypted) once it proves right
+main.used_saved_password	Opened with a saved password	Status note: a password of this run or a saved one fitted, no question was asked
+main.passwords	Passwords	Settings tab
+main.password_manager	Password manager	Settings, heading of the passwords tab
+main.auto_try_saved_passwords	Try saved passwords automatically	Setting
+main.auto_try_saved_passwords_desc	When an archive needs a password, try the saved ones first (up to 50, or for 5 seconds) and ask only if none of them fits.	Description of the setting
+main.remember_run_passwords	Remember the passwords used in this session	Setting
+main.remember_run_passwords_desc	Passwords that worked are kept in memory and tried first, until LycanZip is closed. They are never written to disk.	Description of the setting
+main.remember_password_default	"Remember this password" is selected by default	Setting
+main.remember_password_default_desc	In the password dialog. Otherwise a password is saved only when you select it.	Description of the setting
+main.saved_passwords	Saved passwords	Settings, heading and list name
+main.saved_passwords_desc	Saved in passwords.dat next to the settings, encrypted for your Windows account. They can only be read by this account on this PC (a portable copy moved to another PC can't read them). This does not protect against malware running under your account.	Explains where and how the passwords are kept, and the limits
+main.add_password	Add password	Button and dialog title
+main.import_passwords	Import…	Button: a text file with one password per line
+main.export_passwords	Export…	Button: a plain text file with one password per line
+main.clear_unreadable_passwords	Delete the saved passwords	Button shown when the saved passwords cannot be read
+main.saved_passwords_unreadable	The saved passwords can't be read. They were saved by another Windows account or on another PC, or the file is damaged.	Settings, passwords tab
+main.clear_unreadable_passwords_question	Delete passwords.dat? The passwords in it are lost. New ones can then be saved.	Confirmation
+main.no_saved_passwords	No saved passwords yet. Select "Remember this password" when you type one, or add it here.	Empty list
+main.hidden_password	Hidden password	Accessible name of a masked password in the list
+main.never_used	Never used	Last used column of a saved password
+main.copy_password	Copy password	Button
+main.edit_password	Edit password	Button and dialog title
+main.delete_password	Delete password	Button and dialog title
+main.delete_password_question	Delete this saved password?	Confirmation
+main.password_copied	Password copied	Status note
+main.password_note	Note (optional)	Field of the password dialog in the settings
+main.password_note_hint	Where the password is from	Placeholder of the note field
+main.could_not_save_passwords	Couldn't save the passwords.	Error
+main.password_file_too_large	This file is too large to be a list of passwords.	Import error
+main.passwords_imported	{0} new {0:password|passwords} imported.	After the import; passwords that were saved already are not counted
+main.export_passwords_warning	The exported file is plain text: anyone who can open it can read every password. Keep it somewhere safe and delete it when you no longer need it.	Warning before the export
+main.text_file	Text file	File type in the save dialog
+main.passwords_exported	Passwords exported	Status note
+main.master_password	Master password	Heading and field label: one password that protects the saved passwords
+main.master_password_desc	Asks for one password before the saved passwords are tried, shown or changed, once each time LycanZip starts. If you forget it, the saved passwords can't be recovered: they can only be deleted.	Description of the master password card on the Passwords tab
+main.master_password_off	Off. The saved passwords are protected by your Windows account only.	State of the master password
+main.master_password_unlocked	On. The saved passwords are unlocked until LycanZip is closed.	State of the master password
+main.master_password_locked	On. The saved passwords are locked.	State of the master password
+main.set_master_password	Set master password	Button and dialog title
+main.change_master_password	Change master password	Button and dialog title
+main.turn_off_master_password	Turn off master password	Button and dialog title
+main.lock_now	Lock now	Button: lock the saved passwords again
+main.unlock	Unlock	Button: open the saved passwords with the master password
+main.unlock_saved_passwords	Unlock saved passwords	Dialog title
+main.forgot_master_password	Forgot the master password?	Link that deletes the saved passwords (after a question)
+main.reset_saved_passwords_question	Without the master password the saved passwords can't be read. Delete all saved passwords and the master password? This can't be undone.	
+main.delete_all	Delete all	Button
+main.current_master_password	Current master password	Field label
+main.new_master_password	New master password	Field label
+main.master_password_rules	At least 4 characters. If you forget it, the saved passwords can't be recovered: they can only be deleted.	Under the fields for a new master password (the program requires 4 characters)
+main.wrong_master_password	Wrong master password.	
+main.master_password_set	Master password set	Status note
+main.master_password_changed	Master password changed	Status note
+main.master_password_turned_off	Master password turned off	Status note
+main.saved_passwords_locked_now	Saved passwords locked	Status note
+main.saved_passwords_are_locked	The saved passwords are locked. Unlock them with the master password to see or change them.	Shown instead of the list of saved passwords
+main.unlock_to_try_saved	Your saved passwords are locked. Enter the master password to try them.	In the password dialog of an archive
+main.master_to_remember	Your saved passwords are locked. To remember this password, enter the master password.	In the password dialog of an archive (when the saved passwords are not tried automatically)
+main.enter_master_to_remember	Enter the master password to remember this password.	
+main.unlock_and_try	Unlock and try	Button next to the master password field
+main.no_saved_password_fits	None of the saved passwords fits.	
+main.use_saved_password	Use a saved password	Button under the password of a new archive
+main.show_passwords	Show passwords	Check box in the list of saved passwords
+main.save_button	Save	Button of the dialog that adds or edits a saved password
+core.repack_damaged	{0} {0:item|items} of the archive could not be read (damaged). Nothing was converted.	Converting / removing the password: the source archive has damaged items
+core.repack_test_failed	The new archive did not pass the integrity test. The original archive was not changed.	Removing the password / upgrading: the original is replaced only when the new archive passes the test
+core.repack_count_mismatch	The new archive has {0} {0:file|files}, the original had {1}.	Warning after converting
+main.convert_archive_format	Convert archive format…	Menu item (More options, the context menu setting): opens the new archive page with this archive as the source
+main.convert_archive_title	Convert archive format	Title of the new archive page when it converts archives
+main.remove_archive_password	Remove archive password	Menu item: packs the archive again without its password and replaces it (after an integrity test)
+main.upgrade_archive	Upgrade archive	Menu item and link: writes the file names of an old zip again in UTF-8
+main.upgrade_archive_tip	Stores the file names in UTF-8, so that they show correctly on any PC. The data is copied as it is.	Tooltip of "Upgrade archive"
+main.upgrade_avoids_problem	 You can avoid this by upgrading the archive.	Added after the message about the detected file name encoding (keep the space at the start where the language puts one between sentences)
+main.convert_password	Password of the new archive	Header of a drop-down when converting
+main.keep_original_password	Keep the original password	Choice of "Password of the new archive"
+main.no_password	No password	Choice of "Password of the new archive"
+main.new_password	New password	Choice of "Password of the new archive"
+main.convert_each_keeps_name	Each archive keeps its name, with the extension {0}	Converting several archives; {0} is the new extension (.7z)
+main.password_removed	Password removed (the new archive passed the integrity test)	Status note
+main.archive_upgraded	Archive upgraded: the file names are stored in UTF-8 now	Status note
+main.items_left_out_original_kept	  (Some items could not be read and were left out, so deleting the original isn't offered)	On the card of a conversion
+main.conversion	Conversion	Title of a task card (followed by the archive name)
+main.password_removal	Removing the password	Title of a task card (followed by the archive name)
+task.tested	, tested	After "Done  3 files  1.2 MB → 1.0 MB" of a conversion
+task.left_out	, {0} left out	Items that could not be read
+shell.convert	Convert archive format…	Explorer context menu item
+main.start_converting	Start converting	Button of the new archive page when it converts archives
+main.upgrade_confirm_text	The file names are stored in UTF-8 for good, exactly as shown below. If they look garbled, choose another encoding first.	In the dialog before upgrading an archive; below it: an encoding drop-down and some file names
+main.upgrade_encoding_uncertain	The encoding was detected but is not certain: check the names carefully.	
+main.upgrade_button	Upgrade	Button of the upgrade dialog
+main.convert_names_note	The file names are written as shown now ({0}). If they look garbled, go back and choose another encoding first.	On the convert page, for an archive whose names have no encoding mark; {0} is the encoding (Shift-JIS)
+main.tar_names_title	Store the file names in UTF-8?	Dialog title before the first change of an old tar archive
+main.tar_names_text	The file names of this tar archive have no encoding mark. Changing it stores all of them in UTF-8 for good, exactly as shown below. If they look garbled, cancel and choose another encoding at the top right first.	Below it: some file names as they are shown now

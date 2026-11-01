@@ -21,7 +21,8 @@ DataLocation GetDataLocation();
 // LocalState folder (%LOCALAPPDATA%\Packages\<family>\LocalState). Not %LOCALAPPDATA%\LycanZip for a package: Windows redirects the writes
 // of a package there to a private copy, so the package would read the files of an installed copy until it saved once, and File Explorer
 // ("Open the settings folder") would show files that the package does not use. The first time a package asks, the settings and the presets
-// it saw in %LOCALAPPDATA%\LycanZip are copied to LocalState (once: a file "imported" is left there). The settings, the presets, the logs,
+// it saw in %LOCALAPPDATA%\LycanZip are copied to LocalState (once: a file "imported" is left there when something was copied; with nothing
+// to copy, it looks again at the next start until the package has a settings.ini of its own). The settings, the presets, the logs,
 // the crash reports and the Explorer menu (shellext.cpp) all use this folder.
 std::filesystem::path UserDataDir();
 // The same rule for given folders (tests): packageDir empty = not a package

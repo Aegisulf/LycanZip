@@ -1019,6 +1019,11 @@ preset.store_only_no_compression	仅存储，不压缩	05d2dfd8
 lang.zh_tw	繁體中文	1f7e4a4c
 lang.en_us	English	649df08a
 lang.zh_cn	简体中文	93659150
+lang.ja_jp	日本語	c12140a0
+lang.ko_kr	한국어	6e081b59
+lang.de_de	Deutsch	a6a77092
+lang.es_es	Español	2001ca08
+lang.fr_fr	Français	2ca514eb
 ## fmt
 fmt.value_paren	{0}（{1}）	4aec5d0a
 fmt.size_bytes	{0}（{1} 字节）	a94a0670
@@ -1372,3 +1377,144 @@ main.view_small_icons	小图标	9fd460c2
 main.view_medium_icons	中图标	66c5bbfe
 main.view_large_icons	大图标	7d71ad7d
 main.view_huge_icons	超大图标	4ec7f1c2
+main.search_settings	搜索设置	9a6f37a7
+main.search_settings_ctrl_f	搜索设置（Ctrl+F）	2763171f
+main.no_settings_match	没有匹配的设置	ba12d2cd
+main.search_settings_on_page	搜索设置（在设置页）	862a70e5
+main.preview_pane	预览窗格	b40b3929
+main.preview_pane_toggle	预览窗格开关	cad29b53
+main.show_preview_pane	显示预览窗格	d5b62a9a
+main.preview_pane_desc	在文件夹树下方显示选中的项目（所有视图模式）：图片、文本、PDF、音频标签和详细信息。窗口太窄时会自动隐藏。	8fe413c6
+main.show_hide_preview_pane	显示 / 隐藏预览窗格	89f2d82c
+main.drag_resize_preview_pane_double	拖动调整预览窗格高度（双击还原）	aaa0b471
+main.preview_pane_splitter	预览窗格分隔线	ad8cab6b
+preview.pane_text	文本预览	960373f3
+preview.pane_loading	正在读取	8f26c652
+preview.pane_enlarge	打开较大的预览	b7a798a8
+preview.pane_previous_page	上一页	81f54719
+preview.pane_next_page	下一页	4bfc194b
+preview.pane_page_of	第 {0} 页，共 {1} 页	c10e7490
+preview.pane_play	播放	5d12bd53
+preview.pane_enter_password	输入密码	570591c0
+preview.pane_locked	已加密，输入密码后即可预览。	0c432e08
+preview.pane_program_not_previewed	程序和安装程序不提供预览。	ba76c063
+preview.pane_not_text	这个文件看起来不是文本。	533067ba
+preview.pane_text_truncated	（只显示前 {0}。）	79ced1ce
+preview.pane_audio_title	标题	768e0c1c
+preview.pane_audio_artist	艺术家	6c3f3d32
+preview.pane_audio_album	专辑	dfb4c9a1
+preview.pane_length	时长	3bade34e
+preview.pane_pdf_failed	无法显示这个 PDF，文件可能已损坏或受保护。	a741ecac
+preview.pane_window_title	预览	f1fbb2b4
+preview.pane_window_title_name	预览 – {0}	d4bdfa4a
+welcome.preview_pane_hint	在文件夹树下方显示选中的图片、文本或 PDF	9066fd16
+preview.reading_mode	阅读模式	d75871a6
+preview.reading_mode_tip	阅读模式（B）：按顺序读整个压缩文件、双页并排、从右到左	d7b46a5e
+preview.reading_on	已打开阅读模式	8dfdb523
+preview.reading_off	已关闭阅读模式	6d526edb
+preview.reading_rtl	从右到左	da502a64
+preview.reading_ltr	从左到右	34ce1477
+preview.reading_direction_tip	阅读方向（D）	39306b19
+preview.reading_spread_auto	页面：自动	f2bfb879
+preview.reading_spread_single	单页	b6c31c22
+preview.reading_spread_double	双页	bd8c3aa6
+preview.reading_spread_tip	双页并排（S）：自动 / 单页 / 双页	3b726cd5
+preview.reading_shift	错开一页	5f7d1b48
+preview.reading_resume	从第 {0} 页继续	abd0854c
+main.comic_reading_mode	漫画压缩文件直接以阅读模式打开	410e39d2
+main.comic_reading_mode_desc	双击 .cbz、.cb7、.cbr 或 .cbt 文件时，直接以图形预览的阅读模式打开图片。关闭则改为显示文件列表。	7c65a9e1
+main.reading_mode_keys	阅读模式 / 方向 / 单页或双页 / 错开一页	7ffd115a
+main.remember_this_password	记住这个密码	9c29b204
+main.used_saved_password	已使用保存的密码	8fbc1750
+main.passwords	密码	02c83041
+main.password_manager	密码管理器	17015895
+main.auto_try_saved_passwords	自动尝试已保存的密码	c5c561d7
+main.auto_try_saved_passwords_desc	压缩文件需要密码时，先试已保存的密码（最多 50 个或 5 秒），都不对才询问。	5cd0401d
+main.remember_run_passwords	记住这次运行期间用过的密码	92bf3dab
+main.remember_run_passwords_desc	用对的密码会留在内存中并优先尝试，直到关闭 LycanZip 为止，不会写入磁盘。	c99abf03
+main.remember_password_default	“记住这个密码”默认勾选	7f51be69
+main.remember_password_default_desc	在密码对话框中。关闭时，只有你勾选的密码才会保存。	dbbb2f08
+main.saved_passwords	已保存的密码	b3c61c55
+main.saved_passwords_desc	保存在设置旁的 passwords.dat，以你的 Windows 账户加密，只有这台电脑的这个账户能读取（便携版搬到别的电脑后读不出来）。无法防范在你的账户下运行的恶意程序。	c21e27eb
+main.add_password	添加密码	7b7a8260
+main.import_passwords	导入…	4834caf8
+main.export_passwords	导出…	0a116345
+main.clear_unreadable_passwords	删除已保存的密码	2063bc45
+main.saved_passwords_unreadable	无法读取已保存的密码：它们是在另一个 Windows 账户或另一台电脑上保存的，或者文件已损坏。	bf64511e
+main.clear_unreadable_passwords_question	要删除 passwords.dat 吗？里面的密码会丢失，之后可以重新保存新的密码。	942eb96f
+main.no_saved_passwords	还没有保存任何密码。输入密码时勾选“记住这个密码”，或在这里添加。	0be995a4
+main.hidden_password	已隐藏的密码	a51156d2
+main.never_used	尚未使用	984ec5ee
+main.copy_password	复制密码	cda3abab
+main.edit_password	编辑密码	22215170
+main.delete_password	删除密码	330753fe
+main.delete_password_question	要删除这个已保存的密码吗？	7330db44
+main.password_copied	已复制密码	9a0081f0
+main.password_note	备注（可选）	4e395670
+main.password_note_hint	这个密码的来源	bd693a41
+main.could_not_save_passwords	无法保存密码。	d5436c25
+main.password_file_too_large	这个文件太大，不像是密码列表。	1c31e120
+main.passwords_imported	已导入 {0} 个新密码。	6d274f3a
+main.export_passwords_warning	导出的文件是纯文本，任何能打开它的人都能看到所有密码。请妥善保管，不需要时就删除。	ba640f91
+main.text_file	文本文件	ee3d21a8
+main.passwords_exported	已导出密码	1100b2dc
+main.master_password	主密码	33acdbd6
+main.master_password_desc	使用、查看或修改已保存的密码前，先要求输入一个密码；每次启动 LycanZip 只需输入一次。忘记主密码就无法找回已保存的密码，只能全部删除。	453684fb
+main.master_password_off	关闭。已保存的密码只受你的 Windows 账户保护。	8e599348
+main.master_password_unlocked	开启。已保存的密码已解锁，直到关闭 LycanZip。	9b1f206e
+main.master_password_locked	开启。已保存的密码已锁定。	d650441e
+main.set_master_password	设置主密码	5867cf47
+main.change_master_password	更改主密码	318ba37e
+main.turn_off_master_password	关闭主密码	a4c8bd59
+main.lock_now	立即锁定	9217b30d
+main.unlock	解锁	1526a17e
+main.unlock_saved_passwords	解锁已保存的密码	8310b6ac
+main.forgot_master_password	忘记主密码？	4322007e
+main.reset_saved_passwords_question	没有主密码就无法读取已保存的密码。要删除所有已保存的密码和主密码吗？此操作无法撤消。	82c2607e
+main.delete_all	全部删除	08170580
+main.current_master_password	当前的主密码	78246fe5
+main.new_master_password	新的主密码	a935c72d
+main.master_password_rules	至少 4 个字符。忘记主密码就无法找回已保存的密码，只能全部删除。	7d63f663
+main.wrong_master_password	主密码错误。	70658a46
+main.master_password_set	已设置主密码	48fb5813
+main.master_password_changed	已更改主密码	aeb24a2b
+main.master_password_turned_off	已关闭主密码	84fb0020
+main.saved_passwords_locked_now	已锁定已保存的密码	7799a360
+main.saved_passwords_are_locked	已保存的密码已锁定。用主密码解锁后才能查看或修改。	7d5fda6d
+main.unlock_to_try_saved	已保存的密码已锁定。输入主密码即可自动尝试。	694ae67a
+main.master_to_remember	已保存的密码已锁定。要记住这个密码，请输入主密码。	a14af63c
+main.enter_master_to_remember	请输入主密码才能记住这个密码。	3f28a8b9
+main.unlock_and_try	解锁并尝试	2d406384
+main.no_saved_password_fits	已保存的密码都不正确。	f5d39707
+main.use_saved_password	使用已保存的密码	ccb81a8c
+main.show_passwords	显示密码	a7656741
+main.save_button	保存	efc007a3
+core.repack_damaged	压缩文件中有 {0} 个项目无法读取（已损坏），没有进行转换。	abbaaa71
+core.repack_test_failed	新的压缩文件没有通过完整性测试，原压缩文件没有更改。	41a7b625
+core.repack_count_mismatch	新的压缩文件有 {0} 个文件，原压缩文件有 {1} 个。	80a46cfa
+main.convert_archive_format	转换压缩文件格式…	9555ac3f
+main.convert_archive_title	转换压缩文件格式	14c35dc9
+main.remove_archive_password	移除压缩文件的密码	b7a726b2
+main.upgrade_archive	升级压缩文件	95cf43c8
+main.upgrade_archive_tip	把文件名改用 UTF-8 保存，在任何电脑上都能正确显示。文件内容原样保留。	0693060f
+main.upgrade_avoids_problem	可通过升级压缩文件来避免此问题。	3b1ecb4c
+main.convert_password	新压缩文件的密码	f99b5cc8
+main.keep_original_password	沿用原来的密码	ade86a77
+main.no_password	不加密	18518368
+main.new_password	新的密码	d850ee18
+main.convert_each_keeps_name	每个压缩文件沿用原来的文件名，扩展名改为 {0}	86eeb4df
+main.password_removed	已移除密码（新的压缩文件已通过完整性测试）	8451dd24
+main.archive_upgraded	已升级压缩文件：文件名现在以 UTF-8 保存	abec33f5
+main.items_left_out_original_kept	（有些项目无法读取而被跳过，所以不提供删除原文件）	f4309fa4
+main.conversion	转换	9151f843
+main.password_removal	移除密码	43970eb1
+task.tested	，已测试	0d1a310d
+task.left_out	，跳过 {0} 个	170b0356
+shell.convert	转换压缩文件格式…	9555ac3f
+main.start_converting	开始转换	69bc1019
+main.upgrade_confirm_text	升级后文件名会照下面的样子以 UTF-8 永久保存。如果看起来是乱码，请先换一个编码。	35846f99
+main.upgrade_encoding_uncertain	自动检测的编码不确定，请仔细确认文件名。	28d37b63
+main.upgrade_button	升级	a6f47e00
+main.convert_names_note	文件名会照当前显示的样子（{0}）写入。如果看起来是乱码，请先返回换一个编码。	4563f36d
+main.tar_names_title	以 UTF-8 保存文件名？	1cc12cbc
+main.tar_names_text	这个 tar 压缩文件的文件名没有编码标记。修改时所有文件名都会照下面的样子以 UTF-8 永久保存。如果看起来是乱码，请取消，先在右上角换一个编码。	85e7fd4d

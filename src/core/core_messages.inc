@@ -126,3 +126,6 @@
 {L"core.temp_space_full", L"Not enough temporary space: \"{2}\" is full ({1} MB free)"},
 {L"core.dll_not_pinned", L"7z.dll is not the one that LycanZip came with, so it was not loaded: {0}. Reinstall LycanZip to get the right file"},
 {L"core.dll_missing_pinned", L"7z.dll was not found next to LycanZip. Reinstall LycanZip to get it back"},
+{L"core.repack_damaged", L"{0} {0:item|items} of the archive could not be read (damaged). Nothing was converted."},
+{L"core.repack_test_failed", L"The new archive did not pass the integrity test. The original archive was not changed."},
+{L"core.repack_count_mismatch", L"The new archive has {0} {0:file|files}, the original had {1}."},

@@ -671,10 +671,15 @@ std::unique_ptr<ArchiveSource> ArchiveSource::Open(const std::filesystem::path& 
 }
 
 bool ArchiveSource::CheckPassword(const std::wstring& password) {
-    // Test-read the smallest encrypted file: cheapest, and a wrong AES / ZipCrypto password fails here
+    // Test-read the smallest encrypted file that is not empty: cheapest, and the whole file is unpacked and its CRC checked. An empty
+    // file has no data to check: ZipCrypto would then rest on its one check byte alone and let about 1 wrong password in 256 through
+    // (too many when saved passwords are tried one after another). Only when every encrypted file is empty is an empty one used.
     const Entry* smallest = nullptr;
-    for (auto& e : impl_->entries)
-        if (!e.isDir && e.isEncrypted && (!smallest || e.size < smallest->size)) smallest = &e;
+    for (auto& e : impl_->entries) {
+        if (e.isDir || !e.isEncrypted) continue;
+        const bool better = !smallest || (smallest->size == 0 && e.size > 0) || (e.size > 0 && e.size < smallest->size);
+        if (better) smallest = &e;
+    }
     if (!smallest) return true;  // no encrypted file (or the encryption is at the header level and was checked while opening)
 
     struct NullSink final : ByteSink {

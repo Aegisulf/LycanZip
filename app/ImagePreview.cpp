@@ -10,6 +10,7 @@
 #include <cstring>
 #include <functional>
 #include <list>
+#include <fstream>
 #include <map>
 #include <memory>
 #include <mutex>
@@ -20,6 +21,7 @@
 #include "AiMeta.h"
 #include "DragOut.h"
 #include "Foreground.h"
+#include "MenuCursor.h"
 #include <shlobj.h>
 #include <shobjidl_core.h>
 #include <winrt/Windows.Graphics.Imaging.h>
@@ -346,7 +348,7 @@ private:
         bar_.Background(dim(0x55));
         bar_.Padding(ThicknessHelper::FromLengths(10, 6, 150, 6));
         bar_.ColumnSpacing(8);
-        for (int i = 0; i < 6; ++i) {
+        for (int i = 0; i < 9; ++i) {   // previous, next, counter, name (the drag area), reading mode, direction, pages, zoom, menu
             ColumnDefinition cd;
             cd.Width(i == 3 ? GridLength{1, GridUnitType::Star} : GridLength{0, GridUnitType::Auto});
             bar_.ColumnDefinitions().Append(cd);
@@ -377,11 +379,31 @@ private:
         Microsoft::UI::Xaml::Controls::ToolTipService::SetToolTip(fit_, box_value(lycan::Tr(L"preview.switch_f_between_fit_window_width")));
         Microsoft::UI::Xaml::Automation::AutomationProperties::SetName(fit_, lycan::Tr(L"preview.actual_size"));
         fit_.Click([self = weak_from_this()](auto&&, auto&&) { if (auto s = self.lock()) s->ToggleFit(); });
+        // reading mode: the switch, and (while reading) the direction and the pages side by side
+        readBtn_ = Primitives::ToggleButton{};
+        {
+            FontIcon ic;
+            ic.Glyph(L"");   // reading mode
+            ic.FontSize(14);
+            readBtn_.Content(ic);
+            Microsoft::UI::Xaml::Controls::ToolTipService::SetToolTip(readBtn_, box_value(lycan::Tr(L"preview.reading_mode_tip")));
+            Microsoft::UI::Xaml::Automation::AutomationProperties::SetName(readBtn_, lycan::Tr(L"preview.reading_mode"));
+        }
+        readBtn_.Click([self = weak_from_this()](auto&&, auto&&) { if (auto s = self.lock()) s->ToggleReading(); });
+        dirBtn_ = Button{};
+        dirBtn_.Click([self = weak_from_this()](auto&&, auto&&) { if (auto s = self.lock()) s->ToggleDirection(); });
+        Microsoft::UI::Xaml::Controls::ToolTipService::SetToolTip(dirBtn_, box_value(lycan::Tr(L"preview.reading_direction_tip")));
+        spreadBtn_ = Button{};
+        spreadBtn_.Click([self = weak_from_this()](auto&&, auto&&) { if (auto s = self.lock()) s->CycleSpread(); });
+        Microsoft::UI::Xaml::Controls::ToolTipService::SetToolTip(spreadBtn_, box_value(lycan::Tr(L"preview.reading_spread_tip")));
         Grid::SetColumn(prev_, 0);
         Grid::SetColumn(next_, 1);
         Grid::SetColumn(counter_, 2);
         Grid::SetColumn(name_, 3);
-        Grid::SetColumn(fit_, 4);
+        Grid::SetColumn(readBtn_, 4);
+        Grid::SetColumn(dirBtn_, 5);
+        Grid::SetColumn(spreadBtn_, 6);
+        Grid::SetColumn(fit_, 7);
         menuBtn_ = Button{};
         {
             FontIcon ic;
@@ -392,11 +414,14 @@ private:
             Microsoft::UI::Xaml::Automation::AutomationProperties::SetName(menuBtn_, lycan::Tr(L"preview.menu"));
             menuBtn_.Flyout(BuildMenu());
         }
-        Grid::SetColumn(menuBtn_, 5);
+        Grid::SetColumn(menuBtn_, 8);
         bar_.Children().Append(prev_);
         bar_.Children().Append(next_);
         bar_.Children().Append(counter_);
         bar_.Children().Append(name_);
+        bar_.Children().Append(readBtn_);
+        bar_.Children().Append(dirBtn_);
+        bar_.Children().Append(spreadBtn_);
         bar_.Children().Append(fit_);
         bar_.Children().Append(menuBtn_);
         Grid::SetColumnSpan(bar_, 2);
@@ -458,6 +483,7 @@ private:
         host_ = Grid{};
         host_.Background(Microsoft::UI::Xaml::Media::SolidColorBrush{Windows::UI::Color{0, 0, 0, 0}});  // an empty area also receives the mouse (drag to pan, double click)
         host_.ContextFlyout(BuildMenu());  // right click on the picture: the same menu
+        lycan_app::RefreshCursorWhenOpened(host_.ContextFlyout());
         wrapper_ = Grid{};
         wrapper_.HorizontalAlignment(HorizontalAlignment::Center);
         wrapper_.VerticalAlignment(VerticalAlignment::Center);
@@ -470,13 +496,25 @@ private:
             img->Opacity(0);
             wrapper_.Children().Append(*img);
         }
+        // the second page of a spread (reading mode): next to the page shown, in the same frame
+        pair_ = Image{};
+        pair_.Stretch(Microsoft::UI::Xaml::Media::Stretch::Fill);
+        pair_.VerticalAlignment(VerticalAlignment::Center);
+        pair_.Visibility(Visibility::Collapsed);
+        wrapper_.Children().Append(pair_);
         host_.Children().Append(wrapper_);
         scroll_.Content(host_);
         host_.DoubleTapped([self = weak_from_this()](Windows::Foundation::IInspectable const&, Input::DoubleTappedRoutedEventArgs const& e) {
             if (auto s = self.lock()) {
                 auto p = e.GetPosition(s->scroll_);
+                if (s->PageTurnZone(p.X) != 0) return;   // the sides turn pages in the reading mode (two clicks = two pages, no zoom)
                 s->ToggleFit(p.X, p.Y);
             }
+        });
+        // reading mode: a click on the left or right side turns the page (only when the picture fits: otherwise a click starts a pan)
+        host_.Tapped([self = weak_from_this()](Windows::Foundation::IInspectable const&, Input::TappedRoutedEventArgs const& e) {
+            if (auto s = self.lock())
+                if (const int z = s->PageTurnZone(e.GetPosition(s->scroll_).X)) s->Navigate(z < 0 ? (s->rtl_ ? +1 : -1) : (s->rtl_ ? -1 : +1));
         });
         host_.PointerPressed([self = weak_from_this()](Windows::Foundation::IInspectable const&, Input::PointerRoutedEventArgs const& e) {
             auto s = self.lock();
@@ -501,7 +539,9 @@ private:
         host_.PointerReleased(endPan);
         host_.PointerCanceled(endPan);
         host_.PointerCaptureLost(endPan);
-        scroll_.SizeChanged([self = weak_from_this()](auto&&, auto&&) { if (auto s = self.lock()) s->Reflow(); });
+        scroll_.SizeChanged([self = weak_from_this()](auto&&, auto&&) {
+            if (auto s = self.lock()) { if (s->reading_) s->UpdatePair(); else s->Reflow(); }   // (a wider window may turn one page into two)
+        });
         bodyGrid_ = Grid{};
         auto& body = bodyGrid_;
         {
@@ -605,11 +645,12 @@ private:
         const auto kCtrlShift = static_cast<VM>(static_cast<uint32_t>(VM::Control) | static_cast<uint32_t>(VM::Shift));
         key(VK::Escape, [](PreviewWindow& s) { if (s.fullscreen_) s.ToggleFullscreen(); else s.Close(); });
         // Arrow keys: pan when the picture is larger than the window, otherwise page
-        key(VK::Left, [](PreviewWindow& s) { if (s.CanPan()) s.Pan(-80, 0); else s.Navigate(-1); });
+        // (reading right to left: the left arrow is the next page)
+        key(VK::Left, [](PreviewWindow& s) { if (s.CanPan()) s.Pan(-80, 0); else s.Navigate(s.reading_ && s.rtl_ ? +1 : -1); });
         key(VK::Up, [](PreviewWindow& s) { if (s.CanPan()) s.Pan(0, -80); else s.Navigate(-1); });
-        key(VK::Right, [](PreviewWindow& s) { if (s.CanPan()) s.Pan(80, 0); else s.Navigate(+1); });
+        key(VK::Right, [](PreviewWindow& s) { if (s.CanPan()) s.Pan(80, 0); else s.Navigate(s.reading_ && s.rtl_ ? -1 : +1); });
         key(VK::Down, [](PreviewWindow& s) { if (s.CanPan()) s.Pan(0, 80); else s.Navigate(+1); });
-        key(VK::Space, [](PreviewWindow& s) { s.Navigate(+1); });
+        // (Space: in PreviewKeyDown below, so that a focused button does not take it)
         key(VK::PageDown, [](PreviewWindow& s) { s.Navigate(+1); });
         key(VK::Back, [](PreviewWindow& s) { s.Navigate(-1); });
         key(VK::PageUp, [](PreviewWindow& s) { s.Navigate(-1); });
@@ -628,6 +669,10 @@ private:
         key(VK::R, [](PreviewWindow& s) { s.Rotate(-1); }, kShift);
         key(VK::T, [](PreviewWindow& s) { s.ToggleThumbs(); });
         key(VK::B, [](PreviewWindow& s) { s.ToggleThumbs(); }, kCtrl);
+        key(VK::B, [](PreviewWindow& s) { s.ToggleReading(); });
+        key(VK::D, [](PreviewWindow& s) { if (s.reading_) s.ToggleDirection(); });
+        key(VK::S, [](PreviewWindow& s) { if (s.reading_) s.CycleSpread(); });
+        key(VK::O, [](PreviewWindow& s) { if (s.reading_) s.ShiftPage(); });
         key(VK::C, [](PreviewWindow& s) { s.CopyImageAsync(); }, kCtrl);
         key(VK::C, [](PreviewWindow& s) { s.CopyPath(); }, kCtrlShift);
         key(VK::S, [](PreviewWindow& s) { s.ExtractCurrentAsync(); }, kCtrl);
@@ -642,6 +687,11 @@ private:
         root_.PreviewKeyDown([self = weak_from_this()](auto&&, Input::KeyRoutedEventArgs const& a) {
             using Microsoft::UI::Input::InputKeyboardSource;
             using Windows::UI::Core::CoreVirtualKeyStates;
+            // Space too: a focused button (the reading mode switch, previous / next) would take it as a press; Space is the next page
+            if (a.Key() == Windows::System::VirtualKey::Space) {
+                if (auto s = self.lock()) { s->Navigate(+1); a.Handled(true); }
+                return;
+            }
             if (a.Key() != Windows::System::VirtualKey::Enter) return;
             if (static_cast<uint32_t>(InputKeyboardSource::GetKeyStateForCurrentThread(Windows::System::VirtualKey::Menu)) & static_cast<uint32_t>(CoreVirtualKeyStates::Down)) return;  // Alt+Enter: the info panel
             auto s = self.lock();
@@ -651,6 +701,7 @@ private:
             }
         });
 
+        if (auto tag = lycan::i18n::UiLanguageTag(); !tag.empty()) root_.Language(hstring{tag});  // the font fallback picks the fonts by the language
         win_.Content(root_);
         // SetTitleBar is not used (the whole toolbar would count as the title bar, and the buttons for previous / next picture, pressed quickly, would be taken as a double click on the title bar and maximize / restore);
         // only the empty column in the middle of the toolbar is made the drag area, the rest (buttons, counter) is ordinary client area
@@ -671,15 +722,40 @@ private:
 
     // Starts (or restarts) a list
     void Start(PreviewRequest req) {
+        SaveReading();   // the book that was open (when it was read)
         ++session_;
         ++gen_;
         req_ = std::move(req);
-        cache_.clear();
-        thumbs_.clear();
-        wanted_.clear();
         readerA_.Reset(req_.archive, req_.open);
         readerB_.Reset(req_.archive, req_.open);
         readerC_.Reset(req_.archive, req_.open);
+        bookKey_ = BookKey(req_.archive);
+        reading_ = req_.reading;
+        otherItems_.clear();
+        if (reading_ && !req_.book.empty()) { otherItems_ = std::move(req_.items); req_.items = std::move(req_.book); }
+        else if (!reading_) otherItems_ = std::move(req_.book);
+        req_.book.clear();
+        fitKind_ = reading_ ? 2 : 0;
+        size_t start = req_.start;
+        if (reading_) {   // where this book was left
+            if (const size_t at = RestoreReading(); at != SIZE_MAX && at > 0) {
+                start = at;
+                ShowToast(hstring{lycan::Tf(L"preview.reading_resume", at + 1)});
+            }
+        }
+        UseList(start);
+    }
+
+    // Puts req_.items on the strip and shows `start` (after Start, or when the reading mode switches the list)
+    void UseList(size_t start) {
+        ++gen_;
+        ++prefetchEpoch_;
+        cache_.clear();
+        thumbs_.clear();
+        wanted_.clear();
+        HidePair();
+        forceSingle_ = false;
+        UpdateReadingUi();
         auto names = single_threaded_observable_vector<Windows::Foundation::IInspectable>();
         // Every item must be a different object: two pictures with the same name (in different folders) boxed as equal
         // strings would be the same item to the list, and selecting one would select / scroll to the other. The tile's
@@ -688,8 +764,247 @@ private:
         syncingStrip_ = true;
         strip_.ItemsSource(names);
         syncingStrip_ = false;
-        pos_ = std::min(req_.start, req_.items.empty() ? size_t{0} : req_.items.size() - 1);
+        pos_ = std::min(start, req_.items.empty() ? size_t{0} : req_.items.size() - 1);
         GoTo(pos_);
+    }
+
+    // ---- Reading mode
+    void ToggleReading() {
+        const uint32_t entry = pos_ < req_.items.size() ? req_.items[pos_].entryIndex : UINT32_MAX;
+        if (reading_) SaveReading();
+        if (!otherItems_.empty()) std::swap(req_.items, otherItems_);   // the whole book <-> the folder the preview was opened from
+        reading_ = !reading_;
+        fitKind_ = reading_ ? 2 : 0;   // pages: fit the height
+        fitMode_ = true;
+        size_t start = 0;
+        for (size_t i = 0; i < req_.items.size(); ++i)
+            if (req_.items[i].entryIndex == entry) { start = i; break; }
+        ShowToast(hstring{lycan::Tr(reading_ ? L"preview.reading_on" : L"preview.reading_off")});
+        UseList(start);
+    }
+    void ToggleDirection() {
+        rtl_ = !rtl_;
+        UpdateReadingUi();
+        Reflow();   // the two pages change sides
+        ShowToast(hstring{lycan::Tr(rtl_ ? L"preview.reading_rtl" : L"preview.reading_ltr")});
+    }
+    void CycleSpread() {
+        spread_ = (spread_ + 1) % 3;
+        forceSingle_ = false;
+        UpdateReadingUi();
+        UpdatePair();
+        ShowToast(hstring{SpreadName()});
+    }
+    // "Shift by one page": a book whose spreads are off by one (a missing cover page, an inserted page)
+    void ShiftPage() {
+        if (pairPos_ != SIZE_MAX) { forceSingle_ = true; HidePair(); Reflow(); }   // this page alone: the next spread starts one later
+        else if (SpreadWanted() && pos_ >= 2) GoTo(pos_ - 1);                       // the page before and this one together
+        ShowToast(hstring{lycan::Tr(L"preview.reading_shift")});
+    }
+    std::wstring SpreadName() const {
+        return lycan::Tr(spread_ == 1 ? L"preview.reading_spread_single" : spread_ == 2 ? L"preview.reading_spread_double" : L"preview.reading_spread_auto");
+    }
+    void UpdateReadingUi() {
+        if (!readBtn_) return;
+        readBtn_.IsChecked(reading_);
+        const auto vis = reading_ ? Visibility::Visible : Visibility::Collapsed;
+        dirBtn_.Visibility(vis);
+        spreadBtn_.Visibility(vis);
+        const hstring dir{lycan::Tr(rtl_ ? L"preview.reading_rtl" : L"preview.reading_ltr")};
+        dirBtn_.Content(box_value(dir));
+        Microsoft::UI::Xaml::Automation::AutomationProperties::SetName(dirBtn_, dir);
+        spreadBtn_.Content(box_value(hstring{SpreadName()}));
+        Microsoft::UI::Xaml::Automation::AutomationProperties::SetName(spreadBtn_, hstring{SpreadName()});
+    }
+    // -1 left side, +1 right side, 0 elsewhere (or not reading / the picture can be panned / zoomed in)
+    int PageTurnZone(double x) {
+        if (!reading_ || !hasImage_ || !fitMode_ || CanPan()) return 0;
+        const double w = scroll_.ActualWidth();
+        return x < w * 0.3 ? -1 : x > w * 0.7 ? +1 : 0;
+    }
+    bool SpreadWanted() {
+        if (!reading_ || rot_ != 0 || spread_ == 1) return false;
+        return spread_ == 2 || scroll_.ActualWidth() > scroll_.ActualHeight();
+    }
+    static std::wstring FolderOf(std::wstring const& path) {
+        const auto slash = path.find_last_of(L"/\\");
+        return slash == std::wstring::npos ? std::wstring() : path.substr(0, slash);
+    }
+    void UpdateCounter() {
+        const std::wstring n = std::to_wstring(req_.items.size());
+        counter_.Text(hstring{pairPos_ != SIZE_MAX && pairPos_ == pos_ + 1 ? std::to_wstring(pos_ + 1) + L"–" + std::to_wstring(pairPos_ + 1) + L" / " + n : std::to_wstring(pos_ + 1) + L" / " + n});
+    }
+    void HidePair() {
+        ++pairGen_;
+        pairPos_ = SIZE_MAX;
+        if (pair_) {
+            pair_.Visibility(Visibility::Collapsed);
+            pair_.Source(nullptr);
+        }
+        if (counter_ && !req_.items.empty()) UpdateCounter();
+    }
+    // The page that goes with the one shown: the next page when two pages are wanted, the page shown is not the cover and neither
+    // page is wider than high (a two-page picture stays alone). Called after a page is shown and when the window or the mode changes.
+    void UpdatePair() {
+        size_t want = SIZE_MAX;
+        if (SpreadWanted() && !forceSingle_ && hasImage_ && pos_ >= 1 && pos_ + 1 < req_.items.size()) {
+            uint32_t rw, rh;
+            RotDimsFor(TotalRot(), imgW_, imgH_, rw, rh);
+            if (rw <= rh) want = pos_ + 1;
+        }
+        if (want == SIZE_MAX) {
+            if (pairPos_ != SIZE_MAX) HidePair();
+            Reflow();
+            return;
+        }
+        if (want == pairPos_) { Reflow(); return; }
+        HidePair();
+        Reflow();
+        ShowPairAsync(want);
+    }
+    fire_and_forget ShowPairAsync(size_t idx) {
+        auto self = shared_from_this();
+        const uint32_t g = ++pairGen_;
+        const uint32_t session = session_;
+        if (idx >= req_.items.size()) co_return;
+        const PreviewItem item = req_.items[idx];
+        Decoded d;
+        if (auto it = cache_.find(idx); it != cache_.end() && it->second.dec.image) {
+            d = it->second.dec;   // read ahead already (the usual case): no wait at all
+        } else {
+            if (item.size > kMaxBytes) co_return;
+            std::shared_ptr<std::vector<uint8_t>> bytes;
+            if (auto it = cache_.find(idx); it != cache_.end()) bytes = it->second.bytes;
+            if (!bytes) {
+                co_await resume_background();
+                auto data = std::make_shared<std::vector<uint8_t>>();
+                std::wstring error;
+                const bool ok = readerA_.Read(item.entryIndex, kMaxBytes, *data, [self, g] { return self->pairGen_ == g; }, error);
+                co_await resume_ui{dq_};
+                if (g != pairGen_ || session != session_ || closed_ || !ok) co_return;
+                bytes = data;
+                cache_[idx].bytes = bytes;
+                OnBytes(idx);
+            }
+            try {
+                co_await DecodeInto(bytes, kMaxDecodeWidth, d, true);
+            } catch (hresult_error const&) {
+                co_return;   // a page that cannot be shown: the one shown stays alone
+            }
+            if (g != pairGen_ || session != session_ || closed_) co_return;
+            cache_[idx].dec = d;
+            Evict();
+        }
+        if (g != pairGen_ || pos_ + 1 != idx) co_return;
+        int br = 0;
+        bool mir = false;
+        OrientationToTransform(EffectiveOrientation(d), br, mir);
+        uint32_t rw, rh;
+        RotDimsFor(br, d.w, d.h, rw, rh);
+        if (rw > rh) co_return;   // a two-page picture: the page shown stays alone, this one comes next on its own
+        pair_.Source(d.image);
+        pairW_ = d.w;
+        pairH_ = d.h;
+        pairRot_ = br;
+        pairMirror_ = mir;
+        pairPos_ = idx;
+        pair_.Visibility(Visibility::Visible);
+        Reflow();
+        UpdateCounter();
+    }
+    // Two pages at the same height, side by side, fitted together (or at the zoom of the page shown); the earlier page is on the
+    // right when reading right to left
+    void ReflowSpread() {
+        uint32_t aw, ah, bw, bh;
+        RotDimsFor(TotalRot(), imgW_, imgH_, aw, ah);
+        RotDimsFor(pairRot_, pairW_, pairH_, bw, bh);
+        if (!ah || !bh) return;
+        const double s = ScaleF();
+        double h;
+        if (fitMode_) {
+            const double vw = std::max(1.0, scroll_.ActualWidth() - 4), vh = std::max(1.0, scroll_.ActualHeight() - 4);
+            h = std::min(vh, vw / (static_cast<double>(aw) / ah + static_cast<double>(bw) / bh));
+            if (!req_.enlargeSmall) h = std::min(h, std::max(ah, bh) / s);
+        } else {
+            h = zoom_ * ah / s;
+        }
+        const double za = h * s / ah, zb = h * s / bh;
+        LayoutSlot(Slot(front_), imgW_, imgH_, za, TotalRot(), mirror_);
+        LayoutSlot(pair_, pairW_, pairH_, zb, pairRot_, pairMirror_);
+        const auto mainSide = rtl_ ? HorizontalAlignment::Right : HorizontalAlignment::Left;
+        img0_.HorizontalAlignment(mainSide);
+        img1_.HorizontalAlignment(mainSide);
+        pair_.HorizontalAlignment(rtl_ ? HorizontalAlignment::Left : HorizontalAlignment::Right);
+        wrapper_.Width(aw * za / s + bw * zb / s);
+        wrapper_.Height(h);
+        host_.MinWidth(std::max(0.0, scroll_.ActualWidth() - 2));
+        host_.MinHeight(std::max(0.0, scroll_.ActualHeight() - 2));
+        UpdateZoomUi(za);
+    }
+
+    // Where each book was left: "key <Tab> page path <Tab> right to left <Tab> pages", the most recent first, 200 books
+    struct ReadingEntry { std::wstring key, page; bool rtl = true; int spread = 0; };
+    static std::wstring BookKey(std::filesystem::path const& archive) {
+        WIN32_FILE_ATTRIBUTE_DATA fa{};
+        if (archive.empty() || !GetFileAttributesExW(archive.c_str(), GetFileExInfoStandard, &fa)) return {};
+        std::wstring p = archive.wstring();
+        std::transform(p.begin(), p.end(), p.begin(), [](wchar_t c) { return static_cast<wchar_t>(towlower(c)); });
+        const uint64_t size = (static_cast<uint64_t>(fa.nFileSizeHigh) << 32) | fa.nFileSizeLow;
+        const uint64_t time = (static_cast<uint64_t>(fa.ftLastWriteTime.dwHighDateTime) << 32) | fa.ftLastWriteTime.dwLowDateTime;
+        return p + L"|" + std::to_wstring(size) + L"|" + std::to_wstring(time);
+    }
+    std::vector<ReadingEntry> LoadReadingStore() const {
+        std::vector<ReadingEntry> out;
+        if (req_.readingStore.empty()) return out;
+        std::ifstream in(req_.readingStore, std::ios::binary);
+        std::string line;
+        while (std::getline(in, line) && out.size() < 200) {
+            if (!line.empty() && line.back() == '\r') line.pop_back();
+            const std::wstring w = winrt::to_hstring(line).c_str();
+            std::vector<std::wstring> f;
+            for (size_t a = 0;;) {
+                const size_t t = w.find(L'\t', a);
+                f.push_back(w.substr(a, t == std::wstring::npos ? std::wstring::npos : t - a));
+                if (t == std::wstring::npos) break;
+                a = t + 1;
+            }
+            if (f.size() < 4 || f[0].empty()) continue;
+            out.push_back({f[0], f[1], f[2] != L"0", std::clamp(_wtoi(f[3].c_str()), 0, 2)});
+        }
+        return out;
+    }
+    size_t RestoreReading() {
+        if (bookKey_.empty()) return SIZE_MAX;
+        for (auto const& e : LoadReadingStore()) {
+            if (e.key != bookKey_) continue;
+            rtl_ = e.rtl;
+            spread_ = e.spread;
+            for (size_t i = 0; i < req_.items.size(); ++i)
+                if (req_.items[i].path == e.page) return i;
+            return SIZE_MAX;
+        }
+        return SIZE_MAX;
+    }
+    void SaveReading() {
+        if (!reading_ || bookKey_.empty() || req_.readingStore.empty() || pos_ >= req_.items.size()) return;
+        const std::wstring& page = req_.items[pos_].path;
+        if (page.find_first_of(L"\t\r\n") != std::wstring::npos || bookKey_.find_first_of(L"\t\r\n") != std::wstring::npos) return;
+        auto all = LoadReadingStore();
+        all.erase(std::remove_if(all.begin(), all.end(), [&](ReadingEntry const& e) { return e.key == bookKey_; }), all.end());
+        all.insert(all.begin(), ReadingEntry{bookKey_, page, rtl_, spread_});
+        if (all.size() > 200) all.resize(200);
+        std::string text;
+        for (auto const& e : all)
+            text += winrt::to_string(e.key + L"\t" + e.page + L"\t" + (e.rtl ? L"1" : L"0") + L"\t" + std::to_wstring(e.spread)) + "\n";
+        std::error_code ec;
+        std::filesystem::create_directories(req_.readingStore.parent_path(), ec);
+        const auto tmp = std::filesystem::path(req_.readingStore).concat(L".tmp");
+        {
+            std::ofstream out(tmp, std::ios::binary | std::ios::trunc);
+            out << text;
+            if (!out.good()) return;
+        }
+        std::filesystem::rename(tmp, req_.readingStore, ec);
     }
 
     void UpdateDragRects() {
@@ -708,6 +1023,20 @@ private:
 
     void Navigate(int d) {
         if (req_.items.size() < 2) return;
+        if (reading_) {   // a book: no wrapping around; a spread moves by two pages
+            size_t target;
+            if (d > 0) {
+                const size_t step = pairPos_ != SIZE_MAX ? 2 : 1;
+                if (pos_ + step >= req_.items.size()) { ShowToast(lycan::Tr(L"preview.this_is_last")); return; }
+                target = pos_ + step;
+            } else {
+                if (pos_ == 0) { ShowToast(lycan::Tr(L"preview.this_is_first")); return; }
+                target = pos_ - 1;
+                if (SpreadWanted() && target >= 2) --target;   // the spread before: that page and its partner
+            }
+            GoTo(target);
+            return;
+        }
         const int64_t n = static_cast<int64_t>(req_.items.size());
         const bool wraps = (d > 0 && pos_ + 1 == req_.items.size()) || (d < 0 && pos_ == 0);
         GoTo(static_cast<size_t>(((static_cast<int64_t>(pos_) + d) % n + n) % n));  // wraps around to the other end at the ends
@@ -734,6 +1063,15 @@ private:
 
     void GoTo(size_t pos) {
         if (req_.items.empty() || pos >= req_.items.size()) return;
+        forceSingle_ = false;
+        // reading across folders (one folder per chapter): say which folder starts
+        if (reading_ && pos != pos_ && pos_ < req_.items.size()) {
+            const std::wstring folder = FolderOf(req_.items[pos].path);
+            if (folder != FolderOf(req_.items[pos_].path)) {
+                const auto slash = folder.find_last_of(L"/\\");
+                ShowToast(hstring{folder.empty() ? req_.archive.filename().wstring() : folder.substr(slash == std::wstring::npos ? 0 : slash + 1)});
+            }
+        }
         if (pos != pos_) dir_ = pos > pos_ ? +1 : -1;
         pos_ = pos;
         syncingStrip_ = true;
@@ -827,6 +1165,9 @@ private:
     // Lays out again when the window size, zoom or rotation changes (the picture shown now)
     void Reflow() {
         if (!hasImage_) return;
+        if (pairPos_ != SIZE_MAX) { ReflowSpread(); return; }
+        img0_.HorizontalAlignment(HorizontalAlignment::Center);
+        img1_.HorizontalAlignment(HorizontalAlignment::Center);
         const double z = ZoomNow();
         LayoutSlot(Slot(front_), imgW_, imgH_, z, TotalRot(), mirror_);
         LayoutWrapper(imgW_, imgH_, z, TotalRot());
@@ -896,7 +1237,7 @@ private:
     void Rotate(int dir) {
         if (!hasImage_) return;
         rot_ = (rot_ + dir + 4) % 4;
-        Reflow();
+        if (reading_) UpdatePair(); else Reflow();   // a turned page is shown alone
         scroll_.ChangeView(0.0, 0.0, nullptr, true);
     }
     void UpdateChrome() {
@@ -1141,7 +1482,7 @@ private:
         hasImage_ = true;
         EndLoading();
         scroll_.ChangeView(0.0, 0.0, nullptr, true);
-        Reflow();
+        if (reading_) UpdatePair(); else Reflow();
         if (infoVisible_) InfoAsync(pos_);
         if (pendWebp_) PlayWebp(pendWebp_, front_, ++webpGen_);
     }
@@ -1186,6 +1527,11 @@ private:
         auto thumbs = toggle(lycan::Tr(L"preview.thumbnail_strip"), L"T", [](PreviewWindow& s) { s.ToggleThumbs(); });
         auto play = toggle(lycan::Tr(L"preview.play_animation"), L"P", [](PreviewWindow& s) { s.TogglePlay(); });
         sep();
+        auto readItem = toggle(lycan::Tr(L"preview.reading_mode"), L"B", [](PreviewWindow& s) { s.ToggleReading(); });
+        auto rtlItem = toggle(lycan::Tr(L"preview.reading_rtl"), L"D", [](PreviewWindow& s) { s.ToggleDirection(); });
+        auto spreadItem = item(lycan::Tr(L"preview.reading_spread_tip"), L"S", [](PreviewWindow& s) { s.CycleSpread(); }, L"");
+        auto shiftItem = item(lycan::Tr(L"preview.reading_shift"), L"O", [](PreviewWindow& s) { s.ShiftPage(); });
+        sep();
         item(lycan::Tr(L"preview.copy_image"), L"Ctrl+C", [](PreviewWindow& s) { s.CopyImageAsync(); }, L"\uE8C8");
         item(lycan::Tr(L"main.copy_path"), L"Ctrl+Shift+C", [](PreviewWindow& s) { s.CopyPath(); }, L"\uE8C8");
         item(lycan::Tr(L"preview.save_image_as"), L"Ctrl+S", [](PreviewWindow& s) { s.ExtractCurrentAsync(); }, L"\uE74E");
@@ -1195,8 +1541,11 @@ private:
         auto info = toggle(lycan::Tr(L"preview.image_info"), L"I", [](PreviewWindow& s) { s.ToggleInfo(); });
         sep();
         item(lycan::Tr(L"main.close"), L"Esc", [](PreviewWindow& s) { s.Close(); }, L"\uE711");
-        m.Opening([weak, full, thumbs, info, play, fitW, fitWd, fitH, actual, enlarge, openExt](auto&&, auto&&) {
+        m.Opening([weak, full, thumbs, info, play, fitW, fitWd, fitH, actual, enlarge, openExt, readItem, rtlItem, spreadItem, shiftItem](auto&&, auto&&) {
             if (auto s = weak.lock()) {
+                readItem.IsChecked(s->reading_);
+                rtlItem.IsChecked(s->rtl_);
+                for (MenuFlyoutItemBase it : {MenuFlyoutItemBase{rtlItem}, MenuFlyoutItemBase{spreadItem}, MenuFlyoutItemBase{shiftItem}}) it.Visibility(s->reading_ ? Visibility::Visible : Visibility::Collapsed);
                 openExt.IsEnabled(static_cast<bool>(s->req_.openExternal));   // a preview that was started from a file (no main window to hand the file to) cannot open it with the associated program
                 full.IsChecked(s->fullscreen_);
                 thumbs.IsChecked(!s->thumbsHidden_);
@@ -1573,6 +1922,7 @@ private:
         ContentDialog dlg;
         dlg.XamlRoot(root_.XamlRoot());
         dlg.RequestedTheme(root_.ActualTheme());
+        if (auto tag = lycan::i18n::UiLanguageTag(); !tag.empty()) dlg.Language(hstring{tag});
         dlg.Title(box_value(lycan::Tr(L"preview.wallpaper_title")));
         StackPanel sp;
         sp.Spacing(12);
@@ -1706,7 +2056,7 @@ private:
         // the title has the archive name: with previews of several main windows it tells which preview belongs to which archive
         win_.Title(hstring{req_.archive.empty() ? item.name : item.name + L" — " + req_.archive.filename().wstring()});
         name_.Text(hstring{item.name});
-        counter_.Text(hstring{std::to_wstring(pos + 1) + L" / " + std::to_wstring(req_.items.size())});
+        UpdateCounter();
         prev_.IsEnabled(req_.items.size() > 1);
         next_.IsEnabled(req_.items.size() > 1);
         msg_.Visibility(Visibility::Collapsed);
@@ -1946,6 +2296,20 @@ private:
     double lastLoadMs_ = 0;
     int wheelAcc_ = 0;
     uint32_t imgW_ = 0, imgH_ = 0;
+
+    // ---- Reading mode (DESIGN.md "閱讀模式")
+    bool reading_ = false, rtl_ = true;
+    int spread_ = 0;                              // 0 automatic (two pages when the window is wider than high), 1 one page, 2 two pages
+    std::vector<PreviewItem> otherItems_;         // the list of the other mode (the folder while reading, the book otherwise)
+    Image pair_{nullptr};                         // the second page of a spread
+    size_t pairPos_ = SIZE_MAX;                   // its page (SIZE_MAX = one page shown)
+    uint32_t pairW_ = 0, pairH_ = 0;
+    std::atomic<uint32_t> pairGen_{0};
+    int pairRot_ = 0;
+    bool pairMirror_ = false, forceSingle_ = false;
+    Primitives::ToggleButton readBtn_{nullptr};
+    Button dirBtn_{nullptr}, spreadBtn_{nullptr};
+    std::wstring bookKey_;                        // the archive as the reading store knows it (path | size | time)
 };
 
 // Each main window (owner) has one preview window: previewing again from the same main window reuses it, another main window has its own (several windows, can be compared side by side)
@@ -1959,6 +2323,7 @@ int LivePreviewCount() {
 }
 
 void PreviewWindow::OnClosed() {
+    SaveReading();   // where the book was left
     closed_ = true;
     if (auto done = std::move(req_.onClosed)) done();
     RevokeOpened();
@@ -2010,6 +2375,16 @@ bool IsImageDecoderAvailable(const std::wstring& name) {
 }
 
 bool CanPreviewImage(const std::wstring& name) { return IsPreviewableImageName(name) && IsImageDecoderAvailable(name); }
+
+Windows::Foundation::IAsyncAction DecodePaneImage(std::shared_ptr<std::vector<uint8_t>> data, uint32_t maxWidth, std::shared_ptr<PaneImage> out) {
+    Decoded d;
+    co_await DecodeInto(data, maxWidth, d, true);
+    if (d.frames > 1 && d.image && !d.webpBytes) d.image.Play();   // a GIF moves in the pane too (an animated WebP shows its first frame)
+    out->image = d.image;
+    OrientationToTransform(EffectiveOrientation(d), out->rotate, out->mirror);
+    out->w = (out->rotate & 1) ? d.h : d.w;   // upright
+    out->h = (out->rotate & 1) ? d.w : d.h;
+}
 
 std::wstring MissingDecoderHint(const std::wstring& name) {
     const auto e = LowerExt(name);

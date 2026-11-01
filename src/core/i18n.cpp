@@ -17,6 +17,14 @@ std::unordered_map<std::wstring, std::wstring>& Table() {
     static std::unordered_map<std::wstring, std::wstring> t;
     return t;
 }
+std::unordered_map<std::wstring, std::wstring>& EnglishTable() {  // the master, kept when a language is loaded over it (EnglishOf)
+    static std::unordered_map<std::wstring, std::wstring> t;
+    return t;
+}
+std::unordered_map<std::wstring, std::wstring>& ShownToEnglish() {  // made the first time EnglishOf is asked
+    static std::unordered_map<std::wstring, std::wstring> t;
+    return t;
+}
 std::wstring& CurrentLang() {
     static std::wstring c = i18n::kSourceLanguage;
     return c;
@@ -139,6 +147,8 @@ std::wstring Resolve(const std::wstring& setting, const fs::path& langDir) {
 
 size_t Load(const fs::path& langDir, const std::wstring& code) {
     Table().clear();
+    EnglishTable().clear();
+    ShownToEnglish().clear();
     CurrentLang() = kSourceLanguage;
     auto read = [&](const std::wstring& lang) -> size_t {
         std::ifstream in(langDir / (lang + L".tsv"), std::ios::binary);
@@ -147,6 +157,7 @@ size_t Load(const fs::path& langDir, const std::wstring& code) {
         return ParseTable(data, Table());
     };
     const size_t master = read(kSourceLanguage);  // every id has its English text, so a language that lacks one shows English
+    EnglishTable() = Table();
     if (code == kPseudoLanguage) {
         for (auto& kv : Table()) kv.second = Pseudo(kv.second);
         CurrentLang() = kPseudoLanguage;
@@ -163,6 +174,23 @@ size_t Load(const fs::path& langDir, const std::wstring& code) {
 
 const std::wstring& Current() { return CurrentLang(); }
 bool IsSourceLanguage() { return CurrentLang() == kSourceLanguage; }
+std::wstring UiLanguageTag() {
+    const std::wstring& cur = CurrentLang();
+    if (cur == kPseudoLanguage || cur == SystemLanguage()) return {};  // the language of Windows is what XAML uses anyway
+    if (cur == L"zh-TW") return L"zh-Hant-TW";                        // with the script: the font fallback goes by it
+    if (cur == L"zh-CN") return L"zh-Hans-CN";
+    return cur;
+}
+
+std::wstring EnglishOf(std::wstring_view shown) {
+    if (shown.empty() || IsSourceLanguage()) return {};
+    auto& map = ShownToEnglish();
+    if (map.empty())
+        for (auto const& [id, text] : Table())
+            if (auto en = EnglishTable().find(id); en != EnglishTable().end() && en->second != text) map.emplace(text, en->second);
+    auto it = map.find(std::wstring(shown));
+    return it == map.end() ? std::wstring() : it->second;
+}
 
 }  // namespace i18n
 
@@ -175,7 +203,8 @@ const wchar_t* Tr(const wchar_t* source) {
 }
 
 namespace i18n_detail {
-static std::wstring FormatText(const std::wstring& fmt, const std::vector<std::wstring>& args) {
+// zeroIsOne: the language uses the singular form for 0 too (French: "0 fichier").
+static std::wstring FormatText(const std::wstring& fmt, const std::vector<std::wstring>& args, bool zeroIsOne = false) {
     std::wstring out;
     out.reserve(fmt.size() + 16);
     for (size_t i = 0; i < fmt.size(); ++i) {
@@ -188,14 +217,14 @@ static std::wstring FormatText(const std::wstring& fmt, const std::vector<std::w
                 i = j;
                 continue;
             }
-            // Plural {N:one|other}: the argument is 1 -> the first form, otherwise the second (only needed for translation, for example "{0} {0:file|files}")
+            // Plural {N:one|other}: the argument is 1 (or 0 in French) -> the first form, otherwise the second (for example "{0} {0:file|files}")
             if (digits && j < fmt.size() && fmt[j] == L':') {
                 size_t close = fmt.find(L'}', j);
                 if (close != std::wstring::npos) {
                     std::wstring spec = fmt.substr(j + 1, close - j - 1);
                     size_t bar = spec.find(L'|');
                     if (bar != std::wstring::npos) {
-                        const bool one = idx < args.size() && args[idx] == L"1";
+                        const bool one = idx < args.size() && (args[idx] == L"1" || (zeroIsOne && args[idx] == L"0"));
                         out += one ? spec.substr(0, bar) : spec.substr(bar + 1);
                         i = close;
                         continue;
@@ -207,7 +236,9 @@ static std::wstring FormatText(const std::wstring& fmt, const std::vector<std::w
     }
     return out;
 }
-std::wstring FormatImpl(const wchar_t* source, const std::vector<std::wstring>& args) { return FormatText(Tr(source), args); }
+std::wstring FormatImpl(const wchar_t* source, const std::vector<std::wstring>& args) {
+    return FormatText(Tr(source), args, CurrentLang().rfind(L"fr", 0) == 0);
+}
 std::wstring FormatEnglish(const std::wstring& id, const std::vector<std::wstring>& args) {
     struct Entry { const wchar_t* id; const wchar_t* text; };
     static const Entry kCore[] = {

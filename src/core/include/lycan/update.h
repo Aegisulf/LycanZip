@@ -57,6 +57,10 @@ struct UpdateOptions {
     bool replaceSameName = true;     // Add (mode AddReplace): an item that already exists is replaced; false = fail
     UpdateMode mode = UpdateMode::AddReplace;
     unsigned nameCodepage = 0;       // see OpenOptions::nameCodepage
+    // "Upgrade the archive": an archive whose names have no charset mark (old zip / tar) is written again even without operations,
+    // every name as it was decoded (nameCodepage), now in UTF-8 and marked; the data is copied as it is.
+    bool rewriteNames = false;
+    bool verify = false;             // test the new archive before it replaces the old one; it fails (nothing changes) when the test does
     ProgressFn progress;             // false = cancel
 };
 

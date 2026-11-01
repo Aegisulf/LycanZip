@@ -78,6 +78,19 @@ public:
                 if (!r.update.ok()) { r.state = TaskState::Failed; r.error = Message::Make(L"core.task_unreadable"); }
                 break;
             }
+            case TaskKind::Repack: {
+                RepackOptions ro;
+                ro.compress = spec.compressOptions;
+                ro.open = spec.openOptions;
+                ro.inPlace = spec.repackInPlace;
+                ro.skipDamaged = spec.repackSkipDamaged;
+                ro.test = spec.repackTest;
+                ro.scratch = spec.openOptions.tempDir;
+                ro.progress = progress;
+                r.repack = RepackArchive(spec.archive, spec.output, ro);
+                if (!r.repack.ok()) { r.state = TaskState::Failed; r.error = Message::Make(L"core.task_test_failed"); }
+                break;
+            }
         }
         return r;
     }

@@ -59,11 +59,13 @@ int main() {
     EXPECT(i18n::MapLanguageTag(L"zh-Hans-CN") == L"zh-CN");
     EXPECT(i18n::MapLanguageTag(L"zh-SG") == L"zh-CN");
     EXPECT(i18n::MapLanguageTag(L"en-GB") == L"en-US");
-    EXPECT(i18n::MapLanguageTag(L"ja-JP") == L"en-US");  // a language that is not supported: English
+    EXPECT(i18n::MapLanguageTag(L"ru-RU") == L"en-US");  // a language that is not supported: English
+    EXPECT(i18n::MapLanguageTag(L"ja-JP") == L"ja-JP" && i18n::MapLanguageTag(L"ja") == L"ja-JP" && i18n::MapLanguageTag(L"ko-KR") == L"ko-KR");
+    EXPECT(i18n::MapLanguageTag(L"de-AT") == L"de-DE" && i18n::MapLanguageTag(L"es-MX") == L"es-ES" && i18n::MapLanguageTag(L"fr-CA") == L"fr-FR");  // by the first part
 
     // ---- the list of languages (languages.h) ----
     EXPECT(LanguageIndex(L"en-US") >= 0 && LanguageIndex(L"EN-us") == LanguageIndex(L"en-US"));
-    EXPECT(LanguageIndex(L"zh-CN") >= 0 && LanguageIndex(L"auto") == -1 && LanguageIndex(L"") == -1 && LanguageIndex(L"ja-JP") == -1);
+    EXPECT(LanguageIndex(L"zh-CN") >= 0 && LanguageIndex(L"auto") == -1 && LanguageIndex(L"") == -1 && LanguageIndex(L"ru-RU") == -1);
     for (int i = 0; i < kLanguageCount; ++i) {
         EXPECT(LanguageIndex(kLanguages[i].code) == i);                       // no code twice
         EXPECT(LanguageForTag(kLanguages[i].code) == kLanguages[i].code);     // every language is what its own tag maps to
@@ -108,6 +110,8 @@ int main() {
 
     EXPECT(i18n::Load(dir, L"zh-TW") == 4);
     EXPECT(i18n::Current() == L"zh-TW" && !i18n::IsSourceLanguage());
+    // the tag of the XAML text: with the script, or empty when Windows is in this language already
+    EXPECT(i18n::UiLanguageTag() == (i18n::SystemLanguage() == L"zh-TW" ? L"" : L"zh-Hant-TW"));
     EXPECT(std::wstring(Tr(L"main.extract")) == L"解壓縮");
     EXPECT(std::wstring(Tr(L"main.only_english")) == L"Only in English {0}");  // no Chinese text: English
     EXPECT(Tf(L"main.total", 5, L"ok") == L"共 5 個項目，ok");
@@ -117,6 +121,9 @@ int main() {
     EXPECT(Tf(L"main.plain", 1, 2) == L"Plain 1");                               // an argument too many is dropped
     EXPECT(Tf(L"main.only_english") == L"Only in English ");                     // a missing argument is an empty string
     EXPECT(Tf(L"{x} {0", 1) == L"{x} {0");                                       // not a placeholder: as it is
+    // the English behind a shown text (the settings search also finds English words)
+    EXPECT(i18n::EnglishOf(L"解壓縮") == L"Extract");
+    EXPECT(i18n::EnglishOf(L"Only in English {0}").empty() && i18n::EnglishOf(L"no such text").empty() && i18n::EnglishOf(L"").empty());
 
     // Message: Text() is in the language of the user, English() is always English (the table is compiled into the Core)
     EXPECT(Message::Make(L"main.total", 5, L"ok").Text() == L"共 5 個項目，ok");
@@ -142,10 +149,17 @@ int main() {
     EXPECT(Tf(L"main.total", 5, L"ok") == L"[T\u00f6t\u00e0l 5 \u00eet\u00e9ms, ok \u00b7\u00b7\u00b7\u00b7\u00b7]" || Tf(L"main.total", 5, L"ok").find(L"5") != std::wstring::npos);
     EXPECT(Tf(L"main.templates", 1).find(L"1 ") != std::wstring::npos && Tf(L"main.templates", 3).find(L"templates") != std::wstring::npos);
     EXPECT(Message::Make(L"main.total", 5, L"ok").Text().front() == L'[');
+    EXPECT(i18n::UiLanguageTag().empty());  // the pseudo language is English with accents: no tag
     EXPECT(Message::Make(L"core.skipped_link", L"C:\\a").English() == L"C:\\a (symbolic link / junction)");  // English() ignores the language
 
+    // French uses the singular for 0 as well ("0 mod\u00e8le" in the language of the user)
+    WriteFile(dir / "fr-FR.tsv", "main.templates\t{0} {0:mod\xC3\xA8le|mod\xC3\xA8les}\th4\n");
+    EXPECT(i18n::Load(dir, L"fr-FR") == 1 && i18n::Current() == L"fr-FR");
+    EXPECT(Tf(L"main.templates", 0) == L"0 mod\u00e8le" && Tf(L"main.templates", 1) == L"1 mod\u00e8le" && Tf(L"main.templates", 2) == L"2 mod\u00e8les");
+    fs::remove(dir / "fr-FR.tsv");
     EXPECT(i18n::Load(dir, L"fr-FR") == 0 && i18n::IsSourceLanguage());          // no file: English
     EXPECT(std::wstring(Tr(L"main.extract")) == L"Extract");
+    EXPECT(i18n::EnglishOf(L"Extract").empty() && i18n::EnglishOf(L"解壓縮").empty());   // English: nothing behind it
     EXPECT(i18n::Load(dir, L"..\\en-US") == 6 && i18n::IsSourceLanguage());     // an invalid code does not leave the folder: English
 
     fs::remove_all(dir);

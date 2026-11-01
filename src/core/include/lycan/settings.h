@@ -89,6 +89,9 @@ struct Settings {
     bool shellIcons = true;                         // the list and the folder tree use the Windows file icons (false = the coloured icons of LycanZip)
     bool compactRows = true;                        // row height of the list: compact (default) / comfortable
     bool showFolderTree = true;
+    bool previewPane = true;                        // the preview pane under the folder tree (all view modes)
+    unsigned previewPaneHeight = 260;               // its height (DIP, 120-1200; the window caps it at 70 % of the left column)
+    std::string previewWindowRect;                  // where the larger preview window was: "x,y,w,h" in screen pixels (empty = not yet)
     bool confirmDeleteArchive = true;               // ask before the folder tree's "delete the archive" moves it to the Recycle Bin
     bool confirmDeleteEntries = true;               // ask before items are deleted from inside an archive (the archive file itself is changed)
     bool confirmWriteBack = true;                   // after a file of an archive was edited: ask before it goes back into the archive
@@ -110,6 +113,11 @@ struct Settings {
     PreviewKey openPreviewKey = PreviewKey::Shift;   // opening an archive with this key held = the picture preview (Off: never)
     AudioLoop audioLoop = AudioLoop::None;           // the playback mode of the audio preview
     bool doubleClickAudioPreview = false;           // double-click an audio file in an archive: true = play it in the audio preview, false = open it with the associated program
+    // Password manager (passwords.h)
+    bool autoTryPasswords = true;                   // before asking: try the passwords of this run and the saved ones (up to 50 or 5 seconds)
+    bool rememberRunPasswords = true;               // the passwords that worked are kept in memory until the program ends
+    bool rememberPasswordDefault = false;           // "Remember this password" of the password dialog is ticked at first
+    bool comicReading = true;                      // a comic book archive (.cbz .cb7 .cbr .cbt) opened from Explorer goes straight to the reading mode of the picture preview
     bool doubleClickPreview = true;                 // double-click a picture in an archive: true = open it in the picture preview, false = open it with the associated program
     unsigned listColumns = 11;                      // columns of the details view (bits: 1 type, 2 size, 4 packed, 8 modified, 16 ratio, 32 encrypted, 64 CRC, 128 method); the default has no packed column
     std::string listColWidths;                      // widths (DIP) that the user dragged the columns to: "name=320,type=70" (empty = the default of every column); read by the program, which knows the names

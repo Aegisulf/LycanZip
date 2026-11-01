@@ -481,6 +481,7 @@ std::vector<Node> ArchiveMenu(const Selection& sel, const Config& c) {
     }
     if (on("merge") && many) v.push_back(leaf(Tr(L"shell.extract_merge", c), L"--extract-merge"));
     if (on("test")) v.push_back(leaf(Tr(L"shell.test", c), L"--test"));
+    if (on("convert")) v.push_back(leaf(Tr(L"shell.convert", c), L"--convert"));
     if (on("images") && !many) v.push_back(leaf(Tr(L"shell.image_preview", c), L"--preview-images"));
     if (on("audio") && !many) v.push_back(leaf(Tr(L"shell.audio_preview", c), L"--preview-audio"));
     if (on("hash")) v.push_back(leaf(Tr(L"shell.hash", c), L"--hash"));

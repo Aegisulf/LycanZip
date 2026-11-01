@@ -23,6 +23,7 @@
 #include "lycan/scan.h"
 #include "lycan/settings.h"
 #include "lycan/taskexec.h"
+#include "lycan/repack.h"
 #include "lycan/update.h"
 #include "lycan/version.h"
 
@@ -48,6 +49,13 @@ void Usage() {
         "                                            freshen = only update what the archive has (when newer), sync = make the archive the same as the folder (replace what differs, delete what is extra);\n"
         "                                            --dry-run only lists what would be done (added, replaced, skipped, deleted), changes nothing\n"
         "  (a and u both take --no-store-compressed: files that are already compressed are not stored without compression)\n"
+        "  lycanzip-cli convert <archive> <new archive> [-t zip|7z|tar|tgz|txz|tbz2] [-p pw] [--new-password pw | --no-password]\n"
+        "             [-l 0-9] [--profile ...] [-v 50m] [--skip-damaged] [--no-test]\n"
+        "                                            unpacks the archive and packs it again as a new one (the format from the extension unless -t is given);\n"
+        "                                            the new archive keeps the password (-p) unless --new-password or --no-password; it is tested afterwards\n"
+        "  lycanzip-cli unprotect <archive> -p pw     removes the password: the archive is packed again without it and replaced only when the new one passes the test\n"
+        "  lycanzip-cli upgrade <archive> [-p pw]     an old zip / tar whose names have no UTF-8 mark: the names are written again in UTF-8 (the encoding\n"
+        "                                            detected, or --encoding), the data is copied as it is; replaced only when the new one passes the test\n"
         "  a also takes --sums-archive (write <archive>.sha256) and --sums-files (write <name>.sha256 with the files that went in), next to the archive\n"
         "  lycanzip-cli l <archive>                      lists the content\n"
         "  lycanzip-cli x <archive> [-o dir] [-p pw] [-y|-s|-r] [--smart|--no-smart] [--max-size 10g] [--max-ratio 1000] [--discard-broken]\n"
@@ -355,6 +363,10 @@ static int CliMain(int argc, wchar_t** argv) {
     std::vector<UpdateOp> updOps;
     std::wstring updInto;
     bool estimateOnly = false, dryRun = false;
+    std::filesystem::path convertOut;   // convert: the new archive
+    std::wstring newPassword;
+    bool newPasswordGiven = false, noPassword = false, skipDamaged = false, noTest = false;
+    const bool packs = cmd == L"a" || cmd == L"convert";   // takes the options of a new archive (addOpt)
 
     for (int i = 3; i < argc; ++i) {
         std::wstring a = argv[i];
@@ -387,17 +399,21 @@ static int CliMain(int argc, wchar_t** argv) {
         else if (a == L"-y") ow = OverwriteMode::Overwrite;
         else if (a == L"-s") ow = OverwriteMode::Skip;
         else if (a == L"-r") ow = OverwriteMode::Rename;
-        else if ((cmd == L"a" || cmd == L"u") && a == L"-l" && i + 1 < argc) (cmd == L"a" ? addOpt : updOpt.compress).level = _wtoi(argv[++i]);
-        else if ((cmd == L"a" || cmd == L"u") && a == L"--profile" && i + 1 < argc) {
+        else if ((packs || cmd == L"u") && a == L"-l" && i + 1 < argc) (packs ? addOpt : updOpt.compress).level = _wtoi(argv[++i]);
+        else if ((packs || cmd == L"u") && a == L"--profile" && i + 1 < argc) {
             std::wstring v = argv[++i];
-            CompressOptions& co = cmd == L"a" ? addOpt : updOpt.compress;
+            CompressOptions& co = packs ? addOpt : updOpt.compress;
             if (v == L"compatible") co.profile = Profile::Compatible;
             else if (v == L"balanced") co.profile = Profile::Balanced;
             else if (v == L"smallest") { co.profile = Profile::Smallest; co.storeCompressed = false; }
             else if (v == L"fastest") co.profile = Profile::Fastest;
             else { Usage(); return 2; }
         }
-        else if ((cmd == L"a" || cmd == L"u") && a == L"--no-store-compressed") (cmd == L"a" ? addOpt : updOpt.compress).storeCompressed = false;
+        else if ((packs || cmd == L"u") && a == L"--no-store-compressed") (packs ? addOpt : updOpt.compress).storeCompressed = false;
+        else if (cmd == L"convert" && a == L"--new-password" && i + 1 < argc) { newPassword = argv[++i]; newPasswordGiven = true; }
+        else if (cmd == L"convert" && a == L"--no-password") noPassword = true;
+        else if (cmd == L"convert" && a == L"--skip-damaged") skipDamaged = true;
+        else if (cmd == L"convert" && a == L"--no-test") noTest = true;
         else if (cmd == L"u" && a == L"--backup") updOpt.keepBackup = true;
         else if (cmd == L"u" && a == L"--estimate") estimateOnly = true;
         else if (cmd == L"u" && a == L"--dry-run") dryRun = true;
@@ -419,7 +435,7 @@ static int CliMain(int argc, wchar_t** argv) {
         else if (cmd == L"u" && a == L"--mkdir" && i + 1 < argc) updOps.push_back(UpdateOp::MakeDir(argv[++i]));
         else if (cmd == L"u" && a == L"--rename" && i + 2 < argc) { std::wstring from = argv[++i]; updOps.push_back(UpdateOp::Rename(from, argv[++i])); }
         else if (cmd == L"u" && a == L"--replace" && i + 2 < argc) { std::wstring path = argv[++i]; updOps.push_back(UpdateOp::Replace(path, std::filesystem::path(argv[++i]))); }
-        else if (cmd == L"a" && a.rfind(L"-v", 0) == 0 && (a.size() > 2 || i + 1 < argc)) {  // -v50m or -v 50m
+        else if (packs && a.rfind(L"-v", 0) == 0 && (a.size() > 2 || i + 1 < argc)) {  // -v50m or -v 50m
             std::wstring v = a.size() > 2 ? a.substr(2) : std::wstring(argv[++i]);
             if (!ParseSize(v, addOpt.volumeSize)) { Err("Cannot read the volume size (for example 50k, 100m, 4.7g)\n"); return 2; }
         }
@@ -428,7 +444,7 @@ static int CliMain(int argc, wchar_t** argv) {
         else if (cmd == L"a" && a == L"--iso-now") addOpt.isoKeepTimes = false;
         else if (cmd == L"a" && a == L"--sums-archive") sumsArchive = true;
         else if (cmd == L"a" && a == L"--sums-files") sumsFiles = true;
-        else if (cmd == L"a" && a == L"-t" && i + 1 < argc) {
+        else if (packs && a == L"-t" && i + 1 < argc) {
             std::wstring v = argv[++i];
             if (v == L"zip") addOpt.type = ArchiveType::Zip;
             else if (v == L"7z") addOpt.type = ArchiveType::SevenZip;
@@ -441,6 +457,7 @@ static int CliMain(int argc, wchar_t** argv) {
             typeGiven = true;
         }
         else if (cmd == L"a" && !a.empty() && a[0] != L'-') addInputs.push_back(a);
+        else if (cmd == L"convert" && convertOut.empty() && !a.empty() && a[0] != L'-') convertOut = a;
         else if (positional == 3 && cmd == L"cat") { catIndex = a; positional = 4; }
         else { Usage(); return 2; }
     }
@@ -476,6 +493,66 @@ static int CliMain(int argc, wchar_t** argv) {
                 for (auto& o : sw.written) Out("Checksum file: " + ToUtf8(o.wstring()) + "\n");
                 if (sw.skipped) Out("Not in the checksum file (could not be read): " + std::to_string(sw.skipped) + "\n");
             }
+            return rep.ok() ? 0 : 1;
+        } catch (const Error& e) {
+            Err(std::string("\nError: ") + e.what() + "\n");
+            return e.cancelled() ? 3 : 1;
+        }
+    }
+
+    if (cmd == L"convert" || cmd == L"unprotect") {
+        try {
+            RepackOptions ro;
+            ro.open.password = pw;
+            ro.open.nameCodepage = nameCp;
+            ro.compress = addOpt;
+            ro.skipDamaged = skipDamaged;
+            ro.test = !noTest;
+            ro.progress = [](uint64_t done, uint64_t total) {
+                if (total) fprintf(stderr, "\r%3d%%", static_cast<int>(std::min<uint64_t>(done * 100 / total, 100)));
+                return true;
+            };
+            if (cmd == L"unprotect") {
+                if (!hasPassword) { Usage(); return 2; }
+                auto src = ArchiveSource::Open(archive, [&] { OpenOptions o; o.password = pw; return o; }());
+                if (!WritableTypeOf(*src, ro.compress.type)) { Err("This format cannot be written: convert it to another one instead\n"); return 1; }
+                src.reset();
+                ro.inPlace = true;
+                ro.compress.password.clear();
+            } else {
+                if (convertOut.empty()) { Usage(); return 2; }
+                if (!typeGiven && !GuessArchiveType(convertOut, ro.compress.type)) {
+                    Err("The format cannot be told from the extension; give it with -t (zip / 7z / tar / tgz / txz / tbz2)\n");
+                    return 2;
+                }
+                ro.compress.password = noPassword ? L"" : newPasswordGiven ? newPassword : password;
+                ro.compress.overwrite = ow == OverwriteMode::Overwrite;
+            }
+            auto rep = RepackArchive(archive, convertOut, ro);
+            Err("\n");
+            Out("Files " + std::to_string(rep.files) + ", folders " + std::to_string(rep.dirs) + "; " + std::to_string(rep.archiveBefore) + " -> " +
+                std::to_string(rep.archiveAfter) + " bytes" + (rep.tested ? ", tested" : "") + "\n");
+            for (auto& o : rep.outputs) Out("Output: " + ToUtf8(o.wstring()) + "\n");
+            for (auto& s : rep.skipped) Out("Left out: " + ToUtf8(s) + "\n");
+            for (auto& s : rep.warnings) Out("Warning: " + ToUtf8(s) + "\n");
+            for (auto& s : rep.errors) Out("Error: " + ToUtf8(s) + "\n");
+            return rep.ok() ? 0 : 1;
+        } catch (const Error& e) {
+            Err(std::string("\nError: ") + e.what() + "\n");
+            return e.cancelled() ? 3 : 1;
+        }
+    }
+
+    if (cmd == L"upgrade") {
+        try {
+            UpdateOptions uo;
+            uo.compress.password = password;
+            uo.nameCodepage = nameCp;
+            uo.rewriteNames = true;
+            uo.verify = true;
+            auto rep = UpdateArchive(archive, {}, uo);
+            if (!rep.changed) { Out("Nothing to upgrade: the names are marked as UTF-8 already (or are plain ASCII)\n"); return 0; }
+            Out("Upgraded: the names are in UTF-8 now; " + std::to_string(rep.archiveBefore) + " -> " + std::to_string(rep.archiveAfter) + " bytes\n");
             return rep.ok() ? 0 : 1;
         } catch (const Error& e) {
             Err(std::string("\nError: ") + e.what() + "\n");

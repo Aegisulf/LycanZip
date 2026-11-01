@@ -17,9 +17,9 @@ No ads, no bundled software, no telemetry.
 
 | Home | Browsing an archive |
 |---|---|
-| ![Home](assets/screenshots/home.webp) | ![Details view](assets/screenshots/details.webp) |
+| ![Home](assets/screenshots/1.0-home.webp) | ![Details view](assets/screenshots/1.0-details.webp) |
 | **Picture preview** | **Creating an archive** |
-| ![Picture preview](assets/screenshots/preview.webp) | ![Compress](assets/screenshots/compress.webp) |
+| ![Picture preview](assets/screenshots/1.0-preview.webp) | ![Compress](assets/screenshots/1.0-compress.webp) |
 
 ## Why LycanZip
 

@@ -226,6 +226,21 @@ try:
     ul = run("l", str(uarc), check_rc=0).stdout.decode("utf-8", errors="replace")
     check("使用手冊.pdf" in ul and "テスト.txt" in ul, "UTF-8 flagged zip keeps correct names")
     check("[detected automatically" not in ul, "UTF-8 flagged zip is not treated as legacy-encoded")
+    # with the flag, also the names whose characters all exist in CP437 stay as they are (Python alone would write these without the flag)
+    class Utf8Name(zipfile.ZipInfo):
+        def _encodeFilenameFlags(self):
+            return self.filename.encode("utf-8"), 0x800
+    latin = ["Café à Paris.jpg", "München im Winter.jpg", "España.jpg", "使用手冊.pdf"]
+    larc = root / "enc_utf8flag_latin.zip"
+    with zipfile.ZipFile(larc, "w") as zf:
+        for n in latin:
+            zf.writestr(Utf8Name(n), "x")
+    ll = run("l", str(larc), check_rc=0).stdout.decode("utf-8", errors="replace")
+    check(all(n in ll for n in latin), "UTF-8 flagged zip keeps names that fit CP437")
+    check("[detected automatically" not in ll, "UTF-8 flagged names that fit CP437 are not treated as legacy-encoded")
+    lout = root / "out_utf8flag_latin"
+    run("x", str(larc), "-o", str(lout), check_rc=0)
+    check(all((lout / n).exists() for n in latin), "UTF-8 flagged names that fit CP437 are extracted correctly")
 
     # ---- Creating archives (a): verify the products with the independent 7z.exe ----
     def tree_hash(d):

@@ -599,8 +599,12 @@ void ResolveNames(ArchiveSource::Impl& impl, const OpenOptions& options) {
         if (impl.arc->GetProperty(static_cast<UInt32>(i), kpidPath, &p.v) != S_OK) continue;
         std::wstring w = p.Str();
         if (w.empty()) continue;  // a single-stream format keeps the name that was derived
+        // A zip name with the UTF-8 mark is Unicode already, even when all its characters exist in CP437 (Café, München) and it would look like raw bytes.
+        // (Not for tar: there it only says that the bytes are valid UTF-8, and the handler still gives them as CP437.)
+        Prop characts;
+        bool marked = fmt.rfind(L"zip", 0) == 0 && impl.arc->GetProperty(static_cast<UInt32>(i), kpidCharacts, &characts.v) == S_OK && characts.Str().find(L"UTF8") != std::wstring::npos;
         std::string raw;
-        bool hasHigh = TryRecoverRawBytes(w, raw) &&
+        bool hasHigh = !marked && TryRecoverRawBytes(w, raw) &&
                        std::any_of(raw.begin(), raw.end(), [](char c) { return static_cast<unsigned char>(c) >= 0x80; });
         if (hasHigh) {
             impl.rawNames[i] = raw;

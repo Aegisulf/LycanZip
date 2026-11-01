@@ -4,6 +4,10 @@ All notable changes to LycanZip are listed here, one section per version. Versio
 [Semantic Versioning](https://semver.org/): from 1.0 on, the settings files (`settings.ini`, `presets.ini`) and the command line
 stay compatible within a major version. Release notes are taken from this file.
 
+## 1.1.1 (2026-11-01)
+
+- Fixed: a zip whose file names have the UTF-8 mark could show and extract some of them wrongly. Names whose accented letters also exist in the old DOS code page 437 (Café, München, España) were taken for names in a legacy code page and decoded again, and the archive offered an upgrade it did not need.
+
 ## 1.1.0 (2026-11-01)
 
 - Five more interface languages: Japanese, Korean, German, Spanish and French. When the interface language differs from the language of Windows, the text is drawn with the fonts of the interface language (for example Japanese kanji forms on a Chinese Windows).

@@ -18,3 +18,5 @@ CMakeUserPresets.json
 __pycache__/
 
 graphify-out/
+# the Store images: assets/design/tools/gen_store_art.py makes them again
+/assets/store/shots/

@@ -2,9 +2,9 @@
 #pragma once
 #define LYCAN_VERSION_MAJOR 1
 #define LYCAN_VERSION_MINOR 1
-#define LYCAN_VERSION_PATCH 0
-#define LYCAN_VERSION_STRING "1.1.0"
-#define LYCAN_VERSION_WSTRING L"1.1.0"
+#define LYCAN_VERSION_PATCH 1
+#define LYCAN_VERSION_STRING "1.1.1"
+#define LYCAN_VERSION_WSTRING L"1.1.1"
 // four-part version for the resource file / MSIX (the fourth part is always 0)
-#define LYCAN_VERSION_RC 1,1,0,0
-#define LYCAN_VERSION_RC_STRING "1.1.0.0"
+#define LYCAN_VERSION_RC 1,1,1,0
+#define LYCAN_VERSION_RC_STRING "1.1.1.0"

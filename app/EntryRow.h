@@ -1,4 +1,5 @@
 #pragma once
+#include "lycan/security.h"   // VisibleName: the names are shown with their hidden direction marks visible
 #include "EntryRow.g.h"
 #include "CrumbItem.g.h"
 
@@ -85,7 +86,7 @@ namespace winrt::LycanZip::implementation
     {
         EntryRow(uint32_t nodeId, hstring const& name, hstring const& folder, hstring const& sizeText, hstring const& packedText,
                  hstring const& modifiedText, bool isDir, bool isEncrypted, bool showPath)
-            : nodeId_(nodeId), name_(name), folder_(folder), sizeText_(sizeText), packedText_(packedText), modifiedText_(modifiedText),
+            : nodeId_(nodeId), name_(lycan::VisibleName(name)), folder_(lycan::VisibleName(folder)), sizeText_(sizeText), packedText_(packedText), modifiedText_(modifiedText),
               isDir_(isDir), isEncrypted_(isEncrypted), showPath_(showPath) {}
 
         uint32_t NodeId() const { return nodeId_; }
@@ -130,7 +131,7 @@ namespace winrt::LycanZip::implementation
         bool CheckHitTest() const { return selected_ || hover_; }
         double ItemWidth() const { return itemWidth_; }
         double BoxHeight() const { return boxHeight_; }
-        double ItemHeight() const { return boxHeight_ + 22.0 + 20.0 * nameLines_; }  // the picture area + the lines of the name + the padding: the same for every cell of a folder
+        double ItemHeight() const { return boxHeight_ + 14.0 + lineHeight_ * nameLines_; }  // the picture area + the lines of the name + the padding (4 + 4) and the gap (6): the same for every cell of a folder
         int NameLines() const { return nameLines_; }
         // Name in the icon view: add a no-break character after ! and ? so that "!" does not get a line of its own (a line break is normally allowed after these marks)
         hstring DisplayName() const
@@ -175,6 +176,8 @@ namespace winrt::LycanZip::implementation
         Microsoft::UI::Xaml::Media::ImageSource RootIcon() const { return rootIcon_; }
         Microsoft::UI::Xaml::Visibility RootIconVisibility() const { return rootIcon_ ? Microsoft::UI::Xaml::Visibility::Visible : Microsoft::UI::Xaml::Visibility::Collapsed; }
         Microsoft::UI::Xaml::Visibility TreeGlyphVisibility() const { return rootIcon_ || shellSmall_ ? Microsoft::UI::Xaml::Visibility::Collapsed : Microsoft::UI::Xaml::Visibility::Visible; }
+        Microsoft::UI::Xaml::Thickness TreeIndent() const { return {treeDepth_ * 12.0, 0, 0, 0}; }
+        void SetTreeDepth(int32_t depth) { treeDepth_ = depth; }
         void SetRootIcon(Microsoft::UI::Xaml::Media::ImageSource const& s)
         {
             rootIcon_ = s;
@@ -182,7 +185,7 @@ namespace winrt::LycanZip::implementation
             Raise(L"RootIconVisibility");
             Raise(L"TreeGlyphVisibility");
         }
-        void SetLayout(double itemWidth, double boxHeight, int nameLines, double iconSize) { itemWidth_ = itemWidth; boxHeight_ = boxHeight; nameLines_ = nameLines; iconSize_ = iconSize; }
+        void SetLayout(double itemWidth, double boxHeight, int nameLines, double iconSize, double lineHeight) { itemWidth_ = itemWidth; boxHeight_ = boxHeight; nameLines_ = nameLines; iconSize_ = iconSize; lineHeight_ = lineHeight; }
         double IconSize() const { return iconSize_; }
         double GlyphSize() const { return iconSize_ * 0.9; }
         void SetThumb(Microsoft::UI::Xaml::Media::ImageSource const& s)
@@ -211,10 +214,11 @@ namespace winrt::LycanZip::implementation
         void Raise(wchar_t const* name) { changed_(*this, Microsoft::UI::Xaml::Data::PropertyChangedEventArgs{name}); }
         winrt::event<Microsoft::UI::Xaml::Data::PropertyChangedEventHandler> changed_;
         bool selected_ = false, hover_ = false;
-        double itemWidth_ = 104.0, boxHeight_ = 50.0, iconSize_ = 44.0;
+        double itemWidth_ = 104.0, boxHeight_ = 50.0, iconSize_ = 44.0, lineHeight_ = 20.0;
         int nameLines_ = 3;
         Microsoft::UI::Xaml::Media::ImageSource thumb_{nullptr};
         Microsoft::UI::Xaml::Media::ImageSource rootIcon_{nullptr};
+        int32_t treeDepth_ = 0;
         Microsoft::UI::Xaml::Media::ImageSource shellSmall_{nullptr}, shellLarge_{nullptr};
         uint32_t nodeId_;
         hstring name_, folder_, sizeText_, packedText_, modifiedText_;
@@ -228,7 +232,7 @@ namespace winrt::LycanZip::implementation
 {
     struct CrumbItem : CrumbItemT<CrumbItem>
     {
-        CrumbItem(hstring const& name, bool isLast) : name_(name), last_(isLast) {}
+        CrumbItem(hstring const& name, bool isLast) : name_(lycan::VisibleName(name)), last_(isLast) {}   // hidden direction marks shown as [RLO] etc.
         hstring Name() const { return name_; }
         hstring Tip() const { return last_ ? name_ : hstring{lycan::Tf(L"main.go", name_)}; }
         Microsoft::UI::Xaml::Visibility NormalVisibility() const { return last_ ? Microsoft::UI::Xaml::Visibility::Collapsed : Microsoft::UI::Xaml::Visibility::Visible; }

@@ -5,6 +5,7 @@
 #include "ImagePreview.h"
 #include "AudioPreview.h"
 #include "OpenTempDir.h"
+#include "StartupTiming.h"
 
 #include <algorithm>
 #include <chrono>
@@ -29,8 +30,11 @@ namespace winrt::LycanZip::implementation
     static const bool sShiftAtLoad = (GetAsyncKeyState(VK_SHIFT) & 0x8000) != 0;
     static const bool sCtrlAtLoad = (GetAsyncKeyState(VK_CONTROL) & 0x8000) != 0;
 
+    static long long sAppMadeMs = -1;   // the App object is made before the log is set up: written down here, logged in OnLaunched
+
     App::App()
     {
+        sAppMadeMs = lycan_app::MsSinceProcessStart();
         // The automated tests (scripts\ui-smoke.ps1) set this environment variable: any error fails at once, without a CRT / error report dialog that would block the test
         if (GetEnvironmentVariableW(L"LYCAN_NO_DIALOGS", nullptr, 0) > 0)
         {
@@ -272,11 +276,17 @@ namespace winrt::LycanZip::implementation
         LeaveBackground();  // somebody is back (a new request arrived): show the windows again
         if (req.action == lycan::LaunchAction::Open && !req.paths.empty() && MainWindow::IsOpenableArchive(req.paths[0]))
         {
-            // On an Explorer multi-select each file starts a process: collect the same batch for a short time, then open a window for each
+            // On an Explorer multi-select each file starts a process: the first one opens at once, the ones that follow within a
+            // moment are collected and opened together (asked about when there are many)
+            const auto now = std::chrono::steady_clock::now();
+            const bool newBurst = openBatch_.empty() && !askingBatch_ && now >= burstUntil_;
+            burstUntil_ = now + std::chrono::milliseconds(400);
+            if (newBurst) burstOpened_ = 0;
             for (auto const& p : req.paths)
                 if (std::find(openBatch_.begin(), openBatch_.end(), p) == openBatch_.end()) openBatch_.push_back(p);
             openTimer_.Stop();
-            openTimer_.Start();
+            if (newBurst && req.paths.size() == 1) FlushOpenBatch();
+            else openTimer_.Start();
             return;
         }
         if (req.IsPreviewOnly())
@@ -319,16 +329,18 @@ namespace winrt::LycanZip::implementation
         for (auto const& p : paths)
             if (!FocusIfOpen(p)) todo.push_back(p);  // already open: bring to the front, not counted in the number of new ones
         size_t limit = todo.size();
-        if (limit > kMaxOpenWindows)
+        if (burstOpened_ + limit > kMaxOpenWindows)
         {
             Window w = ActiveWindow();
             if (!w) w = NewWindow();
             askingBatch_ = true;
-            const int n = co_await Impl(w)->AskOpenBatchAsync(static_cast<int>(todo.size()), static_cast<int>(kMaxOpenWindows), static_cast<int>(kMaxOpenAll));
+            const size_t total = burstOpened_ + todo.size();   // the ones opened at once are part of the count the user sees
+            const int n = co_await Impl(w)->AskOpenBatchAsync(static_cast<int>(total), static_cast<int>(kMaxOpenWindows), static_cast<int>(kMaxOpenAll));
             askingBatch_ = false;
-            limit = static_cast<size_t>(n);
+            limit = static_cast<size_t>(n) > burstOpened_ ? static_cast<size_t>(n) - burstOpened_ : 0;
         }
-        if (limit == 1 && todo.size() == 1)
+        burstOpened_ += std::min(limit, todo.size());
+        if (limit == 1 && todo.size() == 1 && burstOpened_ == 1)
         {
             // a single archive: according to the "open mode" setting it may replace the content of the current window
             Window w = ActiveWindow();
@@ -346,14 +358,16 @@ namespace winrt::LycanZip::implementation
         if (!openBatch_.empty()) FlushOpenBatch();  // new requests arrived while asking
     }
 
-    void App::OnLaunched(LaunchActivatedEventArgs const&)
+    // The start request from the command line. The keys held at the start are read here, in the process that Explorer started, before it hands
+    // the request to the running one. waitPid: "--wait-pid <n>" waits for that process (the early hand-over leaves such starts alone).
+    static lycan::LaunchRequest CommandLineRequest(bool waitPid, bool* special = nullptr)
     {
-        // Command line -> start request
         std::vector<std::wstring> args;
         int argc = 0;
         if (LPWSTR* argv = CommandLineToArgvW(GetCommandLineW(), &argc))
         {
             for (int i = 1; i < argc; ++i) args.emplace_back(argv[i]);
+            for (auto const& a : args) if (special && a.rfind(L"--velo", 0) == 0) *special = true;   // Velopack's hooks (answered before main)
             LocalFree(argv);
         }
         // --wait-pid <n>: started by "switch the data location": wait until that process (the old window) has ended
@@ -361,6 +375,8 @@ namespace winrt::LycanZip::implementation
         {
             if (args[i] == L"--wait-pid")
             {
+                if (special) *special = true;
+                if (!waitPid) return {};
                 if (const DWORD pid = static_cast<DWORD>(_wtoi(args[i + 1].c_str())))
                     if (HANDLE h = OpenProcess(SYNCHRONIZE, FALSE, pid))
                     {
@@ -387,8 +403,30 @@ namespace winrt::LycanZip::implementation
             else if (lycan::IconFamilyForPath(request.paths[0].wstring()) == lycan::IconFamily::Comic && lycan::LoadSettings(lycan::DefaultSettingsPath()).comicReading)
                 request.action = lycan::LaunchAction::PreviewImages;
         }
+        return request;
+    }
+
+    // A second start while LycanZip runs (a double click on an archive): hand the request over before the interface library starts, which
+    // saves the time it takes to start it (about 100 ms). Anything unusual, or no answer in 2 seconds, goes the normal way (OnLaunched).
+    bool ForwardBeforeXaml()
+    {
+        if (!SingleInstance::PrimaryRunning()) return false;
+        bool special = false;
+        lycan::LaunchRequest request = CommandLineRequest(false, &special);
+        if (special) return false;
+        AllowSetForegroundWindow(ASFW_ANY);
+        SingleInstance instance;
+        return instance.Forward(lycan::SerializeLaunchRequest(request.valid ? request : lycan::LaunchRequest{}), 2000);
+    }
+
+    void App::OnLaunched(LaunchActivatedEventArgs const&)
+    {
+        const long long launchedMs = lycan_app::MsSinceProcessStart();
+        lycan::LaunchRequest request = CommandLineRequest(true);
         lycan::diag::Init(L"app");
         lycan::diag::LogStartup();
+        lycan_app::StartupMark(L"app object made", sAppMadeMs);
+        lycan_app::StartupMark(L"OnLaunched", launchedMs);
         lycan::diag::Info(L"launch: action {}, {} path(s){}", static_cast<int>(request.action), request.paths.size(), request.valid ? L"" : L" (arguments not understood)");
 
         // There is a main instance already: hand the request over (including "just bring the window to the front") and exit
@@ -415,8 +453,11 @@ namespace winrt::LycanZip::implementation
 
         lycan_app::InstallCrashHandler();  // on a crash write a local report (nothing is uploaded); announced at the next start
 
+        lycan_app::StartupMark(L"before the first window");
         Window first = NewWindow(request.valid && request.IsPreviewOnly(), request.valid && request.action != lycan::LaunchAction::None && !request.IsPreviewOnly());
         dispatcher_ = first.DispatcherQueue();
+        lycan_app::StartupMark(L"first window made");
+        lycan_app::StartupMarkAtNextFrame(L"first frame", !(request.valid && request.action != lycan::LaunchAction::None));
         if (auto root = first.Content().try_as<FrameworkElement>()) lycan::diag::Debug(L"interface text language: {}", std::wstring(root.Language()));
         MainWindow::sStateChanged = [this] { UpdateCrashSnapshot(); };
         MainWindow::sEnterBackground = [this] { EnterBackground(); };
@@ -431,6 +472,7 @@ namespace winrt::LycanZip::implementation
         MainWindow::sOpenInNewWindow = [this](std::filesystem::path p) { OpenOne(p); };
 
         instance_.StartServer([this](std::wstring message) {
+            lycan::diag::Info(L"forward: a request arrived");
             dispatcher_.TryEnqueue([this, message = std::move(message)] {
                 auto req = lycan::DeserializeLaunchRequest(message);
                 if (req.valid) Route(req);
@@ -467,4 +509,14 @@ namespace winrt::LycanZip::implementation
             }).detach();
         }
     }
+}
+
+// DISABLE_XAML_GENERATED_MAIN (LycanZip.vcxproj): this entry point first tries the early hand-over, then starts the interface the way the
+// generated one does (not by calling wXamlGeneratedMain: its check for a parameterless App constructor fails in the Debug build, and no App is made)
+int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
+{
+    if (winrt::LycanZip::implementation::ForwardBeforeXaml()) return 0;
+    winrt::init_apartment(winrt::apartment_type::single_threaded);
+    winrt::Microsoft::UI::Xaml::Application::Start([](auto&&) { winrt::make<winrt::LycanZip::implementation::App>(); });
+    return 0;
 }

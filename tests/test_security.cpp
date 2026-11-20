@@ -16,6 +16,11 @@ static int failures = 0;
     } while (0)
 
 using lycan::SanitizeEntryPath;
+using lycan::HasBidiControls;
+using lycan::VisibleName;
+using lycan::LooksDisguised;
+using lycan::NameWarnings;
+using lycan::ScanEntryNames;
 
 int main() {
     // normal
@@ -68,6 +73,18 @@ int main() {
     }
     // empty after cleaning
     EXPECT(SanitizeEntryPath(L"dir/...").rejected);
+
+    // Names that pretend to be another type
+    {
+        const std::wstring rlo = L"x\u202Etxt.exe";   // shown by Windows as "xexe.txt"
+        EXPECT(HasBidiControls(rlo) && !HasBidiControls(L"readme.txt"));
+        EXPECT(VisibleName(rlo) == L"x[RLO]txt.exe" && VisibleName(L"a\u200Fb\u2066c") == L"a[RLM]b[LRI]c" && VisibleName(L"plain.txt") == L"plain.txt");
+        EXPECT(LooksDisguised(rlo) && LooksDisguised(L"docs/invoice.PDF.exe") && LooksDisguised(L"photo.jpg      .scr") && LooksDisguised(L"a/b/report.docx..cmd"));
+        EXPECT(!LooksDisguised(L"setup.exe") && !LooksDisguised(L"report.pdf") && !LooksDisguised(L"tool.v2.exe") && !LooksDisguised(L"data.tar.gz"));
+        const NameWarnings w = ScanEntryNames({L"ok.txt", L"invoice.pdf.exe", L"../evil.txt", rlo, L"C:/abs.txt"});
+        EXPECT(w.disguised == 2 && w.unsafePaths == 2 && w.example == L"invoice.pdf.exe");
+        EXPECT(ScanEntryNames({L"a.txt", L"setup.exe", L"dir/b.png"}).disguised == 0);
+    }
 
     if (failures == 0) std::puts("test_security: all passed");
     return failures ? 1 : 0;

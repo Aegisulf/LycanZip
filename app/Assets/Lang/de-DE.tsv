@@ -1323,8 +1323,8 @@ main.restart_explorer_hint	Verwenden Sie dies, wenn eine Änderung des Kontextme
 main.restart_explorer_do	Neu starten	b134bd55
 main.restart_explorer_title	Datei-Explorer neu starten?	1247b286
 main.restart_explorer_question	Die geöffneten Ordnerfenster werden geschlossen, und die Taskleiste verschwindet kurz. Schließen Sie zuerst ab, was Sie im Datei-Explorer gerade tun.	bb88d250
-main.menu_updated	Das Kontextmenü wurde aktualisiert	35a346d0
-main.menu_updated_restart_explorer	Starten Sie den Datei-Explorer neu, um die neue Version zu verwenden.	81b74c5b
+main.menu_updated	LycanZip wurde aktualisiert	40f2217e
+main.menu_updated_restart_explorer	Starten Sie den Datei-Explorer neu, damit auch das Kontextmenü die neue Version verwendet.	4f4ab0bd
 main.off	Aus	e3de5ab0
 main.virustotal_lookup	Bei VirusTotal nachschlagen	45155d86
 main.virustotal_lookup_tip	Berechnet den SHA-256-Wert und öffnet VirusTotal in Ihrem Browser. Gesendet wird nur der Hash, nicht die Datei. Ein Hash, den VirusTotal nicht kennt, bedeutet nicht, dass die Datei sicher ist.	162ec07b
@@ -1518,3 +1518,13 @@ main.upgrade_button	Aktualisieren	a6f47e00
 main.convert_names_note	Die Dateinamen werden so geschrieben, wie sie jetzt angezeigt werden ({0}). Wenn sie unleserlich aussehen, gehen Sie zurück und wählen Sie zuerst eine andere Codierung.	4563f36d
 main.tar_names_title	Dateinamen in UTF-8 speichern?	1cc12cbc
 main.tar_names_text	Die Dateinamen dieses tar-Archivs haben keine Codierungskennzeichnung. Beim Ändern werden alle dauerhaft in UTF-8 gespeichert, genau wie unten angezeigt. Wenn sie unleserlich aussehen, brechen Sie ab und wählen Sie zuerst oben rechts eine andere Codierung.	85e7fd4d
+core.protected_move_cancelled	Nichts wurde in {0} abgelegt: Der Ordner erfordert Administratorrechte, und sie wurden nicht erteilt.	22f8dbad
+core.protected_move_failed	Das Ergebnis konnte nicht nach {0} verschoben werden ({1}).	8f4f7d89
+main.drag_nothing_written	Dort wurde nichts abgelegt. Wenn der Ordner Administratorrechte erfordert, verwenden Sie „Extrahieren nach…“ oder deaktivieren Sie in den Einstellungen „Dateien beim Herausziehen streamen“.	d7f177dc
+main.safety_title	Dieses Archiv prüfen	5298c70e
+main.safety_disguised	{0} {0:Datei gibt sich|Dateien geben sich} als anderer Typ aus und könnte ein Programm sein, z. B. {1}	0591efb1
+main.safety_unsafe_paths	{0} {0:Element hat einen unsicheren Pfad und wird|Elemente haben unsichere Pfade und werden} beim Extrahieren ausgelassen, z. B. {1}	6618dcd9
+main.safety_both	{0} {0:Datei gibt sich|Dateien geben sich} als anderer Typ aus und {1} {1:Pfad ist|Pfade sind} unsicher, z. B. {2}	6c0af725
+win11.trust_title	Dem LycanZip-Zertifikat vertrauen?	9d36cd0b
+win11.trust_text	Das neue Kontextmenü von Windows 11 erfordert ein signiertes Paket. LycanZip signiert es mit einem eigenen Zertifikat, das Windows noch nicht kennt. Windows fragt jetzt nach Administratorrechten, um dieses Zertifikat auf diesem PC unter „Vertrauenswürdige Personen“ hinzuzufügen.\n\nDanach werden mit diesem Zertifikat signierte Pakete auf diesem PC ohne Warnung installiert; LycanZip signiert damit nur sein eigenes Menüpaket. Sie können das Zertifikat später entfernen (certlm.msc, „Vertrauenswürdige Personen“). Die Microsoft Store-Version benötigt dies nicht.	6d4479fc
+win11.trust_button	Vertrauen und Menü hinzufügen	0c5d5389

@@ -43,7 +43,7 @@ namespace LycanZip
         Microsoft.UI.Xaml.Visibility GlyphVisibility{ get; };
         // The icon view: the width of a cell, the height of the picture area and how many lines of the name there is room for (the same for every cell of a folder)
         // iconSize: the size of the icon of a file that is not a picture (the glyph is a little smaller)
-        void SetLayout(Double itemWidth, Double boxHeight, Int32 nameLines, Double iconSize);
+        void SetLayout(Double itemWidth, Double boxHeight, Int32 nameLines, Double iconSize, Double lineHeight);
         Double IconSize{ get; };
         Double GlyphSize{ get; };
         Int32 NameLines{ get; };
@@ -66,6 +66,9 @@ namespace LycanZip
         Microsoft.UI.Xaml.Media.ImageSource RootIcon{ get; };
         Microsoft.UI.Xaml.Visibility RootIconVisibility{ get; };
         Microsoft.UI.Xaml.Visibility TreeGlyphVisibility{ get; };
+        // The left padding of a row of the folder tree: its level (bound by the tree item's template)
+        Microsoft.UI.Xaml.Thickness TreeIndent{ get; };
+        void SetTreeDepth(Int32 depth);
     }
 
     // One part of the breadcrumb: the last part (the current place) is bold; the tooltip says "Go to xxx"

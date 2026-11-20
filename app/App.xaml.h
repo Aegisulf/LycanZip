@@ -52,6 +52,9 @@ namespace winrt::LycanZip::implementation
         std::chrono::steady_clock::time_point lastQuickAt_{};
         std::vector<std::filesystem::path> openBatch_;  // "open" requests that the processes hand over one after the other on an Explorer multi-select; collected for a short time and handled together
         bool askingBatch_ = false;                      // asking "how many to open": requests arriving meanwhile are kept
+        // The first archive of a burst opens at once (a double click must not wait); the burst lasts while requests keep arriving
+        std::chrono::steady_clock::time_point burstUntil_{};
+        size_t burstOpened_ = 0;                        // windows opened in this burst so far: counted against kMaxOpenWindows
         SingleInstance instance_;
     };
 }

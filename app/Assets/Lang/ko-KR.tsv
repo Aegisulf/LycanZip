@@ -1323,8 +1323,8 @@ main.restart_explorer_hint	오른쪽 클릭 메뉴의 변경 내용이 아직 �
 main.restart_explorer_do	다시 시작	b134bd55
 main.restart_explorer_title	파일 탐색기를 다시 시작하시겠습니까?	1247b286
 main.restart_explorer_question	열려 있는 폴더 창이 닫히고 작업 표시줄이 잠시 사라집니다. 먼저 파일 탐색기에서 하던 작업을 마치세요.	bb88d250
-main.menu_updated	오른쪽 클릭 메뉴가 업데이트되었습니다	35a346d0
-main.menu_updated_restart_explorer	새 버전을 사용하려면 파일 탐색기를 다시 시작하세요.	81b74c5b
+main.menu_updated	LycanZip가 업데이트되었습니다	40f2217e
+main.menu_updated_restart_explorer	오른쪽 클릭 메뉴에서도 새 버전을 사용하려면 파일 탐색기를 다시 시작하세요.	4f4ab0bd
 main.off	끄기	e3de5ab0
 main.virustotal_lookup	VirusTotal에서 조회	45155d86
 main.virustotal_lookup_tip	SHA-256을 계산하고 브라우저에서 VirusTotal을 엽니다. 파일이 아닌 해시만 보냅니다. VirusTotal이 모르는 해시라고 해서 파일이 안전한 것은 아닙니다.	162ec07b
@@ -1518,3 +1518,13 @@ main.upgrade_button	업그레이드	a6f47e00
 main.convert_names_note	파일 이름은 지금 표시된 대로({0}) 기록됩니다. 글자가 깨져 보이면 돌아가서 먼저 다른 인코딩을 선택하세요.	4563f36d
 main.tar_names_title	파일 이름을 UTF-8로 저장하시겠습니까?	1cc12cbc
 main.tar_names_text	이 tar 압축 파일의 파일 이름에는 인코딩 표시가 없습니다. 변경하면 모든 파일 이름이 아래 표시된 그대로 UTF-8로 영구 저장됩니다. 글자가 깨져 보이면 취소하고 먼저 오른쪽 위에서 다른 인코딩을 선택하세요.	85e7fd4d
+core.protected_move_cancelled	{0}에 아무것도 넣지 않았습니다. 이 폴더에는 관리자 권한이 필요하지만 허용되지 않았습니다.	22f8dbad
+core.protected_move_failed	결과를 {0}(으)로 이동할 수 없습니다({1}).	8f4f7d89
+main.drag_nothing_written	아무것도 넣지 못했습니다. 그 폴더에 관리자 권한이 필요하면 "압축 풀 위치 지정…"을 사용하거나 설정에서 "끌어 낼 때 파일 스트리밍"을 끄세요.	d7f177dc
+main.safety_title	이 압축 파일을 확인하세요	5298c70e
+main.safety_disguised	파일 {0}개가 다른 형식으로 위장되어 있으며 프로그램일 수 있습니다(예: {1})	0591efb1
+main.safety_unsafe_paths	항목 {0}개의 경로가 안전하지 않아 압축을 풀 때 건너뜁니다(예: {1})	6618dcd9
+main.safety_both	파일 {0}개가 다른 형식으로 위장되어 있고 경로 {1}개가 안전하지 않습니다(예: {2})	6c0af725
+win11.trust_title	LycanZip 인증서를 신뢰하시겠습니까?	9d36cd0b
+win11.trust_text	Windows 11의 새 상황에 맞는 메뉴에는 서명된 패키지가 필요합니다. LycanZip은 자체 인증서로 서명하지만 Windows는 아직 이 인증서를 모릅니다. 이제 Windows가 관리자 권한을 요청하여 이 인증서를 이 PC의 "신뢰할 수 있는 사용자"에 추가합니다.\n\n그 후 이 인증서로 서명된 패키지는 이 PC에 경고 없이 설치됩니다. LycanZip은 자체 메뉴 패키지에만 이 인증서로 서명합니다. 나중에 인증서를 제거할 수 있습니다(certlm.msc의 "신뢰할 수 있는 사용자"). Microsoft Store 버전에는 필요하지 않습니다.	6d4479fc
+win11.trust_button	신뢰하고 메뉴 추가	0c5d5389

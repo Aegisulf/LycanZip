@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "ImagePreview.h"
+#include "ProtectedMove.h"
 #include "AltBeep.h"
 
 #include <algorithm>
@@ -1827,67 +1828,75 @@ private:
                                                                  : std::filesystem::path{std::wstring(co_await lycan_app::PickSaveFileAsync(win_.AppWindow().Id(), lycan_app::kPurposeSaveImage,
                                                                                             archive.parent_path(), item.name, types, lycan::Tr(L"preview.save_dialog_title")))};
         if (dest.empty() || closed_) co_return;
+        HWND owner{};
+        win_.as<::IWindowNative>()->get_WindowHandle(&owner);
         co_await resume_background();
         bool ok = false;
         try {
-            auto src = lycan::ArchiveSource::Open(archive, open);
-            // written next to the target under a temporary name and moved over it, so a failure never damages an existing file
-            std::filesystem::path tmp = dest;
-            tmp += L".lycantmp";
-            struct FileSink : lycan::ByteSink {
-                HANDLE h = INVALID_HANDLE_VALUE;
-                void Write(const void* d, size_t n) override {
-                    auto p = static_cast<const char*>(d);
-                    while (n) {
-                        DWORD w = 0;
-                        if (!WriteFile(h, p, static_cast<DWORD>(std::min<size_t>(n, 1u << 20)), &w, nullptr) || !w) throw lycan::Error(HRESULT_FROM_WIN32(GetLastError()), "write failed");
-                        p += w;
-                        n -= w;
+            // a folder that needs administrator rights: written into a scratch folder, which the shell moves in (it asks for the rights)
+            ok = lycan_app::WriteInto(owner, dest.parent_path(), [&](std::filesystem::path const& where) {
+                const std::filesystem::path out = where / dest.filename();
+                bool ok = false;
+                auto src = lycan::ArchiveSource::Open(archive, open);
+                // written next to the target under a temporary name and moved over it, so a failure never damages an existing file
+                std::filesystem::path tmp = out;
+                tmp += L".lycantmp";
+                struct FileSink : lycan::ByteSink {
+                    HANDLE h = INVALID_HANDLE_VALUE;
+                    void Write(const void* d, size_t n) override {
+                        auto p = static_cast<const char*>(d);
+                        while (n) {
+                            DWORD w = 0;
+                            if (!WriteFile(h, p, static_cast<DWORD>(std::min<size_t>(n, 1u << 20)), &w, nullptr) || !w) throw lycan::Error(HRESULT_FROM_WIN32(GetLastError()), "write failed");
+                            p += w;
+                            n -= w;
+                        }
                     }
+                } sink;
+                sink.h = CreateFileW(lycan::ToLongPath(tmp).c_str(), GENERIC_WRITE, 0, nullptr, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
+                if (sink.h == INVALID_HANDLE_VALUE) throw lycan::Error(HRESULT_FROM_WIN32(GetLastError()), "cannot create file");
+                try {
+                    const std::wstring destExt = SaveExt(out.extension().wstring());
+                    const EncoderChoice* target = nullptr;
+                    if (destExt != origExt)
+                        for (auto const& e : Encoders())
+                            if (e.ext == destExt) target = &e;
+                    if (!target) {
+                        src->ReadEntry(item.entryIndex, sink);   // the same format: the file as it is
+                    } else {
+                        std::vector<uint8_t> bytes;
+                        VecSink vs(bytes, 256ull << 20);
+                        src->ReadEntry(item.entryIndex, vs);
+                        const auto converted = ConvertImageAsync(std::move(bytes), target->id, target->ext == L"jpg" || target->ext == L"bmp").get();
+                        sink.Write(converted.data(), converted.Length());
+                    }
+                } catch (...) {
+                    CloseHandle(sink.h);
+                    DeleteFileW(lycan::ToLongPath(tmp).c_str());
+                    throw;
                 }
-            } sink;
-            sink.h = CreateFileW(lycan::ToLongPath(tmp).c_str(), GENERIC_WRITE, 0, nullptr, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
-            if (sink.h == INVALID_HANDLE_VALUE) throw lycan::Error(HRESULT_FROM_WIN32(GetLastError()), "cannot create file");
-            try {
-                const std::wstring destExt = SaveExt(dest.extension().wstring());
-                const EncoderChoice* target = nullptr;
-                if (destExt != origExt)
-                    for (auto const& e : Encoders())
-                        if (e.ext == destExt) target = &e;
-                if (!target) {
-                    src->ReadEntry(item.entryIndex, sink);   // the same format: the file as it is
-                } else {
-                    std::vector<uint8_t> bytes;
-                    VecSink vs(bytes, 256ull << 20);
-                    src->ReadEntry(item.entryIndex, vs);
-                    const auto converted = ConvertImageAsync(std::move(bytes), target->id, target->ext == L"jpg" || target->ext == L"bmp").get();
-                    sink.Write(converted.data(), converted.Length());
+                if (item.mtimeFileTime) {
+                    FILETIME ft{static_cast<DWORD>(item.mtimeFileTime & 0xFFFFFFFF), static_cast<DWORD>(item.mtimeFileTime >> 32)};
+                    SetFileTime(sink.h, nullptr, nullptr, &ft);
                 }
-            } catch (...) {
                 CloseHandle(sink.h);
-                DeleteFileW(lycan::ToLongPath(tmp).c_str());
-                throw;
-            }
-            if (item.mtimeFileTime) {
-                FILETIME ft{static_cast<DWORD>(item.mtimeFileTime & 0xFFFFFFFF), static_cast<DWORD>(item.mtimeFileTime >> 32)};
-                SetFileTime(sink.h, nullptr, nullptr, &ft);
-            }
-            CloseHandle(sink.h);
-            ok = MoveFileExW(lycan::ToLongPath(tmp).c_str(), lycan::ToLongPath(dest).c_str(), MOVEFILE_REPLACE_EXISTING) != 0;
-            if (!ok) DeleteFileW(lycan::ToLongPath(tmp).c_str());
-            // keep the "downloaded from the internet" mark of the archive on the saved image (like extracting does)
-            if (ok) {
-                HANDLE z = CreateFileW((lycan::ToLongPath(archive).wstring() + L":Zone.Identifier").c_str(), GENERIC_READ, FILE_SHARE_READ | FILE_SHARE_WRITE, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
-                if (z != INVALID_HANDLE_VALUE) {
-                    char buf[4096];
-                    DWORD n = 0;
-                    if (ReadFile(z, buf, sizeof buf, &n, nullptr) && n) {
-                        HANDLE o = CreateFileW((lycan::ToLongPath(dest).wstring() + L":Zone.Identifier").c_str(), GENERIC_WRITE, 0, nullptr, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
-                        if (o != INVALID_HANDLE_VALUE) { DWORD w = 0; WriteFile(o, buf, n, &w, nullptr); CloseHandle(o); }
+                ok = MoveFileExW(lycan::ToLongPath(tmp).c_str(), lycan::ToLongPath(out).c_str(), MOVEFILE_REPLACE_EXISTING) != 0;
+                if (!ok) DeleteFileW(lycan::ToLongPath(tmp).c_str());
+                // keep the "downloaded from the internet" mark of the archive on the saved image (like extracting does)
+                if (ok) {
+                    HANDLE z = CreateFileW((lycan::ToLongPath(archive).wstring() + L":Zone.Identifier").c_str(), GENERIC_READ, FILE_SHARE_READ | FILE_SHARE_WRITE, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
+                    if (z != INVALID_HANDLE_VALUE) {
+                        char buf[4096];
+                        DWORD n = 0;
+                        if (ReadFile(z, buf, sizeof buf, &n, nullptr) && n) {
+                            HANDLE o = CreateFileW((lycan::ToLongPath(out).wstring() + L":Zone.Identifier").c_str(), GENERIC_WRITE, 0, nullptr, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
+                            if (o != INVALID_HANDLE_VALUE) { DWORD w = 0; WriteFile(o, buf, n, &w, nullptr); CloseHandle(o); }
+                        }
+                        CloseHandle(z);
                     }
-                    CloseHandle(z);
                 }
-            }
+                return ok;
+            });
         } catch (...) {}
         co_await resume_ui{dq_};
         if (!closed_) Flash(ok ? lycan::Tf(L"preview.saved", dest.wstring()) : std::wstring(lycan::Tr(L"preview.could_not_save")));

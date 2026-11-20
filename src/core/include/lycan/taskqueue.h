@@ -43,6 +43,15 @@ struct TaskInfo {
     bool Finished() const { return state == TaskState::Completed || state == TaskState::Failed || state == TaskState::Cancelled; }
 };
 
+// Whether this process can create files in `dir`, or in the nearest folder above it that exists (returned in `existing`):
+// false = writing there needs administrator rights (Program Files and the like).
+bool CanWriteInto(const std::filesystem::path& dir, std::filesystem::path* existing = nullptr);
+
+// Moves `items` into the folder `into`, asking for administrator rights (the program uses the shell's file operation, the one of File
+// Explorer). replace: what is there under the same name is replaced without asking (an archive that was changed in place).
+// false + `error` when it did not happen (the user said no, an error).
+using ProtectedMoveFn = std::function<bool(const std::vector<std::filesystem::path>& items, const std::filesystem::path& into, bool replace, Message& error)>;
+
 class TaskQueue {
 public:
     using Listener = std::function<void(const TaskInfo&)>;
@@ -59,6 +68,9 @@ public:
 
     // State changes and progress (throttled to about once per 50 ms; completion / a state change is always reported). May be empty.
     void SetListener(Listener l);
+    // A task whose target needs administrator rights (CanWriteInto: extract, compress, repack, and changing an archive in place)
+    // writes into a scratch folder first and hands the result to this function when it is done. Without it such a task fails as before.
+    void SetProtectedMove(ProtectedMoveFn fn);
 
     uint64_t EnqueueExtract(std::filesystem::path archive, std::filesystem::path destDir, ExtractOptions options = {},
                             OpenOptions open = {}, std::vector<uint32_t> indices = {});
@@ -110,6 +122,7 @@ private:
     std::vector<std::thread> workers_;
     Listener listener_;
     std::mutex listenerM_;
+    ProtectedMoveFn protectedMove_;   // under listenerM_
     uint64_t nextId_ = 1;
     unsigned maxParallel_ = 1;
     unsigned running_ = 0;

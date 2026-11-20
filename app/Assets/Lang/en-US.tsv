@@ -1323,8 +1323,8 @@ main.restart_explorer_hint	Use it when a change of the right-click menu does not
 main.restart_explorer_do	Restart	Button of the card and of the question
 main.restart_explorer_title	Restart File Explorer?	Title of the question
 main.restart_explorer_question	The open folder windows close and the taskbar disappears for a moment. Finish what you are doing in File Explorer first.	The question before File Explorer is restarted
-main.menu_updated	The right-click menu was updated	Title of the notice on the start page after an update of the program
-main.menu_updated_restart_explorer	Restart File Explorer to use the new version.	Message of the notice
+main.menu_updated	LycanZip was updated	Title of the notice on the start page after an update of the program
+main.menu_updated_restart_explorer	Restart File Explorer so that the right-click menu uses the new version too.	Message of the notice
 main.off	Off	An option of a drop-down list that switches the feature off (background, read-ahead); not the Close button
 main.virustotal_lookup	Look up on VirusTotal	Menu item, tooltip of the button next to a SHA-256 value, and the title of the small window while the hash is calculated
 main.virustotal_lookup_tip	Calculates the SHA-256 and opens VirusTotal in your browser. Only the hash is sent, not the file. A hash that VirusTotal does not know does not mean that the file is safe.	Tooltip of the menu item
@@ -1518,3 +1518,13 @@ main.upgrade_button	Upgrade	Button of the upgrade dialog
 main.convert_names_note	The file names are written as shown now ({0}). If they look garbled, go back and choose another encoding first.	On the convert page, for an archive whose names have no encoding mark; {0} is the encoding (Shift-JIS)
 main.tar_names_title	Store the file names in UTF-8?	Dialog title before the first change of an old tar archive
 main.tar_names_text	The file names of this tar archive have no encoding mark. Changing it stores all of them in UTF-8 for good, exactly as shown below. If they look garbled, cancel and choose another encoding at the top right first.	Below it: some file names as they are shown now
+core.protected_move_cancelled	Nothing was put into {0}: the folder needs administrator rights, and they were not given.	{0} = a folder such as C:\Program Files\App. The user said no to the administrator prompt (or closed it) when the result was moved into a protected folder.
+core.protected_move_failed	Could not move the result into {0} ({1}).	{0} = a folder that needs administrator rights; {1} = an error code such as 0x80070005.
+main.drag_nothing_written	Nothing was put there. If that folder needs administrator rights, use Extract to…, or turn off "Stream files when dragging them out" in Settings.	Shown in the status bar after a drag to File Explorer that wrote no file (usually access denied). The button (main.extract) and the setting (main.stream_files_when_dragging_them_out) keep the names they have in the program.
+main.safety_title	Check this archive	Bold start of the warning line above an archive whose file names look suspicious.
+main.safety_disguised	{0} {0:file pretends|files pretend} to be another type and may be a program, for example {1}	{0} = a number; {1} = a file name such as invoice.pdf.exe or x[RLO]txt.exe ([RLO] marks a hidden character that reverses the text).
+main.safety_unsafe_paths	{0} {0:item has a path|items have paths} that will not be extracted (not safe), for example {1}	{0} = a number; {1} = a path such as ../../evil.txt.
+main.safety_both	{0} {0:file pretends|files pretend} to be another type and {1} {1:path is|paths are} not safe, for example {2}	{0}, {1} = numbers; {2} = a file name or path.
+win11.trust_title	Trust the LycanZip certificate?	Title of the question before the Windows 11 context menu is added (installer and zip versions).
+win11.trust_text	The new Windows 11 context menu needs a signed package. LycanZip signs it with its own certificate, which Windows does not know yet. Windows will now ask for administrator rights to add this certificate to Trusted People on this computer.\n\nAfter that, packages signed with this certificate are installed on this computer without a warning; LycanZip signs only its own menu package with it. You can remove the certificate later (certlm.msc, Trusted People). The Microsoft Store version does not need this.	Body of that question. certlm.msc and Trusted People are names of Windows: use the name the Windows of that language shows for the store "Trusted People".
+win11.trust_button	Trust and add the menu	Button that trusts the certificate (asks for administrator rights) and adds the menu.

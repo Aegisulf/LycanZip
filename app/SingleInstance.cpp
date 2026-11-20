@@ -53,6 +53,13 @@ bool SingleInstance::BecomePrimary() {
     return true;
 }
 
+bool SingleInstance::PrimaryRunning() {
+    HANDLE m = OpenMutexW(SYNCHRONIZE, FALSE, (L"Local\\LycanZip.Primary." + CopyTag()).c_str());
+    if (!m) return false;
+    CloseHandle(m);
+    return true;
+}
+
 bool SingleInstance::Forward(const std::wstring& message, DWORD timeoutMs) {
     const std::wstring name = PipeName();
     ULONGLONG end = GetTickCount64() + timeoutMs;

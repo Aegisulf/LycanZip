@@ -1,6 +1,7 @@
 ﻿#include "pch.h"
 // The main window: hash values, checksum files, "Calculate and save as name.sha256", the archive information.
 #include "MainWindowShared.h"
+#include "ProtectedMove.h"
 
 namespace winrt::LycanZip::implementation
 {
@@ -461,10 +462,17 @@ namespace winrt::LycanZip::implementation
                                                                                lycan::Tr(L"main.save_checksum_file")))};
         if (out.empty()) co_return;
         const std::string text = lycan::HashReportText(st->report, algo, inArchive ? fs::path{} : out.parent_path());
-        std::ofstream f(out, std::ios::binary | std::ios::trunc);
-        f << text;
-        f.close();
-        if (!f.good() || text.empty()) { ShowMessage(lycan::Tr(L"main.could_not_save"), hstring{lycan::Tf(L"main.could_not_write", out.wstring())}); co_return; }
+        const HWND owner = Hwnd();
+        co_await resume_background();
+        // a folder that needs administrator rights gets them through the shell (WriteInto)
+        const bool written = !text.empty() && lycan_app::WriteInto(owner, out.parent_path(), [&](fs::path const& where) {
+            std::ofstream f(where / out.filename(), std::ios::binary | std::ios::trunc);
+            f << text;
+            f.close();
+            return f.good();
+        });
+        co_await resume_ui{dispatcher_};
+        if (!written) { ShowMessage(lycan::Tr(L"main.could_not_save"), hstring{lycan::Tf(L"main.could_not_write", out.wstring())}); co_return; }
         st->status.Text(hstring{lycan::Tf(L"main.saved", out.wstring())});
     }
 
@@ -843,7 +851,7 @@ namespace winrt::LycanZip::implementation
         bool cancelled = false;
     };
 
-    static fire_and_forget HashSaveJob(std::shared_ptr<HashSaveState> st, std::vector<fs::path> paths, fs::path out, fs::path base)
+    static fire_and_forget HashSaveJob(std::shared_ptr<HashSaveState> st, std::vector<fs::path> paths, fs::path out, fs::path base, HWND owner)
     {
         co_await resume_background();
         try
@@ -854,7 +862,10 @@ namespace winrt::LycanZip::implementation
             lycan::SumWriteOptions o;
             o.algo = lycan::kHashSha256;
             o.progress = [st](uint64_t d, uint64_t t) { st->done = d; st->total = t; return !st->cancel.load(); };
-            st->result = lycan::WriteSumFile(out, paths, base, o);
+            // a folder that needs administrator rights gets them through the shell (WriteInto)
+            if (!lycan_app::WriteInto(owner, out.parent_path(), [&](fs::path const& where) { st->result = lycan::WriteSumFile(where / out.filename(), paths, base, o); return true; })
+                && !st->cancel)
+                st->error = lycan::Tf(L"main.could_not_write", out.wstring());
         }
         catch (lycan::Error const& e)
         {
@@ -901,7 +912,7 @@ namespace winrt::LycanZip::implementation
         }
 
         auto st = std::make_shared<HashSaveState>();
-        HashSaveJob(st, paths, out, dir);
+        HashSaveJob(st, paths, out, dir, Hwnd());
 
         // quick: wait a moment without showing anything
         const auto start = std::chrono::steady_clock::now();
@@ -1103,6 +1114,28 @@ namespace winrt::LycanZip::implementation
         const bool wasHidden = strip.Visibility() == Visibility::Collapsed;
         strip.Visibility(Visibility::Visible);
         if (wasHidden) FadeIn(strip, -8, 200);   // comes down into place
+    }
+
+    // The warning above an archive that was opened: names that pretend to be another type ("invoice.pdf.exe", hidden direction marks) or
+    // paths that extracting leaves out (path traversal ...). Looked at in the background (a big archive has many names).
+    fire_and_forget MainWindow::ShowSafetyBannerAsync()
+    {
+        auto strong = get_strong();
+        SafetyStrip().Visibility(Visibility::Collapsed);
+        if (!current_ || compact_ || previewOnly_) co_return;
+        const auto source = current_;
+        std::vector<std::wstring> names;
+        names.reserve(source->Entries().size());
+        for (auto const& e : source->Entries()) names.push_back(e.path);
+        co_await resume_background();
+        const lycan::NameWarnings w = lycan::ScanEntryNames(names);
+        co_await resume_ui{dispatcher_};
+        if (current_ != source || (w.disguised == 0 && w.unsafePaths == 0)) co_return;
+        const std::wstring message = w.disguised && w.unsafePaths ? lycan::Tf(L"main.safety_both", w.disguised, w.unsafePaths, w.example)
+                                   : w.disguised ? lycan::Tf(L"main.safety_disguised", w.disguised, w.example)
+                                                 : lycan::Tf(L"main.safety_unsafe_paths", w.unsafePaths, w.example);
+        lycan::diag::Info(L"safety: {} disguised name(s), {} unsafe path(s)", w.disguised, w.unsafePaths);
+        ShowNotice(SafetyStrip(), true, lycan::Tr(L"main.safety_title"), hstring{message}, {});
     }
 
     // The notice above an archive that was opened: a checksum file sits next to it

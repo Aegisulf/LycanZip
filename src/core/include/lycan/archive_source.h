@@ -37,6 +37,19 @@ std::filesystem::path SevenZipDllPath();
 // The base name after the archive extension is removed: foo.tar.gz / foo.tgz -> foo, foo.7z.001 -> foo, foo.part1.rar -> foo
 std::wstring ArchiveBaseName(const std::filesystem::path& file);
 
+// Closes every handle this process has on `file` (the archives that are open on it) and keeps them closed while it lives: a read
+// meanwhile fails; afterwards each one opens the file again, where it was, on its next read. For replacing an archive that is open
+// in the program by a means that needs it closed (the shell's move, which asks for administrator rights).
+class FileHold {
+public:
+    explicit FileHold(std::filesystem::path file);
+    ~FileHold();
+    FileHold(const FileHold&) = delete;
+    FileHold& operator=(const FileHold&) = delete;
+private:
+    std::filesystem::path file_;
+};
+
 class ArchiveSource final : public IFileSource {
 public:
     // Throws lycan::Error on failure.

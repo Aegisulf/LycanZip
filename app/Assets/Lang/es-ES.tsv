@@ -1323,8 +1323,8 @@ main.restart_explorer_hint	Úsalo cuando un cambio del menú contextual aún no 
 main.restart_explorer_do	Reiniciar	b134bd55
 main.restart_explorer_title	¿Reiniciar el Explorador de archivos?	1247b286
 main.restart_explorer_question	Las ventanas de carpeta abiertas se cierran y la barra de tareas desaparece un momento. Termina primero lo que estés haciendo en el Explorador de archivos.	bb88d250
-main.menu_updated	Se actualizó el menú contextual	35a346d0
-main.menu_updated_restart_explorer	Reinicia el Explorador de archivos para usar la nueva versión.	81b74c5b
+main.menu_updated	LycanZip se actualizó	40f2217e
+main.menu_updated_restart_explorer	Reinicia el Explorador de archivos para que el menú contextual también use la nueva versión.	4f4ab0bd
 main.off	Desactivado	e3de5ab0
 main.virustotal_lookup	Buscar en VirusTotal	45155d86
 main.virustotal_lookup_tip	Calcula el SHA-256 y abre VirusTotal en el explorador. Solo se envía el hash, no el archivo. Que VirusTotal no conozca un hash no significa que el archivo sea seguro.	162ec07b
@@ -1518,3 +1518,13 @@ main.upgrade_button	Actualizar	a6f47e00
 main.convert_names_note	Los nombres de archivo se escriben tal como se muestran ahora ({0}). Si se ven ilegibles, vuelve atrás y elige primero otra codificación.	4563f36d
 main.tar_names_title	¿Guardar los nombres de archivo en UTF-8?	1cc12cbc
 main.tar_names_text	Los nombres de archivo de este archivo tar no indican su codificación. Al cambiarlo, todos se guardarán en UTF-8 de forma permanente, tal como se muestran abajo. Si se ven ilegibles, cancela y elige primero otra codificación arriba a la derecha.	85e7fd4d
+core.protected_move_cancelled	No se ha puesto nada en {0}: la carpeta necesita permisos de administrador y no se concedieron.	22f8dbad
+core.protected_move_failed	No se pudo mover el resultado a {0} ({1}).	8f4f7d89
+main.drag_nothing_written	No se ha puesto nada ahí. Si esa carpeta necesita permisos de administrador, use «Extraer en…» o desactive «Transmitir los archivos al arrastrarlos fuera» en Configuración.	d7f177dc
+main.safety_title	Revise este archivo comprimido	5298c70e
+main.safety_disguised	{0} {0:archivo se hace pasar|archivos se hacen pasar} por otro tipo y podría ser un programa, por ejemplo {1}	0591efb1
+main.safety_unsafe_paths	{0} {0:elemento tiene una ruta no segura y se omitirá|elementos tienen rutas no seguras y se omitirán} al extraer, por ejemplo {1}	6618dcd9
+main.safety_both	{0} {0:archivo se hace pasar|archivos se hacen pasar} por otro tipo y {1} {1:ruta no es segura|rutas no son seguras}, por ejemplo {2}	6c0af725
+win11.trust_title	¿Confiar en el certificado de LycanZip?	9d36cd0b
+win11.trust_text	El nuevo menú contextual de Windows 11 necesita un paquete firmado. LycanZip lo firma con su propio certificado, que Windows aún no conoce. Ahora Windows pedirá permisos de administrador para agregar este certificado a «Personas de confianza» en este equipo.\n\nDespués, los paquetes firmados con este certificado se instalarán en este equipo sin advertencia; LycanZip solo firma con él su propio paquete de menú. Puede quitar el certificado más adelante (certlm.msc, «Personas de confianza»). La versión de Microsoft Store no lo necesita.	6d4479fc
+win11.trust_button	Confiar y agregar el menú	0c5d5389

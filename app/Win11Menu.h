@@ -27,6 +27,15 @@ struct Win11MenuRegistration {
 };
 Win11MenuRegistration QueryWin11MenuRegistration();   // asks the package manager: call it from a background thread
 
+// The installer and zip versions sign the package with LycanZip's own certificate (LycanZipShell.cer next to the exe), which a computer
+// has to trust first (Trusted People of the computer: one question for administrator rights). With Developer Mode on, the unsigned
+// layout next to the exe (shell-menu\AppxManifest.xml) is registered instead and nothing has to be trusted.
+// true: the menu can only be added after the certificate is trusted (not trusted yet, and no Developer Mode)
+bool Win11MenuNeedsTrust(std::filesystem::path const& exeDir);
+// Adds the certificate to Trusted People of the computer (certutil, started with administrator rights). Empty when it worked,
+// "cancelled" when the user said no to the rights, otherwise the reason. Waits on a background thread.
+winrt::Windows::Foundation::IAsyncOperation<winrt::hstring> TrustWin11MenuCertAsync(std::filesystem::path exeDir);
+
 // Register / remove the package; the result is empty when it worked, otherwise the reason (already translated)
 winrt::Windows::Foundation::IAsyncOperation<winrt::hstring> RegisterWin11MenuAsync(std::filesystem::path installDir);
 winrt::Windows::Foundation::IAsyncOperation<winrt::hstring> UnregisterWin11MenuAsync();

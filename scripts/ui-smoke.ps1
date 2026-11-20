@@ -1675,7 +1675,7 @@ z.close()
     }
     $ask = MW-Find-Any $p.Id "只開啟前 5 個"
     Check ($null -ne $ask) "multiwin: a batch of 7 asks how many to open (button 'only the first 5')"
-    Check ((MW-Wins $p.Id).Count -eq 3) "multiwin: nothing is opened while the question is open (still 3)"
+    Check ((MW-Wins $p.Id).Count -eq 4) "multiwin: while the question is open only the first of the batch is open (it opens at once: 4)"
     if ($ask) { Click $ask }
     Check (MW-Wait-Count $p.Id 8) "multiwin: choosing 'only the first 5' opens 5 more windows (8 in total)"
     Start-Sleep -Seconds 2
@@ -5147,6 +5147,23 @@ with tarfile.open(sys.argv[1], "w", format=tarfile.GNU_FORMAT, encoding="cp932")
         Check ((Test-Path "$tm\資料夾\a.txt") -and (Test-Path "$tm\資料夾\sub\b.bin")) "tree: 'extract here' on a folder puts the folder (with its name) next to the archive"
     }
 
+    # a double click on a row opens and closes it; on the chevron it does not toggle one time too many
+    function Double-Click($el, $dx = $null) { $r = $el.Current.BoundingRectangle; $x = if ($null -ne $dx) { [int]($r.X + $dx) } else { [int]($r.X + $r.Width / 2) }; [Win.D]::SetCursorPos($x, [int]($r.Y + $r.Height / 2)) | Out-Null; Start-Sleep -Milliseconds 300; 1..2 | ForEach-Object { [Win.D]::mouse_event(2,0,0,0,[UIntPtr]::Zero); [Win.D]::mouse_event(4,0,0,0,[UIntPtr]::Zero); Start-Sleep -Milliseconds 60 }; Start-Sleep -Milliseconds 700 }
+    $folder = Tree-Text "資料夾"
+    if ($folder) {
+        $open0 = $null -ne (Tree-Text "sub")
+        Double-Click $folder
+        Check (($null -ne (Tree-Text "sub")) -ne $open0) "tree: a double click on a folder opens or closes it"
+        Double-Click (Tree-Text "資料夾")
+        Check (($null -ne (Tree-Text "sub")) -eq $open0) "tree: another double click puts it back"
+        # the chevron is left of the icon (16 px + the 6 px gap + half of its 20 px column; 1.5 x at 150%): two clicks toggle twice, so nothing changes
+        $scale = [Win.D]::GetDpiForWindow([IntPtr]$win.Current.NativeWindowHandle) / 96.0
+        $folder = Tree-Text "資料夾"
+        Double-Click $folder (-32 * $scale)
+        Check (($null -ne (Tree-Text "sub")) -eq $open0) "tree: a double click on the chevron does not toggle a third time"
+    }
+    Check (Tree-Text "sample.zip") "tree: the root row is still there after the double clicks"
+
     # delete the archive: asks (with a check box), moves it to the Recycle Bin, back to the home page
     $root = Tree-Text "sample.zip"
     if ($root) {
@@ -5195,7 +5212,9 @@ with tarfile.open(sys.argv[1], "w", format=tarfile.GNU_FORMAT, encoding="cp932")
     if ($ex) {
         $half = [int]($scr.Width / 2); $hgt = [int]($scr.Height - 120)
         [Win.D]::ShowWindow([IntPtr]$ex.Current.NativeWindowHandle, 9) | Out-Null; [Win.D]::MoveWindow([IntPtr]$ex.Current.NativeWindowHandle, $half, 0, $half, $hgt, $true) | Out-Null
-        [Win.D]::MoveWindow($p.MainWindowHandle, 0, 0, $half, $hgt, $true) | Out-Null; Start-Sleep -Milliseconds 1200
+        # below 640 px (in logical pixels) the app hides the tree: half of a 1080p screen at 150% is just too narrow
+        $appW = [Math]::Max($half, [int](700 * [Win.D]::GetDpiForWindow($p.MainWindowHandle) / 96.0))
+        [Win.D]::MoveWindow($p.MainWindowHandle, 0, 0, $appW, $hgt, $true) | Out-Null; Start-Sleep -Milliseconds 1200
         function MoveAbs($x, $y) { [Win.D]::mouse_event(0x8001, [uint32]($x * 65535 / $scr.Width), [uint32]($y * 65535 / $scr.Height), 0, [UIntPtr]::Zero) }
         function Drag-TreeItem($name) {
             $el = Tree-Text $name; if (-not $el) { return }

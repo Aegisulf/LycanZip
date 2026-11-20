@@ -1891,8 +1891,9 @@ namespace winrt::LycanZip::implementation
         {
             wchar_t exe[MAX_PATH * 2];
             const DWORD n = GetModuleFileNameW(nullptr, exe, static_cast<DWORD>(std::size(exe)));
-            hstring e = co_await lycan_app::RegisterWin11MenuAsync(lycan::EnsureShellHome(fs::path(std::wstring(exe, n)).parent_path()));
-            if (!e.empty()) failed += std::wstring{lycan::Tr(L"main.windows_11_right_click_menu")} + lycan::Tf(L"fmt.colon_value", std::wstring{e}) + L"\n";
+            hstring e = co_await TrustWin11MenuIfNeededAsync();
+            if (e.empty()) e = co_await lycan_app::RegisterWin11MenuAsync(lycan::EnsureShellHome(fs::path(std::wstring(exe, n)).parent_path()));
+            if (!e.empty() && e != L"cancelled") failed += std::wstring{lycan::Tr(L"main.windows_11_right_click_menu")} + lycan::Tf(L"fmt.colon_value", std::wstring{e}) + L"\n";
         }
         RefreshFileAssocStatus();
         RefreshWin11MenuAsync();
@@ -1932,6 +1933,28 @@ namespace winrt::LycanZip::implementation
         ApplyStoreChannelUi();
     }
 
+    // The installer and zip versions sign the menu package with LycanZip's own certificate: before the package can be added the computer has
+    // to trust it. This says what that means and asks; Windows then asks for administrator rights (certutil adds it to Trusted People).
+    Windows::Foundation::IAsyncOperation<hstring> MainWindow::TrustWin11MenuIfNeededAsync()
+    {
+        auto strong = get_strong();
+        wchar_t exe[MAX_PATH * 2];
+        const DWORD n = GetModuleFileNameW(nullptr, exe, static_cast<DWORD>(std::size(exe)));
+        const fs::path exeDir = fs::path(std::wstring(exe, n)).parent_path();
+        if (!lycan_app::Win11MenuNeedsTrust(exeDir)) co_return hstring{};
+        auto dlg = MakeDialog(lycan::Tr(L"win11.trust_title"), L"\uE72E");
+        TextBlock tb;
+        tb.Text(lycan::Tr(L"win11.trust_text"));
+        tb.TextWrapping(TextWrapping::Wrap);
+        tb.MaxWidth(480);
+        dlg.Content(tb);
+        dlg.PrimaryButtonText(lycan::Tr(L"win11.trust_button"));
+        dlg.CloseButtonText(lycan::Tr(L"main.cancel"));
+        dlg.DefaultButton(ContentDialogButton::Close);
+        if (co_await ShowDialogAsync(dlg) != ContentDialogResult::Primary) co_return hstring{L"cancelled"};
+        co_return co_await lycan_app::TrustWin11MenuCertAsync(exeDir);
+    }
+
     winrt::fire_and_forget MainWindow::OnWin11MenuToggled(Windows::Foundation::IInspectable const&, RoutedEventArgs const&)
     {
         if (loadingSettings_ || win11MenuBusy_) co_return;
@@ -1941,7 +1964,15 @@ namespace winrt::LycanZip::implementation
         Win11MenuToggle().IsEnabled(false);
         wchar_t exe[MAX_PATH * 2];
         const DWORD n = GetModuleFileNameW(nullptr, exe, static_cast<DWORD>(std::size(exe)));
-        hstring error = want ? co_await lycan_app::RegisterWin11MenuAsync(lycan::EnsureShellHome(fs::path(std::wstring(exe, n)).parent_path())) : co_await lycan_app::UnregisterWin11MenuAsync();
+        hstring error = want ? co_await TrustWin11MenuIfNeededAsync() : hstring{};
+        if (error == L"cancelled")   // the user did not want to trust the certificate: nothing changes
+        {
+            win11MenuBusy_ = false;
+            RefreshWin11MenuAsync();
+            co_return;
+        }
+        if (error.empty())
+            error = want ? co_await lycan_app::RegisterWin11MenuAsync(lycan::EnsureShellHome(fs::path(std::wstring(exe, n)).parent_path())) : co_await lycan_app::UnregisterWin11MenuAsync();
         win11MenuBusy_ = false;
         if (!error.empty()) ShowMessage(want ? lycan::Tr(L"main.could_not_add_windows_11_context") : lycan::Tr(L"main.could_not_remove_windows_11"), error);
         else if (want) ShowMessage(lycan::Tr(L"main.added"), lycan::Tr(L"main.if_menu_does_not_show_up"));

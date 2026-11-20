@@ -2,7 +2,7 @@
 #   Default: the sources (only the headers are used) -> third_party/7zip
 #   -Binaries: the x64 installer, unpacks 7z.dll and the license documents -> third_party/7zip-bin (shipped by the packaging scripts, same version as the headers)
 param(
-    [string]$Version = "26.05",
+    [string]$Version = "26.06",
     [switch]$Binaries
 )
 $ErrorActionPreference = "Stop"
@@ -10,6 +10,10 @@ $root = Split-Path $PSScriptRoot -Parent
 
 # version -> (file name, SHA256). To upgrade 7-Zip add a row here (hashes: see the asset digest at https://github.com/ip7z/7zip/releases)
 $pins = @{
+    "26.06" = @{
+        src = @{ name = "7z2606-src.7z";  sha256 = "E0364D39E8208557D939472C9A12D02ED1C12F45CA402E3B408BCAA63B36DD93" }
+        x64 = @{ name = "7z2606-x64.exe"; sha256 = "9B697F65ECC2D9B0152F5EE96D72DDE522A7827690349D9307935DACF40F42EC" }
+    }
     "26.05" = @{
         src = @{ name = "7z2605-src.7z";  sha256 = "FA081A1A33186158D71E9E24F494ED852EF8D0C9D06E21A86FB4713D94B55AE9" }
         x64 = @{ name = "7z2605-x64.exe"; sha256 = "FD99E86F57D8F429EF5ED045BF98315AF962E2309B0F1BA87A147A44C71647D0" }
@@ -43,7 +47,9 @@ if (-not (Test-Path $sevenZip)) { throw "A 7z.exe is needed to unpack the downlo
 
 if ($Binaries) {
     $dest = Join-Path $root "third_party\7zip-bin"
-    if (Test-Path (Join-Path $dest "7z.dll")) { Write-Host "7-Zip binaries already present."; return }
+    $mark = Join-Path $dest "VERSION.txt"
+    if ((Test-Path $mark) -and (Get-Content $mark -Raw) -like "7-Zip $Version *") { Write-Host "7-Zip $Version binaries already present."; return }
+    if (Test-Path $dest) { Remove-Item $dest -Recurse -Force }   # another version: replace it
     $exe = Get-Verified $pin.x64
     & $sevenZip x $exe "-o$dest" -y 7z.dll 7z.exe License.txt readme.txt History.txt | Out-Null
     if (-not (Test-Path (Join-Path $dest "7z.dll"))) { throw "Unpacking failed" }
@@ -53,7 +59,10 @@ if ($Binaries) {
 }
 
 $dest = Join-Path $root "third_party\7zip"
-if (Test-Path (Join-Path $dest "CPP\7zip\Archive\IArchive.h")) { Write-Host "7-Zip source already present."; return }
+$mark = Join-Path $dest "LYCAN-VERSION.txt"
+if ((Test-Path $mark) -and (Get-Content $mark -Raw).Trim() -eq $Version) { Write-Host "7-Zip $Version source already present."; return }
+if (Test-Path $dest) { Remove-Item $dest -Recurse -Force }   # another (or an unmarked) version: replace it
 $archive = Get-Verified $pin.src
 & $sevenZip x $archive "-o$dest" -y | Out-Null
+Set-Content $mark $Version
 Write-Host "Extracted to $dest"

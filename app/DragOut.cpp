@@ -3,6 +3,7 @@
 
 #include <objidl.h>
 #include <ole2.h>
+#include <exdisp.h>
 #include <shlobj.h>
 #include <shlwapi.h>
 
@@ -23,6 +24,7 @@
 #include "lycan/i18n.h"
 #include "lycan/junk.h"
 #include "lycan/security.h"
+#include "lycan/taskqueue.h"
 
 namespace lycan_app {
 namespace {
@@ -457,6 +459,10 @@ struct DragData : winrt::implements<DragData, ::IDataObject> {
         }
     }
 
+    // how many file streams the target asked for (a drop that read none could not write: see DragOutcome::nothingRead)
+    int ContentsAsked() const { return contentsAsked_.load(); }
+    bool HasFiles() const { return std::any_of(req_.entries.begin(), req_.entries.end(), [](const DragEntry& e) { return !e.isDir; }); }
+
     ~DragData() {
         if (batch_) batch_->Cancel();
         for (auto& s : set_) ReleaseStgMedium(&s.second);
@@ -471,6 +477,7 @@ struct DragData : winrt::implements<DragData, ::IDataObject> {
             if (f->cfFormat == CfPreferred() && (f->tymed & TYMED_HGLOBAL)) return Preferred(m);
             if (f->cfFormat == CfContents() && (f->tymed & TYMED_ISTREAM)) {
                 if (f->lindex < 0 || static_cast<size_t>(f->lindex) >= items_.size()) return DV_E_LINDEX;
+                ++contentsAsked_;
                 const Item& it = items_[f->lindex];
                 const DragEntry& entry = req_.entries[it.entry];
                 if (entry.isDir) return DV_E_LINDEX;
@@ -633,6 +640,7 @@ private:
     };
     VirtualDragRequest req_;
     std::vector<Item> items_;   // what the descriptor lists, in its order
+    std::atomic<int> contentsAsked_{0};
     std::string motw_;          // the Zone.Identifier of the archive (empty: it has none)
     std::shared_ptr<BatchSource> batch_;   // set when the drag is one pass over a solid archive
     std::shared_ptr<Source> source_;
@@ -744,12 +752,69 @@ HBITMAP MakeDragImage(const VirtualDragRequest& req, SIZE& size, POINT& offset) 
     return bmp;
 }
 
+// The folder of the File Explorer window under the point (the tab that is shown), empty when it is not one (the desktop, another
+// program). The folder icon under the cursor is not looked at: dropping onto a subfolder gives the window's folder.
+std::filesystem::path ExplorerFolderAt(POINT pt) {
+    HWND root = GetAncestor(WindowFromPoint(pt), GA_ROOT);
+    wchar_t cls[64] = {};
+    if (!root || !GetClassNameW(root, cls, 64) || wcscmp(cls, L"CabinetWClass") != 0) return {};
+    winrt::com_ptr<IShellWindows> windows;
+    if (FAILED(CoCreateInstance(CLSID_ShellWindows, nullptr, CLSCTX_ALL, IID_PPV_ARGS(windows.put())))) return {};
+    long count = 0;
+    windows->get_Count(&count);
+    for (long i = 0; i < count; ++i) {
+        VARIANT index{};
+        index.vt = VT_I4;
+        index.lVal = i;
+        winrt::com_ptr<IDispatch> disp;
+        if (FAILED(windows->Item(index, disp.put())) || !disp) continue;
+        auto app = disp.try_as<IWebBrowserApp>();
+        SHANDLE_PTR h = 0;
+        if (!app || FAILED(app->get_HWND(&h)) || reinterpret_cast<HWND>(h) != root) continue;
+        auto services = disp.try_as<IServiceProvider>();
+        winrt::com_ptr<IShellBrowser> browser;
+        winrt::com_ptr<IShellView> view;
+        if (!services || FAILED(services->QueryService(SID_STopLevelBrowser, IID_PPV_ARGS(browser.put()))) || FAILED(browser->QueryActiveShellView(view.put()))) continue;
+        HWND viewWnd = nullptr;
+        RECT r{};
+        // the windows of one Explorer window are its tabs: the one whose view is visible and under the point
+        if (FAILED(view->GetWindow(&viewWnd)) || !IsWindowVisible(viewWnd) || !GetWindowRect(viewWnd, &r) || !PtInRect(&r, pt)) continue;
+        winrt::com_ptr<IFolderView> folderView = view.try_as<IFolderView>();
+        winrt::com_ptr<IPersistFolder2> folder;
+        PIDLIST_ABSOLUTE pidl = nullptr;
+        if (!folderView || FAILED(folderView->GetFolder(IID_PPV_ARGS(folder.put()))) || FAILED(folder->GetCurFolder(&pidl))) continue;
+        wchar_t path[MAX_PATH * 4] = {};
+        const bool ok = SHGetPathFromIDListEx(pidl, path, static_cast<DWORD>(std::size(path)), GPFIDL_DEFAULT) != FALSE;
+        CoTaskMemFree(pidl);
+        if (ok) return std::filesystem::path(path);
+    }
+    return {};
+}
+
 struct DropSource : winrt::implements<DropSource, ::IDropSource> {
+    explicit DropSource(DragOutcome* outcome) : outcome_(outcome) {}
     HRESULT __stdcall QueryContinueDrag(BOOL escape, DWORD keys) noexcept override {
         if (escape) return DRAGDROP_S_CANCEL;
-        if (!(keys & MK_LBUTTON)) return DRAGDROP_S_DROP;
+        if (!(keys & MK_LBUTTON)) {
+            if (outcome_) {
+                POINT pt{};
+                GetCursorPos(&pt);
+                try {
+                    const auto folder = ExplorerFolderAt(pt);
+                    if (!folder.empty() && !lycan::CanWriteInto(folder)) {
+                        lycan::diag::Info(L"drag: dropped on {}, which needs administrator rights: extracted there instead", lycan::diag::Name(folder));
+                        outcome_->protectedTarget = folder;
+                        return DRAGDROP_S_CANCEL;
+                    }
+                } catch (...) {}
+            }
+            dropped_ = true;
+            return DRAGDROP_S_DROP;
+        }
         return S_OK;
     }
+    bool dropped_ = false;
+    DragOutcome* outcome_ = nullptr;
     HRESULT __stdcall GiveFeedback(DWORD) noexcept override { return DRAGDROP_S_USEDEFAULTCURSORS; }
 };
 
@@ -837,7 +902,7 @@ bool PlanSingleFileDrag(uint32_t index, const std::wstring& name, uint64_t size,
     return true;
 }
 
-DWORD RunVirtualDrag(VirtualDragRequest request) {
+DWORD RunVirtualDrag(VirtualDragRequest request, DragOutcome* outcome) {
     OleInitialize(nullptr);  // S_FALSE: the UI thread already did it
     // WinUI delivers the mouse as pointer messages (and refuses to turn that off), but the OLE drag loop only reads the
     // legacy mouse messages: it would never see the cursor move or the button go up. A helper thread reads the real state
@@ -860,7 +925,7 @@ DWORD RunVirtualDrag(VirtualDragRequest request) {
     POINT imageOffset{};
     HBITMAP image = MakeDragImage(request, imageSize, imageOffset);
     auto data = winrt::make_self<DragData>(std::move(request));
-    auto source = winrt::make_self<DropSource>();
+    auto source = winrt::make_self<DropSource>(outcome);
     // the picture and the text next to the cursor: without them the cursor goes about alone
     winrt::com_ptr<::IDragSourceHelper> helper;
     const HRESULT hrHelper = CoCreateInstance(CLSID_DragDropHelper, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(helper.put()));
@@ -882,6 +947,7 @@ DWORD RunVirtualDrag(VirtualDragRequest request) {
     DWORD effect = DROPEFFECT_NONE;
     DoDragDrop(data.as<::IDataObject>().get(), source.as<::IDropSource>().get(), DROPEFFECT_COPY, &effect);
     stop->store(true);
+    if (outcome && source->dropped_ && data->ContentsAsked() == 0 && data->HasFiles()) outcome->nothingRead = true;
     return effect;
 }
 

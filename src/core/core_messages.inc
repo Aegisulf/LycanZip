@@ -129,3 +129,5 @@
 {L"core.repack_damaged", L"{0} {0:item|items} of the archive could not be read (damaged). Nothing was converted."},
 {L"core.repack_test_failed", L"The new archive did not pass the integrity test. The original archive was not changed."},
 {L"core.repack_count_mismatch", L"The new archive has {0} {0:file|files}, the original had {1}."},
+{L"core.protected_move_cancelled", L"Nothing was put into {0}: the folder needs administrator rights, and they were not given."},
+{L"core.protected_move_failed", L"Could not move the result into {0} ({1})."},

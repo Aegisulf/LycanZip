@@ -1323,8 +1323,8 @@ main.restart_explorer_hint	À utiliser lorsqu’une modification du menu context
 main.restart_explorer_do	Redémarrer	b134bd55
 main.restart_explorer_title	Redémarrer l’Explorateur de fichiers ?	1247b286
 main.restart_explorer_question	Les fenêtres de dossiers ouvertes se ferment et la barre des tâches disparaît un instant. Terminez d’abord ce que vous faites dans l’Explorateur de fichiers.	bb88d250
-main.menu_updated	Le menu contextuel a été mis à jour	35a346d0
-main.menu_updated_restart_explorer	Redémarrez l’Explorateur de fichiers pour utiliser la nouvelle version.	81b74c5b
+main.menu_updated	LycanZip a été mis à jour	40f2217e
+main.menu_updated_restart_explorer	Redémarrez l’Explorateur de fichiers pour que le menu contextuel utilise aussi la nouvelle version.	4f4ab0bd
 main.off	Désactivé	e3de5ab0
 main.virustotal_lookup	Rechercher sur VirusTotal	45155d86
 main.virustotal_lookup_tip	Calcule le SHA-256 et ouvre VirusTotal dans votre navigateur. Seul le hachage est envoyé, pas le fichier. Un hachage inconnu de VirusTotal ne signifie pas que le fichier est sans danger.	162ec07b
@@ -1518,3 +1518,13 @@ main.upgrade_button	Mettre à niveau	a6f47e00
 main.convert_names_note	Les noms de fichiers sont écrits tels qu’ils s’affichent maintenant ({0}). S’ils semblent illisibles, revenez en arrière et choisissez d’abord un autre encodage.	4563f36d
 main.tar_names_title	Enregistrer les noms de fichiers en UTF-8 ?	1cc12cbc
 main.tar_names_text	Les noms de fichiers de cette archive tar n’indiquent pas leur encodage. La modifier les enregistre tous définitivement en UTF-8, exactement comme ci-dessous. S’ils semblent illisibles, annulez et choisissez d’abord un autre encodage en haut à droite.	85e7fd4d
+core.protected_move_cancelled	Rien n’a été placé dans {0} : le dossier exige des droits d’administrateur, et ils n’ont pas été accordés.	22f8dbad
+core.protected_move_failed	Impossible de déplacer le résultat dans {0} ({1}).	8f4f7d89
+main.drag_nothing_written	Rien n’a été déposé. Si ce dossier exige des droits d’administrateur, utilisez « Extraire vers… » ou désactivez « Diffuser les fichiers lors du glisser vers l’extérieur » dans les paramètres.	d7f177dc
+main.safety_title	Vérifiez cette archive	5298c70e
+main.safety_disguised	{0} {0:fichier se fait passer|fichiers se font passer} pour un autre type et pourrait être un programme, par exemple {1}	0591efb1
+main.safety_unsafe_paths	{0} {0:élément a un chemin non sûr et sera ignoré|éléments ont des chemins non sûrs et seront ignorés} à l’extraction, par exemple {1}	6618dcd9
+main.safety_both	{0} {0:fichier se fait passer|fichiers se font passer} pour un autre type et {1} {1:chemin n’est pas sûr|chemins ne sont pas sûrs}, par exemple {2}	6c0af725
+win11.trust_title	Faire confiance au certificat de LycanZip ?	9d36cd0b
+win11.trust_text	Le nouveau menu contextuel de Windows 11 exige un package signé. LycanZip le signe avec son propre certificat, que Windows ne connaît pas encore. Windows va maintenant demander des droits d’administrateur pour ajouter ce certificat aux « Personnes autorisées » de ce PC.\n\nEnsuite, les packages signés avec ce certificat s’installeront sur ce PC sans avertissement ; LycanZip ne signe avec lui que son propre package de menu. Vous pourrez supprimer le certificat plus tard (certlm.msc, « Personnes autorisées »). La version Microsoft Store n’en a pas besoin.	6d4479fc
+win11.trust_button	Faire confiance et ajouter le menu	0c5d5389

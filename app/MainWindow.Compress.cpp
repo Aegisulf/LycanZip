@@ -1,6 +1,7 @@
 ﻿#include "pch.h"
 // The main window: the "New archive" page and repacking (convert the format, remove the password, upgrade an archive).
 #include "MainWindowShared.h"
+#include "ProtectedMove.h"
 
 namespace winrt::LycanZip::implementation
 {
@@ -882,8 +883,18 @@ namespace winrt::LycanZip::implementation
         OpGuard guard{this};   // the compact window stays until the files are written
         lycan::SumWriteResult res;
         bool failed = false;
+        const HWND owner = Hwnd();
         co_await resume_background();
-        try { res = lycan::WriteArchiveSums(outputs.front(), sources, archiveSum, filesSum, {}, outputs); }
+        // beside the archive; a folder that needs administrator rights gets them through the shell (WriteInto)
+        const fs::path folder = outputs.front().parent_path();
+        try {
+            failed = !lycan_app::WriteInto(owner, folder, [&](fs::path const& where) {
+                lycan::SumWriteOptions o;
+                if (where != folder) o.outDir = where;
+                res = lycan::WriteArchiveSums(outputs.front(), sources, archiveSum, filesSum, o, outputs);
+                return true;
+            });
+        }
         catch (...) { failed = true; }
         co_await resume_ui{dispatcher_};
         auto row = taskById_.find(cardId);

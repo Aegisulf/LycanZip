@@ -1,5 +1,7 @@
 #include <algorithm>
 #include <exception>
+#include <mutex>
+#include <vector>
 
 #include "archive_impl.h"
 #include "lycan/encoding.h"
@@ -14,6 +16,23 @@ namespace {
 
 // ---- Input stream: an IInStream on a Win32 file handle (random access) -----------------
 
+class FileInStream;
+
+// The streams of this process that read a named file, and the files that are held closed (FileHold)
+struct OpenFiles {
+    std::mutex m;            // streams (taken before a stream's own mutex, never while one is held)
+    std::vector<FileInStream*> streams;
+    std::mutex heldM;        // held (a stream asks it while its own mutex is held)
+    std::vector<std::wstring> held;
+    static OpenFiles& Get() { static OpenFiles o; return o; }
+    static std::wstring Key(const std::filesystem::path& p) {
+        std::wstring s = p.lexically_normal().wstring();
+        std::transform(s.begin(), s.end(), s.begin(), ::towlower);
+        return s;
+    }
+    bool Held(const std::wstring& key) { std::lock_guard lk(heldM); return std::find(held.begin(), held.end(), key) != held.end(); }
+};
+
 class FileInStream final : public IInStream, public IStreamGetSize, public CMyUnknownImp {
 public:
     Z7_COM_UNKNOWN_IMP_2(IInStream, IStreamGetSize)
@@ -21,30 +40,69 @@ public:
     Z7_IFACE_COM7_IMP(IInStream)
     Z7_IFACE_COM7_IMP(IStreamGetSize)
 public:
-    explicit FileInStream(HANDLE h) : h_(h) {}
-    ~FileInStream() { if (h_ != INVALID_HANDLE_VALUE) CloseHandle(h_); }
+    // path: the file, so that FileHold can close the handle and this stream can open it again (empty: a scratch file, never closed)
+    explicit FileInStream(HANDLE h, std::filesystem::path path = {}) : h_(h), key_(path.empty() ? std::wstring() : OpenFiles::Key(path)), path_(std::move(path)) {
+        if (!key_.empty()) { std::lock_guard lk(OpenFiles::Get().m); OpenFiles::Get().streams.push_back(this); }
+    }
+    ~FileInStream() {
+        if (!key_.empty()) {
+            auto& o = OpenFiles::Get();
+            std::lock_guard lk(o.m);
+            o.streams.erase(std::remove(o.streams.begin(), o.streams.end(), this), o.streams.end());
+        }
+        std::lock_guard lk(m_);
+        if (h_ != INVALID_HANDLE_VALUE) CloseHandle(h_);
+    }
+    const std::wstring& Key() const { return key_; }
+    void Close() {
+        std::lock_guard lk(m_);
+        if (h_ != INVALID_HANDLE_VALUE) { CloseHandle(h_); h_ = INVALID_HANDLE_VALUE; }
+    }
 private:
+    // the handle, opened again where it was after a FileHold (m_ is held)
+    HRESULT Ensure() {
+        if (h_ != INVALID_HANDLE_VALUE) return S_OK;
+        if (OpenFiles::Get().Held(key_)) return HRESULT_FROM_WIN32(ERROR_SHARING_VIOLATION);
+        h_ = CreateFileW(ToLongPath(path_).c_str(), GENERIC_READ, FILE_SHARE_READ | FILE_SHARE_DELETE, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
+        if (h_ == INVALID_HANDLE_VALUE) return HRESULT_FROM_WIN32(GetLastError());
+        LARGE_INTEGER to;
+        to.QuadPart = static_cast<LONGLONG>(pos_);
+        SetFilePointerEx(h_, to, nullptr, FILE_BEGIN);
+        return S_OK;
+    }
     HANDLE h_;
+    std::wstring key_;
+    std::filesystem::path path_;
+    uint64_t pos_ = 0;   // where the handle is (to open it again there)
+    std::mutex m_;
 };
 
 Z7_COM7F_IMF(FileInStream::Read(void* data, UInt32 size, UInt32* processed)) {
+    std::lock_guard lk(m_);
     DWORD n = 0;
     if (processed) *processed = 0;
+    if (const HRESULT hr = Ensure(); FAILED(hr)) return hr;
     if (!ReadFile(h_, data, size, &n, nullptr)) return HRESULT_FROM_WIN32(GetLastError());
+    pos_ += n;
     if (processed) *processed = n;
     return S_OK;
 }
 
 Z7_COM7F_IMF(FileInStream::Seek(Int64 offset, UInt32 origin, UInt64* newPos)) {
     if (origin > 2) return STG_E_INVALIDFUNCTION;
+    std::lock_guard lk(m_);
+    if (const HRESULT hr = Ensure(); FAILED(hr)) return hr;
     LARGE_INTEGER in, out;
     in.QuadPart = offset;
     if (!SetFilePointerEx(h_, in, &out, origin)) return HRESULT_FROM_WIN32(GetLastError());
-    if (newPos) *newPos = static_cast<UInt64>(out.QuadPart);
+    pos_ = static_cast<uint64_t>(out.QuadPart);
+    if (newPos) *newPos = pos_;
     return S_OK;
 }
 
 Z7_COM7F_IMF(FileInStream::GetSize(UInt64* size)) {
+    std::lock_guard lk(m_);
+    if (const HRESULT hr = Ensure(); FAILED(hr)) return hr;
     LARGE_INTEGER s;
     if (!GetFileSizeEx(h_, &s)) return HRESULT_FROM_WIN32(GetLastError());
     *size = static_cast<UInt64>(s.QuadPart);
@@ -127,7 +185,7 @@ Z7_COM7F_IMF(OpenCb::GetStream(const wchar_t* name, IInStream** stream)) {
     HANDLE h = CreateFileW(ToLongPath(p).c_str(), GENERIC_READ, FILE_SHARE_READ | FILE_SHARE_DELETE, nullptr,
                            OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
     if (h == INVALID_HANDLE_VALUE) return S_FALSE;  // that volume does not exist
-    CMyComPtr<IInStream> s(new FileInStream(h));
+    CMyComPtr<IInStream> s(new FileInStream(h, p));
     *stream = s.Detach();
     return S_OK;
 }
@@ -635,12 +693,27 @@ void ResolveNames(ArchiveSource::Impl& impl, const OpenOptions& options) {
 
 }  // namespace
 
+FileHold::FileHold(std::filesystem::path file) : file_(std::move(file)) {
+    auto& o = OpenFiles::Get();
+    const std::wstring key = OpenFiles::Key(file_);
+    { std::lock_guard lk(o.heldM); o.held.push_back(key); }   // first: a stream closed now cannot open again
+    std::lock_guard lk(o.m);
+    for (auto* s : o.streams) if (s->Key() == key) s->Close();   // (a stream leaves the list, under o.m, before it is destroyed)
+}
+
+FileHold::~FileHold() {
+    auto& o = OpenFiles::Get();
+    std::lock_guard lk(o.heldM);
+    auto it = std::find(o.held.begin(), o.held.end(), OpenFiles::Key(file_));
+    if (it != o.held.end()) o.held.erase(it);
+}
+
 std::unique_ptr<ArchiveSource> ArchiveSource::Open(const std::filesystem::path& file, const OpenOptions& options) {
     HANDLE h = CreateFileW(ToLongPath(file).c_str(), GENERIC_READ, FILE_SHARE_READ | FILE_SHARE_DELETE, nullptr,
                            OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
     if (h == INVALID_HANDLE_VALUE)
         throw Error(HRESULT_FROM_WIN32(GetLastError()), Message::Make(L"core.cannot_open_file", file.wstring()));
-    CMyComPtr<IInStream> stream(new FileInStream(h));
+    CMyComPtr<IInStream> stream(new FileInStream(h, file));
 
     std::unique_ptr<ArchiveSource> src(new ArchiveSource());
     auto& impl = *src->impl_;

@@ -143,6 +143,8 @@ namespace winrt::LycanZip::implementation
         void OnShellMenuToggled(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
         winrt::fire_and_forget OnWin11MenuToggled(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
         winrt::fire_and_forget RefreshWin11MenuAsync();
+        // installer / zip versions: trusting LycanZip's certificate before the menu package is added (asks). Empty = go on, "cancelled" = no, else the reason
+        Windows::Foundation::IAsyncOperation<hstring> TrustWin11MenuIfNeededAsync();
         winrt::fire_and_forget CheckStaleRegistrationsAsync();
         winrt::fire_and_forget RestartExplorerAsync();   // "Restart File Explorer" (asks first)
         void OnRestartExplorerClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
@@ -161,6 +163,8 @@ namespace winrt::LycanZip::implementation
         // Archive view: navigation, sorting, search, multi-select, context menu
         void OnTreeExpanding(Microsoft::UI::Xaml::Controls::TreeView const&, Microsoft::UI::Xaml::Controls::TreeViewExpandingEventArgs const&);
         void OnTreeItemInvoked(Microsoft::UI::Xaml::Controls::TreeView const&, Microsoft::UI::Xaml::Controls::TreeViewItemInvokedEventArgs const&);
+        void OnTreeDoubleTapped(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::Input::DoubleTappedRoutedEventArgs const&);
+        void OnTreeNameTrimmedChanged(Microsoft::UI::Xaml::Controls::TextBlock const&, Microsoft::UI::Xaml::Controls::IsTextTrimmedChangedEventArgs const&);
         void OnCrumbClicked(Microsoft::UI::Xaml::Controls::BreadcrumbBar const&, Microsoft::UI::Xaml::Controls::BreadcrumbBarItemClickedEventArgs const&);
         void OnUpClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
         void OnSortClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
@@ -235,6 +239,12 @@ namespace winrt::LycanZip::implementation
         bool compactHost_ = false;         // the compact window only hosts a dialog (hash values, verify): no options row
         double dialogWidthDip_ = 640;      // the compact window's width while a dialog is open
         Microsoft::UI::Dispatching::DispatcherQueueTimer revealTimer_{nullptr};
+        // The window stays cloaked (DWM) until its first frame is drawn, so it never shows black first (CloakUntilDrawn)
+        void CloakUntilDrawn();
+        void Uncloak();
+        winrt::event_token cloakFrame_{};
+        int cloakFrames_ = 0;
+        Microsoft::UI::Dispatching::DispatcherQueueTimer cloakTimer_{nullptr};
         void ShowNotice(Microsoft::UI::Xaml::Controls::Border const& strip, bool warning, hstring const& title, hstring const& message,
                         std::vector<std::pair<std::pair<hstring, hstring>, std::function<void()>>> const& links);   // link = ((text, tooltip), action)
         void ShowSumsBanner();                                                              // the bar above an opened archive: "a checksum file is next to it"
@@ -690,6 +700,9 @@ namespace winrt::LycanZip::implementation
         std::wstring batchTitle_, batchError_;  // the last task that ended (used to compose the notification text when there was one task only)
         lycan::TaskKind batchKind_ = lycan::TaskKind::Extract;
         void ApplyDensity();
+        fire_and_forget ShowSafetyBannerAsync();   // a warning above an archive whose names pretend to be another type or whose paths are not safe
+        // The text of the list and the icon view: compact rows use the size of Explorer (12), comfortable ones the WinUI size (14)
+        double ListFontSize() const { return settings_.compactRows ? 12.0 : 14.0; }
         void ApplyAccent();
         void UpdateBackdrop();
         void LayoutHomeScene();

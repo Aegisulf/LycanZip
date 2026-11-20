@@ -77,7 +77,7 @@
       <ConformanceMode>true</ConformanceMode>
       <DisableSpecificWarnings>4100;4453;28204;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\src\core\include;$(MSBuildProjectDirectory);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32_LEAN_AND_MEAN;WINRT_LEAN_AND_MEAN;NOMINMAX;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32_LEAN_AND_MEAN;WINRT_LEAN_AND_MEAN;NOMINMAX;_CRT_SECURE_NO_WARNINGS;DISABLE_XAML_GENERATED_MAIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions>/utf-8 /bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ResourceCompile>
@@ -114,6 +114,8 @@
     <ClInclude Include="TaskRow.h" />
     <ClInclude Include="ShellNotify.h" />
     <ClInclude Include="Win11Menu.h" />
+    <ClInclude Include="StartupTiming.h" />
+    <ClInclude Include="ProtectedMove.h" />
     <ClInclude Include="ShellIcons.h" />
     <ClInclude Include="BackgroundHost.h" />
     <ClInclude Include="PreviewReader.h" />
@@ -147,6 +149,7 @@
     <ClCompile Include="Welcome.cpp" />
     <ClCompile Include="ShellNotify.cpp" />
     <ClCompile Include="Win11Menu.cpp" />
+    <ClCompile Include="ProtectedMove.cpp" />
     <ClCompile Include="ShellIcons.cpp" />
     <ClCompile Include="BackgroundHost.cpp" />
     <ClCompile Include="I18nXaml.cpp" />

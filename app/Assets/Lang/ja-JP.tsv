@@ -1323,8 +1323,8 @@ main.restart_explorer_hint	右クリック メニューの変更がまだ反映�
 main.restart_explorer_do	再起動	b134bd55
 main.restart_explorer_title	エクスプローラーを再起動しますか?	1247b286
 main.restart_explorer_question	開いているフォルダー ウィンドウが閉じ、タスク バーが一瞬消えます。先にエクスプローラーでの作業を終えてください。	bb88d250
-main.menu_updated	右クリック メニューが更新されました	35a346d0
-main.menu_updated_restart_explorer	新しいバージョンを使うには、エクスプローラーを再起動してください。	81b74c5b
+main.menu_updated	LycanZip が更新されました	40f2217e
+main.menu_updated_restart_explorer	右クリック メニューでも新しいバージョンを使うには、エクスプローラーを再起動してください。	4f4ab0bd
 main.off	オフ	e3de5ab0
 main.virustotal_lookup	VirusTotal で調べる	45155d86
 main.virustotal_lookup_tip	SHA-256 を計算し、ブラウザーで VirusTotal を開きます。送信されるのはハッシュだけで、ファイルは送信されません。VirusTotal が知らないハッシュでも、ファイルが安全だとは限りません。	162ec07b
@@ -1518,3 +1518,13 @@ main.upgrade_button	アップグレード	a6f47e00
 main.convert_names_note	ファイル名は現在の表示（{0}）のとおりに書き込まれます。文字化けしている場合は、戻って先に別のエンコードを選んでください。	4563f36d
 main.tar_names_title	ファイル名を UTF-8 で保存しますか?	1cc12cbc
 main.tar_names_text	この tar 圧縮ファイルのファイル名にはエンコードの情報がありません。変更すると、すべてのファイル名が下に表示されているとおりに UTF-8 で恒久的に保存されます。文字化けしている場合は、キャンセルして先に右上で別のエンコードを選んでください。	85e7fd4d
+core.protected_move_cancelled	{0} には何も入れていません。このフォルダーには管理者権限が必要ですが、許可されませんでした。	22f8dbad
+core.protected_move_failed	結果を {0} に移動できませんでした ({1})。	8f4f7d89
+main.drag_nothing_written	何も入れられませんでした。そのフォルダーに管理者権限が必要な場合は、「展開先を指定…」を使うか、設定で「ドラッグで取り出すときにストリーミングする」をオフにしてください。	d7f177dc
+main.safety_title	このアーカイブに注意	5298c70e
+main.safety_disguised	{0} 個のファイルが別の種類を装っており、プログラムの可能性があります (例: {1})	0591efb1
+main.safety_unsafe_paths	{0} 個の項目のパスが安全でないため、展開時にスキップされます (例: {1})	6618dcd9
+main.safety_both	{0} 個のファイルが別の種類を装い、{1} 個のパスが安全ではありません (例: {2})	6c0af725
+win11.trust_title	LycanZip の証明書を信頼しますか?	9d36cd0b
+win11.trust_text	Windows 11 の新しいコンテキスト メニューには署名済みのパッケージが必要です。LycanZip は独自の証明書で署名していますが、Windows はまだこの証明書を知りません。このあと Windows が管理者権限を求め、この証明書をこの PC の「信頼されたユーザー」に追加します。\n\nその後、この証明書で署名されたパッケージは、この PC に警告なしでインストールされます。LycanZip が署名するのは自身のメニュー パッケージだけです。証明書は後で削除できます (certlm.msc の「信頼されたユーザー」)。Microsoft Store 版では不要です。	6d4479fc
+win11.trust_button	信頼してメニューを追加	0c5d5389

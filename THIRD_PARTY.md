@@ -3,7 +3,7 @@
 ## 7-Zip (Igor Pavlov)
 
 - Use: the compression / extraction engine. Used by **dynamic linking** of `7z.dll` (loaded at run time); at build time only its C++ interface headers are referenced (`third_party/7zip`, downloaded by `scripts/fetch-7zip.ps1`, not under version control).
-- Pinned source version now: 26.05 (SHA256 is verified in the script). During development `7z.dll` is the locally installed version (25.01 in the tests now); a release ships the `7z.dll` of the same version, together with the 7-Zip license texts.
+- Pinned source version now: 26.06 (SHA256 is verified in the script). During development `7z.dll` is the locally installed version (25.01 in the tests now); a release ships the `7z.dll` of the same version, together with the 7-Zip license texts.
 - License: GNU LGPL, plus the unRAR license restriction - the RAR unpacking code **must not** be used to rebuild the RAR compression algorithm. LycanZip provides RAR extraction only.
 - Source: https://www.7-zip.org/ / https://github.com/ip7z/7zip
 

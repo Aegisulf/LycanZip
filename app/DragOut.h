@@ -55,9 +55,19 @@ bool PlanVirtualDrag(const std::vector<lycan::Entry>& entries, const std::vector
 // false when it cannot be a file name Explorer takes.
 bool PlanSingleFileDrag(uint32_t index, const std::wstring& name, uint64_t size, uint64_t mtimeFileTime, VirtualDragRequest& out);
 
+// What happened at the end of a drag, beyond the DROPEFFECT
+struct DragOutcome {
+    // The button went up over a File Explorer window whose folder needs administrator rights (Program Files): Explorer cannot write
+    // virtual files there (it says "access denied" and does not ask for the rights), so the drag was cancelled; the caller extracts
+    // the same items into this folder the way that asks for them (TaskQueue::SetProtectedMove).
+    std::filesystem::path protectedTarget;
+    // Dropped, but the target did not read one file (what an "access denied" in a place that was not recognised looks like)
+    bool nothingRead = false;
+};
+
 // Runs the OLE drag and returns when the files were dropped or the drag was cancelled (the left mouse button must be down).
 // UI thread only; call it from the event that starts the drag. Decompression runs on background threads; while the UI thread
 // waits for data it keeps handling messages. Returns the DROPEFFECT.
-DWORD RunVirtualDrag(VirtualDragRequest request);
+DWORD RunVirtualDrag(VirtualDragRequest request, DragOutcome* outcome = nullptr);
 
 }  // namespace lycan_app

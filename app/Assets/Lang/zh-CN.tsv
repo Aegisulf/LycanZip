@@ -1323,8 +1323,8 @@ main.restart_explorer_hint	右键菜单的更改还没出现时使用：开启�
 main.restart_explorer_do	重启	b134bd55
 main.restart_explorer_title	要重启文件资源管理器吗？	1247b286
 main.restart_explorer_question	打开的文件夹窗口会关闭，任务栏会短暂消失。请先完成文件资源管理器里正在做的事。	bb88d250
-main.menu_updated	右键菜单已更新	35a346d0
-main.menu_updated_restart_explorer	重启文件资源管理器后就会使用新版。	81b74c5b
+main.menu_updated	LycanZip 已更新	40f2217e
+main.menu_updated_restart_explorer	重启文件资源管理器后，右键菜单也会使用新版。	4f4ab0bd
 main.off	关闭	e3de5ab0
 main.virustotal_lookup	在 VirusTotal 查询	45155d86
 main.virustotal_lookup_tip	计算 SHA-256 后用浏览器打开 VirusTotal。只会发送哈希值，不会上传文件。VirusTotal 没见过的哈希值，不代表文件安全。	162ec07b
@@ -1518,3 +1518,13 @@ main.upgrade_button	升级	a6f47e00
 main.convert_names_note	文件名会照当前显示的样子（{0}）写入。如果看起来是乱码，请先返回换一个编码。	4563f36d
 main.tar_names_title	以 UTF-8 保存文件名？	1cc12cbc
 main.tar_names_text	这个 tar 压缩文件的文件名没有编码标记。修改时所有文件名都会照下面的样子以 UTF-8 永久保存。如果看起来是乱码，请取消，先在右上角换一个编码。	85e7fd4d
+core.protected_move_cancelled	没有放入 {0}：此文件夹需要管理员权限，但未获得。	22f8dbad
+core.protected_move_failed	无法将结果移到 {0}（{1}）。	8f4f7d89
+main.drag_nothing_written	没有放入任何文件。如果该文件夹需要管理员权限，请改用“解压到…”，或在设置中关闭“拖出文件时直接流式传输”。	d7f177dc
+main.safety_title	请留意这个压缩文件	5298c70e
+main.safety_disguised	{0} 个文件伪装成其他类型，可能是程序，例如 {1}	0591efb1
+main.safety_unsafe_paths	{0} 个项目的路径不安全，解压时会跳过，例如 {1}	6618dcd9
+main.safety_both	{0} 个文件伪装成其他类型，{1} 个路径不安全，例如 {2}	6c0af725
+win11.trust_title	要信任 LycanZip 的证书吗？	9d36cd0b
+win11.trust_text	Windows 11 的新式右键菜单需要已签名的包。LycanZip 使用自己的证书签名，但 Windows 还不认识这个证书。接下来 Windows 会请求管理员权限，把这个证书添加到这台电脑的“受信任人”。\n\n之后，用这个证书签名的包在这台电脑上安装时不会出现警告；LycanZip 只用它签名自己的菜单包。以后也可以移除这个证书（certlm.msc 中的“受信任人”）。Microsoft Store 版不需要这一步。	6d4479fc
+win11.trust_button	信任并添加菜单	0c5d5389

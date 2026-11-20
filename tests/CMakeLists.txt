@@ -172,3 +172,7 @@ add_test(NAME tempdir COMMAND test_tempdir)
 add_executable(test_versioncheck test_versioncheck.cpp)
 target_link_libraries(test_versioncheck PRIVATE lycan_core)
 add_test(NAME versioncheck COMMAND test_versioncheck)
+
+# The diagnostic log of every test (and of the programs it starts) goes to the build folder, never to the log of the user
+get_property(lycan_all_tests DIRECTORY PROPERTY TESTS)
+set_property(TEST ${lycan_all_tests} APPEND PROPERTY ENVIRONMENT_MODIFICATION "LYCAN_LOG_DIR=set:${CMAKE_BINARY_DIR}/test-logs")

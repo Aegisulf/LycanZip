@@ -475,7 +475,7 @@ SumWriteResult WriteArchiveSums(const fs::path& archive, const std::vector<fs::p
         if (archiveSum) {
             const HashReport rep = HashPart(archiveFiles, algo, options.progress, 0, grand);
             if (rep.failed) throw Error(static_cast<long>(0x80070005L), "cannot read the archive");
-            const fs::path out = archive.wstring() + ext;
+            const fs::path out = (options.outDir.empty() ? archive.parent_path() : options.outDir) / (archive.filename().wstring() + ext);
             WriteUtf8File(out, SumLines(rep, std::vector<fs::path>(archiveFiles.size(), archive.parent_path()), algo));
             res.written.push_back(out);
         }
@@ -483,7 +483,7 @@ SumWriteResult WriteArchiveSums(const fs::path& archive, const std::vector<fs::p
             const HashReport rep = HashPart(files, algo, options.progress, archiveSize, grand);
             res.skipped = rep.failed;
             const std::wstring stem = ArchiveBaseName(archive);
-            const fs::path out = archive.parent_path() / ((stem.empty() ? archive.stem().wstring() : stem) + ext);
+            const fs::path out = (options.outDir.empty() ? archive.parent_path() : options.outDir) / ((stem.empty() ? archive.stem().wstring() : stem) + ext);
             WriteUtf8File(out, SumLines(rep, bases, algo));
             res.written.push_back(out);
         }

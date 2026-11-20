@@ -4,6 +4,16 @@ All notable changes to LycanZip are listed here, one section per version. Versio
 [Semantic Versioning](https://semver.org/): from 1.0 on, the settings files (`settings.ini`, `presets.ini`) and the command line
 stay compatible within a major version. Release notes are taken from this file.
 
+## 1.2.0 (2026-11-20)
+
+- The installer and zip versions can put their entries in the new top-level Windows 11 menu. They bring a small menu package signed with LycanZip’s own certificate: switching the Windows 11 menu on in Settings (File Explorer) first explains what trusting that certificate means, then Windows asks once for administrator rights. With Developer Mode on, nothing has to be trusted. The menu has a single LycanZip entry for files, folders and archives, as in the Store version.
+- Folders that need administrator rights, such as Program Files: extracting there (also by dragging out of LycanZip), compressing into them, changing an archive kept there, checksum files and pictures saved from the preview now work after Windows asks for the rights once, the same way File Explorer does. Before, they failed with “Access denied”.
+- Hidden direction marks in file names (they can make a program look like a document) are shown as visible markers in the list, the folder tree and the path bar, and a bar warns when an archive has disguised names such as `invoice.pdf.exe` or unsafe paths.
+- Faster to open an archive while LycanZip is already running, a single archive no longer waits for others, and windows appear only once they are drawn.
+- A more compact list: rows of 24 pixels, column dividers always visible with a resize cursor, and a tighter icon view with the checkbox inside the selection frame.
+- Folder tree: less space on the left, a double click opens or closes a folder, and a tip shows names that do not fit.
+- The 7-Zip engine is updated to 26.06, which fixes some bugs and vulnerabilities and reads split files made by the Linux `split` command better.
+
 ## 1.1.1 (2026-11-01)
 
 - Fixed: a zip whose file names have the UTF-8 mark could show and extract some of them wrongly. Names whose accented letters also exist in the old DOS code page 437 (Café, München, España) were taken for names in a legacy code page and decoded again, and the archive offered an upgrade it did not need.

@@ -20,6 +20,8 @@ public:
 
     // Becomes the main instance; returns false when there is a main instance already.
     bool BecomePrimary();
+    // Whether a main instance of this copy runs (does not take the role): for handing a request over before the interface starts
+    static bool PrimaryRunning();
 
     // Secondary instance: sends a message to the main instance. When the main instance has just started and the pipe is not ready it retries until timeoutMs.
     bool Forward(const std::wstring& message, DWORD timeoutMs);

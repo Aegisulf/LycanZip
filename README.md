@@ -17,9 +17,9 @@ No ads, no bundled software, no telemetry.
 
 | Home | Browsing an archive |
 |---|---|
-| ![Home](assets/screenshots/1.0-home.webp) | ![Details view](assets/screenshots/1.0-details.webp) |
+| ![Home](assets/screenshots/1.2-home.webp) | ![Details view](assets/screenshots/1.2-details.webp) |
 | **Picture preview** | **Creating an archive** |
-| ![Picture preview](assets/screenshots/1.0-preview.webp) | ![Compress](assets/screenshots/1.0-compress.webp) |
+| ![Picture preview](assets/screenshots/1.2-preview.webp) | ![Compress](assets/screenshots/1.2-compress.webp) |
 
 ## Why LycanZip
 
@@ -33,9 +33,9 @@ No ads, no bundled software, no telemetry.
 
 | | |
 |---|---|
-| **[Microsoft Store](https://apps.microsoft.com/detail/9PB97QFZM56W)** | Updated by Windows, and the only version with entries in the new top-level Windows 11 menu (Windows lets only a signed package add them). |
-| **[Installer](https://aegisulf.com/lycanzip/download/)** | One click, per user, no administrator rights; can update itself (off until you switch it on). |
-| **[Zip / portable](https://aegisulf.com/lycanzip/download/)** | Unpack and run; the portable zip keeps its settings next to the program (a USB stick). |
+| **[Microsoft Store](https://apps.microsoft.com/detail/9PB97QFZM56W)** | Updated by Windows; its entries are in the new top-level Windows 11 menu with nothing to set up. |
+| **[Installer](https://aegisulf.com/lycanzip/download/)** | One click, per user, no administrator rights; can update itself (off until you switch it on). Its entries can be in the new Windows 11 menu after you trust LycanZip’s own certificate once. |
+| **[Zip / portable](https://aegisulf.com/lycanzip/download/)** | Unpack and run; the portable zip keeps its settings next to the program (a USB stick). The new Windows 11 menu works as with the installer. |
 
 Windows 10 version 1809 or newer, or Windows 11; 64-bit. Nothing else to install.
 

@@ -111,6 +111,7 @@ std::vector<std::filesystem::path> ExpandForHash(const std::vector<std::filesyst
 struct SumWriteOptions {
     uint32_t algo = kHashSha256;    // one algorithm
     ProgressFn progress;
+    std::filesystem::path outDir;   // WriteArchiveSums: write the files here instead of beside the archive (the names stay the same)
 };
 
 struct SumWriteResult {

@@ -1323,8 +1323,8 @@ main.restart_explorer_hint	右鍵選單的變更還沒出現時使用：開啟�
 main.restart_explorer_do	重新啟動	b134bd55
 main.restart_explorer_title	要重新啟動檔案總管嗎？	1247b286
 main.restart_explorer_question	開著的資料夾視窗會關閉，工作列會短暫消失。請先完成檔案總管裡正在做的事。	bb88d250
-main.menu_updated	右鍵選單已更新	35a346d0
-main.menu_updated_restart_explorer	重新啟動檔案總管後就會使用新版。	81b74c5b
+main.menu_updated	LycanZip 已更新	40f2217e
+main.menu_updated_restart_explorer	重新啟動檔案總管後，右鍵選單也會使用新版。	4f4ab0bd
 main.off	關閉	e3de5ab0
 main.virustotal_lookup	在 VirusTotal 查詢	45155d86
 main.virustotal_lookup_tip	計算 SHA-256 後用瀏覽器開啟 VirusTotal。只會送出雜湊值，不會上傳檔案。VirusTotal 沒看過的雜湊值，不代表檔案安全。	162ec07b
@@ -1518,3 +1518,13 @@ main.upgrade_button	升級	a6f47e00
 main.convert_names_note	檔名會照目前顯示的樣子（{0}）寫入。如果看起來是亂碼，請先返回換一個編碼。	4563f36d
 main.tar_names_title	以 UTF-8 儲存檔名？	1cc12cbc
 main.tar_names_text	這個 tar 壓縮檔的檔名沒有編碼標記。修改時所有檔名都會照下面的樣子以 UTF-8 永久儲存。如果看起來是亂碼，請取消，先在右上角換一個編碼。	85e7fd4d
+core.protected_move_cancelled	沒有放進 {0}：這個資料夾需要系統管理員權限，但沒有取得。	22f8dbad
+core.protected_move_failed	無法把結果移到 {0}（{1}）。	8f4f7d89
+main.drag_nothing_written	沒有放進去任何檔案。如果那個資料夾需要系統管理員權限，請改用「解壓縮到…」，或在設定關閉「拖出檔案時直接串流」。	d7f177dc
+main.safety_title	請留意這個壓縮檔	5298c70e
+main.safety_disguised	{0} 個檔案偽裝成其他類型，可能是程式，例如 {1}	0591efb1
+main.safety_unsafe_paths	{0} 個項目的路徑不安全，解壓縮時會略過，例如 {1}	6618dcd9
+main.safety_both	{0} 個檔案偽裝成其他類型，{1} 個路徑不安全，例如 {2}	6c0af725
+win11.trust_title	要信任 LycanZip 的憑證嗎？	9d36cd0b
+win11.trust_text	Windows 11 的新式右鍵選單需要已簽章的套件。LycanZip 用自己的憑證簽章，但 Windows 還不認得這個憑證。接著 Windows 會要求系統管理員權限，把這個憑證加入這台電腦的「受信任的人」。\n\n之後，用這個憑證簽章的套件在這台電腦上安裝時不會出現警告；LycanZip 只用它簽自己的選單套件。之後也可以移除這個憑證（certlm.msc 的「受信任的人」）。Microsoft Store 版不需要這一步。	6d4479fc
+win11.trust_button	信任並加入選單	0c5d5389

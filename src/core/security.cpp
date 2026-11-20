@@ -1,4 +1,5 @@
 #include "lycan/security.h"
+#include "lycan/exectype.h"
 
 #include <algorithm>
 #include <array>
@@ -107,6 +108,69 @@ std::filesystem::path ToLongPath(const std::filesystem::path& p) {
     if (s.rfind(LR"(\\?\)", 0) == 0) return s;
     if (s.rfind(LR"(\\)", 0) == 0) return LR"(\\?\UNC\)" + s.substr(2);
     return LR"(\\?\)" + s;
+}
+
+namespace {
+const wchar_t* BidiMark(wchar_t c) {
+    switch (c) {
+        case 0x061C: return L"[ALM]";
+        case 0x200E: return L"[LRM]";
+        case 0x200F: return L"[RLM]";
+        case 0x202A: return L"[LRE]";
+        case 0x202B: return L"[RLE]";
+        case 0x202C: return L"[PDF]";
+        case 0x202D: return L"[LRO]";
+        case 0x202E: return L"[RLO]";
+        case 0x2066: return L"[LRI]";
+        case 0x2067: return L"[RLI]";
+        case 0x2068: return L"[FSI]";
+        case 0x2069: return L"[PDI]";
+        default: return nullptr;
+    }
+}
+}  // namespace
+
+bool HasBidiControls(std::wstring_view name) {
+    return std::any_of(name.begin(), name.end(), [](wchar_t c) { return BidiMark(c) != nullptr; });
+}
+
+std::wstring VisibleName(std::wstring_view name) {
+    if (!HasBidiControls(name)) return std::wstring(name);
+    std::wstring out;
+    for (wchar_t c : name) {
+        if (const wchar_t* m = BidiMark(c)) out += m;
+        else out += c;
+    }
+    return out;
+}
+
+bool LooksDisguised(std::wstring_view name) {
+    if (HasBidiControls(name)) return true;
+    const size_t slash = name.find_last_of(L"/\\");
+    std::wstring file(slash == std::wstring_view::npos ? name : name.substr(slash + 1));
+    std::transform(file.begin(), file.end(), file.begin(), [](wchar_t c) { return static_cast<wchar_t>(std::towlower(c)); });
+    if (!IsExecutableName(file)) return false;
+    std::wstring rest = file.substr(0, file.find_last_of(L'.'));
+    while (!rest.empty() && (rest.back() == L' ' || rest.back() == L'.')) rest.pop_back();   // "photo.jpg      .scr"
+    const size_t dot = rest.find_last_of(L'.');
+    if (dot == std::wstring::npos) return false;
+    static const wchar_t* const kDecoys[] = {L"pdf", L"doc", L"docx", L"xls", L"xlsx", L"ppt", L"pptx", L"txt", L"rtf", L"csv", L"htm", L"html",
+                                             L"jpg", L"jpeg", L"png", L"gif", L"bmp", L"webp", L"heic", L"mp3", L"wav", L"mp4", L"mkv", L"avi",
+                                             L"mov", L"zip", L"rar", L"7z"};
+    const std::wstring ext = rest.substr(dot + 1);
+    return std::any_of(std::begin(kDecoys), std::end(kDecoys), [&](const wchar_t* d) { return ext == d; });
+}
+
+NameWarnings ScanEntryNames(const std::vector<std::wstring>& paths) {
+    NameWarnings w;
+    for (const auto& p : paths) {
+        const bool disguised = LooksDisguised(p);
+        const bool unsafe = SanitizeEntryPath(p).rejected;
+        if (disguised) ++w.disguised;
+        if (unsafe) ++w.unsafePaths;
+        if ((disguised || unsafe) && w.example.empty()) w.example = VisibleName(p);
+    }
+    return w;
 }
 
 }  // namespace lycan

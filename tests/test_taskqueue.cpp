@@ -11,6 +11,7 @@
 
 #include "lycan/error.h"
 #include "lycan/taskqueue.h"
+#include "lycan/tempdir.h"
 
 using namespace lycan;
 namespace fs = std::filesystem;
@@ -367,6 +368,87 @@ int main() {
         q.Get(slow, ti);
         EXPECT(ti.state == TaskState::Cancelled && fake->sawCancel);
         EXPECT(fake->calls == 5);
+    }
+
+    // A target that needs administrator rights (LYCAN_TEST_PROTECTED pretends it): the task writes into a scratch folder, the move
+    // function gets what was written and the nearest existing folder; the report shows the real place; a refused move fails the task
+    {
+        const fs::path prot = root / "prot";
+        fs::create_directories(prot);
+        SetEnvironmentVariableW(L"LYCAN_TEST_PROTECTED", prot.c_str());
+        EXPECT(!CanWriteInto(prot / "new" / "deeper") && CanWriteInto(root / "src"));
+        fs::path existing;
+        CanWriteInto(prot / "new" / "deeper", &existing);
+        EXPECT(existing == prot);
+        TaskQueue q(1, Exec());
+        std::mutex m;
+        std::vector<fs::path> movedItems;
+        fs::path movedInto;
+        bool refuse = false;
+        bool lastReplace = false;
+        q.SetProtectedMove([&](const std::vector<fs::path>& items, const fs::path& into, bool replace, Message& error) {
+            std::lock_guard lk(m);
+            if (refuse) { error = Message::Make(L"core.protected_move_cancelled", into.wstring()); return false; }
+            movedItems = items;
+            movedInto = into;
+            lastReplace = replace;
+            std::error_code e;
+            for (auto const& p : items) { if (replace) fs::remove(into / p.filename(), e); fs::rename(p, into / p.filename(), e); }   // the test can write there: a plain move stands in for the shell
+            return true;
+        });
+        CompressOptions co;
+        co.type = ArchiveType::Zip;
+        auto c = q.EnqueueCompress(prot / "out" / "p.zip", {root / "src"}, co);
+        EXPECT(q.Wait(c, 30000));
+        TaskInfo ci;
+        q.Get(c, ci);
+        EXPECT(ci.state == TaskState::Completed && fs::exists(prot / "out" / "p.zip"));
+        EXPECT(movedInto == prot && movedItems.size() == 1 && movedItems[0].filename() == L"out");
+        EXPECT(ci.compress.outputs.size() == 1 && ci.compress.outputs[0] == prot / "out" / "p.zip");
+        // a target folder that exists already: the paths in the report are the plain ones (no "\." in them)
+        auto c2 = q.EnqueueCompress(prot / "q.zip", {root / "src"}, co);
+        EXPECT(q.Wait(c2, 30000));
+        TaskInfo c2i;
+        q.Get(c2, c2i);
+        EXPECT(c2i.state == TaskState::Completed && c2i.compress.outputs.size() == 1 && c2i.compress.outputs[0] == prot / "q.zip" && fs::exists(prot / "q.zip"));
+        auto x = q.EnqueueExtract(prot / "out" / "p.zip", prot / "x");
+        EXPECT(q.Wait(x, 30000));
+        TaskInfo xi;
+        q.Get(x, xi);
+        EXPECT(xi.state == TaskState::Completed && SameFile(root / "src" / "small.bin", prot / "x" / "src" / "small.bin"));
+        EXPECT(xi.extract.outputDir.wstring().find(L"lycan-staged-") == std::wstring::npos);
+        // FileHold: an archive that is open lets go of its file (nothing else of this process holds it then), and reads again afterwards
+        {
+            auto src = ArchiveSource::Open(prot / "out" / "p.zip");
+            {
+                FileHold hold(prot / "out" / "p.zip");
+                HANDLE ex = CreateFileW((prot / "out" / "p.zip").c_str(), GENERIC_READ | GENERIC_WRITE, 0, nullptr, OPEN_EXISTING, 0, nullptr);
+                EXPECT(ex != INVALID_HANDLE_VALUE);
+                if (ex != INVALID_HANDLE_VALUE) CloseHandle(ex);
+            }
+            ExtractTo(*src, root / "afterhold");
+            EXPECT(SameFile(root / "src" / "small.bin", root / "afterhold" / "src" / "small.bin"));
+        }
+        // changed in place: a copy is changed in the scratch folder and replaces the archive (replace = true)
+        const auto sizeBefore = fs::file_size(prot / "out" / "p.zip");
+        UpdateOp mk;
+        mk.kind = UpdateOp::Kind::MakeDir;
+        mk.path = L"added-folder";
+        auto u = q.EnqueueUpdate(prot / "out" / "p.zip", {mk});
+        EXPECT(q.Wait(u, 30000));
+        TaskInfo ui;
+        q.Get(u, ui);
+        EXPECT(ui.state == TaskState::Completed && lastReplace && movedInto == prot / "out" && fs::file_size(prot / "out" / "p.zip") != sizeBefore);
+        { std::lock_guard lk(m); refuse = true; }
+        auto r = q.EnqueueExtract(prot / "out" / "p.zip", prot / "refused");
+        EXPECT(q.Wait(r, 30000));
+        TaskInfo ri;
+        q.Get(r, ri);
+        EXPECT(ri.state == TaskState::Failed && ri.error.id == L"core.protected_move_cancelled" && !fs::exists(prot / "refused"));
+        bool leftover = false;
+        for (auto const& e : fs::directory_iterator(ScratchDirectory({}))) if (e.path().filename().wstring().rfind(L"lycan-staged-" + std::to_wstring(GetCurrentProcessId()) + L"-", 0) == 0) leftover = true;
+        EXPECT(!leftover);
+        SetEnvironmentVariableW(L"LYCAN_TEST_PROTECTED", nullptr);
     }
 
     std::error_code ec;

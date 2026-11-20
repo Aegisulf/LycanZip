@@ -50,6 +50,14 @@ static int failures = 0;
 
 static fs::path g_root;
 
+// A drive letter that does not exist on this machine (Z: is often a mapped or cloud drive: a test once wrote 50000 files there)
+static std::wstring MissingDrive() {
+    const DWORD used = GetLogicalDrives();
+    for (wchar_t d = L'Z'; d >= L'D'; --d)
+        if (!(used & (1u << (d - L'A')))) return std::wstring(1, d) + L":";
+    return L"";
+}
+
 static void WriteRandom(const fs::path& p, size_t bytes, unsigned seed) {
     fs::create_directories(ToLongPath(p.parent_path()));
     std::mt19937 rng(seed);
@@ -1223,9 +1231,11 @@ static void TestApiMisuse() {
     {
         fs::path out = Fresh(L"mu_out");
         bool a = false, b = false, c = false;
-        try { CreateArchive(out / L"x.zip", {fs::path(L"Z:\\definitely\\missing")}, {}); } catch (const Error&) { a = true; }
+        const std::wstring missing = MissingDrive();
+        EXPECT_MSG(!missing.empty(), "a free drive letter for the test");
+        try { CreateArchive(out / L"x.zip", {fs::path(missing + L"\\definitely\\missing")}, {}); } catch (const Error&) { a = true; }
         try { CreateArchive(out / L"y.zip", {}, {}); } catch (const Error&) { b = true; }
-        try { CreateArchive(fs::path(L"Z:\\no\\such\\drive\\x.zip"), {src}, {}); } catch (const Error&) { c = true; }
+        try { CreateArchive(fs::path(missing + L"\\no\\such\\drive\\x.zip"), {src}, {}); } catch (const Error&) { c = true; }
         EXPECT_MSG(a && b && c, "missing input / no input / unwritable output all report errors");
         EXPECT_MSG(ListAll(out).empty(), "nothing left after the failed attempts");
     }
@@ -1395,7 +1405,7 @@ static void TestSmartScanFlat() {
     eo.smart = true;
     const auto t0 = GetTickCount64();
     bool failedAsExpected = false;
-    try { ExtractTo(*s, fs::path(L"Z:\\lycan_no_such_drive\\out"), eo); } catch (const Error&) { failedAsExpected = true; }
+    try { ExtractTo(*s, fs::path(MissingDrive() + L"\\lycan_no_such_drive\\out"), eo); } catch (const Error&) { failedAsExpected = true; }
     const auto ms = GetTickCount64() - t0;
     std::printf("   scan of 50000 entries: %llu ms\n", static_cast<unsigned long long>(ms));
     EXPECT_MSG(failedAsExpected, "extraction into a missing drive fails");

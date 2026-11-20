@@ -4,6 +4,10 @@
 #include "MainWindow.g.cpp"
 #endif
 #include "MainWindowShared.h"
+#include "StartupTiming.h"
+#include "ProtectedMove.h"
+#include <dwmapi.h>
+#pragma comment(lib, "dwmapi.lib")
 
 namespace winrt::LycanZip::implementation
 {
@@ -13,8 +17,11 @@ namespace winrt::LycanZip::implementation
     MainWindow::MainWindow()
     {
         lycan::diag::Info(L"window: created");
+        lycan_app::StartupMark(L"window: constructor");
         InitializeComponent();
+        lycan_app::StartupMark(L"window: XAML loaded");
         lycan_app::TranslateTree(Content());
+        lycan_app::StartupMark(L"window: texts translated");
         if (auto tag = lycan::i18n::UiLanguageTag(); !tag.empty()) Content().as<FrameworkElement>().Language(hstring{tag});  // the font fallback picks the fonts by the language (Japanese kanji forms)
         {
             // The settings search box is at least as wide as its placeholder ("Rechercher dans les paramètres (Ctrl+F)" is longer
@@ -30,13 +37,16 @@ namespace winrt::LycanZip::implementation
         taskRows_ = single_threaded_observable_vector<Windows::Foundation::IInspectable>();  // must be an "observable" collection, so that added / removed rows are shown
         TaskList().ItemsSource(taskRows_);
 
+        lycan_app::StartupMark(L"window: search box measured");
         LoadBrandImages();
+        lycan_app::StartupMark(L"window: brand images");
         ExtendsContentIntoTitleBar(true);
         // No SetTitleBar: the whole strip would be the caption, and the settings button inside it sometimes ignored a click
         // (a second quick click counted as a double-click on the caption and maximized the window). Only the empty parts
         // of the strip are drag rectangles; the button is plain client area.
         AppTitleBar().SizeChanged([weak = get_weak()](auto&&, auto&&) { if (auto self = weak.get()) self->UpdateTitleDragRects(); });
         ResizeToDefault();
+        lycan_app::StartupMark(L"window: title bar, size");
         UpdateTitleDragRects();
 
         // File name encoding menu
@@ -52,11 +62,15 @@ namespace winrt::LycanZip::implementation
         EncodingCombo().SelectedIndex(0);
 
         settingsPath_ = lycan::DefaultSettingsPath();
+        lycan_app::StartupMark(L"window: encoding menu, title bar");
         settings_ = lycan::LoadSettings(settingsPath_);
+        lycan_app::StartupMark(L"window: settings file loaded");
         lycan_app::PasswordVault::Get().SetFile(settingsPath_.parent_path() / L"passwords.dat");   // the saved passwords live next to the settings
+        lycan_app::StartupMark(L"window: password file set");
         // the names of the file types follow the language of the program (only the names are rewritten, not where the registration points to)
         if (GetEnvironmentVariableW(L"LYCAN_NO_STALE_CHECK", nullptr, 0) == 0 && !StepAsideForStore()) lycan::UpdateAssociationNames(AssocOptions());
         StampSettings();
+        lycan_app::StartupMark(L"window: settings read");
         RootGrid().ActualThemeChanged([weak = get_weak()](auto&&, auto&&) { if (auto self = weak.get()) self->UpdateBackdrop(); });
         // the twinkling stars of the home page rest while the window is not the active one (minimized included)
         Activated([weak = get_weak()](auto&&, WindowActivatedEventArgs const& e) {
@@ -74,6 +88,7 @@ namespace winrt::LycanZip::implementation
         InitCompressPage();
         InitShortcuts();
         BuildShellItemsUi();
+        lycan_app::StartupMark(L"window: accent, compress page, shortcuts");
         this->Closed([weak = get_weak(), id = static_cast<const void*>(this)](auto&&, auto&&) {
             lycan_app::CloseImagePreview(id);  // close only the previews that belong to this window
             lycan_app::CloseAudioPreview(id);
@@ -84,7 +99,9 @@ namespace winrt::LycanZip::implementation
         InitTreeSplitter();
         InitPreviewPane();
         InitListHeader();
+        lycan_app::StartupMark(L"window: splitters, preview pane, header");
         SetWindowSubclass(Hwnd(), MinSizeProc, 1, reinterpret_cast<DWORD_PTR>(&compactFlag_));
+        CloakUntilDrawn();
         lycan_app::SuppressAltBeep(Hwnd());
         notifier_.Attach(Hwnd());
         // Several windows: when another window saved the settings, apply them at once (see SettingsHub.h)
@@ -107,12 +124,19 @@ namespace winrt::LycanZip::implementation
             self->AskCloseWithTasksAsync(n);
         });
         LoadSettingsToUi();
+        lycan_app::StartupMark(L"window: settings page filled");
         ApplySettings();
         ApplyAccent();
+        lycan_app::StartupMark(L"window: settings applied");
 
+        // a target that needs administrator rights (Program Files): Core writes into a scratch folder, the shell moves it in and asks for the rights
+        queue_.SetProtectedMove([hwnd = Hwnd()](std::vector<fs::path> const& items, fs::path const& into, bool replace, lycan::Message& error) {
+            return lycan_app::ShellMoveInto(hwnd, items, into, replace, error);
+        });
         queue_.SetListener([weak = get_weak()](lycan::TaskInfo const& info) {
             if (auto self = weak.get()) self->Post([self, info] { self->OnTaskUpdate(info); });
         });
+        FolderTree().AddHandler(UIElement::DoubleTappedEvent(), box_value(Input::DoubleTappedEventHandler{this, &MainWindow::OnTreeDoubleTapped}), true);
         // The list items handle the click first (toggle the check) and mark the event as handled, so a double click is received only with handledEventsToo
         for (UIElement list : {EntryList().as<UIElement>(), EntryGrid().as<UIElement>()})
         {
@@ -867,6 +891,33 @@ namespace winrt::LycanZip::implementation
         revealTimer_.Start();
     }
 
+    // A new window is drawn black for a moment before its content (150 to 200 ms when it opens an archive): it is cloaked until three frames
+    // were drawn while it is on the screen. The timer is the way out if no frame comes (a window that is never shown is not a problem).
+    void MainWindow::CloakUntilDrawn()
+    {
+        BOOL on = TRUE;
+        if (FAILED(DwmSetWindowAttribute(Hwnd(), DWMWA_CLOAK, &on, sizeof(on)))) return;
+        cloakFrame_ = Microsoft::UI::Xaml::Media::CompositionTarget::Rendering([weak = get_weak()](auto&&, auto&&) {
+            auto self = weak.get();
+            if (self && IsWindowVisible(self->Hwnd()) && ++self->cloakFrames_ >= 3) self->Uncloak();
+        });
+        cloakTimer_ = dispatcher_.CreateTimer();
+        cloakTimer_.IsRepeating(false);
+        cloakTimer_.Interval(1500ms);
+        cloakTimer_.Tick([weak = get_weak()](auto&&, auto&&) { if (auto self = weak.get()) self->Uncloak(); });
+        cloakTimer_.Start();
+    }
+
+    void MainWindow::Uncloak()
+    {
+        if (!cloakTimer_) return;
+        cloakTimer_.Stop();
+        cloakTimer_ = nullptr;
+        Microsoft::UI::Xaml::Media::CompositionTarget::Rendering(cloakFrame_);
+        BOOL off = FALSE;
+        DwmSetWindowAttribute(Hwnd(), DWMWA_CLOAK, &off, sizeof(off));
+    }
+
     void MainWindow::RevealWindow()
     {
         if (!deferredShow_) return;
@@ -874,6 +925,7 @@ namespace winrt::LycanZip::implementation
         if (revealTimer_) revealTimer_.Stop();
         if (previewOnly_) return;   // the preview window is the whole UI
         lycan::diag::Info(L"window: shown");
+        lycan_app::StartupMark(L"window shown");
         AppWindow().Show();
         Activate();
     }
@@ -1577,6 +1629,8 @@ namespace winrt::LycanZip::implementation
 
     void MainWindow::ShowArchive(std::shared_ptr<lycan::ArchiveSource> src, fs::path path, unsigned codepage)
     {
+        lycan_app::StartupMark(L"archive opened, showing it");
+        lycan_app::StartupMarkAtNextFrame(L"archive drawn", true);
         EndLoading(false);
         if (current_ && currentPath_ != path)
         {
@@ -1719,6 +1773,7 @@ namespace winrt::LycanZip::implementation
         }
 
         ShowSumsBanner();
+        ShowSafetyBannerAsync();
         listFxUntil_ = GetTickCount64() + 400;
         PlaySfx(L"open");
         ShowView(View::Archive);
@@ -1852,6 +1907,9 @@ namespace winrt::LycanZip::implementation
         TreeViewNode tn;
         hstring name = id == tree_->Root() ? hstring{currentPath_.filename().wstring()} : hstring{n.name};
         auto row = make<implementation::EntryRow>(id, name, hstring{}, hstring{}, hstring{}, hstring{}, true, false, false);
+        int32_t depth = 0;
+        for (uint32_t x = id; x != tree_->Root(); x = tree_->Node(x).parent) ++depth;
+        row.SetTreeDepth(depth);
         if (id == tree_->Root()) get_self<implementation::EntryRow>(row)->SetRootIcon(FileIconImage(currentPath_));
         else ApplyShellIcon(row);
         tn.Content(row);
@@ -1876,6 +1934,35 @@ namespace winrt::LycanZip::implementation
         auto item = args.InvokedItem();
         if (auto tn = item.try_as<TreeViewNode>()) NavigateTo(NodeIdOf(tn), false);
         else if (auto row = item.try_as<LycanZip::EntryRow>()) NavigateTo(row.NodeId(), false);
+    }
+
+    // A double click on a row opens or closes it, as in the tree of Explorer. The chevron toggles by itself on each click, so a double click there is left alone.
+    void MainWindow::OnTreeDoubleTapped(Windows::Foundation::IInspectable const&, Input::DoubleTappedRoutedEventArgs const& args)
+    {
+        for (auto d = args.OriginalSource().try_as<DependencyObject>(); d; d = Microsoft::UI::Xaml::Media::VisualTreeHelper::GetParent(d))
+        {
+            if (auto fe = d.try_as<FrameworkElement>(); fe && fe.Name() == L"ExpandCollapseChevron") return;
+            if (auto tvi = d.try_as<TreeViewItem>())
+            {
+                auto tn = FolderTree().NodeFromContainer(tvi);
+                if (!tn) return;
+                RealizeTreeChildren(tn);
+                if (tn.Children().Size() > 0) tn.IsExpanded(!tn.IsExpanded());
+                return;
+            }
+        }
+    }
+
+    // A tip with the whole name only on a name that does not fit. It follows the text because rows are reused.
+    void MainWindow::OnTreeNameTrimmedChanged(TextBlock const& name, IsTextTrimmedChangedEventArgs const&)
+    {
+        if (!name.IsTextTrimmed()) { ToolTipService::SetToolTip(name, nullptr); return; }
+        Microsoft::UI::Xaml::Data::Binding text;
+        text.Source(name);
+        text.Path(PropertyPath(L"Text"));
+        Controls::ToolTip tip;
+        tip.SetBinding(ContentControl::ContentProperty(), text);
+        ToolTipService::SetToolTip(name, tip);
     }
 
     // Makes the tree selection follow the current folder (when navigating from the breadcrumb / a double click / up one level)
@@ -1963,7 +2050,7 @@ namespace winrt::LycanZip::implementation
             const int maxLines = cellW <= 104.0 ? 3 : 2;
             for (uint32_t id : ids)
             {
-                nameLines = std::max(nameLines, EstimateNameLines(tree_->Node(id).name, cellW - 8.0));
+                nameLines = std::max(nameLines, EstimateNameLines(tree_->Node(id).name, (cellW - 4.0) * 14.0 / ListFontSize()));
                 if (nameLines >= maxLines) { nameLines = maxLines; break; }
             }
         }
@@ -1987,7 +2074,7 @@ namespace winrt::LycanZip::implementation
             }
             row.SetExtra(ratioText, crcText, methodText, n.isEncrypted);
             ApplyShellIcon(row);
-            row.SetLayout(cellW, cellBox, nameLines, iconDip);
+            row.SetLayout(cellW, cellBox, nameLines, iconDip, settings_.compactRows ? 17.0 : 20.0);   // a line of Segoe UI at 12 / 14; whole numbers, so that every cell has the same height
             rows.push_back(row);
         }
         const ULONGLONG t1 = GetTickCount64();
@@ -2747,7 +2834,7 @@ namespace winrt::LycanZip::implementation
             {
                 Style style{xaml_typename<GridViewItem>()};
                 style.BasedOn(Application::Current().Resources().Lookup(box_value(L"DefaultGridViewItemStyle")).as<Style>());
-                style.Setters().Append(Setter(FrameworkElement::MinHeightProperty(), box_value(settings_.compactRows ? 30.0 : 40.0)));
+                style.Setters().Append(Setter(FrameworkElement::MinHeightProperty(), box_value(settings_.compactRows ? 24.0 : 40.0)));
                 style.Setters().Append(Setter(FrameworkElement::MinWidthProperty(), box_value(0.0)));
                 EntryGrid().ItemContainerStyle(style);
             }
@@ -2755,7 +2842,7 @@ namespace winrt::LycanZip::implementation
         }
         else
         {
-            // icons: leave a gap of 4 between items (the gap belongs to no item, so pressing and dragging there is a band selection); remove the default minimum size and padding
+            // icons: leave a gap of 8 between items (the gap belongs to no item, so pressing and dragging there is a band selection); remove the default minimum size and padding
             try
             {
                 Style style{xaml_typename<GridViewItem>()};
@@ -2846,12 +2933,17 @@ namespace winrt::LycanZip::implementation
         {
             Style style{xaml_typename<ListViewItem>()};
             style.BasedOn(Application::Current().Resources().Lookup(box_value(L"DefaultListViewItemStyle")).as<Style>());
-            style.Setters().Append(Setter(FrameworkElement::MinHeightProperty(), box_value(settings_.compactRows ? 30.0 : 40.0)));
+            style.Setters().Append(Setter(FrameworkElement::MinHeightProperty(), box_value(settings_.compactRows ? 24.0 : 40.0)));
             style.Setters().Append(Setter(Control::HorizontalContentAlignmentProperty(), box_value(HorizontalAlignment::Stretch)));
             style.Setters().Append(Setter(Control::PaddingProperty(), box_value(ThicknessHelper::FromLengths(8, 0, 8, 0))));  // the default left and right padding is too wide; line up with the 8 of the column headers
             EntryList().ItemContainerStyle(style);
         }
         catch (...) {}  // if the default style is not found keep things as they are (default row height)
+        const double font = ListFontSize();
+        EntryList().FontSize(font);
+        EntryGrid().FontSize(font);
+        for (auto const& child : ListHeader().Children())
+            if (auto c = child.try_as<Control>()) c.FontSize(font);
     }
 
     // ---- Selection
@@ -3358,22 +3450,27 @@ namespace winrt::LycanZip::implementation
             line.RadiusY(1);
             line.HorizontalAlignment(HorizontalAlignment::Center);
             line.Margin(ThicknessHelper::FromLengths(0, 4, 0, 4));
-            line.Opacity(0);
-            line.Fill(Application::Current().Resources().Lookup(box_value(L"AccentFillColorDefaultBrush")).as<Microsoft::UI::Xaml::Media::Brush>());
+            // the grips are always shown as a thin neutral line (otherwise nobody finds them); under the mouse and while dragging the line is the accent color
+            auto res = Application::Current().Resources();
+            const auto idleBrush = res.Lookup(box_value(L"ControlStrongStrokeColorDefaultBrush")).as<Microsoft::UI::Xaml::Media::Brush>();
+            const auto hotBrush = res.Lookup(box_value(L"AccentFillColorDefaultBrush")).as<Microsoft::UI::Xaml::Media::Brush>();
+            auto idle = [line, idleBrush] { line.Fill(idleBrush); line.Opacity(0.4); };
+            auto hot = [line, hotBrush](double opacity) { line.Fill(hotBrush); line.Opacity(opacity); };   // only the color changes: a change of size between the two clicks of a double click loses it
+            idle();
             grip.Child(line);
-            Automation::AutomationProperties::SetName(grip, lycan::Tr(L"main.resize_column"));
+            if (auto p = grip.try_as<IUIElementProtected>()) p.ProtectedCursor(Microsoft::UI::Input::InputSystemCursor::Create(Microsoft::UI::Input::InputSystemCursorShape::SizeWestEast));            Automation::AutomationProperties::SetName(grip, lycan::Tr(L"main.resize_column"));
             Grid::SetColumn(grip, static_cast<int>(c) + 1);
             auto weak = get_weak();
-            grip.PointerEntered([weak, line](auto&&, auto&&) { if (auto s = weak.get()) if (s->colDrag_ < 0) line.Opacity(0.6); });
-            grip.PointerExited([weak, line, c](auto&&, auto&&) { if (auto s = weak.get()) if (s->colDrag_ != c) line.Opacity(0); });
-            grip.PointerPressed([weak, line, c](Windows::Foundation::IInspectable const& sender, Input::PointerRoutedEventArgs const& e) {
+            grip.PointerEntered([weak, hot](auto&&, auto&&) { if (auto s = weak.get()) if (s->colDrag_ < 0) hot(0.6); });
+            grip.PointerExited([weak, idle, c](auto&&, auto&&) { if (auto s = weak.get()) if (s->colDrag_ != c) idle(); });
+            grip.PointerPressed([weak, hot, c](Windows::Foundation::IInspectable const& sender, Input::PointerRoutedEventArgs const& e) {
                 auto s = weak.get();
                 if (!s) return;
                 s->colDrag_ = c;
                 s->colDragX_ = e.GetCurrentPoint(nullptr).Position().X;
                 s->colDragW_ = s->curW_[c];
                 sender.as<UIElement>().CapturePointer(e.Pointer());
-                line.Opacity(1.0);
+                hot(1.0);
                 e.Handled(true);
             });
             grip.PointerMoved([weak, c](auto&&, Input::PointerRoutedEventArgs const& e) {
@@ -3384,12 +3481,12 @@ namespace winrt::LycanZip::implementation
                 s->UpdateListColumns();
                 e.Handled(true);
             });
-            auto finish = [weak, line, c](Windows::Foundation::IInspectable const& sender, Input::PointerRoutedEventArgs const& e) {
+            auto finish = [weak, idle, c](Windows::Foundation::IInspectable const& sender, Input::PointerRoutedEventArgs const& e) {
                 auto s = weak.get();
                 if (!s || s->colDrag_ != c) return;
                 s->colDrag_ = -1;
                 sender.as<UIElement>().ReleasePointerCaptures();
-                line.Opacity(0);
+                idle();
                 s->settings_.listColWidths = s->ColWidthsText();
                 s->SaveSettings();
                 e.Handled(true);
@@ -4110,8 +4207,14 @@ namespace winrt::LycanZip::implementation
                 vr.open = oo;
                 ActiveList().ReleasePointerCaptures();
                 // Right here, inside the pointer event that started the drag: the OLE drag loop runs from this call
-                lycan_app::RunVirtualDrag(std::move(vr));
+                lycan_app::DragOutcome outcome;
+                lycan_app::RunVirtualDrag(std::move(vr), &outcome);
                 dragOutActive_ = false;
+                // Explorer cannot write virtual files into a folder that needs administrator rights: the same items are extracted
+                // there instead, which asks for the rights (TaskQueue::SetProtectedMove)
+                if (!outcome.protectedTarget.empty())
+                    StartExtractCore(wrap.empty() ? outcome.protectedTarget : outcome.protectedTarget / wrap, indices, strip, true, std::nullopt);
+                else if (outcome.nothingRead) ShowStatusNote(lycan::Tr(L"main.drag_nothing_written"));
                 return DragOutResult::Done;
             }
         }
